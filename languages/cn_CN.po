@@ -1,0 +1,381 @@
+# Copyright (C) 2017 Martin Krasilnikov
+# This file is distributed under the MIT.
+msgid ""
+msgstr ""
+"Project-Id-Version: Mongabay Environmental News 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/mongabay_prod\n"
+"POT-Creation-Date: 2017-08-14 16:39-0700\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2017-08-14 18:15-0700\n"
+"Language-Team: \n"
+"X-Generator: Poedit 1.8.7\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: zh\n"
+
+#: 404.php:7
+msgid "Page not found"
+msgstr "未找到页面"
+
+#: 404.php:9
+msgid "Return home?"
+msgstr "返回主页？"
+
+#: author.php:9
+msgid "Articles by "
+msgstr "作者 "
+
+#: custom-code/meta.php:67
+msgid ""
+"Mongabay seeks to raise interest in and appreciation of wild lands and "
+"wildlife, while examining the impact of emerging trends in climate, "
+"technology, economics,and finance on conservation and development."
+msgstr ""
+"Mongabay意在通过考察气候、科技、经济和金融方面的新趋势对野生保育和发展的影"
+"响，来唤起人们对野生环境和野生动植物的兴趣和欣赏。"
+
+#: custom-code/taxonomy-location.php:6
+msgctxt "taxonomy general name"
+msgid "Locations"
+msgstr "位置"
+
+#: custom-code/taxonomy-location.php:7
+msgctxt "taxonomy singular name"
+msgid "Location"
+msgstr "定位"
+
+#: custom-code/taxonomy-location.php:8
+msgid "Search Locations"
+msgstr "搜索位置"
+
+#: custom-code/taxonomy-location.php:9
+msgid "Popular Locations"
+msgstr "常用位置"
+
+#: custom-code/taxonomy-location.php:10
+msgid "All Locations"
+msgstr "所有位置"
+
+#: custom-code/taxonomy-location.php:13
+msgid "Edit Location"
+msgstr "编辑位置"
+
+#: custom-code/taxonomy-location.php:14
+msgid "Update Location"
+msgstr "更新位置"
+
+#: custom-code/taxonomy-location.php:15
+msgid "Add New Location"
+msgstr "添加新位置"
+
+#: custom-code/taxonomy-location.php:16
+msgid "New Location Name"
+msgstr "新位置名称"
+
+#: custom-code/taxonomy-location.php:17
+msgid "Separate locations with commas"
+msgstr "以逗号隔开位置"
+
+#: custom-code/taxonomy-location.php:18
+msgid "Add or remove locations"
+msgstr "添加或移除位置"
+
+#: custom-code/taxonomy-location.php:19
+msgid "Choose from the most used locations"
+msgstr "从常用位置中选择"
+
+#: custom-code/taxonomy-location.php:20
+msgid "No locations found."
+msgstr "没有找到位置"
+
+#: custom-code/taxonomy-location.php:21
+msgid "Location"
+msgstr "定位"
+
+#: custom-code/taxonomy-serial.php:6
+msgctxt "taxonomy general name"
+msgid "Serials"
+msgstr "连载"
+
+#: custom-code/taxonomy-serial.php:7
+msgctxt "taxonomy singular name"
+msgid "Serial"
+msgstr "连载"
+
+#: custom-code/taxonomy-serial.php:8
+msgid "Search Serials"
+msgstr "搜索连载"
+
+#: custom-code/taxonomy-serial.php:9
+msgid "Popular Serials"
+msgstr "常用连载"
+
+#: custom-code/taxonomy-serial.php:10
+msgid "All Serials"
+msgstr "所有连载"
+
+#: custom-code/taxonomy-serial.php:13
+msgid "Edit Serial"
+msgstr "编辑连载"
+
+#: custom-code/taxonomy-serial.php:14
+msgid "Update Serial"
+msgstr "更新连载"
+
+#: custom-code/taxonomy-serial.php:15
+msgid "Add New Serial"
+msgstr "添加新连载"
+
+#: custom-code/taxonomy-serial.php:16
+msgid "New Serial Name"
+msgstr "新连载名字"
+
+#: custom-code/taxonomy-serial.php:17
+msgid "Separate serials with commas"
+msgstr "以逗号隔开连载"
+
+#: custom-code/taxonomy-serial.php:18
+msgid "Add or remove serials"
+msgstr "添加或移除连载"
+
+#: custom-code/taxonomy-serial.php:19
+msgid "Choose from the most used serials"
+msgstr "从最常用连载中选择"
+
+#: custom-code/taxonomy-serial.php:20
+msgid "No serials found."
+msgstr "没有找到连载"
+
+#: custom-code/taxonomy-serial.php:21
+msgid "Serial"
+msgstr "连载"
+
+#: custom-code/taxonomy-topic.php:6
+msgctxt "taxonomy general name"
+msgid "Topics"
+msgstr "主题"
+
+#: custom-code/taxonomy-topic.php:7
+msgctxt "taxonomy singular name"
+msgid "Topic"
+msgstr "主题"
+
+#: custom-code/taxonomy-topic.php:8
+msgid "Search Topics"
+msgstr "搜索主题"
+
+#: custom-code/taxonomy-topic.php:9
+msgid "Popular Topics"
+msgstr "常见主题"
+
+#: custom-code/taxonomy-topic.php:10
+msgid "All Topics"
+msgstr "所有主题"
+
+#: custom-code/taxonomy-topic.php:13
+msgid "Edit Topic"
+msgstr "编辑主题"
+
+#: custom-code/taxonomy-topic.php:14
+msgid "Update Topic"
+msgstr "更新主题"
+
+#: custom-code/taxonomy-topic.php:15
+msgid "Add New Topic"
+msgstr "添加新主题"
+
+#: custom-code/taxonomy-topic.php:16
+msgid "New Topic Name"
+msgstr "新主题名"
+
+#: custom-code/taxonomy-topic.php:17
+msgid "Separate topics with commas"
+msgstr "用逗号隔开主题"
+
+#: custom-code/taxonomy-topic.php:18
+msgid "Add or remove topics"
+msgstr "添加或移除主题"
+
+#: custom-code/taxonomy-topic.php:19
+msgid "Choose from the most used topics"
+msgstr "从常用主题中选择"
+
+#: custom-code/taxonomy-topic.php:20
+msgid "No topics found."
+msgstr "没有找到主题"
+
+#: custom-code/taxonomy-topic.php:21
+msgid "Topic"
+msgstr "主题"
+
+#: custom-code/thumbnailed-recent-posts.php:16
+msgid "Most Recent"
+msgstr "最近"
+
+#: front-page.php:53
+msgid "Environmental headlines"
+msgstr "环境新闻"
+
+#: front-page.php:54
+msgid ""
+"Mongabay is a non-profit provider of conservation and environmental science "
+"news."
+msgstr ""
+
+#: functions.php:216
+msgid "Special series"
+msgstr "特约系列"
+
+#: functions.php:261
+msgid "More articles"
+msgstr "更多文章"
+
+#: functions.php:368
+msgid "Header Menu"
+msgstr "首栏菜单"
+
+#: functions.php:369
+msgid "Sidebar Menu"
+msgstr "侧栏菜单"
+
+#: functions.php:370
+msgid "Extra Menu"
+msgstr "附加菜单"
+
+#: functions.php:416
+msgid "Sidebar Widget"
+msgstr "侧栏小工具"
+
+#: functions.php:417
+msgid "All sidebar widgets should be placed here."
+msgstr "所有侧栏小工具都要放在这里"
+
+#: functions.php:427
+msgid "Footer Widget 1/4"
+msgstr "页脚小工具1/4"
+
+#: functions.php:428
+msgid "First column widget"
+msgstr "第一列小工具"
+
+#: functions.php:438
+msgid "Footer Widget 2/4"
+msgstr "页脚小工具2/4"
+
+#: functions.php:439
+msgid "Second column widget"
+msgstr "第二列小工具"
+
+#: functions.php:449
+msgid "Footer Widget 3/4"
+msgstr "页脚小工具3/4"
+
+#: functions.php:450
+msgid "Third column widget"
+msgstr "第三列小工具"
+
+#: functions.php:460
+msgid "Footer Widget 4/4"
+msgstr "页脚小工具4/4"
+
+#: functions.php:461
+msgid "Forth column widget"
+msgstr "第四列小工具"
+
+#: functions.php:484
+msgid "Topic and location tabs"
+msgstr "题目和位置标签"
+
+#: functions.php:485
+msgid "Listing topics and locations as tabbed content"
+msgstr "列出被标注的题目和位置"
+
+#: functions.php:507
+msgid "By topic"
+msgstr "按题目筛选"
+
+#: functions.php:508
+msgid "By location"
+msgstr "按位置筛选"
+
+#: functions.php:564
+msgid "Many more topics"
+msgstr "更多主题"
+
+#: functions.php:608
+msgid "Browse more locations"
+msgstr "浏览更多位置"
+
+#: functions.php:621
+msgid "New title"
+msgstr "新标题"
+
+#: functions.php:625
+msgid "Title:"
+msgstr "标题"
+
+#: functions.php:698
+msgid "View Article"
+msgstr "查看文章"
+
+#: functions.php:853 functions.php:857
+msgid "You cannot add terms to this taxonomy"
+msgstr "不能再往此分类添加项目"
+
+#: loop.php:30 single.php:37
+msgid "by "
+msgstr "来自 "
+
+#: loop.php:56 page.php:16 single-featured.php:78 single.php:92
+msgid "Sorry, nothing to display."
+msgstr "不好意思，这里没有内容"
+
+#: partials/navigation-featured.php:9 partials/navigation-mobile.php:9
+msgid "News sections"
+msgstr "新的组别"
+
+#: partials/navigation-featured.php:13 partials/navigation-mobile.php:15
+msgid "Language"
+msgstr "语言"
+
+#: search.php:6
+msgid "%s Search Results for "
+msgstr "%s  按以下关键词搜索"
+
+#: searchform.php:3
+msgid "To search, type and hit enter."
+msgstr "输入搜索内容后按回车"
+
+#: searchform.php:4
+msgid "Search"
+msgstr "搜索"
+
+#: single-featured.php:26 single.php:22
+msgid "Mongabay Series: "
+msgstr "Mongabay系列栏目： "
+
+#: single-featured.php:65 single.php:79
+msgid "Article published by "
+msgstr "发表者 "
+
+#: single.php:37
+msgid " on "
+msgstr " 在 "
+
+#. Theme Name of the plugin/theme
+msgid "Mongabay Environmental News"
+msgstr "Mongabay环境新闻"
+
+#. Description of the plugin/theme
+msgid "Mongabay WordPress Theme"
+msgstr "Mongabay 站点主题"
+
+#. Author of the plugin/theme
+msgid "Martin Krasilnikov"
+msgstr "Martin Krasilnikov"
+
+#. Author URI of the plugin/theme
+msgid "www.mkras.com"
+msgstr "www.mkras.com"

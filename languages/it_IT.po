@@ -1,0 +1,384 @@
+# Copyright (C) 2017 Martin Krasilnikov
+# This file is distributed under the MIT.
+msgid ""
+msgstr ""
+"Project-Id-Version: Mongabay Environmental News 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/mongabay_prod\n"
+"POT-Creation-Date: 2017-08-09 17:08-0700\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2017-08-09 17:35-0700\n"
+"Language-Team: \n"
+"X-Generator: Poedit 1.8.7\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: it\n"
+
+#: 404.php:7
+msgid "Page not found"
+msgstr "Pagina non trovata"
+
+#: 404.php:9
+msgid "Return home?"
+msgstr "Tornare alla home page?"
+
+#: author.php:9
+msgid "Articles by "
+msgstr "Articoli di"
+
+#: custom-code/meta.php:67
+msgid ""
+"Mongabay seeks to raise interest in and appreciation of wild lands and "
+"wildlife, while examining the impact of emerging trends in climate, "
+"technology, economics,and finance on conservation and development."
+msgstr ""
+"Mongabay cerca di suscitare interesse e considerazione per terre e animali "
+"selvaggi e, allo stesso tempo, di esaminare lʼimpatto delle nuove tendenze "
+"del clima, della tecnologia, dellʼeconomia e della finanza sulla "
+"conservazione e lo sviluppo."
+
+#: custom-code/taxonomy-location.php:6
+msgctxt "taxonomy general name"
+msgid "Locations"
+msgstr "Luoghi"
+
+#: custom-code/taxonomy-location.php:7
+msgctxt "taxonomy singular name"
+msgid "Location"
+msgstr "Luogo"
+
+#: custom-code/taxonomy-location.php:8
+msgid "Search Locations"
+msgstr "Cerca luoghi"
+
+#: custom-code/taxonomy-location.php:9
+msgid "Popular Locations"
+msgstr "Luoghi popolari"
+
+#: custom-code/taxonomy-location.php:10
+msgid "All Locations"
+msgstr "Tutti i luoghi"
+
+#: custom-code/taxonomy-location.php:13
+msgid "Edit Location"
+msgstr "Modifica luoghi"
+
+#: custom-code/taxonomy-location.php:14
+msgid "Update Location"
+msgstr "Aggiorna luoghi"
+
+#: custom-code/taxonomy-location.php:15
+msgid "Add New Location"
+msgstr "Aggiungi un nuovo luogo"
+
+#: custom-code/taxonomy-location.php:16
+msgid "New Location Name"
+msgstr "Nome del nuovo luogo"
+
+#: custom-code/taxonomy-location.php:17
+msgid "Separate locations with commas"
+msgstr "Separa i luoghi con una virgola"
+
+#: custom-code/taxonomy-location.php:18
+msgid "Add or remove locations"
+msgstr "Aggiungi o rimuovi luoghi"
+
+#: custom-code/taxonomy-location.php:19
+msgid "Choose from the most used locations"
+msgstr "Scegli tra i luoghi più usati"
+
+#: custom-code/taxonomy-location.php:20
+msgid "No locations found."
+msgstr "Non è stato trovato alcun luogo."
+
+#: custom-code/taxonomy-location.php:21
+msgid "Location"
+msgstr "Luogo"
+
+#: custom-code/taxonomy-serial.php:6
+msgctxt "taxonomy general name"
+msgid "Serials"
+msgstr "Serie"
+
+#: custom-code/taxonomy-serial.php:7
+msgctxt "taxonomy singular name"
+msgid "Serial"
+msgstr "Serie"
+
+#: custom-code/taxonomy-serial.php:8
+msgid "Search Serials"
+msgstr "Ricerca serie"
+
+#: custom-code/taxonomy-serial.php:9
+msgid "Popular Serials"
+msgstr "Serie popolari"
+
+#: custom-code/taxonomy-serial.php:10
+msgid "All Serials"
+msgstr "Tutte le serie"
+
+#: custom-code/taxonomy-serial.php:13
+msgid "Edit Serial"
+msgstr "modifica serie"
+
+#: custom-code/taxonomy-serial.php:14
+msgid "Update Serial"
+msgstr "aggiorna serie"
+
+#: custom-code/taxonomy-serial.php:15
+msgid "Add New Serial"
+msgstr "aggiungi una nuova serie"
+
+#: custom-code/taxonomy-serial.php:16
+msgid "New Serial Name"
+msgstr "nome della nuova serie"
+
+#: custom-code/taxonomy-serial.php:17
+msgid "Separate serials with commas"
+msgstr "separa le serie con una virgola"
+
+#: custom-code/taxonomy-serial.php:18
+msgid "Add or remove serials"
+msgstr "aggiungi o rimuovi serie"
+
+#: custom-code/taxonomy-serial.php:19
+msgid "Choose from the most used serials"
+msgstr "Scegli tra le serie più usate"
+
+#: custom-code/taxonomy-serial.php:20
+msgid "No serials found."
+msgstr "non è stata trovata alcuna serie"
+
+#: custom-code/taxonomy-serial.php:21
+msgid "Serial"
+msgstr "serie"
+
+#: custom-code/taxonomy-topic.php:6
+msgctxt "taxonomy general name"
+msgid "Topics"
+msgstr "temi"
+
+#: custom-code/taxonomy-topic.php:7
+msgctxt "taxonomy singular name"
+msgid "Topic"
+msgstr "tema"
+
+#: custom-code/taxonomy-topic.php:8
+msgid "Search Topics"
+msgstr "ricerca tema"
+
+#: custom-code/taxonomy-topic.php:9
+msgid "Popular Topics"
+msgstr "temi popolari"
+
+#: custom-code/taxonomy-topic.php:10
+msgid "All Topics"
+msgstr "tutti i temi"
+
+#: custom-code/taxonomy-topic.php:13
+msgid "Edit Topic"
+msgstr "modifica tema"
+
+#: custom-code/taxonomy-topic.php:14
+msgid "Update Topic"
+msgstr "aggiorna tema"
+
+#: custom-code/taxonomy-topic.php:15
+msgid "Add New Topic"
+msgstr "aggiungi un nuovo tema"
+
+#: custom-code/taxonomy-topic.php:16
+msgid "New Topic Name"
+msgstr "nome del nuovo tema"
+
+#: custom-code/taxonomy-topic.php:17
+msgid "Separate topics with commas"
+msgstr "separa i temi con una virgola"
+
+#: custom-code/taxonomy-topic.php:18
+msgid "Add or remove topics"
+msgstr "aggiungi o rimuovi temi"
+
+#: custom-code/taxonomy-topic.php:19
+msgid "Choose from the most used topics"
+msgstr "Scegli tra i temi più usati"
+
+#: custom-code/taxonomy-topic.php:20
+msgid "No topics found."
+msgstr "non è stato trovato alcun tema"
+
+#: custom-code/taxonomy-topic.php:21
+msgid "Topic"
+msgstr "tema"
+
+#: custom-code/thumbnailed-recent-posts.php:16
+msgid "Most Recent"
+msgstr "più recenti"
+
+#: front-page.php:53
+msgid "Environmental headlines"
+msgstr "Mongabay: Notizie sull’Ambiente"
+
+#: front-page.php:54
+msgid ""
+"Mongabay is a non-profit provider of conservation and environmental science "
+"news."
+msgstr ""
+"Notizie e ispirazione dalla natura - Giornalismo ambientale indipendente. "
+
+#: functions.php:216
+msgid "Special series"
+msgstr "serie speciali"
+
+#: functions.php:261
+msgid "More articles"
+msgstr "più articoli"
+
+#: functions.php:368
+msgid "Header Menu"
+msgstr "Menù Intestazioni"
+
+#: functions.php:369
+msgid "Sidebar Menu"
+msgstr "Menù laterale"
+
+#: functions.php:370
+msgid "Extra Menu"
+msgstr "Extra Menù"
+
+#: functions.php:416
+msgid "Sidebar Widget"
+msgstr "Widget barra laterale"
+
+#: functions.php:417
+msgid "All sidebar widgets should be placed here."
+msgstr "tutti i widget della barra laterale vanno messi qui"
+
+#: functions.php:427
+msgid "Footer Widget 1/4"
+msgstr "Widget del footer 1/4"
+
+#: functions.php:428
+msgid "First column widget"
+msgstr "widget prima colonna"
+
+#: functions.php:438
+msgid "Footer Widget 2/4"
+msgstr "Widget del footer 2/4"
+
+#: functions.php:439
+msgid "Second column widget"
+msgstr "widget seconda colonna"
+
+#: functions.php:449
+msgid "Footer Widget 3/4"
+msgstr "Widget del footer 3/4"
+
+#: functions.php:450
+msgid "Third column widget"
+msgstr "widget terza colonna"
+
+#: functions.php:460
+msgid "Footer Widget 4/4"
+msgstr "Widget del footer 4/4"
+
+#: functions.php:461
+msgid "Forth column widget"
+msgstr "widget quarta colonna"
+
+#: functions.php:484
+msgid "Topic and location tabs"
+msgstr "etichette di tema e luogo"
+
+#: functions.php:485
+msgid "Listing topics and locations as tabbed content"
+msgstr "elencare temi e luoghi come contenuti a schede"
+
+#: functions.php:507
+msgid "By topic"
+msgstr "per tema"
+
+#: functions.php:508
+msgid "By location"
+msgstr "per luogo"
+
+#: functions.php:564
+msgid "Many more topics"
+msgstr "Molti più temi"
+
+#: functions.php:608
+msgid "Browse more locations"
+msgstr "sfoglia più luoghi"
+
+#: functions.php:621
+msgid "New title"
+msgstr "Nuovo titolo"
+
+#: functions.php:625
+msgid "Title:"
+msgstr "Titolo: "
+
+#: functions.php:698
+msgid "View Article"
+msgstr "Visualizza articolo"
+
+#: functions.php:853 functions.php:857
+msgid "You cannot add terms to this taxonomy"
+msgstr "Impossibile aggiungere termini a questa tassonomia"
+
+#: loop.php:30 single.php:37
+msgid "by "
+msgstr "di "
+
+#: loop.php:56 page.php:16 single-featured.php:78 single.php:92
+msgid "Sorry, nothing to display."
+msgstr "Niente da visualizzare"
+
+#: partials/navigation-featured.php:9 partials/navigation-mobile.php:9
+msgid "News sections"
+msgstr "Nuove sezioni"
+
+#: partials/navigation-featured.php:13 partials/navigation-mobile.php:15
+msgid "Language"
+msgstr "Lingua"
+
+#: search.php:6
+msgid "%s Search Results for "
+msgstr "%s Cerca risultati per"
+
+#: searchform.php:3
+msgid "To search, type and hit enter."
+msgstr "Per effettuare la ricerca, digitare e premere enter."
+
+#: searchform.php:4
+msgid "Search"
+msgstr "Cerca"
+
+#: single-featured.php:26 single.php:22
+msgid "Mongabay Series: "
+msgstr "Serie di Mongabay: "
+
+#: single-featured.php:65 single.php:79
+msgid "Article published by "
+msgstr "Articolo pubblicato da "
+
+#: single.php:37
+msgid " on "
+msgstr " il "
+
+#. Theme Name of the plugin/theme
+msgid "Mongabay Environmental News"
+msgstr "Mongabay: Notizie sull’Ambiente"
+
+#. Description of the plugin/theme
+msgid "Mongabay WordPress Theme"
+msgstr "Tema Wordpress di Mongabay"
+
+#. Author of the plugin/theme
+msgid "Martin Krasilnikov"
+msgstr "Martin Krasilnikov"
+
+#. Author URI of the plugin/theme
+msgid "www.mkras.com"
+msgstr "Martin Krasilnikov"
