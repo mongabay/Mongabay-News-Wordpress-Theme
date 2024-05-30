@@ -31,7 +31,7 @@ function articles_listing($posts_per_page, $offset, $show_all_thumbnails, $thumb
         <a href="<?php the_permalink(); ?>">
           <?php if (($show_all_thumbnails || $post_counter == 1) && has_post_thumbnail()) { ?>
             <div class="featured-image">
-              <?php echo get_the_post_thumbnail(get_the_ID(), $thumbnail_size) ?>
+              <?php the_post_thumbnail($thumbnail_size) ?>
             </div>
           <?php }; ?>
           <div class="title headline">
@@ -85,7 +85,7 @@ function featured_articles_listing($posts_per_page, $offset, $thumbnail_size, $t
         <div class="article--container">
           <a href="<?php the_permalink(); ?>">
             <div class="featured-image">
-              <?php echo get_the_post_thumbnail(get_the_ID(), 'medium') ?>
+              <?php the_post_thumbnail('medium') ?>
               <div class="title headline">
                 <h1><?php the_title(); ?></h1>
               </div>
@@ -100,7 +100,7 @@ function featured_articles_listing($posts_per_page, $offset, $thumbnail_size, $t
           <a href="<?php the_permalink(); ?>">
             <?php if ($post_counter == 1 && has_post_thumbnail()) { ?>
               <div class="featured-image">
-                <?php echo get_the_post_thumbnail(get_the_ID(), $thumbnail_size) ?>
+                <?php the_post_thumbnail($thumbnail_size) ?>
               </div>
             <?php }; ?>
             <div class="title headline">

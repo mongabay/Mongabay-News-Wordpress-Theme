@@ -17,7 +17,7 @@ get_header(); ?>
 			<h4>Latest</h4>
 			<div class="divider"></div>
 		</div>
-		<?php articles_listing(6, 5, false, 'thumbnail', null); ?>
+		<?php articles_listing(6, 5, false, 'medium', null); ?>
 		<a class="theme--button outlined full-width">All news <span class="icon icon-right"></span></a>
 		<!-- Component End -->
 	</div>
