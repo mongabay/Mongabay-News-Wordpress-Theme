@@ -1,0 +1,382 @@
+# Copyright (C) 2017 Martin Krasilnikov
+# This file is distributed under the MIT.
+msgid ""
+msgstr ""
+"Project-Id-Version: Mongabay Environmental News 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/mongabay_prod\n"
+"POT-Creation-Date: 2017-08-06 20:55-0700\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2020-09-03 20:22-0700\n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.4.1\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: ja\n"
+
+#: 404.php:7
+msgid "Page not found"
+msgstr "ページが見つかりません"
+
+#: 404.php:9
+msgid "Return home?"
+msgstr "ホーム画面に戻りますか？"
+
+#: author.php:9
+msgid "Articles by "
+msgstr "記事の著者 "
+
+#: custom-code/meta.php:67
+msgid ""
+"Mongabay seeks to raise interest in and appreciation of wild lands and "
+"wildlife, while examining the impact of emerging trends in climate, "
+"technology, economics,and finance on conservation and development."
+msgstr ""
+"Mongabay は気候、テクノロジー、経済、金融界の保全と発展に対する最新動向の影"
+"響を調査しながら、原生地および野生動物への関心と理解が高まるよう努めていま"
+"す。"
+
+#: custom-code/taxonomy-location.php:6
+msgctxt "taxonomy general name"
+msgid "Locations"
+msgstr "ロケーション"
+
+#: custom-code/taxonomy-location.php:7
+msgctxt "taxonomy singular name"
+msgid "Location"
+msgstr "ロケーション"
+
+#: custom-code/taxonomy-location.php:8
+msgid "Search Locations"
+msgstr "ロケーションを検索する"
+
+#: custom-code/taxonomy-location.php:9
+msgid "Popular Locations"
+msgstr "人気のロケーション"
+
+#: custom-code/taxonomy-location.php:10
+msgid "All Locations"
+msgstr "全ロケーション"
+
+#: custom-code/taxonomy-location.php:13
+msgid "Edit Location"
+msgstr "ロケーションを編集する"
+
+#: custom-code/taxonomy-location.php:14
+msgid "Update Location"
+msgstr "ロケーションを更新する"
+
+#: custom-code/taxonomy-location.php:15
+msgid "Add New Location"
+msgstr "新しいロケーションを追加する"
+
+#: custom-code/taxonomy-location.php:16
+msgid "New Location Name"
+msgstr "新しいロケーション名"
+
+#: custom-code/taxonomy-location.php:17
+msgid "Separate locations with commas"
+msgstr "コンマでロケーションを区切る"
+
+#: custom-code/taxonomy-location.php:18
+msgid "Add or remove locations"
+msgstr "ロケーションを追加または削除する"
+
+#: custom-code/taxonomy-location.php:19
+msgid "Choose from the most used locations"
+msgstr "最も利用されているロケーションから選ぶ"
+
+#: custom-code/taxonomy-location.php:20
+msgid "No locations found."
+msgstr "ロケーションが見つかりません."
+
+#: custom-code/taxonomy-location.php:21
+msgid "Location"
+msgstr "ロケーション"
+
+#: custom-code/taxonomy-serial.php:6
+msgctxt "taxonomy general name"
+msgid "Serials"
+msgstr "シリアル"
+
+#: custom-code/taxonomy-serial.php:7
+msgctxt "taxonomy singular name"
+msgid "Serial"
+msgstr "シリアル"
+
+#: custom-code/taxonomy-serial.php:8
+msgid "Search Serials"
+msgstr "シリアルを検索する"
+
+#: custom-code/taxonomy-serial.php:9
+msgid "Popular Serials"
+msgstr "人気のシリアル"
+
+#: custom-code/taxonomy-serial.php:10
+msgid "All Serials"
+msgstr "全シリアル"
+
+#: custom-code/taxonomy-serial.php:13
+msgid "Edit Serial"
+msgstr "シリアルを編集する"
+
+#: custom-code/taxonomy-serial.php:14
+msgid "Update Serial"
+msgstr "シリアルを更新する"
+
+#: custom-code/taxonomy-serial.php:15
+msgid "Add New Serial"
+msgstr "新しいシリアルを追加する"
+
+#: custom-code/taxonomy-serial.php:16
+msgid "New Serial Name"
+msgstr "新しいシリアル名"
+
+#: custom-code/taxonomy-serial.php:17
+msgid "Separate serials with commas"
+msgstr "コンマでシリアルを区切る"
+
+#: custom-code/taxonomy-serial.php:18
+msgid "Add or remove serials"
+msgstr "シリアルを追加または削除する"
+
+#: custom-code/taxonomy-serial.php:19
+msgid "Choose from the most used serials"
+msgstr "最も利用されているシリアルから選ぶ"
+
+#: custom-code/taxonomy-serial.php:20
+msgid "No serials found."
+msgstr "シリアルが見つかりません."
+
+#: custom-code/taxonomy-serial.php:21
+msgid "Serial"
+msgstr "シリアル"
+
+#: custom-code/taxonomy-topic.php:6
+msgctxt "taxonomy general name"
+msgid "Topics"
+msgstr "トピック"
+
+#: custom-code/taxonomy-topic.php:7
+msgctxt "taxonomy singular name"
+msgid "Topic"
+msgstr "トピック"
+
+#: custom-code/taxonomy-topic.php:8
+msgid "Search Topics"
+msgstr "トピックを検索する"
+
+#: custom-code/taxonomy-topic.php:9
+msgid "Popular Topics"
+msgstr "人気のトピック"
+
+#: custom-code/taxonomy-topic.php:10
+msgid "All Topics"
+msgstr "全トピック"
+
+#: custom-code/taxonomy-topic.php:13
+msgid "Edit Topic"
+msgstr "トピックを編集する"
+
+#: custom-code/taxonomy-topic.php:14
+msgid "Update Topic"
+msgstr "トピックを更新する"
+
+#: custom-code/taxonomy-topic.php:15
+msgid "Add New Topic"
+msgstr "新しいトピックを追加する"
+
+#: custom-code/taxonomy-topic.php:16
+msgid "New Topic Name"
+msgstr "新しいトピック名"
+
+#: custom-code/taxonomy-topic.php:17
+msgid "Separate topics with commas"
+msgstr "コンマでトピックを区切る"
+
+#: custom-code/taxonomy-topic.php:18
+msgid "Add or remove topics"
+msgstr "トピックを追加または削除する"
+
+#: custom-code/taxonomy-topic.php:19
+msgid "Choose from the most used topics"
+msgstr "最も利用されているトピックから選ぶ"
+
+#: custom-code/taxonomy-topic.php:20
+msgid "No topics found."
+msgstr "トピックが見つかりません."
+
+#: custom-code/taxonomy-topic.php:21
+msgid "Topic"
+msgstr "トピック"
+
+#: custom-code/thumbnailed-recent-posts.php:16
+msgid "Most Recent"
+msgstr "最新"
+
+#: front-page.php:53
+msgid "Environmental headlines"
+msgstr "自然からの便りとインスピレーション"
+
+#: front-page.php:54
+msgid ""
+"Mongabay is a non-profit provider of conservation and environmental science "
+"news."
+msgstr "環境保全の独立ニュース局."
+
+#: functions.php:216
+msgid "Special series"
+msgstr "スペシャルシリーズ"
+
+#: functions.php:261
+msgid "More articles"
+msgstr "その他の記事"
+
+#: functions.php:368
+msgid "Header Menu"
+msgstr "ヘッダーメニュー"
+
+#: functions.php:369
+msgid "Sidebar Menu"
+msgstr "サイドバーメニュー"
+
+#: functions.php:370
+msgid "Extra Menu"
+msgstr "追加メニュー"
+
+#: functions.php:416
+msgid "Sidebar Widget"
+msgstr "サイドバーウィジェット"
+
+#: functions.php:417
+msgid "All sidebar widgets should be placed here."
+msgstr "サイドバーウィジェットはすべてここに配置してください."
+
+#: functions.php:427
+msgid "Footer Widget 1/4"
+msgstr "フッターウィジェット1/4"
+
+#: functions.php:428
+msgid "First column widget"
+msgstr "1番目の投稿ウィジェット"
+
+#: functions.php:438
+msgid "Footer Widget 2/4"
+msgstr "フッターウィジェット2/4"
+
+#: functions.php:439
+msgid "Second column widget"
+msgstr "2番目の投稿ウィジェット"
+
+#: functions.php:449
+msgid "Footer Widget 3/4"
+msgstr "フッターウィジェット3/4"
+
+#: functions.php:450
+msgid "Third column widget"
+msgstr "3番目の投稿ウィジェット"
+
+#: functions.php:460
+msgid "Footer Widget 4/4"
+msgstr "フッターウィジェット4/4"
+
+#: functions.php:461
+msgid "Forth column widget"
+msgstr "4番目の投稿ウィジェット"
+
+#: functions.php:484
+msgid "Topic and location tabs"
+msgstr "トピックとロケーションのタブ"
+
+#: functions.php:485
+msgid "Listing topics and locations as tabbed content"
+msgstr "タブコンテンツとしてトピックとロケーションを表示"
+
+#: functions.php:507
+msgid "By topic"
+msgstr "トピック順"
+
+#: functions.php:508
+msgid "By location"
+msgstr "ロケーション順"
+
+#: functions.php:564
+msgid "Many more topics"
+msgstr "その他のトピック"
+
+#: functions.php:608
+msgid "Browse more locations"
+msgstr "その他のロケーションを表示"
+
+#: functions.php:621
+msgid "New title"
+msgstr "新タイトル"
+
+#: functions.php:625
+msgid "Title:"
+msgstr "タイトル :"
+
+#: functions.php:698
+msgid "View Article"
+msgstr "記事を表示"
+
+#: functions.php:853 functions.php:857
+msgid "You cannot add terms to this taxonomy"
+msgstr "この分類に用語を追加することはできません"
+
+#: loop.php:30 single.php:37
+msgid "by "
+msgstr "順序 "
+
+#: loop.php:56 page.php:16 single-featured.php:78 single.php:92
+msgid "Sorry, nothing to display."
+msgstr "表示するものがありません."
+
+#: partials/navigation-featured.php:9 partials/navigation-mobile.php:9
+msgid "News sections"
+msgstr "ニュースセクション"
+
+#: partials/navigation-featured.php:13 partials/navigation-mobile.php:15
+msgid "Language"
+msgstr "言語"
+
+#: search.php:6
+msgid "%s Search Results for "
+msgstr "%s 件の検索結果 "
+
+#: searchform.php:3
+msgid "To search, type and hit enter."
+msgstr "検索するには、入力後にenter キーを押 す."
+
+#: searchform.php:4
+msgid "Search"
+msgstr "検索"
+
+#: single-featured.php:26 single.php:22
+msgid "Mongabay Series: "
+msgstr "Mongabay シリーズ "
+
+#: single-featured.php:65 single.php:79
+msgid "Article published by "
+msgstr "記事の掲載者 "
+
+#: single.php:37
+msgid " on "
+msgstr " 日付 "
+
+#. Theme Name of the plugin/theme
+msgid "Mongabay Environmental News"
+msgstr "Mongabay 環境ニュース"
+
+#. Description of the plugin/theme
+msgid "Mongabay WordPress Theme"
+msgstr "Mongabay WordPress のテーマ"
+
+#. Author of the plugin/theme
+msgid "Martin Krasilnikov"
+msgstr "Martin Krasilnikov氏"
+
+#. Author URI of the plugin/theme
+msgid "www.mkras.com"
+msgstr "www.mkras.com"

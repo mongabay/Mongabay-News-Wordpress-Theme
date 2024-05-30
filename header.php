@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" <?php language_attributes(); ?> class="no-js">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" <?php language_attributes(); ?> class="no-js">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8) ]><!-->
+<?php
+if (wp_is_mobile()) {
+	$html_style = 'margin-top: 25px!important';
+}
+?>
+<html <?php language_attributes(); ?> class="no-js" style="<?php echo $html_style; ?>">
+<!--<![endif]-->
+
+<head>
+	<meta charset="<?php bloginfo('charset'); ?>" />
+	<title><?php mongabay_custom_title(); ?></title>
+	<!-- <link href="//www.google-analytics.com" rel="dns-prefetch"> -->
+
+	<!-- Google tag (gtag.js) -->
+	<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-12973256-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-12973256-1');
+	</script> -->
+
+	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/img/icons/favicon.png" type="image/x-icon" />
+	<link rel="apple-touch-icon-precomposed" href="<?php echo get_template_directory_uri(); ?>/img/icons/ico-s2.jpg">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo get_template_directory_uri(); ?>/img/icons/ico-l2.jpg">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo get_template_directory_uri(); ?>/img/icons/ico-s.jpg">
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo get_template_directory_uri(); ?>/img/icons/ico-l.jpg">
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" />
+	<meta name="referrer" content="always" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta name="description" content="<?php bloginfo('description'); ?>" />
+	<meta property="fb:pages" content="24436227877" />
+	<?php
+	// if (is_home()) {
+	// 	echo '<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />';
+	// 	echo '<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>';
+	// 	echo '<script>window.addEventListener("load", function(){window.cookieconsent.initialise({
+	// "palette": {"popup": {"background": "#000"},"button": {"background": "#f1d600"}}})});</script>';
+	// }
+	?>
+	<?php wp_head(); ?>
+
+</head>
+
+<body <?php body_class(); ?>>
+	<?php wp_body_open(); ?>
+	<!-- container -->
+	<header class="header" role="banner">
+		<?php
+		if (wp_is_mobile()) {
+		} else { ?>
+			<div class="container in-row space-between align-center">
+				<div class="branding">
+					<a href="" class="theme-light"><img src="<?php echo get_template_directory_uri(); ?>/img/logo/mongabay_logo_news_black.svg" /></a><a href="" class="theme-dark"><img src="<?php echo get_template_directory_uri(); ?>/img/logo/mongabay_logo_news_white.svg" /></a>
+				</div>
+				<div class="menu-container align-center">
+					<ul class="main-menu nav-desktop">
+						<li><a>Feature</a></li>
+						<li><a>Videos</a></li>
+						<li><a>Podcasts</a></li>
+						<li><a>Series</a></li>
+						<li><a>Articles</a></li>
+						<li><a>Shorts</a></li>
+					</ul>
+					<a class="theme--button primary simple md-hide" href="">Donate</a>
+					<a id="theme-switch" class="icon icon-cog"></a>
+					<a id="site-search"><span class="icon icon-search"></span></a>
+					<a id="secondary-menu"><span class="icon icon-menu"></span></a>
+				</div>
+			</div>
+		<?php } ?>
+	</header>
