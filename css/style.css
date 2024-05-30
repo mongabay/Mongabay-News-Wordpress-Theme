@@ -330,7 +330,7 @@ ul.main-menu li {
 }
 ul.main-menu li a {
   opacity: 1;
-  font-size: var(--font-xs);
+  font-size: var(--font-s);
   font-weight: 600;
   color: var(--theme-black);
   cursor: pointer;
