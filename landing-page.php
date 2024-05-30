@@ -17,54 +17,7 @@ get_header(); ?>
 			<h4>Latest</h4>
 			<div class="divider"></div>
 		</div>
-		<div class="article--container ph--8">
-			<div class="featured-image">
-				<img src="./img/01.jpg" />
-			</div>
-			<div class="title headline">
-				<h3>Green credentials of electric vehicles come under fire</h3>
-			</div>
-			<div class="meta">
-				<span class="byline"><a href="">Gerry McGovern, Sue Branford</a></span>
-				<span class="date">23 May 2024</span>
-			</div>
-		</div>
-		<div class="article--container ph--8">
-			<div class="title headline">
-				<h3>Green credentials of electric vehicles come under fire</h3>
-			</div>
-			<div class="meta">
-				<span class="byline"><a href="">Gerry McGovern, Sue Branford</a></span>
-				<span class="date">23 May 2024</span>
-			</div>
-		</div>
-		<div class="article--container ph--8">
-			<div class="title headline">
-				<h3>Green credentials of electric vehicles come under fire</h3>
-			</div>
-			<div class="meta">
-				<span class="byline"><a href="">Gerry McGovern, Sue Branford</a></span>
-				<span class="date">23 May 2024</span>
-			</div>
-		</div>
-		<div class="article--container ph--8">
-			<div class="title headline">
-				<h3>Green credentials of electric vehicles come under fire</h3>
-			</div>
-			<div class="meta">
-				<span class="byline"><a href="">Gerry McGovern, Sue Branford</a></span>
-				<span class="date">23 May 2024</span>
-			</div>
-		</div>
-		<div class="article--container ph--8">
-			<div class="title headline">
-				<h3>Green credentials of electric vehicles come under fire</h3>
-			</div>
-			<div class="meta">
-				<span class="byline"><a href="">Gerry McGovern, Sue Branford</a></span>
-				<span class="date">23 May 2024</span>
-			</div>
-		</div>
+		<?php articles_listing(6, 5, false, 'thumbnail', null); ?>
 		<a class="theme--button outlined full-width">All news <span class="icon icon-right"></span></a>
 		<!-- Component End -->
 	</div>
@@ -74,64 +27,7 @@ get_header(); ?>
 			<h4>Top stories</h4>
 			<div class="divider"></div>
 		</div>
-		<div class="article--container">
-			<div class="featured-image">
-				<img src="./img/02.jpg" />
-				<div class="title headline">
-					<h1>Green credentials of electric vehicles come under fire</h1>
-				</div>
-			</div>
-		</div>
-		<div class="grid--2 gap--40">
-			<div class="article--container ph--8">
-				<div class="featured-image">
-					<img src="./img/03.jpg" />
-				</div>
-				<div class="title headline">
-					<h3>Green credentials of electric vehicles come under fire</h3>
-				</div>
-				<div class="meta">
-					<span class="byline"><a href="">Gerry McGovern, Sue Branford</a></span>
-					<span class="date">23 May 2024</span>
-				</div>
-			</div>
-			<div class="article--container ph--8">
-				<div class="featured-image">
-					<img src="./img/04.jpg" />
-				</div>
-				<div class="title headline">
-					<h3>Green credentials of electric vehicles come under fire</h3>
-				</div>
-				<div class="meta">
-					<span class="byline"><a href="">Gerry McGovern, Sue Branford</a></span>
-					<span class="date">23 May 2024</span>
-				</div>
-			</div>
-			<div class="article--container ph--8">
-				<div class="featured-image">
-					<img src="./img/05.jpg" />
-				</div>
-				<div class="title headline">
-					<h3>Green credentials of electric vehicles come under fire</h3>
-				</div>
-				<div class="meta">
-					<span class="byline"><a href="">Gerry McGovern, Sue Branford</a></span>
-					<span class="date">23 May 2024</span>
-				</div>
-			</div>
-			<div class="article--container ph--8">
-				<div class="featured-image">
-					<img src="./img/06.jpg" />
-				</div>
-				<div class="title headline">
-					<h3>Green credentials of electric vehicles come under fire</h3>
-				</div>
-				<div class="meta">
-					<span class="byline"><a href="">Gerry McGovern, Sue Branford</a></span>
-					<span class="date">23 May 2024</span>
-				</div>
-			</div>
-		</div>
+		<?php featured_articles_listing(5, 0, 'thumbnail', null); ?>
 		<!-- Component End -->
 	</div>
 	<div class="column--20 gap--40 ph--40 latest-banners">

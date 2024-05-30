@@ -67,16 +67,16 @@ if (wp_is_mobile()) {
 		} else { ?>
 			<div class="container in-row space-between align-center">
 				<div class="branding">
-					<a href="" class="theme-light"><img src="<?php echo get_template_directory_uri(); ?>/img/logo/mongabay_logo_news_black.svg" /></a><a href="" class="theme-dark"><img src="<?php echo get_template_directory_uri(); ?>/img/logo/mongabay_logo_news_white.svg" /></a>
+					<a href="<?php echo home_url(); ?>" class="theme-light"><img src="<?php echo get_template_directory_uri(); ?>/img/logo/mongabay_logo_news_black.svg" /></a><a href="" class="theme-dark"><img src="<?php echo get_template_directory_uri(); ?>/img/logo/mongabay_logo_news_white.svg" /></a>
 				</div>
 				<div class="menu-container align-center">
 					<ul class="main-menu nav-desktop">
-						<li><a>Feature</a></li>
-						<li><a>Videos</a></li>
-						<li><a>Podcasts</a></li>
-						<li><a>Series</a></li>
-						<li><a>Articles</a></li>
-						<li><a>Shorts</a></li>
+						<li><a href="">Feature</a></li>
+						<li><a href="">Videos</a></li>
+						<li><a href="">Podcasts</a></li>
+						<li><a href="">Series</a></li>
+						<li><a href="">Articles</a></li>
+						<li><a href="">Shorts</a></li>
 					</ul>
 					<a class="theme--button primary simple md-hide" href="">Donate</a>
 					<a id="theme-switch" class="icon icon-cog"></a>
@@ -85,4 +85,32 @@ if (wp_is_mobile()) {
 				</div>
 			</div>
 		<?php } ?>
+		<script>
+			const isDarkMode = window.localStorage.getItem("mongabay-theme");
+
+			if (isDarkMode) {
+				document.querySelector("body").classList.add("dark-mode");
+			}
+
+			function brandingDisplay() {
+				if (document.querySelector("body").classList.contains("dark-mode")) {
+					window.localStorage.setItem("mongabay-theme", "dark-mode");
+					document.querySelector(".branding .theme-light").style.display = "none";
+					document.querySelector(".branding .theme-dark").style.display = "block";
+				} else {
+					window.localStorage.removeItem("mongabay-theme");
+					document.querySelector(".branding .theme-light").style.display = "block";
+					document.querySelector(".branding .theme-dark").style.display = "none";
+				}
+			}
+
+			brandingDisplay();
+
+			document.getElementById("theme-switch").addEventListener("click", (e) => {
+				e.preventDefault;
+				e.stopPropagation;
+				document.querySelector("body").classList.toggle("dark-mode");
+				brandingDisplay();
+			});
+		</script>
 	</header>

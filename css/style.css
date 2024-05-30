@@ -65,7 +65,7 @@ body {
   font-size: var(--font-s);
   font-weight: 400;
   color: var(--theme-black);
-  background-color: var(--theme-white);
+  background-color: #FCFBF1;
   margin: 0;
 }
 

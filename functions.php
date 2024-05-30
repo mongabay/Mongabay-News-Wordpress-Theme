@@ -8,6 +8,7 @@ include(get_template_directory() . '/custom-code/taxonomy-entity.php');
 include(get_template_directory() . '/custom-code/thumbnailed-recent-posts.php');
 include(get_template_directory() . '/custom-code/feed-query.php');
 include(get_template_directory() . '/custom-code/meta.php');
+include(get_template_directory() . '/components/components-functions.php');
 // include(get_template_directory() . '/custom-code/menus.php');
 include(get_template_directory() . '/custom-code/analytics.php');
 if (function_exists('add_theme_support')) {
@@ -212,8 +213,8 @@ function mongabay_header_scripts()
         wp_register_script('addtohomescreen', get_template_directory_uri() . '/js/lib/addtohomescreen.min.js', array(), '3.2.3', true);
         wp_enqueue_script('addtohomescreen');
         // TODO add proper script
-        wp_register_script('scripts', get_template_directory_uri() . '/js/scripts.min.js', array('jquery'), '1.0.0', true);
-        wp_enqueue_script('scripts');
+        // wp_register_script('scripts', get_template_directory_uri() . '/js/scripts.min.js', array('jquery'), '1.0.0', true);
+        // wp_enqueue_script('scripts');
     }
 }
 
