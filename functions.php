@@ -227,10 +227,14 @@ function mongabay_conditional_scripts()
         wp_register_script('iframeresize', 'https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.1/iframeResizer.min.js', array(), '4.3.1', true);
         wp_enqueue_script('iframeresize');
     }
-    // if (!is_singular() || is_home() || is_page(__('series', 'mongabay'))) {
-    //     wp_register_script('salvattore', get_template_directory_uri() . '/js/lib/salvattore.min.js', array(), '1.0.9', true);
-    //     wp_enqueue_script('salvattore');
-    // }
+    if (is_front_page()) {
+        wp_register_style('slick-theme', get_template_directory_uri() . '/js/lib/slick/slick.css', array(), '1.8.1', 'all');
+        wp_enqueue_style('slick-theme');
+        wp_register_script('slick', get_template_directory_uri() . '/js/lib/slick/slick.min.js', array(), '1.8.1', true);
+        wp_enqueue_script('slick');
+        wp_register_script('slick-init', get_template_directory_uri() . '/js/slick-init.js', array(), '1.0.0', true);
+        wp_enqueue_script('slick-init');
+    }
 }
 
 // Featured articles template

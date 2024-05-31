@@ -65,7 +65,7 @@ body {
   font-size: var(--font-s);
   font-weight: 400;
   color: var(--theme-black);
-  background-color: #FCFBF1;
+  background-color: #fcfbf1;
   margin: 0;
 }
 
@@ -341,7 +341,7 @@ ul.main-menu li a {
 ul.main-menu li a:hover:before {
   content: "";
   position: absolute;
-  top: -16px;
+  top: -8px;
   left: 0;
   width: 100%;
   height: 8px;
@@ -356,6 +356,9 @@ ul.main-menu li a:hover:before {
   display: flex;
   max-width: 1280px;
   margin: 0 auto;
+}
+
+.container.content {
   padding: 40px 40px 80px 40px;
 }
 
@@ -427,12 +430,14 @@ ul.main-menu li a:hover:before {
   color: var(--theme-white);
   text-shadow: 0 0 3px var(--theme-black);
   width: calc(100% - 48px);
+  line-height: 1.1;
 }
 
 .article--container .title h3 {
   font-size: 1.2rem;
   font-weight: 400;
   margin: 0;
+  line-height: 1.2;
 }
 .article--container .meta,
 .article--container .meta a {
@@ -612,6 +617,17 @@ ul.main-menu li a:hover:before {
 #series--description-container .series--browse {
   align-items: end;
 }
+.section--highlight.series {
+  height: 100%;
+}
+#series-slider .article--container .featured-image {
+  height: 580px;
+}
+
+#series-slider .article--container img {
+  object-fit: cover;
+  height: 100%;
+}
 
 .article--container-headline {
   position: absolute;
@@ -626,6 +642,25 @@ ul.main-menu li a:hover:before {
 .section--series-more h3 {
   font-size: var(--font-m);
   color: var(--theme-white);
+}
+
+/* Footer */
+.footer-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-links li {
+  padding: 4px 0;
+}
+
+.footer-links li a {
+  text-decoration: none;
+}
+
+footer .grid--4 {
+  align-items: start;
 }
 
 @media only screen and (max-width: 768px) {
