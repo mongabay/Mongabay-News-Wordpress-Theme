@@ -65,7 +65,7 @@ if (wp_is_mobile()) {
 		<?php
 		if (wp_is_mobile()) {
 		} else { ?>
-			<div class="container in-row space-between align-center ph--20 pv--40">
+			<div class="container in-row space-between align-center ph--40 pv--20">
 				<div class="branding">
 					<a href="<?php echo home_url(); ?>" class="theme-light"><img src="<?php echo get_template_directory_uri(); ?>/img/logo/mongabay_logo_news_black.svg" /></a><a href="" class="theme-dark"><img src="<?php echo get_template_directory_uri(); ?>/img/logo/mongabay_logo_news_white.svg" /></a>
 				</div>

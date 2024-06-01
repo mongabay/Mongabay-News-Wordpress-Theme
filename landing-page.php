@@ -27,31 +27,51 @@ get_header(); ?>
 			<h4><?php _e('Top stories', 'mongabay'); ?></h4>
 			<div class="divider"></div>
 		</div>
-		<?php featured_articles_listing('post', 5, 0, 'medium', null); ?>
+		<?php featured_articles_listing('post', 5, 0, 'medium', 2, true, null); ?>
 		<!-- Component End -->
 	</div>
-	<div class="column--20 gap--40 ph--40 latest-banners">
-		<!-- Component Start -->
-		<div class="banner outlined gap--20 ph--20 pv--20">
-			<div class="title">
-				<h1><?php _e('Stay updated', 'mongabay'); ?></h1>
-			</div>
-			<div class="copy"><?php _e('Delivering news and inspiration from nature’s frontline.', 'mongabay'); ?></div>
-			<a href="" class="theme--button full-width primary"><?php _e('Newsletter', 'mongabay'); ?><span class="icon icon-right"></span></a>
-		</div>
-		<div class="banner accent gap--20 ph--20 pv--20">
-			<div class="title">
-				<h1><?php _e('We are nonprofit', 'mongabay'); ?></h1>
-			</div>
-			<div class="copy">
-				<?php _e('Help us tell stories of biodiversity loss, climate change and more.', 'mongabay'); ?>
-			</div>
-			<a href="" class="theme--button full-width primary"><?php _e('Donate', 'momgabay'); ?><span class="icon icon-right"></span></a>
-		</div>
+	<div class="column--20 gap--40 pv--40 latest-banners">
+		<?php banner('', 'Stay updated', 'Delivering news and inspiration from nature’s frontline.', 'Newsletter', 'outlined ph--20 pv--20'); ?>
+		<?php banner('', 'We are nonprofit', 'Help us tell stories of biodiversity loss, climate change and more.', 'Donate', 'accent ph--20 pv--56 full-width'); ?>
 	</div>
 </div>
 
 <?php inspiration_banner(); ?>
+
 <?php series_articles_listing(); ?>
+
+<div class="container gap--32 pv--40">
+	<div class="banner full-width accent pv--56">
+		<div class="inner">
+			<div class="title">
+				<h1 class="extra-large"><?php _e('Free and open access to credible information.', 'mongabay'); ?></h1>
+			</div>
+			<a href="" class="theme--button primary"><?php _e('Donate', 'mongabay'); ?><span class="icon icon-right"></span></a>
+		</div>
+	</div>
+</div>
+
+<div class="section--highlight full-width ph--40 pv--40">
+	<?php podcastsBanner(); ?>
+</div>
+
+<div class="container ph--40 pv--40">
+	<?php banner('', 'Free and open access to credible information.', '', 'Learn more', 'accent ph--20 pv--56 full-width'); ?>
+</div>
+
+<div class="container ph--40 pv--40">
+	<?php featured_articles_listing('videos', 5, 0, 'medium', 4, false, null); ?>
+</div>
+
+<div class="container ph--40 pv--40">
+	<?php banner('', 'We are nonprofit', 'Help us tell stories of biodiversity loss, climate change and more.', 'Donate', 'accent ph--20 pv--56 full-width'); ?>
+</div>
+
+<?php featured_articles_slider(4, 5); ?>
+
+<div class="container ph--40 pv--40">
+	<?php banner('', 'Stay updated', 'Delivering news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--20 pv--56 full-width'); ?>
+</div>
+
 <!-- /container -->
 <?php get_footer(); ?>

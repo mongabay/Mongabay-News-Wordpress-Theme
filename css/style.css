@@ -136,51 +136,51 @@ a {
 }
 
 /* Paddings */
-.ph--8 {
+.pv--8 {
   padding-top: 8px;
   padding-bottom: 8px;
 }
-.ph--16 {
+.pv--16 {
   padding-top: 16px;
   padding-bottom: 16px;
 }
-.ph--20 {
+.pv--20 {
   padding-top: 20px;
   padding-bottom: 20px;
 }
-.ph--24 {
+.pv--24 {
   padding-top: 24px;
   padding-bottom: 24px;
 }
-.ph--30 {
+.pv--30 {
   padding-top: 30px;
   padding-bottom: 30px;
 }
-.ph--40 {
+.pv--40 {
   padding-top: 40px;
   padding-bottom: 40px;
 }
-.ph--56 {
+.pv--56 {
   padding-top: 56px;
   padding-bottom: 56px;
 }
-.pv--8 {
+.ph--8 {
   padding-left: 8px;
   padding-right: 8px;
 }
-.pv--16 {
+.ph--16 {
   padding-left: 16px;
   padding-right: 16px;
 }
-.pv--20 {
+.ph--20 {
   padding-left: 20px;
   padding-right: 20px;
 }
-.pv--40 {
+.ph--40 {
   padding-left: 40px;
   padding-right: 40px;
 }
-.pv--56 {
+.ph--56 {
   padding-left: 56px;
   padding-right: 56px;
 }
@@ -218,6 +218,11 @@ a {
 .grid--2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
+}
+
+.grid--3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .grid--4 {
@@ -303,13 +308,29 @@ body.dark-mode {
   background: var(--theme-secondary);
   color: var(--theme-white);
 }
+
 .theme--button.outlined {
   border: 1px solid var(--theme-black);
   color: var(--theme-black);
 }
+
+.dark-mode .theme--button.outlined {
+  border: 1px solid var(--theme-white);
+  color: var(--theme-white);
+}
+
+.theme--button.no-margins {
+  margin: 0;
+}
+
 .dark-mode .theme--button.primary {
   color: var(--theme-black);
 }
+
+.dark-mode .theme--button.primary .icon {
+  color: var(--theme-black);
+}
+
 /* Menu */
 .menu-container {
   display: flex;
@@ -487,6 +508,10 @@ ul.main-menu li a:hover:before {
   border: 1px solid rgba(15, 54, 46, 0.078);
 }
 
+.dark-mode .banner.outlined {
+  border-color: var(--theme-white);
+}
+
 .banner.accent {
   background: var(--theme-accent);
 }
@@ -509,6 +534,10 @@ ul.main-menu li a:hover:before {
   color: var(--theme-accent);
 }
 
+.banner a.theme--button {
+  width: max-content;
+}
+
 /* Inspiration block */
 .section--inspiration {
   background: radial-gradient(
@@ -522,7 +551,7 @@ ul.main-menu li a:hover:before {
   flex-direction: row;
   padding: 80px 40px;
   color: var(--theme-accent);
-  box-sizing: initial;
+  box-sizing: border-box;
 }
 
 .section--inspiration .title {
@@ -590,6 +619,10 @@ ul.main-menu li a:hover:before {
   max-width: 80%;
 }
 
+.section--highlight h1.text-center {
+  margin: 0 auto;
+}
+
 .section--highlight.videos h1,
 .section--highlight.videos h3 {
   max-width: 100%;
@@ -607,6 +640,11 @@ ul.main-menu li a:hover:before {
   background: var(--theme-accent);
   border-radius: 40px;
   display: inline-block;
+}
+
+#series-slider {
+  height: 580px;
+  overflow: hidden;
 }
 
 #series--description-container {
@@ -644,6 +682,15 @@ ul.main-menu li a:hover:before {
   color: var(--theme-white);
 }
 
+/* Single post */
+.article-headline h1 {
+  font-size: var(--font-xl);
+  font-family: "Lora";
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.33;
+}
+
 /* Footer */
 .footer-links {
   list-style: none;
@@ -676,6 +723,9 @@ footer .grid--4 {
   }
   .branding {
     width: 175px;
+  }
+  .grid--3 {
+    grid-template-columns: 1fr;
   }
   .grid--4 {
     grid-template-columns: 1fr 1fr;

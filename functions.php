@@ -9,7 +9,7 @@ include(get_template_directory() . '/custom-code/thumbnailed-recent-posts.php');
 include(get_template_directory() . '/custom-code/feed-query.php');
 include(get_template_directory() . '/custom-code/meta.php');
 include(get_template_directory() . '/components/components-functions.php');
-// include(get_template_directory() . '/custom-code/menus.php');
+include(get_template_directory() . '/custom-code/post-type-formats.php');
 include(get_template_directory() . '/custom-code/analytics.php');
 if (function_exists('add_theme_support')) {
     add_theme_support('menus');
@@ -1058,5 +1058,5 @@ add_filter('the_content', 'wpautop', 12); //Remove <p> and <br> from shortcodes
 add_filter('use_block_editor_for_post', '__return_false'); //Disable Gutenberg editor
 add_filter('wp_lazy_loading_enabled', '__return_false'); //Disable lazy load
 // add_filter('the_permalink', 'mirror_site_permalink'); // Fix mirror site links
-add_filter('term_link', 'mirror_site_permalink'); // Fix mirror site byline links
+// add_filter('term_link', 'mirror_site_permalink'); // Fix mirror site byline links
 ?>

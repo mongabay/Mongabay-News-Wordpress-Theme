@@ -1,0 +1,116 @@
+<?php get_header(); ?>
+<main role="main">
+  <?php
+  $post_id = get_the_ID();
+  $translator = get_post_meta($post_id, "translated_by", true);
+  $adaptor = get_post_meta($post_id, "adapted_by", true);
+  $translated_adapted = get_post_meta($post_id, "translated_adapted", true);
+  $commentary = get_post_meta($post_id, "commentary", true);
+  $analysis = get_post_meta($post_id, "analysis_by", true);
+  $topics = wp_get_post_terms($post_id, 'topic');
+  $serial = wp_get_post_terms($post_id, 'serial');
+  $legacy = get_post_meta($post_id, 'mongabay_post_legacy_status', true);
+  ?>
+  <div class="container in-column ph--40">
+    <div id="headline">
+      <div class="article-headline">
+        <?php
+        if ($serial) {
+          echo '<p>';
+          _e('Mongabay Series: ', 'mongabay');
+          echo get_the_term_list($post_id, 'serial', '', ', ', '');
+          echo '</p>';
+        }
+        ?>
+        <h1><?php the_title(); ?></h1>
+        <?php
+        if (mongabay_wp_is_mobile()) {
+          echo '<div class="social">';
+          // get_template_part('partials/section', 'social');
+          echo '</div>';
+        }
+        ?>
+      </div>
+      <div class="single-article-meta">
+        <?php if ($commentary == '1' || $commentary == 'yes') _e('Commentary ', 'mongabay');
+        if ($analysis == '1' || $analysis == 'yes') _e('Analysis ', 'mongabay');
+        _e('by ', 'mongabay'); ?><?php echo get_the_term_list($post_id, 'byline', '', ', ', ''); ?><?php _e(' on ', 'mongabay'); ?><?php the_time('j F Y'); ?>
+        <?php
+        if ($translated_adapted == 'adapted' || $translated_adapted == 'translated') {
+
+          if ($translated_adapted == 'adapted' && !empty($adaptor)) {
+            $string_title = 'Adapted by ';
+            $translator_adaptor = $adaptor;
+          } elseif ($translated_adapted == 'translated' && !empty($translator)) {
+            $string_title = 'Translated by ';
+            $translator_adaptor = $translator;
+          }
+          echo '| ';
+          _e($string_title, 'mongabay');
+          echo ' ';
+          echo '<a href="' . home_url('/') . 'by/' . $translator_adaptor['slug'] . '">' . $translator_adaptor['name'] . '</a>';
+        }
+        ?>
+        <?php
+        if (!mongabay_wp_is_mobile()) {
+          echo '<div class="social">';
+          // get_template_part('partials/section', 'social');
+          echo '</div>';
+        }
+        ?>
+      </div>
+    </div>
+    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+        <!-- article -->
+        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+          <?php
+          $mog_count = 0;
+          for ($n = 0; $n < 4; $n++) {
+            $single_bullet = get_post_meta($post_id, "mog_bullet_" . $n . "_mog_bulletpoint", true);
+            if (!empty($single_bullet)) {
+              $mog_count = $mog_count + 1;
+            }
+          }
+          if ((int)$mog_count > 0 && get_post_meta($post_id, "mog_bullet_0_mog_bulletpoint", true)) {
+            echo '<div class="bulletpoints"><ul>';
+            for ($i = 0; $i < $mog_count; $i++) {
+
+              echo "<li><em>" . get_post_meta($post_id, "mog_bullet_" . $i . "_mog_bulletpoint", true) . "</em></li>";
+            }
+            echo "</ul></div>";
+          }
+          ?>
+          <?php mongabay_sanitized_content($post_id); ?>
+          <div id="single-article-footer">
+            <div id="single-article-meta">
+              <?php if (get_current_blog_id() === 20) {
+                echo '<a href="https://mongabay.org/donate/?utm_source=mongabay.com&utm_medium=bottom-of-news-post&utm_campaign=support-our-journalism-2023" style="display:block;margin-bottom:2rem;"><img src="https://imgs.mongabay.com/wp-content/uploads/sites/20/2022/01/15035219/support-our-journalism.jpg" width="480" height="258"></a>';
+              } ?>
+              <span>
+                <?php _e('Article published by ', 'mongabay'); ?><?php the_author_posts_link(); ?></span>
+              <span class="article-comments"><a href=""></a></span>
+            </div>
+            <div id="single-article-tags">
+              <?php echo get_the_term_list($post_id, 'topic', '', ', '); ?><br><BR>
+              <?php echo get_the_term_list($post_id, 'location', '', ', '); ?><br><BR>
+              <?php echo get_the_term_list($post_id, 'entity', '', ', '); ?>
+            </div>
+            <a href="amp/?print" style="text-align:center;display:block;width: 45px;color: inherit;text-transform: uppercase;margin: 1em 0;font-size: 0.8em;"><svg style="width:45px;height:35px;" class="icon" fill="#669a00">
+                <use xlink:href="#print"></use>
+              </svg>Print</a>
+          </div>
+          <?php mongabay_comments(); ?>
+
+        </article>
+        <!-- /article -->
+      <?php endwhile; ?>
+    <?php else : ?>
+      <!-- article -->
+      <article>
+        <h1><?php _e('Sorry, nothing to display.', 'mongabay'); ?></h1>
+      </article>
+      <!-- /article -->
+    <?php endif; ?>
+  </div>
+</main>
+<?php get_footer(); ?>
