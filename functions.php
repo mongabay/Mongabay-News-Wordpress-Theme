@@ -8,7 +8,8 @@ include(get_template_directory() . '/custom-code/taxonomy-entity.php');
 include(get_template_directory() . '/custom-code/thumbnailed-recent-posts.php');
 include(get_template_directory() . '/custom-code/feed-query.php');
 include(get_template_directory() . '/custom-code/meta.php');
-// include(get_template_directory() . '/custom-code/menus.php');
+include(get_template_directory() . '/components/components-functions.php');
+include(get_template_directory() . '/custom-code/post-type-formats.php');
 include(get_template_directory() . '/custom-code/analytics.php');
 if (function_exists('add_theme_support')) {
     add_theme_support('menus');
@@ -212,8 +213,8 @@ function mongabay_header_scripts()
         wp_register_script('addtohomescreen', get_template_directory_uri() . '/js/lib/addtohomescreen.min.js', array(), '3.2.3', true);
         wp_enqueue_script('addtohomescreen');
         // TODO add proper script
-        wp_register_script('scripts', get_template_directory_uri() . '/js/scripts.min.js', array('jquery'), '1.0.0', true);
-        wp_enqueue_script('scripts');
+        // wp_register_script('scripts', get_template_directory_uri() . '/js/scripts.min.js', array('jquery'), '1.0.0', true);
+        // wp_enqueue_script('scripts');
     }
 }
 
@@ -226,10 +227,16 @@ function mongabay_conditional_scripts()
         wp_register_script('iframeresize', 'https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.1/iframeResizer.min.js', array(), '4.3.1', true);
         wp_enqueue_script('iframeresize');
     }
-    // if (!is_singular() || is_home() || is_page(__('series', 'mongabay'))) {
-    //     wp_register_script('salvattore', get_template_directory_uri() . '/js/lib/salvattore.min.js', array(), '1.0.9', true);
-    //     wp_enqueue_script('salvattore');
-    // }
+    if (is_front_page()) {
+        wp_register_style('slick-main', get_template_directory_uri() . '/js/lib/slick/slick.css', array(), '1.8.1', 'all');
+        wp_enqueue_style('slick-main');
+        wp_register_style('slick-theme', get_template_directory_uri() . '/js/lib/slick/slick-theme.css', array(), '1.8.1', 'all');
+        wp_enqueue_style('slick-theme');
+        wp_register_script('slick', get_template_directory_uri() . '/js/lib/slick/slick.min.js', array(), '1.8.1', true);
+        wp_enqueue_script('slick');
+        wp_register_script('slick-init', get_template_directory_uri() . '/js/slick-init.js', array(), '1.0.0', true);
+        wp_enqueue_script('slick-init');
+    }
 }
 
 // Featured articles template
@@ -864,10 +871,12 @@ function post_edit_screen()
 }
 
 // Require featured image before publishing an article
-if ($GLOBALS['pagenow'] == 'post-new.php' || $pagenow == 'post.php') :
+if (($GLOBALS['pagenow'] == 'post-new.php' || $pagenow == 'post.php') && 'post' === get_post_type( $_GET['post'] )) :
     add_filter('wp_insert_post_data', function ($data, $postarr) {
         $post_id = $postarr['ID'];
         $post_status = $data['post_status'];
+        var_dump($postarr);
+
         $original_post_status = $postarr['original_post_status'];
         if ($post_id && 'publish' === $post_status && 'publish' !== $original_post_status) {
             $post_type = get_post_type($post_id);
@@ -1053,5 +1062,5 @@ add_filter('the_content', 'wpautop', 12); //Remove <p> and <br> from shortcodes
 add_filter('use_block_editor_for_post', '__return_false'); //Disable Gutenberg editor
 add_filter('wp_lazy_loading_enabled', '__return_false'); //Disable lazy load
 // add_filter('the_permalink', 'mirror_site_permalink'); // Fix mirror site links
-add_filter('term_link', 'mirror_site_permalink'); // Fix mirror site byline links
+// add_filter('term_link', 'mirror_site_permalink'); // Fix mirror site byline links
 ?>

@@ -37,7 +37,7 @@
 	        <!-- /aside-->
 		</div>
 	        <!-- /row-->
-		<?php get_template_part( section, series ); ?>
+		<?php // get_template_part( section, series ); ?>
 	</main>
 </div>
 <!-- /container -->

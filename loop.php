@@ -10,7 +10,6 @@
 	<div class="entry-meta-news">
 		<?php
 		_e('by ', 'mongabay');
-		var_dump(get_the_term_list(get_the_ID(), 'byline', '', ', ', ''));
 		echo get_the_term_list(get_the_ID(), 'byline', '', ', ', '');
 		echo ' ';
 		the_time('j F Y');
