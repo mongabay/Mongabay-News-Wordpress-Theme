@@ -73,5 +73,13 @@ get_header(); ?>
 	<?php banner('', 'Stay updated', 'Delivering news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--20 pv--56 full-width'); ?>
 </div>
 
+<div class="section--highlight">
+	<div class="container ph--40 pv--40 gap--20 in-column">
+		<h1>Get quick glances with our brief <span>shorts</span></h1>
+		<div class="grid--3 gap--40">
+			<?php articles_listing_condensed('post', 6, 0, false, 'medium', null); ?>
+		</div>
+	</div>
+</div>
 <!-- /container -->
 <?php get_footer(); ?>

@@ -228,7 +228,9 @@ function mongabay_conditional_scripts()
         wp_enqueue_script('iframeresize');
     }
     if (is_front_page()) {
-        wp_register_style('slick-theme', get_template_directory_uri() . '/js/lib/slick/slick.css', array(), '1.8.1', 'all');
+        wp_register_style('slick-main', get_template_directory_uri() . '/js/lib/slick/slick.css', array(), '1.8.1', 'all');
+        wp_enqueue_style('slick-main');
+        wp_register_style('slick-theme', get_template_directory_uri() . '/js/lib/slick/slick-theme.css', array(), '1.8.1', 'all');
         wp_enqueue_style('slick-theme');
         wp_register_script('slick', get_template_directory_uri() . '/js/lib/slick/slick.min.js', array(), '1.8.1', true);
         wp_enqueue_script('slick');
@@ -869,10 +871,12 @@ function post_edit_screen()
 }
 
 // Require featured image before publishing an article
-if ($GLOBALS['pagenow'] == 'post-new.php' || $pagenow == 'post.php') :
+if (($GLOBALS['pagenow'] == 'post-new.php' || $pagenow == 'post.php') && 'post' === get_post_type( $_GET['post'] )) :
     add_filter('wp_insert_post_data', function ($data, $postarr) {
         $post_id = $postarr['ID'];
         $post_status = $data['post_status'];
+        var_dump($postarr);
+
         $original_post_status = $postarr['original_post_status'];
         if ($post_id && 'publish' === $post_status && 'publish' !== $original_post_status) {
             $post_type = get_post_type($post_id);

@@ -11,7 +11,7 @@ if (wp_is_mobile()) {
 	$html_style = 'margin-top: 25px!important';
 }
 ?>
-<html <?php language_attributes(); ?> class="no-js" style="<?php echo $html_style; ?>">
+<html <?php language_attributes(); ?> class="no-js">
 <!--<![endif]-->
 
 <head>
@@ -83,6 +83,30 @@ if (wp_is_mobile()) {
 					<a id="site-search"><span class="icon icon-search"></span></a>
 					<a id="secondary-menu"><span class="icon icon-menu"></span></a>
 				</div>
+				<div id="off-canvas">
+					<div class="container in-column ph--40 pv--20 gap--20">
+						<div class="global-nav gap--20">
+							<span class="icon icon-globe"></span>
+							<ul class="">
+								<li><a href="" class="active">English</a></li>
+								<li><a href="">Español (Spanish)</a></li>
+								<li><a href="">Bahasa Indonesia (Indonesian)</a></li>
+								<li><a href="">Brasil (Portuguese)</a></li>
+								<li><a href="">India (Hindi)</a></li>
+							</ul>
+							<span class="icon icon-cancel"></span>
+						</div>
+						<ul class="main-menu nav-desktop off-canvas">
+							<li><a href="">Videos</a></li>
+							<li><a href="">Podcasts</a></li>
+							<li><a href="">Articles</a></li>
+							<li><a href="">Short News</a></li>
+							<li><a href="">Feature Stories</a></li>
+							<li><a href="">The Latest</a></li>
+							<li><a href="">Explore All</a></li>
+						</ul>
+					</div>
+				</div>
 			</div>
 		<?php } ?>
 		<script>
@@ -111,6 +135,18 @@ if (wp_is_mobile()) {
 				e.stopPropagation;
 				document.querySelector("body").classList.toggle("dark-mode");
 				brandingDisplay();
+			});
+
+			document.getElementById("secondary-menu").addEventListener("click", (e) => {
+				e.preventDefault;
+				e.stopPropagation;
+				document.getElementById("off-canvas").classList.add("active");
+			});
+
+			document.querySelector(".icon-cancel").addEventListener("click", (e) => {
+				e.preventDefault;
+				e.stopPropagation;
+				document.getElementById("off-canvas").classList.remove("active");
 			});
 		</script>
 	</header>

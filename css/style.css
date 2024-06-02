@@ -6,6 +6,7 @@
   --theme-accent: #cbefb6;
   --accent-green: #cbefb6;
   --theme-secondary: #0f362e;
+  --theme-soft-gray: rgba(0, 0, 0, 0.05);
   --spacing-1: 6px;
   --spacing-2: 9px;
   --spacing-3: 12px;
@@ -67,6 +68,7 @@ body {
   color: var(--theme-black);
   background-color: #fcfbf1;
   margin: 0;
+  overflow-x: hidden;
 }
 
 a {
@@ -274,6 +276,75 @@ body.dark-mode {
   color: var(--theme-white);
 }
 
+#off-canvas {
+  position: absolute;
+  transform: translateX(200vw);
+  top: 0;
+  left: 0;
+  background: var(--theme-secondary);
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  transition-duration: 0.3s;
+}
+
+#off-canvas.active {
+  transform: translateX(0);
+  transition-duration: 0.3s;
+}
+
+ul.main-menu.nav-desktop.off-canvas {
+  display: block;
+  column-count: 2;
+}
+
+ul.main-menu.nav-desktop.off-canvas li {
+  padding: 10px 0;
+  margin: 0;
+}
+
+ul.main-menu.nav-desktop.off-canvas li a {
+  font-size: 3em;
+  font-family: "Lora";
+  color: var(--theme-accent);
+}
+
+.global-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: inline-flex;
+  gap: 20px;
+}
+
+.global-nav ul li a.active {
+  color: var(--theme-accent);
+  font-weight: 800;
+}
+
+.global-nav span.icon.icon-globe {
+  font-size: 36px;
+  color: var(--theme-accent);
+}
+
+.global-nav {
+  display: flex;
+  align-items: center;
+}
+
+.global-nav a {
+  font-size: small;
+  font-family: "Open Sans";
+  font-weight: 600;
+}
+
+.global-nav span.icon.icon-cancel {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  right: 60px;
+}
+
 /* Buttons */
 .theme--button {
   padding: 16px 48px 16px 24px;
@@ -344,6 +415,7 @@ ul.main-menu {
   gap: var(--spacing-5);
   margin: 0;
   align-items: center;
+  column-count: 2;
 }
 ul.main-menu li {
   padding: var(--spacing-5) 0;
@@ -471,6 +543,28 @@ ul.main-menu li a:hover:before {
   content: " · ";
 }
 
+.article--container.bg-gray {
+  background: var(--theme-soft-gray);
+}
+
+.article--container.bg-gray .title h3 {
+  max-width: 100%;
+}
+
+.article--container.bg-gray img {
+  border-radius: 0 0 5px 5px;
+  object-fit: cover;
+  height: 100%;
+}
+
+.article--container.bg-gray a {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+/* Sections */
 .section--highlight .article--container {
   margin: 0 auto;
 }
@@ -644,7 +738,6 @@ ul.main-menu li a:hover:before {
 
 #series-slider {
   height: 580px;
-  overflow: hidden;
 }
 
 #series--description-container {

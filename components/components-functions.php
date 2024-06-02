@@ -158,7 +158,7 @@ function featured_articles_listing(
           </a>
         </div>
       <?php }; ?>
-  <?php }
+    <?php }
     echo '</div></div>';
     wp_reset_postdata();
   } else {
@@ -167,33 +167,56 @@ function featured_articles_listing(
 }
 
 function inspiration_banner()
-{ ?>
-  <div class="section--inspiration full-width">
-    <div class="container">
-      <div class="title column--40">
-        <h1>News and Inspiration from Nature's Frontline.</h1>
-      </div>
-      <div class="items column--60">
-        <div class="column--60">
-          <div class="item-container first">
-            <img src="./img/08.jpg" />
-            <div class="item-title video">Videos</div>
-          </div>
-          <div class="item-container">
-            <img src="./img/08.jpg" />
-            <div class="item-title podcast">Podcasts</div>
-          </div>
-        </div>
-        <div class="column--40">
-          <div class="item-container second">
-            <img src="./img/08.jpg" />
-            <div class="item-title articles">Articles</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-<?php }
+{
+  $post_types = array('videos', 'podcasts', 'specials');
+
+  $section = '<div class="section--inspiration full-width"><div class="container"><div class="title column--40"><h1>News and Inspiration from Nature`s Frontline.</h1></div><div class="items column--60">';
+  $first_column = '<div class="column--60">';
+  $second_column = '<div class="column--40">';
+
+  $has_videos = false;
+  $has_podcasts = false;
+  $has_articles = false;
+
+  foreach ($post_types as $type) {
+    $args = array(
+      'post_type' => $type,
+      'posts_per_page' => 1,
+      'cache_results' => true,
+    );
+
+
+    $query = new WP_Query($args);
+
+    if ($query->have_posts()) {
+      while ($query->have_posts()) {
+        $query->the_post();
+
+        if ($type === 'videos') {
+          $has_videos = true;
+          $first_column .= '<div class="item-container first">' . get_the_post_thumbnail(get_the_ID(), 'medium') . '<div class="item-title">Videos</div></div>';
+        } elseif ($type === 'podcasts') {
+          $has_podcasts = true;
+          $first_column .= '<div class="item-container">' . get_the_post_thumbnail(get_the_ID(), 'medium') . '<div class="item-title podcast">Podcasts</div></div>';
+        } elseif ($type === 'specials') {
+          $has_articles = true;
+          $second_column .= '<div class="item-container second">' . get_the_post_thumbnail(get_the_ID(), 'medium') . '<div class="item-title articles">Articles</div></div>';
+        }
+      };
+
+      wp_reset_postdata();
+    };
+  }
+
+  if ($has_videos || $has_podcasts || $has_articles) {
+    $section .= $first_column . '</div>';
+    $section .= $second_column . '</div>';
+    $section .= '</div></div></div>';
+    echo $section;
+  }
+}
+
+
 
 function series_articles_listing()
 {
@@ -216,110 +239,123 @@ function series_articles_listing()
     // ),
   );
 
-  $queryTracking = new WP_Query($argsTracking); ?>
+  $queryTracking = new WP_Query($argsTracking);
 
-  <div class="section--highlight slider full-width">
-    <div class="container in-column gap--40 pv--40">
-      <h1>Mongabay <span>series</span> gather stories with a lot in common.</h1>
-      <div class="in-column gap--20">
-        <h3><?php _e('Forest tracker', 'mongabay'); ?></h3>
-        <div id="series-slider">
-          <div class="article--container slider slider-series">
-            <?php while ($queryTracking->have_posts()) {
-              $queryTracking->the_post(); ?>
-              <div class="article--container">
-                <a href="<?php the_permalink(); ?>">
-                  <div class="featured-image">
-                    <?php the_post_thumbnail('large'); ?>
-                    <div class="article--container-headline">
-                      <div class="title headline gap--8 text-center">
-                        <h1><?php the_title(); ?></h1>
-                        <div class="meta">
-                          <span class="byline"><?php echo getPostBylines(get_the_ID()); ?></span>
-                          <span class="date"><?php the_time('j F Y'); ?></span>
+  if ($queryTracking->have_posts()) { ?>
+    <div class="section--highlight slider full-width">
+      <div class="container in-column gap--40 pv--40">
+        <h1>Mongabay <span>series</span> gather stories with a lot in common.</h1>
+        <div class="in-column gap--20">
+          <h3><?php _e('Forest tracker', 'mongabay'); ?></h3>
+          <div id="series-slider">
+            <div class="article--container slider slider-series">
+              <?php while ($queryTracking->have_posts()) {
+                $queryTracking->the_post(); ?>
+                <div class="article--container">
+                  <a href="<?php the_permalink(); ?>">
+                    <div class="featured-image">
+                      <?php the_post_thumbnail('large'); ?>
+                      <div class="article--container-headline">
+                        <div class="title headline gap--8 text-center">
+                          <h1><?php the_title(); ?></h1>
+                          <div class="meta">
+                            <span class="byline"><?php echo getPostBylines(get_the_ID()); ?></span>
+                            <span class="date"><?php the_time('j F Y'); ?></span>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </a>
-              </div>
-            <?php } ?>
+                  </a>
+                </div>
+              <?php } ?>
+            </div>
           </div>
-        </div>
-        <div id="series--description-container" class="gap--20">
-          <div class="series--description column--60">
-            <?php
-            $serial_obj = get_term_by('slug', 'forest-trackers', 'serial');
+          <div id="series--description-container" class="gap--20">
+            <div class="series--description column--60">
+              <?php
+              $serial_obj = get_term_by('slug', 'forest-trackers', 'serial');
 
-            if ($serial_obj) {
-              echo '<p>' . $serial_obj->description . '</p>';
-            }
-            ?>
+              if ($serial_obj) {
+                echo '<p>' . $serial_obj->description . '</p>';
+              }
+              ?>
 
-          </div>
-          <div class="series--browse column--40">
-            <a href="<?php echo home_url() . '/series/' . $name; ?>" class="theme--button outlined no-margins">Forest tracker series <span class="icon icon-right"></span></a>
+            </div>
+            <div class="series--browse column--40">
+              <a href="<?php echo home_url() . '/series/' . $name; ?>" class="theme--button outlined no-margins">Forest tracker series <span class="icon icon-right"></span></a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="section--series-more full-width">
-    <div class="container in-column ph--40 pv--40 gap--16">
-      <div class="section-title">
-        <h4><?php _e('More series', 'mongabay'); ?></h4>
-        <div class="divider"></div>
-      </div>
-      <div class="grid--3 gap--40">
-        <?php
-        foreach ($series as $name) {
-          $argsSeries = array(
-            'post_type' => 'post',
-            'posts_per_page' => 1,
-            'cache_results' => true,
-            // TODO change number to 4
-            // 'tax_query' => array(
-            //   array(
-            //     'taxonomy' => 'serial',
-            //     'field'    => 'slug',
-            //     'terms'    => $name,
-            //   ),
-            // ),
-          );
+  <?php } ?>
+  <?php
+  $post_counter = 0;
 
-          $querySeries = new WP_Query($argsSeries);
+  foreach ($series as $name) {
+    $argsSeries = array(
+      'post_type' => 'post',
+      'posts_per_page' => 1,
+      'cache_results' => true,
+      // TODO change number to 4
+      // 'tax_query' => array(
+      //   array(
+      //     'taxonomy' => 'serial',
+      //     'field'    => 'slug',
+      //     'terms'    => $name,
+      //   ),
+      // ),
+    );
 
-          while ($querySeries->have_posts()) {
-            $querySeries->the_post();
-            $serial_obj = get_term_by('slug', $name, 'serial');
-            $serial_name = $serial_obj->name; ?>
+    $querySeries = new WP_Query($argsSeries);
 
-            <div class="article--container">
-              <div class="featured-image">
-                <?php the_post_thumbnail('medium'); ?>
-                <div class="article--container-headline">
-                  <div class="title headline gap--8">
-                    <div class="meta">
-                      <span class="count"><?php echo $querySeries->found_posts; ?> stories</span>
+    if ($querySeries->have_posts()) {
+      $post_counter++;
+
+      if ($post_counter == 1) { ?>
+        <div class="section--series-more full-width">
+          <div class="container in-column pv--40 gap--16">
+            <div class="section-title">
+              <h4><?php _e('More series', 'mongabay'); ?></h4>
+              <div class="divider"></div>
+            </div>
+            <div class="grid--3 gap--40">
+            <?php }
+            ?>
+
+            <?php
+            while ($querySeries->have_posts()) {
+              $querySeries->the_post();
+              $serial_obj = get_term_by('slug', $name, 'serial');
+              $serial_name = $serial_obj->name; ?>
+
+              <div class="article--container">
+                <div class="featured-image">
+                  <?php the_post_thumbnail('medium'); ?>
+                  <div class="article--container-headline">
+                    <div class="title headline gap--8">
+                      <div class="meta">
+                        <span class="count"><?php echo $querySeries->found_posts; ?> stories</span>
+                      </div>
+                      <h3><?php echo $serial_name; ?></h3>
                     </div>
-                    <h3><?php echo $serial_name; ?></h3>
                   </div>
                 </div>
               </div>
+              <?php if ($post_counter === sizeof($series)) { ?>
             </div>
-        <?php }
-        };
-        ?>
-      </div>
-    </div>
-  </div>
-<?php
-}
+          </div>
+        </div>
+      <?php } ?>
+    <?php } ?>
+  <?php } ?>
+<?php } ?>
+<?php }
 
 function featured_articles_slider($posts_per_page, $offset)
 {
   $args = array(
-    'post_type' => 'post',
+    'post_type' => array('post', 'videos', 'podcasts', 'specials'),
     'posts_per_page' => $posts_per_page,
     'cache_results' => true,
     'offset' => $offset,
@@ -329,7 +365,7 @@ function featured_articles_slider($posts_per_page, $offset)
         'value' => 'featured',
         'compare' => '='
       )
-    )
+    ),
   );
 
   $query = new WP_Query($args); ?>
@@ -406,5 +442,61 @@ function podcastsBanner()
         </div>
       </div>
     </div>
+    <?php }
+}
+
+
+function articles_listing_condensed(
+  string $post_type,
+  int $posts_per_page,
+  int $offset,
+  bool $show_featured,
+  string $thumbnail_size,
+  ?string $taxonomy
+) {
+  $args = array(
+    'post_type' => $post_type,
+    'post_status' => 'publish',
+    'posts_per_page' => $posts_per_page,
+    'offset' => $offset,
+    'cache_results' => true,
+  );
+
+  if ($taxonomy) {
+    $args['taxonomy'] = array(
+      array(
+        'taxonomy' => $taxonomy,
+        'field' => 'slug',
+      )
+    );
+  }
+
+  $query = new WP_Query($args);
+  $counter = 0;
+  if ($query->have_posts()) {
+    while ($query->have_posts()) {
+      $counter++;
+      $query->the_post();
+    ?>
+      <div class="article--container gap--16 bg-gray rounded">
+        <a href="<?php the_permalink(); ?>">
+          <?php if ($show_featured && has_post_thumbnail() && $counter === 1) { ?>
+            <div class="featured-image">
+              <?php the_post_thumbnail($thumbnail_size) ?>
+            </div>
+          <?php } else { ?>
+            <div class="title headline ph--40 pv--40">
+              <h3><?php the_title(); ?></h3>
+            </div>
+            <div class="featured-image">
+              <?php the_post_thumbnail($thumbnail_size) ?>
+            </div>
+          <?php }; ?>
+        </a>
+      </div>
 <?php }
+    wp_reset_postdata();
+  } else {
+    esc_html_e('Sorry, no posts matched your criteria.');
+  }
 }
