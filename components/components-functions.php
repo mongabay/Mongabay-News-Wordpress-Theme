@@ -646,6 +646,10 @@ function formats_slider(string $post_format, string $headline, array $terms_arra
             echo '</div><div class="grid--3 gap--40">';
           }
 
+          if ($counter === 6) {
+            echo '<div class="grid--3 gap--40">';
+          }
+
           while ($query->have_posts()) {
             $query->the_post();
             $tax_obj = get_term_by('slug', $name, 'serial');
@@ -668,7 +672,17 @@ function formats_slider(string $post_format, string $headline, array $terms_arra
               </div>
             </div>
             <?php
-            if ($counter === 6) {
+            if ($counter === 5) {
+              echo '</div>';
+            }
+
+            if ($counter === 5) {
+              echo '<div class="container pv--56 full-width">';
+              banner('', 'We are nonprofit', 'Help us tell stories of biodiversity loss, climate change and more.', 'Donate', 'accent ph--20 pv--56 full-width', 'extra-large');
+              echo '</div>';
+            }
+
+            if ($counter === 8) {
               echo '</div>';
             }
             ?>
