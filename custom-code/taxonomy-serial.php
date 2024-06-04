@@ -36,5 +36,5 @@ function mongabay_tax_register_serial() {
     	'graphql_plural_name' => 'Serials',
 	);
 
-	register_taxonomy( 'serial', array('post'), $args );
+	register_taxonomy( 'serial', array('post', 'videos', 'podcasts', 'short-article', 'custom-story', 'specials'), $args );
 }
