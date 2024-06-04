@@ -227,7 +227,7 @@ function mongabay_conditional_scripts()
         wp_register_script('iframeresize', 'https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.1/iframeResizer.min.js', array(), '4.3.1', true);
         wp_enqueue_script('iframeresize');
     }
-    if (is_front_page()) {
+    if (is_front_page() || is_page('articles') || is_page('series')) {
         wp_register_style('slick-main', get_template_directory_uri() . '/js/lib/slick/slick.css', array(), '1.8.1', 'all');
         wp_enqueue_style('slick-main');
         wp_register_style('slick-theme', get_template_directory_uri() . '/js/lib/slick/slick-theme.css', array(), '1.8.1', 'all');
@@ -871,7 +871,7 @@ function post_edit_screen()
 }
 
 // Require featured image before publishing an article
-if (($GLOBALS['pagenow'] == 'post-new.php' || $pagenow == 'post.php') && 'post' === get_post_type( $_GET['post'] )) :
+if (($GLOBALS['pagenow'] == 'post-new.php' || $pagenow == 'post.php') && 'post' === get_post_type($_GET['post'])) :
     add_filter('wp_insert_post_data', function ($data, $postarr) {
         $post_id = $postarr['ID'];
         $post_status = $data['post_status'];
@@ -970,6 +970,15 @@ add_action('graphql_register_types', function () {
     ]);
 });
 
+/* Disable Gutenberg globally */
+function mongabay_disable_gutenberg($can_edit, $post_type)
+{
+    $excluded_post_type = 'custom-story';
+
+    return $post_type === $excluded_post_type;
+}
+
+
 // function is_mirror_site($id)
 // {
 //     return in_array($id, array(1, 22, 31, 32, 33, 34));
@@ -1059,8 +1068,9 @@ add_filter('pods_register_taxonomy_byline', 'add_pods_graphql_support'); //Bylin
 remove_filter('the_excerpt', 'wpautop'); // Remove <p> tags from Excerpt altogether
 remove_filter('the_content', 'wpautop');
 add_filter('the_content', 'wpautop', 12); //Remove <p> and <br> from shortcodes
-add_filter('use_block_editor_for_post', '__return_false'); //Disable Gutenberg editor
-add_filter('wp_lazy_loading_enabled', '__return_false'); //Disable lazy load
+// add_filter('use_block_editor_for_post', '__return_false'); //Disable Gutenberg editor
+add_filter('use_block_editor_for_post_type', 'mongabay_disable_gutenberg', 10, 2); //Enable Gutenberg editor for custom stories only
+// add_filter('wp_lazy_loading_enabled', '__return_false'); //Disable lazy load
 // add_filter('the_permalink', 'mirror_site_permalink'); // Fix mirror site links
 // add_filter('term_link', 'mirror_site_permalink'); // Fix mirror site byline links
 ?>

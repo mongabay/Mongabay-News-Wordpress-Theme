@@ -166,6 +166,10 @@ a {
   padding-top: 56px;
   padding-bottom: 56px;
 }
+.pv--80 {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
 .ph--8 {
   padding-left: 8px;
   padding-right: 8px;
@@ -190,6 +194,7 @@ a {
 /* Columns */
 .column--20,
 .column--40,
+.column--50,
 .column--60,
 .column--80,
 .column--100 {
@@ -203,6 +208,10 @@ a {
 
 .column--40 {
   width: 40%;
+}
+
+.column--50 {
+  width: 50%;
 }
 
 .column--60 {
@@ -614,6 +623,11 @@ ul.main-menu li a:hover:before {
   max-width: 60%;
   margin: 0 auto;
 }
+
+.latest-banners .banner .inner {
+  max-width: 100%;
+}
+
 .banner .title h1 {
   font-size: var(--font-m);
   font-weight: 400;
@@ -730,10 +744,44 @@ ul.main-menu li a:hover:before {
   line-height: normal;
   margin: 0;
 }
+
 .section--highlight h1 span {
   background: var(--theme-accent);
   border-radius: 40px;
   display: inline-block;
+  padding: 0 1rem;
+}
+
+.section--highlight h1 span.outlined,
+.section--highlight h1 span.outlined span {
+  background: transparent;
+}
+
+.section--highlight h1 span.outlined {
+  border: 2px solid;
+}
+
+.section--highlight h1 span.outlined a {
+  display: inline-flex;
+  align-items: center;
+}
+
+.section--highlight h1 span.outlined a,
+.section--highlight h1 span.outlined span.icon {
+  color: var(--theme-body);
+}
+
+.section--highlight h1 span.outlined span.icon {
+  font-size: 2rem;
+  padding: 0 0 0 1rem;
+}
+
+.section--highlight h1 span.outlined span.icon {
+  font-size: 2rem;
+}
+
+.section--highlight h2 {
+  font-weight: 400;
 }
 
 #series-slider {
