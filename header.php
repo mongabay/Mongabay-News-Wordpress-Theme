@@ -71,17 +71,17 @@ if (wp_is_mobile()) {
 				</div>
 				<div class="menu-container align-center">
 					<ul class="main-menu nav-desktop">
-						<li><a href="">Feature</a></li>
-						<li><a href="">Videos</a></li>
-						<li><a href="">Podcasts</a></li>
-						<li><a href="">Series</a></li>
-						<li><a href="">Articles</a></li>
-						<li><a href="">Shorts</a></li>
+						<li><a href="<?php echo home_url(); ?>/feature""><?php _e('Feature', 'mongabay'); ?></a></li>
+						<li><a href=" <?php echo home_url(); ?>/videos""><?php _e('Videos', 'mongabay'); ?></a></li>
+						<li><a href="<?php echo home_url(); ?>/podcasts""><?php _e('Podcasts', 'mongabay'); ?></a></li>
+						<li><a href=" <?php echo home_url(); ?>/series""><?php _e('Series', 'mongabay'); ?></a></li>
+						<li><a href="<?php echo home_url(); ?>/articles"><?php _e('Articles', 'mongabay'); ?></a></li>
+						<li><a href="<?php echo home_url(); ?>/shorts""><?php _e('Shorts', 'mongabay'); ?></a></li>
 					</ul>
-					<a class="theme--button primary simple md-hide" href="">Donate</a>
-					<a id="theme-switch" class="icon icon-cog"></a>
-					<a id="site-search"><span class="icon icon-search"></span></a>
-					<a id="secondary-menu"><span class="icon icon-menu"></span></a>
+					<a class=" theme--button primary simple md-hide" href=""><?php _e('Donate', 'mongabay'); ?></a>
+							<a id="theme-switch" class="icon icon-cog"></a>
+							<a id="site-search"><span class="icon icon-search"></span></a>
+							<a id="secondary-menu"><span class="icon icon-menu"></span></a>
 				</div>
 				<div id="off-canvas">
 					<div class="container in-column ph--40 pv--20 gap--20">
@@ -97,11 +97,11 @@ if (wp_is_mobile()) {
 							<span class="icon icon-cancel"></span>
 						</div>
 						<ul class="main-menu nav-desktop off-canvas">
-							<li><a href="">Videos</a></li>
-							<li><a href="">Podcasts</a></li>
-							<li><a href="">Articles</a></li>
-							<li><a href="">Short News</a></li>
-							<li><a href="">Feature Stories</a></li>
+							<li><a href="<?php echo home_url(); ?>/videos""><?php _e('Videos', 'mongabay'); ?></a></li>
+							<li><a href=" <?php echo home_url(); ?>/podcasts""><?php _e('Podcasts', 'mongabay'); ?></a></li>
+							<li><a href="<?php echo home_url(); ?>/articles"><?php _e('Articles', 'mongabay'); ?></a></li>
+							<li><a href="<?php echo home_url(); ?>/shorts""><?php _e('Short News', 'mongabay'); ?></a></li>
+							<li><a href=" <?php echo home_url(); ?>/feature""><?php _e('Feature Stories', 'mongabay'); ?></a></li>
 							<li><a href="">The Latest</a></li>
 							<li><a href="">Explore All</a></li>
 						</ul>

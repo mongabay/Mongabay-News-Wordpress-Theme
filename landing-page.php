@@ -31,8 +31,8 @@ get_header(); ?>
 		<!-- Component End -->
 	</div>
 	<div class="column--20 gap--40 pv--40 latest-banners">
-		<?php banner('', 'Stay updated', 'Delivering news and inspiration from nature’s frontline.', 'Newsletter', 'outlined ph--20 pv--20'); ?>
-		<?php banner('', 'We are nonprofit', 'Help us tell stories of biodiversity loss, climate change and more.', 'Donate', 'accent ph--20 pv--56 full-width'); ?>
+		<?php banner('', 'Stay updated', 'Delivering news and inspiration from nature’s frontline.', 'Newsletter', 'outlined ph--20 pv--20', ''); ?>
+		<?php banner('', 'We are nonprofit', 'Help us tell stories of biodiversity loss, climate change and more.', 'Donate', 'accent ph--20 pv--56 full-width', ''); ?>
 	</div>
 </div>
 
@@ -40,23 +40,10 @@ get_header(); ?>
 
 <?php series_articles_listing(); ?>
 
-<div class="container gap--32 pv--40">
-	<div class="banner full-width accent pv--56">
-		<div class="inner">
-			<div class="title">
-				<h1 class="extra-large"><?php _e('Free and open access to credible information.', 'mongabay'); ?></h1>
-			</div>
-			<a href="" class="theme--button primary"><?php _e('Donate', 'mongabay'); ?><span class="icon icon-right"></span></a>
-		</div>
-	</div>
-</div>
+<?php banner('', 'Free and open access to credible information', '', 'Learn more', 'accent full-width ph--20 pv--56', 'extra-large'); ?>
 
 <div class="section--highlight full-width ph--40 pv--40">
 	<?php podcastsBanner(); ?>
-</div>
-
-<div class="container ph--40 pv--40">
-	<?php banner('', 'Free and open access to credible information.', '', 'Learn more', 'accent ph--20 pv--56 full-width'); ?>
 </div>
 
 <div class="container ph--40 pv--40">
@@ -64,14 +51,10 @@ get_header(); ?>
 </div>
 
 <div class="container ph--40 pv--40">
-	<?php banner('', 'We are nonprofit', 'Help us tell stories of biodiversity loss, climate change and more.', 'Donate', 'accent ph--20 pv--56 full-width'); ?>
+	<?php banner('', 'We are nonprofit', 'Help us tell stories of biodiversity loss, climate change and more.', 'Donate', 'accent ph--20 pv--56 full-width', 'extra-large'); ?>
 </div>
 
 <?php featured_articles_slider(4, 5); ?>
-
-<div class="container ph--40 pv--40">
-	<?php banner('', 'Stay updated', 'Delivering news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--20 pv--56 full-width'); ?>
-</div>
 
 <div class="section--highlight">
 	<div class="container ph--40 pv--40 gap--20 in-column">
@@ -81,5 +64,8 @@ get_header(); ?>
 		</div>
 	</div>
 </div>
-<!-- /container -->
+
+<div class="container ph--40 pv--40">
+	<?php banner('', 'Stay updated', 'Delivering news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--20 pv--56 full-width', 'extra-large'); ?>
+</div>
 <?php get_footer(); ?>
