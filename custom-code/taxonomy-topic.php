@@ -39,5 +39,5 @@ function mongabay_tax_register_topic() {
     	'graphql_plural_name' => 'Topics',
 	);
 
-	register_taxonomy( 'topic', array('post'), $args );
+	register_taxonomy( 'topic', array('post', 'videos', 'podcasts', 'short-article', 'custom-story', 'specials'), $args );
 }

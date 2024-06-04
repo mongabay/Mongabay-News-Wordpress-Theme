@@ -40,5 +40,5 @@ function mongabay_tax_register_entities()
 		'graphql_plural_name' => 'Entities',
 	);
 
-	register_taxonomy('entity', array('post'), $args);
+	register_taxonomy('entity', array('post', 'videos', 'podcasts', 'short-article', 'custom-story', 'specials'), $args);
 }

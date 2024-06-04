@@ -978,6 +978,15 @@ function mongabay_disable_gutenberg($can_edit, $post_type)
     return $post_type === $excluded_post_type;
 }
 
+/* Register post tags for new post types */
+function mongabay_register_tags_cpts(){
+    register_taxonomy_for_object_type('post_tag', 'videos');
+    register_taxonomy_for_object_type('post_tag', 'podcasts');
+    register_taxonomy_for_object_type('post_tag', 'short-article');
+    register_taxonomy_for_object_type('post_tag', 'custom-story');
+    register_taxonomy_for_object_type('post_tag', 'specials');
+}
+add_action('init', 'mongabay_register_tags_cpts');
 
 // function is_mirror_site($id)
 // {

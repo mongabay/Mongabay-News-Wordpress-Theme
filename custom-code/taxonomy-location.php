@@ -39,6 +39,6 @@ function mongabay_tax_register_location() {
     	'graphql_plural_name' => 'Locations',
 	);
 
-	register_taxonomy( 'location', array('post'), $args );
+	register_taxonomy( 'location', array('post', 'videos', 'podcasts', 'short-article', 'custom-story', 'specials'), $args );
 }
 ?>
