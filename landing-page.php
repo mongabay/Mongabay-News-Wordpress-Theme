@@ -17,7 +17,7 @@ get_header(); ?>
 			<h4><?php _e('Latest', 'mongabay'); ?></h4>
 			<div class="divider"></div>
 		</div>
-		<?php articles_listing(6, 5, false, 'medium', null); ?>
+		<?php articles_listing('post', 6, 5, false, 'medium', null); ?>
 		<a class="theme--button outlined full-width"><?php _e('All news', 'mongabay'); ?><span class="icon icon-right"></span></a>
 		<!-- Component End -->
 	</div>
@@ -43,7 +43,7 @@ get_header(); ?>
 <?php banner('', 'Free and open access to credible information', '', 'Learn more', 'accent full-width ph--20 pv--56', 'extra-large'); ?>
 
 <div class="section--highlight full-width ph--40 pv--40">
-	<?php podcastsBanner(); ?>
+	<?php podcasts_banner(); ?>
 </div>
 
 <div class="container ph--40 pv--40">

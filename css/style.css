@@ -7,10 +7,10 @@
   --accent-green: #cbefb6;
   --theme-secondary: #0f362e;
   --theme-soft-gray: rgba(0, 0, 0, 0.05);
-  --spacing-1: 6px;
-  --spacing-2: 9px;
-  --spacing-3: 12px;
-  --spacing-4: 18px;
+  --spacing-1: 4px;
+  --spacing-2: 6px;
+  --spacing-3: 8px;
+  --spacing-4: 10px;
   --spacing-5: 24px;
   --spacing-6: 30px;
   --spacing-7: 36px;
@@ -241,6 +241,11 @@ a {
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
+.grid--4.repeat {
+  grid-template-columns: repeat(4, 1fr);
+  display: inline-grid;
+}
+
 @keyframes move-up {
   0% {
     transform: translateY(0);
@@ -460,6 +465,10 @@ ul.main-menu li a:hover:before {
   margin: 0 auto;
 }
 
+.container.centered {
+  justify-content: center;
+}
+
 .container.content {
   padding: 40px 40px 80px 40px;
 }
@@ -541,6 +550,7 @@ ul.main-menu li a:hover:before {
   margin: 0;
   line-height: 1.2;
 }
+
 .article--container .meta,
 .article--container .meta a {
   color: var(--brand-color);
