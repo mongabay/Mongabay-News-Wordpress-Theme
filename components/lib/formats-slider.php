@@ -20,6 +20,13 @@ function formats_slider(string $post_format, string $headline, array $terms_arra
                 'field' => 'slug',
                 'terms' => $name,
               ),
+            ),
+            'meta_query' => array(
+              array(
+                'key' => 'featured_as',
+                'value' => 'featured',
+                'compare' => '='
+              )
             )
           );
 
@@ -54,8 +61,15 @@ function formats_slider(string $post_format, string $headline, array $terms_arra
       } else {
         $args = array(
           'post_type' => $post_format,
-          'posts_per_page' => 1,
+          'posts_per_page' => 4,
           'cache_results' => true,
+          'meta_query' => array(
+            array(
+              'key' => 'featured_as',
+              'value' => 'featured',
+              'compare' => '='
+            )
+          )
         );
 
         $query = new WP_Query($args);

@@ -1,5 +1,5 @@
 <?php
-function topics_section(string $headline, array $topics)
+function topics_section(string $headline, array $topics, array $extra_params = [])
 {
   $args = array(
     'post_type' => 'post',
@@ -20,14 +20,22 @@ function topics_section(string $headline, array $topics)
     ),
   );
 
+  $link_copy = 'all topics';
+  $link_url = '';
+
+  if (count($extra_params) > 0) {
+    $link_copy = $extra_params['link_copy'];
+    $link_url = $extra_params['link_url'];
+  }
+
   $query = new WP_Query($args);
 
   if ($query->have_posts()) {
     while ($query->have_posts()) {
       $query->the_post(); ?>
-      <div class="section--highlight full-width pv--80 ph--40">
+      <div class="section--highlight full-width pv--80">
         <div class="container">
-          <div class="title column--50">
+          <div class="title column--50 align-left">
             <h1>
               <?php _e($headline, 'mongabay'); ?>
               <?php
@@ -37,7 +45,7 @@ function topics_section(string $headline, array $topics)
                 }
               }
               ?>
-              <span class="outlined"><a href="">all topics<span class="icon icon-right"></span></a></span>
+              <span class="outlined"><a href="<?php echo $link_url; ?>"><?php echo $link_copy; ?><span class="icon icon-right"></span></a></span>
             </h1>
           </div>
           <div class="column--50">
