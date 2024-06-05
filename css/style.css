@@ -599,13 +599,25 @@ ul.main-menu li a:hover:before {
   flex-direction: column;
   align-items: center;
 }
+
 .section--highlight .meta {
   font-family: "Open Sans";
 }
+
 .sound-wave {
   background: url(../img/sound-wave.svg);
   background-position: 50% 50%;
   background-repeat: no-repeat;
+}
+
+.section--headline .theme--button {
+  margin: 0;
+}
+
+.section--headline h1 {
+  font-size: var(--font-xxl);
+  font-family: "Lora";
+  font-weight: 400;
 }
 
 /* Banners */
@@ -615,6 +627,7 @@ ul.main-menu li a:hover:before {
   border-radius: var(--rounded);
   align-items: center;
   text-align: center;
+  height: max-content;
 }
 
 .banner.outlined {

@@ -17,6 +17,14 @@ formats_slider('videos', 'Explore video stories from nature’s frontline.', arr
 
 <?php topics_section('Explore engaging videos about pressing issues like', array('climate', 'oceans')); ?>
 
+<div id="section-videos-latest" class="container ph--40 pv--40 gap--20 in-column">
+  <div class="container in-row full-width section--headline" style="align-items: center; justify-content: space-between;">
+    <h1><?php _e('Latest videos', 'mongabay'); ?></h1>
+    <a href="" class="theme--button primary"><?php _e('All videos', 'mongabay'); ?><span class="icon icon-right"></span></a>
+  </div>
+  <?php videos_latest(); ?>
+</div>
+
 <?php banner('', 'Stay updated', 'Delivering news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--20 pv--56 full-width', 'extra-large'); ?>
 
 <div class="container full--width pv--40 gap--40 in-column">

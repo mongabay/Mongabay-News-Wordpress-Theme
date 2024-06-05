@@ -227,7 +227,8 @@ function mongabay_conditional_scripts()
         wp_register_script('iframeresize', 'https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.1/iframeResizer.min.js', array(), '4.3.1', true);
         wp_enqueue_script('iframeresize');
     }
-    if (is_front_page() || is_page('articles') || is_page('series') || is_page('videos')) {
+
+    if (is_front_page() || is_page('articles') || is_page('series') || is_page('videos') || is_page('podcasts')) {
         wp_register_style('slick-main', get_template_directory_uri() . '/js/lib/slick/slick.css', array(), '1.8.1', 'all');
         wp_enqueue_style('slick-main');
         wp_register_style('slick-theme', get_template_directory_uri() . '/js/lib/slick/slick-theme.css', array(), '1.8.1', 'all');

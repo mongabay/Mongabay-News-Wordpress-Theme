@@ -14,3 +14,5 @@ include(get_template_directory() . '/components/lib/featured-articles-slider.php
 include(get_template_directory() . '/components/lib/articles-listing-condensed.php');
 include(get_template_directory() . '/components/lib/topics-section.php');
 include(get_template_directory() . '/components/lib/formats-slider.php');
+include(get_template_directory() . '/components/lib/videos-latest.php');
+include(get_template_directory() . '/components/lib/podcasts-banner.php');

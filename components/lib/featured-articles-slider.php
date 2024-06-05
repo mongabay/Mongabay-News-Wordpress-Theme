@@ -18,7 +18,7 @@ function featured_articles_slider($posts_per_page, $offset)
   $query = new WP_Query($args); ?>
 
   <div class="section--highlight slider full-width">
-    <div class="container in-column pv--40 gap--40">
+    <div class="container in-column ph--40 pv--40 gap--40">
       <h1 class="text-center">The outstanding <span>feature stories</span> give one step forward</h1>
     </div>
     <div class="in-column gap--20">
@@ -48,6 +48,6 @@ function featured_articles_slider($posts_per_page, $offset)
       </div>
     </div>
   </div>
-  <?php
+<?php
 }
 ?>

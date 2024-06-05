@@ -5,6 +5,8 @@ function articles_listing(
   int $offset,
   bool $show_all_thumbnails,
   string $thumbnail_size,
+  ?string $odd_item,
+  ?int $odd_item_position,
   ?string $taxonomy
 ) {
   $args = array(
@@ -32,6 +34,9 @@ function articles_listing(
       $query->the_post();
       $post_counter++;
 ?>
+      <?php if (strlen($odd_item) > 0 && $post_counter == $odd_item_position) {
+        echo $odd_item;
+      } ?>
       <div class="article--container pv--8">
         <a href="<?php the_permalink(); ?>">
           <?php if (($show_all_thumbnails || $post_counter == 1) && has_post_thumbnail()) { ?>
