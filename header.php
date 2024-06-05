@@ -64,24 +64,26 @@ if (wp_is_mobile()) {
 	<header class="header" role="banner">
 		<?php
 		if (wp_is_mobile()) {
-		} else { ?>
+		} else {
+
+		?>
 			<div class="container in-row space-between align-center ph--40 pv--20">
 				<div class="branding">
 					<a href="<?php echo home_url(); ?>" class="theme-light"><img src="<?php echo get_template_directory_uri(); ?>/img/logo/mongabay_logo_news_black.svg" /></a><a href="" class="theme-dark"><img src="<?php echo get_template_directory_uri(); ?>/img/logo/mongabay_logo_news_white.svg" /></a>
 				</div>
 				<div class="menu-container align-center">
 					<ul class="main-menu nav-desktop">
-						<li><a href="<?php echo home_url(); ?>/feature""><?php _e('Feature', 'mongabay'); ?></a></li>
-						<li><a href=" <?php echo home_url(); ?>/videos""><?php _e('Videos', 'mongabay'); ?></a></li>
-						<li><a href="<?php echo home_url(); ?>/podcasts""><?php _e('Podcasts', 'mongabay'); ?></a></li>
-						<li><a href=" <?php echo home_url(); ?>/series""><?php _e('Series', 'mongabay'); ?></a></li>
-						<li><a href="<?php echo home_url(); ?>/articles"><?php _e('Articles', 'mongabay'); ?></a></li>
-						<li><a href="<?php echo home_url(); ?>/shorts""><?php _e('Shorts', 'mongabay'); ?></a></li>
+						<li><a href="<?php echo home_url(); ?>/feature" class="<?php echo is_page('Feature') ? 'active' : ''; ?>"><?php _e('Feature', 'mongabay'); ?></a></li>
+						<li><a href=" <?php echo home_url(); ?>/videos" class="<?php echo is_page('Videos') ? 'active' : ''; ?>"><?php _e('Videos', 'mongabay'); ?></a></li>
+						<li><a href="<?php echo home_url(); ?>/podcasts" class="<?php echo is_page('Podcasts') ? 'active' : ''; ?>"><?php _e('Podcasts', 'mongabay'); ?></a></li>
+						<li><a href=" <?php echo home_url(); ?>/series" class="<?php echo is_page('Series') ? 'active' : ''; ?>"><?php _e('Series', 'mongabay'); ?></a></li>
+						<li><a href="<?php echo home_url(); ?>/articles" class="<?php echo is_page('Articles') ? 'active' : ''; ?>"><?php _e('Articles', 'mongabay'); ?></a></li>
+						<li><a href="<?php echo home_url(); ?>/shorts" class="<?php echo is_page('Shorts') ? 'active' : ''; ?>"><?php _e('Shorts', 'mongabay'); ?></a></li>
 					</ul>
 					<a class=" theme--button primary simple md-hide" href=""><?php _e('Donate', 'mongabay'); ?></a>
-							<a id="theme-switch" class="icon icon-cog"></a>
-							<a id="site-search"><span class="icon icon-search"></span></a>
-							<a id="secondary-menu"><span class="icon icon-menu"></span></a>
+					<a id="theme-switch" class="icon icon-cog"></a>
+					<a id="site-search"><span class="icon icon-search"></span></a>
+					<a id="secondary-menu"><span class="icon icon-menu"></span></a>
 				</div>
 				<div id="off-canvas">
 					<div class="container in-column ph--40 pv--20 gap--20">
@@ -97,7 +99,7 @@ if (wp_is_mobile()) {
 							<span class="icon icon-cancel"></span>
 						</div>
 						<ul class="main-menu nav-desktop off-canvas">
-							<li><a href="<?php echo home_url(); ?>/videos""><?php _e('Videos', 'mongabay'); ?></a></li>
+							<li><a href="<?php echo home_url(); ?>/videos"" class=""><?php _e('Videos', 'mongabay'); ?></a></li>
 							<li><a href=" <?php echo home_url(); ?>/podcasts""><?php _e('Podcasts', 'mongabay'); ?></a></li>
 							<li><a href="<?php echo home_url(); ?>/articles"><?php _e('Articles', 'mongabay'); ?></a></li>
 							<li><a href="<?php echo home_url(); ?>/shorts""><?php _e('Short News', 'mongabay'); ?></a></li>

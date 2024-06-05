@@ -17,7 +17,7 @@ get_header(); ?>
 			<h4><?php _e('Latest', 'mongabay'); ?></h4>
 			<div class="divider"></div>
 		</div>
-		<?php articles_listing(6, 5, false, 'medium', null); ?>
+		<?php articles_listing('post', 6, 5, false, 'medium', null, null, null); ?>
 		<a class="theme--button outlined full-width"><?php _e('All news', 'mongabay'); ?><span class="icon icon-right"></span></a>
 		<!-- Component End -->
 	</div>
@@ -40,10 +40,12 @@ get_header(); ?>
 
 <?php series_articles_listing(); ?>
 
-<?php banner('', 'Free and open access to credible information', '', 'Learn more', 'accent full-width ph--20 pv--56', 'extra-large'); ?>
+<div class="container ph--40 pv--40">
+	<?php banner('', 'Free and open access to credible information', '', 'Learn more', 'accent full-width pv--56', 'extra-large'); ?>
+</div>
 
-<div class="section--highlight full-width ph--40 pv--40">
-	<?php podcastsBanner(); ?>
+<div class="section--highlight container full-width ph--40 pv--40">
+	<?php podcasts_banner(); ?>
 </div>
 
 <div class="container ph--40 pv--40">
@@ -54,7 +56,9 @@ get_header(); ?>
 	<?php banner('', 'We are nonprofit', 'Help us tell stories of biodiversity loss, climate change and more.', 'Donate', 'accent ph--20 pv--56 full-width', 'extra-large'); ?>
 </div>
 
-<?php featured_articles_slider(4, 5); ?>
+<div class="container ph--40 pv--40">
+	<?php featured_articles_slider(4, 5); ?>
+</div>
 
 <div class="section--highlight">
 	<div class="container ph--40 pv--40 gap--20 in-column">

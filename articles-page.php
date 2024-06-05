@@ -23,7 +23,7 @@ get_header(); ?>
       <h4><?php _e('Latest', 'mongabay'); ?></h4>
       <div class="divider"></div>
     </div>
-    <?php articles_listing(10, 0, false, 'medium', null); ?>
+    <?php articles_listing('post', 10, 0, false, 'medium', null, null, null); ?>
     <a class="theme--button outlined full-width"><?php _e('All news', 'mongabay'); ?><span class="icon icon-right"></span></a>
   </div>
 </div>
@@ -32,7 +32,7 @@ get_header(); ?>
   <?php banner('', 'We are nonprofit', 'Help us tell stories of biodiversity loss, climate change and more.', 'Donate', 'accent ph--20 pv--56 full-width', 'extra-large'); ?>
 </div>
 
-<?php topics_section(); ?>
+<?php topics_section('Explore articles by topic such as', array('climate', 'oceans')); ?>
 
 <?php featured_articles_slider(4, 5); ?>
 

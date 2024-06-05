@@ -8,7 +8,7 @@ include(get_template_directory() . '/custom-code/taxonomy-entity.php');
 include(get_template_directory() . '/custom-code/thumbnailed-recent-posts.php');
 include(get_template_directory() . '/custom-code/feed-query.php');
 include(get_template_directory() . '/custom-code/meta.php');
-include(get_template_directory() . '/components/components-functions.php');
+include(get_template_directory() . '/components/functions.php');
 include(get_template_directory() . '/custom-code/post-type-formats.php');
 include(get_template_directory() . '/custom-code/analytics.php');
 if (function_exists('add_theme_support')) {
@@ -227,7 +227,8 @@ function mongabay_conditional_scripts()
         wp_register_script('iframeresize', 'https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.1/iframeResizer.min.js', array(), '4.3.1', true);
         wp_enqueue_script('iframeresize');
     }
-    if (is_front_page() || is_page('articles') || is_page('series')) {
+
+    if (is_front_page() || is_page(['articles', 'series', 'videos', 'podcasts', 'feature'])) {
         wp_register_style('slick-main', get_template_directory_uri() . '/js/lib/slick/slick.css', array(), '1.8.1', 'all');
         wp_enqueue_style('slick-main');
         wp_register_style('slick-theme', get_template_directory_uri() . '/js/lib/slick/slick-theme.css', array(), '1.8.1', 'all');
