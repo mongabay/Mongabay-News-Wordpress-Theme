@@ -30,7 +30,7 @@ get_header(); ?>
 		<?php featured_articles_listing('post', 5, 0, 'medium', 2, true, null); ?>
 		<!-- Component End -->
 	</div>
-	<div class="column--20 gap--40 pv--40 latest-banners">
+	<div class="column--20 gap--40 pv--20 latest-banners">
 		<?php banner('', 'Stay updated', 'Delivering news and inspiration from nature’s frontline.', 'Newsletter', 'outlined ph--20 pv--20', ''); ?>
 		<?php banner('', 'We are nonprofit', 'Help us tell stories of biodiversity loss, climate change and more.', 'Donate', 'accent ph--20 pv--56 full-width', ''); ?>
 	</div>
