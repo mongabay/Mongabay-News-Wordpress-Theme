@@ -752,10 +752,10 @@ ul.main-menu li a.active:before {
   border-radius: 16px;
   width: 100%;
   object-fit: cover;
-  animation: move-up linear;
+  /* animation: move-up linear;
   animation-timeline: view();
   animation-range-start: 100px;
-  animation-range-end: 1000px;
+  animation-range-end: 1000px; */
 }
 
 .section--inspiration .item-container.first img {

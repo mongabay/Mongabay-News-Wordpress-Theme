@@ -47,4 +47,53 @@ function inspiration_banner()
     $section .= '</div></div></div>';
     echo $section;
   }
+
+  echo "<script>
+    
+    function mbHeroSmoothScroll() {
+        const items = jQuery('.section--inspiration .item-container'),
+            dY = 30;
+        const ease = function (a, b, n) {
+            return (1 - n) * a + n * b;
+        };
+        const inView = function (item, y) {
+            if (window.scrollY + window.innerHeight > item.offset().top &&
+                window.scrollY < item.offset().top + item.outerHeight()) {
+                return true;
+            }
+            return false;
+        };
+        const itemsInView = function () {
+            return items.filter(function () {
+                return inView(jQuery(this));
+            });
+        };
+        const init = function () {
+            items.each(function () {
+                var item = jQuery(this);
+                item.data('y', 0);
+                item.data('c', Math.random());
+            });
+            function loop() {
+                itemsInView().each(function () {
+                    var item = jQuery(this);
+                    var deltaY = (item.offset().top - window.scrollY) / window.innerHeight - 1;
+                    item.data('y', ease(item.data('y'), deltaY, item.data('c') * .15));
+                    item.css({
+                        'transform': 'translate3d(0,' + (dY * item.data('y')).toFixed(2) + '%,0)',
+                    });
+                });
+                requestAnimationFrame(loop);
+            }
+            jQuery(window).on('scroll', loop);
+        };
+        return {
+            init: function () {
+                if (items.length) init();
+            }
+        };
+    }
+
+    mbHeroSmoothScroll().init();
+  </script>";
 }
