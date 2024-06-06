@@ -1,24 +1,20 @@
 <?php
 function podcasts_topics_section(string $headline, array $topics, array $extra_params): void
 {
-  $tax_args = array();
-
-  foreach ($topics as $topic) {
-    $tax_args['terms'][] = array(
-      'taxonomy' => 'topic',
-      'field' => 'slug',
-      'terms' => $topic,
-    );
-  }
+  $tax_args = array(
+    'taxonomy' => 'topic',
+    'field' => 'slug',
+    'terms' => $topics,
+  );
 
   $args = array(
     'post_type' => 'podcasts',
-    'posts_per_page' => count($topics),
+    'posts_per_page' => 1,
     'cache_results' => true,
-    // 'tax_query' => array(
-    //   'relation' => 'OR',
-    //   $tax_args,
-    // ),
+    'tax_query' => array(
+      'relation' => 'OR',
+      $tax_args,
+    ),
   );
 
   $link_copy = 'all topics';
@@ -40,7 +36,9 @@ function podcasts_topics_section(string $headline, array $topics, array $extra_p
             <?php
             if (count($topics) > 0) {
               foreach ($topics as $topic) {
-                echo '<span class="outlined">' . $topic . '</span>';
+                $topic_name = get_term_by('slug', $topic, 'topic')->name;
+
+                echo '<span class="outlined"><a href="' . home_url() . '/?s=&format=podcasts&topics=' . $topic . '">' . strtolower($topic_name) . '</a></span>';
               }
             }
             ?>
@@ -56,25 +54,8 @@ function podcasts_topics_section(string $headline, array $topics, array $extra_p
       while ($query->have_posts()) {
         $counter++;
         $query->the_post();
-        $terms = get_the_terms(get_the_ID(), 'topic');
-
-        $filtered_terms = array_filter($terms, function ($term) use ($topics) {
-          return in_array($term->slug, $topics);
-        });
-
-        $sorted_terms = array_values($filtered_terms);
-        usort($sorted_terms, function ($a, $b) {
-          return strcasecmp($a->slug, $b->slug);
-        });
-
-        foreach ($sorted_terms as $term) {
-          // print_r($term->slug);
-        }
-
-        $first_term = reset($filtered_terms);
-        $term_slug = $first_term ? $first_term->slug : '';
       ?>
-        <div class="container in-row gap--20 topics-slide slide-<?php echo $term_slug; ?> <?php echo $counter === 1 ? 'active' : ''; ?>">
+        <div class="container in-row gap--20 topics-slide">
           <div class="column--20">
             <div class="featured-image">
               <?php the_post_thumbnail('medium'); ?>

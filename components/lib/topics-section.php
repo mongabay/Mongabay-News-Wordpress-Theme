@@ -10,12 +10,12 @@ function topics_section(string $headline, array $topics, array $extra_params = [
       array(
         'taxonomy' => 'topic',
         'field'    => 'slug',
-        'terms'    => array('climate'),
+        'terms'    => 'climate',
       ),
       array(
         'taxonomy' => 'topic',
         'field'    => 'slug',
-        'terms'    => array('oceans'),
+        'terms'    => 'oceans',
       ),
     ),
   );

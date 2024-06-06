@@ -893,14 +893,6 @@ ul.main-menu li a.active:before {
 }
 
 /* Topics slider */
-.topics-slide {
-  display: none;
-}
-
-.topics-slide.active {
-  display: flex;
-}
-
 .topics-slide img {
   width: 100%;
   height: 100%;
@@ -910,7 +902,6 @@ ul.main-menu li a.active:before {
 }
 
 /* Search page */
-
 .search #content {
   max-width: 100%;
   display: block;
