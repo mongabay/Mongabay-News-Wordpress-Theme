@@ -15,16 +15,17 @@ get_header(); ?>
 formats_slider(array('post', 'custom-story', 'videos', 'podcats', 'specials'), 'The outstanding feature stories give one step forward', array(), 'text-center');
 ?>
 
-<?php
-$extra_params = array(
-  'link_copy' => 'all stories',
-  'link_url' => '',
-);
-
-topics_section('Explore features by topic such as', array('climate', 'oceans'), $extra_params);
-?>
-
 <div class="container full-width ph--40 in-column">
+  <?php
+  $extra_params = array(
+    'link_copy' => 'all stories',
+    'link_url' => '',
+  );
+
+  topics_section('Explore features by topic such as', array('climate', 'oceans'), $extra_params);
+  ?>
+
+
   <div id="section-features-latest" class="container pv--40 gap--20 in-column">
     <div class="container in-row full-width section--headline" style="align-items: center; justify-content: space-between;">
       <h1><?php _e('Latest features', 'mongabay'); ?></h1>
