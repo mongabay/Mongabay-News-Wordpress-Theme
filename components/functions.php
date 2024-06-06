@@ -17,3 +17,4 @@ include(get_template_directory() . '/components/lib/formats-slider.php');
 include(get_template_directory() . '/components/lib/videos-latest.php');
 include(get_template_directory() . '/components/lib/podcasts-banner.php');
 include(get_template_directory() . '/components/lib/articles-listing-in-columns.php');
+include(get_template_directory() . '/components/lib/podcasts-topics-section.php');

@@ -11,8 +11,8 @@ get_header(); ?>
 
 
 <?php
-$series = (array('global-forests', 'indonesian-forests', 'oceans', 'indigenous-peoples-and-conservation'));
-formats_slider('post', 'The outstanding feature stories give one step forward', $series, 'text-center');
+//$series = (array('global-forests', 'indonesian-forests', 'oceans', 'indigenous-peoples-and-conservation'));
+formats_slider(array('post', 'custom-story', 'videos', 'podcats', 'specials'), 'The outstanding feature stories give one step forward', array(), 'text-center');
 ?>
 
 <?php

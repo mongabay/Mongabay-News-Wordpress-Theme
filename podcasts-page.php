@@ -12,10 +12,10 @@ get_header(); ?>
 
 <?php
 $series = (array('oceans', 'amazon-conservation', 'land-rights-and-extractives', 'global-forests'));
-formats_slider('podcasts', 'Uncover a world of thought provoking podcasts', array(), 'text-center');
+formats_slider(array('podcasts'), 'Uncover a world of thought provoking podcasts', array(), 'text-center');
 ?>
 
-<?php topics_section('Explore stories about', array('oceans', 'climate', 'rainforest')); ?>
+<?php podcasts_topics_section('Explore stories about', array('oceans', 'climate', 'rainforests'), array('link_copy' => 'all topics', 'link_url' => '')); ?>
 
 <div id="section-podcasts-latest" class="container ph--40 pv--40 gap--20 in-column">
   <div class="container in-row full-width section--headline" style="align-items: center; justify-content: space-between;">
@@ -24,7 +24,7 @@ formats_slider('podcasts', 'Uncover a world of thought provoking podcasts', arra
   </div>
   <div class="grid--4 gap--20">
     <?php
-      $banner = '
+    $banner = '
       <div class="banner gap--20 pv--20 accent">
       <div class="inner">
         <div class="title">
