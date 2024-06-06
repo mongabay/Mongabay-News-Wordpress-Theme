@@ -51,6 +51,7 @@ function featured_articles_listing(
           <a href="<?php the_permalink(); ?>">
             <div class="featured-image">
               <?php the_post_thumbnail($thumbnail_size) ?>
+              <div class="img-overlay"></div>
               <div class="title headline <?php echo $post_type !== 'post' ? 'text-center' : ''; ?>">
                 <h1><?php the_title(); ?></h1>
                 <?php if ($post_type !== 'post') { ?>
