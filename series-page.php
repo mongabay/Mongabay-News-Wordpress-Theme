@@ -12,7 +12,7 @@ get_header(); ?>
 
 <?php
 $series = (array('oceans', 'amazon-conservation', 'land-rights-and-extractives', 'global-forests'));
-formats_slider('post', 'Mongabay series gather stories with a lot in common.', $series,);
+formats_slider(array('post'), 'Mongabay series gather stories with a lot in common.', $series,);
 ?>
 <div class="container section--highlight ph--40 pv--40 gap--20 full-width in-column">
   <?php

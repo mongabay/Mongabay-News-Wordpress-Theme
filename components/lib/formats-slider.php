@@ -1,5 +1,5 @@
 <?php
-function formats_slider(string $post_format, string $headline, array $terms_array = [], string $extra_class = null)
+function formats_slider(array $post_formats, string $headline, array $terms_array = [], string $extra_class = null)
 { ?>
   <div id="formats-slider" class="section--highlight slider full-width">
     <div class="container in-column gap--40 pv--40">
@@ -11,7 +11,7 @@ function formats_slider(string $post_format, string $headline, array $terms_arra
       if (count($terms_array) > 0) {
         foreach ($terms_array as $name) {
           $args = array(
-            'post_type' => $post_format,
+            'post_type' => $post_formats,
             'posts_per_page' => 1,
             'cache_results' => true,
             'tax_query' => array(
@@ -60,7 +60,7 @@ function formats_slider(string $post_format, string $headline, array $terms_arra
         }
       } else {
         $args = array(
-          'post_type' => $post_format,
+          'post_type' => $post_formats,
           'posts_per_page' => 4,
           'cache_results' => true,
           'meta_query' => array(

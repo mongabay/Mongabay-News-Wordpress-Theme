@@ -12,7 +12,7 @@ get_header(); ?>
 
 <?php
 $series = (array('oceans', 'amazon-conservation', 'land-rights-and-extractives', 'global-forests'));
-formats_slider('videos', 'Explore video stories from nature’s frontline.', array(), 'text-center');
+formats_slider(array('videos'), 'Explore video stories from nature’s frontline.', array(), 'text-center');
 ?>
 
 <div class="container full-width in-column gap--20 ph--40">
