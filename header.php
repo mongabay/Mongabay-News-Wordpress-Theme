@@ -82,7 +82,7 @@ if (wp_is_mobile()) {
 					</ul>
 					<a class=" theme--button primary simple md-hide" href=""><?php _e('Donate', 'mongabay'); ?></a>
 					<a id="theme-switch" class="icon icon-cog"></a>
-					<a id="site-search"><span class="icon icon-search"></span></a>
+					<a id="site-search" href="<?php echo home_url(); ?>/?s"><span class="icon icon-search"></span></a>
 					<a id="secondary-menu"><span class="icon icon-menu"></span></a>
 				</div>
 				<div id="off-canvas">

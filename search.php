@@ -1,56 +1,60 @@
 <?php get_header(); ?>
-	<main role="main">
-        <div class="row">
-            <div id="main" class="col-lg-8">
-                <div class="tag-line">
-                    <h1><?php echo sprintf( __( '%s Search Results for ', 'mongabay' ), $wp_query->found_posts ); echo '"'.get_search_query().'"'; ?></h1>
-                    <?php
-                        function get_tax_by_search($search_text) {
+<div class="container in-column ph--40 pv--40">
 
-                            $args = array(
-                                'taxonomy'      => array( 'topic' ),
-                                'orderby'       => 'id', 
-                                'order'         => 'ASC',
-                                'hide_empty'    => true,
-                                'fields'        => 'all',
-                                'name__like'    => $search_text
-                            ); 
-
-                            $terms = get_terms( $args );
-                            $count = count( $terms );
-                            if($count > 0) {
-                                _e ( 'Related topic pages:', 'mongabay' );
-                                echo '&nbsp;';
-                                foreach ($terms as $term) {
-                                    echo "<a href='".get_term_link( $term )."'>".$term->name."</a>";
-                                    if (next( $terms )) {
-                                        echo ', ';
-                                    }
-                                }
-                            }
-
-                        }
-                        get_tax_by_search( get_search_query() );
-                    ?>
-                </div>
-                <section>
-
-                    <div id="post-wrapper-news" class="row" data-columns>
-                        <?php get_template_part('loop'); ?>
-                    </div>
-                    <div class="counter">
-                        <?php mongabay_pagination(); ?>
-                    </div>
-                    
-                </section>
-            </div>
-            <?php
-                if(!wp_is_mobile()) {
-                    get_sidebar();
-                }
-            ?>
+    <div class="search-input-wrapper">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M19.0008 19.0008L13.8038 13.8038M13.8038 13.8038C15.2104 12.3972 16.0006 10.4895 16.0006 8.50028C16.0006 6.51108 15.2104 4.60336 13.8038 3.19678C12.3972 1.79021 10.4895 1 8.50028 1C6.51108 1 4.60336 1.79021 3.19678 3.19678C1.79021 4.60336 1 6.51108 1 8.50028C1 10.4895 1.79021 12.3972 3.19678 13.8038C4.60336 15.2104 6.51108 16.0006 8.50028 16.0006C10.4895 16.0006 12.3972 15.2104 13.8038 13.8038Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <div class="search-wrapper">
+            <input type="text" id="searchInput" placeholder="Type to search in any field." autocomplete="off" />
+            <div class="search-actions"></div>
         </div>
-        <?php get_template_part( 'partials/section', 'series' ); ?>
-    </main>
+        <div id="articles-suggestions" class="dropdown hide"></div>
+    </div>
+    <div class="tax-wrapper">
+        <div class="tax-item-wrapper topics">
+            <input type="text" id="searchTopic" placeholder="Topic" />
+            <div class="tax-search-actions topic"></div>
+            <div id="topics-suggestions" class="dropdown hide"></div>
+            <div id="topics-results" class="dropdown hide"></div>
+        </div>
+        <div class="tax-item-wrapper locations">
+            <input type="text" id="searchLocation" placeholder="Location" onchange="" />
+            <div class="tax-search-actions location"></div>
+            <div id="locations-suggestions" class="dropdown hide"></div>
+            <div id="locations-results" class="dropdown hide"></div>
+        </div>
+        <div class="tax-item-wrapper format">
+            <input type="text" id="searchFormat" placeholder="Format" onchange="" />
+            <div class="tax-search-actions format"></div>
+            <div id="formats-suggestions" class="dropdown hide"></div>
+            <div id="formats-results" class="dropdown hide"></div>
+        </div>
+    </div>
+    <div id="default" class="">
+        <h1><?php _e('Try out our suggestions', 'mongabay'); ?></h1>
+        <div class="suggestions">
+            <div class="suggestion-item"><a href="<?php home_url(); ?>/?s=Forests"><?php _e('Forest articles', 'mongabay'); ?></a></div>
+            <div class="suggestion-item"><a href="<?php home_url(); ?>/?s=Wildlife"><?php _e('Wildlife Videos', 'mongabay'); ?></a></div>
+            <div class="suggestion-item"><a href="<?php home_url(); ?>/?s=Conservation podcasts"><?php _e('Conservation Podcasts', 'mongabay'); ?></a></div>
+            <div class="suggestion-item"><a href="<?php home_url(); ?>/?s=a&format=customStories"><?php _e('Ocean Specials', 'mongabay'); ?></a></div>
+        </div>
+    </div>
+    <div id="no-results" class="hide">
+        <h1><?php _e('No results found', 'mongabay'); ?></h1>
+        <div class="suggestions">
+            <div class="suggestion-item"><a href="<?php home_url(); ?>/?s=Forests"><?php _e('Forest articles', 'mongabay'); ?></a></div>
+            <div class="suggestion-item"><a href="<?php home_url(); ?>/?s=Wildlife"><?php _e('Wildlife Videos', 'mongabay'); ?></a></div>
+            <div class="suggestion-item"><a href="<?php home_url(); ?>/?s=Conservation Podcasts"><?php _e('Conservation Podcasts', 'mongabay'); ?></a></div>
+            <div class="suggestion-item"><a href="<?php home_url(); ?>/?s=&format=customStories"><?php _e('Ocean Specials', 'mongabay'); ?></a></div>
+        </div>
+    </div>
+    <div class="results-wrapper">
+        <div id="results" class="hide"></div>
+        <div class="results-footer"></div>
+    </div>
+</div>
+
+
 </div>
 <?php get_footer(); ?>

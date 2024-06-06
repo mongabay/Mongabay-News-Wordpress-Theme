@@ -238,6 +238,11 @@ function mongabay_conditional_scripts()
         wp_register_script('slick-init', get_template_directory_uri() . '/js/slick-init.js', array(), '1.0.0', true);
         wp_enqueue_script('slick-init');
     }
+
+    if (is_search() && isset($_GET['s'])) {
+        wp_register_script('search-js', get_stylesheet_directory_uri() . '/js/lib/search.js', array(), '1.0.0', true);
+        wp_enqueue_script('search-js');
+    }
 }
 
 // Featured articles template
@@ -980,7 +985,8 @@ function mongabay_disable_gutenberg($can_edit, $post_type)
 }
 
 /* Register post tags for new post types */
-function mongabay_register_tags_cpts(){
+function mongabay_register_tags_cpts()
+{
     register_taxonomy_for_object_type('post_tag', 'videos');
     register_taxonomy_for_object_type('post_tag', 'podcasts');
     register_taxonomy_for_object_type('post_tag', 'short-article');
