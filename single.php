@@ -39,7 +39,7 @@
                     esc_html_e( '1 Comment', 'mongabay' );
                   } ?>
                 <div class="social">
-                   <?php get_template_part('partials/section', 'social'); ?>
+                   <?php // get_template_part('partials/section', 'social'); ?>
                 </div>
 
             </div>
