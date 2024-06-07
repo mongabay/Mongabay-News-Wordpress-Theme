@@ -60,14 +60,13 @@ if (wp_is_mobile()) {
 
 <body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
-	<!-- container -->
 	<header class="header" role="banner">
 		<?php
 		if (wp_is_mobile()) {
 		} else {
 
 		?>
-			<div class="container in-row space-between align-center ph--40 pv--20">
+			<div class="container in-row space-between align-center full-height ph--40 pv--20">
 				<div class="branding">
 					<a href="<?php echo home_url(); ?>" class="theme-light"><img src="<?php echo get_template_directory_uri(); ?>/img/logo/mongabay_logo_news_black.svg" /></a><a href="" class="theme-dark"><img src="<?php echo get_template_directory_uri(); ?>/img/logo/mongabay_logo_news_white.svg" /></a>
 				</div>
@@ -86,15 +85,15 @@ if (wp_is_mobile()) {
 					<a id="secondary-menu"><span class="icon icon-menu"></span></a>
 				</div>
 				<div id="off-canvas">
-					<div class="container in-column ph--40 pv--20 gap--20">
+					<div class="container full-height in-column ph--40 pv--20 gap--20" style="justify-content: space-between">
 						<div class="global-nav gap--20">
 							<span class="icon icon-globe"></span>
 							<ul class="">
 								<li><a href="" class="active">English</a></li>
-								<li><a href="">Español (Spanish)</a></li>
-								<li><a href="">Bahasa Indonesia (Indonesian)</a></li>
-								<li><a href="">Brasil (Portuguese)</a></li>
-								<li><a href="">India (Hindi)</a></li>
+								<li><a href="https://es.mongabay.com/">Español (Spanish)</a></li>
+								<li><a href="https://www.mongabay.co.id/">Bahasa Indonesia (Indonesian)</a></li>
+								<li><a href="https://brasil.mongabay.com/">Brasil (Portuguese)</a></li>
+								<li><a href="https://hindi.mongabay.com/">India (Hindi)</a></li>
 							</ul>
 							<span class="icon icon-cancel"></span>
 						</div>
@@ -104,9 +103,36 @@ if (wp_is_mobile()) {
 							<li><a href="<?php echo home_url(); ?>/articles"><?php _e('Articles', 'mongabay'); ?></a></li>
 							<li><a href="<?php echo home_url(); ?>/shorts""><?php _e('Short News', 'mongabay'); ?></a></li>
 							<li><a href=" <?php echo home_url(); ?>/feature""><?php _e('Feature Stories', 'mongabay'); ?></a></li>
-							<li><a href="">The Latest</a></li>
+							<li><a href="<?php echo home_url(); ?>/">The Latest</a></li>
 							<li><a href="">Explore All</a></li>
 						</ul>
+						<div class="footer gap--20 grid--5">
+							<ul class="footer-links">
+								<li><a href="https://www.mongabay.com/about/"><?php _e('About', 'mongabay'); ?></a></li>
+								<li><a href="<?php echo home_url(); ?>/team"><?php _e('Team', 'mongabay'); ?></a></li>
+								<li><a href="<?php echo home_url(); ?>/contact"><?php _e('Contact', 'mongabay'); ?></a></li>
+							</ul>
+							<ul class="footer-links">
+								<li><a href="https://donate.mongabay.org/?utm_source=mongabay.com&utm_medium=headerlink&utm_campaign=com-header-text-link-new"><?php _e('Donate', 'mongabay'); ?></a></li>
+								<li><a href="https://mongabay.us14.list-manage.com/subscribe?u=80161fe385606408293ae0e51&id=940652e1f4"><?php _e('Subscribe page', 'mongabay'); ?></a></li>
+								<li><a href="<?php echo home_url(); ?>/submissions/"><?php _e('Submissions', 'mongabay'); ?></a></li>
+							</ul>
+							<ul class="footer-links">
+								<li><a href="https://www.mongabay.com/privacy"><?php _e('Privacy Policy', 'mongabay'); ?></a></li>
+								<li><a href="https://www.mongabay.com/terms"><?php _e('Terms of Use', 'mongabay'); ?></a></li>
+								<li><a href="https://www.mongabay.com/advertising"><?php _e('Advertising', 'mongabay'); ?></a></li>
+							</ul>
+							<ul class="footer-links">
+								<li><a href="https://www.wildmadagascar.org/"><?php _e('Wild Madagascar', 'mongabay'); ?></a></li>
+								<li><a href="https://selvastropicales.org/"><?php _e('Selva tropicales', 'mongabay'); ?></a></li>
+								<li><a href=""><?php _e('Impact', 'mongabay'); ?></a></li>
+							</ul>
+							<ul class="footer-links">
+								<li><a href="https://kids.mongabay.com/"><?php _e('For Kids', 'mongabay'); ?></a></li>
+								<li><a href="https://mongabay.org/"><?php _e('Mongabay.org', 'mongabay'); ?></a></li>
+								<li><a href="https://tropicalforestnetwork.org/"><?php _e('Tropical Forest Network', 'mongabay'); ?></a></li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -143,12 +169,14 @@ if (wp_is_mobile()) {
 				e.preventDefault;
 				e.stopPropagation;
 				document.getElementById("off-canvas").classList.add("active");
+				document.querySelector("body").classList.add("no-scroll");
 			});
 
 			document.querySelector(".icon-cancel").addEventListener("click", (e) => {
 				e.preventDefault;
 				e.stopPropagation;
 				document.getElementById("off-canvas").classList.remove("active");
+				document.querySelector("body").classList.remove("no-scroll");
 			});
 		</script>
 	</header>

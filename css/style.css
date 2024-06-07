@@ -268,9 +268,18 @@ a {
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
+.grid--5 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
 .grid--4.repeat {
   grid-template-columns: repeat(4, 1fr);
   display: inline-grid;
+}
+
+.no-scroll {
+  overflow: hidden;
 }
 
 @keyframes move-up {
