@@ -40,7 +40,7 @@ get_header(); ?>
 		<?php banner('', 'Free and open access to credible information', '', 'Learn more', 'accent full-width pv--56', 'extra-large'); ?>
 	</div>
 
-	<div class="section--highlight container full-width ph--40 pv--40">
+	<div class="section--highlight container full-width pv--40">
 		<?php podcasts_banner(); ?>
 	</div>
 
