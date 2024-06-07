@@ -12,7 +12,7 @@ get_header(); ?>
 
 <?php
 $series = (array('oceans', 'amazon-conservation', 'land-rights-and-extractives', 'global-forests'));
-formats_slider(array('post'), 'Mongabay series gather stories with a lot in common.', $series,);
+formats_slider(array('post'), 'Mongabay series gather stories with a lot in common.', $series, 'text-center');
 ?>
 <div class="container section--highlight ph--40 pv--40 gap--20 full-width in-column">
   <?php
@@ -23,12 +23,6 @@ formats_slider(array('post'), 'Mongabay series gather stories with a lot in comm
     <a href="" class="theme--button primary"><?php _e('All series', 'mongabay'); ?><span class="icon icon-right"></span></a>
   </div>
 </div>
-
-<?php // featured_articles_slider(4, 5); 
-?>
-
-<?php // topics_section(); 
-?>
 
 <?php inspiration_banner(); ?>
 
