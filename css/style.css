@@ -1497,6 +1497,16 @@ input:focus-visible {
   margin-left: -75px;
 }
 
+/* Mongabay tools */
+.tools-item {
+  height: 250px;
+}
+
+.tools-item img {
+  height: 100%;
+  width: auto;
+}
+
 /* Single post */
 .article-headline h1 {
   font-size: var(--font-xl);
