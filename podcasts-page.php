@@ -20,12 +20,12 @@ formats_slider(array('podcasts'), 'Uncover a world of thought provoking podcasts
   <div id="section-podcasts-latest" class="container pv--40 gap--20 in-column">
     <div class="container in-row full-width section--headline" style="align-items: center; justify-content: space-between;">
       <h1><?php _e('Latest podcasts', 'mongabay'); ?></h1>
-      <a href="" class="theme--button primary"><?php _e('All podcasts', 'mongabay'); ?><span class="icon icon-right"></span></a>
+      <a href="<?php home_url(); ?>/?s=&format=podcasts" class="theme--button primary"><?php _e('All podcasts', 'mongabay'); ?><span class="icon icon-right"></span></a>
     </div>
     <div class="grid--4 gap--20">
       <?php
       $banner = '
-      <div class="banner gap--20 pv--20 accent">
+      <div class="banner gap--20 ph--20 pv--20 accent">
       <div class="inner">
         <div class="title">
           <h1>We are nonprofit</h1>
@@ -51,7 +51,7 @@ formats_slider(array('podcasts'), 'Uncover a world of thought provoking podcasts
       <?php articles_listing('podcasts', 4, 7, true, 'medium', null, null, null); ?>
     </div>
     <div class="container centered pv--40">
-      <a href="" class="theme--button primary"><?php _e('All podcasts', 'mongabay'); ?><span class="icon icon-right"></span></a>
+      <a href="<?php home_url(); ?>/?s=&format=podcasts" class="theme--button primary"><?php _e('All podcasts', 'mongabay'); ?><span class="icon icon-right"></span></a>
     </div>
   </div>
 </div>

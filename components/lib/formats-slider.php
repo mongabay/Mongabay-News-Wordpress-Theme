@@ -39,9 +39,8 @@ function formats_slider(array $post_formats, string $headline, array $terms_arra
               $tax_name = $tax_obj->name;
               $tax_url = home_url() . '/series/' . $name;
       ?>
-
-              <div class="article--container">
-                <div class="featured-image">
+              <div class="article--container full-height">
+                <div class="featured-image full-height">
                   <a href="<?php echo $tax_url; ?>">
                     <?php the_post_thumbnail('large'); ?>
                     <div class="article--container-headline">
@@ -144,7 +143,7 @@ function formats_slider(array $post_formats, string $headline, array $terms_arra
             $tax_url = home_url() . '/series/' . $name;
           ?>
             <div class="article--container">
-              <div class="featured-image">
+              <div class="featured-image full-height">
                 <a href="<?php echo $tax_url; ?>">
                   <?php the_post_thumbnail('large'); ?>
                   <div class="article--container-headline">
