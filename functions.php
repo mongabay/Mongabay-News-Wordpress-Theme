@@ -136,8 +136,6 @@ function mongabay_mega_query($query)
     }
 }
 
-
-
 //fix topics links
 function mongabay_topic_link($link, $term, $taxonomy)
 {
@@ -269,17 +267,6 @@ function mongabay_styles()
     wp_enqueue_style('addtohomescreen');
 }
 
-
-// Register Navigation
-function register_mongabay_menu()
-{
-    register_nav_menus(array( // Using array to specify more menus if needed
-        'header-menu' => __('Header Menu', 'mongabay'), // Main Navigation
-        'sidebar-menu' => __('Sidebar Menu', 'mongabay'), // Sidebar Navigation
-        'mobile-menu' => __('Mobile Menu', 'mongabay'), // Mobile Navigation
-    ));
-}
-
 // Remove the <div> surrounding the dynamic navigation to cleanup markup
 function my_wp_nav_menu_args($args = '')
 {
@@ -316,65 +303,6 @@ function add_slug_to_body_class($classes)
 
     return $classes;
 }
-
-// If Dynamic Sidebar Exists
-if (function_exists('register_sidebar')) {
-    // Define Sidebar Widget
-    register_sidebar(array(
-        'name' => __('Sidebar Widget', 'mongabay'),
-        'description' => __('All sidebar widgets should be placed here.', 'mongabay'),
-        'id' => 'sidebar-widget',
-        'before_widget' => '<div id="%1$s" class="%2$s">',
-        'after_widget' => '</div>',
-        'before_title' => '<h2>',
-        'after_title' => '</h2>'
-    ));
-
-    // Define Footer Widget 1/4
-    register_sidebar(array(
-        'name' => __('Footer Widget 1/4', 'mongabay'),
-        'description' => __('First column widget', 'mongabay'),
-        'id' => 'footer-widget-1',
-        'before_widget' => '<div id="%1$s" class="%2$s">',
-        'after_widget' => '</div>',
-        'before_title' => '<h4>',
-        'after_title' => '</h4>'
-    ));
-
-    // Define Footer Widget 2/4
-    register_sidebar(array(
-        'name' => __('Footer Widget 2/4', 'mongabay'),
-        'description' => __('Second column widget', 'mongabay'),
-        'id' => 'footer-widget-2',
-        'before_widget' => '<div id="%1$s" class="%2$s">',
-        'after_widget' => '</div>',
-        'before_title' => '<h4>',
-        'after_title' => '</h4>'
-    ));
-
-    // Define Footer Widget 3/4
-    register_sidebar(array(
-        'name' => __('Footer Widget 3/4', 'mongabay'),
-        'description' => __('Third column widget', 'mongabay'),
-        'id' => 'footer-widget-3',
-        'before_widget' => '<div id="%1$s" class="%2$s">',
-        'after_widget' => '</div>',
-        'before_title' => '<h4>',
-        'after_title' => '</h4>'
-    ));
-
-    // Define Footer Widget 4/4
-    register_sidebar(array(
-        'name' => __('Footer Widget 4/4', 'mongabay'),
-        'description' => __('Forth column widget', 'mongabay'),
-        'id' => 'footer-widget-4',
-        'before_widget' => '<div id="%1$s" class="%2$s">',
-        'after_widget' => '</div>',
-        'before_title' => '<h4>',
-        'after_title' => '</h4>'
-    ));
-}
-
 
 // Remove wp_head() injected Recent Comment styles
 function my_remove_recent_comments_style()
@@ -465,9 +393,6 @@ function mongabay_query_var($vars)
 
 
 // Customize RSS feed
-remove_all_actions('do_feed_rss2');
-add_action('do_feed_rss2', 'mongabay_feed_rss2', 10, 1);
-
 function mongabay_feed_rss2()
 {
 
@@ -475,6 +400,104 @@ function mongabay_feed_rss2()
     load_template($rss_template);
 }
 
+function custom_rss_feed_init()
+{
+    add_feed('custom', 'custom_rss_feed_callback');
+}
+
+function custom_rss_feed_callback()
+{
+    $search_term = isset($_GET['s']) ? sanitize_text_field($_GET['s']) : '';
+    $topics_str = isset($_GET['topic']) ? ($_GET['topic']) : '';
+    $locations_str = isset($_GET['location']) ? ($_GET['location']) : '';
+    $post_type_str = isset($_GET['post_type']) ? ($_GET['post_type']) : '';
+
+    $topics = array();
+    $locations = array();
+
+    if (!empty($topics_str)) {
+        if (strpos($topics_str, ',') !== false) {
+            $topics = explode(',', $topics_str);
+        } else {
+            $topics[] = $topics_str;
+        }
+    }
+
+    if (!empty($locations_str)) {
+        if (strpos($locations_str, ',') !== false) {
+            $locations = explode(',', $locations_str);
+        } else {
+            $locations[] = $locations_str;
+        }
+    }
+
+    if (!empty($post_type_str)) {
+        switch ($post_type_str) {
+            case 'shortArticle':
+                $post_type = 'short-article';
+                break;
+            case 'posts':
+                $post_type = 'post';
+                break;
+            default:
+                $post_type = $post_type_str;
+                break;
+        }
+    } else {
+        $post_type = 'post';
+    }
+
+    // Custom query arguments
+    $args = array(
+        'post_type' => $post_type,
+        'posts_per_page' => 10,
+        's' => $search_term,
+        'tax_query' => array(
+            'relation' => 'OR',
+            array(
+                'taxonomy' => 'topic',
+                'field' => 'slug',
+                'terms' => $topics,
+            ),
+            array(
+                'taxonomy' => 'location',
+                'field' => 'slug',
+                'terms' => $locations,
+            ),
+        ),
+    );
+
+    $query = new WP_Query($args);
+
+    // Generate RSS feed
+    header('Access-Control-Allow-Origin: *');
+    header('Content-Type: ' . feed_content_type('rss-http') . '; charset=' . get_option('blog_charset'), true);
+
+    echo '<?xml version="1.0" encoding="' . get_option('blog_charset') . '"?>';
+?>
+    <rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" <?php do_action('rss2_ns'); ?>>
+        <channel>
+            <title><?php _e('Results for: ', 'mongabay'); ?><?php echo $search_term; ?></title>
+            <link><?php bloginfo_rss('url'); ?></link>
+            <description><?php bloginfo_rss('description'); ?></description>
+            <language><?php bloginfo_rss('language'); ?></language>
+            <pubDate><?php echo date('r'); ?></pubDate>
+            <generator>https://wordpress.org/?v=<?php bloginfo_rss('version'); ?></generator>
+            <?php while ($query->have_posts()) : $query->the_post(); ?>
+                <item>
+                    <title><?php the_title_rss(); ?></title>
+                    <link><?php the_permalink_rss(); ?></link>
+                    <pubDate><?php echo get_post_time('r', true); ?></pubDate>
+                </item>
+            <?php endwhile; ?>
+        </channel>
+    </rss>
+    <?php
+    // Restore original post data
+    wp_reset_postdata();
+}
+
+add_action('init', 'custom_rss_feed_init');
 // Parallax Shortcode
 function parallax_img($atts)
 {
@@ -503,7 +526,7 @@ function px_shortcode_button()
 {
 
     if (wp_script_is("quicktags")) {
-?>
+    ?>
         <script type="text/javascript">
             function getSel() {
                 var txtarea = document.getElementById("content");
@@ -1026,7 +1049,6 @@ add_shortcode('close-parallax-content', 'parallax_close');
 add_action('init', 'mongabay_header_scripts'); // Add Custom Scripts to wp_head
 add_action('wp_enqueue_scripts', 'mongabay_conditional_scripts'); // Add Conditional Page Scripts
 add_action('wp_enqueue_scripts', 'mongabay_styles'); // Add Theme Stylesheet
-add_action('init', 'register_mongabay_menu'); // Add Blank Menu
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
 add_action('init', 'mongabay_pagination'); // Add our Pagination
 add_action('rest_api_init', 'rest_api_filter_add_filters'); // Add the filter parameter for API
@@ -1055,6 +1077,8 @@ remove_action('wp_head', 'print_emoji_detection_script', 7); //remove emoji scri
 remove_action('admin_print_scripts', 'print_emoji_detection_script'); //remove emoji script
 remove_action('wp_print_styles', 'print_emoji_styles'); //remove emoji style
 remove_action('admin_print_styles', 'print_emoji_styles'); //remove emoji style
+remove_all_actions('do_feed_rss2'); // Remove default RSS feed
+add_action('do_feed_rss2', 'mongabay_feed_rss2', 10, 1); // Custom RSS feed
 
 // Add Filters
 add_filter('body_class', 'add_slug_to_body_class'); // Add slug to body class (Starkers build)

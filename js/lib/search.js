@@ -762,7 +762,7 @@ async function fetchArticles(fromStart = false) {
     const hasTopics = selectedTopics.length > 0;
     const hasLocations = selectedLocations.length > 0;
 
-    resultsRSS.href = `${domain}/?feed=custom-rss-feed&s=${searchValue}&post_type=${selectedFormat}${
+    resultsRSS.href = `${domain}/?feed=custom&s=${searchValue}&post_type=${selectedFormat}${
       hasTopics ? `&topic=${selectedTopics.join(",")}` : ""
     }${hasLocations ? `&location=${selectedLocations.join(",")}` : ""}`;
     resultsRSS.target = "_blank";
