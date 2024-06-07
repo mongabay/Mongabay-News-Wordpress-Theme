@@ -55,6 +55,7 @@
     </div>
 </div>
 
-
+<?php tools_slider(); ?>
+<?php inspiration_banner(); ?>
 </div>
 <?php get_footer(); ?>

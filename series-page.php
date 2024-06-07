@@ -24,6 +24,7 @@ formats_slider(array('post'), 'Mongabay series gather stories with a lot in comm
   </div>
 </div>
 
+<?php tools_slider(); ?>
 <?php inspiration_banner(); ?>
 
 <?php get_footer(); ?>
