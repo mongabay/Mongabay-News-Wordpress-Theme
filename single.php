@@ -17,7 +17,7 @@
     ?>
     <div class="container in-column ph--40">
         <div id="headline">
-            <div class="article-headline">
+            <div class="article-headline pv--16">
                 <h1><?php the_title(); ?></h1>
             </div>
             <div class="single-article-meta">
@@ -32,12 +32,16 @@
                   </div>
                 </div>
                 <?php $comments_number = get_comments_number();
-                  if ( $comments_number > 1 ){
-                    printf( esc_html__('%s Comments', 'mongabay'), get_comments_number_text( '0', '1', '%' ) );
-                  }
-                  else {
-                    esc_html_e( '1 Comment', 'mongabay' );
-                  } ?>
+                    if ($comments_number){
+                        echo '<div class="meta-comments-count">';
+                          if ( $comments_number > 1 ){
+                            printf( esc_html__('%s Comments', 'mongabay'), $comments_number );
+                          }
+                          else {
+                            esc_html_e( '1 Comment', 'mongabay' );
+                          }
+                        echo '</div>';
+                    } ?>
                 <div class="social">
                    <?php get_template_part('partials/section', 'social'); ?>
                 </div>
@@ -108,23 +112,26 @@
                         <?php mongabay_sanitized_content($post_id);?>
                         <div id="single-article-footer">
                             <div id="single-article-meta">
-                                <div class="about-editor-translator">
+                                <div class="about-editor-translator pv--40">
                                     <div class="section-title gap--16">
                                         <h4><?php _e( 'Credits ', 'mongabay' ); ?> </h4>
                                         <div class="divider"></div>
-                                    </div>                                   
-                                  <div class="author-avatar">
-                                    <?php $author_avatar = get_avatar( get_the_author_meta( 'ID' ), 32 ); ?>
-                                      <?php if($author_avatar){ echo $author_avatar; 
-                                        } else { echo '<span class="meta-author-circle"></span>';
-                                        } ?>
-                                  </div>
-                                  <div class="author-info">
-                                    <span>
-                                        <?php the_author_posts_link(); ?> 
-                                        <?php _e( 'Contributor ', 'mongabay' ); ?>  
-                                    </span>
-                                  </div>
+                                    </div>
+                                    <div class="editor-translator-list grid--3">
+                                        <div class="about-contributor">
+                                          <div class="author-avatar">
+                                            <?php $author_avatar = get_avatar( get_the_author_meta( 'ID' ), 32 ); ?>
+                                              <?php if($author_avatar){ echo $author_avatar; 
+                                                } else { echo '<span class="meta-author-circle"></span>';
+                                                } ?>
+                                          </div>
+                                          <div class="author-info">
+                                            <?php the_author_posts_link(); ?>
+                                            <span> 
+                                                <?php _e( 'Contributor ', 'mongabay' ); ?>  
+                                            </span>
+                                          </div>
+                                        </div>
                                 
                             <?php
                                 if ($translated_adapted == 'adapted' || $translated_adapted == 'translated' ) {
@@ -142,7 +149,7 @@
                                         $translator_adaptor_id = $translator_adaptor['term_id'];
 
                                         $adaptor_avatar = get_term_meta($translator_adaptor_id,'cover_image_url',true);
-
+                                        echo '<div class="about-adaptor">';
                                         echo '<div class="author-avatar">';
                                         if (!empty($adaptor_avatar)) {
                                             echo '<img src="' . esc_url($adaptor_avatar) . '" alt="Cover Image">';
@@ -152,15 +159,22 @@
                                         echo '</div>';
                                         echo '<div class="author-info">';
                                         echo '<a href="'.home_url( '/' ).'by/'. $translator_adaptor_slug .'">'. $translator_adaptor_name .'</a>';
-                                        _e( $string_title ,'mongabay');
-                                        echo '</div>';
+                                        echo '<span>' . _e( $string_title ,'mongabay') . '</span>';
+                                        echo '</div></div>';
                                 }
                             ?>
+                                    </div><!-- /editor-translator-list -->
                                 </div><!-- /about-editor-translator -->
-                                <div id="single-article-tags">
-                                    <?php echo get_the_term_list( $post_id, 'topic', '', ', ' ); ?><br><BR>             
-                                    <?php echo get_the_term_list( $post_id, 'location', '', ', ' ); ?><br><BR>
-                                    <?php echo get_the_term_list( $post_id, 'entity', '', ', ' ); ?> 
+                                <div id="single-article-tags" class="pv--40">
+                                    <div class="section-title gap--16">
+                                        <h4><?php _e( 'Topics ', 'mongabay' ); ?> </h4>
+                                        <div class="divider"></div>
+                                    </div>
+                                    <div class="tags-list">
+                                        <?php echo get_the_term_list( $post_id, 'topic', '', ', ' ); ?>             
+                                        <?php echo get_the_term_list( $post_id, 'location', '', ', ' ); ?>
+                                        <?php echo get_the_term_list( $post_id, 'entity', '', ', ' ); ?>
+                                    </div>
                                 </div>
                                 
                                 
