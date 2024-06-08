@@ -393,12 +393,16 @@ function mongabay_query_var($vars)
 
 
 // Customize RSS feed
+remove_all_actions('do_feed_rss2'); // Remove default RSS feed
+
 function mongabay_feed_rss2()
 {
 
     $rss_template = get_template_directory() . '/custom-code/feed-rss2.php';
     load_template($rss_template);
 }
+
+add_action('do_feed_rss2', 'mongabay_feed_rss2', 10, 1); // Custom RSS feed
 
 function custom_rss_feed_init()
 {
@@ -447,25 +451,34 @@ function custom_rss_feed_callback()
         $post_type = 'post';
     }
 
+    $tax_query = array('relation' => 'OR');
+
+    if (!empty($topics)) {
+        $tax_query[] = array(
+            'taxonomy' => 'topic',
+            'field' => 'slug',
+            'terms' => $topics,
+        );
+    }
+
+    if (!empty($locations)) {
+        $tax_query[] = array(
+            'taxonomy' => 'location',
+            'field' => 'slug',
+            'terms' => $locations,
+        );
+    }
+
     // Custom query arguments
     $args = array(
         'post_type' => $post_type,
         'posts_per_page' => 10,
         's' => $search_term,
-        'tax_query' => array(
-            'relation' => 'OR',
-            array(
-                'taxonomy' => 'topic',
-                'field' => 'slug',
-                'terms' => $topics,
-            ),
-            array(
-                'taxonomy' => 'location',
-                'field' => 'slug',
-                'terms' => $locations,
-            ),
-        ),
     );
+
+    if (!empty($topics) || !empty($locations)) {
+        $args['tax_query'] = $tax_query;
+    }
 
     $query = new WP_Query($args);
 
@@ -497,7 +510,6 @@ function custom_rss_feed_callback()
     wp_reset_postdata();
 }
 
-add_action('init', 'custom_rss_feed_init');
 // Parallax Shortcode
 function parallax_img($atts)
 {
@@ -1059,6 +1071,7 @@ add_action('admin_menu', 'mongabay_remove_custom_fields'); // Remove custom fiel
 add_action('admin_print_footer_scripts', 'px_shortcode_button'); // Add parallax button
 add_action('admin_print_footer_scripts', 'open_close_px_content'); // Add parallax button
 add_action('template_redirect', 'mongabay_featured'); // Redirect template if content is Featured
+add_action('init', 'custom_rss_feed_init'); // Add custom RSS feed
 
 // Remove Actions
 remove_action('wp_head', 'feed_links_extra', 3); // Display the links to the extra feeds such as category feeds
@@ -1077,8 +1090,6 @@ remove_action('wp_head', 'print_emoji_detection_script', 7); //remove emoji scri
 remove_action('admin_print_scripts', 'print_emoji_detection_script'); //remove emoji script
 remove_action('wp_print_styles', 'print_emoji_styles'); //remove emoji style
 remove_action('admin_print_styles', 'print_emoji_styles'); //remove emoji style
-remove_all_actions('do_feed_rss2'); // Remove default RSS feed
-add_action('do_feed_rss2', 'mongabay_feed_rss2', 10, 1); // Custom RSS feed
 
 // Add Filters
 add_filter('body_class', 'add_slug_to_body_class'); // Add slug to body class (Starkers build)
