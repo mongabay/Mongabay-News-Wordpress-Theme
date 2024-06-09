@@ -960,6 +960,12 @@ ul.main-menu:not(.off-canvas) li a.active:before {
   top: 50%;
   transform: translate(-50%, -50%);
   border: none;
+  background: var(--theme-white);
+  color: var(--theme-body);
+}
+
+.dark-mode #share-dialog {
+  background: var(--theme-black);
 }
 
 #share-dialog .close {
@@ -968,6 +974,7 @@ ul.main-menu:not(.off-canvas) li a.active:before {
   right: 0;
   padding: var(--spacing-3);
   cursor: pointer;
+  color: var(--theme-secondary);
 }
 
 #share-dialog a:not(.close) {
@@ -991,6 +998,10 @@ ul.main-menu:not(.off-canvas) li a.active:before {
   font-size: 1rem;
 }
 
+.dark-mode #share-dialog a span {
+  border-color: var(--theme-secondary);
+}
+
 ::backdrop {
   background: rgba(0, 0, 0, 0.6);
 }
@@ -999,6 +1010,7 @@ ul.main-menu:not(.off-canvas) li a.active:before {
   font-size: var(--font-m);
   font-weight: 400;
   font-family: "Lora";
+  color: var(--theme-body);
 }
 
 #share-dialog label {
@@ -1018,8 +1030,17 @@ ul.main-menu:not(.off-canvas) li a.active:before {
   white-space: nowrap;
 }
 
+.dark-mode #share-dialog input {
+  border: 1px solid var(--theme-secondary);
+  background: var(--theme-black);
+}
+
 #share-dialog .share-dialog-link {
   position: relative;
+}
+
+#share-dialog .icon-share svg {
+  fill: var(--theme-body);
 }
 
 #share-dialog .icon-share-copy {
@@ -1027,6 +1048,10 @@ ul.main-menu:not(.off-canvas) li a.active:before {
   right: var(--spacing-3);
   top: 40px;
   cursor: pointer;
+}
+
+#share-dialog .icon-share-copy svg {
+  stroke: var(--theme-secondary);
 }
 
 /* Search page */
