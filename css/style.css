@@ -7,6 +7,7 @@
   --accent-green: #cbefb6;
   --theme-secondary: #0f362e;
   --theme-soft-gray: rgba(0, 0, 0, 0.05);
+  --theme-muted: #878787;
   --spacing-1: 4px;
   --spacing-2: 6px;
   --spacing-3: 8px;
@@ -15,15 +16,16 @@
   --spacing-6: 30px;
   --spacing-7: 32px;
   --spacing-8: 36px;
-  --spacing-9: 42px;
+  --spacing-9: 40px;
+  --spacing-10: 42px;
   --rounded: 8px;
-  --font-xxl: 3.5rem;
-  --font-xl: 3rem;
-  --font-l: 2.5rem;
-  --font-m: 2rem;
-  --font-sm: 1.5rem;
-  --font-s: 1rem;
   --font-xs: 0.8rem;
+  --font-s: 1rem;
+  --font-sm: 1.5rem;
+  --font-m: 2rem;
+  --font-l: 2.5rem;
+  --font-xl: 3rem;
+  --font-xxl: 3.5rem;
 }
 
 html,
@@ -951,6 +953,82 @@ ul.main-menu:not(.off-canvas) li a.active:before {
 .podcast--player .podcast-embed {
 }
 
+/* Sharing modal */
+#share-dialog {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+}
+
+#share-dialog .close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: var(--spacing-3);
+  cursor: pointer;
+}
+
+#share-dialog a:not(.close) {
+  color: var(--theme-body);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-4);
+}
+
+#share-dialog a span {
+  border-width: 1px;
+  border-color: var(--theme-soft-gray);
+  border-style: solid;
+  border-radius: 100%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+::backdrop {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+#share-dialog h1 {
+  font-size: var(--font-m);
+  font-weight: 400;
+  font-family: "Lora";
+}
+
+#share-dialog label {
+  font-size: var(--font-s);
+  font-weight: 600;
+}
+
+#share-dialog input {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: var(--spacing-1);
+  color: var(--theme-muted);
+  padding: var(--spacing-3);
+  font-size: var(--font-s);
+  padding-right: var(--spacing-10);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#share-dialog .share-dialog-link {
+  position: relative;
+}
+
+#share-dialog .icon-share-copy {
+  position: absolute;
+  right: var(--spacing-3);
+  top: 40px;
+  cursor: pointer;
+}
+
 /* Search page */
 .search #content {
   max-width: 100%;
@@ -1217,7 +1295,7 @@ input:focus-visible {
 
 .search #default h1,
 .search #no-results h1 {
-  font-family: Lora;
+  font-family: "Lora";
   font-size: 48px;
   font-style: normal;
   font-weight: 400;
