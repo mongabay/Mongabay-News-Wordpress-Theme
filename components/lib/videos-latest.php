@@ -10,34 +10,6 @@ function videos_latest()
   $counter = 0;
   $query = new WP_Query($args);
 
-  function render_item($is_featured)
-  { ?>
-    <div class="article--container">
-      <a href="<?php the_permalink(); ?>">
-        <div class="featured-image">
-          <?php the_post_thumbnail('large'); ?>
-          <div class="article--container-headline">
-            <div class="title headline gap--8 text-center">
-              <h1><?php the_title(); ?></h1>
-              <?php if ($is_featured) { ?>
-                <div class="meta">
-                  <span class="byline"><?php echo getPostBylines(get_the_ID()); ?></span>
-                  <span class="date"><?php the_time('j F Y'); ?></span>
-                </div>
-              <?php } ?>
-            </div>
-            <?php if (!$is_featured) { ?>
-              <div class="meta">
-                <span class="byline"><?php echo getPostBylines(get_the_ID()); ?></span>
-                <span class="date"><?php the_time('j F Y'); ?></span>
-              </div>
-            <?php } ?>
-          </div>
-        </div>
-      </a>
-    </div>
-  <? }
-
   if ($query->have_posts()) { ?>
     <div class="container gap--20 grid--2">
       <?php
@@ -55,7 +27,8 @@ function videos_latest()
           $first_column .= '<div class="container in-column gap--40">';
           $first_column .= '
           <div class="article--container">
-          <a href="' . get_the_permalink() . '">
+          <a href="' . get_the_permalink() . '">'
+            . get_icon(get_the_ID()) . '
             <div class="featured-image">' . get_the_post_thumbnail(get_the_ID(), 'medium') . '
               <div class="article--container-headline">
                 <div class="title headline gap--8 text-center">
@@ -79,7 +52,7 @@ function videos_latest()
           $first_grid .= '
           <div class="article--container">
             <a href="' . get_the_permalink() . '">
-              <div class="featured-image">' . get_the_post_thumbnail(get_the_ID(), 'medium') . '</div>
+              <div class="featured-image">' . get_icon(get_the_ID()) . get_the_post_thumbnail(get_the_ID(), 'medium') . '</div>
               <div class="title headline gap--8">
                 <h3>' . get_the_title() . '</h3>
               </div>
@@ -95,7 +68,7 @@ function videos_latest()
           $first_grid .= '
           <div class="article--container">
             <a href="' . get_the_permalink() . '">
-              <div class="featured-image">' . get_the_post_thumbnail(get_the_ID(), 'medium') . '</div>
+              <div class="featured-image">' . get_icon(get_the_ID()) . get_the_post_thumbnail(get_the_ID(), 'medium') . '</div>
               <div class="title headline gap--8">
                 <h3>' . get_the_title() . '</h3>
               </div>
@@ -116,7 +89,7 @@ function videos_latest()
           $second_grid .= '
           <div class="article--container">
             <a href="' . get_the_permalink() . '">
-              <div class="featured-image">' . get_the_post_thumbnail(get_the_ID(), 'medium') . '</div>
+              <div class="featured-image">' . get_icon(get_the_ID()) . get_the_post_thumbnail(get_the_ID(), 'medium') . '</div>
               <div class="title headline gap--8">
                 <h3>' . get_the_title() . '</h3>
               </div>
@@ -130,7 +103,7 @@ function videos_latest()
 
         if ($counter === 5) {
           $second_grid .= '
-          <div class="banner gap--20 accent pv--20">
+          <div class="banner gap--20 accent ph--20 pv--20">
           <div class="inner">
             <div class="title">
               <h1>We are nonprofit</h1>
@@ -147,7 +120,7 @@ function videos_latest()
           $second_column .= '
           <div class="article--container">
             <a href="' . get_the_permalink() . '">
-              <div class="featured-image">' . get_the_post_thumbnail(get_the_ID(), 'medium') . '
+              <div class="featured-image">' . get_icon(get_the_ID()) . get_the_post_thumbnail(get_the_ID(), 'medium') . '
                 <div class="article--container-headline">
                   <div class="title headline gap--8 text-center">
                     <h1>' . get_the_title() . '</h1>
