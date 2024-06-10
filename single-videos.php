@@ -15,8 +15,6 @@
   ?>
   <div class="container in-column ph--40">
     <?php article_headline(); ?>
-
-    <div class="container full-width pv--40">
       <?php if (!empty($video_url)) : ?>
         <div class="container">
           <?php

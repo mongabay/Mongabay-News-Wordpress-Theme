@@ -81,7 +81,7 @@ function social_share()
   $whatsapp = '<a class="whatsapp" href="' . $whatsappURL . '" target="_blank"><span class="icon-share">' . $icon_whatsapp . '</span>Whatsapp</a>';
   $email = '<a class="email" href="javascript:emailArticle()"><span class="icon-share">' . $icon_email . '</span>Email</a>';
 
-  echo '<a id="share-article" class="theme--button simple" href="#" title="Share ' . $post_title . '">';
+  echo '<a id="share-article" class="theme--button simple secondary" href="#" title="Share ' . $post_title . '">';
   _e('Share', 'mongabay');
   echo ' ' . $type . '</a>'; ?>
 
