@@ -592,9 +592,9 @@ ul.main-menu:not(.off-canvas) li a.active:before {
   justify-content: center;
 }
 
-.featured-image .post-icon svg {
-  fill: var(--brand-color);
-  stroke: var(--brand-color);
+.featured-image .post-icon span {
+  color: var(--brand-color);
+  font-size: .8rem;
 }
 
 .article--container .featured-image.full-height img {
