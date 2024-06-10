@@ -1176,14 +1176,14 @@ ul.main-menu:not(.off-canvas) li a.active:before {
 }
 
 .search-input-wrapper button:after {
-  content: "\e804";
+  content: "\e803";
   cursor: pointer;
   font-size: 10px;
   font-family: "fontello";
 }
 
 .search .tax-item-wrapper button:after {
-  content: "\e804";
+  content: "\e803";
   margin-left: 6px;
   cursor: pointer;
   font-size: 10px;
@@ -1369,7 +1369,7 @@ input:focus-visible {
 }
 
 #list-view:before {
-  content: "\e803";
+  content: "\e80d";
   font-family: "fontello";
   color: var(--brand-color);
   font-size: 16px;
@@ -1395,7 +1395,7 @@ input:focus-visible {
 
 #results-view-toggles button.active:last-child:before,
 #results-view-toggles button.active:last-child:before {
-  content: "\e807";
+  content: "\e805";
   border-radius: 24px;
   background-color: var(--brand-color);
   padding: 13px;
@@ -1408,7 +1408,7 @@ input:focus-visible {
 }
 
 #results-view-toggles button:last-child:before {
-  content: "\e807";
+  content: "\e805";
   border-radius: 24px;
   background-color: transparent;
   padding: 10px;
@@ -1546,7 +1546,7 @@ input:focus-visible {
 }
 
 .list-view .post-meta:after {
-  content: "\e802";
+  content: "\e80f";
   font-family: "fontello";
   text-align: right;
   font-size: 16px;
