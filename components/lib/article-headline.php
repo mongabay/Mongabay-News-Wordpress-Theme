@@ -5,9 +5,9 @@ function article_headline()
   $byline_terms = wp_get_post_terms($post_id, 'byline');
   $avatar = get_term_meta($byline_terms[0]->term_id, 'cover_image_url', true);
 ?>
-  <div class="article-headline">
+  <div class="container in-column gap--16 article-headline">
     <h1><?php the_title(); ?></h1>
-    <div class="container in-column single-article-meta">
+    <div class="container in-column full-width single-article-meta">
       <div class="about-author">
         <div class="author-avatar">
           <?php if ($avatar) {
