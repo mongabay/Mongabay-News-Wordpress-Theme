@@ -8,7 +8,7 @@ function series_articles_listing()
 
   $argsTracking = array(
     'post_type' => 'post',
-    'posts_per_page' => 3,
+    'posts_per_page' => 4,
     'cache_results' => true,
     // TODO change number to 4
     // 'tax_query' => array(
@@ -30,9 +30,10 @@ function series_articles_listing()
           <h3><?php _e('Forest tracker', 'mongabay'); ?></h3>
           <div id="series-slider">
             <div class="article--container slider slider-series">
-              <?php while ($queryTracking->have_posts()) {
+              <?php $count = 0;
+              while ($queryTracking->have_posts()) {
                 $queryTracking->the_post(); ?>
-                <div class="article--container">
+                <div class="article--slide <?php echo ($count == 0) ? 'expanded' : 'collapsed'; ?>">
                   <a href="<?php the_permalink(); ?>">
                     <div class="featured-image">
                       <?php the_post_thumbnail('large'); ?>
@@ -48,7 +49,8 @@ function series_articles_listing()
                     </div>
                   </a>
                 </div>
-              <?php } ?>
+              <?php $count++;
+              } ?>
             </div>
           </div>
           <div id="series--description-container" class="gap--20">
@@ -70,8 +72,54 @@ function series_articles_listing()
       </div>
     </div>
   <?php } ?>
-  <?php
-  $post_counter = 0;
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+    let articles = document.querySelectorAll(".article--slide");
+    let currentIndex = 0;
+    let autoSlideInterval;
+    const slideIntervalTime = 5000;
+
+    function showNextArticle(nextIndex) {
+        articles[currentIndex].classList.remove("expanded");
+        articles[currentIndex].classList.add("collapsed");
+
+        currentIndex = nextIndex;
+
+        articles[currentIndex].classList.remove("collapsed");
+        articles[currentIndex].classList.add("expanded");
+    }
+
+    function startAutoSlide() {
+        autoSlideInterval = setInterval(() => {
+            showNextArticle((currentIndex + 1) % articles.length);
+        }, slideIntervalTime);
+    }
+
+    function stopAutoSlide() {
+        clearInterval(autoSlideInterval);
+    }
+
+    articles.forEach((article, index) => {
+        article.addEventListener("click", (event) => {
+            if (!article.classList.contains("expanded")) {
+                showNextArticle(index);
+                event.preventDefault();
+            } else {
+                window.location.href = article.querySelector("a").href;
+            }
+        });
+
+        article.addEventListener("mouseenter", stopAutoSlide);
+        article.addEventListener("mouseleave", startAutoSlide);
+    });
+
+    articles[currentIndex].classList.add("expanded");
+
+    startAutoSlide();
+    });
+    </script>
+  
+  <?php $post_counter = 0;
 
   foreach ($series as $name) {
     $argsSeries = array(
