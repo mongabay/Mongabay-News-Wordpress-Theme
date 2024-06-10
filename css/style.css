@@ -1716,7 +1716,6 @@ input:focus-visible {
 
 .single .meta-comments-count, 
 .single .social {
-  background: var(--theme-accent);
   height: 32px;
   padding: var(--spacing-1) var(--spacing-5);
   justify-content: center;
