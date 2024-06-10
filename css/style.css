@@ -145,7 +145,8 @@ p {
   gap: 32px;
 }
 .gap--40 {
-  gap: 40px;
+  /* gap: 40px; */
+  gap: clamp(20px, 5vw + 1px, 40px);
 }
 
 .gap--80 {
@@ -193,8 +194,10 @@ p {
   padding-bottom: 30px;
 }
 .pv--40 {
-  padding-top: 40px;
-  padding-bottom: 40px;
+  /* padding-top: 40px; */
+  padding-top: clamp(20px, 5vw + 1px, 40px);
+  /* padding-bottom: 40px; */
+  padding-bottom: clamp(20px, 5vw + 1px, 40px);
 }
 .pv--56 {
   padding-top: 56px;
@@ -217,8 +220,10 @@ p {
   padding-right: 20px;
 }
 .ph--40 {
-  padding-left: 40px;
-  padding-right: 40px;
+  /* padding-left: 40px; */
+  padding-left: clamp(20px, 5vw + 1px, 40px);
+  /* padding-right: 40px; */
+  padding-right: clamp(20px, 5vw + 1px, 40px);
 }
 .ph--56 {
   padding-left: 56px;
@@ -1377,11 +1382,17 @@ input:focus-visible {
   margin-bottom: 40px;
   text-align: center;
 }
+
 #results-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
+#results-header .theme--button {
+  margin: 0;
+}
+
 #list-view,
 #results-view-toggles button:last-child {
   font-size: 0;
@@ -1501,11 +1512,10 @@ input:focus-visible {
 
 .list-item h4 {
   font-family: "Lora" !important;
-  font-size: 18px;
+  color: var(--theme-body);
   font-style: normal;
   font-weight: 400;
-  line-height: 24px;
-  margin-top: 16px;
+  margin-top: var(--spacing-5);
 }
 
 .list-view .list-item h4 {
@@ -1537,13 +1547,12 @@ input:focus-visible {
 
 .search .post-meta {
   display: block;
-  font-family: "Open Sans";
-  font-size: 12px;
+  font-size: 1.1rem;
   font-style: normal;
   font-weight: 600;
-  line-height: 16px;
   text-transform: uppercase;
   color: var(--brand-color);
+  margin-top: var(--spacing-3);
 }
 
 .dark-skin .search .post-meta {
@@ -1973,6 +1982,9 @@ footer .grid--4 {
     flex-direction: column;
     padding: 20px;
   }
+  .container.content {
+    padding: 40px 20px;
+  }
   .menu-container {
     height: fit-content;
   }
@@ -2110,5 +2122,9 @@ footer .grid--4 {
   .article--slide.expanded {
     overflow: hidden;
     border-radius: var(--rounded);
+  }
+
+  .slick-slider {
+    height: 405px;
   }
 }

@@ -27,9 +27,11 @@ function videos_latest()
           $first_column .= '<div class="container in-column gap--40">';
           $first_column .= '
           <div class="article--container">
-          <a href="' . get_the_permalink() . '">'
-            . get_icon(get_the_ID()) . '
-            <div class="featured-image">' . get_the_post_thumbnail(get_the_ID(), 'medium') . '
+          <a href="' . get_the_permalink() . '">
+            <div class="featured-image">'
+            . get_icon(get_the_ID())
+            . get_the_post_thumbnail(get_the_ID(), 'medium')
+            . '
               <div class="article--container-headline">
                 <div class="title headline gap--8 text-center">
                   <h1>' . get_the_title() . '</h1>
