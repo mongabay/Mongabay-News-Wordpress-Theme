@@ -16,7 +16,7 @@
   <div class="container in-column ph--40">
     <?php article_headline(); ?>
       <?php if (!empty($video_url)) : ?>
-        <div class="container">
+        <div class="container full-width video pv--24">
           <?php
           echo do_shortcode($wp_embed->autoembed(pods('videos', get_the_ID())->field('video_source')));
           ?>
