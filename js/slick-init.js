@@ -7,20 +7,6 @@ function resizeSlider() {
     .css("height", slickHeight + "px");
 }
 
-jQuery(".slider-series")
-  .slick({
-    infinite: true,
-    centerMode: true,
-    centerPadding: "40px",
-    arrows: false,
-    slidesToShow: 1,
-    dots: false,
-    lazyLoad: "ondemand",
-  })
-  .on("setPosition", function () {
-    resizeSlider();
-  });
-
 jQuery(".slider-featured")
   .slick({
     infinite: true,
