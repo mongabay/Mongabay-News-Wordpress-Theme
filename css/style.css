@@ -361,7 +361,7 @@ ul.main-menu.nav-desktop.off-canvas li {
 }
 
 ul.main-menu.nav-desktop.off-canvas li a {
-  font-size: 3em;
+  font-size: clamp(1.8rem, 3vw + 1rem, 3rem);
   font-family: "Lora";
   color: var(--theme-accent);
 }
@@ -1967,9 +1967,42 @@ footer .grid--4 {
   header .container {
     flex-direction: row;
   }
+  #off-canvas .container {
+    flex-direction: column-reverse;
+  }
   ul.main-menu.nav-desktop {
     display: none;
   }
+  #off-canvas ul.main-menu.nav-desktop.off-canvas {
+    column-count: 1;
+    display: inline-flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: flex-start;
+    align-items: flex-start;
+    gap: 0;
+  }
+  #off-canvas ul.global-languages,
+  #off-canvas ul.global-languages li {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    gap: var(--spacing-3);
+    flex-direction: row;
+  }
+
+  #off-canvas ul.global-languages li a {
+    color: var(--theme-muted);
+    font-weight: 400;
+  }
+  #off-canvas .icon-cancel {
+    position: absolute;
+    right: var(--spacing-5);
+    top: var(--spacing-5);
+    color: var(--theme-accent);
+  }
+
   .latest-news {
     order: 3;
     gap: 20px;

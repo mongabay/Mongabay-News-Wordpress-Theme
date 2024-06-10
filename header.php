@@ -61,51 +61,52 @@ if (wp_is_mobile()) {
 <body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
 	<header class="header" role="banner">
-		<?php
-		if (wp_is_mobile()) {
-		} else {
-
-		?>
-			<div class="container in-row space-between align-center full-height ph--40 pv--20">
-				<div class="branding">
-					<a href="<?php echo home_url(); ?>" class="theme-light"><img src="<?php echo get_template_directory_uri(); ?>/img/logo/mongabay_logo_news_black.svg" /></a><a href="" class="theme-dark"><img src="<?php echo get_template_directory_uri(); ?>/img/logo/mongabay_logo_news_white.svg" /></a>
-				</div>
-				<div class="menu-container align-center">
-					<ul class="main-menu nav-desktop">
-						<li><a href="<?php echo home_url(); ?>/feature" class="<?php echo is_page('Feature') ? 'active' : ''; ?>"><?php _e('Feature', 'mongabay'); ?></a></li>
-						<li><a href=" <?php echo home_url(); ?>/videos" class="<?php echo is_page('Videos') ? 'active' : ''; ?>"><?php _e('Videos', 'mongabay'); ?></a></li>
-						<li><a href="<?php echo home_url(); ?>/podcasts" class="<?php echo is_page('Podcasts') ? 'active' : ''; ?>"><?php _e('Podcasts', 'mongabay'); ?></a></li>
-						<li><a href=" <?php echo home_url(); ?>/series" class="<?php echo is_page('Series') ? 'active' : ''; ?>"><?php _e('Series', 'mongabay'); ?></a></li>
-						<li><a href="<?php echo home_url(); ?>/articles" class="<?php echo is_page('Articles') ? 'active' : ''; ?>"><?php _e('Articles', 'mongabay'); ?></a></li>
-						<li><a href="<?php echo home_url(); ?>/shorts" class="<?php echo is_page('Shorts') ? 'active' : ''; ?>"><?php _e('Shorts', 'mongabay'); ?></a></li>
-					</ul>
-					<a class=" theme--button primary simple md-hide" href=""><?php _e('Donate', 'mongabay'); ?></a>
-					<a id="theme-switch" class="icon icon-cog"></a>
-					<a id="site-search" href="<?php echo home_url(); ?>/?s="><span class="icon icon-search"></span></a>
-					<a id="secondary-menu"><span class="icon icon-menu"></span></a>
-				</div>
-				<div id="off-canvas">
-					<div class="container full-height in-column ph--40 pv--20 gap--20" style="justify-content: space-between">
-						<div class="global-nav gap--20">
-							<span class="icon icon-globe"></span>
-							<ul class="">
-								<li><a href="" class="active">English</a></li>
-								<li><a href="https://es.mongabay.com/">Español (Spanish)</a></li>
-								<li><a href="https://www.mongabay.co.id/">Bahasa Indonesia (Indonesian)</a></li>
-								<li><a href="https://brasil.mongabay.com/">Brasil (Portuguese)</a></li>
-								<li><a href="https://hindi.mongabay.com/">India (Hindi)</a></li>
-							</ul>
-							<span class="icon icon-cancel"></span>
-						</div>
-						<ul class="main-menu nav-desktop off-canvas">
-							<li><a href="<?php echo home_url(); ?>/videos"" class=""><?php _e('Videos', 'mongabay'); ?></a></li>
-							<li><a href=" <?php echo home_url(); ?>/podcasts""><?php _e('Podcasts', 'mongabay'); ?></a></li>
-							<li><a href="<?php echo home_url(); ?>/articles"><?php _e('Articles', 'mongabay'); ?></a></li>
-							<li><a href="<?php echo home_url(); ?>/shorts""><?php _e('Short News', 'mongabay'); ?></a></li>
-							<li><a href=" <?php echo home_url(); ?>/feature""><?php _e('Feature Stories', 'mongabay'); ?></a></li>
-							<li><a href="<?php echo home_url(); ?>/">The Latest</a></li>
-							<li><a href="">Explore All</a></li>
+		<div class="container in-row space-between align-center full-height ph--40 pv--20">
+			<div class="branding">
+				<a href="<?php echo home_url(); ?>" class="theme-light"><img src="<?php echo get_template_directory_uri(); ?>/img/logo/mongabay_logo_news_black.svg" /></a><a href="" class="theme-dark"><img src="<?php echo get_template_directory_uri(); ?>/img/logo/mongabay_logo_news_white.svg" /></a>
+			</div>
+			<div class="menu-container align-center">
+				<ul class="main-menu nav-desktop">
+					<li><a href="<?php echo home_url(); ?>/feature" class="<?php echo is_page('Feature') ? 'active' : ''; ?>"><?php _e('Feature', 'mongabay'); ?></a></li>
+					<li><a href=" <?php echo home_url(); ?>/videos" class="<?php echo is_page('Videos') ? 'active' : ''; ?>"><?php _e('Videos', 'mongabay'); ?></a></li>
+					<li><a href="<?php echo home_url(); ?>/podcasts" class="<?php echo is_page('Podcasts') ? 'active' : ''; ?>"><?php _e('Podcasts', 'mongabay'); ?></a></li>
+					<li><a href=" <?php echo home_url(); ?>/series" class="<?php echo is_page('Series') ? 'active' : ''; ?>"><?php _e('Series', 'mongabay'); ?></a></li>
+					<li><a href="<?php echo home_url(); ?>/articles" class="<?php echo is_page('Articles') ? 'active' : ''; ?>"><?php _e('Articles', 'mongabay'); ?></a></li>
+					<li><a href="<?php echo home_url(); ?>/shorts" class="<?php echo is_page('Shorts') ? 'active' : ''; ?>"><?php _e('Shorts', 'mongabay'); ?></a></li>
+				</ul>
+				<a class="theme--button primary simple md-hide" href=""><?php _e('Donate', 'mongabay'); ?></a>
+				<a id="theme-switch" class="icon icon-cog"></a>
+				<a id="site-search" href="<?php echo home_url(); ?>/?s="><span class="icon icon-search"></span></a>
+				<a id="secondary-menu"><span class="icon icon-menu"></span></a>
+			</div>
+			<div id="off-canvas">
+				<?php if (wp_is_mobile()) { ?>
+					<span class="icon icon-cancel"></span>
+				<?php } ?>
+				<div class="container in-column ph--40 pv--20 gap--20 <?php echo !wp_is_mobile() ? 'full-height' : ''; ?>" style="justify-content: space-between">
+					<div class="global-nav gap--20">
+						<span class="icon icon-globe md-hide"></span>
+						<ul class="global-languages">
+							<li><a href="" class="active">English</a></li>
+							<li><a href="https://es.mongabay.com/">Español (Spanish)</a></li>
+							<li><a href="https://www.mongabay.co.id/">Bahasa Indonesia (Indonesian)</a></li>
+							<li><a href="https://brasil.mongabay.com/">Brasil (Portuguese)</a></li>
+							<li><a href="https://hindi.mongabay.com/">India (Hindi)</a></li>
 						</ul>
+						<?php if (!wp_is_mobile()) { ?>
+							<span class="icon icon-cancel"></span>
+						<?php } ?>
+					</div>
+					<ul class="main-menu nav-desktop off-canvas">
+						<li><a href="<?php echo home_url(); ?>/videos"" class=""><?php _e('Videos', 'mongabay'); ?></a></li>
+							<li><a href=" <?php echo home_url(); ?>/podcasts""><?php _e('Podcasts', 'mongabay'); ?></a></li>
+						<li><a href="<?php echo home_url(); ?>/articles"><?php _e('Articles', 'mongabay'); ?></a></li>
+						<li><a href="<?php echo home_url(); ?>/shorts""><?php _e('Short News', 'mongabay'); ?></a></li>
+							<li><a href=" <?php echo home_url(); ?>/feature""><?php _e('Feature Stories', 'mongabay'); ?></a></li>
+						<li><a href="<?php echo home_url(); ?>/">The Latest</a></li>
+						<li><a href="">Explore All</a></li>
+					</ul>
+					<?php if (!wp_is_mobile()) { ?>
 						<div class="footer gap--20 grid--5">
 							<ul class="footer-links">
 								<li><a href="https://www.mongabay.com/about/"><?php _e('About', 'mongabay'); ?></a></li>
@@ -133,10 +134,10 @@ if (wp_is_mobile()) {
 								<li><a href="https://tropicalforestnetwork.org/"><?php _e('Tropical Forest Network', 'mongabay'); ?></a></li>
 							</ul>
 						</div>
-					</div>
+					<?php } ?>
 				</div>
 			</div>
-		<?php } ?>
+		</div>
 		<script>
 			const isDarkMode = window.localStorage.getItem("mongabay-theme");
 
