@@ -41,6 +41,7 @@ function articles_listing(
         <a href="<?php the_permalink(); ?>">
           <?php if (($show_all_thumbnails || $post_counter == 1) && has_post_thumbnail()) { ?>
             <div class="featured-image">
+              <?php echo get_icon(get_the_ID()); ?>
               <?php the_post_thumbnail($thumbnail_size) ?>
             </div>
           <?php }; ?>

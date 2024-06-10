@@ -52,6 +52,7 @@ function topics_section(string $headline, array $topics, array $extra_params = [
             <div class="article--container">
               <a href="<?php the_permalink(); ?>">
                 <div class="featured-image">
+                  <?php echo get_icon(get_the_ID()); ?>
                   <?php the_post_thumbnail('medium'); ?>
                 </div>
                 <div class="title headline">
