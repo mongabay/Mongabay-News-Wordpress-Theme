@@ -882,6 +882,7 @@ ul.main-menu:not(.off-canvas) li a.active:before {
   border-radius: 40px;
   display: inline-block;
   padding: 0 1rem;
+  color: var(--theme-secondary);
 }
 
 .section--highlight h1 span.outlined,
@@ -1942,8 +1943,7 @@ footer .grid--4 {
 }
 
 @media (min-width: 769px) {
-
-  .article--container {
+  #series-slider .article--container {
     flex-flow: initial;
   }
 
@@ -2096,7 +2096,7 @@ footer .grid--4 {
     height: 50vh;
   }
 
-  #series-slider .article--container .featured-image, 
+  #series-slider .article--container .featured-image,
   .article--slide.expanded {
     height: 400px;
   }
@@ -2106,7 +2106,8 @@ footer .grid--4 {
     height: 52px !important;
   }
 
-  .article--slide.collapsed, .article--slide.expanded{
+  .article--slide.collapsed,
+  .article--slide.expanded {
     overflow: hidden;
     border-radius: var(--rounded);
   }
