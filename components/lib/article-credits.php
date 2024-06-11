@@ -1,7 +1,6 @@
 <?php
-function article_credits()
+function article_credits(int $post_id)
 {
-  $post_id = get_the_ID();
   $translator = get_post_meta($post_id, "translated_by", true);
   $adaptor = get_post_meta($post_id, "adapted_by", true);
   $translated_adapted = get_post_meta($post_id, "translated_adapted", true);
