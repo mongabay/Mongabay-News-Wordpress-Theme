@@ -535,6 +535,10 @@ ul.main-menu:not(.off-canvas) li a.active:before {
   justify-content: center;
 }
 
+.container.wrapped {
+  flex-wrap: wrap;
+}
+
 .container.content {
   padding: 40px 40px 80px 40px;
 }
