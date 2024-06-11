@@ -20,7 +20,7 @@ function article_bulletpoints(int $post_id)
     }
     echo '</ul>';
     if ($mog_count > 2) {
-      echo '<button class="toggle-bulletpoints"><span>' . __('See All Key Ideas', 'mongabay') . '</span></button>';
+      echo '<button class="content-expander"><span>' . __('See All Key Ideas', 'mongabay') . '</span></button>';
     }
     echo '</div>';
   }
@@ -28,12 +28,12 @@ function article_bulletpoints(int $post_id)
   <script>
     (function($) {
       $(document).ready(function() {
-        $('.bulletpoints .toggle-bulletpoints').click(function() {
+        $('.bulletpoints .content-expander').click(function() {
           $(this).prev('ul').find('li:nth-child(n+3)').toggle();
           if ($(this).prev('ul').find('li:nth-child(n+3)').is(':visible')) {
-            $(this).addClass('bullets-visible');
+            $(this).addClass('visible');
           } else {
-            $(this).removeClass('bullets-visible');
+            $(this).removeClass('visible');
           }
         });
       });
