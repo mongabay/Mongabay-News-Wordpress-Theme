@@ -1804,6 +1804,12 @@ input:focus-visible {
   padding-top: 10px;
 }
 
+#single-article-tags {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 #single-article-tags a {
   margin: var(--spacing-3) var(--spacing-3) var(--spacing-3) 0;
   padding: var(--spacing-1) var(--spacing-4);
@@ -1811,6 +1817,7 @@ input:focus-visible {
   border: 1px solid var(--theme-body);
   font-size: 1rem;
   color: var(--theme-body);
+  text-wrap: nowrap;
 }
 
 #single-article-footer .author-info span {
