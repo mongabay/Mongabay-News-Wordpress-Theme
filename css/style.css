@@ -1689,7 +1689,7 @@ input:focus-visible {
 }
 
 .article-headline h1 {
-  font-size: var(--font-xl);
+  font-size: clamp(2rem, 3vw + 1rem, var(--font-xl));
   font-family: "Lora";
   font-weight: 400;
   margin: 0;
@@ -2067,7 +2067,9 @@ footer .grid--4 {
     top: var(--spacing-5);
     color: var(--theme-accent);
   }
-
+  .single .row > #main {
+    padding: 0;
+  }
   .latest-news {
     order: 3;
     gap: 20px;
@@ -2152,5 +2154,12 @@ footer .grid--4 {
 
   .slick-slider {
     height: 405px;
+  }
+
+  #article-taxonomies {
+    position: relative;
+    width: 100%;
+    display: inline-flex;
+    flex-direction: row;
   }
 }
