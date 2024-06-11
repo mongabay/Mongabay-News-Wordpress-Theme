@@ -23,3 +23,4 @@ include(get_template_directory() . '/components/lib/social-share.php');
 include(get_template_directory() . '/components/lib/series-latest.php');
 include(get_template_directory() . '/components/lib/post-icon.php');
 include(get_template_directory() . '/components/lib/article-headline.php');
+include(get_template_directory() . '/components/lib/article-credits.php');
