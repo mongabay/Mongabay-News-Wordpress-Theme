@@ -23,7 +23,7 @@ get_header(); ?>
 			<h4><?php _e('Top stories', 'mongabay'); ?></h4>
 			<div class="divider"></div>
 		</div>
-		<?php featured_articles_listing('post', 5, 0, 'medium', 2, true, null); ?>
+		<?php featured_articles_listing('post', 5, 0, 'medium', 2, true, null, null); ?>
 	</div>
 	<div class="column--20 gap--40 pv--40 latest-banners">
 		<?php banner('', 'Stay updated', 'Delivering news and inspiration from nature’s frontline.', 'Newsletter', 'outlined ph--20 pv--20', ''); ?>
@@ -45,7 +45,7 @@ get_header(); ?>
 	</div>
 
 	<div class="container pv--40">
-		<?php featured_articles_listing('videos', 5, 0, 'medium', 4, false, null); ?>
+		<?php featured_articles_listing('videos', 5, 0, 'medium', 4, false, null, null); ?>
 	</div>
 
 	<div class="container full-width pv--40">

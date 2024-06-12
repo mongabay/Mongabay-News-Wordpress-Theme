@@ -16,7 +16,7 @@ get_header(); ?>
       <h4><?php _e('Top stories', 'mongabay'); ?></h4>
       <div class="divider"></div>
     </div>
-    <?php featured_articles_listing('post', 10, 0, 'medium', 3, true, null); ?>
+    <?php featured_articles_listing('post', 10, 0, 'medium', 3, true, null, null); ?>
   </div>
   <div class="column--20 latest-news">
     <div class="section-title gap--8">
@@ -28,12 +28,10 @@ get_header(); ?>
   </div>
 </div>
 
-<div class="container ph--40 pv--40">
+<div class="container in-column ph--40 pv--40">
   <?php banner('', 'We are nonprofit', 'Help us tell stories of biodiversity loss, climate change and more.', 'Donate', 'accent ph--20 pv--56 full-width', 'extra-large'); ?>
+  <?php topics_section('Explore articles by topic such as', array('climate', 'oceans')); ?>
 </div>
-
-<?php topics_section('Explore articles by topic such as', array('climate', 'oceans')); ?>
-
 <?php featured_articles_slider(4, 5); ?>
 
 <div class="container ph--40 pv--40">

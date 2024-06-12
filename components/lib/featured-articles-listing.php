@@ -5,8 +5,9 @@ function featured_articles_listing(
   int $offset,
   string $thumbnail_size,
   int $items_in_row,
-  ?bool $show_featured,
-  ?string $taxonomy
+  ?bool $show_featured = false,
+  ?string $taxonomy = null,
+  ?string $taxonomy_term = null
 ) {
   $args = array(
     'posts_per_page' => $posts_per_page,
@@ -27,10 +28,11 @@ function featured_articles_listing(
   }
 
   if ($taxonomy) {
-    $$args['tax_query'] = array(
+    $args['tax_query'] = array(
       array(
         'taxonomy' => $taxonomy,
         'field' => 'slug',
+        'terms' => $taxonomy_term,
       )
     );
   }
@@ -52,16 +54,27 @@ function featured_articles_listing(
             <div class="featured-image">
               <?php the_post_thumbnail($thumbnail_size) ?>
               <div class="img-overlay"></div>
+              <?php if (!$taxonomy) { ?>
+                <div class="title headline <?php echo $post_type !== 'post' ? 'text-center' : ''; ?>">
+                  <h1><?php the_title(); ?></h1>
+                  <?php if ($post_type !== 'post') { ?>
+                    <div class="meta">
+                      <span class="byline"><?php echo getPostBylines(get_the_ID()); ?></span>
+                      <span class="date"><?php the_time('j F Y'); ?></span>
+                    </div>
+                  <?php } ?>
+                </div>
+              <?php } ?>
+            </div>
+            <?php if ($taxonomy) { ?>
               <div class="title headline <?php echo $post_type !== 'post' ? 'text-center' : ''; ?>">
                 <h1><?php the_title(); ?></h1>
-                <?php if ($post_type !== 'post') { ?>
-                  <div class="meta">
-                    <span class="byline"><?php echo getPostBylines(get_the_ID()); ?></span>
-                    <span class="date"><?php the_time('j F Y'); ?></span>
-                  </div>
-                <?php } ?>
+                <div class="meta">
+                  <span class="byline"><?php echo getPostBylines(get_the_ID()); ?></span>
+                  <span class="date"><?php the_time('j F Y'); ?></span>
+                </div>
               </div>
-            </div>
+            <?php } ?>
           </a>
         </div>
       <?php } else {
