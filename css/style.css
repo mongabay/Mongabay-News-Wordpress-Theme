@@ -78,6 +78,7 @@ body {
 a {
   color: var(--brand-color);
   text-decoration: none;
+  cursor: pointer;
 }
 
 p {
@@ -537,6 +538,10 @@ ul.main-menu:not(.off-canvas) li a.active:before {
 
 .container.wrapped {
   flex-wrap: wrap;
+}
+
+.container.full-width {
+  max-width: 100%!important;
 }
 
 .container.content {

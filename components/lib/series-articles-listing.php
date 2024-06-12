@@ -1,5 +1,5 @@
 <?php
-function series_articles_listing()
+function series_articles_listing(bool $show_headline)
 {
   // TODO decide which series are in the list and how to manage a list with more than 3
   $series = (array('oceans', 'amazon-conservation', 'land-rights-and-extractives'));
@@ -51,9 +51,16 @@ function series_articles_listing()
     if ($serieQuery->have_posts()) { ?>
       <div class="section--highlight slider full-width">
         <div class="container in-column gap--40 pv--40">
-          <h1>Mongabay <span class="icon icon-series-icon">specials</span> gather stories with a lot in common.</h1>
+          <?php if ($show_headline) { ?>
+            <h1>Mongabay <span class="icon icon-series-icon">specials</span> gather stories with a lot in common.</h1>
+          <?php } else { ?>
+            <h1><?php echo $single_serie_name; ?></h1>
+          <?php } ?>
+
           <div class="in-column gap--20">
-            <h3><?php echo $single_serie_name; ?></h3>
+            <?php if ($show_headline) { ?>
+              <h3><?php echo $single_serie_name; ?></h3>
+            <?php } ?>
             <div id="series-slider">
               <div class="article--container slider slider-series">
                 <?php $count = 0;
@@ -145,6 +152,11 @@ function series_articles_listing()
       });
     </script>
     <?php }
+
+  if (!$show_headline) {
+    return;
+  }
+
   $post_counter = 0;
 
   foreach ($series as $name) {
