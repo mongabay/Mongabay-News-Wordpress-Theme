@@ -901,6 +901,7 @@ ul.main-menu:not(.off-canvas) li a.active:before {
 
 .section--highlight h1 span.outlined {
   border: 2px solid;
+  line-height: 1.3;
 }
 
 .section--highlight h1 span.outlined a {
@@ -920,6 +921,23 @@ ul.main-menu:not(.off-canvas) li a.active:before {
 
 .section--highlight h1 span.outlined span.icon {
   font-size: 2rem;
+}
+
+.section--highlight h1 span.outlined:hover {
+  background: var(--theme-black);
+}
+
+.section--highlight h1 span.outlined:hover a {
+  color: var(--theme-white);
+}
+
+.dark-mode .section--highlight h1 span.outlined:hover {
+  background: var(--theme-white);
+  border: none;
+}
+
+.dark-mode .section--highlight h1 span.outlined:hover a {
+  color: var(--theme-black);
 }
 
 .section--highlight h2 {

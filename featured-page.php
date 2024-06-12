@@ -19,10 +19,10 @@ formats_slider(array('post', 'custom-story', 'videos', 'podcats', 'specials'), '
   <?php
   $extra_params = array(
     'link_copy' => 'all stories',
-    'link_url' => '',
+    'link_url' => home_url() . '/?s=&format=post',
   );
 
-  topics_section('Explore features by topic such as', array('climate', 'oceans'), $extra_params);
+  topics_section('Explore custom stories about', array('climate', 'oceans'), $extra_params);
   ?>
 
 
