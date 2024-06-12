@@ -32,6 +32,9 @@
                             <?php mongabay_sanitized_content($post_id); ?>
                             <div id="single-article-footer">
                                 <?php article_credits($post_id); ?>
+                                <div id="single-article-tags">
+                                    <?php article_terms($post_id); ?>
+                                </div>
                             </div>
                             <span class="article-comments"><a href=""></a></span>
                             <?php mongabay_comments(); ?>
