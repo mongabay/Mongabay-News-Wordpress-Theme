@@ -16,6 +16,8 @@ formats_slider(array('post'), 'Mongabay series gather stories with a lot in comm
 ?>
 <div class="container section--highlight ph--40 pv--40 gap--20 full-width in-column">
   <?php
+  series_articles_listing(false);
+
   $series_latest = (array('oceans', 'amazon-conservation', 'land-rights-and-extractives', 'indigenous-peoples-and-conservation', 'amazon-conservation', 'oceans', 'oceans', 'oceans'));
   series_latest($series_latest);
   ?>

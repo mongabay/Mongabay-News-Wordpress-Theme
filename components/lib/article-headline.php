@@ -3,7 +3,11 @@ function article_headline()
 {
   $post_id = get_the_ID();
   $byline_terms = wp_get_post_terms($post_id, 'byline');
-  $avatar = get_term_meta($byline_terms[0]->term_id, 'cover_image_url', true);
+  $avatar = null;
+
+  if (!empty($byline_terms)) {
+    $avatar = get_term_meta($byline_terms[0]->term_id, 'cover_image_url', true);
+  }
 ?>
   <div class="container in-column gap--16 article-headline">
     <h1><?php the_title(); ?></h1>
