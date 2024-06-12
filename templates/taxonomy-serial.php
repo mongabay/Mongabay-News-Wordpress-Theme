@@ -1,7 +1,7 @@
 <?php
 
 /**
- * The template for displaying taxonomy topics
+ * The template for displaying single taxonomy serial
  *
  */
 

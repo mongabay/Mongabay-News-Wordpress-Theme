@@ -177,7 +177,7 @@ function series_articles_listing()
               $serial_name = $serial_obj->name; ?>
 
               <div class="article--container">
-                <a href="<?php echo home_url() . '/list/' . $name; ?>">
+                <a href="<?php echo home_url() . '/series/' . $name; ?>">
                   <div class="featured-image">
                     <?php the_post_thumbnail('medium'); ?>
                     <div class="article--container-headline">
