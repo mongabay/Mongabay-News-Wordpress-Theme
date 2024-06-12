@@ -25,22 +25,26 @@
                 </div>
             <?php endif; ?>
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-                    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                        <?php article_bulletpoints($post_id); ?>
+                    <div class="inner">
+                        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                            <?php article_bulletpoints($post_id); ?>
 
-                        <?php mongabay_sanitized_content($post_id); ?>
-                        <div id="single-article-footer">
-                            <?php article_credits($post_id); ?>
-                        </div>
-                        <span class="article-comments"><a href=""></a></span>
-                        <?php mongabay_comments(); ?>
+                            <?php mongabay_sanitized_content($post_id); ?>
+                            <div id="single-article-footer">
+                                <?php article_credits($post_id); ?>
+                            </div>
+                            <span class="article-comments"><a href=""></a></span>
+                            <?php mongabay_comments(); ?>
 
-                    </article>
+                        </article>
+                    </div>
                 <?php endwhile; ?>
             <?php else : ?>
-                <article>
-                    <h1><?php _e('Sorry, nothing to display.', 'mongabay'); ?></h1>
-                </article>
+                <div class="inner">
+                    <article>
+                        <h1><?php _e('Sorry, nothing to display.', 'mongabay'); ?></h1>
+                    </article>
+                </div>
             <?php endif; ?>
         </div>
     </div>

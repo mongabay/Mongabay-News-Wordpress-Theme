@@ -1,5 +1,5 @@
 <footer class="footer" role="contentinfo">
-	<div class="container ph--40 pv--40 full-width in-column gap--40">
+	<div class="container ph--40 pv--40 in-column gap--40">
 		<div class="branding">
 			<a href="<?php echo home_url(); ?>" class="theme-light"><img src="<?php echo get_template_directory_uri(); ?>/img/logo/mongabay_logo_news_black.svg" /></a><a href="" class="theme-dark"><img src="<?php echo get_template_directory_uri(); ?>/img/logo/mongabay_logo_news_white.svg" /></a>
 		</div>

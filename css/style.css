@@ -541,7 +541,7 @@ ul.main-menu:not(.off-canvas) li a.active:before {
 }
 
 .container.full-width {
-  max-width: 100%!important;
+  max-width: 100% !important;
 }
 
 .container.content {
@@ -1776,6 +1776,22 @@ input:focus-visible {
 
 .single .bulletpoints {
   margin-bottom: 80px;
+}
+
+.single .inner {
+  width: 100%;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.single figure {
+  margin: 40px 0;
+}
+
+.single figcaption {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: var(--spacing-3) 0;
 }
 
 .content-expander {
