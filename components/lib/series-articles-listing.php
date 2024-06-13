@@ -50,7 +50,7 @@ function series_articles_listing(bool $show_headline)
 
     if ($serieQuery->have_posts()) { ?>
       <div class="section--highlight slider full-width">
-        <div class="container in-column gap--40 pv--40">
+        <div class="container full-width in-column gap--40 pv--40">
           <?php if ($show_headline) { ?>
             <h1>Mongabay <span class="icon icon-series-icon">specials</span> gather stories with a lot in common.</h1>
           <?php } else { ?>

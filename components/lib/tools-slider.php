@@ -2,9 +2,9 @@
 function tools_slider()
 { ?>
 
-  <div id="tools-container" class="container section--highlight full-width in-column pv--40 gap--80">
+  <div id="tools-container" class="container section--highlight in-column pv--40 gap--80">
     <div class="container full-width ph--40">
-      <h1>Interested in other Mongabay tools?</h1>
+      <h1><?php _e('Interested in other Mongabay tools?', 'mongabay'); ?></h1>
     </div>
     <div class="container in-row gap--80 tools-top">
       <div class="tools-item">

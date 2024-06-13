@@ -106,7 +106,7 @@ function mongabay_mega_query($query)
             $query->set('tax_query', $tax_query);
         }
 
-        if ($section == 'list' && !empty($firstvar) && !empty($secondvar)) {
+        if ($section === 'list' && !empty($firstvar) && !empty($secondvar) && $firstvar !== 'specials') {
 
             $item1 = get_terms(array('topic', 'location'), array('slug' => $firstvar));
             $item2 = get_terms(array('topic', 'location'), array('slug' => $secondvar));
@@ -226,7 +226,7 @@ function mongabay_conditional_scripts()
         wp_enqueue_script('iframeresize');
     }
 
-    if (is_front_page() || is_page(['articles', 'series', 'videos', 'podcasts', 'feature'])) {
+    if (is_front_page() || is_page(['articles', 'specials', 'videos', 'podcasts', 'feature'])) {
         wp_register_style('slick-main', get_template_directory_uri() . '/js/lib/slick/slick.css', array(), '1.8.1', 'all');
         wp_enqueue_style('slick-main');
         wp_register_style('slick-theme', get_template_directory_uri() . '/js/lib/slick/slick-theme.css', array(), '1.8.1', 'all');
@@ -912,15 +912,15 @@ function post_edit_screen()
 }
 
 // Require featured image before publishing an article
-if (($GLOBALS['pagenow'] == 'post-new.php' || $pagenow == 'post.php') && 'post' === get_post_type($_GET['post'])) :
+if ($GLOBALS['pagenow'] == 'post-new.php' || $pagenow == 'post.php') :
     add_filter('wp_insert_post_data', function ($data, $postarr) {
         $post_id = $postarr['ID'];
         $post_status = $data['post_status'];
-        var_dump($postarr);
 
-        $original_post_status = $postarr['original_post_status'];
-        if ($post_id && 'publish' === $post_status && 'publish' !== $original_post_status) {
+        // $original_post_status = $postarr['original_post_status'];
+        if ($post_id && 'publish' === $post_status) {
             $post_type = get_post_type($post_id);
+
             if (post_type_supports($post_type, 'thumbnail') && !has_post_thumbnail($post_id)) {
                 $data['post_status'] = 'draft';
             }
