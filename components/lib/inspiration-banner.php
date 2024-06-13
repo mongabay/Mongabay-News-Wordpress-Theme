@@ -27,13 +27,13 @@ function inspiration_banner()
 
         if ($type === 'videos') {
           $has_videos = true;
-          $first_column .= '<div class="item-container first">' . get_the_post_thumbnail(get_the_ID(), 'medium') . '<div class="item-title">Videos</div></div>';
+          $first_column .= '<div class="item-container first"><a href="' . get_permalink() . '">' . get_the_post_thumbnail(get_the_ID(), 'medium') . '</a><div class="item-title"><span class="icon-play-icon"></span><a href="' . home_url() . '/?s=&format=videos">Videos</a></div></div>';
         } elseif ($type === 'podcasts') {
           $has_podcasts = true;
-          $first_column .= '<div class="item-container">' . get_the_post_thumbnail(get_the_ID(), 'medium') . '<div class="item-title podcast">Podcasts</div></div>';
+          $first_column .= '<div class="item-container"><a href="' . get_permalink() . '">' . get_the_post_thumbnail(get_the_ID(), 'medium') . '</a><div class="item-title podcast"><span class="icon-audio-icon"></span><a href="' . home_url() . '/?s=&format=podcasts">Podcasts</a></div></div>';
         } elseif ($type === 'specials') {
           $has_articles = true;
-          $second_column .= '<div class="item-container second">' . get_the_post_thumbnail(get_the_ID(), 'medium') . '<div class="item-title articles">Articles</div></div>';
+          $second_column .= '<div class="item-container second"><a href="' . get_permalink() . '">' . get_the_post_thumbnail(get_the_ID(), 'medium') . '</a><div class="item-title articles"><span class="icon-articles-icon"></span><a href="' . home_url() . '/?s=&format=specialsArticles">Articles</a></div></div>';
         }
       };
 
