@@ -528,6 +528,7 @@ ul.main-menu:not(.off-canvas) li a.active:before {
 
 .container {
   display: flex;
+  width: 100%;
   max-width: 1280px;
   margin: 0 auto;
 }
@@ -666,6 +667,7 @@ ul.main-menu:not(.off-canvas) li a.active:before {
 
 .article--container .meta,
 .article--container .meta a {
+  font-family: "Open Sans";
   color: var(--brand-color);
   text-transform: uppercase;
   font-size: var(--font-xs);
@@ -808,7 +810,7 @@ ul.main-menu:not(.off-canvas) li a.active:before {
 .section--inspiration .title h1 {
   font-family: "Lora";
   font-weight: 400;
-  font-size: 4, 875rem;
+  font-size: 4.875rem;
   line-height: 115%;
 }
 

@@ -7,15 +7,15 @@
 	$secondvar = get_query_var('nc2');
 
 	$line_end = '';
-	if ($section == 'list' && !empty($firstvar) && empty($secondvar)) {
 
+	if ($section === 'list' && !empty($firstvar) && empty($secondvar) && $firstvar !== 'specials') {
 		$item1 = get_terms(array('topic', 'location'), array('slug' => $firstvar));
 		$title = $item1[0]->name;
-		//$description = $item1[0] -> description;
+		$description = $item1[0]->description;
 		$line_end = ' News';
 	}
 
-	if ($section == 'list' && !empty($firstvar) && !empty($secondvar)) {
+	if ($section === 'list' && !empty($firstvar) && !empty($secondvar) && $firstvar !== 'specials') {
 		$item1 = get_terms(array('topic', 'location'), array('slug' => $firstvar));
 		$item2 = get_terms(array('topic', 'location'), array('slug' => $secondvar));
 		$title1 = $item1[0]->name;
@@ -24,27 +24,20 @@
 		$line_end = ' News';
 	}
 	?>
-	<?php
-	global $wp_query;
-	$taxonomy_obj = $wp_query->tax_query;
-	$terms = $taxonomy_obj->queried_terms;
-	?>
 
-	<?php if (!empty($terms)) {
-		if (is_tax('serial')) {
-			// Redirect to taxonomy-serial.php
-			get_template_part('templates/taxonomy', 'serial');
-			exit;
-		} else {
-			// Redirect to taxonomy-custom.php
-			get_template_part('templates/taxonomy', 'custom');
-			exit;
-		}
+	<?php
+	if (is_tax('serial')) {
+		get_template_part('templates/taxonomy', 'specials');
+		exit;
+	} else {
+		get_template_part('templates/taxonomy', 'custom');
+		exit;
 	}
 	?>
 	<div class="row">
 		<div id="main" class="col-lg-8">
 			<div class="tag-line">
+				<?php var_dump($firstvar); ?>
 				<h1><?php echo $title; ?><?php _e($line_end, 'mongabay'); ?></h1>
 				<p><?php echo $description; ?></p>
 			</div>
@@ -52,7 +45,8 @@
 			<section>
 
 				<div class="post-wrapper-news">
-					<?php get_template_part('loop'); ?>
+					<?php // get_template_part('loop'); 
+					?>
 				</div>
 				<div class="counter">
 					<?php mongabay_pagination(); ?>

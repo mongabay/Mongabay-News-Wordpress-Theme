@@ -34,9 +34,13 @@ $tax_description = $queried_object->description;
 	</div>
 </div>
 
-<div class="container in-column pv--40">
+<div class="container in-column pv--40 gap--40">
+	<div class="container in-row full-width section--headline" style="align-items: center; justify-content: space-between;">
+		<h1><?php _e('Latest Specials', 'mongabay'); ?></h1>
+	</div>
+	<?php articles_listing_in_columns('post', 6, 0, 'medium', 'serial', true); ?>
+
 	<?php banner('', 'We are nonprofit', 'Help us tell stories of biodiversity loss, climate change and more.', 'Donate', 'accent ph--20 pv--56 full-width', 'extra-large'); ?>
-	<?php topics_section('Explore articles by topic such as', array('climate', 'oceans')); ?>
 </div>
 <?php featured_articles_slider(4, 5); ?>
 

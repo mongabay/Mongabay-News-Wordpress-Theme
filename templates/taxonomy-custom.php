@@ -13,6 +13,9 @@ get_header(); ?>
 	<?php if (have_posts()) { ?>
 		<?php
 		$title = get_query_var('term');
+		$term = get_query_var('list');
+		$first = get_query_var('nc1');
+		var_dump($first === 'series');
 		//get query object
 		global $wp_query;
 		$taxonomies = $wp_query->tax_query;
