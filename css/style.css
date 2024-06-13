@@ -808,7 +808,7 @@ ul.main-menu:not(.off-canvas) li a.active:before {
 .section--inspiration .title h1 {
   font-family: "Lora";
   font-weight: 400;
-  font-size: 4, 875rem;
+  font-size: 4.875rem;
   line-height: 115%;
 }
 
@@ -843,12 +843,18 @@ ul.main-menu:not(.off-canvas) li a.active:before {
 .section--inspiration .item-container .item-title {
   background: rgba(7, 245, 197, 0.078);
   padding: 10px 24px;
+  border-radius: 40px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  line-height: 70%;
+}
+
+.section--inspiration .item-container .item-title a {
+  color: var(--accent-green);
   font-size: var(--font-l);
   text-transform: lowercase;
   font-family: "Lora";
-  border-radius: 40px;
-  position: absolute;
-  color: var(--accent-green);
 }
 
 .section--inspiration .item-container:nth-child(1) .item-title {
@@ -856,14 +862,24 @@ ul.main-menu:not(.off-canvas) li a.active:before {
   bottom: -15%;
 }
 
-.section--inspiration .column--60 > .item-container:last-child img {
-  height: 296px;
-  width: 296px;
-}
-
 .section--inspiration .item-container:nth-child(2) .item-title {
   left: -30%;
   bottom: 10%;
+}
+
+.section--inspiration .column--60 > .item-container:last-child img {
+  height: 145px;
+  width: 145px;
+}
+
+.section--inspiration .column--60 > .item-container.first img {
+  width: 54px;
+  height: 54px;
+}
+
+.section--inspiration .column--40 > .item-container.second img {
+  width: 107px;
+  height: 65px;
 }
 
 .section--highlight h1,
@@ -2040,6 +2056,21 @@ footer .grid--4 {
 
   #series-slider {
     height: 580px;
+  }
+  
+  .section--inspiration .column--60 > .item-container:last-child img {
+	height: 296px;
+	width: 296px;
+  }
+  
+  .section--inspiration .column--60 > .item-container.first img {
+    width: 110px;
+    height: 110px;
+  }
+
+  .section--inspiration .column--40 > .item-container.second img {
+    width: 218px;
+    height: 133px;
   }
 }
 
