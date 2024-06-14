@@ -49,7 +49,7 @@ function featured_articles_listing(
 ?>
 
       <?php if ($post_counter == 1 && has_post_thumbnail()) { ?>
-        <div class="article--container">
+        <div class="article--container full-width">
           <a href="<?php the_permalink(); ?>">
             <div class="featured-image">
               <?php the_post_thumbnail($thumbnail_size) ?>
