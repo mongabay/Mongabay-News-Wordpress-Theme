@@ -89,7 +89,7 @@ get_header(); ?>
 				});
 			</script>
 		</div>
-		<div class="counter">
+		<div class="pagination container pv--40 centered gap--20">
 			<?php mongabay_pagination(); ?>
 		</div>
 	<?php } else {

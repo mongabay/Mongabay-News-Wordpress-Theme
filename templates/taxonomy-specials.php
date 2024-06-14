@@ -101,7 +101,7 @@ $counter = 0;
       </div>
     <?php endwhile; ?>
   </div>
-  <div class="container full-width centered">
+  <div class="pagination container pv--40 centered gap--20">
     <?php mongabay_pagination(); ?>
   </div>
   <div class="container section--highlight full-width pv-40">

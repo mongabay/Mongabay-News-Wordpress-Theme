@@ -50,7 +50,7 @@
 					<?php // get_template_part('loop'); 
 					?>
 				</div>
-				<div class="counter">
+				<div class="pagination container pv--40 centered gap--20">
 					<?php mongabay_pagination(); ?>
 				</div>
 			</section>
