@@ -12,7 +12,7 @@ function article_headline()
   <div class="container in-column gap--16 article-headline">
     <h1><?php the_title(); ?></h1>
     <div class="container in-column full-width single-article-meta">
-      <div class="about-author">
+      <div class="about-author gap--16">
         <div class="author-avatar">
           <?php if ($avatar) {
             echo '<img src="' . $avatar . '" alt="cover image" style="max-width:48px;height:auto;">';

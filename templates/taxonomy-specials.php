@@ -9,31 +9,17 @@ defined('ABSPATH') || exit; // Exit if accessed directly
 
 get_header(); ?>
 <?php
-// $term = get_query_var('nc2');
-// $title = ucfirst(str_replace('-', ' ', $term));
-
 global $wp_query;
-
-// $wp_query->set('post_type', 'post');
 $wp_query->set('posts_per_page', 20);
 $wp_query->set('paged', get_query_var('paged') ? get_query_var('paged') : 1);
-// $wp_query->set('tax_query', array(
-//   array(
-//     'taxonomy' => 'serial',
-//     'field' => 'slug',
-//     'terms' => $term
-//   )
-// ));
 
-// $wp_query->get_posts();
-// $total = $wp_query->found_posts;
 $term = get_query_var('term');
 $description = get_term_by('slug', $term, 'serial')->description;
 $title = get_term_by('slug', $term, 'serial')->name;
 $counter = 0;
 ?>
 <div class="container in-column ph--40 gap--40">
-  <div class="container full-width in-column section--highlight text-center">
+  <div class="container full-width in-column section--highlight text-center gap--20 pv--40">
     <h1><?php echo $title; ?> <?php _e(' News', 'mongabay'); ?></h1>
     <?php if ($description) { ?>
       <p><?php echo $description; ?></p>
