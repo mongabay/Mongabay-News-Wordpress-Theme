@@ -37,7 +37,6 @@
 	<div class="row">
 		<div id="main" class="col-lg-8">
 			<div class="tag-line">
-				<?php var_dump($firstvar); ?>
 				<h1><?php echo $title; ?><?php _e($line_end, 'mongabay'); ?></h1>
 				<p><?php echo $description; ?></p>
 			</div>
