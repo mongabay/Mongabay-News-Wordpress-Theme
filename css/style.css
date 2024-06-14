@@ -549,6 +549,10 @@ ul.main-menu:not(.off-canvas) li a.active:before {
   padding: 40px 40px 80px 40px;
 }
 
+.container.relative {
+  position: relative;
+}
+
 .section-title {
   display: grid;
   grid-template-columns: max-content 1fr;
@@ -1896,14 +1900,25 @@ input:focus-visible {
   width: 100%;
 }
 
-#article-taxonomies {
-  height: 150px;
+#article-taxonomies,
+#transcript {
   overflow: hidden;
   align-content: flex-start;
 }
 
-#article-taxonomies.visible {
-  height: max-content;
+#article-taxonomies {
+  min-height: 80px;
+}
+
+#transcript {
+  position: relative;
+  max-height: 450px;
+}
+
+#article-taxonomies.visible,
+#transcript.visible {
+  max-height: max-content;
+  overflow: visible;
 }
 
 #single-article-footer .author-info span {

@@ -9,7 +9,7 @@ function article_terms(int $post_id)
   echo get_the_term_list($post_id, 'location', '', '', '');
   echo get_the_term_list($post_id, 'entity', '', '', '');
   echo '</div>';
-  echo '<div id="expander-container" class="container full-width"><button class="content-expander"><span>';
+  echo '<div id="expander-container" class="tags container full-width"><button class="content-expander"><span>';
   _e('See Topics', 'mongabay');
   echo '</span></button></div>';
 ?>
@@ -19,12 +19,12 @@ function article_terms(int $post_id)
         const wrapperHeight = $('#article-taxonomies').height();
 
         if (wrapperHeight < 80) {
-          $('.content-expander').remove();
+          $('.tags .content-expander').remove();
 
           return;
         }
 
-        $('#expander-container .content-expander').click(function() {
+        $('#expander-container .tags .content-expander').click(function() {
           $('#article-taxonomies').toggleClass('visible');
           $(this).toggleClass('visible');
         });
