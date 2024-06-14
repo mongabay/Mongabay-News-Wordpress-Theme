@@ -44,7 +44,10 @@ get_header(); ?>
 		<?php podcasts_banner(); ?>
 	</div>
 
-	<div class="container pv--40">
+	<div class="container in-column pv--80 gap--40">
+		<div class="container section--highlight">
+			<h1>Explore engaging <span class="icon icon-play">videos</span> about pressing issues.</h1>
+		</div>
 		<?php featured_articles_listing('videos', 5, 0, 'medium', 4, false, null, null); ?>
 	</div>
 
@@ -60,7 +63,7 @@ get_header(); ?>
 <div class="container ph--40 pv--40 in-column">
 	<div class="section--highlight">
 		<div class="container gap--20 in-column">
-			<h1>Get quick glances with our brief <span>shorts</span></h1>
+			<h1>Get quick glances with our brief <span class="icon icon-shorts">shorts</span></h1>
 			<div class="grid--3 gap--40">
 				<?php articles_listing_condensed('post', 6, 0, false, 'medium', null); ?>
 			</div>
