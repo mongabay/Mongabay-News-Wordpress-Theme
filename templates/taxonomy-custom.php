@@ -15,8 +15,7 @@ get_header(); ?>
 		$title = get_query_var('term');
 		$term = get_query_var('list');
 		$first = get_query_var('nc1');
-		var_dump($first === 'series');
-		//get query object
+
 		global $wp_query;
 		$taxonomies = $wp_query->tax_query;
 		$topics = array();
@@ -90,7 +89,7 @@ get_header(); ?>
 				});
 			</script>
 		</div>
-		<div class="counter">
+		<div class="pagination container pv--40 centered gap--20">
 			<?php mongabay_pagination(); ?>
 		</div>
 	<?php } else {
