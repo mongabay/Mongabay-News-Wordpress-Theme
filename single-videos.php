@@ -31,20 +31,23 @@
 
   <div class="inner">
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-          <?php
-          echo '<div class="container full-width text-center">';
-          mongabay_sanitized_content($post_id);
-          echo '<a class="content-expander text-center"><span>' . __('Read full transcript', 'mongabay') . '</span></a>';
-          echo '</div>';
-          ?>
-
+        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> style="position: relative">
+          <div class="container in-column">
+            <div id="transcript">
+              <?php mongabay_sanitized_content($post_id); ?>
+            </div>
+            <div id="expander-container" class="container full-width">
+              <a class="content-expander text-center"><span><?php _e('Read full transcript', 'mongabay'); ?></span></a>
+            </div>
+          </div>
           <div id="single-article-footer">
             <?php article_credits($post_id); ?>
+            <div id="single-article-tags">
+              <?php article_terms($post_id); ?>
+            </div>
           </div>
           <span class="article-comments"><a href=""></a></span>
           <?php mongabay_comments(); ?>
-
         </article>
       <?php endwhile; ?>
     <?php else : ?>
@@ -52,6 +55,18 @@
         <h1><?php _e('Sorry, nothing to display.', 'mongabay'); ?></h1>
       </article>
     <?php endif; ?>
+    <script>
+      jQuery(document).ready(function() {
+        const wrapperHeight = jQuery('#transcript').height();
+        console.log({
+          wrapperHeight
+        })
+        jQuery('#expander-container .content-expander').click(function() {
+          jQuery('#transcript').toggleClass('visible');
+          jQuery(this).toggleClass('visible');
+        });
+      });
+    </script>
   </div>
 
   <div class="container ph--40 pv--40 in-column">
