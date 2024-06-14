@@ -151,7 +151,8 @@ p {
 }
 
 .gap--80 {
-  gap: 80px;
+  /* gap: 80px; */
+  gap: clamp(20px, 5vw + 1px, 80px);
 }
 
 /* Flex direction and distribution */
@@ -862,6 +863,16 @@ ul.main-menu:not(.off-canvas) li a.active:before {
   display: flex;
   align-items: center;
   line-height: 70%;
+  min-height: 70px;
+  backdrop-filter: blur(1px);
+}
+
+.section--inspiration .item-container .item-title span:before {
+  font-size: 1.6rem;
+}
+
+.dark-mode .section--inspiration .item-container .item-title span:before {
+  color: var(--accent-green);
 }
 
 .section--inspiration .item-container .item-title a {
@@ -1167,6 +1178,26 @@ ul.main-menu:not(.off-canvas) li a.active:before {
 
 #share-dialog .icon-share-copy svg {
   stroke: var(--theme-secondary);
+}
+
+/* Byline archive */
+.byline--overview.byline-avatar {
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.byline--overview.byline-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.byline--info h1 {
+  font-size: var(--font-xl);
+  font-family: "Lora";
+  font-weight: 400;
 }
 
 /* Search page */
@@ -2059,6 +2090,37 @@ input:focus-visible {
 
 .soliloquy-container .soliloquy-image {
   border-radius: var(--spacing-3) var(--spacing-3) 0 0;
+}
+
+/* Pagination */
+span.page-numbers.current,
+.pagination a.prev,
+.pagination a.next {
+  color: var(--brand-color);
+}
+
+span.page-numbers,
+.pagination a {
+  color: #c1c1c1;
+}
+
+a.prev.page-numbers,
+a.next.page-numbers {
+  font-size: 0;
+}
+
+a.prev.page-numbers:before,
+a.next.page-numbers:before {
+  font-family: "fontello";
+  font-size: 1rem;
+}
+
+a.prev.page-numbers:before {
+  content: "\e806";
+}
+
+a.next.page-numbers:before {
+  content: "\e802";
 }
 
 /* Footer */

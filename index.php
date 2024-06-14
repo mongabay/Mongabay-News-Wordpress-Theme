@@ -29,6 +29,9 @@
 	if (is_tax('serial')) {
 		get_template_part('templates/taxonomy', 'specials');
 		exit;
+	} else if (is_tax('byline')) {
+		get_template_part('templates/taxonomy', 'byline');
+		exit;
 	} else {
 		get_template_part('templates/taxonomy', 'custom');
 		exit;
