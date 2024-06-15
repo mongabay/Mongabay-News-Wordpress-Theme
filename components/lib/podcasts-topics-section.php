@@ -78,7 +78,8 @@ function podcasts_topics_section(string $headline, array $topics, array $extra_p
               <div class="podcast-embed">
                 <?php
                 global $wp_embed;
-                echo do_shortcode($wp_embed->autoembed(pods('podcasts', get_the_ID())->field('podcast_source')));
+                // echo do_shortcode($wp_embed->autoembed(pods('podcasts', get_the_ID())->field('podcast_source')));
+                echo do_shortcode('[iframe height="128" src="' . pods('podcasts', get_the_ID())->field('podcast_embed') . '"]');
                 ?>
               </div>
             </div>
