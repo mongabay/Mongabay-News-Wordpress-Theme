@@ -50,6 +50,10 @@ function related_articles_slider(int $post_id)
         <div class="related--slider-nav">
           <button class="prev"><span class="icon icon-left-open"></span></button>
           <button class="next active"><span class="icon icon-right-open"></span></button>
+          <div class="related--slider-dots">
+            <span class="slider-dot first active"></span>
+            <span class="slider-dot second"></span>
+          </div>
         </div>
       </div>
       <div class="related--slider-container in-column gap--20">
@@ -91,13 +95,16 @@ function related_articles_slider(int $post_id)
           scrollLeft: newScroll
         }, 500);
 
-        console.log(newScroll);
         if (newScroll < 0) {
           jQuery('.related--slider-nav button.prev').removeClass('active');
           jQuery('.related--slider-nav button.next').addClass('active');
+          jQuery('.related--slider-nav .slider-dot.first').addClass('active');
+          jQuery('.related--slider-nav .slider-dot.second').removeClass('active');
         } else {
           jQuery('.related--slider-nav button.next').removeClass('active');
           jQuery('.related--slider-nav button.prev').addClass('active');
+          jQuery('.related--slider-nav .slider-dot.first').removeClass('active');
+          jQuery('.related--slider-nav .slider-dot.second').addClass('active');
         }
       });
     </script>
