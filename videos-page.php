@@ -26,7 +26,7 @@ formats_slider(array('videos'), 'Explore video stories from nature’s frontline
     <?php videos_latest(); ?>
   </div>
 
-  <?php banner('', 'Stay updated', 'Delivering news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--20 pv--56 full-width', 'extra-large'); ?>
+  <?php banner('https://mongabay.us14.list-manage.com/subscribe?u=80161fe385606408293ae0e51&id=940652e1f4', 'Stay updated', 'Delivering news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--20 pv--56 full-width', 'extra-large'); ?>
 
   <div class="container full--width gap--40 in-column">
     <div class="grid--4 gap--20 repeat">

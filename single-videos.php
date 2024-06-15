@@ -83,7 +83,7 @@
         <a href="<?php home_url(); ?>/?s=&format=videos" class="theme--button primary"><?php _e('All videos', 'mongabay'); ?><span class="icon icon-right"></span></a>
       </div>
       <?php videos_latest(); ?>
-      <?php banner('', 'Stay updated', 'Delivering news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--20 pv--56 full-width', 'extra-large'); ?>
+      <?php banner('https://mongabay.us14.list-manage.com/subscribe?u=80161fe385606408293ae0e51&id=940652e1f4', 'Stay updated', 'Delivering news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--20 pv--56 full-width', 'extra-large'); ?>
     </div>
     <div class="grid--4 gap--20 repeat pv--40">
       <?php articles_listing('videos', 8, 0, true, 'medium', false, false, null); ?>
