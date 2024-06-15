@@ -35,7 +35,7 @@ get_header(); ?>
 <?php featured_articles_slider(4, 5); ?>
 
 <div class="container ph--40 pv--40">
-  <?php banner('', 'Stay updated', 'Delivering news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--20 pv--56 full-width', 'extra-large'); ?>
+  <?php banner('https://mongabay.us14.list-manage.com/subscribe?u=80161fe385606408293ae0e51&id=940652e1f4', 'Stay updated', 'Delivering news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--20 pv--56 full-width', 'extra-large'); ?>
 </div>
 
 <div class="section--highlight">

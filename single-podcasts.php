@@ -72,7 +72,7 @@
     </div>
     <div class="column--20 in-column gap--20">
       <?php banner('', 'We are nonprofit.', 'Help us tell stories of biodiversity loss, climate change & socio-environmental injustice.', 'Donate', 'accent full-width ph--20 pv--20', ''); ?>
-      <?php banner('', 'Stay updated', 'Delivering news and inspiration from nature’s frontline.', 'Newsletter', 'outlined ph--20 pv--20 full-width', ''); ?>
+      <?php banner('https://mongabay.us14.list-manage.com/subscribe?u=80161fe385606408293ae0e51&id=940652e1f4', 'Stay updated', 'Delivering news and inspiration from nature’s frontline.', 'Newsletter', 'outlined ph--20 pv--20 full-width', ''); ?>
     </div>
   </div>
 
@@ -104,7 +104,7 @@
     </div>
 
     <div class="container full-width pv--40">
-      <?php banner('', 'Stay updated', 'Delivering news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--20 pv--56 full-width', 'extra-large'); ?>
+      <?php banner('https://mongabay.us14.list-manage.com/subscribe?u=80161fe385606408293ae0e51&id=940652e1f4', 'Stay updated', 'Delivering news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--20 pv--56 full-width', 'extra-large'); ?>
     </div>
     <div class="container pv--40 gap--20 in-column">
       <div class="grid--4 gap--20 repeat">

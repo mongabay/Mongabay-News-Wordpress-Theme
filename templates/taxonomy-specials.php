@@ -70,7 +70,7 @@ $counter = 0;
       ?>
     </div>
     <div class="column--20 gap--40 latest-banners">
-      <?php banner('', 'Stay updated', 'Delivering news and inspiration from nature’s frontline.', 'Newsletter', 'full-width outlined ph--20', ''); ?>
+      <?php banner('https://mongabay.us14.list-manage.com/subscribe?u=80161fe385606408293ae0e51&id=940652e1f4', 'Stay updated', 'Delivering news and inspiration from nature’s frontline.', 'Newsletter', 'full-width outlined ph--20', ''); ?>
       <?php banner('', 'We are nonprofit', 'Help us tell stories of biodiversity loss, climate change and more.', 'Donate', 'accent ph--20 pv--20 full-width', ''); ?>
     </div>
   </div>
