@@ -14,21 +14,19 @@ function article_terms(int $post_id)
   echo '</span></button></div>';
 ?>
   <script>
-    (function($) {
-      $(document).ready(function() {
-        const wrapperHeight = $('#article-taxonomies').height();
+    jQuery(document).ready(function() {
+      const wrapperHeight = document.getElementById('article-taxonomies').scrollHeight;
 
-        if (wrapperHeight < 80) {
-          $('.tags .content-expander').remove();
+      if (wrapperHeight <= 130) {
+        jQuery('#expander-container').remove();
 
-          return;
-        }
+        return;
+      }
 
-        $('#expander-container .tags .content-expander').click(function() {
-          $('#article-taxonomies').toggleClass('visible');
-          $(this).toggleClass('visible');
-        });
+      jQuery('#expander-container.tags .content-expander').click(function() {
+        jQuery('#article-taxonomies').toggleClass('visible');
+        jQuery(this).toggleClass('visible');
       });
-    })(jQuery);
+    });
   </script>
 <?php }

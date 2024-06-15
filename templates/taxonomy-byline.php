@@ -15,7 +15,12 @@ $first = get_query_var('nc1');
 $byline = get_term_by('slug', $title, 'byline');
 $byline_name = $byline->name;
 $byline_description = $byline->description;
-
+$byline_id = $byline->term_id;
+$byline_email = get_term_meta($byline_id, 'email', true);
+$byline_web = get_term_meta($byline_id, 'web', true);
+$byline_x = get_term_meta($byline_id, 'authors_twitter_account', true);
+$byline_fb = get_term_meta($byline_id, 'authors_facebook_account', true);
+$byline_type = get_term_meta($byline_id, 'author_type', true);
 ?>
 
 <div class="container in-column in-row ph--40 pv--40 gap--80">
@@ -24,11 +29,37 @@ $byline_description = $byline->description;
       <?php echo get_avatar($byline->term_id); ?>
     </div>
   </div>
-  <div class="byline--info col--80">
+  <div class="container in-column byline--info col--80 gap--20">
     <h1 class=""><?php echo $byline_name; ?></h1>
     <?php if ($byline_description) { ?>
+      <div class="section-title gap--16">
+        <h4><?php _e('About', 'mongabay'); ?></h4>
+        <div class="divider"></div>
+      </div>
       <p><?php echo $byline_description; ?></p>
     <?php } ?>
+    <div class="container in-row gap--20">
+      <?php if ($byline_email) { ?>
+        <a href="mailto:<?php echo $byline_email; ?>">Email address</a>
+      <?php } ?>
+      <?php if ($byline_web) { ?>
+        <div class="col--50">
+          <a href="<?php echo $byline_web; ?>" target="_blank">Website</a>
+        </div>
+      <?php } ?>
+    </div>
+    <div class="container in-row gap--20">
+      <?php if ($byline_x) { ?>
+        <div class="col--50">
+          <a href="<?php echo $byline_x; ?>" target="_blank">X</a>
+        </div>
+      <?php } ?>
+      <?php if ($byline_fb) { ?>
+        <div class="col--50">
+          <a href="<?php echo $byline_fb; ?>" target="_blank">Facebook</a>
+        </div>
+      <?php } ?>
+    </div>
   </div>
 </div>
 <div class="container in-column ph--40 pv--40">
