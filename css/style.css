@@ -2188,6 +2188,26 @@ input:focus-visible {
   border-left: none;
 }
 
+span.slider-dot {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border: 1px solid var(--brand-color);
+  border-radius: 50%;
+}
+
+.related--slider-dots {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--spacing-3);
+  margin: 0 var(--spacing-5);
+}
+
+span.slider-dot.active {
+  background: var(--brand-color);
+}
+
 /* Pagination */
 span.page-numbers.current,
 .pagination a.prev,
