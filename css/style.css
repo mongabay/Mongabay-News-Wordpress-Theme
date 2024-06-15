@@ -93,6 +93,16 @@ p {
   height: 100%;
 }
 
+img.full-height {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+img.rounded {
+  border-radius: var(--rounded);
+}
+
 .headline,
 .headline h1,
 .headline h2,
@@ -234,9 +244,11 @@ p {
 
 /* Columns */
 .column--20,
+.column--30,
 .column--40,
 .column--50,
 .column--60,
+.column--70,
 .column--80,
 .column--100 {
   display: flex;
@@ -251,12 +263,20 @@ p {
   width: 40%;
 }
 
+.column--30 {
+  width: 30%;
+}
+
 .column--50 {
   width: 50%;
 }
 
 .column--60 {
   width: 60%;
+}
+
+.column--70 {
+  width: 70%;
 }
 
 .column--80 {
@@ -938,6 +958,7 @@ ul.main-menu:not(.off-canvas) li a.active:before {
   position: relative;
   color: var(--theme-secondary);
   padding: 0 1rem;
+  display: inline-block;
 }
 
 .section--highlight h1 span.icon {
@@ -1823,7 +1844,8 @@ input:focus-visible {
 
 .single .author-info a {
   display: block;
-  color: var(--theme-black);
+  color: var(--brand-color);
+  font-weight: 600;
 }
 
 .single .author-info span {
@@ -1883,6 +1905,7 @@ input:focus-visible {
   position: absolute;
   left: 0;
   border: none;
+  z-index: 10;
 }
 
 .dark-mode .content-expander {
@@ -1961,7 +1984,8 @@ input:focus-visible {
 }
 
 #article-taxonomies {
-  min-height: 80px;
+  height: 130px;
+  overflow: hidden;
 }
 
 #transcript {
@@ -1971,7 +1995,7 @@ input:focus-visible {
 
 #article-taxonomies.visible,
 #transcript.visible {
-  max-height: max-content;
+  height: max-content;
   overflow: visible;
 }
 
@@ -2186,7 +2210,6 @@ footer .grid--4 {
 @media only screen and (max-width: 768px) {
   .container {
     flex-direction: column;
-    padding: 20px;
   }
   .container.content {
     padding: 40px 20px;
@@ -2295,8 +2318,12 @@ footer .grid--4 {
     top: -40px;
   }
 
-  .section--inspiration .item-container .item-title {
+  .section--inspiration .item-container .item-title a {
     font-size: 1.6rem;
+  }
+
+  .section--inspiration .item-container:nth-child(1) .item-title {
+    right: 14%;
   }
 
   #series--description-container,
@@ -2341,5 +2368,22 @@ footer .grid--4 {
     width: 100%;
     display: inline-flex;
     flex-direction: row;
+  }
+
+  #post-results.grid-view {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .pagination {
+    flex-direction: row;
+  }
+
+  .byline--overview.byline-avatar {
+    width: 110px;
+    height: 110px;
+  }
+
+  .byline--info h1 {
+    font-size: 2rem;
   }
 }
