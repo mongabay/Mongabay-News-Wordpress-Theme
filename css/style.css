@@ -1379,6 +1379,18 @@ button.clear-button:after {
   align-items: flex-start;
 }
 
+.tax-item-wrapper button:not(.clear-button) {
+  background: transparent;
+  border: 1px solid var(--theme-body);
+  padding: var(--spacing-3) var(--spacing-4);
+  cursor: pointer;
+  border-radius: 24px;
+  display: inline-flex;
+  align-items: center;
+  margin: var(--spacing-1);
+  color: var(--theme-body);
+}
+
 .dark-mode .search .tax-item-wrapper,
 .dark-mode .search input#searchInput {
   background: rgba(3, 117, 94, 0.4);
@@ -1481,7 +1493,7 @@ input:focus-visible {
   font-style: normal;
   font-weight: 400;
   line-height: 24px;
-  color: var(--accent-green);
+  color: var(--brand-color);
 }
 
 .dark-mode .search .suggestion-item a {
