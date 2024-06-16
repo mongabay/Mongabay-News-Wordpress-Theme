@@ -16,7 +16,7 @@ get_header(); ?>
       <h4><?php _e('Top stories', 'mongabay'); ?></h4>
       <div class="divider"></div>
     </div>
-    <?php featured_articles_listing('post', 10, 0, 'medium', 3, true, null, null); ?>
+    <?php featured_articles_listing(array('post'), 10, 0, 'medium', 3, true, null, null); ?>
   </div>
   <div class="column--20 latest-news">
     <div class="section-title gap--8">

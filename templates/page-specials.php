@@ -25,7 +25,7 @@ $tax_description = $queried_object->description;
 	</div>
 	<div class="container in-row gap--40" style="margin-top: calc(-1 * var(--spacing-3))">
 		<div class="column--80 latest-featured gap--8 pv--8">
-			<?php featured_articles_listing('post', 10, 0, 'medium', 3, false, 'serial', $tax_slug); ?>
+			<?php featured_articles_listing(array('post'), 10, 0, 'medium', 3, false, 'serial', $tax_slug); ?>
 		</div>
 		<div class="column--20 latest-news">
 			<?php articles_listing('post', 10, 0, false, 'medium', null, null, 'serial'); ?>

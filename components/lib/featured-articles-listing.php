@@ -1,6 +1,6 @@
 <?php
 function featured_articles_listing(
-  string $post_type,
+  array $post_types,
   int $posts_per_page,
   int $offset,
   string $thumbnail_size,
@@ -11,7 +11,7 @@ function featured_articles_listing(
 ) {
   $args = array(
     'posts_per_page' => $posts_per_page,
-    'post_type' => $post_type,
+    'post_type' => $post_types,
     'post_status' => 'publish',
     'offset' => $offset,
     'cache_results' => true,
@@ -40,6 +40,8 @@ function featured_articles_listing(
   $query = new WP_Query($args);
   $post_counter = 0;
 
+  $is_posts_only = count($post_types) === 1 && $post_types[0] === 'post';
+
   if ($query->have_posts()) {
     echo '<div class="article--container full-width">';
 
@@ -52,12 +54,13 @@ function featured_articles_listing(
         <div class="article--container full-width">
           <a href="<?php the_permalink(); ?>">
             <div class="featured-image">
+              <?php echo get_icon(get_the_ID()); ?>
               <?php the_post_thumbnail($thumbnail_size) ?>
               <div class="img-overlay"></div>
               <?php if (!$taxonomy) { ?>
-                <div class="title headline <?php echo $post_type !== 'post' ? 'text-center' : ''; ?>">
+                <div class="title headline <?php echo $is_posts_only ? 'text-center' : ''; ?>">
                   <h1><?php the_title(); ?></h1>
-                  <?php if ($post_type !== 'post') { ?>
+                  <?php if ($is_posts_only) { ?>
                     <div class="meta">
                       <span class="byline"><?php echo getPostBylines(get_the_ID()); ?></span>
                       <span class="date"><?php the_time('j F Y'); ?></span>
@@ -67,7 +70,7 @@ function featured_articles_listing(
               <?php } ?>
             </div>
             <?php if ($taxonomy) { ?>
-              <div class="title headline <?php echo $post_type !== 'post' ? 'text-center' : ''; ?>">
+              <div class="title headline <?php echo $post_types !== 'post' ? 'text-center' : ''; ?>">
                 <h1><?php the_title(); ?></h1>
                 <div class="meta">
                   <span class="byline"><?php echo getPostBylines(get_the_ID()); ?></span>
@@ -85,6 +88,7 @@ function featured_articles_listing(
           <a href="<?php the_permalink(); ?>">
             <?php if (has_post_thumbnail()) { ?>
               <div class="featured-image">
+                <?php echo get_icon(get_the_ID()); ?>
                 <?php the_post_thumbnail($thumbnail_size) ?>
               </div>
             <?php }; ?>

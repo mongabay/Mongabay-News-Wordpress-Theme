@@ -356,7 +356,7 @@ body.dark-mode {
   display: none;
 }
 
-.dark-mode .icon {
+.dark-mode .menu-container .icon {
   color: var(--theme-white);
 }
 
@@ -633,6 +633,10 @@ ul.main-menu:not(.off-canvas) li a.active:before {
   justify-content: center;
 }
 
+.list-view .article--container .featured-image .post-icon {
+  zoom: 0.6;
+}
+
 .featured-image .post-icon span {
   color: var(--brand-color);
   font-size: 0.8rem;
@@ -646,7 +650,7 @@ ul.main-menu:not(.off-canvas) li a.active:before {
 .featured-image .img-overlay {
   content: "";
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   width: 100%;
   height: 99%;
@@ -1718,6 +1722,11 @@ input:focus-visible {
   text-align: right;
   font-size: 16px;
   float: right;
+  color: var(--brand-color);
+}
+
+.post-meta span {
+  color: var(--brand-color);
 }
 
 .dark-mode .search .results-footer button {
@@ -2026,6 +2035,11 @@ input:focus-visible {
   margin: 0;
 }
 
+/* Shorts */
+.dark-mode .shorts .bg-gray {
+  background: var(--theme-accent);
+}
+
 /* Soliloquy slider */
 .wp-block-soliloquy-soliloquywp {
   margin: 50px 0;
@@ -2276,7 +2290,7 @@ footer .grid--4 {
   }
 
   .article--slide.collapsed {
-    width: 64px !important;
+    width: 100px !important;
   }
 
   .article--slide.collapsed .title {
@@ -2284,7 +2298,7 @@ footer .grid--4 {
   }
 
   .article--slide.expanded {
-    width: calc(100% - 252px) !important;
+    width: calc(100% - 350px) !important;
   }
 
   .article--slide {

@@ -23,7 +23,7 @@ get_header(); ?>
 			<h4><?php _e('Top stories', 'mongabay'); ?></h4>
 			<div class="divider"></div>
 		</div>
-		<?php featured_articles_listing('post', 5, 0, 'medium', 2, true, null, null); ?>
+		<?php featured_articles_listing(array('post', 'videos', 'podcasts', 'short-article', 'custom-story'), 5, 0, 'medium', 2, true, null, null); ?>
 	</div>
 	<div class="column--20 gap--40 pv--40 latest-banners">
 		<?php banner('https://mongabay.us14.list-manage.com/subscribe?u=80161fe385606408293ae0e51&id=940652e1f4', 'Stay updated', 'Delivering news and inspiration from nature’s frontline.', 'Newsletter', 'outlined ph--20 pv--20', ''); ?>
@@ -48,7 +48,7 @@ get_header(); ?>
 		<div class="container section--highlight">
 			<h1>Explore engaging <span class="icon icon-play">videos</span> about pressing issues.</h1>
 		</div>
-		<?php featured_articles_listing('videos', 5, 0, 'medium', 4, false, null, null); ?>
+		<?php featured_articles_listing(array('videos'), 5, 0, 'medium', 4, false, null, null); ?>
 	</div>
 
 	<div class="container full-width pv--40">
@@ -64,7 +64,7 @@ get_header(); ?>
 	<div class="section--highlight">
 		<div class="container gap--20 in-column">
 			<h1>Get quick glances with our brief <span class="icon icon-shorts">shorts</span></h1>
-			<div class="grid--3 gap--40">
+			<div class="shorts grid--3 gap--40">
 				<?php articles_listing_condensed('post', 6, 0, false, 'medium', null); ?>
 			</div>
 		</div>
