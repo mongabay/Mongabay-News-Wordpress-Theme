@@ -2,7 +2,7 @@
 function topics_section(string $headline, array $topics, array $extra_params = [])
 {
   $args = array(
-    'post_type' => 'post',
+    'post_type' => array('post', 'custom-story', 'videos', 'podcats', 'specials', 'short-article'),
     'posts_per_page' => 1,
     'cache_results' => true,
     'tax_query' => array(

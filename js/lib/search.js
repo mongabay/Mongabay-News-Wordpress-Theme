@@ -7,6 +7,9 @@ const defaultSuggestions = document.getElementById("default");
 const noResults = document.getElementById("no-results");
 const formatResults = document.getElementById("formats-results");
 const results = document.getElementById("results");
+const isMobile =
+  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) &&
+  document.querySelector("body").clientWidth < 481;
 let isResultsLoading = false;
 
 let totalCount;
@@ -775,11 +778,14 @@ async function fetchArticles(fromStart = false) {
 
     resultsHeaderLeft.appendChild(resultsRSS);
     resultsHeaderLeft.appendChild(resultsTotal);
-
     resultsHeader.appendChild(resultsHeaderLeft);
-    resultsHeader.appendChild(resultsViewToggles);
-    resultsViewToggles.appendChild(listViewButton);
-    resultsViewToggles.appendChild(gridViewButton);
+
+    if (!isMobile) {
+      resultsHeader.appendChild(resultsViewToggles);
+      resultsViewToggles.appendChild(listViewButton);
+      resultsViewToggles.appendChild(gridViewButton);
+    }
+
     results.appendChild(resultsHeader);
     results.appendChild(resultsList);
 
@@ -817,19 +823,33 @@ async function fetchArticles(fromStart = false) {
 
   data[selectedFormat].edges.forEach((edge) => {
     const node = edge.node;
+    const aricleContainer = document.createElement("div");
+    aricleContainer.classList.add("article--container", "pv--8");
     const listItem = document.createElement("div");
-    listItem.classList.add("list-item");
+    listItem.classList.add("article--container", "pv--8");
     const postLink = document.createElement("a");
     const postImage = document.createElement("img");
-    const postTitle = document.createElement("h4");
+    const titleContainer = document.createElement("div");
+    titleContainer.classList.add("title", "headline");
+    const postTitle =
+      node.featuredImage === null || node.featuredImage.node.srcSet === null
+        ? document.createElement("h2")
+        : document.createElement("h4");
+    titleContainer.appendChild(postTitle);
     const postMeta = document.createElement("div");
-    postMeta.classList.add("post-meta");
+    postMeta.classList.add("meta", "pv--8");
+
     const byline = document.createElement("span");
+    byline.classList.add("byline");
     const postDate = document.createElement("span");
+    postDate.classList.add("date");
 
     listItem.appendChild(postLink);
-    postLink.appendChild(postImage);
-    postLink.appendChild(postTitle);
+    const imageContainer = document.createElement("div");
+    imageContainer.classList.add("featured-image");
+    imageContainer.appendChild(postImage);
+    postLink.appendChild(imageContainer);
+    postLink.appendChild(titleContainer);
     postLink.appendChild(postMeta);
     postMeta.appendChild(byline);
     postMeta.appendChild(postDate);
@@ -837,8 +857,11 @@ async function fetchArticles(fromStart = false) {
     postLink.href = node.link;
     postTitle.textContent = node.title;
 
+    aricleContainer.appendChild(listItem);
+
     if (node.featuredImage === null || node.featuredImage.node.srcSet === null) {
-      postImage.src = `${domain}/gql-src/no-image.png`;
+      // postImage.src = `${domain}/gql-src/no-image.png`;
+      imageContainer.remove();
     } else {
       postImage.srcset = node.featuredImage.node.srcSet;
       postImage.sizes = node.featuredImage.node.sizes;
@@ -850,7 +873,7 @@ async function fetchArticles(fromStart = false) {
       byline.textContent = node.byline.nodes[0].name;
     }
     postDate.textContent = formatDate(node.date);
-    document.getElementById("post-results").appendChild(listItem);
+    document.getElementById("post-results").appendChild(aricleContainer);
   });
 
   if (data[selectedFormat].pageInfo.hasNextPage) {

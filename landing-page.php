@@ -62,7 +62,7 @@ get_header(); ?>
 
 <div class="container ph--40 pv--40 in-column">
 	<div class="section--highlight">
-		<div class="container gap--20 in-column">
+		<div class="container gap--40 in-column">
 			<h1>Get quick glances with our brief <span class="icon icon-shorts">shorts</span></h1>
 			<div class="shorts grid--3 gap--40">
 				<?php articles_listing_condensed('post', 6, 0, false, 'medium', null); ?>

@@ -21,7 +21,7 @@ formats_slider(array('videos'), 'Explore video stories from nature’s frontline
   <div id="section-videos-latest" class="container pv--40 gap--20 in-column">
     <div class="container in-row full-width section--headline" style="align-items: center; justify-content: space-between;">
       <h1><?php _e('Latest videos', 'mongabay'); ?></h1>
-      <a href="" class="theme--button primary"><?php _e('All videos', 'mongabay'); ?><span class="icon icon-right"></span></a>
+      <a href="<?php home_url(); ?>/?s=&format=videos" class="theme--button primary"><?php _e('All videos', 'mongabay'); ?><span class="icon icon-right"></span></a>
     </div>
     <?php videos_latest(); ?>
   </div>
@@ -33,7 +33,7 @@ formats_slider(array('videos'), 'Explore video stories from nature’s frontline
       <?php articles_listing('videos', 8, 0, true, 'medium', null, null, null); ?>
     </div>
     <div class="container centered pv--40">
-      <a href="" class="theme--button primary"><?php _e('All videos', 'mongabay'); ?><span class="icon icon-right"></span></a>
+      <a href="<?php home_url(); ?>/?s=&format=videos" class="theme--button primary"><?php _e('All videos', 'mongabay'); ?><span class="icon icon-right"></span></a>
     </div>
   </div>
 </div>
