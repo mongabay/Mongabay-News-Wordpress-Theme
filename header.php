@@ -70,7 +70,7 @@ if (wp_is_mobile()) {
 					<li><a href="<?php echo home_url(); ?>/feature" class="<?php echo is_page('Feature') ? 'active' : ''; ?>"><?php _e('Feature', 'mongabay'); ?></a></li>
 					<li><a href=" <?php echo home_url(); ?>/videos" class="<?php echo is_page('Videos') ? 'active' : ''; ?>"><?php _e('Videos', 'mongabay'); ?></a></li>
 					<li><a href="<?php echo home_url(); ?>/podcasts" class="<?php echo is_page('Podcasts') ? 'active' : ''; ?>"><?php _e('Podcasts', 'mongabay'); ?></a></li>
-					<li><a href=" <?php echo home_url(); ?>/specials" class="<?php echo is_page('Specials') ? 'active' : ''; ?>"><?php _e('Specials', 'mongabay'); ?></a></li>
+					<li><a href=" <?php echo home_url(); ?>/specials" class="<?php echo (is_page('Specials') || is_tax('serial')) ? 'active' : ''; ?>"><?php _e('Specials', 'mongabay'); ?></a></li>
 					<li><a href="<?php echo home_url(); ?>/articles" class="<?php echo is_page('Articles') ? 'active' : ''; ?>"><?php _e('Articles', 'mongabay'); ?></a></li>
 					<li><a href="<?php echo home_url(); ?>/shorts" class="<?php echo is_page('Shorts') ? 'active' : ''; ?>"><?php _e('Shorts', 'mongabay'); ?></a></li>
 				</ul>

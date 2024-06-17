@@ -1,7 +1,7 @@
 <?php
 function inspiration_banner()
 {
-  $post_types = array('videos', 'podcasts', 'specials');
+  $post_types = array('videos', 'podcasts', 'post');
 
   $section = '<div class="section--inspiration full-width"><div class="container"><div class="title column--40"><h1>News and Inspiration from Nature\'s Frontline.</h1></div><div class="items column--60">';
   $first_column = '<div class="column--60">';
@@ -27,13 +27,13 @@ function inspiration_banner()
 
         if ($type === 'videos') {
           $has_videos = true;
-          $first_column .= '<div class="item-container first"><a href="' . get_permalink() . '">' . get_the_post_thumbnail(get_the_ID(), 'medium') . '</a><div class="item-title"><span class="icon-play"></span><a href="' . home_url() . '/?s=&format=videos">Videos</a></div></div>';
+          $first_column .= '<div class="item-container first"><a href="' . get_permalink() . '">' . get_the_post_thumbnail(get_the_ID(), 'medium') . '</a><div class="item-title"><span class="icon-play"></span><a href="' . home_url() . '/videos">Videos</a></div></div>';
         } elseif ($type === 'podcasts') {
           $has_podcasts = true;
-          $first_column .= '<div class="item-container"><a href="' . get_permalink() . '">' . get_the_post_thumbnail(get_the_ID(), 'medium') . '</a><div class="item-title podcast"><span class="icon-audio"></span><a href="' . home_url() . '/?s=&format=podcasts">Podcasts</a></div></div>';
-        } elseif ($type === 'specials') {
+          $first_column .= '<div class="item-container"><a href="' . get_permalink() . '">' . get_the_post_thumbnail(get_the_ID(), 'medium') . '</a><div class="item-title podcast"><span class="icon-audio"></span><a href="' . home_url() . '/podcasts">Podcasts</a></div></div>';
+        } elseif ($type === 'post') {
           $has_articles = true;
-          $second_column .= '<div class="item-container second"><a href="' . get_permalink() . '">' . get_the_post_thumbnail(get_the_ID(), 'medium') . '</a><div class="item-title articles"><span class="icon-articles"></span><a href="' . home_url() . '/?s=&format=specialsArticles">Articles</a></div></div>';
+          $second_column .= '<div class="item-container second"><a href="' . get_permalink() . '">' . get_the_post_thumbnail(get_the_ID(), 'medium') . '</a><div class="item-title articles"><span class="icon-articles"></span><a href="' . home_url() . '/articles">Articles</a></div></div>';
         }
       };
 

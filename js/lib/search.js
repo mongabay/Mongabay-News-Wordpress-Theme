@@ -49,7 +49,7 @@ const formatOptions = {
   shortArticles: ["Short", "shortArticles"],
   videos: ["Video", "videos"],
   podcasts: ["Podcast", "podcasts"],
-  specialsArticles: ["Special", "specialsArticles"],
+  special: ["Special", "special"],
 };
 
 function createDefaultList(type, data) {
@@ -687,6 +687,7 @@ async function fetchArticles(fromStart = false) {
   const locationGql = `{taxonomy:LOCATION,terms:${JSON.stringify(
     selectedLocations,
   )},field:SLUG,operator:IN}`;
+  const seriesQql = `{taxonomy:SERIAL,operator:EXISTS,field: SLUG}`;
   // const formatsGql = `{taxonomy:ARTICLEFORMATTYPE,terms:${JSON.stringify(
   //   selectedFormats,
   // )},field:SLUG,operator:IN}`;
@@ -699,20 +700,22 @@ async function fetchArticles(fromStart = false) {
   if (selectedLocations.length) {
     taxArray.push(locationGql);
   }
-  // if (selectedFormats.length) {
-  // taxArray.push(formatsGql);
-  // }
+  if (selectedFormat === "special") {
+    taxArray.push(seriesQql);
+  }
 
   const keyWordQuery = `, search:\"${searchValue}\"`;
   const taxQuery = `taxQuery:{taxArray:[${taxArray.join(",")}]}`;
+  const featuredQuery = `metaQuery:{relation:OR,queries:[{key:\"featured_as\",value:\"featured\",compare:"="}]`;
   const paginate = `,after:\"${cursor}\"`;
 
   const resp = await fetch(
-    `${domain}/graphql?query=query{${selectedFormat}(first:24${
-      cursor.length ? paginate : ""
-    },where:{status: PUBLISH${searchValue.length ? keyWordQuery : ""},${
-      taxArray.length > 0 ? taxQuery : ""
-    }}){edges{node{title,link,date,byline{nodes{name}},featuredImage{node{srcSet sizes(size: THUMBNAIL)}}}}pageInfo{endCursor hasNextPage hasPreviousPage startCursor total}}}`,
+    `${domain}/graphql?query=query{${
+      selectedFormat === "special" ? "posts" : selectedFormat
+    }(first:24${cursor.length ? paginate : ""},where:{status:PUBLISH${
+      searchValue.length ? keyWordQuery : ""
+    },${taxArray.length > 0 ? taxQuery : ""}
+    }){edges{node{title,link,date,byline{nodes{name}},featuredImage{node{srcSet sizes(size: THUMBNAIL)}}}}pageInfo{endCursor hasNextPage hasPreviousPage startCursor total}}}`,
     {
       method: "GET",
       mode: "cors",
@@ -765,9 +768,11 @@ async function fetchArticles(fromStart = false) {
     const hasTopics = selectedTopics.length > 0;
     const hasLocations = selectedLocations.length > 0;
 
-    resultsRSS.href = `${domain}/?feed=custom&s=${searchValue}&post_type=${selectedFormat}${
-      hasTopics ? `&topic=${selectedTopics.join(",")}` : ""
-    }${hasLocations ? `&location=${selectedLocations.join(",")}` : ""}`;
+    resultsRSS.href = `${domain}/?feed=custom&s=${searchValue}&post_type=${
+      selectedFormat === "special" ? "post" : selectedFormat
+    }${hasTopics ? `&topic=${selectedTopics.join(",")}` : ""}${
+      hasLocations ? `&location=${selectedLocations.join(",")}` : ""
+    }`;
     resultsRSS.target = "_blank";
 
     resultsHeader.id = "results-header";
@@ -804,7 +809,9 @@ async function fetchArticles(fromStart = false) {
     });
   }
 
-  const foundResultsCount = data[selectedFormat].edges.length;
+  const postFormat = selectedFormat === "special" ? "posts" : selectedFormat;
+
+  const foundResultsCount = data[postFormat].edges.length;
 
   if (foundResultsCount === 0) {
     resultsFooter.innerHTML = preloader(false);
@@ -814,14 +821,14 @@ async function fetchArticles(fromStart = false) {
     return;
   }
 
-  totalCount = data[selectedFormat].pageInfo.total;
+  totalCount = data[postFormat].pageInfo.total;
   document.getElementById("results-total").textContent = `${totalCount} ${
     totalCount > 1 ? "stories" : "story"
   }`;
 
   noResults.classList.add("hide");
 
-  data[selectedFormat].edges.forEach((edge) => {
+  data[postFormat].edges.forEach((edge) => {
     const node = edge.node;
     const aricleContainer = document.createElement("div");
     aricleContainer.classList.add("article--container", "pv--8");
@@ -876,8 +883,8 @@ async function fetchArticles(fromStart = false) {
     document.getElementById("post-results").appendChild(aricleContainer);
   });
 
-  if (data[selectedFormat].pageInfo.hasNextPage) {
-    cursor = data[selectedFormat].pageInfo.endCursor;
+  if (data[postFormat].pageInfo.hasNextPage) {
+    cursor = data[postFormat].pageInfo.endCursor;
     const loadMore = document.createElement("button");
     loadMore.classList.add("load-more", "theme--button", "primary");
     loadMore.innerHTML = 'Load More<span class="icon icon-right"></span>';

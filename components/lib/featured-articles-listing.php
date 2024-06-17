@@ -63,7 +63,7 @@ function featured_articles_listing(
                   <?php if ($is_posts_only) { ?>
                     <div class="meta">
                       <span class="byline"><?php echo getPostBylines(get_the_ID()); ?></span>
-                      <span class="date"><?php the_time('j F Y'); ?></span>
+                      <span class="date"><?php the_time('j M Y'); ?></span>
                     </div>
                   <?php } ?>
                 </div>
@@ -74,7 +74,7 @@ function featured_articles_listing(
                 <h1><?php the_title(); ?></h1>
                 <div class="meta">
                   <span class="byline"><?php echo getPostBylines(get_the_ID()); ?></span>
-                  <span class="date"><?php the_time('j F Y'); ?></span>
+                  <span class="date"><?php the_time('j M Y'); ?></span>
                 </div>
               </div>
             <?php } ?>
@@ -97,7 +97,7 @@ function featured_articles_listing(
             </div>
             <div class="meta">
               <span class="byline"><?php echo getPostBylines(get_the_ID()); ?></span>
-              <span class="date"><?php the_time('j F Y'); ?></span>
+              <span class="date"><?php the_time('j M Y'); ?></span>
             </div>
           </a>
         </div>

@@ -21,7 +21,7 @@ function article_headline()
           } ?>
         </div>
         <div class="author-info">
-          <?php echo get_the_term_list($post_id, 'byline', '', ', ', ''); ?><?php the_time('j F Y'); ?>
+          <?php echo get_the_term_list($post_id, 'byline', '', ', ', ''); ?><?php the_time('j M Y'); ?>
         </div>
       </div>
       <div class="container social gap--4">

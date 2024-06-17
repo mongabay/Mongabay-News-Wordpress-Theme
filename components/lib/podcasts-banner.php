@@ -31,7 +31,7 @@ function podcasts_banner()
             </h3>
             <div class="meta text-center">
               <span class="byline"><?php echo getPostBylines(get_the_ID()); ?></span>
-              <span class="date"><?php the_time('j F Y'); ?></span>
+              <span class="date"><?php the_time('j M Y'); ?></span>
             </div>
           </div>
         </div>

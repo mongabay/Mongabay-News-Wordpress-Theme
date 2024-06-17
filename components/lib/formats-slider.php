@@ -89,7 +89,7 @@ function formats_slider(array $post_formats, string $headline, array $terms_arra
                       <h1><?php the_title() ?></h1>
                       <div class="meta">
                         <span class="byline"><?php echo getPostBylines(get_the_ID()); ?></span>
-                        <span class="date"><?php the_time('j F Y'); ?></span>
+                        <span class="date"><?php the_time('j M Y'); ?></span>
                       </div>
                     </div>
                   </div>
