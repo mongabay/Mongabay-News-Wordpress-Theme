@@ -19,7 +19,7 @@ function podcasts_banner()
           <div class="article--container narrow">
             <?php if (has_post_thumbnail()) { ?>
               <div class="featured-image">
-                <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('thumbnail'); ?></a>
+                <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium'); ?></a>
               </div>
             <?php }; ?>
           </div>
@@ -31,7 +31,7 @@ function podcasts_banner()
             </h3>
             <div class="meta text-center">
               <span class="byline"><?php echo getPostBylines(get_the_ID()); ?></span>
-              <span class="date"><?php the_time('j F Y'); ?></span>
+              <span class="date"><?php the_time('j M Y'); ?></span>
             </div>
           </div>
         </div>

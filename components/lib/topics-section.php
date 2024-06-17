@@ -2,7 +2,7 @@
 function topics_section(string $headline, array $topics, array $extra_params = [])
 {
   $args = array(
-    'post_type' => 'post',
+    'post_type' => array('post', 'custom-story', 'videos', 'podcats', 'specials', 'short-article'),
     'posts_per_page' => 1,
     'cache_results' => true,
     'tax_query' => array(
@@ -61,7 +61,7 @@ function topics_section(string $headline, array $topics, array $extra_params = [
                 </div>
                 <div class="meta pv--8">
                   <span class="byline"><?php echo getPostBylines(get_the_ID()); ?></span>
-                  <span class="date"><?php the_time('j F Y'); ?></span>
+                  <span class="date"><?php the_time('j M Y'); ?></span>
                 </div>
               </a>
             </div>

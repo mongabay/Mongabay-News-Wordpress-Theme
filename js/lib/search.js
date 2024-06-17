@@ -7,6 +7,9 @@ const defaultSuggestions = document.getElementById("default");
 const noResults = document.getElementById("no-results");
 const formatResults = document.getElementById("formats-results");
 const results = document.getElementById("results");
+const isMobile =
+  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) &&
+  document.querySelector("body").clientWidth < 481;
 let isResultsLoading = false;
 
 let totalCount;
@@ -46,7 +49,7 @@ const formatOptions = {
   shortArticles: ["Short", "shortArticles"],
   videos: ["Video", "videos"],
   podcasts: ["Podcast", "podcasts"],
-  specialsArticles: ["Special", "specialsArticles"],
+  special: ["Special", "special"],
 };
 
 function createDefaultList(type, data) {
@@ -684,6 +687,7 @@ async function fetchArticles(fromStart = false) {
   const locationGql = `{taxonomy:LOCATION,terms:${JSON.stringify(
     selectedLocations,
   )},field:SLUG,operator:IN}`;
+  const seriesQql = `{taxonomy:SERIAL,operator:EXISTS,field: SLUG}`;
   // const formatsGql = `{taxonomy:ARTICLEFORMATTYPE,terms:${JSON.stringify(
   //   selectedFormats,
   // )},field:SLUG,operator:IN}`;
@@ -696,20 +700,22 @@ async function fetchArticles(fromStart = false) {
   if (selectedLocations.length) {
     taxArray.push(locationGql);
   }
-  // if (selectedFormats.length) {
-  // taxArray.push(formatsGql);
-  // }
+  if (selectedFormat === "special") {
+    taxArray.push(seriesQql);
+  }
 
   const keyWordQuery = `, search:\"${searchValue}\"`;
   const taxQuery = `taxQuery:{taxArray:[${taxArray.join(",")}]}`;
+  const featuredQuery = `metaQuery:{relation:OR,queries:[{key:\"featured_as\",value:\"featured\",compare:"="}]`;
   const paginate = `,after:\"${cursor}\"`;
 
   const resp = await fetch(
-    `${domain}/graphql?query=query{${selectedFormat}(first:8${
-      cursor.length ? paginate : ""
-    },where:{status: PUBLISH${searchValue.length ? keyWordQuery : ""},${
-      taxArray.length > 0 ? taxQuery : ""
-    }}){edges{node{title,link,date,byline{nodes{name}},featuredImage{node{srcSet sizes(size: THUMBNAIL)}}}}pageInfo{endCursor hasNextPage hasPreviousPage startCursor total}}}`,
+    `${domain}/graphql?query=query{${
+      selectedFormat === "special" ? "posts" : selectedFormat
+    }(first:24${cursor.length ? paginate : ""},where:{status:PUBLISH${
+      searchValue.length ? keyWordQuery : ""
+    },${taxArray.length > 0 ? taxQuery : ""}
+    }){edges{node{title,link,date,byline{nodes{name}},featuredImage{node{srcSet sizes(size: THUMBNAIL)}}}}pageInfo{endCursor hasNextPage hasPreviousPage startCursor total}}}`,
     {
       method: "GET",
       mode: "cors",
@@ -762,9 +768,11 @@ async function fetchArticles(fromStart = false) {
     const hasTopics = selectedTopics.length > 0;
     const hasLocations = selectedLocations.length > 0;
 
-    resultsRSS.href = `${domain}/?feed=custom&s=${searchValue}&post_type=${selectedFormat}${
-      hasTopics ? `&topic=${selectedTopics.join(",")}` : ""
-    }${hasLocations ? `&location=${selectedLocations.join(",")}` : ""}`;
+    resultsRSS.href = `${domain}/?feed=custom&s=${searchValue}&post_type=${
+      selectedFormat === "special" ? "post" : selectedFormat
+    }${hasTopics ? `&topic=${selectedTopics.join(",")}` : ""}${
+      hasLocations ? `&location=${selectedLocations.join(",")}` : ""
+    }`;
     resultsRSS.target = "_blank";
 
     resultsHeader.id = "results-header";
@@ -775,11 +783,14 @@ async function fetchArticles(fromStart = false) {
 
     resultsHeaderLeft.appendChild(resultsRSS);
     resultsHeaderLeft.appendChild(resultsTotal);
-
     resultsHeader.appendChild(resultsHeaderLeft);
-    resultsHeader.appendChild(resultsViewToggles);
-    resultsViewToggles.appendChild(listViewButton);
-    resultsViewToggles.appendChild(gridViewButton);
+
+    if (!isMobile) {
+      resultsHeader.appendChild(resultsViewToggles);
+      resultsViewToggles.appendChild(listViewButton);
+      resultsViewToggles.appendChild(gridViewButton);
+    }
+
     results.appendChild(resultsHeader);
     results.appendChild(resultsList);
 
@@ -798,7 +809,9 @@ async function fetchArticles(fromStart = false) {
     });
   }
 
-  const foundResultsCount = data[selectedFormat].edges.length;
+  const postFormat = selectedFormat === "special" ? "posts" : selectedFormat;
+
+  const foundResultsCount = data[postFormat].edges.length;
 
   if (foundResultsCount === 0) {
     resultsFooter.innerHTML = preloader(false);
@@ -808,28 +821,42 @@ async function fetchArticles(fromStart = false) {
     return;
   }
 
-  totalCount = data[selectedFormat].pageInfo.total;
+  totalCount = data[postFormat].pageInfo.total;
   document.getElementById("results-total").textContent = `${totalCount} ${
     totalCount > 1 ? "stories" : "story"
   }`;
 
   noResults.classList.add("hide");
 
-  data[selectedFormat].edges.forEach((edge) => {
+  data[postFormat].edges.forEach((edge) => {
     const node = edge.node;
+    const aricleContainer = document.createElement("div");
+    aricleContainer.classList.add("article--container", "pv--8");
     const listItem = document.createElement("div");
-    listItem.classList.add("list-item");
+    listItem.classList.add("article--container", "pv--8");
     const postLink = document.createElement("a");
     const postImage = document.createElement("img");
-    const postTitle = document.createElement("h4");
+    const titleContainer = document.createElement("div");
+    titleContainer.classList.add("title", "headline");
+    const postTitle =
+      node.featuredImage === null || node.featuredImage.node.srcSet === null
+        ? document.createElement("h2")
+        : document.createElement("h4");
+    titleContainer.appendChild(postTitle);
     const postMeta = document.createElement("div");
-    postMeta.classList.add("post-meta");
+    postMeta.classList.add("meta", "pv--8");
+
     const byline = document.createElement("span");
+    byline.classList.add("byline");
     const postDate = document.createElement("span");
+    postDate.classList.add("date");
 
     listItem.appendChild(postLink);
-    postLink.appendChild(postImage);
-    postLink.appendChild(postTitle);
+    const imageContainer = document.createElement("div");
+    imageContainer.classList.add("featured-image");
+    imageContainer.appendChild(postImage);
+    postLink.appendChild(imageContainer);
+    postLink.appendChild(titleContainer);
     postLink.appendChild(postMeta);
     postMeta.appendChild(byline);
     postMeta.appendChild(postDate);
@@ -837,8 +864,11 @@ async function fetchArticles(fromStart = false) {
     postLink.href = node.link;
     postTitle.textContent = node.title;
 
+    aricleContainer.appendChild(listItem);
+
     if (node.featuredImage === null || node.featuredImage.node.srcSet === null) {
-      postImage.src = `${domain}/gql-src/no-image.png`;
+      // postImage.src = `${domain}/gql-src/no-image.png`;
+      imageContainer.remove();
     } else {
       postImage.srcset = node.featuredImage.node.srcSet;
       postImage.sizes = node.featuredImage.node.sizes;
@@ -850,11 +880,11 @@ async function fetchArticles(fromStart = false) {
       byline.textContent = node.byline.nodes[0].name;
     }
     postDate.textContent = formatDate(node.date);
-    document.getElementById("post-results").appendChild(listItem);
+    document.getElementById("post-results").appendChild(aricleContainer);
   });
 
-  if (data[selectedFormat].pageInfo.hasNextPage) {
-    cursor = data[selectedFormat].pageInfo.endCursor;
+  if (data[postFormat].pageInfo.hasNextPage) {
+    cursor = data[postFormat].pageInfo.endCursor;
     const loadMore = document.createElement("button");
     loadMore.classList.add("load-more", "theme--button", "primary");
     loadMore.innerHTML = 'Load More<span class="icon icon-right"></span>';

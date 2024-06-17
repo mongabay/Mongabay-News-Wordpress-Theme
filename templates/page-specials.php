@@ -15,6 +15,7 @@ $taxonomy = $queried_object->term_id;
 $tax_name = $queried_object->name;
 $tax_slug = $queried_object->slug;
 $tax_description = $queried_object->description;
+$formats = array('post', 'custom-story', 'videos', 'podcasts', 'specials', 'short-article');
 ?>
 <div class="container in-column gap--40">
 	<div class="container section--highlight full-width in-column text-center ph--40 pv--40 gap--20">
@@ -25,7 +26,7 @@ $tax_description = $queried_object->description;
 	</div>
 	<div class="container in-row gap--40" style="margin-top: calc(-1 * var(--spacing-3))">
 		<div class="column--80 latest-featured gap--8 pv--8">
-			<?php featured_articles_listing('post', 10, 0, 'medium', 3, false, 'serial', $tax_slug); ?>
+			<?php featured_articles_listing(array('post'), 10, 0, 'medium', 3, false, 'serial', $tax_slug); ?>
 		</div>
 		<div class="column--20 latest-news">
 			<?php articles_listing('post', 10, 0, false, 'medium', null, null, 'serial'); ?>
@@ -38,7 +39,7 @@ $tax_description = $queried_object->description;
 	<div class="container in-row full-width section--headline" style="align-items: center; justify-content: space-between;">
 		<h1><?php _e('Latest Specials', 'mongabay'); ?></h1>
 	</div>
-	<?php articles_listing_in_columns('post', 6, 0, 'medium', 'serial', true); ?>
+	<?php articles_listing_in_columns($formats, 6, 0, 'medium', 'serial', true); ?>
 
 	<?php banner('', 'We are nonprofit', 'Help us tell stories of biodiversity loss, climate change and more.', 'Donate', 'accent ph--20 pv--56 full-width', 'extra-large'); ?>
 </div>

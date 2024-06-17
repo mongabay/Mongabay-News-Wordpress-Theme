@@ -1,6 +1,6 @@
 <?php
 function articles_listing_in_columns(
-  string $post_format,
+  array $post_formats,
   int $posts_per_page,
   int $offset,
   string $thumbnail_size,
@@ -8,7 +8,7 @@ function articles_listing_in_columns(
   ?bool $is_featured
 ) {
   $args = array(
-    'post_type' => $post_format,
+    'post_type' => $post_formats,
     'post_status' => 'publish',
     'posts_per_page' => $posts_per_page,
     'offset' => $offset,
@@ -45,11 +45,11 @@ function articles_listing_in_columns(
 
       if ($post_counter === 1) {
         //open first row
-        echo '<div class="container in-row gap--40">';
+        echo '<div class="container in-row gap--40 primary">';
       }
 
       if ($post_counter === 3) {
-        echo '<div class="container grid--4 gap--40">';
+        echo '<div class="container grid--4 gap--40 secondary">';
       }
 ?>
 
@@ -57,6 +57,7 @@ function articles_listing_in_columns(
         <a href="<?php the_permalink(); ?>">
           <?php if (has_post_thumbnail()) { ?>
             <div class="featured-image">
+              <?php echo get_icon(get_the_ID()); ?>
               <?php the_post_thumbnail($thumbnail_size) ?>
             </div>
           <?php }; ?>
@@ -69,7 +70,7 @@ function articles_listing_in_columns(
           </div>
           <div class="meta pv--8">
             <span class="byline"><?php echo getPostBylines(get_the_ID()); ?></span>
-            <span class="date"><?php the_time('j F Y'); ?></span>
+            <span class="date"><?php the_time('j M Y'); ?></span>
           </div>
         </a>
       </div>

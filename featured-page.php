@@ -12,7 +12,8 @@ get_header(); ?>
 
 <?php
 //$series = (array('global-forests', 'indonesian-forests', 'oceans', 'indigenous-peoples-and-conservation'));
-formats_slider(array('post', 'custom-story', 'videos', 'podcats', 'specials'), 'The outstanding feature stories give one step forward', array(), 'text-center');
+$formats = array('post', 'custom-story', 'videos', 'podcasts', 'specials', 'short-article');
+formats_slider($formats, 'The outstanding feature stories give one step forward', array(), 'text-center');
 ?>
 
 <div class="container full-width ph--40 in-column">
@@ -31,7 +32,7 @@ formats_slider(array('post', 'custom-story', 'videos', 'podcats', 'specials'), '
       <h1><?php _e('Latest features', 'mongabay'); ?></h1>
       <a href="" class="theme--button primary"><?php _e('All features', 'mongabay'); ?><span class="icon icon-right"></span></a>
     </div>
-    <?php articles_listing_in_columns('post', 6, 0, 'medium', null, true); ?>
+    <?php articles_listing_in_columns($formats, 6, 0, 'medium', null, true); ?>
   </div>
 
   <div class="container full-width pv--40">

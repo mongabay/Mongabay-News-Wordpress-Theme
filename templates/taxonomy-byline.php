@@ -21,12 +21,17 @@ $byline_web = get_term_meta($byline_id, 'web', true);
 $byline_x = get_term_meta($byline_id, 'authors_twitter_account', true);
 $byline_fb = get_term_meta($byline_id, 'authors_facebook_account', true);
 $byline_type = get_term_meta($byline_id, 'author_type', true);
+$byline_avatar = get_term_meta($byline_id, 'cover_image_url', true);
 ?>
 
 <div class="container in-column in-row ph--40 pv--40 gap--80">
   <div class="col--20">
     <div class="byline--overview byline-avatar">
-      <?php echo get_avatar($byline->term_id); ?>
+      <?php if ($byline_avatar) { ?>
+        <img src="<?php echo $byline_avatar; ?>" alt="<?php echo $byline_name; ?>">
+      <?php } else {
+        echo get_avatar($byline->term_id);
+      }; ?>
     </div>
   </div>
   <div class="container in-column byline--info col--80 gap--20">
@@ -51,12 +56,12 @@ $byline_type = get_term_meta($byline_id, 'author_type', true);
     <div class="container in-row gap--20">
       <?php if ($byline_x) { ?>
         <div class="col--50">
-          <a href="<?php echo $byline_x; ?>" target="_blank">X</a>
+          <a href="https://x.com/<?php echo $byline_x; ?>" target="_blank">X</a>
         </div>
       <?php } ?>
       <?php if ($byline_fb) { ?>
         <div class="col--50">
-          <a href="<?php echo $byline_fb; ?>" target="_blank">Facebook</a>
+          <a href="https://facebook.com/<?php echo $byline_fb; ?>" target="_blank">Facebook</a>
         </div>
       <?php } ?>
     </div>
@@ -76,10 +81,12 @@ $byline_type = get_term_meta($byline_id, 'author_type', true);
           <a href="<?php get_home_url() ?>/feed/?post_type=post&byline=<?php echo $title; ?>" target="_blank" id="results-rss" class="theme--button primary simple">RSS</a>
           <div id="results-total"><?php echo $total; ?> <?php _e($total > 1 ? 'stories' : 'story', 'mongabay'); ?></div>
         </div>
-        <div id="results-view-toggles">
-          <button id="list-view">L</button>
-          <button id="grid-view" class="active">G</button>
-        </div>
+        <?php if (!wp_is_mobile()) { ?>
+          <div id="results-view-toggles">
+            <button id="list-view">L</button>
+            <button id="grid-view" class="active">G</button>
+          </div>
+        <?php } ?>
       </div>
       <div id="post-results" class="grid-view">
         <?php
@@ -91,17 +98,24 @@ $byline_type = get_term_meta($byline_id, 'author_type', true);
             <a href="<?php the_permalink(); ?>">
               <?php if (has_post_thumbnail()) { ?>
                 <div class="featured-image">
-                  <?php echo get_icon(get_the_ID()); ?>
+                  <?php echo !wp_is_mobile() ? get_icon(get_the_ID()) : ''; ?>
                   <?php the_post_thumbnail('medium') ?>
                 </div>
               <?php }; ?>
-              <div class="title headline">
-                <h3><?php the_title(); ?></h3>
-              </div>
-              <div class="meta pv--8">
-                <span class="byline"><?php echo getPostBylines(get_the_ID()); ?></span>
-                <span class="date"><?php the_time('j F Y'); ?></span>
-              </div>
+              <?php if (wp_is_mobile()) { ?>
+                <div class="wrapper">
+                <?php } ?>
+                <div class="title headline">
+                  <h3><?php the_title(); ?></h3>
+                </div>
+                <div class="post-meta pv--8">
+                  <?php echo wp_is_mobile() ? get_icon(get_the_ID()) : ''; ?>
+                  <span class="byline"><?php echo getPostBylines(get_the_ID()); ?></span>
+                  <span class="date"><?php the_time('j M Y'); ?></span>
+                </div>
+                <?php if (wp_is_mobile()) { ?>
+                </div>
+              <?php } ?>
             </a>
           </div>
         <?php endwhile; ?>

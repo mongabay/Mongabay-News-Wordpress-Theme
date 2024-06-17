@@ -75,7 +75,7 @@ function series_articles_listing(bool $show_headline)
                             <h1><?php the_title(); ?></h1>
                             <div class="meta">
                               <span class="byline"><?php echo getPostBylines(get_the_ID()); ?></span>
-                              <span class="date"><?php the_time('j F Y'); ?></span>
+                              <span class="date"><?php the_time('j M Y'); ?></span>
                             </div>
                           </div>
                         </div>

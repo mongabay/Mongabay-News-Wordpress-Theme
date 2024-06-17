@@ -63,7 +63,7 @@ get_header(); ?>
 							</div>
 							<div class="meta pv--8">
 								<span class="byline"><?php echo getPostBylines(get_the_ID()); ?></span>
-								<span class="date"><?php the_time('j F Y'); ?></span>
+								<span class="date"><?php the_time('j M Y'); ?></span>
 							</div>
 						</a>
 					</div>

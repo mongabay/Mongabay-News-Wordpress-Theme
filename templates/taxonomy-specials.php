@@ -60,7 +60,7 @@ $counter = 0;
                 <h1><?php the_title(); ?></h1>
                 <div class="meta">
                   <span class="byline"><?php echo getPostBylines(get_the_ID()); ?></span>
-                  <span class="date"><?php the_time('j F Y'); ?></span>
+                  <span class="date"><?php the_time('j M Y'); ?></span>
                 </div>
               </div>
             </a>
@@ -95,7 +95,7 @@ $counter = 0;
           </div>
           <div class="meta pv--8">
             <span class="byline"><?php echo getPostBylines(get_the_ID()); ?></span>
-            <span class="date"><?php the_time('j F Y'); ?></span>
+            <span class="date"><?php the_time('j M Y'); ?></span>
           </div>
         </a>
       </div>
@@ -110,7 +110,7 @@ $counter = 0;
     ?>
   </div>
   <div class="container centered">
-    <a href="" class="theme--button primary"><?php _e('All Specials', 'mongabay'); ?><span class="icon icon-right"></span></a>
+    <a href="<?php home_url(); ?>/?s=&format=special" class="theme--button primary"><?php _e('All Specials', 'mongabay'); ?><span class="icon icon-right"></span></a>
   </div>
 </div>
 <?php tools_slider(); ?>
