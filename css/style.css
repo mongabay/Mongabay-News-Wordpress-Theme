@@ -1409,7 +1409,7 @@ button.clear-button:after {
 }
 
 .search .tax-item-wrapper input {
-  padding: 12px 0;
+  padding: 14px 0;
   border: none;
   background: transparent;
   display: flex;
@@ -1643,36 +1643,6 @@ input:focus-visible {
   gap: 20px;
   grid-template-columns: 100px 1fr 1fr;
   align-items: center;
-}
-
-#post-results.list-view .list-item {
-  margin: 10px;
-}
-
-#post-results .list-item a img {
-  width: 100%;
-  height: auto;
-  max-height: 160px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-#post-results.list-view .list-item a img {
-  width: auto;
-  height: 100%;
-}
-
-.list-item h4 {
-  font-family: "Lora" !important;
-  color: var(--theme-body);
-  font-style: normal;
-  font-weight: 400;
-  margin-top: var(--spacing-5);
-}
-
-.list-view .list-item h4 {
-  font-size: 16px;
-  margin-top: 0;
 }
 
 #results-view-toggles {

@@ -708,7 +708,7 @@ async function fetchArticles(fromStart = false) {
   const paginate = `,after:\"${cursor}\"`;
 
   const resp = await fetch(
-    `${domain}/graphql?query=query{${selectedFormat}(first:8${
+    `${domain}/graphql?query=query{${selectedFormat}(first:24${
       cursor.length ? paginate : ""
     },where:{status: PUBLISH${searchValue.length ? keyWordQuery : ""},${
       taxArray.length > 0 ? taxQuery : ""
