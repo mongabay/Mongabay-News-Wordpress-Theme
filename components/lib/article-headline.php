@@ -41,7 +41,7 @@ function article_headline()
       </div>
       <div class="container social gap--4">
         <?php $comments_number = get_comments_number();
-        echo '<a class="theme--button simple secondary">';
+        echo '<a href="#spotim-specific" class="theme--button simple secondary">';
 
         if ($comments_number > 1) {
           printf(esc_html__('%s Comments', 'mongabay'), get_comments_number_text('0', '1', '%'));
