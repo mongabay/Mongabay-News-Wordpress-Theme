@@ -47,7 +47,7 @@ function formats_slider(array $post_formats, string $headline, array $terms_arra
                     <div class="article--container-headline">
                       <div class="title headline gap--8 text-center">
                         <h1><?php echo $tax_name; ?></h1>
-                        <div class="meta">
+                        <div class="post-meta">
                           <span class="count"><?php echo $query->found_posts; ?> stories</span>
                         </div>
                       </div>
@@ -87,7 +87,7 @@ function formats_slider(array $post_formats, string $headline, array $terms_arra
                   <div class="article--container-headline">
                     <div class="title headline gap--8 text-center">
                       <h1><?php the_title() ?></h1>
-                      <div class="meta">
+                      <div class="post-meta">
                         <span class="byline"><?php echo getPostBylines(get_the_ID()); ?></span>
                         <span class="date"><?php the_time('j M Y'); ?></span>
                       </div>

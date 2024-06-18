@@ -24,6 +24,8 @@ const formatOptions = {
   specials: ["Special", "SPECIALS"],
 };
 
+const defaultFormatsList = ["POST", "VIDEOS", "PODCASTS", "SPECIALS"];
+
 let selectedFormats = [];
 
 const articlesData = {
@@ -171,7 +173,7 @@ if (Object.keys(queriedParams).length > 0) {
     }
   }
 
-  fetchArticles(selectedFormats.length > 0);
+  fetchArticles(true);
 }
 
 function formatDate(date) {
@@ -259,7 +261,7 @@ function clearTags(type) {
   }
 
   if (type === "formats") {
-    selectedFormats = ["POST"];
+    // selectedFormats = ["POST"];
     const formatsResults = document.querySelector("#formats-results");
     formatsResults.innerHTML = "";
     formatsResults.classList.add("hide");
@@ -400,7 +402,7 @@ function createTaxTag(type, name, slug, showResults = false) {
     .insertBefore(tag, document.getElementById(searchSelectorId));
 
   if (showResults) {
-    fetchArticles(selectedFormats.length > 0);
+    fetchArticles(true);
   }
 
   tag.addEventListener("click", () => {
@@ -428,7 +430,7 @@ function createTaxTag(type, name, slug, showResults = false) {
     document.querySelector(`.tax-item-wrapper.${type}s`).removeChild(tag);
 
     filtersCheck();
-    fetchArticles(selectedFormats.length > 0);
+    fetchArticles(true);
   });
 
   document.getElementById(searchSelectorId).value = "";
@@ -487,6 +489,7 @@ function createFormatTag(name, slug, showResults = false) {
       filtersCheck();
 
       if (shouldFetch) {
+        console.log("fetching");
         fetchArticles(true);
       }
     }
@@ -645,9 +648,6 @@ async function fetchArticles(fromStart = false) {
     controller.abort();
   }
 
-  if (!selectedFormats.length) {
-    return;
-  }
   controller = new AbortController();
   const signal = controller.signal;
 
@@ -721,7 +721,7 @@ async function fetchArticles(fromStart = false) {
   const taxQuery = `taxQuery:{taxArray:[${taxArray.join(",")}]},`;
   const featuredQuery = `metaQuery:{relation:OR,queries:[{key:\"featured_as\",value:\"featured\",compare:"="}]`;
   const paginate = `,after:\"${cursor}\"`;
-  const node = `title,link,date,byline{nodes{name}},featuredImage{node{srcSet sizes(size: THUMBNAIL)}}`;
+  const node = `__typename,title,link,date,byline{nodes{name}},featuredImage{node{srcSet sizes(size: THUMBNAIL)}}`;
   const pageInfo = `pageInfo{endCursor hasNextPage hasPreviousPage startCursor total}`;
 
   const query = `query{
@@ -729,7 +729,7 @@ async function fetchArticles(fromStart = false) {
       status:PUBLISH,
       ${searchValue.length > 0 ? keyWordQuery : ""}
       ${taxArray.length > 0 ? taxQuery : ""}
-      contentTypes: [${selectedFormats}]
+      contentTypes: [${!selectedFormats.length ? defaultFormatsList : selectedFormats}]
     }
       first: 24
       ${cursor.length ? paginate : ""}
@@ -873,19 +873,42 @@ async function fetchArticles(fromStart = false) {
 
   data.contentNodes.edges.forEach((edge) => {
     const node = edge.node;
-    const aricleContainer = document.createElement("div");
-    aricleContainer.classList.add("article--container", "pv--8");
+
+    if (!node) {
+      return;
+    }
+
+    const hasNoImage =
+      node.featuredImage === null ||
+      (!node.featuredImage && !node.featuredImage.node) ||
+      node.featuredImage.node.srcSet === null;
+
     const listItem = document.createElement("div");
     listItem.classList.add("article--container", "pv--8");
     const postLink = document.createElement("a");
     const postImage = document.createElement("img");
-    //TODO add format icon
+    const postFormatIcon = document.createElement("div");
+    postFormatIcon.classList.add("post-icon");
+
+    let iconClass = "";
+
+    switch (node.__typename) {
+      case "Video":
+        iconClass = "icon-play";
+        break;
+      case "Podcast":
+        iconClass = "icon-podcast";
+        break;
+      default:
+        iconClass = "";
+        break;
+    }
+
+    postFormatIcon.innerHTML = `<span class='icon ${iconClass}'></span>`;
+
     const titleContainer = document.createElement("div");
     titleContainer.classList.add("title", "headline");
-    const postTitle =
-      node.featuredImage === null || node.featuredImage.node.srcSet === null
-        ? document.createElement("h2")
-        : document.createElement("h4");
+    const postTitle = hasNoImage ? document.createElement("h2") : document.createElement("h4");
     titleContainer.appendChild(postTitle);
     const postMeta = document.createElement("div");
     postMeta.classList.add("post-meta", "pv--8");
@@ -898,19 +921,35 @@ async function fetchArticles(fromStart = false) {
     listItem.appendChild(postLink);
     const imageContainer = document.createElement("div");
     imageContainer.classList.add("featured-image");
-    imageContainer.appendChild(postImage);
-    postLink.appendChild(imageContainer);
-    postLink.appendChild(titleContainer);
-    postLink.appendChild(postMeta);
+
+    if (node.__typename !== "Post" && !hasNoImage) {
+      imageContainer.appendChild(postFormatIcon);
+    }
+
+    if (!hasNoImage) {
+      imageContainer.appendChild(postImage);
+      postLink.appendChild(imageContainer);
+    } else {
+      postLink.classList.add("no-image");
+    }
+
+    if (isMobile) {
+      const titleMetaContainer = document.createElement("div");
+      titleMetaContainer.appendChild(titleContainer);
+      titleMetaContainer.appendChild(postMeta);
+      postLink.appendChild(titleMetaContainer);
+    } else {
+      postLink.appendChild(titleContainer);
+      postLink.appendChild(postMeta);
+    }
+
     postMeta.appendChild(byline);
     postMeta.appendChild(postDate);
 
     postLink.href = node.link;
     postTitle.textContent = node.title;
 
-    aricleContainer.appendChild(listItem);
-
-    if (node.featuredImage === null || node.featuredImage.node.srcSet === null) {
+    if (hasNoImage) {
       postImage.src = `${domain}/gql-src/no-image.png`;
       postImage.style.opacity = 0;
       // imageContainer.remove();
@@ -925,7 +964,7 @@ async function fetchArticles(fromStart = false) {
       byline.textContent = node.byline.nodes[0].name;
     }
     postDate.textContent = formatDate(node.date);
-    document.getElementById("post-results").appendChild(aricleContainer);
+    document.getElementById("post-results").appendChild(listItem);
   });
 
   if (data.contentNodes.pageInfo.hasNextPage) {
@@ -990,7 +1029,7 @@ async function searchTopic() {
         if (searchValue.length > 0) {
           // fetchArticles();
         }
-        fetchArticles(selectedFormats.length > 0);
+        fetchArticles(true);
         // clearSearch();
       }
     });
@@ -1053,9 +1092,10 @@ async function searchLocation() {
       if (!selectedLocations.includes(node.slug)) {
         createTaxTag("location", node.name, node.slug);
 
-        if (searchValue.length > 0) {
-          fetchArticles(selectedFormats.length > 0);
-        }
+        // if (searchValue.length > 0) {
+        //   fetchArticles(true);
+        // }
+        fetchArticles(true);
       }
     });
 

@@ -4,7 +4,7 @@ function article_terms(int $post_id)
   echo '<div class="section-title gap--16"><h4>';
   _e('Topics', 'mongabay');
   echo '</h4><div class="divider"></div></div>';
-  echo '<div id="article-taxonomies" class="container wrapped" style="position: relative">';
+  echo '<div id="article-taxonomies" class="tags container wrapped" style="position: relative">';
   echo get_the_term_list($post_id, 'topic', '', '', '');
   echo get_the_term_list($post_id, 'location', '', '', '');
   echo get_the_term_list($post_id, 'entity', '', '', '');
@@ -16,14 +16,13 @@ function article_terms(int $post_id)
   <script>
     jQuery(document).ready(function() {
       const wrapperHeight = document.getElementById('article-taxonomies').scrollHeight;
+      const expanderButton = jQuery('#expander-container.tags button.content-expander');
 
       if (wrapperHeight <= 130) {
         jQuery('#expander-container').remove();
-
-        return;
       }
 
-      jQuery('#expander-container.tags .content-expander').click(function() {
+      expanderButton.click(function() {
         jQuery('#article-taxonomies').toggleClass('visible');
         jQuery(this).toggleClass('visible');
       });

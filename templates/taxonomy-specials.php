@@ -58,7 +58,7 @@ $counter = 0;
               </div>
               <div class="title headline gap--8">
                 <h1><?php the_title(); ?></h1>
-                <div class="meta">
+                <div class="post-meta">
                   <span class="byline"><?php echo getPostBylines(get_the_ID()); ?></span>
                   <span class="date"><?php the_time('j M Y'); ?></span>
                 </div>
@@ -93,7 +93,7 @@ $counter = 0;
           <div class="title headline">
             <h3><?php the_title(); ?></h3>
           </div>
-          <div class="meta pv--8">
+          <div class="post-meta pv--8">
             <span class="byline"><?php echo getPostBylines(get_the_ID()); ?></span>
             <span class="date"><?php the_time('j M Y'); ?></span>
           </div>

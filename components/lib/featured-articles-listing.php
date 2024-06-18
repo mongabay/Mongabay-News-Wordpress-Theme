@@ -61,7 +61,7 @@ function featured_articles_listing(
                 <div class="title headline <?php echo $is_posts_only ? 'text-center' : ''; ?>">
                   <h1><?php the_title(); ?></h1>
                   <?php if ($is_posts_only) { ?>
-                    <div class="meta">
+                    <div class="post-meta">
                       <span class="byline"><?php echo getPostBylines(get_the_ID()); ?></span>
                       <span class="date"><?php the_time('j M Y'); ?></span>
                     </div>
@@ -72,7 +72,7 @@ function featured_articles_listing(
             <?php if ($taxonomy) { ?>
               <div class="title headline <?php echo $post_types !== 'post' ? 'text-center' : ''; ?>">
                 <h1><?php the_title(); ?></h1>
-                <div class="meta">
+                <div class="post-meta">
                   <span class="byline"><?php echo getPostBylines(get_the_ID()); ?></span>
                   <span class="date"><?php the_time('j M Y'); ?></span>
                 </div>
@@ -95,7 +95,7 @@ function featured_articles_listing(
             <div class="title headline pv--16">
               <h3><?php the_title(); ?></h3>
             </div>
-            <div class="meta">
+            <div class="post-meta">
               <span class="byline"><?php echo getPostBylines(get_the_ID()); ?></span>
               <span class="date"><?php the_time('j M Y'); ?></span>
             </div>

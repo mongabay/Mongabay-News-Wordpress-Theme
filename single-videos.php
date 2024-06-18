@@ -58,9 +58,7 @@
     <script>
       jQuery(document).ready(function() {
         const wrapperHeight = jQuery('#transcript').height();
-        console.log({
-          wrapperHeight
-        })
+
         jQuery('#expander-container .content-expander').click(function() {
           jQuery('#transcript').toggleClass('visible');
           jQuery(this).toggleClass('visible');
