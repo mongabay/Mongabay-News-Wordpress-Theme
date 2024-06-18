@@ -57,7 +57,7 @@ function featured_articles_listing(
               <?php echo get_icon(get_the_ID()); ?>
               <?php the_post_thumbnail($thumbnail_size) ?>
               <div class="img-overlay"></div>
-              <?php if (!$taxonomy) { ?>
+              <?php if (!$taxonomy && !wp_is_mobile()) { ?>
                 <div class="title headline <?php echo $is_posts_only ? 'text-center' : ''; ?>">
                   <h1><?php the_title(); ?></h1>
                   <?php if ($is_posts_only) { ?>
@@ -69,8 +69,8 @@ function featured_articles_listing(
                 </div>
               <?php } ?>
             </div>
-            <?php if ($taxonomy) { ?>
-              <div class="title headline <?php echo $post_types !== 'post' ? 'text-center' : ''; ?>">
+            <?php if ($taxonomy || wp_is_mobile()) { ?>
+              <div class="title headline <?php echo ($post_types !== 'post' && !wp_is_mobile()) ? 'text-center' : ''; ?>">
                 <h1><?php the_title(); ?></h1>
                 <div class="post-meta">
                   <span class="byline"><?php echo getPostBylines(get_the_ID()); ?></span>

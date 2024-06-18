@@ -34,7 +34,7 @@ function topics_section(string $headline, array $topics, array $extra_params = [
     while ($query->have_posts()) {
       $query->the_post(); ?>
       <div class="section--highlight full-width pv--80">
-        <div class="container">
+        <div class="container gap--40">
           <div class="title column--50 align-left">
             <h1>
               <?php _e($headline, 'mongabay'); ?>
