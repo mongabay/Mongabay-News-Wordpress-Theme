@@ -48,7 +48,7 @@ function series_latest(array $series_array)
               <div class="article--container-headline">
                 <div class="title headline gap--8 text-center">
                   <h1><?php echo $tax_name; ?></h1>
-                  <div class="meta">
+                  <div class="post-meta">
                     <span class="count"><?php echo $query->found_posts; ?> stories</span>
                   </div>
                 </div>

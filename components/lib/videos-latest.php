@@ -36,7 +36,7 @@ function videos_latest()
                 <div class="title headline gap--8 text-center">
                   <h1>' . get_the_title() . '</h1>
                   
-                    <div class="meta">
+                    <div class="post-meta">
                       <span class="byline">' . getPostBylines(get_the_ID()) . '</span>
                       <span class="date">' . get_the_time('j F Y') . '</span>
                     </div>
@@ -58,7 +58,7 @@ function videos_latest()
               <div class="title headline gap--8">
                 <h3>' . get_the_title() . '</h3>
               </div>
-              <div class="meta">
+              <div class="post-meta">
                 <span class="byline">' . getPostBylines(get_the_ID()) . '</span>
                 <span class="date">' . get_the_time('j F Y') . '</span>
               </div>
@@ -74,7 +74,7 @@ function videos_latest()
               <div class="title headline gap--8">
                 <h3>' . get_the_title() . '</h3>
               </div>
-              <div class="meta">
+              <div class="post-meta">
                 <span class="byline">' . getPostBylines(get_the_ID()) . '</span>
                 <span class="date">' . get_the_time('j F Y') . '</span>
               </div>
@@ -95,7 +95,7 @@ function videos_latest()
               <div class="title headline gap--8">
                 <h3>' . get_the_title() . '</h3>
               </div>
-              <div class="meta">
+              <div class="post-meta">
                 <span class="byline">' . getPostBylines(get_the_ID()) . '</span>
                 <span class="date">' . get_the_time('j F Y') . '</span>
               </div>
@@ -126,7 +126,7 @@ function videos_latest()
                 <div class="article--container-headline">
                   <div class="title headline gap--8 text-center">
                     <h1>' . get_the_title() . '</h1>
-                    <div class="meta">
+                    <div class="post-meta">
                       <span class="byline">' . getPostBylines(get_the_ID()) . '</span>
                       <span class="date">' . get_the_time('j F Y') . '</span>
                     </div>

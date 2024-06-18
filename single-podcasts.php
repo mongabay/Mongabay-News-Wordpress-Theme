@@ -38,7 +38,7 @@
               <div id="transcript">
                 <?php mongabay_sanitized_content($post_id); ?>
               </div>
-              <div id="expander-container" class="container full-width">
+              <div id="expander-container" class="transcript container full-width">
                 <a class="content-expander text-center"><span><?php _e('Read full transcript', 'mongabay'); ?></span></a>
               </div>
             </div>
@@ -60,10 +60,8 @@
       <script>
         jQuery(document).ready(function() {
           const wrapperHeight = jQuery('#transcript').height();
-          console.log({
-            wrapperHeight
-          })
-          jQuery('#expander-container .content-expander').click(function() {
+
+          jQuery('#expander-container.transcript .content-expander').click(function() {
             jQuery('#transcript').toggleClass('visible');
             jQuery(this).toggleClass('visible');
           });

@@ -29,7 +29,7 @@ function podcasts_banner()
             <h3 class="text-center">
               <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
             </h3>
-            <div class="meta text-center">
+            <div class="post-meta text-center">
               <span class="byline"><?php echo getPostBylines(get_the_ID()); ?></span>
               <span class="date"><?php the_time('j M Y'); ?></span>
             </div>

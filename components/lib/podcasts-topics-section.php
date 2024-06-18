@@ -66,7 +66,7 @@ function podcasts_topics_section(string $headline, array $topics, array $extra_p
               <div class="title headline">
                 <h2><?php the_title(); ?></h2>
               </div>
-              <div class="meta pv--8">
+              <div class="post-meta pv--8">
                 <span class="byline"><?php echo getPostBylines(get_the_ID()); ?></span>
                 <span class="date"><?php the_time('j M Y'); ?></span>
               </div>
