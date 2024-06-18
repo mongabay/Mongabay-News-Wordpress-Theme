@@ -3,6 +3,8 @@ function article_headline()
 {
   $post_id = get_the_ID();
   $byline_terms = wp_get_post_terms($post_id, 'byline');
+  $series_terms = wp_get_post_terms($post_id, 'serial');
+  $location_terms = wp_get_post_terms($post_id, 'location');
   $avatar = null;
 
   if (!empty($byline_terms)) {
@@ -20,8 +22,21 @@ function article_headline()
             echo '<span class="meta-author-circle"></span>';
           } ?>
         </div>
-        <div class="author-info">
-          <?php echo get_the_term_list($post_id, 'byline', '', ', ', ''); ?><?php the_time('j M Y'); ?>
+        <div class="extra-info">
+          <span class="bylines"><?php echo get_the_term_list($post_id, 'byline', '', ', ', ''); ?></span>
+          <div class="post-meta">
+            <span class="date"><?php the_time('j M Y'); ?></span>
+            <?php if (!empty($location_terms)) {
+              echo '<span class="taxonomy">';
+              echo '<a href="' . home_url() . '/location/' . $location_terms[0]->slug . '">' . $location_terms[0]->name . '</a>';
+              echo '</span>';
+            } ?>
+            <?php if (!empty($series_terms)) {
+              echo '<span class="taxonomy">';
+              echo '<a href="' . home_url() . '/series/' . $series_terms[0]->slug . '">' . $series_terms[0]->name . '</a>';
+              echo '</span>';
+            } ?>
+          </div>
         </div>
       </div>
       <div class="container social gap--4">

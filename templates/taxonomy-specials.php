@@ -110,7 +110,7 @@ $counter = 0;
     ?>
   </div>
   <div class="container centered">
-    <a href="<?php home_url(); ?>/?s=&format=special" class="theme--button primary"><?php _e('All Specials', 'mongabay'); ?><span class="icon icon-right"></span></a>
+    <a href="<?php home_url(); ?>/?s=&formats=special" class="theme--button primary"><?php _e('All Specials', 'mongabay'); ?><span class="icon icon-right"></span></a>
   </div>
 </div>
 <?php tools_slider(); ?>

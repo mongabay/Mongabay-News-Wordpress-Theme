@@ -13,8 +13,18 @@ const isMobile =
 let isResultsLoading = false;
 
 let totalCount;
-let selectedFormat = "posts";
 let cursor = "";
+
+const formatOptions = {
+  post: ["Articles", "POST"],
+  // customStories: ["Custom Stories", "customStories"],
+  // shortArticles: ["Short", "shortArticles"],
+  videos: ["Video", "VIDEOS"],
+  podcasts: ["Podcast", "PODCASTS"],
+  specials: ["Special", "SPECIALS"],
+};
+
+let selectedFormats = [];
 
 const articlesData = {
   0: ["Forests"],
@@ -43,22 +53,10 @@ const locationsData = {
 const clearAllTagsText = "Clear all tags";
 const clearSearchInputText = "Clear search input";
 
-const formatOptions = {
-  posts: ["Posts", "posts"],
-  // customStories: ["Custom Stories", "customStories"],
-  shortArticles: ["Short", "shortArticles"],
-  videos: ["Video", "videos"],
-  podcasts: ["Podcast", "podcasts"],
-  special: ["Special", "special"],
-};
-
 function createDefaultList(type, data) {
   const output = document.getElementById(`${type}-suggestions`);
 
   Object.values(data).forEach((item) => {
-    if (item[1] === "posts") {
-      return;
-    }
     const itemSpan = document.createElement("span");
     itemSpan.textContent = item[0];
 
@@ -70,36 +68,21 @@ function createDefaultList(type, data) {
         if (type === "topics") {
           if (!selectedTopics.includes(item[1])) {
             createTaxTag("topic", item[0], item[1]);
-
-            if (searchInput.value.length > 0) {
-              // fetchArticles(true);
-            }
             fetchArticles(true);
-            // clearSearch();
           }
         }
 
         if (type === "locations") {
           if (!selectedLocations.includes(item[1])) {
             createTaxTag("location", item[0], item[1]);
-
-            if (searchInput.value.length > 0) {
-              // fetchArticles(true);
-            }
             fetchArticles(true);
-            // clearSearch();
           }
         }
 
         if (type === "formats") {
-          if (selectedFormat !== item[1]) {
+          if (!selectedFormats.includes(item[1])) {
             createFormatTag(item[0], item[1], true);
-
-            if (searchInput.value.length > 0) {
-              // fetchArticles(true);
-            }
             fetchArticles(true);
-            // clearSearch();
           }
         }
       }
@@ -131,6 +114,7 @@ const queriedParams = queriedSearch.split("&").reduce((acc, param) => {
       acc[key] = value && value.includes("+") ? value.split("+") : value;
     }
   }
+
   return acc;
 }, {});
 
@@ -165,13 +149,25 @@ if (Object.keys(queriedParams).length > 0) {
       });
     }
   }
-  if (queriedParams.format) {
-    selectedFormat = queriedParams.format;
-    const formatName = formatOptions[queriedParams.format][0];
-    const formatSlug = formatOptions[queriedParams.format][1];
 
-    if (formatName && formatSlug) {
-      createFormatTag(formatName, formatSlug, true);
+  if (queriedParams.formats) {
+    if (isValueString(queriedParams.formats)) {
+      const upFormatStr = queriedParams.formats.toUpperCase();
+      selectedFormats = [upFormatStr];
+      createFormatTag(
+        formatOptions[queriedParams.formats][0],
+        formatOptions[queriedParams.formats][1],
+        false,
+      );
+    } else {
+      queriedParams.formats.forEach((format) => {
+        const upFormat = format.toUpperCase();
+
+        if (!selectedFormats.includes(upFormat)) {
+          selectedFormats.push(formatOptions[format][1]);
+          createFormatTag(formatOptions[format][0], formatOptions[format][1], false);
+        }
+      });
     }
   }
 
@@ -221,7 +217,8 @@ function filtersCheck() {
     !searchInput.value.length &&
     !selectedTopics.length &&
     !selectedLocations.length &&
-    selectedFormat === "posts"
+    selectedFormats.length === 1 &&
+    selectedFormats.includes("POST")
   ) {
     document.getElementById("results").classList.add("hide");
     document.querySelector(".results-footer").classList.add("hide");
@@ -263,7 +260,7 @@ function clearTags(type) {
   }
 
   if (type === "formats") {
-    selectedFormat = "post";
+    selectedFormats = ["POST"];
     const formatsResults = document.querySelector("#formats-results");
     formatsResults.innerHTML = "";
     formatsResults.classList.add("hide");
@@ -448,29 +445,43 @@ if (selectedTopics.length > 0) {
  */
 
 function createFormatTag(name, slug, showResults = false) {
-  if (slug === "posts") {
-    return;
-  }
-
   const formatResults = document.getElementById("formats-results");
   const formatTag = document.createElement("button");
   formatTag.textContent = name;
 
+  if (!selectedFormats.includes(slug)) {
+    selectedFormats.push(slug);
+
+    if (
+      selectedFormats.length > 0 &&
+      !document.querySelector(".tax-search-actions.format .clear-button")
+    ) {
+      displayClearButton("#searchFormat", ".tax-search-actions.format", clearAllTagsText);
+    }
+  }
+
   if (document.querySelector(".tax-item-wrapper.format button")) {
-    document.querySelector(".tax-item-wrapper.format button").remove();
+    // document.querySelector(".tax-item-wrapper.format button").remove();
   }
 
   document
     .querySelector(".tax-item-wrapper.format")
     .insertBefore(formatTag, document.getElementById("searchFormat"));
-  selectedFormat = slug;
+
+  // if (!selectedFormats.includes(slug)) {
+  //   selectedFormats.push(slug);
+  // }
 
   if (document.querySelector(".tax-search-actions.format .clear-button")) {
     document.querySelector(".tax-search-actions.format .clear-button").remove();
   }
 
   formatTag.addEventListener("click", () => {
-    selectedFormat = "posts";
+    selectedFormats = selectedFormats.filter((format) => format !== slug);
+
+    if (selectedFormats.length === 0) {
+      selectedFormats = ["POST"];
+    }
 
     if (document.querySelector(".tax-item-wrapper.format button")) {
       document.querySelector(".tax-item-wrapper.format").removeChild(formatTag);
@@ -672,7 +683,7 @@ async function fetchArticles(fromStart = false) {
   const searchString = `?s=${searchValue}${
     selectedLocations.length ? `&locations=${selectedLocations.join("+")}` : ""
   }${selectedTopics.length ? `&topics=${selectedTopics.join("+")}` : ""}${
-    selectedFormat ? `&format=${selectedFormat}` : ""
+    selectedFormats ? `&formats=${selectedFormats.join("+").toLowerCase()}` : ""
   }`;
 
   const nextURL = `${domain}${searchString}`;
@@ -700,22 +711,52 @@ async function fetchArticles(fromStart = false) {
   if (selectedLocations.length) {
     taxArray.push(locationGql);
   }
-  if (selectedFormat === "special") {
+  if (selectedFormats.includes("SPECIAL")) {
     taxArray.push(seriesQql);
   }
 
-  const keyWordQuery = `, search:\"${searchValue}\"`;
-  const taxQuery = `taxQuery:{taxArray:[${taxArray.join(",")}]}`;
+  const keyWordQuery = `search:\"${searchValue}\",`;
+  const taxQuery = `taxQuery:{taxArray:[${taxArray.join(",")}]},`;
   const featuredQuery = `metaQuery:{relation:OR,queries:[{key:\"featured_as\",value:\"featured\",compare:"="}]`;
   const paginate = `,after:\"${cursor}\"`;
+  const node = `title,link,date,byline{nodes{name}},featuredImage{node{srcSet sizes(size: THUMBNAIL)}}`;
+  const pageInfo = `pageInfo{endCursor hasNextPage hasPreviousPage startCursor total}`;
+
+  const query = `query{
+    contentNodes(where: {
+      status:PUBLISH,
+      ${searchValue.length ? keyWordQuery : ""}
+      contentTypes: [${selectedFormats}]}
+      first: 24
+      ${cursor.length ? paginate : ""}
+    ) 
+      {
+        ${pageInfo}
+        edges {
+          node {
+            ... on Post {
+              ${node}
+            }
+            ... on Podcast {
+              ${node}
+            }
+            ... on Video {
+              ${node}
+            }
+          }
+        }
+    }
+  }`;
+
+  // `${domain}/graphql?query=query{${
+  //   selectedFormat === "special" ? "posts" : selectedFormat
+  // }(first:24${cursor.length ? paginate : ""},where:{status:PUBLISH${
+  //   searchValue.length ? keyWordQuery : ""
+  // },${taxArray.length > 0 ? taxQuery : ""}
+  // }){edges{node{title,link,date,byline{nodes{name}},featuredImage{node{srcSet sizes(size: THUMBNAIL)}}}}pageInfo{endCursor hasNextPage hasPreviousPage startCursor total}}}`,
 
   const resp = await fetch(
-    `${domain}/graphql?query=query{${
-      selectedFormat === "special" ? "posts" : selectedFormat
-    }(first:24${cursor.length ? paginate : ""},where:{status:PUBLISH${
-      searchValue.length ? keyWordQuery : ""
-    },${taxArray.length > 0 ? taxQuery : ""}
-    }){edges{node{title,link,date,byline{nodes{name}},featuredImage{node{srcSet sizes(size: THUMBNAIL)}}}}pageInfo{endCursor hasNextPage hasPreviousPage startCursor total}}}`,
+    `${domain}/graphql?query=${query}`,
     {
       method: "GET",
       mode: "cors",
@@ -768,11 +809,11 @@ async function fetchArticles(fromStart = false) {
     const hasTopics = selectedTopics.length > 0;
     const hasLocations = selectedLocations.length > 0;
 
-    resultsRSS.href = `${domain}/?feed=custom&s=${searchValue}&post_type=${
-      selectedFormat === "special" ? "post" : selectedFormat
-    }${hasTopics ? `&topic=${selectedTopics.join(",")}` : ""}${
-      hasLocations ? `&location=${selectedLocations.join(",")}` : ""
-    }`;
+    // resultsRSS.href = `${domain}/?feed=custom&s=${searchValue}&post_type=${
+    // selectedFormats === "special" ? "post" : selectedFormats
+    //}${hasTopics ? `&topic=${selectedTopics.join(",")}` : ""}${
+    //hasLocations ? `&location=${selectedLocations.join(",")}` : ""
+    //}`;
     resultsRSS.target = "_blank";
 
     resultsHeader.id = "results-header";
@@ -809,9 +850,7 @@ async function fetchArticles(fromStart = false) {
     });
   }
 
-  const postFormat = selectedFormat === "special" ? "posts" : selectedFormat;
-
-  const foundResultsCount = data[postFormat].edges.length;
+  const foundResultsCount = data.contentNodes.edges.length;
 
   if (foundResultsCount === 0) {
     resultsFooter.innerHTML = preloader(false);
@@ -821,14 +860,14 @@ async function fetchArticles(fromStart = false) {
     return;
   }
 
-  totalCount = data[postFormat].pageInfo.total;
+  totalCount = data.contentNodes.pageInfo.total;
   document.getElementById("results-total").textContent = `${totalCount} ${
     totalCount > 1 ? "stories" : "story"
   }`;
 
   noResults.classList.add("hide");
 
-  data[postFormat].edges.forEach((edge) => {
+  data.contentNodes.edges.forEach((edge) => {
     const node = edge.node;
     const aricleContainer = document.createElement("div");
     aricleContainer.classList.add("article--container", "pv--8");
@@ -836,6 +875,7 @@ async function fetchArticles(fromStart = false) {
     listItem.classList.add("article--container", "pv--8");
     const postLink = document.createElement("a");
     const postImage = document.createElement("img");
+    //TODO add format icon
     const titleContainer = document.createElement("div");
     titleContainer.classList.add("title", "headline");
     const postTitle =
@@ -844,7 +884,7 @@ async function fetchArticles(fromStart = false) {
         : document.createElement("h4");
     titleContainer.appendChild(postTitle);
     const postMeta = document.createElement("div");
-    postMeta.classList.add("meta", "pv--8");
+    postMeta.classList.add("post-meta", "pv--8");
 
     const byline = document.createElement("span");
     byline.classList.add("byline");
@@ -867,8 +907,9 @@ async function fetchArticles(fromStart = false) {
     aricleContainer.appendChild(listItem);
 
     if (node.featuredImage === null || node.featuredImage.node.srcSet === null) {
-      // postImage.src = `${domain}/gql-src/no-image.png`;
-      imageContainer.remove();
+      postImage.src = `${domain}/gql-src/no-image.png`;
+      postImage.style.opacity = 0;
+      // imageContainer.remove();
     } else {
       postImage.srcset = node.featuredImage.node.srcSet;
       postImage.sizes = node.featuredImage.node.sizes;
@@ -883,8 +924,8 @@ async function fetchArticles(fromStart = false) {
     document.getElementById("post-results").appendChild(aricleContainer);
   });
 
-  if (data[postFormat].pageInfo.hasNextPage) {
-    cursor = data[postFormat].pageInfo.endCursor;
+  if (data.contentNodes.pageInfo.hasNextPage) {
+    cursor = data.contentNodes.pageInfo.endCursor;
     const loadMore = document.createElement("button");
     loadMore.classList.add("load-more", "theme--button", "primary");
     loadMore.innerHTML = 'Load More<span class="icon icon-right"></span>';
