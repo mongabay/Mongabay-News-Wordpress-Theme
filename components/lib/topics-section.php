@@ -42,7 +42,7 @@ function topics_section(string $headline, array $topics, array $extra_params = [
               if (count($topics) > 0) {
                 foreach ($topics as $topic) {
                   $topic_name = str_replace('-', ' ', $topic);
-                  echo '<span class="outlined"><a href="' . home_url() . '/?s=&topics=' . $topic . '&format=videos">' . $topic_name . '</a></span>';
+                  echo '<span class="outlined"><a href="' . home_url() . '/?s=&topics=' . $topic . '&formats=videos">' . $topic_name . '</a></span>';
                 }
               }
               ?>

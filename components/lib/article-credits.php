@@ -20,7 +20,7 @@ function article_credits(int $post_id)
             echo '<span class="meta-author-circle"></span>';
           } ?>
         </div>
-        <div class="author-info">
+        <div class="extra-info">
           <h4><?php the_author_posts_link(); ?></h4>
           <span><?php _e('Contributor ', 'mongabay'); ?></span>
         </div>
@@ -48,7 +48,7 @@ function article_credits(int $post_id)
               <span class="meta-author-circle"></span>
             <?php } ?>
           </div>
-          <div class="author-info">
+          <div class="extra-info">
             <a href="<?php echo home_url('/') . 'by/' . $translator_adaptor_slug; ?>">
               <?php echo $translator_adaptor_name; ?>
             </a>

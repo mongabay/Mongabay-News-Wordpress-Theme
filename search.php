@@ -37,7 +37,7 @@
             <div class="suggestion-item"><a href="<?php home_url(); ?>/?s=Forests"><?php _e('Forest articles', 'mongabay'); ?></a></div>
             <div class="suggestion-item"><a href="<?php home_url(); ?>/?s=Wildlife"><?php _e('Wildlife Videos', 'mongabay'); ?></a></div>
             <div class="suggestion-item"><a href="<?php home_url(); ?>/?s=Conservation podcasts"><?php _e('Conservation Podcasts', 'mongabay'); ?></a></div>
-            <div class="suggestion-item"><a href="<?php home_url(); ?>/?s=a&format=customStories"><?php _e('Ocean Specials', 'mongabay'); ?></a></div>
+            <div class="suggestion-item"><a href="<?php home_url(); ?>/?s=a&formats=customStories"><?php _e('Ocean Specials', 'mongabay'); ?></a></div>
         </div>
     </div>
     <div id="no-results" class="hide">
@@ -46,7 +46,7 @@
             <div class="suggestion-item"><a href="<?php home_url(); ?>/?s=Forests"><?php _e('Forest articles', 'mongabay'); ?></a></div>
             <div class="suggestion-item"><a href="<?php home_url(); ?>/?s=Wildlife"><?php _e('Wildlife Videos', 'mongabay'); ?></a></div>
             <div class="suggestion-item"><a href="<?php home_url(); ?>/?s=Conservation Podcasts"><?php _e('Conservation Podcasts', 'mongabay'); ?></a></div>
-            <div class="suggestion-item"><a href="<?php home_url(); ?>/?s=&format=customStories"><?php _e('Ocean Specials', 'mongabay'); ?></a></div>
+            <div class="suggestion-item"><a href="<?php home_url(); ?>/?s=&formats=customStories"><?php _e('Ocean Specials', 'mongabay'); ?></a></div>
         </div>
     </div>
     <div class="results-wrapper">

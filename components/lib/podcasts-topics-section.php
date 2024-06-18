@@ -38,7 +38,7 @@ function podcasts_topics_section(string $headline, array $topics, array $extra_p
               foreach ($topics as $topic) {
                 $topic_name = get_term_by('slug', $topic, 'topic')->name;
 
-                echo '<span class="outlined"><a href="' . home_url() . '/?s=&format=podcasts&topics=' . $topic . '">' . strtolower($topic_name) . '</a></span>';
+                echo '<span class="outlined"><a href="' . home_url() . '/?s=&formats=podcasts&topics=' . $topic . '">' . strtolower($topic_name) . '</a></span>';
               }
             }
             ?>

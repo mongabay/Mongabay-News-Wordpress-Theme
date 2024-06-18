@@ -33,6 +33,8 @@ function articles_listing(
     while ($query->have_posts()) {
       $query->the_post();
       $post_counter++;
+
+      $isFeatured = get_post_meta(get_the_ID(), 'featured_as', true) === 'featured';
 ?>
       <?php if (strlen($odd_item) > 0 && $post_counter == $odd_item_position) {
         echo $odd_item;
@@ -44,6 +46,9 @@ function articles_listing(
               <?php echo get_icon(get_the_ID()); ?>
               <?php the_post_thumbnail($thumbnail_size) ?>
             </div>
+          <?php }; ?>
+          <?php if ($isFeatured) { ?>
+            <div class="featured-label"><?php _e('Feature story', 'mongabay'); ?></div>
           <?php }; ?>
           <div class="title headline">
             <h3><?php the_title(); ?></h3>
