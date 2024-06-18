@@ -725,8 +725,10 @@ async function fetchArticles(fromStart = false) {
   const query = `query{
     contentNodes(where: {
       status:PUBLISH,
-      ${searchValue.length ? keyWordQuery : ""}
-      contentTypes: [${selectedFormats}]}
+      ${searchValue.length > 0 ? keyWordQuery : ""}
+      ${taxArray.length > 0 ? taxQuery : ""}
+      contentTypes: [${selectedFormats}]
+    }
       first: 24
       ${cursor.length ? paginate : ""}
     ) 
