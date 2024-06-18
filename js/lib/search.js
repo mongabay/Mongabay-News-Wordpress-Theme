@@ -171,7 +171,7 @@ if (Object.keys(queriedParams).length > 0) {
     }
   }
 
-  fetchArticles(true);
+  fetchArticles(selectedFormats.length > 0);
 }
 
 function formatDate(date) {
@@ -217,8 +217,7 @@ function filtersCheck() {
     !searchInput.value.length &&
     !selectedTopics.length &&
     !selectedLocations.length &&
-    selectedFormats.length === 1 &&
-    selectedFormats.includes("POST")
+    !selectedFormats.length
   ) {
     document.getElementById("results").classList.add("hide");
     document.querySelector(".results-footer").classList.add("hide");
@@ -361,7 +360,7 @@ function displayClearButton(inputTag, insertLocation = "", toolTipText = "") {
 }
 
 /**
- * * @param {'topic' | 'location'} type - Either topic or location.
+ * @param {'topic' | 'location'} type - Either topic or location.
  * @param {string} name - The name of the tag.
  * @param {string} slug - The slug of the tag.
  * @param {boolean} showResults - Whether to show the results or not.
@@ -401,7 +400,7 @@ function createTaxTag(type, name, slug, showResults = false) {
     .insertBefore(tag, document.getElementById(searchSelectorId));
 
   if (showResults) {
-    fetchArticles();
+    fetchArticles(selectedFormats.length > 0);
   }
 
   tag.addEventListener("click", () => {
@@ -429,7 +428,7 @@ function createTaxTag(type, name, slug, showResults = false) {
     document.querySelector(`.tax-item-wrapper.${type}s`).removeChild(tag);
 
     filtersCheck();
-    fetchArticles(true);
+    fetchArticles(selectedFormats.length > 0);
   });
 
   document.getElementById(searchSelectorId).value = "";
@@ -479,9 +478,9 @@ function createFormatTag(name, slug, showResults = false) {
   formatTag.addEventListener("click", () => {
     selectedFormats = selectedFormats.filter((format) => format !== slug);
 
-    if (selectedFormats.length === 0) {
-      selectedFormats = ["POST"];
-    }
+    // if (selectedFormats.length === 0) {
+    //   selectedFormats = [];
+    // }
 
     if (document.querySelector(".tax-item-wrapper.format button")) {
       document.querySelector(".tax-item-wrapper.format").removeChild(formatTag);
@@ -646,6 +645,9 @@ async function fetchArticles(fromStart = false) {
     controller.abort();
   }
 
+  if (!selectedFormats.length) {
+    return;
+  }
   controller = new AbortController();
   const signal = controller.signal;
 
@@ -988,7 +990,7 @@ async function searchTopic() {
         if (searchValue.length > 0) {
           // fetchArticles();
         }
-        fetchArticles(true);
+        fetchArticles(selectedFormats.length > 0);
         // clearSearch();
       }
     });
@@ -1052,7 +1054,7 @@ async function searchLocation() {
         createTaxTag("location", node.name, node.slug);
 
         if (searchValue.length > 0) {
-          fetchArticles(true);
+          fetchArticles(selectedFormats.length > 0);
         }
       }
     });
