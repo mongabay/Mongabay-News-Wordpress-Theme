@@ -88,7 +88,7 @@ $byline_avatar = get_term_meta($byline_id, 'cover_image_url', true);
           </div>
         <?php } ?>
       </div>
-      <div id="post-results" class="grid-view">
+      <div class="container grid--4 gap--20 grid-view">
         <?php
         // Start the Loop
         while (have_posts()) :
