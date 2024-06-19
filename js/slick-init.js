@@ -30,6 +30,18 @@ jQuery(".slider-formats")
     slidesToShow: 1,
     dots: true,
     lazyLoad: "ondemand",
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+          centerPadding: "10%",
+        },
+      },
+    ],
   })
   .on("setPosition", function () {
     resizeSlider();

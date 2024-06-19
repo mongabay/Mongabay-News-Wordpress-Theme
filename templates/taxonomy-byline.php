@@ -78,7 +78,7 @@ $byline_avatar = get_term_meta($byline_id, 'cover_image_url', true);
     <div id="results">
       <div id="results-header">
         <div id="results-header-left">
-          <a href="<?php get_home_url() ?>/feed/?post_type=post&byline=<?php echo $title; ?>" target="_blank" id="results-rss" class="theme--button primary simple">RSS</a>
+          <a href="<?php echo home_url() ?>/feed/?post_type=post&byline=<?php echo $title; ?>" target="_blank" id="results-rss" class="theme--button primary simple">RSS</a>
           <div id="results-total"><?php echo $total; ?> <?php _e($total > 1 ? 'stories' : 'story', 'mongabay'); ?></div>
         </div>
         <?php if (!wp_is_mobile()) { ?>

@@ -36,7 +36,7 @@ get_header(); ?>
 		<div id="results">
 			<div id="results-header">
 				<div id="results-header-left">
-					<a href="<?php get_home_url() ?>/?feed=custom&s=&post_type=posts&topic=<?php echo $title; ?>" target="_blank" id="results-rss" class="theme--button primary simple">RSS</a>
+					<a href="<?php echo home_url() ?>/?feed=custom&s=&post_type=posts&topic=<?php echo $title; ?>" target="_blank" id="results-rss" class="theme--button primary simple">RSS</a>
 					<div id="results-total"><?php echo $total; ?> <?php _e($total > 1 ? 'stories' : 'story', 'mongabay'); ?></div>
 				</div>
 				<div id="results-view-toggles">

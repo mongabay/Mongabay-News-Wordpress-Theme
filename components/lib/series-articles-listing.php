@@ -84,7 +84,6 @@ function series_articles_listing(bool $show_headline)
                   </div>
                 <?php $count++;
                 }
-
                 wp_reset_postdata(); ?>
               </div>
             </div>
@@ -164,6 +163,13 @@ function series_articles_listing(bool $show_headline)
       'post_type' => 'post',
       'posts_per_page' => 1,
       'cache_results' => true,
+      'tax_query' => array(
+        array(
+          'taxonomy' => 'serial',
+          'field'    => 'slug',
+          'terms'    => $name,
+        ),
+      ),
     );
 
     $querySeries = new WP_Query($argsSeries);
@@ -186,12 +192,13 @@ function series_articles_listing(bool $show_headline)
             while ($querySeries->have_posts()) {
               $querySeries->the_post();
               $serial_obj = get_term_by('slug', $name, 'serial');
-              $serial_name = $serial_obj->name; ?>
+              $serial_name = $serial_obj->name;
+            ?>
 
-              <div class="article--container">
+              <div class="article--container full-height">
                 <a href="<?php echo home_url() . '/series/' . $name; ?>">
-                  <div class="featured-image">
-                    <?php the_post_thumbnail('medium'); ?>
+                  <div class="featured-image full-height">
+                    <?php the_post_thumbnail(get_the_ID(), 'medium', ['class' => 'full-height']); ?>
                     <div class="article--container-headline">
                       <div class="title headline gap--8">
                         <div class="meta">

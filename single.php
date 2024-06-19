@@ -59,13 +59,13 @@
         <div id="section-post-latest" class="container pv--40 gap--20 in-column">
             <div class="container in-row full-width section--headline" style="align-items: center; justify-content: space-between;">
                 <h1><?php _e('Latest articles', 'mongabay'); ?></h1>
-                <a href="<?php home_url(); ?>/articles" class="theme--button primary"><?php _e('All articles', 'mongabay'); ?><span class="icon icon-right"></span></a>
+                <a href="<?php echo home_url(); ?>/articles" class="theme--button primary"><?php _e('All articles', 'mongabay'); ?><span class="icon icon-right"></span></a>
             </div>
             <div class="grid--4 gap--20">
                 <?php articles_listing('post', 8, 0, true, 'medium', false, false, null); ?>
             </div>
             <div class="container centered pv--40">
-                <a href="<?php home_url(); ?>/articles" class="theme--button primary"><?php _e('All articles', 'mongabay'); ?><span class="icon icon-right"></span></a>
+                <a href="<?php echo home_url(); ?>/articles" class="theme--button primary"><?php _e('All articles', 'mongabay'); ?><span class="icon icon-right"></span></a>
             </div>
         </div>
         <div class="container pv--40 full-width">

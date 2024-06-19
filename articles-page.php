@@ -24,7 +24,7 @@ get_header(); ?>
       <div class="divider"></div>
     </div>
     <?php articles_listing('post', 10, 0, false, 'medium', null, null, null); ?>
-    <a href="<?php home_url(); ?>/?s=&formats=post" class="theme--button outlined full-width"><?php _e('All news', 'mongabay'); ?><span class="icon icon-right"></span></a>
+    <a href="<?php echo home_url(); ?>/?s=&formats=post" class="theme--button outlined full-width"><?php _e('All news', 'mongabay'); ?><span class="icon icon-right"></span></a>
   </div>
 </div>
 

@@ -78,7 +78,7 @@
     <div class="container in-column pv--40 gap--40">
       <div class="container in-row full-width section--headline latest-videos">
         <h1><?php _e('Latest videos', 'mongabay'); ?></h1>
-        <a href="<?php home_url(); ?>/?s=&formats=videos" class="theme--button primary"><?php _e('All videos', 'mongabay'); ?><span class="icon icon-right"></span></a>
+        <a href="<?php echo home_url(); ?>/?s=&formats=videos" class="theme--button primary"><?php _e('All videos', 'mongabay'); ?><span class="icon icon-right"></span></a>
       </div>
       <?php videos_latest(); ?>
       <?php if (!wp_is_mobile()) {
@@ -93,7 +93,7 @@
       </div>
     <?php } ?>
     <div class="container centered">
-      <a href="<?php home_url(); ?>/?s=&formats=videos" class="theme--button primary"><?php _e('All videos', 'mongabay'); ?><span class="icon icon-right"></span></a>
+      <a href="<?php echo home_url(); ?>/?s=&formats=videos" class="theme--button primary"><?php _e('All videos', 'mongabay'); ?><span class="icon icon-right"></span></a>
     </div>
   </div>
   <div class="container full-width pv--40">
