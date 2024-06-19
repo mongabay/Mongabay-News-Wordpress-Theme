@@ -1,9 +1,15 @@
 <?php
 function series_latest(array $series_array)
 {
-  echo '<div class="full-width in-column gap--40"><h1>Latest sereies</h1>';
+  echo '<div class="latest-series full-width in-column gap--40"><h1>';
+  _e('Latest Specials', 'mongabay');
+  echo '</h1>';
 
   $counter = 0;
+
+  if (wp_is_mobile()) {
+    $series_array = array_slice($series_array, 0, 3);
+  }
 
   foreach ($series_array as $name) {
     $args = array(
@@ -43,12 +49,13 @@ function series_latest(array $series_array)
 ?>
         <div class="article--container">
           <div class="featured-image full-height">
+            <div class="img-overlay"></div>
             <a href="<?php echo $tax_url; ?>">
               <?php the_post_thumbnail('large'); ?>
               <div class="article--container-headline">
-                <div class="title headline gap--8 text-center">
+                <div class="title headline gap--8 left">
                   <h1><?php echo $tax_name; ?></h1>
-                  <div class="post-meta">
+                  <div class="meta">
                     <span class="count"><?php echo $query->found_posts; ?> stories</span>
                   </div>
                 </div>
@@ -61,13 +68,15 @@ function series_latest(array $series_array)
           echo '</div>';
         }
 
-        if ($counter === 5) {
-          echo '<div class="container pv--56 full-width">';
+        if ($counter === 5 || (wp_is_mobile() && $counter === 2)) {
+          echo '<div class="container ';
+          echo !wp_is_mobile() ? 'pv--56' : '';
+          echo ' full-width">';
           banner('', 'We are nonprofit', 'Help us tell stories of biodiversity loss, climate change and more.', 'Donate', 'accent ph--20 pv--56 full-width', 'extra-large');
           echo '</div>';
         }
 
-        if ($counter === 8) {
+        if ($counter === 8 || (wp_is_mobile() && $counter === 3)) {
           echo '</div>';
         }
         ?>

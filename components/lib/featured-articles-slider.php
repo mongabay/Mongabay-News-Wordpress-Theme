@@ -29,6 +29,7 @@ function featured_articles_slider($posts_per_page, $offset)
             <div class="article--container">
               <a href="<?php the_permalink(); ?>">
                 <div class="featured-image">
+                  <div class="img-overlay"></div>
                   <?php the_post_thumbnail('large'); ?>
                   <div class="article--container-headline">
                     <div class="title headline gap--8 text-center">

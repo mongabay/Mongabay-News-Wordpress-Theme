@@ -26,11 +26,11 @@ $formats = array('post', 'custom-story', 'videos', 'podcasts', 'specials', 'shor
 	</div>
 	<div class="container in-row gap--40" style="margin-top: calc(-1 * var(--spacing-3))">
 		<div class="column--80 latest-featured gap--8 pv--8">
-			<?php featured_articles_listing(array('post'), 10, 0, 'medium', 3, false, 'serial', $tax_slug); ?>
+			<?php featured_articles_listing($formats, 10, 0, 'medium', 3, false, 'serial', $tax_slug); ?>
 		</div>
 		<div class="column--20 latest-news">
 			<?php articles_listing('post', 10, 0, false, 'medium', null, null, 'serial'); ?>
-			<a href="<?php home_url(); ?>/?s=" class="theme--button outlined full-width"><?php _e('All news', 'mongabay'); ?><span class="icon icon-right"></span></a>
+			<a href="<?php echo home_url(); ?>/?s=" class="theme--button outlined full-width"><?php _e('All news', 'mongabay'); ?><span class="icon icon-right"></span></a>
 		</div>
 	</div>
 </div>

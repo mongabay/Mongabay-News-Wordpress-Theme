@@ -44,7 +44,7 @@ formats_slider($formats, 'The outstanding feature stories give one step forward'
       <?php articles_listing('post', 4, 8, true, 'medium', null, null, 'serial'); ?>
     </div>
     <div class="container centered pv--40">
-      <a href="<?php home_url(); ?>/?s=&formats=special" class="theme--button primary"><?php _e('All series', 'mongabay'); ?><span class="icon icon-right"></span></a>
+      <a href="<?php echo home_url(); ?>/?s=&formats=special" class="theme--button primary"><?php _e('All series', 'mongabay'); ?><span class="icon icon-right"></span></a>
     </div>
   </div>
 </div>

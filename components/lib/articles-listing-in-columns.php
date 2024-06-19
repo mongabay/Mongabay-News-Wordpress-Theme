@@ -61,7 +61,7 @@ function articles_listing_in_columns(
               <?php the_post_thumbnail($thumbnail_size) ?>
             </div>
           <?php }; ?>
-          <div class="title headline">
+          <div class="title headline left">
             <?php if ($post_counter < 3) { ?>
               <h1><?php the_title(); ?></h1>
             <?php } else { ?>

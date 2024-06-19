@@ -77,7 +77,7 @@
   <div class="container ph--40 pv--40 in-column">
     <div class="container in-row full-width section--headline" style="align-items: center; justify-content: space-between;">
       <h1><?php _e('Latest podcasts', 'mongabay'); ?></h1>
-      <a href="<?php home_url(); ?>/?s=&formats=podcasts" class="theme--button primary"><?php _e('All podcasts', 'mongabay'); ?><span class="icon icon-right"></span></a>
+      <a href="<?php echo home_url(); ?>/?s=&formats=podcasts" class="theme--button primary"><?php _e('All podcasts', 'mongabay'); ?><span class="icon icon-right"></span></a>
     </div>
 
     <div class="grid--4 gap--20">
@@ -109,7 +109,7 @@
         <?php articles_listing('podcasts', 4, 7, true, 'medium', null, null, null); ?>
       </div>
       <div class="container centered pv--40">
-        <a href="<?php home_url(); ?>/?s=&formats=podcasts" class="theme--button primary"><?php _e('All podcasts', 'mongabay'); ?><span class="icon icon-right"></span></a>
+        <a href="<?php echo home_url(); ?>/?s=&formats=podcasts" class="theme--button primary"><?php _e('All podcasts', 'mongabay'); ?><span class="icon icon-right"></span></a>
       </div>
     </div>
   </div>
