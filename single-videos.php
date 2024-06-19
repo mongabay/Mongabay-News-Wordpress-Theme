@@ -76,16 +76,22 @@
       ?>
     </div>
     <div class="container in-column pv--40 gap--40">
-      <div class="container in-row full-width section--headline" style="align-items: center; justify-content: space-between;">
+      <div class="container in-row full-width section--headline latest-videos">
         <h1><?php _e('Latest videos', 'mongabay'); ?></h1>
         <a href="<?php home_url(); ?>/?s=&formats=videos" class="theme--button primary"><?php _e('All videos', 'mongabay'); ?><span class="icon icon-right"></span></a>
       </div>
       <?php videos_latest(); ?>
-      <?php banner('https://mongabay.us14.list-manage.com/subscribe?u=80161fe385606408293ae0e51&id=940652e1f4', 'Stay updated', 'Delivering news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--20 pv--56 full-width', 'extra-large'); ?>
+      <?php if (!wp_is_mobile()) {
+        banner('https://mongabay.us14.list-manage.com/subscribe?u=80161fe385606408293ae0e51&id=940652e1f4', 'Stay updated', 'Delivering news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--20 pv--56 full-width', 'extra-large');
+      } ?>
     </div>
-    <div class="grid--4 gap--20 repeat pv--40">
-      <?php articles_listing('videos', 8, 0, true, 'medium', false, false, null); ?>
-    </div>
+    <?php if (!wp_is_mobile()) { ?>
+      <div class="container pv--40 gap--20 in-column">
+        <div class="grid--4 gap--20 repeat">
+          <?php articles_listing('videos', 4, 8, true, 'medium', null, null, null); ?>
+        </div>
+      </div>
+    <?php } ?>
     <div class="container centered">
       <a href="<?php home_url(); ?>/?s=&formats=videos" class="theme--button primary"><?php _e('All videos', 'mongabay'); ?><span class="icon icon-right"></span></a>
     </div>

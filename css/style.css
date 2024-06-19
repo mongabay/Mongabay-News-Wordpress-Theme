@@ -796,6 +796,12 @@ ul.main-menu:not(.off-canvas) li a.active:before {
   font-family: "Lora";
   font-weight: 400;
 }
+
+.section--headline.latest-videos {
+  align-items: center;
+  justify-content: space-between;
+}
+
 #section-features-latest .secondary .article--container img {
   height: 170px;
   object-fit: cover;
@@ -2437,6 +2443,12 @@ footer .grid--4 {
   .latest-banners {
     order: 2;
   }
+  .article--container .featured-image .title {
+    width: 100%;
+    bottom: 0;
+    left: 0;
+  }
+
   .article--container .featured-image .title h1 {
     font-size: 1.5rem;
     line-height: 1;
@@ -2478,6 +2490,14 @@ footer .grid--4 {
 
   .section--inspiration .item-container:nth-child(1) .item-title {
     right: 14%;
+  }
+
+  .section--headline h1 {
+    line-height: 1.25;
+  }
+
+  .section--headline.latest-videos {
+    align-items: unset;
   }
 
   #series--description-container,
