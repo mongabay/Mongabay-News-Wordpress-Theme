@@ -28,7 +28,7 @@ formats_slider(array('podcasts'), 'Uncover a world of thought provoking podcasts
       <div class="banner gap--20 ph--20 pv--20 accent">
       <div class="inner">
         <div class="title">
-          <h1>We are nonprofit</h1>
+          <h1 class="lh--tight">We are nonprofit</h1>
         </div>
         <div class="copy">
           Help us tell stories of biodiversity loss, climate change and more.

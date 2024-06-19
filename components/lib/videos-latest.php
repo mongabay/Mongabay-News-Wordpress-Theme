@@ -37,6 +37,7 @@ function videos_latest()
       <div class="article--container">
         <a href="' . get_the_permalink($id) . '">
           <div class="featured-image">'
+      . ($is_large ? '<div class="img-overlay"></div>' : '')
       . get_icon($id)
       . get_the_post_thumbnail($id, 'medium')
       . ($is_large ? $headline_large : '')
@@ -57,7 +58,7 @@ function videos_latest()
       <div class="banner gap--20 accent ph--20 pv--20">
         <div class="inner">
           <div class="title">
-            <h1>We are nonprofit</h1>
+            <h1 class="lh--tight">We are nonprofit</h1>
           </div>
             <div class="copy">Help us tell stories of biodiversity loss, climate change and more.</div>
           <a href="" class="theme--button primary full-width">Donate<span class="icon icon-right"></span>

@@ -23,7 +23,7 @@ formats_slider($formats, 'The outstanding feature stories give one step forward'
     'link_url' => home_url() . '/?s=&formats=post',
   );
 
-  topics_section('Explore custom stories about', array('climate', 'oceans'), $extra_params);
+  topics_section(array('post'), 'Explore custom stories about', array('climate', 'oceans'), $extra_params);
   ?>
 
 

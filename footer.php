@@ -59,7 +59,7 @@
 		<div class="divider"></div>
 		<div>
 			<p class="copyright">
-				© <?php echo date('Y'); ?> Copyright <?php bloginfo('name'); ?>
+				© <?php echo date('Y'); ?> Copyright Conservation news. Mongabay is a U.S.-based non-profit conservation and environmental science news platform. Our EIN or tax ID is 45-3714703.
 			</p>
 		</div>
 	</div>
