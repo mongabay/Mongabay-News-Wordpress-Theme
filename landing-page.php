@@ -26,8 +26,8 @@ get_header(); ?>
 		<?php featured_articles_listing(array('post', 'videos', 'podcasts', 'short-article', 'custom-story'), 5, 0, 'medium', 2, true, null, null); ?>
 	</div>
 	<div class="column--20 gap--40 pv--40 latest-banners">
-		<?php banner('https://mongabay.us14.list-manage.com/subscribe?u=80161fe385606408293ae0e51&id=940652e1f4', 'Stay updated', 'Delivering news and inspiration from nature’s frontline.', 'Newsletter', 'outlined ph--20 pv--20', ''); ?>
-		<?php banner('', 'We are nonprofit', 'Help us tell stories of biodiversity loss, climate change and more.', 'Donate', 'accent ph--20 pv--56 full-width', ''); ?>
+		<?php banner('https://mongabay.us14.list-manage.com/subscribe?u=80161fe385606408293ae0e51&id=940652e1f4', 'Stay updated', 'Delivering news and inspiration from nature’s frontline.', 'Newsletter', 'outlined ph--20 pv--20 gap--16 full-width', 'lh--tightest', 'full-width'); ?>
+		<?php banner('', 'We are nonprofit', 'Help us tell stories of biodiversity loss, climate change and more.', 'Donate', 'accent ph--20 pv--56 full-width gap--16', 'lh--tightest', 'full-width'); ?>
 	</div>
 </div>
 
@@ -37,7 +37,7 @@ get_header(); ?>
 	<?php series_articles_listing(true); ?>
 
 	<div class="container full-width pv--40">
-		<?php banner('', 'Free and open access to credible information', '', 'Learn more', 'accent full-width pv--56', 'extra-large'); ?>
+		<?php banner('', 'Free and open access to credible information', '', 'Learn more', 'accent full-width pv--56 ph--20 gap--32', 'extra-large', ''); ?>
 	</div>
 
 	<div class="section--highlight container full-width pv--40">
@@ -52,7 +52,7 @@ get_header(); ?>
 	</div>
 
 	<div class="container full-width pv--40">
-		<?php banner('', 'We are nonprofit', 'Help us tell stories of biodiversity loss, climate change and more.', 'Donate', 'accent ph--20 pv--56 full-width', 'extra-large'); ?>
+		<?php banner('', 'We are nonprofit', 'Help us tell stories of biodiversity loss, climate change and more.', 'Donate', 'accent ph--20 pv--56 gap--32 full-width', 'extra-large', ''); ?>
 	</div>
 </div>
 
@@ -71,7 +71,7 @@ get_header(); ?>
 	</div>
 
 	<div class="container pv--40 full-width">
-		<?php banner('https://mongabay.us14.list-manage.com/subscribe?u=80161fe385606408293ae0e51&id=940652e1f4', 'Stay updated', 'Delivering news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--20 pv--56 full-width', 'extra-large'); ?>
+		<?php banner('https://mongabay.us14.list-manage.com/subscribe?u=80161fe385606408293ae0e51&id=940652e1f4', 'Stay updated', 'Delivering news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--20 pv--56 gap--32 full-width', 'extra-large', ''); ?>
 	</div>
 </div>
 <?php get_footer(); ?>

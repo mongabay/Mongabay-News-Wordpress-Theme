@@ -1,8 +1,8 @@
 <?php
-function topics_section(string $headline, array $topics, array $extra_params = [])
+function topics_section(array $post_types = array('post', 'custom-story', 'videos', 'podcats', 'specials', 'short-article'), string $headline, array $topics, array $extra_params = [])
 {
   $args = array(
-    'post_type' => array('post', 'custom-story', 'videos', 'podcats', 'specials', 'short-article'),
+    'post_type' => $post_types,
     'posts_per_page' => 1,
     'cache_results' => true,
     'tax_query' => array(

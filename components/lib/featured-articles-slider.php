@@ -33,9 +33,9 @@ function featured_articles_slider($posts_per_page, $offset)
                   <?php the_post_thumbnail('large'); ?>
                   <div class="article--container-headline">
                     <div class="title headline gap--8 text-center">
-                      <h5>Feature story</h5>
+                      <h5><?php _e('Feature story', 'mongabay'); ?></h5>
                       <h1><?php the_title(); ?></h1>
-                      <div class="post-meta">
+                      <div class="meta">
                         <span class="byline"><?php echo getPostBylines(get_the_ID()); ?></span>
                         <span class="date"><?php the_time('j M Y'); ?></span>
                       </div>
