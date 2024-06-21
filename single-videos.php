@@ -69,7 +69,7 @@
 
   <div class="container ph--40 pv--40 in-column">
     <div class="container full-width pv--40">
-      <?php banner('', 'We are nonprofit.', 'Help us tell stories of biodiversity loss, climate change & socio-environmental injustice.', 'Donate', 'accent full-width pv--56', 'extra-large'); ?>
+      <?php banner('', 'We’re a nonprofit.', 'Help us tell stories of biodiversity loss, climate change & socio-environmental injustice.', 'Donate', 'accent full-width pv--56', 'extra-large'); ?>
     </div>
     <div class="container pv--40">
       <?php series_articles_listing(false);
@@ -82,7 +82,7 @@
       </div>
       <?php videos_latest(); ?>
       <?php if (!wp_is_mobile()) {
-        banner('https://mongabay.us14.list-manage.com/subscribe?u=80161fe385606408293ae0e51&id=940652e1f4', 'Stay updated', 'Delivering news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--20 pv--56 full-width', 'extra-large');
+        banner('https://mongabay.us14.list-manage.com/subscribe?u=80161fe385606408293ae0e51&id=940652e1f4', 'Subscribe', 'Stay informed with news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--20 pv--56 full-width', 'extra-large');
       } ?>
     </div>
     <?php if (!wp_is_mobile()) { ?>

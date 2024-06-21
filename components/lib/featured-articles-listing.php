@@ -61,7 +61,7 @@ function featured_articles_listing(
                 <div class="title headline <?php echo $is_posts_only ? 'text-center' : ''; ?>">
                   <h1><?php the_title(); ?></h1>
                   <?php if ($is_posts_only) { ?>
-                    <div class="post-meta">
+                    <div class="meta">
                       <span class="byline"><?php echo getPostBylines(get_the_ID()); ?></span>
                       <span class="date"><?php the_time('j M Y'); ?></span>
                     </div>

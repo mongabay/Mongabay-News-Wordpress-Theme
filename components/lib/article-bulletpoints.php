@@ -10,31 +10,29 @@ function article_bulletpoints(int $post_id)
     }
   }
   if ((int)$mog_count > 0 && get_post_meta($post_id, "mog_bullet_0_mog_bulletpoint", true)) {
-    echo '<div class="bulletpoints" data-tie-toggle=".bulletpoints ul"><ul>';
+    echo '<div class="bulletpoints-wrapper"><div class="bulletpoints"><ul>';
+
     for ($i = 0; $i < $mog_count; $i++) {
-      if ($i >= 2) {
-        echo "<li style='display:none;'><em>" . get_post_meta($post_id, "mog_bullet_" . $i . "_mog_bulletpoint", true) . "</em></li>";
-      } else {
-        echo "<li><em>" . get_post_meta($post_id, "mog_bullet_" . $i . "_mog_bulletpoint", true) . "</em></li>";
-      }
+      echo "<li><em>" . get_post_meta($post_id, "mog_bullet_" . $i . "_mog_bulletpoint", true) . "</em></li>";
     }
-    echo '</ul>';
-    if ($mog_count > 2) {
-      echo '<button class="content-expander"><span>' . __('See All Key Ideas', 'mongabay') . '</span></button>';
-    }
-    echo '</div>';
+
+    echo '</ul></div><button class="content-expander"><span>' . __('See All Key Ideas', 'mongabay') . '</span></button></div>';
   }
   ?>
   <script>
     (function($) {
       $(document).ready(function() {
-        $('.bulletpoints .content-expander').click(function() {
-          $(this).prev('ul').find('li:nth-child(n+3)').toggle();
-          if ($(this).prev('ul').find('li:nth-child(n+3)').is(':visible')) {
-            $(this).addClass('visible');
-          } else {
-            $(this).removeClass('visible');
-          }
+        const bulletPoints = $('.bulletpoints');
+        const bulletPointsHeight = document.querySelector('.bulletpoints').scrollHeight;
+        const toggle = $('.bulletpoints-wrapper .content-expander');
+
+        if (bulletPointsHeight < 120) {
+          toggle.remove();
+        }
+
+        toggle.click(function() {
+          bulletPoints.toggleClass('visible');
+          $(this).toggleClass('visible');
         });
       });
     })(jQuery);

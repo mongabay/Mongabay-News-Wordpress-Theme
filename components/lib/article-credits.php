@@ -52,7 +52,7 @@ function article_credits(int $post_id)
             <a href="<?php echo home_url('/') . 'by/' . $translator_adaptor_slug; ?>">
               <?php echo $translator_adaptor_name; ?>
             </a>
-            <?php _e($string_title, 'mongabay'); ?>
+            <span><?php _e($string_title, 'mongabay'); ?></span>
           </div>
         </div>
       <?php } ?>

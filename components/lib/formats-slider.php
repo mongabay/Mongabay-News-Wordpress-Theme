@@ -2,7 +2,7 @@
 function formats_slider(array $post_formats, string $headline, array $terms_array = [], string $extra_class = null)
 { ?>
   <div id="formats-slider" class="section--highlight slider full-width">
-    <div class="container in-column gap--40 pv--40">
+    <div class="container in-column gap--40 pv--40 ph--40">
       <h1 class="extra-large <?php echo wp_is_mobile() ? 'ph--20' : ''; ?> <?php echo $extra_class ? $extra_class : ''; ?>"><?php _e($headline, 'mongabay'); ?></h1>
     </div>
     <div class="slider-formats">

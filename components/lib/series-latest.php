@@ -72,7 +72,7 @@ function series_latest(array $series_array)
           echo '<div class="container ';
           echo !wp_is_mobile() ? 'pv--56' : '';
           echo ' full-width">';
-          banner('', 'We are nonprofit', 'Help us tell stories of biodiversity loss, climate change and more.', 'Donate', 'accent ph--20 pv--56 full-width', 'extra-large');
+          banner('', 'We’re a nonprofit', 'Help us tell impactful stories of biodiversity loss, climate change, and more', 'Donate', 'accent ph--20 pv--56 full-width', 'extra-large');
           echo '</div>';
         }
 

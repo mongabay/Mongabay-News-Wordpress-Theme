@@ -39,7 +39,7 @@ function articles_listing(
       <?php if (strlen($odd_item) > 0 && $post_counter == $odd_item_position) {
         echo $odd_item;
       } ?>
-      <div class="article--container pv--8">
+      <div class="article--container">
         <a href="<?php the_permalink(); ?>">
           <?php if (($show_all_thumbnails || $post_counter == 1) && has_post_thumbnail()) { ?>
             <div class="featured-image">

@@ -13,7 +13,7 @@ get_header(); ?>
 <?php
 //$series = (array('global-forests', 'indonesian-forests', 'oceans', 'indigenous-peoples-and-conservation'));
 $formats = array('post', 'custom-story', 'videos', 'podcasts', 'specials', 'short-article');
-formats_slider($formats, 'The outstanding feature stories give one step forward', array(), 'text-center');
+formats_slider($formats, 'In-depth feature stories reveal context and insight', array(), 'text-center');
 ?>
 
 <div class="container full-width ph--40 in-column">
@@ -36,7 +36,7 @@ formats_slider($formats, 'The outstanding feature stories give one step forward'
   </div>
 
   <div class="container full-width pv--40">
-    <?php banner('', 'We are nonprofit', 'Help us tell stories of biodiversity loss, climate change and more.', 'Donate', 'accent ph--20 pv--56 full-width', 'extra-large'); ?>
+    <?php banner('', 'We’re a nonprofit', 'Help us tell impactful stories of biodiversity loss, climate change, and more', 'Donate', 'accent ph--20 pv--56 full-width', 'extra-large'); ?>
   </div>
 
   <div class="container full--width gap--40 in-column">

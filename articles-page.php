@@ -29,18 +29,18 @@ get_header(); ?>
 </div>
 
 <div class="container in-column ph--40 pv--40">
-  <?php banner('', 'We are nonprofit', 'Help us tell stories of biodiversity loss, climate change and more.', 'Donate', 'accent ph--20 pv--56 full-width', 'extra-large'); ?>
+  <?php banner('', 'We’re a nonprofit', 'Help us tell impactful stories of biodiversity loss, climate change, and more', 'Donate', 'accent ph--20 pv--56 full-width', 'extra-large'); ?>
   <?php topics_section(array('post'), 'Explore articles by topic such as', array('climate', 'oceans')); ?>
 </div>
 <?php featured_articles_slider(4, 5); ?>
 
 <div class="container ph--40 pv--40">
-  <?php banner('https://mongabay.us14.list-manage.com/subscribe?u=80161fe385606408293ae0e51&id=940652e1f4', 'Stay updated', 'Delivering news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--20 pv--56 full-width', 'extra-large'); ?>
+  <?php banner('https://mongabay.us14.list-manage.com/subscribe?u=80161fe385606408293ae0e51&id=940652e1f4', 'Subscribe', 'Stay informed with news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--20 pv--56 full-width', 'extra-large'); ?>
 </div>
 
 <div class="section--highlight">
   <div class="container ph--40 pv--80 gap--20 in-column">
-    <h1>Get quick glances with our brief <span>shorts</span></h1>
+    <h1>Quickly stay updated with our news <span>shorts</span></h1>
     <div class="grid--3 gap--40">
       <?php articles_listing_condensed('post', 6, 0, false, 'medium', null); ?>
     </div>

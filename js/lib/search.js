@@ -874,7 +874,7 @@ async function fetchArticles(fromStart = false) {
   data.contentNodes.edges.forEach((edge) => {
     const node = edge.node;
 
-    if (!node) {
+    if (!node || Object.keys(node).length === 0){
       return;
     }
 

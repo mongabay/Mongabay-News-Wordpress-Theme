@@ -340,13 +340,13 @@ function mongabay_custom_post($length)
 }
 
 // Create the Custom Excerpts
-function mongabay_excerpt()
+function mongabay_excerpt($length = 30)
 {
     global $post;
     if (empty($post->post_excerpt)) {
         $output_1 = strip_shortcodes($post->post_content);
         $output_2 = wp_strip_all_tags($output_1);
-        $output = wp_trim_words($output_2, 30);
+        $output = wp_trim_words($output_2, $length);
     } else {
         $output = $post->post_excerpt;
     }
