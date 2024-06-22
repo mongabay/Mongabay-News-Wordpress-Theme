@@ -27,6 +27,7 @@ const formatOptions = {
 const defaultFormatsList = ["POST", "VIDEOS", "PODCASTS", "SPECIALS"];
 
 let selectedFormats = [];
+let featuredOnly = false;
 
 const articlesData = {
   0: ["Forests"],
@@ -171,6 +172,11 @@ if (Object.keys(queriedParams).length > 0) {
         }
       });
     }
+  }
+
+  if (queriedParams.featured === "true") {
+    featuredOnly = true;
+    document.getElementById("featured").checked = true;
   }
 
   fetchArticles(true);
@@ -638,6 +644,11 @@ document.getElementById("searchFormat").addEventListener("focus", () => {
   }px`;
 });
 
+document.getElementById("featured").addEventListener("change", () => {
+  featuredOnly = !featuredOnly;
+  fetchArticles(true);
+});
+
 /**
  * Fetch articles based on search criteria.
  * @param {boolean} fromStart - Whether to fetch articles from the start or not.
@@ -686,7 +697,7 @@ async function fetchArticles(fromStart = false) {
     selectedLocations.length ? `&locations=${selectedLocations.join("+")}` : ""
   }${selectedTopics.length ? `&topics=${selectedTopics.join("+")}` : ""}${
     selectedFormats ? `&formats=${selectedFormats.join("+").toLowerCase()}` : ""
-  }`;
+  }${featuredOnly ? "&featured=true" : ""}`;
 
   const nextURL = `${domain}${searchString}`;
   const nextTitle = `Searched for ${searchValue}`;
@@ -701,9 +712,6 @@ async function fetchArticles(fromStart = false) {
     selectedLocations,
   )},field:SLUG,operator:IN}`;
   const seriesQql = `{taxonomy:SERIAL,operator:EXISTS,field: SLUG}`;
-  // const formatsGql = `{taxonomy:ARTICLEFORMATTYPE,terms:${JSON.stringify(
-  //   selectedFormats,
-  // )},field:SLUG,operator:IN}`;
 
   const taxArray = [];
 
@@ -719,7 +727,7 @@ async function fetchArticles(fromStart = false) {
 
   const keyWordQuery = `search:\"${searchValue}\",`;
   const taxQuery = `taxQuery:{taxArray:[${taxArray.join(",")}]},`;
-  const featuredQuery = `metaQuery:{relation:OR,queries:[{key:\"featured_as\",value:\"featured\",compare:"="}]`;
+  const featuredQuery = `metaQuery:{metaArray:{key:\"featured_as\",compare:EQUAL_TO,value:\"featured\"}},`;
   const paginate = `,after:\"${cursor}\"`;
   const node = `__typename,title,link,date,byline{nodes{name}},featuredImage{node{srcSet sizes(size: THUMBNAIL)}}`;
   const pageInfo = `pageInfo{endCursor hasNextPage hasPreviousPage startCursor total}`;
@@ -729,6 +737,7 @@ async function fetchArticles(fromStart = false) {
       status:PUBLISH,
       ${searchValue.length > 0 ? keyWordQuery : ""}
       ${taxArray.length > 0 ? taxQuery : ""}
+      ${featuredOnly ? featuredQuery : ""}
       contentTypes: [${!selectedFormats.length ? defaultFormatsList : selectedFormats}]
     }
       first: 24
@@ -874,7 +883,7 @@ async function fetchArticles(fromStart = false) {
   data.contentNodes.edges.forEach((edge) => {
     const node = edge.node;
 
-    if (!node) {
+    if (!node || Object.keys(node).length === 0) {
       return;
     }
 

@@ -26,3 +26,4 @@ include(get_template_directory() . '/components/lib/article-headline.php');
 include(get_template_directory() . '/components/lib/article-credits.php');
 include(get_template_directory() . '/components/lib/article-bulletpoints.php');
 include(get_template_directory() . '/components/lib/article-terms.php');
+include(get_template_directory() . '/components/lib/share-icons-grid.php');

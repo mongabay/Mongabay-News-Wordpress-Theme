@@ -31,6 +31,12 @@
             <div id="formats-results" class="dropdown hide"></div>
         </div>
     </div>
+    <div class="container pv--8">
+        <label for="featured">
+            <input id="featured" type="checkbox" name="featured" value="false" aria-label="Featured">
+            <?php _e('Featured only', 'mongabay'); ?>
+        </label>
+    </div>
     <div id="default" class="">
         <h1><?php _e('Try out our suggestions', 'mongabay'); ?></h1>
         <div class="suggestions">
