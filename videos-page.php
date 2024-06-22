@@ -16,7 +16,7 @@ formats_slider(array('videos'), 'Explore video stories from nature’s frontline
 ?>
 
 <div class="container in-column gap--20 ph--40">
-  <?php topics_section(array('videos'), 'Watch unique videos that cut through the noise', array('climate', 'oceans'), array('link_copy' => 'all topics', 'link_url' => '')); ?>
+  <?php topics_section(array('videos'), 'Watch unique videos that cut through the noise', array('climate', 'oceans'), array('link_copy' => 'all topics', 'link_url' => home_url() . '/?s=&formats=videos')); ?>
 
   <div id="section-videos-latest" class="container pv--40 gap--20 in-column">
     <div class="container in-row full-width section--headline" style="align-items: center; justify-content: space-between;">

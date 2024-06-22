@@ -20,7 +20,7 @@ formats_slider($formats, 'In-depth feature stories reveal context and insight', 
   <?php
   $extra_params = array(
     'link_copy' => 'all stories',
-    'link_url' => home_url() . '/?s=&formats=post',
+    'link_url' => home_url() . '/?s=&formats=post&featured=true',
   );
 
   topics_section(array('post'), 'Explore custom stories about', array('climate', 'oceans'), $extra_params);
@@ -30,7 +30,7 @@ formats_slider($formats, 'In-depth feature stories reveal context and insight', 
   <div id="section-features-latest" class="container pv--40 gap--20 in-column">
     <div class="container in-row full-width section--headline" style="align-items: center; justify-content: space-between;">
       <h1><?php _e('Latest features', 'mongabay'); ?></h1>
-      <a href="" class="theme--button primary"><?php _e('All features', 'mongabay'); ?><span class="icon icon-right"></span></a>
+      <a href="<?php echo home_url() ?>/?s=&formats=post&featured=true" class="theme--button primary"><?php _e('All features', 'mongabay'); ?><span class="icon icon-right"></span></a>
     </div>
     <?php articles_listing_in_columns($formats, 6, 0, 'medium', null, true); ?>
   </div>
