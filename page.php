@@ -5,7 +5,6 @@
 				<!-- article -->
 				<?php $post_id = get_the_ID(); ?>
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<h1><?php the_title(); ?></h1>
 					<?php mongabay_sanitized_content($post_id); ?>
 				</article>
 				<!-- /article -->
@@ -17,9 +16,10 @@
 			</article>
 			<!-- /article -->
 		<?php endif; ?>
-
-		<!-- /main -->
+	</div>
+	<?php inspiration_banner(); ?>
+	<!-- /main -->
 </main>
-</div>
+
 <!-- /container -->
 <?php get_footer(); ?>
