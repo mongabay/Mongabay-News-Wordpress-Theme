@@ -23,6 +23,7 @@
   --spacing-11: 40px;
   --spacing-12: 42px;
   --spacing-13: 48px;
+  --spacing-14: 80px;
   --rounded: 8px;
   --font-xs: 0.8rem;
   --font-s: 1rem;
@@ -31,6 +32,7 @@
   --font-l: 2.5rem;
   --font-xl: 3rem;
   --font-xxl: 3.5rem;
+  --font-jumbo: 4.875rem;
   --line-height-normal: 1.5;
   --line-height-tight: 1.2;
   --line-height-tightest: 1;
@@ -98,6 +100,28 @@ p.copyright {
   color: var(--theme-body);
 }
 
+hr.spacer {
+  display: flex;
+  height: 1px;
+  background: rgba(15, 54, 46, 0.078) !important;
+  width: 100%;
+  margin: var(--spacing-13) 0;
+  border: none;
+}
+
+ul.no-bullets {
+  list-style: none;
+}
+
+ul.no-bullets li {
+  margin-bottom: var(--spacing-4);
+}
+
+ul.no-bullets li a {
+  text-decoration: none;
+  color: var(--theme-body);
+}
+
 .full-width {
   width: 100%;
 }
@@ -132,9 +156,25 @@ img.rounded {
 .single h1,
 .single h2,
 .single h3,
-.single h4 {
+.single h4,
+h1,
+h2,
+h3,
+h4 {
   font-family: "Lora";
   font-weight: 400;
+}
+
+h1 {
+  font-size: var(--font-xxl);
+}
+
+h1.jumbo {
+  font-size: clamp(2rem, 5vw + 1rem, var(--font-jumbo));
+}
+
+h2 {
+  font-size: clamp(1.5rem, 5vw + 0.5rem, var(--font-xl));
 }
 
 .headline,

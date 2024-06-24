@@ -1014,9 +1014,9 @@ add_action('graphql_register_types', function () {
 /* Disable Gutenberg globally */
 function mongabay_disable_gutenberg($can_edit, $post_type)
 {
-    $excluded_post_type = 'custom-story';
+    $excluded_post_types = array('custom-story', 'page');
 
-    return $post_type === $excluded_post_type;
+    return in_array($post_type, $excluded_post_types);
 }
 
 /* Register post tags for new post types */

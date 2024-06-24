@@ -19,7 +19,7 @@ function article_terms(int $post_id)
       const expanderButton = jQuery('#expander-container.tags button.content-expander');
 
       if (wrapperHeight <= 130) {
-        jQuery('#expander-container').remove();
+        jQuery('#expander-container.tags').remove();
       }
 
       expanderButton.click(function() {

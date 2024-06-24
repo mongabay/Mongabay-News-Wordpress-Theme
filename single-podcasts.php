@@ -30,7 +30,7 @@
       ?>
     </div>
   </div>
-  <div class="container in-row ph--40 gap--20">
+  <div class="container in-row ph--40 gap--40">
     <div class="column--80 in-column">
       <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
           <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> style="position: relative">
