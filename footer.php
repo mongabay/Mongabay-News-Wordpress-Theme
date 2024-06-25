@@ -8,51 +8,51 @@
 				<h4><?php _e('News formats', 'mongabay'); ?></h4>
 				<div class="divider"></div>
 				<ul class="footer-links">
-					<li><a href=""><?php _e('Videos', 'mongabay'); ?></a></li>
-					<li><a href=""><?php _e('Podcasts', 'mongabay'); ?></a></li>
-					<li><a href=""><?php _e('Articles', 'mongabay'); ?></a></li>
-					<li><a href=""><?php _e('Series', 'mongabay'); ?></a></li>
-					<li><a href=""><?php _e('Short news', 'mongabay'); ?></a></li>
-					<li><a href=""><?php _e('Feature Stories', 'mongabay'); ?></a></li>
-					<li><a href=""><?php _e('The Latest', 'mongabay'); ?></a></li>
+					<li><a href="<?php echo home_url(); ?>/videos"><?php _e('Videos', 'mongabay'); ?></a></li>
+					<li><a href="<?php echo home_url(); ?>/podcasts"><?php _e('Podcasts', 'mongabay'); ?></a></li>
+					<li><a href="<?php echo home_url(); ?>/articles"><?php _e('Articles', 'mongabay'); ?></a></li>
+					<li><a href="<?php echo home_url(); ?>/specials"><?php _e('Specials', 'mongabay'); ?></a></li>
+					<li><a href="<?php echo home_url(); ?>/shorts"><?php _e('Short news', 'mongabay'); ?></a></li>
+					<li><a href="<?php echo home_url(); ?>/feature"><?php _e('Feature Stories', 'mongabay'); ?></a></li>
+					<li><a href="<?php echo home_url(); ?>/?s=&formats=post+videos+podcasts+shorts+specials"><?php _e('The Latest', 'mongabay'); ?></a></li>
 				</ul>
 			</div>
 			<div class="section-title gap--16">
 				<h4><?php _e('About', 'mongabay'); ?></h4>
 				<div class="divider"></div>
 				<ul class="footer-links">
-					<li><a href=""><?php _e('About', 'mongabay'); ?></a></li>
-					<li><a href=""><?php _e('Contact', 'mongabay'); ?></a></li>
-					<li><a href=""><?php _e('Donate', 'mongabay'); ?></a></li>
+					<li><a href="<?php echo home_url(); ?>/about"><?php _e('About', 'mongabay'); ?></a></li>
+					<li><a href="<?php echo home_url(); ?>/contact"><?php _e('Contact', 'mongabay'); ?></a></li>
+					<li><a href="<?php echo home_url(); ?>"><?php _e('Donate', 'mongabay'); ?></a></li>
 					<li><a href="https://mongabay.us14.list-manage.com/subscribe?u=80161fe385606408293ae0e51&id=940652e1f4"><?php _e('Newsletters', 'mongabay'); ?></a></li>
-					<li><a href=""><?php _e('Submissions', 'mongabay'); ?></a></li>
-					<li><a href=""><?php _e('Terms of Use', 'mongabay'); ?></a></li>
+					<li><a href="<?php echo home_url(); ?>/submissions"><?php _e('Submissions', 'mongabay'); ?></a></li>
+					<li><a href="<?php echo home_url(); ?>/terms"><?php _e('Terms of Use', 'mongabay'); ?></a></li>
 				</ul>
 			</div>
 			<div class="section-title gap--16">
 				<h4><?php _e('External links', 'mongabay'); ?></h4>
 				<div class="divider"></div>
 				<ul class="footer-links">
-					<li><a href=""><?php _e('Wild Madagascar', 'mongabay'); ?></a></li>
-					<li><a href=""><?php _e('Selva tropicales', 'mongabay'); ?></a></li>
-					<li><a href=""><?php _e('For Kids', 'mongabay'); ?></a></li>
-					<li><a href=""><?php _e('Mongabay.org', 'mongabay'); ?></a></li>
-					<li><a href=""><?php _e('Tropical Forest Network', 'mongabay'); ?></a></li>
+					<li><a href="https://www.wildmadagascar.org/" target="_blank"><?php _e('Wild Madagascar', 'mongabay'); ?></a></li>
+					<li><a href="https://selvastropicales.org/" target="_blank"><?php _e('Selva tropicales', 'mongabay'); ?></a></li>
+					<li><a href="https://kids.mongabay.com/" target="_blank"><?php _e('For Kids', 'mongabay'); ?></a></li>
+					<li><a href="https://www.mongabay.org/" target="_blank"><?php _e('Mongabay.org', 'mongabay'); ?></a></li>
+					<li><a href="https://tropicalforestnetwork.org/" target="_blank"><?php _e('Tropical Forest Network', 'mongabay'); ?></a></li>
 				</ul>
 			</div>
 			<div class="section-title gap--16">
 				<h4><?php _e('Social media', 'mongabay'); ?></h4>
 				<div class="divider"></div>
 				<ul class="footer-links">
-					<li><a href=""><?php _e('LinkedIn', 'mongabay'); ?></a></li>
-					<li><a href=""><?php _e('Instagram', 'mongabay'); ?></a></li>
-					<li><a href=""><?php _e('Youtube', 'mongabay'); ?></a></li>
-					<li><a href=""><?php _e('X', 'mongabay'); ?></a></li>
-					<li><a href=""><?php _e('Facebook', 'mongabay'); ?></a></li>
-					<li><a href=""><?php _e('RSS / XML', 'mongabay'); ?></a></li>
-					<li><a href=""><?php _e('Mastodon', 'mongabay'); ?></a></li>
-					<li><a href=""><?php _e('Android App', 'mongabay'); ?></a></li>
-					<li><a href=""><?php _e('Apple News', 'mongabay'); ?></a></li>
+					<li><a href="https://www.linkedin.com/company/mongabay.com/" target="_blank"><?php _e('LinkedIn', 'mongabay'); ?></a></li>
+					<li><a href="https://www.instagram.com/mongabay/" target="_blank"><?php _e('Instagram', 'mongabay'); ?></a></li>
+					<li><a href="https://www.youtube.com/channel/UCnrubbmyCz8krGnpsbhJRYg/videos" target="_blank"><?php _e('Youtube', 'mongabay'); ?></a></li>
+					<li><a href="https://www.x.com/mongabay" target="_blank"><?php _e('X', 'mongabay'); ?></a></li>
+					<li><a href="https://www.facebook.com/mongabay" target="_blank"><?php _e('Facebook', 'mongabay'); ?></a></li>
+					<li><a href="<?php echo home_url(); ?>/feed"><?php _e('RSS / XML', 'mongabay'); ?></a></li>
+					<li><a href="https://mastodon.green/@mongabay" target="_blank"><?php _e('Mastodon', 'mongabay'); ?></a></li>
+					<li><a href="https://play.google.com/store/apps/details?id=com.newsmongabay&hl=en" target="_blank"><?php _e('Android App', 'mongabay'); ?></a></li>
+					<li><a href="https://apple.news/T7BxfNfp4QAiuOPNsUcn04Q/" target="_blank"><?php _e('Apple News', 'mongabay'); ?></a></li>
 				</ul>
 			</div>
 		</div>
