@@ -1048,6 +1048,32 @@ add_action('init', 'mongabay_register_tags_cpts');
 //     return $permalink;
 // }
 
+function banner_shortcode($atts)
+{
+    $atts = shortcode_atts(array(
+        'link' => '',
+        'title' => '',
+        'copy' => '',
+        'button_copy' => '',
+        'extra_class' => '',
+        'headline_class' => '',
+        'button_class' => ''
+    ), $atts);
+
+    ob_start();
+    banner(
+        $atts['link'],
+        $atts['title'],
+        $atts['copy'],
+        $atts['button_copy'],
+        $atts['extra_class'],
+        $atts['headline_class'],
+        $atts['button_class']
+    );
+    return ob_get_clean();
+}
+
+
 /*------------------------------------*\
     Actions + Filters
 \*------------------------------------*/
@@ -1056,6 +1082,7 @@ add_action('init', 'mongabay_register_tags_cpts');
 add_shortcode('parallax-img', 'parallax_img');
 add_shortcode('open-parallax-content', 'parallax_open');
 add_shortcode('close-parallax-content', 'parallax_close');
+add_shortcode('banner', 'banner_shortcode');
 
 // Add Actions
 add_action('init', 'mongabay_header_scripts'); // Add Custom Scripts to wp_head
