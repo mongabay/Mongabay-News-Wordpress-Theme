@@ -2516,12 +2516,12 @@ a.next.page-numbers:before {
 
 /* Contact page */
 
-.contact-2 .is-position-sticky {
+.contact .is-position-sticky {
   top: var(--spacing-13);
 }
 
-.contact-2 h4.wp-block-heading, 
-.contact-2 ul.no-bullets li a:hover {
+.contact h4.wp-block-heading, 
+.contact ul.no-bullets li a:hover {
   color: var(--brand-color);
   font-weight: 600;
 }
@@ -2861,16 +2861,16 @@ footer .grid--4 {
   }
   
   /* Contact page */
-  .contact-2 .is-position-sticky {
+  .contact .is-position-sticky {
     display: none;
   }
 
-  .contact-2 .wp-block-group-is-layout-flex {
+  .contact .wp-block-group-is-layout-flex {
     flex-direction: column;
     width: 100%;
   }
   
-  .contact-2 hr.spacer {
+  .contact hr.spacer {
     margin: var(--spacing-6) 0;
   }
 }
