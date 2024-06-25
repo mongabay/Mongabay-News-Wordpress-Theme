@@ -171,6 +171,7 @@ h1 {
 
 h1.jumbo {
   font-size: clamp(2rem, 5vw + 1rem, var(--font-jumbo));
+  line-height: 110%;
 }
 
 h2 {
@@ -450,6 +451,11 @@ h2 {
 
 .no-scroll {
   overflow: hidden;
+}
+
+.is-position-sticky {
+  position: sticky;
+  position: -webkit-sticky;
 }
 
 @keyframes move-up {
@@ -2508,6 +2514,18 @@ a.next.page-numbers:before {
   content: "\e802";
 }
 
+/* Contact page */
+
+.contact-2 .is-position-sticky {
+  top: var(--spacing-13);
+}
+
+.contact-2 h4.wp-block-heading, 
+.contact-2 ul.no-bullets li a:hover {
+  color: var(--brand-color);
+  font-weight: 600;
+}
+
 /* Footer */
 .footer-links {
   list-style: none;
@@ -2840,5 +2858,19 @@ footer .grid--4 {
 
   .byline--info h1 {
     font-size: 2rem;
+  }
+  
+  /* Contact page */
+  .contact-2 .is-position-sticky {
+    display: none;
+  }
+
+  .contact-2 .wp-block-group-is-layout-flex {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .contact-2 hr.spacer {
+    margin: var(--spacing-6) 0;
   }
 }
