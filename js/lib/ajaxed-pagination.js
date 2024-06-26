@@ -8,8 +8,6 @@
       page: page,
     };
 
-    const paginationButton = $(".load-more-button");
-
     $.ajax({
       url: ajaxpagination.ajaxurl,
       data: data,
