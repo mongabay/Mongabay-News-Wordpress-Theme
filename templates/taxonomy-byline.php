@@ -36,13 +36,6 @@ $byline_avatar = get_term_meta($byline_id, 'cover_image_url', true);
   </div>
   <div class="container in-column byline--info col--80 gap--20">
     <h1 class=""><?php echo $byline_name; ?></h1>
-    <?php if ($byline_description) { ?>
-      <div class="section-title gap--16">
-        <h4><?php _e('About', 'mongabay'); ?></h4>
-        <div class="divider"></div>
-      </div>
-      <p><?php echo $byline_description; ?></p>
-    <?php } ?>
     <div class="container in-row gap--20">
       <?php if ($byline_email) { ?>
         <a href="mailto:<?php echo $byline_email; ?>">Email address</a>
@@ -65,6 +58,13 @@ $byline_avatar = get_term_meta($byline_id, 'cover_image_url', true);
         </div>
       <?php } ?>
     </div>
+    <?php if ($byline_description) { ?>
+      <div class="section-title gap--16">
+        <h4><?php _e('About', 'mongabay'); ?></h4>
+        <div class="divider"></div>
+      </div>
+      <p><?php echo $byline_description; ?></p>
+    <?php } ?>
   </div>
 </div>
 <div class="container in-column ph--40 pv--40">
@@ -88,7 +88,7 @@ $byline_avatar = get_term_meta($byline_id, 'cover_image_url', true);
           </div>
         <?php } ?>
       </div>
-      <div class="container grid--4 gap--20 grid-view">
+      <div id="post-results" class="container grid--4 gap--20 grid-view">
         <?php
         // Start the Loop
         while (have_posts()) :

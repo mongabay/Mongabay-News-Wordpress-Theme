@@ -158,86 +158,89 @@ $banner = '
         </div>
       </div>
     </dialog>
+    <div id="posts" class="container grid--4 gap--20 pv--40"></div>
     <div class="container centered pv--40">
-      <a href="<?php home_url(); ?>/?s=&formats=short-articles" class="theme--button primary"><?php _e('All shorts', 'mongabay'); ?></a>
+      <a class="theme--button primary load-more-button"><?php _e('Load more', 'mongabay'); ?><span class="icon icon-right"></span></a>
     </div>
 
     <script>
-      const shortsTriggers = document.querySelectorAll('.shorts-trigger');
-      const shortsDialog = document.querySelector('#shorts-dialog');
-      const closeDialogButton = document.querySelector('a.close-button');
-      const backButton = document.querySelector('a.back-button');
-      const shareButton = document.querySelector('a.share');
-      const shortsOverview = document.querySelector('#shorts-overview');
-      const shortsShare = document.querySelector('#shorts-share');
+      function initDialog() {
+        const shortsTriggers = document.querySelectorAll('.shorts-trigger');
+        const shortsDialog = document.querySelector('#shorts-dialog');
+        const closeDialogButton = document.querySelector('a.close-button');
+        const backButton = document.querySelector('a.back-button');
+        const shareButton = document.querySelector('a.share');
+        const shortsOverview = document.querySelector('#shorts-overview');
+        const shortsShare = document.querySelector('#shorts-share');
 
-      let title = '';
-      let postUrl = '';
+        let title = '';
+        let postUrl = '';
 
-      shortsTriggers.forEach(trigger => {
-        trigger.addEventListener('click', (e) => {
+        shortsTriggers.forEach(trigger => {
+          trigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            const postTitle = e.target.closest('.shorts-trigger').querySelector('.title').textContent.trim();
+            const excerpt = e.target.closest('.shorts-trigger').querySelector('.post-excerpt').textContent;
+            const byline = e.target.closest('.shorts-trigger').querySelector('.post-meta .byline').textContent;
+            const date = e.target.closest('.shorts-trigger').querySelector('.post-meta .date').textContent;
+            const url = e.target.closest('.shorts-trigger').dataset.url;
+            postUrl = url;
+            title = postTitle;
+
+            const dialogTitle = shortsDialog.querySelector('.dialog-body .title h2');
+            const dialogContent = shortsDialog.querySelector('.dialog-body .post-content p');
+            const dialogByline = shortsDialog.querySelector('.dialog-body .post-meta .byline');
+            const dialogDate = shortsDialog.querySelector('.dialog-body .post-meta .date');
+            const dialogShareLink = shortsDialog.querySelector('.dialog-footer a.link');
+
+            dialogTitle.textContent = postTitle;
+            dialogContent.textContent = excerpt;
+            dialogByline.textContent = byline;
+            dialogDate.textContent = date;
+            dialogShareLink.href = url;
+
+            shortsDialog.showModal();
+
+            shortsShare.innerHTML = shortsShare.innerHTML.replace(/{{title}}/g, title);
+            shortsShare.innerHTML = shortsShare.innerHTML.replace(/{{postUrl}}/g, postUrl);
+          });
+        });
+
+        function close() {
+          shortsDialog.close();
+        };
+
+        function back() {
+          shortsOverview.classList.remove('hidden');
+          shortsShare.classList.add('hidden');
+          backButton.classList.add('hidden');
+        }
+
+        shareButton.addEventListener('click', (e) => {
           e.preventDefault();
           e.stopPropagation();
-          const postTitle = e.target.closest('.shorts-trigger').querySelector('.title').textContent.trim();
-          const excerpt = e.target.closest('.shorts-trigger').querySelector('.post-excerpt').textContent;
-          const byline = e.target.closest('.shorts-trigger').querySelector('.post-meta .byline').textContent;
-          const date = e.target.closest('.shorts-trigger').querySelector('.post-meta .date').textContent;
-          const url = e.target.closest('.shorts-trigger').dataset.url;
-          postUrl = url;
-          title = postTitle;
 
-          const dialogTitle = shortsDialog.querySelector('.dialog-body .title h2');
-          const dialogContent = shortsDialog.querySelector('.dialog-body .post-content p');
-          const dialogByline = shortsDialog.querySelector('.dialog-body .post-meta .byline');
-          const dialogDate = shortsDialog.querySelector('.dialog-body .post-meta .date');
-          const dialogShareLink = shortsDialog.querySelector('.dialog-footer a.link');
-
-          dialogTitle.textContent = postTitle;
-          dialogContent.textContent = excerpt;
-          dialogByline.textContent = byline;
-          dialogDate.textContent = date;
-          dialogShareLink.href = url;
-
-          shortsDialog.showModal();
-
-          shortsShare.innerHTML = shortsShare.innerHTML.replace(/{{title}}/g, title);
-          shortsShare.innerHTML = shortsShare.innerHTML.replace(/{{postUrl}}/g, postUrl);
+          shortsOverview.classList.add('hidden');
+          shortsShare.classList.remove('hidden');
+          backButton.classList.remove('hidden');
         });
-      });
 
-      function close() {
-        shortsDialog.close();
-      };
+        shortsDialog.addEventListener('show', () => {
+          shortsOverview.classList.remove('hidden');
+          shortsShare.classList.add('hidden');
+          backButton.classList.add('hidden');
+        });
 
-      function back() {
-        shortsOverview.classList.remove('hidden');
-        shortsShare.classList.add('hidden');
-        backButton.classList.add('hidden');
+        shortsDialog.addEventListener('close', () => {
+          shortsOverview.classList.remove('hidden');
+          shortsShare.classList.add('hidden');
+          backButton.classList.add('hidden');
+        });
+
+        closeDialogButton.addEventListener('click', close);
+        backButton.addEventListener('click', back);
       }
-
-      shareButton.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-
-        shortsOverview.classList.add('hidden');
-        shortsShare.classList.remove('hidden');
-        backButton.classList.remove('hidden');
-      });
-
-      shortsDialog.addEventListener('show', () => {
-        shortsOverview.classList.remove('hidden');
-        shortsShare.classList.add('hidden');
-        backButton.classList.add('hidden');
-      });
-
-      shortsDialog.addEventListener('close', () => {
-        shortsOverview.classList.remove('hidden');
-        shortsShare.classList.add('hidden');
-        backButton.classList.add('hidden');
-      });
-
-      closeDialogButton.addEventListener('click', close);
-      backButton.addEventListener('click', back);
     </script>
   <?php } else {
     _e('No short articles found', 'mongabay');
