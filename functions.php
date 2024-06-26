@@ -936,21 +936,21 @@ if ($GLOBALS['pagenow'] == 'post-new.php' || $pagenow == 'post.php') :
             <div id="message" class="error">
                 <p><strong><?php _e('Please set Featured Image. Article cannot be published without one.'); ?></strong></p>
             </div>
-<?php
+        <?php
         }
     });
 endif;
 
 //redirect paid membership users after log in
-function my_pmpro_login_redirect_url($redirect_to, $request, $user)
-{
-    global $wpdb;
-    if (pmpro_hasMembershipLevel(NULL, $user->ID))
-        return "/membership-account/";
-    else
-        return $redirect_to;
-}
-add_filter("pmpro_login_redirect_url", "my_pmpro_login_redirect_url", 10, 3);
+// function my_pmpro_login_redirect_url($redirect_to, $request, $user)
+// {
+//     global $wpdb;
+//     if (pmpro_hasMembershipLevel(NULL, $user->ID))
+//         return "/membership-account/";
+//     else
+//         return $redirect_to;
+// }
+// add_filter("pmpro_login_redirect_url", "my_pmpro_login_redirect_url", 10, 3);
 
 //Apple news byline rewrite
 function mongabay_byline($byline, $postID)
@@ -1073,6 +1073,54 @@ function banner_shortcode($atts)
     return ob_get_clean();
 }
 
+// Ajaxed Pagination
+function mongabay_ajaxed_pagination()
+{
+    if (is_page('shorts')) {
+        wp_enqueue_script('ajax-pagination', get_template_directory_uri() . '/js/lib/ajaxed-pagination.js', array('jquery'), null, true);
+        wp_localize_script('ajax-pagination', 'ajaxpagination', array(
+            'ajaxurl' => admin_url('admin-ajax.php'),
+            'noposts' => __('No older posts found', 'text-domain'),
+        ));
+    }
+}
+
+
+function load_more_posts()
+{
+    $paged = $_POST['page'] ?? 1;
+    $args = array(
+        'post_type' => 'post',
+        'posts_per_page' => 8,
+        'paged' => $paged
+    );
+
+    $query = new WP_Query($args);
+
+    if ($query->have_posts()) :
+        while ($query->have_posts()) : $query->the_post(); ?>
+            <div class="article--container">
+                <a class="shorts-trigger" data-url="<?php the_permalink(get_the_ID()); ?>">
+                    <div class="title headline rounded-top ph--40 pv--40 bg-theme-gray">
+                        <h3><?php the_title(); ?></h3>
+                    </div>
+                    <div class="post-meta hidden">
+                        <span class="byline"><?php echo getPostBylines(get_the_ID()); ?></span>
+                        <span class="date"><?php the_time('j M Y'); ?></span>
+                    </div>
+                    <div class="post-excerpt hidden">
+                        <?php mongabay_excerpt(100); ?>
+                    </div>
+                    <?php the_post_thumbnail($id, 'medium', array('class' => 'rounded-bottom')); ?>
+                </a>
+            </div>
+<?php endwhile;
+    endif;
+    wp_reset_postdata();
+
+    die();
+}
+
 
 /*------------------------------------*\
     Actions + Filters
@@ -1099,6 +1147,9 @@ add_action('admin_print_footer_scripts', 'px_shortcode_button'); // Add parallax
 add_action('admin_print_footer_scripts', 'open_close_px_content'); // Add parallax button
 add_action('template_redirect', 'mongabay_featured'); // Redirect template if content is Featured
 add_action('init', 'custom_rss_feed_init'); // Add custom RSS feed
+add_action('wp_enqueue_scripts', 'mongabay_ajaxed_pagination');
+add_action('wp_ajax_load_more_posts', 'load_more_posts');
+add_action('wp_ajax_nopriv_load_more_posts', 'load_more_posts');
 
 // Remove Actions
 remove_action('wp_head', 'feed_links_extra', 3); // Display the links to the extra feeds such as category feeds

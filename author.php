@@ -17,6 +17,7 @@ $author_in = get_the_author_meta('linkedin');
 $author_insta = get_the_author_meta('instagram');
 $author_email = get_the_author_meta('email');
 $author_username = get_the_author_meta('user_login');
+$author_role = get_the_author_meta('job_title');
 ?>
 
 <div class="container in-column in-row ph--40 pv--40 gap--80">
@@ -27,6 +28,29 @@ $author_username = get_the_author_meta('user_login');
 	</div>
 	<div class="container in-column byline--info col--80 gap--20">
 		<h1 class=""><?php the_author(); ?></h1>
+		<div class="container role-email in-row">
+			<?php if ($author_role) { ?>
+				<span class="role"><?php echo $author_role; ?></span>
+			<?php } ?>
+			<?php if ($author_email) { ?>
+				<span class="email"><a href="mailto:<?php echo $author_email; ?>">Email address</a></span>
+			<?php } ?>
+		</div>
+		<div class="container in-row gap--20">
+			<?php if ($author_x) { ?>
+				<span><a href="https://x.com/@<?php echo $author_x; ?>" target="_blank">X</a></span>
+
+			<?php } ?>
+			<?php if ($author_fb) { ?>
+				<span><a href="<?php echo $author_fb; ?>" target="_blank">Facebook</a></span>
+			<?php } ?>
+			<?php if ($author_insta) { ?>
+				<span><a href="<?php echo $author_insta; ?>" target="_blank">Instagram</a></span>
+			<?php } ?>
+			<?php if ($author_in) { ?>
+				<span><a href="<?php echo $author_in; ?>" target="_blank">Linkedin</a></span>
+			<?php } ?>
+		</div>
 		<?php if ($author_biography) { ?>
 			<div class="section-title gap--16">
 				<h4><?php _e('About', 'mongabay'); ?></h4>
@@ -34,38 +58,7 @@ $author_username = get_the_author_meta('user_login');
 			</div>
 			<p><?php echo wpautop($author_biography); ?></p>
 		<?php } ?>
-		<div class="container in-row gap--20">
-			<?php if ($author_email) { ?>
-				<a href="mailto:<?php echo $author_email; ?>">Email address</a>
-			<?php } ?>
-			<?php if ($author_web) { ?>
-				<div class="col--50">
-					<a href="<?php echo $author_web; ?>" target="_blank">Website</a>
-				</div>
-			<?php } ?>
-		</div>
-		<div class="container in-row gap--20">
-			<?php if ($author_x) { ?>
-				<div class="col--50">
-					<a href="https://x.com/@<?php echo $author_x; ?>" target="_blank">X</a>
-				</div>
-			<?php } ?>
-			<?php if ($author_fb) { ?>
-				<div class="col--50">
-					<a href="<?php echo $author_fb; ?>" target="_blank">Facebook</a>
-				</div>
-			<?php } ?>
-			<?php if ($author_insta) { ?>
-				<div class="col--50">
-					<a href="<?php echo $author_insta; ?>" target="_blank">Instagram</a>
-				</div>
-			<?php } ?>
-			<?php if ($author_in) { ?>
-				<div class="col--50">
-					<a href="<?php echo $author_in; ?>" target="_blank">Linkedin</a>
-				</div>
-			<?php } ?>
-		</div>
+
 	</div>
 </div>
 <div class="container in-column ph--40 pv--40">
@@ -89,7 +82,7 @@ $author_username = get_the_author_meta('user_login');
 					</div>
 				<?php } ?>
 			</div>
-			<div class="container grid--4 gap--20 grid-view">
+			<div id="post-results" class="container grid--4 gap--20 grid-view">
 				<?php
 				// Start the Loop
 				while (have_posts()) :
