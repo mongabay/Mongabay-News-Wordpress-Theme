@@ -274,6 +274,7 @@ h2 {
 /* Backgrounds */
 .bg-theme-secondary {
   background: var(--theme-secondary);
+  color: var(--theme-white) !important;
 }
 
 .bg-theme-secondary-alpha {
@@ -290,6 +291,7 @@ h2 {
 
 .bg-brand-color {
   background: var(--brand-color);
+  color: var(--theme-white) !important;
 }
 
 /* Flex direction and distribution */
@@ -768,6 +770,11 @@ ul.main-menu:not(.off-canvas) li a.active:before {
   border-radius: 5px;
   height: auto;
 }
+
+.shorts .article--container img {
+  border-radius: 0 0 5px 5px;
+}
+
 .article--container .featured-image {
   position: relative;
   /* margin-bottom: var(--spacing-5); */
@@ -1411,6 +1418,11 @@ dialog input {
   white-space: nowrap;
 }
 
+.dialog-body {
+  max-height: 520px;
+  overflow-y: scroll;
+}
+
 .dark-mode #share-dialog input {
   border: 1px solid var(--theme-secondary);
   background: var(--theme-black);
@@ -1903,11 +1915,6 @@ input#featured[type="checkbox"] {
   color: var(--accent-green) !important;
 }
 
-/* .grid-view .post-meta span.byline:after {
-  content: "·";
-  margin: 0 var(--spacing-1);
-} */
-
 .list-view .post-meta {
   display: grid;
   grid-template-columns: 2fr 1fr 0.2fr;
@@ -2015,6 +2022,11 @@ input#featured[type="checkbox"] {
 .search-actions .tooltiptext {
   top: 200%;
   margin-left: -75px;
+}
+
+/* General pages */
+#general-page a {
+  color: var(--theme-body) !important;
 }
 
 /* Mongabay tools */
@@ -2619,6 +2631,11 @@ footer .grid--4 {
   #share-dialog,
   #shorts-dialog {
     min-width: 90%;
+  }
+
+  .dialog-body {
+    max-height: 480px;
+    overflow-y: scroll;
   }
 
   #shorts-overview .dialog-footer {

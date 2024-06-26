@@ -4,6 +4,7 @@ function article_credits(int $post_id)
   $translator = get_post_meta($post_id, "translated_by", true);
   $adaptor = get_post_meta($post_id, "adapted_by", true);
   $translated_adapted = get_post_meta($post_id, "translated_adapted", true);
+  $job_title = get_the_author_meta('job_title');
 ?>
   <div class="container in-column about-editor-translator gap--40 pv--80">
     <div class="section-title gap--16">
@@ -22,7 +23,11 @@ function article_credits(int $post_id)
         </div>
         <div class="extra-info">
           <h4><?php the_author_posts_link(); ?></h4>
-          <span><?php _e('Contributor ', 'mongabay'); ?></span>
+          <?php if ($job_title) { ?>
+            <span><?php _e($job_title, 'mongabay'); ?></span>
+          <?php } else { ?>
+            <span><?php _e('Editor', 'mongabay'); ?></span>
+          <?php } ?>
         </div>
       </div>
       <?php

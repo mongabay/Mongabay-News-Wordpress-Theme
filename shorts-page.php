@@ -20,40 +20,6 @@ $args = array(
 $query = new WP_Query($args);
 $post_counter = 0;
 
-
-function article_card($id, $is_large = false, $title_class = '', $idx = 0)
-{
-  $backgrounds = array(
-    1 => ' bg-theme-secondary',
-    2 => ' bg-theme-gray',
-    3 => ' bg-theme-accent',
-    4 => ' bg-brand-color',
-    5 => ' bg-theme-gray',
-    6 => '',
-    7 => ' bg-theme-secondary',
-    8 => ' bg-theme-accent',
-  );
-?>
-  <div class="article--container">
-    <a class="shorts-trigger" data-url="<?php the_permalink($id); ?>">
-      <div class="title headline rounded-top <?php echo $is_large ? 'ph--80 pv--80' : 'ph--40 pv--40';
-                                              echo $backgrounds[$idx]; ?>">
-        <?php echo $is_large ? '<h2 class="' . $title_class . '">' : '<h3 class="' . $title_class . '">' ?>
-        <?php the_title(); ?>
-        <?php echo $is_large ? '</h2>' : '</h3>' ?>
-      </div>
-      <div class="post-meta hidden">
-        <span class="byline"><?php echo getPostBylines($id); ?></span>
-        <span class="date"><?php the_time('j M Y'); ?></span>
-      </div>
-      <div class="post-excerpt hidden">
-        <?php mongabay_excerpt(100); ?>
-      </div>
-      <?php the_post_thumbnail($id, 'medium', array('class' => 'rounded-bottom')); ?>
-    </a>
-  </div>
-<? }
-
 $banner = '
 <div class="banner gap--20 ph--20 pv--20 outlined">
 <div class="inner">
@@ -77,55 +43,7 @@ $banner = '
       $query->the_post();
       $post_counter++;
 
-      if ($post_counter === 1) {
-        echo '<div class="container in-row gap--40">'; //first grid start
-        echo '<div class="column--60">'; // first grid first column
-        article_card(get_the_ID(), true, 'text--theme-white', $post_counter);
-        echo '</div>'; // close first grid first column
-      }
-      if ($post_counter === 2) {
-        echo '<div class="column--40 in-column gap--40">';
-        article_card(get_the_ID(), false, '', $post_counter);
-      }
-
-      if ($post_counter === 3) {
-        article_card(get_the_ID(), false, '', $post_counter);
-        echo '</div>'; // close first grid second column
-        echo '</div>'; // close first grid
-      }
-
-      if ($post_counter === 4) {
-        echo '<div class="container in-row gap--40 pv--40">'; //second grid start
-        echo '<div class="column--40 in-column gap--40">'; //second grid first column
-        article_card(get_the_ID(), false, 'text--theme-white', $post_counter);
-      }
-
-      if ($post_counter === 5) {
-        article_card(get_the_ID(), false, '', $post_counter);
-        echo '</div>'; // close second grid first column
-      }
-
-      if ($post_counter === 6) {
-        echo '<div class="column--60">'; //second grid second column
-        article_card(get_the_ID(), true,  '', $post_counter);
-        echo '</div>'; // close second grid second column
-        echo '</div>'; // close second grid
-      }
-
-      if ($post_counter === 7) {
-        echo '<div class="container in-row gap--40">'; //third grid start
-        echo '<div class="column--40 in-column gap--40">'; //third grid first column
-        article_card(get_the_ID(), false, 'text--theme-white', $post_counter);
-        echo $banner;
-        echo '</div>'; // close third grid first column
-      }
-
-      if ($post_counter === 8) {
-        echo '<div class="column--60">'; //third grid second column
-        article_card(get_the_ID(), true, '', $post_counter);
-        echo '</div>'; // close third grid second column
-        echo '</div>'; // close third grid
-      }
+      shorts_grid($post_counter, $banner);
     } ?>
     <dialog id="shorts-dialog">
       <div class="dialog-content ph--40 pv--80">
@@ -148,7 +66,7 @@ $banner = '
               </div>
             </div>
           </div>
-          <div class="dialog-footer container in-row gap--20">
+          <div class="dialog-footer container in-row gap--20 pv--16">
             <a class="theme--button secondary share"><?php _e('Share Short', 'mongabay'); ?></a>
             <a class="theme--button secondary simple link" href=""><?php _e('Read Full Article', 'mongabay'); ?></a>
           </div>
@@ -158,9 +76,9 @@ $banner = '
         </div>
       </div>
     </dialog>
-    <div id="posts" class="container grid--4 gap--20 pv--40"></div>
+    <div id="posts"></div>
     <div class="container centered pv--40">
-      <a class="theme--button primary load-more-button"><?php _e('Load more', 'mongabay'); ?><span class="icon icon-right"></span></a>
+      <a class="theme--button outlined load-more-button"><?php _e('Load more', 'mongabay'); ?><span class="icon icon-right"></span></a>
     </div>
 
     <script>

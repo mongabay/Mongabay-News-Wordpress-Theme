@@ -1,5 +1,6 @@
 (function ($) {
-  let page = 1;
+  let page = 0;
+
   $(".load-more-button").on("click", function () {
     page++;
 
