@@ -2520,7 +2520,7 @@ a.next.page-numbers:before {
   top: var(--spacing-13);
 }
 
-.contact h4.wp-block-heading, 
+.contact h4.wp-block-heading,
 .contact ul.no-bullets li a:hover {
   color: var(--brand-color);
   font-weight: 600;
@@ -2615,6 +2615,16 @@ footer .grid--4 {
   dialog#share-dialog .grid--4 {
     grid-template-columns: repeat(3, 1fr) !important;
   }
+
+  #share-dialog,
+  #shorts-dialog {
+    min-width: 90%;
+  }
+
+  #shorts-overview .dialog-footer {
+    flex-direction: row;
+  }
+
   .md-hide {
     display: none !important;
   }
@@ -2859,7 +2869,7 @@ footer .grid--4 {
   .byline--info h1 {
     font-size: 2rem;
   }
-  
+
   /* Contact page */
   .contact .is-position-sticky {
     display: none;
@@ -2869,7 +2879,7 @@ footer .grid--4 {
     flex-direction: column;
     width: 100%;
   }
-  
+
   .contact hr.spacer {
     margin: var(--spacing-6) 0;
   }
