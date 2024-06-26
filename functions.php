@@ -1088,32 +1088,24 @@ function mongabay_ajaxed_pagination()
 
 function load_more_posts()
 {
+    $counter = 0;
     $paged = $_POST['page'] ?? 1;
+
     $args = array(
         'post_type' => 'post',
-        'posts_per_page' => 8,
+        'posts_per_page' => 9,
         'paged' => $paged
     );
 
     $query = new WP_Query($args);
 
     if ($query->have_posts()) :
-        while ($query->have_posts()) : $query->the_post(); ?>
-            <div class="article--container">
-                <a class="shorts-trigger" data-url="<?php the_permalink(get_the_ID()); ?>">
-                    <div class="title headline rounded-top ph--40 pv--40 bg-theme-gray">
-                        <h3><?php the_title(); ?></h3>
-                    </div>
-                    <div class="post-meta hidden">
-                        <span class="byline"><?php echo getPostBylines(get_the_ID()); ?></span>
-                        <span class="date"><?php the_time('j M Y'); ?></span>
-                    </div>
-                    <div class="post-excerpt hidden">
-                        <?php mongabay_excerpt(100); ?>
-                    </div>
-                    <?php the_post_thumbnail($id, 'medium', array('class' => 'rounded-bottom')); ?>
-                </a>
-            </div>
+        echo '<div class="container full-width pv--20"></div>';
+        while ($query->have_posts()) : $query->the_post();
+            $counter++;
+            shorts_grid($counter, null);
+        ?>
+
 <?php endwhile;
     endif;
     wp_reset_postdata();
