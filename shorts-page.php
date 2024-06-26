@@ -241,6 +241,8 @@ $banner = '
         closeDialogButton.addEventListener('click', close);
         backButton.addEventListener('click', back);
       }
+
+      initDialog();
     </script>
   <?php } else {
     _e('No short articles found', 'mongabay');
