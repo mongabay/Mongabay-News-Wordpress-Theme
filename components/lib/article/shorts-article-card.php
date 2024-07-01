@@ -1,28 +1,29 @@
 <?php
 function shorts_article_card($id, $is_large = false, $title_class = '', $idx = 0)
 {
-  // $backgrounds = array(
-  //   1 => ' bg-theme-secondary',
-  //   2 => ' bg-theme-gray',
-  //   3 => ' bg-theme-accent',
-  //   4 => ' bg-brand-color',
-  //   5 => ' bg-theme-gray',
-  //   6 => '',
-  //   7 => ' bg-theme-secondary',
-  //   8 => ' bg-theme-accent',
-  // );
-
   $backgrounds = array(
     1 => ' bg-theme-secondary',
     2 => ' bg-theme-gray',
-    3 => ' bg-theme-gray',
-    4 => ' bg-theme-accent',
-    5 => ' bg-brand-color',
-    6 => ' bg-theme-accent',
-    7 => ' bg-theme-gray',
-    8 => ' bg-theme-secondary',
+    3 => ' bg-theme-accent',
+    4 => ' bg-brand-color',
+    5 => ' bg-theme-gray',
+    6 => ' bg-theme-gray',
+    7 => ' bg-theme-secondary',
+    8 => ' bg-theme-accent',
     9 => ' bg-theme-gray',
   );
+
+  // $backgrounds = array(
+  //   1 => ' bg-theme-secondary',
+  //   2 => ' bg-theme-gray',
+  //   3 => ' bg-theme-gray',
+  //   4 => ' bg-theme-accent',
+  //   5 => ' bg-brand-color',
+  //   6 => ' bg-theme-accent',
+  //   7 => ' bg-theme-gray',
+  //   8 => ' bg-theme-secondary',
+  //   9 => ' bg-theme-gray',
+  // );
 ?>
   <div class="article--container">
     <a class="shorts-trigger" data-url="<?php the_permalink($id); ?>">
