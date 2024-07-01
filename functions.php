@@ -241,6 +241,11 @@ function mongabay_conditional_scripts()
         wp_register_script('search-js', get_stylesheet_directory_uri() . '/js/lib/search.js', array(), '1.0.0', true);
         wp_enqueue_script('search-js');
     }
+
+    if (is_page(['contact', 'terms']) && !wp_is_mobile()) {
+        wp_register_script('highlighter', get_template_directory_uri() . '/js/lib/sidebar-highlighter.js', array(), '1.0.0', true);
+        wp_enqueue_script('highlighter');
+    }
 }
 
 // Featured articles template
