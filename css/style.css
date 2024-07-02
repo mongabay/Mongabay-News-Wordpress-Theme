@@ -2599,34 +2599,6 @@ a.next.page-numbers:before {
   color: var(--theme-secondary) !important;
 }
 
-/* About page */
-
-.about-list .wp-block-column:first-child {
-  padding-left: var(--spacing-14);
-  position: relative;
-}
-
-.about-list h1 {
-  color: var(--brand-color);
-}
-
-.about-list h1:before {
-  content: "\e80f";
-  position: absolute;
-  font-family: "fontello";
-  left: 0;
-  font-size: var(--font-m);
-  margin-top: var(--spacing-6);
-}
-
-.dark-mode .about-list h1:before {
-  color: var(--theme-secondary);
-}
-
-.rhett-block h3 {
-  line-height: 140% !important;
-}
-
 /* Footer */
 .footer-links {
   list-style: none;
@@ -2994,12 +2966,4 @@ footer .grid--4 {
   .legals hr.spacer {
     margin: var(--spacing-6) 0;
   }
-
-  .about-list h1:before {
-	  font-size: var(--font-sm);
-	}
-
-  .about-list .wp-block-column:first-child {
-	  padding-left: 60px;
-	}
 }
