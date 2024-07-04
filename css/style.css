@@ -2988,6 +2988,15 @@ footer .grid--4 {
     font-size: 2rem;
   }
 
+  .byline--info .role {
+    color: var(--brand-color);
+  }
+
+  .byline--info .email:before {
+    content: "·";
+    margin: 0 var(--spacing-4);
+  }
+
   /* Contact page */
   .contact .is-position-sticky, 
   .legals .is-position-sticky {
