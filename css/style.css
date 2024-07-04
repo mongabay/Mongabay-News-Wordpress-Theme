@@ -1471,6 +1471,20 @@ dialog input {
   font-weight: 400;
 }
 
+.byline--info .role {
+  color: var(--brand-color);
+}
+
+.byline--info .email:before {
+  content: "·";
+  margin: 0 var(--spacing-4);
+}
+
+.dark-mode .byline--info .role,
+.dark-mode .byline--info .email a{
+  color: var(--accent-green) !important;
+}
+
 /* Search page */
 .search #content {
   max-width: 100%;
