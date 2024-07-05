@@ -36,7 +36,14 @@
           <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> style="position: relative">
             <div class="container in-column">
               <div id="transcript">
-                <?php mongabay_sanitized_content($post_id); ?>
+                <?php
+                $transcript = pods('podcasts', get_the_ID())->field('transcript');
+                if (!empty($transcript)) {
+                  echo $transcript;
+                }
+                // TODO: remove after testing
+                // mongabay_sanitized_content($post_id);
+                ?>
               </div>
               <div id="expander-container" class="transcript container full-width">
                 <a class="content-expander text-center"><span><?php _e('Read full transcript', 'mongabay'); ?></span></a>

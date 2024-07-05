@@ -61,13 +61,13 @@ if (wp_is_mobile()) {
 <body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
 	<header class="header" role="banner">
-		<div class="container in-row space-between align-center full-height ph--40 pv--20">
+		<div class="container in-row space-between align-center ph--40 pv--20">
 			<div class="branding">
 				<a href="<?php echo home_url(); ?>" class="theme-light"><img src="<?php echo get_template_directory_uri(); ?>/img/logo/mongabay_logo_news_black.svg" /></a><a href="" class="theme-dark"><img src="<?php echo get_template_directory_uri(); ?>/img/logo/mongabay_logo_news_white.svg" /></a>
 			</div>
 			<div class="menu-container align-center">
 				<ul class="main-menu nav-desktop">
-					<li><a href="<?php echo home_url(); ?>/feature" class="<?php echo is_page('Feature') ? 'active' : ''; ?>"><?php _e('Feature', 'mongabay'); ?></a></li>
+					<li><a href="<?php echo home_url(); ?>/features" class="<?php echo is_page('Features') ? 'active' : ''; ?>"><?php _e('Features', 'mongabay'); ?></a></li>
 					<li><a href=" <?php echo home_url(); ?>/videos" class="<?php echo is_page('Videos') ? 'active' : ''; ?>"><?php _e('Videos', 'mongabay'); ?></a></li>
 					<li><a href="<?php echo home_url(); ?>/podcasts" class="<?php echo is_page('Podcasts') ? 'active' : ''; ?>"><?php _e('Podcasts', 'mongabay'); ?></a></li>
 					<li><a href=" <?php echo home_url(); ?>/specials" class="<?php echo (is_page('Specials') || is_tax('serial')) ? 'active' : ''; ?>"><?php _e('Specials', 'mongabay'); ?></a></li>
