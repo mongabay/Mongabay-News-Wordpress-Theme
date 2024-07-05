@@ -33,14 +33,13 @@
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> style="position: relative">
           <div class="container in-column">
+            <?php mongabay_sanitized_content($post_id); ?>
             <div id="transcript">
               <?php
               $transcript = pods('videos', get_the_ID())->field('transcript');
               if (!empty($transcript)) {
                 echo $transcript;
               }
-              // TODO: Remove after testing
-              // mongabay_sanitized_content($post_id);
               ?>
             </div>
             <div id="expander-container" class="container full-width">

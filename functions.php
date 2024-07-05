@@ -255,10 +255,10 @@ function mongabay_featured()
         include(TEMPLATEPATH . '/single-featured.php');
         exit;
     }
-    if (mongabay_layout() == "container-mobile-safe") {
-        include(TEMPLATEPATH . '/single-featured-mobile-safe.php');
-        exit;
-    }
+    // if (mongabay_layout() == "container-mobile-safe") {
+    //     include(TEMPLATEPATH . '/single-featured-mobile-safe.php');
+    //     exit;
+    // }
 }
 
 // Load styles
@@ -1202,7 +1202,6 @@ add_filter('pods_register_taxonomy_byline', 'add_pods_graphql_support'); //Bylin
 remove_filter('the_excerpt', 'wpautop'); // Remove <p> tags from Excerpt altogether
 remove_filter('the_content', 'wpautop');
 add_filter('the_content', 'wpautop', 12); //Remove <p> and <br> from shortcodes
-// add_filter('use_block_editor_for_post', '__return_false'); //Disable Gutenberg editor
 add_filter('use_block_editor_for_post_type', 'mongabay_disable_gutenberg_posts', 10, 2); //Enable Gutenberg editor for custom stories only
 add_filter('use_block_editor_for_post', 'mongabay_disable_gutenberg_pages', 10, 2); //Enable Gutenberg editor for certain pages only
 // add_filter('wp_lazy_loading_enabled', '__return_false'); //Disable lazy load
