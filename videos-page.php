@@ -12,11 +12,11 @@ get_header(); ?>
 
 <?php
 $series = (array('oceans', 'amazon-conservation', 'land-rights-and-extractives', 'global-forests'));
-formats_slider(array('videos'), 'Explore video stories from nature’s frontline.', array(), 'text-center');
+formats_slider(array('videos'), 'Watch unique videos that cut through the noise', array(), 'text-center');
 ?>
 
 <div class="container in-column gap--20 ph--40">
-  <?php topics_section(array('videos'), 'Watch unique videos that cut through the noise', array('climate', 'oceans'), array('link_copy' => 'all topics', 'link_url' => home_url() . '/?s=&formats=videos')); ?>
+  <?php topics_section(array('videos'), 'Explore videos about topics like', array('wildlife', 'indigenous-peoples', 'forests', 'oceans', 'agroecology'), array('link_copy' => 'all topics', 'link_url' => home_url() . '/?s=&formats=videos')); ?>
 
   <div id="section-videos-latest" class="container pv--40 gap--20 in-column">
     <div class="container in-row full-width section--headline" style="align-items: center; justify-content: space-between;">

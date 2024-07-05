@@ -49,23 +49,25 @@ function topics_section(array $post_types = array('post', 'custom-story', 'video
               <span class="outlined"><a href="<?php echo $link_url; ?>"><?php echo $link_copy; ?><span class="icon icon-right"></span></a></span>
             </h1>
           </div>
-          <div class="column--50">
-            <div class="article--container">
-              <a href="<?php the_permalink(); ?>">
-                <div class="featured-image">
-                  <?php echo get_icon(get_the_ID()); ?>
-                  <?php the_post_thumbnail('medium'); ?>
-                </div>
-                <div class="title headline">
-                  <h2><?php the_title(); ?></h2>
-                </div>
-                <div class="post-meta pv--8">
-                  <span class="byline"><?php echo getPostBylines(get_the_ID()); ?></span>
-                  <span class="date"><?php the_time('j M Y'); ?></span>
-                </div>
-              </a>
+          <?php if ($post_types !== array('videos')) { ?>
+            <div class="column--50">
+              <div class="article--container">
+                <a href="<?php the_permalink(); ?>">
+                  <div class="featured-image">
+                    <?php echo get_icon(get_the_ID()); ?>
+                    <?php the_post_thumbnail('medium'); ?>
+                  </div>
+                  <div class="title headline">
+                    <h2><?php the_title(); ?></h2>
+                  </div>
+                  <div class="post-meta pv--8">
+                    <span class="byline"><?php echo getPostBylines(get_the_ID()); ?></span>
+                    <span class="date"><?php the_time('j M Y'); ?></span>
+                  </div>
+                </a>
+              </div>
             </div>
-          </div>
+          <?php } ?>
         </div>
       </div>
 <?php }

@@ -26,7 +26,7 @@
     <div class="column--70 in-column gap--20">
       <?php
       article_headline();
-      echo do_shortcode('[iframe height="128" src="' . pods('podcasts', get_the_ID())->field('podcast_embed') . '"]');
+      echo do_shortcode('[iframe height="200" scrolling="no" src="' . pods('podcasts', get_the_ID())->field('podcast_embed') . '"]');
       ?>
     </div>
   </div>
@@ -35,14 +35,16 @@
       <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
           <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> style="position: relative">
             <div class="container in-column">
+              <?php mongabay_sanitized_content($post_id); ?>
               <div id="transcript">
                 <?php
                 $transcript = pods('podcasts', get_the_ID())->field('transcript');
                 if (!empty($transcript)) {
-                  echo $transcript;
+                  echo '<h1>';
+                  _e('Transcript', 'mongabay');
+                  echo '</h1>';
+                  echo pods_field_display('transcript');
                 }
-                // TODO: remove after testing
-                // mongabay_sanitized_content($post_id);
                 ?>
               </div>
               <div id="expander-container" class="transcript container full-width">

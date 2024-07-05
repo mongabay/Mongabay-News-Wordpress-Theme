@@ -192,6 +192,11 @@ h4 {
   margin: 0;
 }
 
+.single h1 {
+  font-size: var(--font-jumbo);
+  line-height: 1.27;
+}
+
 .single h3 {
   font-size: var(--font-m);
   line-height: 2;
@@ -2131,7 +2136,8 @@ input#featured[type="checkbox"] {
 /* Single post */
 .single-videos .video iframe {
   width: 100%;
-  height: 100vh;
+  height: max-content;
+  aspect-ratio: 2;
   border-radius: var(--rounded);
 }
 
@@ -2362,6 +2368,10 @@ input#featured[type="checkbox"] {
 #transcript {
   position: relative;
   height: 450px;
+}
+
+#transcript ul {
+  padding: 0 0 0 1rem;
 }
 
 #article-taxonomies.visible,

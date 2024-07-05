@@ -705,6 +705,12 @@ async function fetchArticles(fromStart = false) {
 
   window.history.pushState(nextState, nextTitle, nextURL);
 
+  if (searchValue.length > 0) {
+  document.title = nextTitle;
+  } else {
+    document.title = `Showing all ${selectedFormats.join(", ").toLowerCase()} stories`;
+  }
+
   const topicGql = `{taxonomy:TOPIC,terms:${JSON.stringify(
     selectedTopics,
   )},field:SLUG,operator:IN}`;

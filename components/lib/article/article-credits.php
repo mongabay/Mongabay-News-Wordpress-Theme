@@ -22,7 +22,7 @@ function article_credits(int $post_id)
           } ?>
         </div>
         <div class="extra-info">
-          <h4><?php the_author_posts_link(); ?></h4>
+          <?php the_author_posts_link(); ?>
           <?php if ($job_title) { ?>
             <span><?php _e($job_title, 'mongabay'); ?></span>
           <?php } else { ?>
@@ -48,7 +48,7 @@ function article_credits(int $post_id)
           <div class="author-avatar">
             <?php
             if (!empty($adaptor_avatar)) { ?>
-              <img src="' . esc_url($adaptor_avatar) . '" alt="Cover Image">'
+              <img src="<?php echo esc_url($adaptor_avatar); ?>" />
             <?php } else { ?>
               <span class="meta-author-circle"></span>
             <?php } ?>
