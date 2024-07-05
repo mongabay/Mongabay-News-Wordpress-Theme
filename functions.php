@@ -226,7 +226,7 @@ function mongabay_conditional_scripts()
         wp_enqueue_script('iframeresize');
     }
 
-    if (is_front_page() || is_page(['articles', 'specials', 'videos', 'podcasts', 'feature'])) {
+    if (is_front_page() || is_page(['articles', 'specials', 'videos', 'podcasts', 'features'])) {
         wp_register_style('slick-main', get_template_directory_uri() . '/js/lib/slick/slick.css', array(), '1.8.1', 'all');
         wp_enqueue_style('slick-main');
         wp_register_style('slick-theme', get_template_directory_uri() . '/js/lib/slick/slick-theme.css', array(), '1.8.1', 'all');
@@ -520,13 +520,13 @@ function parallax_img($atts)
 {
 
     extract(shortcode_atts(array('imagepath' => 'Image Needed', 'id' => '1', 'px_title' => 'Slide Title', 'title_color' => '#FFFFFF', 'img_caption' => 'Your image caption'), $atts));
-    return "<div class='clearfix'></div><div class='parallax-section full-height' data-parallax='scroll' id='" . $id . "' data-image-src='" . $imagepath . "' style='background-size: cover'><div class='featured-article-meta'><span class='subtitle' style='color:" . $title_color . "'>" . $img_caption . "</span></div></div><div class='clearfix'></div>";
+    return "<div class='parallax-section full-vheight' data-parallax='scroll' id='" . $id . "' data-image-src='" . $imagepath . "' style='background-size: cover'><div class='featured-article-meta'><span class='subtitle' style='color:" . $title_color . "'>" . $img_caption . "</span></div></div>";
 }
 
 function parallax_open()
 {
 
-    return "<div class='container'><div class='row justify-content-center'><div id='main' class='col-lg-8 single'>";
+    return "<div class='container pv--40 ph--40'><div class='inner'>";
 }
 
 
@@ -534,7 +534,7 @@ function parallax_open()
 function parallax_close()
 {
 
-    return "</div></div></div>";
+    return "</div></div>";
 }
 
 
@@ -1016,13 +1016,21 @@ add_action('graphql_register_types', function () {
     ]);
 });
 
-/* Disable Gutenberg globally */
-function mongabay_disable_gutenberg($can_edit, $post_type)
+/* Disable Gutenberg for normal posts */
+function mongabay_disable_gutenberg_posts($can_edit, $post_type)
 {
-    $excluded_post_types = array('custom-story', 'page');
+    $excluded_post_types = array('custom-story');
+    $excluded_pages = array('about', 'contact', 'terms');
 
     return in_array($post_type, $excluded_post_types);
 }
+
+function mongabay_disable_gutenberg_pages($can_edit, $post)
+{
+    $excluded_pages = array('about', 'contact', 'terms');
+    return in_array($post->post_name, $excluded_pages);
+}
+
 
 /* Register post tags for new post types */
 function mongabay_register_tags_cpts()
@@ -1195,7 +1203,8 @@ remove_filter('the_excerpt', 'wpautop'); // Remove <p> tags from Excerpt altoget
 remove_filter('the_content', 'wpautop');
 add_filter('the_content', 'wpautop', 12); //Remove <p> and <br> from shortcodes
 // add_filter('use_block_editor_for_post', '__return_false'); //Disable Gutenberg editor
-add_filter('use_block_editor_for_post_type', 'mongabay_disable_gutenberg', 10, 2); //Enable Gutenberg editor for custom stories only
+add_filter('use_block_editor_for_post_type', 'mongabay_disable_gutenberg_posts', 10, 2); //Enable Gutenberg editor for custom stories only
+add_filter('use_block_editor_for_post', 'mongabay_disable_gutenberg_pages', 10, 2); //Enable Gutenberg editor for certain pages only
 // add_filter('wp_lazy_loading_enabled', '__return_false'); //Disable lazy load
 // add_filter('the_permalink', 'mirror_site_permalink'); // Fix mirror site links
 // add_filter('term_link', 'mirror_site_permalink'); // Fix mirror site byline links

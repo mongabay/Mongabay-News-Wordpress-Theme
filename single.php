@@ -20,7 +20,7 @@
                     }
                     $thumb_url = get_the_post_thumbnail_url($post_id, $coversize);
                     ?>
-                    <div class="col-lg-12" style="background: url('<?php echo esc_url($thumb_url); ?>'); background-size: cover; background-position: center; width: 100%;"></div>
+                    <div style="background: url('<?php echo esc_url($thumb_url); ?>'); background-size: cover; background-position: center; width: 100%;"></div>
 
                 </div>
             <?php endif; ?>

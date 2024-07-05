@@ -15,7 +15,7 @@ $series = (array('oceans', 'amazon-conservation', 'land-rights-and-extractives',
 formats_slider(array('podcasts'), 'Listen to Nature with thought-provoking podcasts', array(), 'text-center');
 ?>
 <div class="container full-width ph--40 pv--40 in-column">
-  <?php podcasts_topics_section('Explore stories about', array('oceans', 'climate', 'rainforests'), array('link_copy' => 'all topics', 'link_url' => '')); ?>
+  <?php podcasts_topics_section('Explore stories about', array('forests', 'wildlife', 'oceans', 'climate', 'conservation-solutions'), array('link_copy' => 'all topics', 'link_url' => '')); ?>
 
   <div id="section-podcasts-latest" class="container pv--40 gap--20 in-column">
     <div class="container in-row full-width section--headline" style="align-items: center; justify-content: space-between;">
