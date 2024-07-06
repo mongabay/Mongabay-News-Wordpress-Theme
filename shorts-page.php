@@ -11,7 +11,7 @@ get_header(); ?>
 
 <?php
 $args = array(
-  'post_type' => 'post',
+  'post_type' => 'short-article',
   'posts_per_page' => 8,
   'offset' => 0,
   'post_status' => 'publish',
@@ -78,7 +78,7 @@ $banner = '
     </dialog>
     <div id="posts"></div>
     <div class="container centered pv--40">
-      <a class="theme--button outlined load-more-button"><?php _e('Load more', 'mongabay'); ?><span class="icon icon-right"></span></a>
+      <a class="theme--button outlined load-more-button" data-post-type="short-article"><?php _e('Load more', 'mongabay'); ?><span class="icon icon-right"></span></a>
     </div>
 
     <script>
@@ -99,7 +99,7 @@ $banner = '
             e.preventDefault();
             e.stopPropagation();
             const postTitle = e.target.closest('.shorts-trigger').querySelector('.title').textContent.trim();
-            const excerpt = e.target.closest('.shorts-trigger').querySelector('.post-excerpt').textContent;
+            const excerpt = e.target.closest('.shorts-trigger').querySelector('.post-excerpt').innerHTML.trim();
             const byline = e.target.closest('.shorts-trigger').querySelector('.post-meta .byline').textContent;
             const date = e.target.closest('.shorts-trigger').querySelector('.post-meta .date').textContent;
             const url = e.target.closest('.shorts-trigger').dataset.url;
@@ -113,7 +113,7 @@ $banner = '
             const dialogShareLink = shortsDialog.querySelector('.dialog-footer a.link');
 
             dialogTitle.textContent = postTitle;
-            dialogContent.textContent = excerpt;
+            dialogContent.innerHTML = excerpt;
             dialogByline.textContent = byline;
             dialogDate.textContent = date;
             dialogShareLink.href = url;

@@ -1365,6 +1365,7 @@ ul.main-menu:not(.off-canvas) li a.active:before {
   border: none;
   background: var(--theme-white);
   color: var(--theme-body);
+  overflow-y: hidden;
 }
 
 .dark-mode #share-dialog,
