@@ -44,7 +44,7 @@
                 echo '<i><small>';
                 _e('Notice: Transcripts are machine and human generated and lightly edited for accuracy. They may contain errors.', 'mongabay');
                 echo '</small></i></div>';
-                echo $transcript;
+                echo pods_field_display('transcript');
               }
               ?>
             </div>
@@ -52,7 +52,7 @@
               <a class="content-expander text-center"><span><?php _e('Read full transcript', 'mongabay'); ?></span></a>
             </div>
           </div>
-          <div id="single-article-footer" class="container ph--40">
+          <div id="single-article-footer" class="container ph--40 in-column">
             <?php article_credits($post_id); ?>
             <div id="single-article-tags">
               <?php article_terms($post_id); ?>

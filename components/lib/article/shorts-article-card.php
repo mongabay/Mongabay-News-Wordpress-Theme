@@ -13,6 +13,7 @@ function shorts_article_card($id, $is_large = false, $title_class = '', $idx = 0
     9 => ' bg-theme-gray',
   );
 
+  $link_url = get_post_meta($id, 'article_link', true)
   // $backgrounds = array(
   //   1 => ' bg-theme-secondary',
   //   2 => ' bg-theme-gray',
@@ -26,7 +27,7 @@ function shorts_article_card($id, $is_large = false, $title_class = '', $idx = 0
   // );
 ?>
   <div class="article--container">
-    <a class="shorts-trigger" data-url="<?php the_permalink($id); ?>">
+    <a class="shorts-trigger" data-url="<?php echo $link_url; ?>">
       <div class="title headline rounded-top <?php echo $is_large ? 'ph--80 pv--80' : 'ph--40 pv--40';
                                               echo $backgrounds[$idx]; ?>">
         <?php echo $is_large ? '<h2 class="' . $title_class . '">' : '<h3 class="' . $title_class . '">' ?>
@@ -38,7 +39,7 @@ function shorts_article_card($id, $is_large = false, $title_class = '', $idx = 0
         <span class="date"><?php the_time('j M Y'); ?></span>
       </div>
       <div class="post-excerpt hidden">
-        <?php mongabay_excerpt(100); ?>
+        <?php the_content(); ?>
       </div>
       <?php the_post_thumbnail($id, 'medium', array('class' => 'rounded-bottom')); ?>
     </a>

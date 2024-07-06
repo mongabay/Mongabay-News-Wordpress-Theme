@@ -248,6 +248,18 @@ function mongabay_conditional_scripts()
     }
 }
 
+// Load word count script on short articles
+function enqueue_word_count_script($hook)
+{
+    // Only enqueue script on the edit page for the custom post type
+    if ($hook === 'post.php' || $hook === 'post-new.php') {
+        global $post;
+        if ($post->post_type === 'short-article') {
+            wp_enqueue_script('word-count-js', get_template_directory_uri() . '/js/lib/word-count.js', array('jquery'), null, true);
+        }
+    }
+}
+
 // Featured articles template
 function mongabay_featured()
 {
@@ -1093,7 +1105,7 @@ function mongabay_ajaxed_pagination()
         wp_enqueue_script('ajax-pagination', get_template_directory_uri() . '/js/lib/ajaxed-pagination.js', array('jquery'), null, true);
         wp_localize_script('ajax-pagination', 'ajaxpagination', array(
             'ajaxurl' => admin_url('admin-ajax.php'),
-            'noposts' => __('No older posts found', 'text-domain'),
+            'noposts' => __('No older posts', 'mongabay'),
         ));
     }
 }
@@ -1103,9 +1115,10 @@ function load_more_posts()
 {
     $counter = 0;
     $paged = $_POST['page'] ?? 1;
+    $post_type = $_POST['post_type'] ?? 'post';
 
     $args = array(
-        'post_type' => 'post',
+        'post_type' => $post_type,
         'posts_per_page' => 9,
         'paged' => $paged
     );
@@ -1126,6 +1139,28 @@ function load_more_posts()
     die();
 }
 
+function validate_short_article_content_length($post_id)
+{
+    // Avoid running during autosave or for non-short-article post types
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
+    if (isset($_POST['post_type']) && $_POST['post_type'] !== 'short-article') return;
+    if (!current_user_can('edit_post', $post_id)) return;
+
+    $content = wp_strip_all_tags($_POST['post_content']);
+    $word_count = str_word_count($content);
+    if ($word_count > 500) {
+        remove_action('save_post', 'validate_short_article_content_length'); // prevent infinite loop
+        wp_update_post(array(
+            'ID' => $post_id,
+            'post_status' => 'draft'
+        ));
+        add_action('save_post', 'validate_short_article_content_length');
+
+        wp_die('Content exceeds 500 words. Please shorten your content.');
+    }
+}
+
+
 
 /*------------------------------------*\
     Actions + Filters
@@ -1140,6 +1175,7 @@ add_shortcode('banner', 'banner_shortcode');
 // Add Actions
 add_action('init', 'mongabay_header_scripts'); // Add Custom Scripts to wp_head
 add_action('wp_enqueue_scripts', 'mongabay_conditional_scripts'); // Add Conditional Page Scripts
+add_action('admin_enqueue_scripts', 'enqueue_word_count_script'); // Enqueue word count script
 add_action('wp_enqueue_scripts', 'mongabay_styles'); // Add Theme Stylesheet
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
 add_action('init', 'mongabay_pagination'); // Add our Pagination
@@ -1155,6 +1191,7 @@ add_action('init', 'custom_rss_feed_init'); // Add custom RSS feed
 add_action('wp_enqueue_scripts', 'mongabay_ajaxed_pagination');
 add_action('wp_ajax_load_more_posts', 'load_more_posts');
 add_action('wp_ajax_nopriv_load_more_posts', 'load_more_posts');
+add_action('save_post', 'validate_short_article_content_length'); // Short articles validation
 
 // Remove Actions
 remove_action('wp_head', 'feed_links_extra', 3); // Display the links to the extra feeds such as category feeds
