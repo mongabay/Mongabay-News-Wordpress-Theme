@@ -32,12 +32,18 @@
   <div class="inner">
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> style="position: relative">
-          <div class="container in-column">
+          <div class="container in-column ph--40">
             <?php mongabay_sanitized_content($post_id); ?>
-            <div id="transcript">
+            <div id="transcript" class="container in-column gap--40">
               <?php
               $transcript = pods('videos', get_the_ID())->field('transcript');
               if (!empty($transcript)) {
+                echo '<div><h1>';
+                _e('Transcript', 'mongabay');
+                echo '</h1>';
+                echo '<i><small>';
+                _e('Notice: Transcripts are machine and human generated and lightly edited for accuracy. They may contain errors.', 'mongabay');
+                echo '</small></i></div>';
                 echo $transcript;
               }
               ?>
@@ -46,7 +52,7 @@
               <a class="content-expander text-center"><span><?php _e('Read full transcript', 'mongabay'); ?></span></a>
             </div>
           </div>
-          <div id="single-article-footer">
+          <div id="single-article-footer" class="container ph--40">
             <?php article_credits($post_id); ?>
             <div id="single-article-tags">
               <?php article_terms($post_id); ?>

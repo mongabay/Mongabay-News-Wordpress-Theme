@@ -34,15 +34,18 @@
     <div class="column--80 in-column">
       <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
           <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> style="position: relative">
-            <div class="container in-column">
+            <div class="container in-column ph--40">
               <?php mongabay_sanitized_content($post_id); ?>
-              <div id="transcript">
+              <div id="transcript" class="container in-column gap--40">
                 <?php
                 $transcript = pods('podcasts', get_the_ID())->field('transcript');
                 if (!empty($transcript)) {
-                  echo '<h1>';
+                  echo '<div><h1>';
                   _e('Transcript', 'mongabay');
                   echo '</h1>';
+                  echo '<i><small>';
+                  _e('Notice: Transcripts are machine and human generated and lightly edited for accuracy. They may contain errors.', 'mongabay');
+                  echo '</small></i></div>';
                   echo pods_field_display('transcript');
                 }
                 ?>

@@ -89,9 +89,11 @@ if (wp_is_mobile()) {
 						<ul class="global-languages">
 							<li><a href="" class="active">English</a></li>
 							<li><a href="https://es.mongabay.com/">Español (Spanish)</a></li>
+							<li><a href="https://fr.mongabay.com/">Français (French)</a></li>
 							<li><a href="https://www.mongabay.co.id/">Bahasa Indonesia (Indonesian)</a></li>
 							<li><a href="https://brasil.mongabay.com/">Brasil (Portuguese)</a></li>
-							<li><a href="https://hindi.mongabay.com/">India (Hindi)</a></li>
+							<li><a href="https://india.mongabay.com/">India (English)</a></li>
+							<li><a href="https://hindi.mongabay.com/">हिंदी (Hindi)</a></li>
 						</ul>
 						<?php if (!wp_is_mobile()) { ?>
 							<span class="icon icon-cancel"></span>

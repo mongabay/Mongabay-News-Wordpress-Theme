@@ -193,7 +193,7 @@ h4 {
 }
 
 .single h1 {
-  font-size: var(--font-jumbo);
+  font-size: clamp(2.5rem, 5vw + 0.5rem, var(--font-jumbo));
   line-height: 1.27;
 }
 
