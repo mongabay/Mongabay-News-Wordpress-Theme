@@ -67,7 +67,7 @@ $banner = '
             </div>
           </div>
           <div class="dialog-footer container in-row gap--20 pv--16">
-            <a class="theme--button secondary share"><?php _e('Share Short', 'mongabay'); ?></a>
+            <a class="theme--button secondary simple share"><?php _e('Share Short', 'mongabay'); ?></a>
             <a class="theme--button secondary simple link" href=""><?php _e('Read Full Article', 'mongabay'); ?></a>
           </div>
         </div>
@@ -93,35 +93,40 @@ $banner = '
 
         let title = '';
         let postUrl = '';
+        let shareUrl = '';
 
         shortsTriggers.forEach(trigger => {
           trigger.addEventListener('click', (e) => {
             e.preventDefault();
             e.stopPropagation();
             const postTitle = e.target.closest('.shorts-trigger').querySelector('.title').textContent.trim();
-            const excerpt = e.target.closest('.shorts-trigger').querySelector('.post-excerpt').innerHTML.trim();
+            const excerpt = e.target.closest('.shorts-trigger').querySelector('.post-excerpt').innerHTML;
             const byline = e.target.closest('.shorts-trigger').querySelector('.post-meta .byline').textContent;
             const date = e.target.closest('.shorts-trigger').querySelector('.post-meta .date').textContent;
-            const url = e.target.closest('.shorts-trigger').dataset.url;
+            const url = e.target.closest('.shorts-trigger').dataset.articlelink;
+            const sUrl = e.target.closest('.shorts-trigger').dataset.shareurl;
+
             postUrl = url;
+            shareUrl = sUrl;
             title = postTitle;
 
             const dialogTitle = shortsDialog.querySelector('.dialog-body .title h2');
             const dialogContent = shortsDialog.querySelector('.dialog-body .post-content p');
             const dialogByline = shortsDialog.querySelector('.dialog-body .post-meta .byline');
             const dialogDate = shortsDialog.querySelector('.dialog-body .post-meta .date');
-            const dialogShareLink = shortsDialog.querySelector('.dialog-footer a.link');
+            const dialogArticleLink = shortsDialog.querySelector('.dialog-footer a.link');
 
             dialogTitle.textContent = postTitle;
             dialogContent.innerHTML = excerpt;
             dialogByline.textContent = byline;
             dialogDate.textContent = date;
-            dialogShareLink.href = url;
+            dialogArticleLink.href = postUrl;
 
             shortsDialog.showModal();
 
             shortsShare.innerHTML = shortsShare.innerHTML.replace(/{{title}}/g, title);
             shortsShare.innerHTML = shortsShare.innerHTML.replace(/{{postUrl}}/g, postUrl);
+            shortsShare.innerHTML = shortsShare.innerHTML.replace(/{{shareUrl}}/g, shareUrl);
           });
         });
 
@@ -142,6 +147,35 @@ $banner = '
           shortsOverview.classList.add('hidden');
           shortsShare.classList.remove('hidden');
           backButton.classList.remove('hidden');
+
+          while (true) {
+            const copyText = document.getElementById("copy-url");
+
+            if (copyText) {
+
+              function copyURL() {
+                copyText.select();
+                copyText.setSelectionRange(0, 99999);
+                navigator.clipboard.writeText(copyText.value);
+              }
+
+              function emailArticle() {
+                window.alert("Email this article?");
+                window.location.href = "mailto:?subject=" + encodeURIComponent(document.title) + "&body=" + encodeURIComponent(window.location.href);
+              }
+
+              document.querySelector(".icon-share-copy").addEventListener("click", copyURL);
+              document.querySelector("a.email").addEventListener("click", emailArticle);
+
+              break;
+            } else {
+              new Promise((resolve, reject) => {
+                setTimeout(() => {
+                  resolve();
+                }, 100);
+              });
+            }
+          }
         });
 
         shortsDialog.addEventListener('show', () => {

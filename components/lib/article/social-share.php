@@ -68,7 +68,7 @@ function social_share()
 
   $facebookURL = 'https://www.facebook.com/sharer/sharer.php?u=' . $postURL;
   $xURL = 'https://twitter.com/share?url=' . $postURL . '&title=' . $post_title;
-  $threadsURL = 'https://www.threads.net/share?url=' . $postURL . '&title=' . $post_title;
+  $threadsURL = 'https://threads.net/intent/post?text=' . $post_title . ' ' . $postURL;
   $redditURL = 'https://reddit.com/submit?url=' . $postURL . '&title=' . $post_title;
   $linkedInURL = 'https://www.linkedin.com/shareArticle?mini=true&url=' . $postURL . '&title=' . $post_title;
   $whatsappURL = 'whatsapp://send?text=' . $postURL . '&title=' . $post_title;
@@ -129,7 +129,8 @@ function social_share()
     }
 
     function emailArticle(){
-      window.location.href="mailto:?subject="+document.title+"&body="+escape(window.location.href);
+      window.alert("Email this article?");
+      window.location.href = "mailto:?subject=" + encodeURIComponent(document.title) + "&body=" + encodeURIComponent(window.location.href);
     }
 
     function copyURL() {

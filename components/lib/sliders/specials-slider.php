@@ -1,5 +1,5 @@
 <?php
-function formats_slider(array $post_formats, string $headline, array $terms_array = [], string $extra_class = null)
+function specials_slider(array $post_formats, string $headline, array $terms_array = [], string $extra_class = null)
 { ?>
   <div id="formats-slider" class="section--highlight slider full-width">
     <div class="container in-column gap--40 pv--40 ph--40">
@@ -11,28 +11,17 @@ function formats_slider(array $post_formats, string $headline, array $terms_arra
       if (count($terms_array) > 0) {
         foreach ($terms_array as $name) {
           $args = array(
-            'post_type' => $post_formats,
+            'post_type' => 'specials',
             'posts_per_page' => 1,
-            'cache_results' => true
-          );
-
-          if ($post_formats !== array('specials')) {
-            $args['tax_query'] = array(
-              array(
-                'taxonomy' => 'serial',
-                'field' => 'slug',
-                'terms' => $terms_array,
-              )
-            );
-
-            $args['meta_query'] = array(
+            'cache_results' => true,
+            'meta_query' => array(
               array(
                 'key' => 'featured_as',
                 'value' => 'featured',
                 'compare' => '='
               )
-            );
-          }
+            )
+          );
 
           $query = new WP_Query($args);
 

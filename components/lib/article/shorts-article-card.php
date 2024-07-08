@@ -13,7 +13,9 @@ function shorts_article_card($id, $is_large = false, $title_class = '', $idx = 0
     9 => ' bg-theme-gray',
   );
 
-  $link_url = get_post_meta($id, 'article_link', true)
+  $article_link = get_post_meta($id, 'article_link', true);
+  $link_url_share = get_permalink($id);
+
   // $backgrounds = array(
   //   1 => ' bg-theme-secondary',
   //   2 => ' bg-theme-gray',
@@ -26,23 +28,21 @@ function shorts_article_card($id, $is_large = false, $title_class = '', $idx = 0
   //   9 => ' bg-theme-gray',
   // );
 ?>
-  <div class="article--container">
-    <a class="shorts-trigger" data-url="<?php echo $link_url; ?>">
-      <div class="title headline rounded-top <?php echo $is_large ? 'ph--80 pv--80' : 'ph--40 pv--40';
-                                              echo $backgrounds[$idx]; ?>">
-        <?php echo $is_large ? '<h2 class="' . $title_class . '">' : '<h3 class="' . $title_class . '">' ?>
-        <?php the_title(); ?>
-        <?php echo $is_large ? '</h2>' : '</h3>' ?>
-      </div>
-      <div class="post-meta hidden">
-        <span class="byline"><?php echo getPostBylines($id); ?></span>
-        <span class="date"><?php the_time('j M Y'); ?></span>
-      </div>
-      <div class="post-excerpt hidden">
-        <?php the_content(); ?>
-      </div>
-      <?php the_post_thumbnail($id, 'medium', array('class' => 'rounded-bottom')); ?>
-    </a>
+  <div class="article--container shorts-trigger" data-articlelink="<?php echo $article_link; ?>" data-shareurl="<?php echo $link_url_share; ?>">
+    <div class="title headline rounded-top <?php echo $is_large ? 'ph--80 pv--80' : 'ph--40 pv--40';
+                                            echo $backgrounds[$idx]; ?>">
+      <?php echo $is_large ? '<h2 class="' . $title_class . '">' : '<h3 class="' . $title_class . '">' ?>
+      <?php the_title(); ?>
+      <?php echo $is_large ? '</h2>' : '</h3>' ?>
+    </div>
+    <div class="post-meta hidden">
+      <span class="byline"><?php echo getPostBylines($id); ?></span>
+      <span class="date"><?php the_time('j M Y'); ?></span>
+    </div>
+    <div class="post-excerpt hidden">
+      <?php the_content(); ?>
+    </div>
+    <?php the_post_thumbnail($id, 'medium', array('class' => 'rounded-bottom')); ?>
   </div>
 <? }
 ?>

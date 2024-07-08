@@ -1,5 +1,5 @@
 <?php
-function series_latest(array $series_array)
+function specials_latest(array $series_array)
 {
   echo '<div class="latest-series full-width in-column gap--40"><h1>';
   _e('Latest Specials', 'mongabay');
@@ -13,7 +13,7 @@ function series_latest(array $series_array)
 
   foreach ($series_array as $name) {
     $args = array(
-      'post_type' => 'post',
+      'post_type' => 'specials',
       'posts_per_page' => 1,
       'cache_results' => true,
       'tax_query' => array(

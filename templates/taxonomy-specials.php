@@ -22,7 +22,7 @@ $counter = 0;
   <div class="container full-width in-column section--highlight text-center gap--20 pv--40">
     <h1><?php echo $title; ?> <?php _e(' News', 'mongabay'); ?></h1>
     <?php if ($description) { ?>
-      <p><?php echo $description; ?></p>
+      <p><?php echo strip_tags($description); ?></p>
     <?php } ?>
   </div>
   <div class="container full-width gap--40">
@@ -105,8 +105,8 @@ $counter = 0;
     <?php mongabay_pagination(); ?>
   </div>
   <div class="container section--highlight full-width pv-40">
-    <?php $series_latest = (array('oceans', 'amazon-conservation', 'land-rights-and-extractives', 'indigenous-peoples-and-conservation', 'amazon-conservation', 'oceans', 'oceans', 'oceans'));
-    series_latest($series_latest);
+    <?php $specials_latest = (array('oceans', 'amazon-conservation', 'land-rights-and-extractives', 'indigenous-peoples-and-conservation', 'amazon-conservation', 'oceans', 'oceans', 'oceans'));
+    specials_latest($specials_latest);
     ?>
   </div>
   <div class="container centered">

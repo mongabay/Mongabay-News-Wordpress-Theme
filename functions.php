@@ -564,16 +564,18 @@ function px_shortcode_button()
                 return txtarea.value.substring(start, finish);
             }
 
-            QTags.addButton(
-                "parallax_shortcode",
-                "ParallaxSlide",
-                callback
-            );
-
             function callback() {
                 var selected_text = getSel();
                 QTags.insertContent("[parallax-img imagepath='image_url' id='1' px_title='First Title' title_color='#333333' img_caption='Your image caption']");
             }
+
+            document.addEventListener('DOMContentLoaded', function() {
+                QTags.addButton(
+                    "parallax_shortcode",
+                    "Parallax",
+                    callback
+                );
+            });
         </script>
     <?php
     }
@@ -592,16 +594,18 @@ function open_close_px_content()
                 return txtarea.value.substring(start, finish);
             }
 
-            QTags.addButton(
-                "pxcontent_shortcode",
-                "ParallaxContent",
-                callback
-            );
-
             function callback() {
                 var selected_text = getSel();
                 QTags.insertContent("[open-parallax-content]" + selected_text + "[close-parallax-content]")
             }
+
+            document.addEventListener('DOMContentLoaded', function() {
+                QTags.addButton(
+                    "pxcontent_shortcode",
+                    "Parallax Content",
+                    callback
+                );
+            });
         </script>
         <?php
     }

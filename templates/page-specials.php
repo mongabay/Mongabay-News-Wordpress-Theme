@@ -15,7 +15,7 @@ $taxonomy = $queried_object->term_id;
 $tax_name = $queried_object->name;
 $tax_slug = $queried_object->slug;
 $tax_description = $queried_object->description;
-$formats = array('post', 'custom-story', 'videos', 'podcasts', 'specials', 'short-article');
+$formats = array('specials');
 ?>
 <div class="container in-column gap--40">
 	<div class="container section--highlight full-width in-column text-center ph--40 pv--40 gap--20">
@@ -53,7 +53,7 @@ $formats = array('post', 'custom-story', 'videos', 'podcasts', 'specials', 'shor
 	<div class="container pv--80 gap--20 in-column">
 		<h1>Quickly stay updated with our news <span>shorts</span></h1>
 		<div class="grid--3 gap--40">
-			<?php articles_listing_condensed('post', 6, 0, false, 'medium', null); ?>
+			<?php articles_listing_condensed('short-article', 6, 0, false, 'medium', null); ?>
 		</div>
 	</div>
 </div>
