@@ -30,7 +30,7 @@ get_header(); ?>
 
 <div class="container in-column ph--40 pv--40">
   <?php banner('', 'We’re a nonprofit', 'Help us tell impactful stories of biodiversity loss, climate change, and more', 'Donate', 'accent ph--20 pv--56 full-width', 'extra-large'); ?>
-  <?php topics_section(array('post'), 'Explore articles by topic such as', array('climate', 'oceans')); ?>
+  <?php topics_section(array('post'), 'Read articles on topics such as', array('animals', 'forests', 'oceans', 'conservation', 'indigenous-peoples')); ?>
 </div>
 <?php featured_articles_slider(4, 5); ?>
 
