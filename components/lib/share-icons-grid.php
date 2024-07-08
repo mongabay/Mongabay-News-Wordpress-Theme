@@ -38,12 +38,13 @@ function share_icons_grid($type)
   </svg>
   ';
 
-  $facebookURL = 'https://www.facebook.com/sharer/sharer.php?u={{postUrl}}';
-  $xURL = 'https://twitter.com/share?url={{postUrl}}&title={{title}}';
-  $threadsURL = 'https://www.threads.net/share?url={{postUrl}}&title={{title}}';
-  $redditURL = 'https://reddit.com/submit?url={{postUrl}}&title={{title}}';
-  $linkedInURL = 'https://www.linkedin.com/shareArticle?mini=true&url={{postUrl}}&title={{title}}';
-  $whatsappURL = 'whatsapp://send?text={{postUrl}}&title={{title}}';
+  $facebookURL = 'https://www.facebook.com/sharer/sharer.php?u={{shareUrl}}';
+  $xURL = 'https://twitter.com/share?url={{shareUrl}}&title={{title}}';
+  $threadsURL = 'https://www.threads.net/share?url={{shareUrl}}&title={{title}}';
+  $threadsURL = 'https://threads.net/intent/post?text={{title}} {{shareUrl}}';
+  $redditURL = 'https://reddit.com/submit?url={{shareUrl}}&title={{title}}';
+  $linkedInURL = 'https://www.linkedin.com/shareArticle?mini=true&url={{shareUrl}}&title={{title}}';
+  $whatsappURL = 'whatsapp://send?text={{shareUrl}}&title={{title}}';
 
   $facebook = '<a class="facebook" href="' . $facebookURL . '" target="_blank"><span class="icon-share">' . $icon_facebook . '</span>Facebook</a>';
   $x = '<a class="x" href="' . $xURL . '" target="_blank"><span class="icon-share">' . $icon_x . '</span>X</a>';
@@ -51,7 +52,7 @@ function share_icons_grid($type)
   $reddit = '<a class="reddit" href="' . $redditURL . '" target="_blank"><span class="icon-share">' . $icon_reddit . '</span>Reddit</a>';
   $linkedin = '<a class="linkedin" href="' . $linkedInURL . '" target="_blank"><span class="icon-share">' . $icon_linkedin . '</span>Linkedin</a>';
   $whatsapp = '<a class="whatsapp" href="' . $whatsappURL . '" target="_blank"><span class="icon-share">' . $icon_whatsapp . '</span>Whatsapp</a>';
-  $email = '<a class="email" href="javascript:emailArticle()"><span class="icon-share">' . $icon_email . '</span>Email</a>';
+  $email = '<a class="email"><span class="icon-share">' . $icon_email . '</span>Email</a>';
 
 
 ?>
@@ -73,7 +74,7 @@ function share_icons_grid($type)
     </div>
     <div class="container full-width in-column gap--8 share-dialog-link">
       <label for="share-link"><?php _e('Page link', 'mongabay'); ?></label>
-      <input id="copy-url" type="text" value="{{postUrl}}" id="share-link" readonly>
+      <input id="copy-url" type="text" value="{{shareUrl}}" id="share-link" readonly>
       <span class="icon-share-copy"><?php echo $icon_copy; ?></span>
     </div>
   </div>

@@ -42,7 +42,7 @@ get_header(); ?>
   <div class="container ph--40 pv--80 gap--20 in-column">
     <h1>Quickly stay updated with our news <span>shorts</span></h1>
     <div class="grid--3 gap--40">
-      <?php articles_listing_condensed('post', 6, 0, false, 'medium', null); ?>
+      <?php articles_listing_condensed('short-article', 6, 0, false, 'medium', null); ?>
     </div>
   </div>
 </div>

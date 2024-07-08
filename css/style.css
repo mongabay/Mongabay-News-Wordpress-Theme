@@ -1474,6 +1474,16 @@ dialog input {
   stroke: var(--theme-secondary);
 }
 
+/* Shorts page */
+.shorts-trigger {
+  cursor: pointer;
+}
+
+#shorts-dialog .post-content a {
+  display: inline-block;
+  font-weight: 600;
+}
+
 /* Byline archive */
 .byline--overview.byline-avatar {
   width: 230px;
