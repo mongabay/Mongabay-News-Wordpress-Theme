@@ -12,13 +12,13 @@ get_header(); ?>
 
 <?php
 $specials_tax_array = (array('conservation-effectiveness', 'product-lifecycles', 'indonesia-for-sale'));
-formats_slider(array('specials'), 'Special Issues connect the dots between stories', $specials_tax_array, 'text-center');
+specials_slider('Special Issues connect the dots between stories', $specials_tax_array, 'text-center');
 ?>
 <div class="container section--highlight ph--40 pv--40 gap--20 in-column">
   <?php
   series_articles_listing(false);
 
-  $series_latest_tax_array = (array('conservation-effectiveness', 'product-lifecycles', 'indonesia-for-sale', 'conservation-potential', 'problem-solved'));
+  $series_latest_tax_array = (array('conservation-effectiveness', 'product-lifecycles', 'indonesia-for-sale', 'conservation-potential', 'problem-solved', 'congo-peatlands', 'satere-mawe', 'central-american-cattle-ranching'));
   specials_latest($series_latest_tax_array);
   ?>
   <div class="container centered">
