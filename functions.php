@@ -1033,18 +1033,20 @@ add_action('graphql_register_types', function () {
 });
 
 /* Disable Gutenberg for normal posts */
-function mongabay_disable_gutenberg_posts($can_edit, $post_type)
+function mongabay_disable_gutenberg($can_edit, $post)
 {
     $excluded_post_types = array('custom-story');
     $excluded_pages = array('about', 'contact', 'terms');
 
-    return in_array($post_type, $excluded_post_types);
-}
+    if ($post->post_type === 'custom-story') {
+        return true;
+    }
 
-function mongabay_disable_gutenberg_pages($can_edit, $post)
-{
-    $excluded_pages = array('about', 'contact', 'terms');
-    return in_array($post->post_name, $excluded_pages);
+    if (in_array($post->post_name, $excluded_pages)) {
+        return true;
+    }
+
+    return false;
 }
 
 
@@ -1243,8 +1245,7 @@ add_filter('pods_register_taxonomy_byline', 'add_pods_graphql_support'); //Bylin
 remove_filter('the_excerpt', 'wpautop'); // Remove <p> tags from Excerpt altogether
 remove_filter('the_content', 'wpautop');
 add_filter('the_content', 'wpautop', 12); //Remove <p> and <br> from shortcodes
-add_filter('use_block_editor_for_post_type', 'mongabay_disable_gutenberg_posts', 10, 2); //Enable Gutenberg editor for custom stories only
-add_filter('use_block_editor_for_post', 'mongabay_disable_gutenberg_pages', 10, 2); //Enable Gutenberg editor for certain pages only
+add_filter('use_block_editor_for_post', 'mongabay_disable_gutenberg', 10, 2); //Enable Gutenberg editor for certain pages and custom stories
 // add_filter('wp_lazy_loading_enabled', '__return_false'); //Disable lazy load
 // add_filter('the_permalink', 'mirror_site_permalink'); // Fix mirror site links
 // add_filter('term_link', 'mirror_site_permalink'); // Fix mirror site byline links
