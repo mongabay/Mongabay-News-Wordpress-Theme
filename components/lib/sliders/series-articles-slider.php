@@ -1,11 +1,11 @@
 <?php
-function series_articles_listing(bool $show_headline)
+function series_articles_slider(bool $show_headline, string $post_type = 'post')
 {
   // TODO decide which series are in the list and how to manage a list with more than 3
   $series = (array('oceans', 'amazon-conservation', 'land-rights-and-extractives'));
 
   $args = array(
-    'post_type' => 'post',
+    'post_type' => $post_type,
     'posts_per_page' => 1,
     'tax_query' => array(
       array(
@@ -29,6 +29,10 @@ function series_articles_listing(bool $show_headline)
       $single_serie_slug = get_the_terms(get_the_ID(), 'serial')[0]->slug;
       $single_serie_name = get_the_terms(get_the_ID(), 'serial')[0]->name;
       $single_serie_description = get_the_terms(get_the_ID(), 'serial')[0]->description;
+
+      if (!$single_serie_description) {
+        $single_serie_description = get_the_excerpt();
+      }
     }
   }
 

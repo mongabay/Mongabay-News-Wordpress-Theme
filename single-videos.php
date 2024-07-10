@@ -84,7 +84,7 @@
       <?php banner('', 'We’re a nonprofit.', 'Help us tell stories of biodiversity loss, climate change & socio-environmental injustice.', 'Donate', 'accent full-width pv--56', 'extra-large'); ?>
     </div>
     <div class="container pv--40">
-      <?php series_articles_listing(false);
+      <?php series_articles_slider(false, 'videos');
       ?>
     </div>
     <div class="container in-column pv--40 gap--40">
