@@ -38,7 +38,7 @@ function series_articles_slider(bool $show_headline, string $post_type = 'post')
 
   if ($single_serie_slug) {
     $serie_args = array(
-      'post_type' => 'post',
+      'post_type' => $post_type,
       'posts_per_page' => 4,
       'cache_results' => true,
       'tax_query' => array(
@@ -56,7 +56,7 @@ function series_articles_slider(bool $show_headline, string $post_type = 'post')
       <div class="section--highlight slider full-width">
         <div class="container full-width in-column gap--40 pv--40">
           <?php if ($show_headline) { ?>
-            <h1><span class="icon icon-series">Special issues</span> connect the dots between stories</h1>
+            <h1><span class="icon icon-specials">Special issues</span> connect the dots between stories</h1>
           <?php } else { ?>
             <h1><?php echo $single_serie_name; ?></h1>
           <?php } ?>
@@ -164,7 +164,7 @@ function series_articles_slider(bool $show_headline, string $post_type = 'post')
 
   foreach ($series as $name) {
     $argsSeries = array(
-      'post_type' => 'post',
+      'post_type' => $post_type,
       'posts_per_page' => 1,
       'cache_results' => true,
       'tax_query' => array(
