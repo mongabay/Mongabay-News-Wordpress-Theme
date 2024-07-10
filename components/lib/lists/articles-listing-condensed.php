@@ -31,14 +31,14 @@ function articles_listing_condensed(
       $counter++;
       $query->the_post();
 ?>
-      <div class="article--container gap--16 bg-theme-gray rounded">
+      <div class="article--container gap--16 rounded">
         <a href="<?php the_permalink(); ?>">
           <?php if ($show_featured && has_post_thumbnail() && $counter === 1) { ?>
             <div class="featured-image">
               <?php the_post_thumbnail($thumbnail_size) ?>
             </div>
           <?php } else { ?>
-            <div class="title headline ph--40 pv--40">
+            <div class="title headline bg-theme-gray ph--40 pv--40">
               <h3><?php the_title(); ?></h3>
             </div>
             <div class="featured-image">

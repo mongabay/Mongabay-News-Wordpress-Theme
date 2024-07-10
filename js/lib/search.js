@@ -17,11 +17,11 @@ let cursor = "";
 
 const formatOptions = {
   post: ["Articles", "POST"],
-  customStories: ["Custom Story", "CUSTOM_STORY"],
-  shortArticles: ["Shorts", "SHORT_ARTICLE"],
+  custom_story: ["Custom Story", "CUSTOM_STORY"],
+  short_article: ["Shorts", "SHORT_ARTICLE"],
   videos: ["Video", "VIDEOS"],
   podcasts: ["Podcast", "PODCASTS"],
-  specials: ["Special", "SPECIALS"],
+  specials: ["Specials", "SPECIALS"],
 };
 
 const defaultFormatsList = [
@@ -502,7 +502,6 @@ function createFormatTag(name, slug, showResults = false) {
       filtersCheck();
 
       if (shouldFetch) {
-        console.log("fetching");
         fetchArticles(true);
       }
     }
