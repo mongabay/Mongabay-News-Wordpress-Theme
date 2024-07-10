@@ -94,7 +94,7 @@
       </div>
       <?php videos_latest(); ?>
       <?php if (!wp_is_mobile()) {
-        banner('https://mongabay.us14.list-manage.com/subscribe?u=80161fe385606408293ae0e51&id=940652e1f4', 'Subscribe', 'Stay informed with news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--20 pv--56 full-width', 'extra-large');
+        banner(getSubscribeLink(), 'Subscribe', 'Stay informed with news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--20 pv--56 full-width', 'extra-large');
       } ?>
     </div>
     <?php if (!wp_is_mobile()) { ?>

@@ -24,7 +24,7 @@
 					<li><a href="<?php echo home_url(); ?>/about"><?php _e('About', 'mongabay'); ?></a></li>
 					<li><a href="<?php echo home_url(); ?>/contact"><?php _e('Contact', 'mongabay'); ?></a></li>
 					<li><a href="<?php echo home_url(); ?>"><?php _e('Donate', 'mongabay'); ?></a></li>
-					<li><a href="https://mongabay.us14.list-manage.com/subscribe?u=80161fe385606408293ae0e51&id=940652e1f4"><?php _e('Newsletters', 'mongabay'); ?></a></li>
+					<li><a href="<?php echo getSubscribeLink(); ?>"><?php _e('Newsletters', 'mongabay'); ?></a></li>
 					<li><a href="<?php echo home_url(); ?>/submissions"><?php _e('Submissions', 'mongabay'); ?></a></li>
 					<li><a href="<?php echo home_url(); ?>/terms"><?php _e('Terms of Use', 'mongabay'); ?></a></li>
 				</ul>

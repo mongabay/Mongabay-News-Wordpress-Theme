@@ -12,7 +12,8 @@ get_header(); ?>
 
 <?php
 //$series = (array('global-forests', 'indonesian-forests', 'oceans', 'indigenous-peoples-and-conservation'));
-$formats = array('post', 'custom-story', 'videos', 'podcasts', 'specials', 'short-article');
+$formats = getDefaultFormats();
+$formats_string = getDefaultSearchFormats();
 formats_slider($formats, 'In-depth feature stories reveal context and insight', array(), 'text-center');
 ?>
 
@@ -23,7 +24,7 @@ formats_slider($formats, 'In-depth feature stories reveal context and insight', 
     'link_url' => home_url() . '/?s=&formats=post&featured=true',
   );
 
-  topics_section(array('post'), 'Explore custom stories about', array('climate', 'oceans'), $extra_params);
+  topics_section(array('post'), 'Explore enterprising journalism about', array('forests', 'environmental-crime', 'oceans', 'wildlife', 'climate'), $extra_params);
   ?>
 
 
@@ -44,7 +45,7 @@ formats_slider($formats, 'In-depth feature stories reveal context and insight', 
       <?php articles_listing('post', 4, 8, true, 'medium', null, null, 'serial'); ?>
     </div>
     <div class="container centered pv--40">
-      <a href="<?php echo home_url(); ?>/?s=&formats=special" class="theme--button primary"><?php _e('All series', 'mongabay'); ?><span class="icon icon-right"></span></a>
+      <a href="<?php echo home_url(); ?>/?s=&formats=<?php echo $formats_string; ?>" class="theme--button primary"><?php _e('All features', 'mongabay'); ?><span class="icon icon-right"></span></a>
     </div>
   </div>
 </div>
