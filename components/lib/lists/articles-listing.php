@@ -1,6 +1,6 @@
 <?php
 function articles_listing(
-  string $post_format,
+  array $post_formats,
   int $posts_per_page,
   int $offset,
   bool $show_all_thumbnails,
@@ -10,7 +10,7 @@ function articles_listing(
   ?string $taxonomy
 ) {
   $args = array(
-    'post_type' => $post_format,
+    'post_type' => $post_formats,
     'post_status' => 'publish',
     'posts_per_page' => $posts_per_page,
     'offset' => $offset,

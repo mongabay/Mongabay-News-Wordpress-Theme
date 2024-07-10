@@ -31,24 +31,33 @@ function articles_listing_condensed(
       $counter++;
       $query->the_post();
 ?>
-      <div class="article--container gap--16 rounded">
-        <a href="<?php the_permalink(); ?>">
-          <?php if ($show_featured && has_post_thumbnail() && $counter === 1) { ?>
-            <div class="featured-image">
-              <?php the_post_thumbnail($thumbnail_size) ?>
-            </div>
-          <?php } else { ?>
-            <div class="title headline bg-theme-gray ph--40 pv--40">
-              <h3><?php the_title(); ?></h3>
-            </div>
-            <div class="featured-image">
-              <?php the_post_thumbnail($thumbnail_size) ?>
-            </div>
-          <?php }; ?>
-        </a>
-      </div>
+      <?php if ($post_type === 'short-article') {
+        shorts_article_card(get_the_ID(), false, '', $counter);
+      } else { ?>
+        <div class="article--container gap--16 rounded">
+          <a href="<?php the_permalink(); ?>">
+            <?php if ($show_featured && has_post_thumbnail() && $counter === 1) { ?>
+              <div class="featured-image">
+                <?php the_post_thumbnail($thumbnail_size) ?>
+              </div>
+            <?php } else { ?>
+              <div class="title headline bg-theme-gray ph--40 pv--40">
+                <h3><?php the_title(); ?></h3>
+              </div>
+              <div class="featured-image">
+                <?php the_post_thumbnail($thumbnail_size) ?>
+              </div>
+            <?php }; ?>
+          </a>
+        </div>
+      <?php } ?>
+
 <?php }
     wp_reset_postdata();
+
+    if ($post_type === 'short-article') {
+      get_shorts_dialog();
+    }
   } else {
     esc_html_e('Sorry, no posts matched your criteria.');
   }

@@ -82,7 +82,7 @@
     </div>
     <div class="column--20 in-column gap--20">
       <?php banner('', 'We’re a nonprofit.', 'Help us tell stories of biodiversity loss, climate change & socio-environmental injustice.', 'Donate', 'accent full-width ph--20 pv--20', ''); ?>
-      <?php banner(getSubscribeLink(), 'Subscribe', 'Stay informed with news and inspiration from nature’s frontline.', 'Newsletter', 'outlined ph--20 pv--20 full-width', ''); ?>
+      <?php banner(get_subscribe_link(), 'Subscribe', 'Stay informed with news and inspiration from nature’s frontline.', 'Newsletter', 'outlined ph--20 pv--20 full-width', ''); ?>
     </div>
   </div>
 
@@ -110,15 +110,15 @@
     </div>
       ';
       ?>
-      <?php articles_listing('podcasts', 7, 0, true, 'medium', $banner, 4, null); ?>
+      <?php articles_listing(array('podcasts'), 7, 0, true, 'medium', $banner, 4, null); ?>
     </div>
 
     <div class="container full-width pv--40">
-      <?php banner(getSubscribeLink(), 'Subscribe', 'Stay informed with news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--20 pv--56 full-width', 'extra-large'); ?>
+      <?php banner(get_subscribe_link(), 'Subscribe', 'Stay informed with news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--20 pv--56 full-width', 'extra-large'); ?>
     </div>
     <div class="container pv--40 gap--20 in-column">
       <div class="grid--4 gap--20 repeat">
-        <?php articles_listing('podcasts', 4, 7, true, 'medium', null, null, null); ?>
+        <?php articles_listing(array('podcasts'), 4, 7, true, 'medium', null, null, null); ?>
       </div>
       <div class="container centered pv--40">
         <a href="<?php echo home_url(); ?>/?s=&formats=podcasts" class="theme--button primary"><?php _e('All podcasts', 'mongabay'); ?><span class="icon icon-right"></span></a>
