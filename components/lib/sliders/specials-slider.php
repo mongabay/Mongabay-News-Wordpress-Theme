@@ -13,6 +13,7 @@ function specials_slider(string $headline, array $terms_array = [], string $extr
           $args = array(
             'post_type' => 'specials',
             'posts_per_page' => 1,
+            'order_by' => 'modified',
             'cache_results' => true,
             'meta_query' => array(
               array(

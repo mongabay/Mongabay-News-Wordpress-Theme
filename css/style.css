@@ -971,10 +971,18 @@ ul.main-menu:not(.off-canvas) li a.active:before {
   font-size: 2.3rem;
 }
 
-.sound-wave {
-  background: url(../img/sound-wave.svg);
+.sound-wave,
+.dark-mode .sound-wave {
   background-position: 50% 50%;
   background-repeat: no-repeat;
+}
+
+.sound-wave {
+  background-image: url(../img/sound-wave.svg);
+}
+
+.dark-mode .sound-wave {
+  background-image: url(../img/sound-wave-white.svg);
 }
 
 .section--headline .theme--button {

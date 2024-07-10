@@ -22,7 +22,7 @@ specials_slider('Special Issues connect the dots between stories', $specials_tax
   specials_latest($series_latest_tax_array);
   ?>
   <div class="container centered">
-    <a href="" class="theme--button primary"><?php _e('All Specials', 'mongabay'); ?><span class="icon icon-right"></span></a>
+    <a href="<?php home_url(); ?>/?s=&formats=specials" class="theme--button primary"><?php _e('All Specials', 'mongabay'); ?><span class="icon icon-right"></span></a>
   </div>
 </div>
 
