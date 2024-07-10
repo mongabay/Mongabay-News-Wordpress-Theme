@@ -21,7 +21,6 @@ include(get_template_directory() . '/components/lib/banners/podcasts-banner.php'
 // lists
 include(get_template_directory() . '/components/lib/lists/articles-listing.php');
 include(get_template_directory() . '/components/lib/lists/featured-articles-listing.php');
-include(get_template_directory() . '/components/lib/lists/series-articles-listing.php');
 include(get_template_directory() . '/components/lib/lists/articles-listing-condensed.php');
 include(get_template_directory() . '/components/lib/lists/articles-listing-in-columns.php');
 include(get_template_directory() . '/components/lib/lists/shorts-listing.php');
@@ -31,6 +30,7 @@ include(get_template_directory() . '/components/lib/sliders/featured-articles-sl
 include(get_template_directory() . '/components/lib/sliders/tools-slider.php');
 include(get_template_directory() . '/components/lib/sliders/formats-slider.php');
 include(get_template_directory() . '/components/lib/sliders/specials-slider.php');
+include(get_template_directory() . '/components/lib/sliders/series-articles-slider.php');
 
 // misc
 include(get_template_directory() . '/components/lib/topics-section.php');

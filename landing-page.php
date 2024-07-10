@@ -36,7 +36,7 @@ get_header(); ?>
 <?php inspiration_banner(); ?>
 
 <div class="container ph--40 pv--40 in-column">
-	<?php series_articles_listing(true); ?>
+	<?php series_articles_slider(true, 'post'); ?>
 
 	<div class="container full-width pv--40">
 		<?php banner('', 'Free and open access to credible information', '', 'Learn more', 'accent full-width pv--56 ph--20 gap--32', 'extra-large', ''); ?>
