@@ -26,11 +26,11 @@ formats_slider(array('videos'), 'Watch unique videos that cut through the noise'
     <?php videos_latest(); ?>
   </div>
 
-  <?php banner(getSubscribeLink(), 'Subscribe', 'Stay informed with news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--20 pv--56 full-width', 'extra-large'); ?>
+  <?php banner(get_subscribe_link(), 'Subscribe', 'Stay informed with news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--20 pv--56 full-width', 'extra-large'); ?>
 
   <div class="container full--width gap--40 in-column">
     <div class="grid--4 gap--20 repeat">
-      <?php articles_listing('videos', 8, 0, true, 'medium', null, null, null); ?>
+      <?php articles_listing(array('videos'), 8, 0, true, 'medium', null, null, null); ?>
     </div>
     <div class="container centered pv--40">
       <a href="<?php echo home_url(); ?>/?s=&formats=videos" class="theme--button primary"><?php _e('All videos', 'mongabay'); ?><span class="icon icon-right"></span></a>

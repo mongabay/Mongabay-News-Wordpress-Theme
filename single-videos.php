@@ -94,13 +94,13 @@
       </div>
       <?php videos_latest(); ?>
       <?php if (!wp_is_mobile()) {
-        banner(getSubscribeLink(), 'Subscribe', 'Stay informed with news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--20 pv--56 full-width', 'extra-large');
+        banner(get_subscribe_link(), 'Subscribe', 'Stay informed with news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--20 pv--56 full-width', 'extra-large');
       } ?>
     </div>
     <?php if (!wp_is_mobile()) { ?>
       <div class="container pv--40 gap--20 in-column">
         <div class="grid--4 gap--20 repeat">
-          <?php articles_listing('videos', 4, 8, true, 'medium', null, null, null); ?>
+          <?php articles_listing(array('videos'), 4, 8, true, 'medium', null, null, null); ?>
         </div>
       </div>
     <?php } ?>

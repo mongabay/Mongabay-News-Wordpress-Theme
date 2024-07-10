@@ -62,14 +62,14 @@
                 <a href="<?php echo home_url(); ?>/articles" class="theme--button primary"><?php _e('All articles', 'mongabay'); ?><span class="icon icon-right"></span></a>
             </div>
             <div class="grid--4 gap--20">
-                <?php articles_listing('post', 8, 0, true, 'medium', false, false, null); ?>
+                <?php articles_listing(array('post'), 8, 0, true, 'medium', false, false, null); ?>
             </div>
             <div class="container centered pv--40">
                 <a href="<?php echo home_url(); ?>/articles" class="theme--button primary"><?php _e('All articles', 'mongabay'); ?><span class="icon icon-right"></span></a>
             </div>
         </div>
         <div class="container pv--40 full-width">
-            <?php banner(getSubscribeLink(), 'Subscribe', 'Stay informed with news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--20 pv--56 full-width', 'extra-large'); ?>
+            <?php banner(get_subscribe_link(), 'Subscribe', 'Stay informed with news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--20 pv--56 full-width', 'extra-large'); ?>
         </div>
     </div>
 </main>

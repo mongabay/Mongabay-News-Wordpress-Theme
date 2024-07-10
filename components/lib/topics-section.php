@@ -24,9 +24,19 @@ function topics_section(
     ),
   );
 
+  if ($extra_params['featured']) {
+    $args['meta_query'] = array(
+      array(
+        'key' => 'featured_as',
+        'value' => 'featured',
+        'compare' => '='
+      )
+    );
+  }
+
   $link_copy = 'all topics';
   $link_url = '';
-  $formats = join('+', $post_types);
+  $formats_string = get_default_search_formats($post_types);
 
   if (count($extra_params) > 0) {
     $link_copy = $extra_params['link_copy'];
@@ -47,7 +57,7 @@ function topics_section(
               if (count($topics) > 0) {
                 foreach ($topics as $topic) {
                   $topic_name = str_replace('-', ' ', $topic);
-                  echo '<span class="outlined"><a href="' . home_url() . '/?s=&topics=' . $topic . '&formats=' . $formats . '">' . $topic_name . '</a></span>';
+                  echo '<span class="outlined"><a href="' . home_url() . '/?s=&topics=' . $topic . '&formats=' . $formats_string . ($extra_params['featured'] ? "&featured=true" : "") . '">' . $topic_name . '</a></span>';
                 }
               }
               ?>

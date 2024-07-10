@@ -23,7 +23,7 @@ get_header(); ?>
       <h4><?php _e('Latest', 'mongabay'); ?></h4>
       <div class="divider"></div>
     </div>
-    <?php articles_listing('post', 10, 0, false, 'medium', null, null, null); ?>
+    <?php articles_listing(array('post'), 10, 0, false, 'medium', null, null, null); ?>
     <a href="<?php echo home_url(); ?>/?s=&formats=post" class="theme--button outlined full-width"><?php _e('All news', 'mongabay'); ?><span class="icon icon-right"></span></a>
   </div>
 </div>
@@ -40,7 +40,7 @@ get_header(); ?>
 <?php featured_articles_slider(4, 5); ?>
 
 <div class="container ph--40 pv--40">
-  <?php banner(getSubscribeLink(), 'Subscribe', 'Stay informed with news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--20 pv--56 full-width', 'extra-large'); ?>
+  <?php banner(get_subscribe_link(), 'Subscribe', 'Stay informed with news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--20 pv--56 full-width', 'extra-large'); ?>
 </div>
 
 <div class="section--highlight">

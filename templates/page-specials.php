@@ -29,7 +29,7 @@ $formats = array('specials');
 			<?php featured_articles_listing($formats, 10, 0, 'medium', 3, false, 'serial', $tax_slug); ?>
 		</div>
 		<div class="column--20 latest-news">
-			<?php articles_listing('post', 10, 0, false, 'medium', null, null, 'serial'); ?>
+			<?php articles_listing(array('post'), 10, 0, false, 'medium', null, null, 'serial'); ?>
 			<a href="<?php echo home_url(); ?>/?s=" class="theme--button outlined full-width"><?php _e('All news', 'mongabay'); ?><span class="icon icon-right"></span></a>
 		</div>
 	</div>
@@ -46,7 +46,7 @@ $formats = array('specials');
 <?php featured_articles_slider(4, 5); ?>
 
 <div class="container pv--40">
-	<?php banner(getSubscribeLink(), 'Subscribe', 'Stay informed with news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--20 pv--56 full-width', 'extra-large'); ?>
+	<?php banner(get_subscribe_link(), 'Subscribe', 'Stay informed with news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--20 pv--56 full-width', 'extra-large'); ?>
 </div>
 
 <div class="section--highlight">
