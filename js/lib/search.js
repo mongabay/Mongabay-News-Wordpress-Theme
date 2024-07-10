@@ -811,7 +811,7 @@ async function fetchArticles(fromStart = false) {
   }
 
   const { errors, data } = await resp.json();
-  console.log({ data });
+
   if (errors) {
     resultsFooter.innerHTML = preloader(false);
     defaultSuggestions.classList.add("hide");
