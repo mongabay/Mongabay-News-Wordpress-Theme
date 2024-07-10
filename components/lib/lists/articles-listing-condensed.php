@@ -31,7 +31,7 @@ function articles_listing_condensed(
       $counter++;
       $query->the_post();
 ?>
-      <div class="article--container gap--16 bg-gray rounded">
+      <div class="article--container gap--16 bg-theme-gray rounded">
         <a href="<?php the_permalink(); ?>">
           <?php if ($show_featured && has_post_thumbnail() && $counter === 1) { ?>
             <div class="featured-image">

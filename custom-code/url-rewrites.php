@@ -1,10 +1,10 @@
 <?php
 //add_action('init', 'custom_author_base');
-function custom_author_base() {
+function custom_author_base()
+{
     global $wp_rewrite;
     $author_slug = 'by';
     $wp_rewrite->author_base = $author_slug;
-
 }
 
 add_action('init', 'add_rewrite_url');
@@ -21,28 +21,35 @@ function add_rewrite_url()
     //     'index.php?topic=$matches[1]',
     //     'bottom'
     // );
-//pagination
-add_rewrite_rule( '^list/([^/]*)/page/([0-9]{1,})/?$', 'index.php?section=list&nc1=$matches[1]&paged=$matches[2]', "top" );
-add_rewrite_rule( '^list/([^/]*)/([^/]*)/page/([0-9]{1,})/?$', 'index.php?section=list&nc1=$matches[1]&nc2=$matches[2]&paged=$matches[3]', "top" );
+    //pagination
+    add_rewrite_rule('^list/([^/]*)/page/([0-9]{1,})/?$', 'index.php?section=list&nc1=$matches[1]&paged=$matches[2]', "top");
+    add_rewrite_rule('^list/([^/]*)/([^/]*)/page/([0-9]{1,})/?$', 'index.php?section=list&nc1=$matches[1]&nc2=$matches[2]&paged=$matches[3]', "top");
 
-//custom taxonomies
-//add_rewrite_rule( '^by/([^/]*)/?$', 'byline=$matches[1]', 'top' );
-//add_rewrite_rule( '^series/([^/]*)/?$', 'index.php?section=series&nc1=$matches[1]', 'top' );
-add_rewrite_rule( '^topic/([^/]*)/?$', 'index.php?section=list&nc1=$matches[1]', 'top' );
-add_rewrite_rule( '^list/([^/]*)/([^/]*)/?$', 'index.php?section=list&nc1=$matches[1]&nc2=$matches[2]', 'top' );
-add_rewrite_rule( '^list/([^/]*)/?$', 'index.php?section=list&nc1=$matches[1]', 'top' );
-add_rewrite_rule( '^wildtech/([0-9]{4})/([0-9]{1,2})/([^/]*)/?$', 'index.php?year=$matches[1]&monthnum=$matches[2]&name=$matches[3]', 'top' );
-add_rewrite_rule( '^list/?$', 'index.php?section=list', 'top' );
+    //custom taxonomies
+    //add_rewrite_rule( '^by/([^/]*)/?$', 'byline=$matches[1]', 'top' );
+    //add_rewrite_rule( '^series/([^/]*)/?$', 'index.php?section=series&nc1=$matches[1]', 'top' );
+    add_rewrite_rule('^topic/([^/]*)/?$', 'index.php?section=list&nc1=$matches[1]', 'top');
+    add_rewrite_rule('^list/([^/]*)/([^/]*)/?$', 'index.php?section=list&nc1=$matches[1]&nc2=$matches[2]', 'top');
+    add_rewrite_rule('^list/([^/]*)/?$', 'index.php?section=list&nc1=$matches[1]', 'top');
+    add_rewrite_rule('^wildtech/([0-9]{4})/([0-9]{1,2})/([^/]*)/?$', 'index.php?year=$matches[1]&monthnum=$matches[2]&name=$matches[3]', 'top');
+    add_rewrite_rule('^list/?$', 'index.php?section=list', 'top');
 
-//legacy support
-add_rewrite_rule( 'news.xml$', 'index.php?section=movedxml&nc1=news', 'top' );
-add_rewrite_rule( 'xml/([^/]*).xml$', 'index.php?section=movedxml&nc1=$matches[1]', 'top' );
-    
-add_rewrite_rule( '([0-9]{4})/([^/]*).html$', 'index.php?section=moved&nc1=$matches[1]&nc2=$matches[2]', 'top' );
-add_rewrite_rule( 'news/([0-9]{4})/([^/]*).html$', 'index.php?section=moved&nc1=$matches[1]&nc2=$matches[2]', 'top' );
-add_rewrite_rule( '([^/]*)/images/([^/]*).html$', 'index.php?section=moved&nc1=$matches[1]&nc2=$matches[2]', 'top' );
-add_rewrite_rule( '([^/]*)/images/([^/]*)/([^/]*).html$', 'index.php?section=moved&nc1=$matches[1]&nc2=$matches[2]', 'top' );
+    //legacy support
+    add_rewrite_rule('news.xml$', 'index.php?section=movedxml&nc1=news', 'top');
+    add_rewrite_rule('xml/([^/]*).xml$', 'index.php?section=movedxml&nc1=$matches[1]', 'top');
 
-//wildtech posts
-add_rewrite_rule( 'wildtech/([0-9]{4})/([0-9]{1,2})/([^/]*)/?$', 'index.php?year=$matches[1]&monthnum=$matches[2]&name=$matches[3]', 'top' );
+    add_rewrite_rule('([0-9]{4})/([^/]*).html$', 'index.php?section=moved&nc1=$matches[1]&nc2=$matches[2]', 'top');
+    add_rewrite_rule('news/([0-9]{4})/([^/]*).html$', 'index.php?section=moved&nc1=$matches[1]&nc2=$matches[2]', 'top');
+    add_rewrite_rule('([^/]*)/images/([^/]*).html$', 'index.php?section=moved&nc1=$matches[1]&nc2=$matches[2]', 'top');
+    add_rewrite_rule('([^/]*)/images/([^/]*)/([^/]*).html$', 'index.php?section=moved&nc1=$matches[1]&nc2=$matches[2]', 'top');
+
+    //wildtech posts
+    add_rewrite_rule('wildtech/([0-9]{4})/([0-9]{1,2})/([^/]*)/?$', 'index.php?year=$matches[1]&monthnum=$matches[2]&name=$matches[3]', 'top');
+
+    //custom post types
+    add_rewrite_rule('video/([0-9]{4})/([0-9]{2})/([^/]+)/?$', 'index.php?post_type=videos&name=$matches[3]', 'top');
+    add_rewrite_rule('short-article/([0-9]{4})/([0-9]{2})/([^/]+)/?$', 'index.php?post_type=short-article&name=$matches[3]', 'top');
+    add_rewrite_rule('podcast/([0-9]{4})/([0-9]{2})/([^/]+)/?$', 'index.php?post_type=podcasts&name=$matches[3]', 'top');
+    add_rewrite_rule('specials/([0-9]{4})/([0-9]{2})/([^/]+)/?$', 'index.php?post_type=specials&name=$matches[3]', 'top');
+    add_rewrite_rule('custom-story/([0-9]{4})/([0-9]{2})/([^/]+)/?$', 'index.php?post_type=custom-story&name=$matches[3]', 'top');
 }

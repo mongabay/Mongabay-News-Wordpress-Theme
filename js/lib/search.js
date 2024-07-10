@@ -17,14 +17,21 @@ let cursor = "";
 
 const formatOptions = {
   post: ["Articles", "POST"],
-  // customStories: ["Custom Stories", "customStories"],
-  // shortArticles: ["Short", "shortArticles"],
+  customStories: ["Custom Story", "CUSTOM_STORY"],
+  shortArticles: ["Shorts", "SHORT_ARTICLE"],
   videos: ["Video", "VIDEOS"],
   podcasts: ["Podcast", "PODCASTS"],
   specials: ["Special", "SPECIALS"],
 };
 
-const defaultFormatsList = ["POST", "VIDEOS", "PODCASTS", "SPECIALS"];
+const defaultFormatsList = [
+  "POST",
+  "CUSTOM_STORY",
+  "SHORT_ARTICLE",
+  "VIDEOS",
+  "PODCASTS",
+  "SPECIALS",
+];
 
 let selectedFormats = [];
 let featuredOnly = false;
@@ -706,7 +713,7 @@ async function fetchArticles(fromStart = false) {
   window.history.pushState(nextState, nextTitle, nextURL);
 
   if (searchValue.length > 0) {
-  document.title = nextTitle;
+    document.title = nextTitle;
   } else {
     document.title = `Showing all ${selectedFormats.join(", ").toLowerCase()} stories`;
   }
@@ -762,6 +769,15 @@ async function fetchArticles(fromStart = false) {
             ... on Video {
               ${node}
             }
+            ... on CustomStory {
+              ${node}
+            }
+            ... on ShortArticle {
+              ${node}
+            }
+            ... on SpecialsArticle {
+              ${node}
+            }
           }
         }
     }
@@ -795,7 +811,7 @@ async function fetchArticles(fromStart = false) {
   }
 
   const { errors, data } = await resp.json();
-
+  console.log({ data });
   if (errors) {
     resultsFooter.innerHTML = preloader(false);
     defaultSuggestions.classList.add("hide");

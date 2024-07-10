@@ -63,7 +63,7 @@ if (wp_is_mobile()) {
 	<header class="header" role="banner">
 		<div class="container in-row space-between align-center ph--40 pv--20">
 			<div class="branding">
-				<a href="<?php echo home_url(); ?>" class="theme-light"><img src="<?php echo get_template_directory_uri(); ?>/img/logo/mongabay_logo_news_black.svg" /></a><a href="" class="theme-dark"><img src="<?php echo get_template_directory_uri(); ?>/img/logo/mongabay_logo_news_white.svg" /></a>
+				<a href="<?php echo home_url(); ?>" class="theme-light"><img src="<?php echo get_template_directory_uri(); ?>/img/logo/mongabay_logo_news_black.svg" /></a><a href="<?php echo home_url(); ?>" class="theme-dark"><img src="<?php echo get_template_directory_uri(); ?>/img/logo/mongabay_logo_news_white.svg" /></a>
 			</div>
 			<div class="menu-container align-center">
 				<ul class="main-menu nav-desktop">

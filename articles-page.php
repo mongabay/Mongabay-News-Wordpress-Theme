@@ -18,8 +18,8 @@ get_header(); ?>
     </div>
     <?php featured_articles_listing(array('post'), 10, 0, 'medium', 3, true, null, null); ?>
   </div>
-  <div class="column--20 latest-news">
-    <div class="section-title gap--8">
+  <div class="column--20 latest-news gap--8">
+    <div class="section-title">
       <h4><?php _e('Latest', 'mongabay'); ?></h4>
       <div class="divider"></div>
     </div>
@@ -30,7 +30,12 @@ get_header(); ?>
 
 <div class="container in-column ph--40 pv--40">
   <?php banner('', 'We’re a nonprofit', 'Help us tell impactful stories of biodiversity loss, climate change, and more', 'Donate', 'accent ph--20 pv--56 full-width', 'extra-large'); ?>
-  <?php topics_section(array('post'), 'Read articles on topics such as', array('animals', 'forests', 'oceans', 'conservation', 'indigenous-peoples')); ?>
+  <?php topics_section(
+    array('post'),
+    'Read articles on topics such as',
+    array('animals', 'forests', 'oceans', 'conservation', 'indigenous-peoples'),
+    array('link_copy' => 'all topics', 'link_url' => home_url() . '/?s=&formats=post')
+  ); ?>
 </div>
 <?php featured_articles_slider(4, 5); ?>
 
