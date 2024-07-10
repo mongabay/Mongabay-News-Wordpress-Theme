@@ -117,7 +117,7 @@ if (wp_is_mobile()) {
 							</ul>
 							<ul class="footer-links">
 								<li><a href="https://donate.mongabay.org/?utm_source=mongabay.com&utm_medium=headerlink&utm_campaign=com-header-text-link-new"><?php _e('Donate', 'mongabay'); ?></a></li>
-								<li><a href="https://mongabay.us14.list-manage.com/subscribe?u=80161fe385606408293ae0e51&id=940652e1f4"><?php _e('Subscribe page', 'mongabay'); ?></a></li>
+								<li><a href="<?php echo getSubscribeLink(); ?>"><?php _e('Subscribe page', 'mongabay'); ?></a></li>
 								<li><a href="<?php echo home_url(); ?>/submissions/"><?php _e('Submissions', 'mongabay'); ?></a></li>
 							</ul>
 							<ul class="footer-links">

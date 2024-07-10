@@ -26,7 +26,7 @@ formats_slider(array('videos'), 'Watch unique videos that cut through the noise'
     <?php videos_latest(); ?>
   </div>
 
-  <?php banner('https://mongabay.us14.list-manage.com/subscribe?u=80161fe385606408293ae0e51&id=940652e1f4', 'Subscribe', 'Stay informed with news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--20 pv--56 full-width', 'extra-large'); ?>
+  <?php banner(getSubscribeLink(), 'Subscribe', 'Stay informed with news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--20 pv--56 full-width', 'extra-large'); ?>
 
   <div class="container full--width gap--40 in-column">
     <div class="grid--4 gap--20 repeat">
