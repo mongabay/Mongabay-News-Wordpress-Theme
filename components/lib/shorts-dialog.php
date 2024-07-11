@@ -40,6 +40,8 @@ function get_shorts_dialog($show_more = false)
   <?php } ?>
 
   <script>
+    const sharingGridCopy = document.getElementById('shorts-share').innerHTML;
+
     function initDialog() {
       const shortsTriggers = document.querySelectorAll('.shorts-trigger');
       const shortsDialog = document.querySelector('#shorts-dialog');
@@ -89,6 +91,7 @@ function get_shorts_dialog($show_more = false)
       });
 
       function close() {
+        document.getElementById("copy-url").value = '{{shareUrl}}';
         shortsDialog.close();
       };
 
@@ -146,6 +149,7 @@ function get_shorts_dialog($show_more = false)
         shortsOverview.classList.remove('hidden');
         shortsShare.classList.add('hidden');
         backButton.classList.add('hidden');
+        document.getElementById("shorts-share").innerHTML = sharingGridCopy;
       });
 
       closeDialogButton.addEventListener('click', close);
