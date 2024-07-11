@@ -44,9 +44,9 @@ function formats_slider(array $post_formats, string $headline, array $terms_arra
               $tax_url = home_url() . '/series/' . $name;
       ?>
               <div class="article--container full-height">
-                <div class="featured-image full-height">
-                  <div class="img-overlay"></div>
-                  <a href="<?php echo $tax_url; ?>">
+                <a href="<?php echo $tax_url; ?>" class="slider-link full-height">
+                  <div class="featured-image full-height">
+                    <div class="img-overlay"></div>
                     <?php echo get_icon(get_the_ID()); ?>
                     <?php the_post_thumbnail('large'); ?>
                     <div class="article--container-headline">
@@ -57,8 +57,8 @@ function formats_slider(array $post_formats, string $headline, array $terms_arra
                         </div>
                       </div>
                     </div>
-                  </a>
-                </div>
+                  </div>
+                </a>
               </div>
             <?php }
           } else {
@@ -86,10 +86,10 @@ function formats_slider(array $post_formats, string $headline, array $terms_arra
             $query->the_post();
             ?>
 
-            <div class="article--container">
-              <div class="featured-image">
-                <div class="img-overlay"></div>
-                <a href="<?php the_permalink(); ?>">
+            <div class="article--container full-height">
+              <a href="<?php the_permalink(); ?>" class="slider-link full-height">
+                <div class="featured-image full-height">
+                  <div class="img-overlay"></div>
                   <?php echo get_icon(get_the_ID()); ?>
                   <?php the_post_thumbnail('large'); ?>
                   <div class="article--container-headline">
@@ -101,8 +101,8 @@ function formats_slider(array $post_formats, string $headline, array $terms_arra
                       </div>
                     </div>
                   </div>
-                </a>
-              </div>
+                </div>
+              </a>
             </div>
     <?php }
         }

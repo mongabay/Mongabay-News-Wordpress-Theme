@@ -7,7 +7,8 @@
  * @subpackage Mongabay_v2
  * @since Mongabay 1.0
  */
-get_header(); ?>
+get_header();
+?>
 
 <div class="container content gap--40">
 	<div class="column--20 latest-news">
@@ -17,7 +18,7 @@ get_header(); ?>
 		</div>
 		<div class="container in-column gap--16 pv--8">
 			<?php articles_listing(array('post'), 6, 5, false, 'medium', null, null, null); ?>
-			<a href="<?php echo home_url(); ?>/?s=&formats=post+videos+podcasts+specials" class="theme--button outlined full-width"><?php _e('All news', 'mongabay'); ?><span class="icon icon-right"></span></a>
+			<a href="<?php echo home_url(); ?>/?s=&formats=<?php echo get_default_search_formats(get_default_formats()); ?>" class="theme--button outlined full-width"><?php _e('All news', 'mongabay'); ?><span class="icon icon-right"></span></a>
 		</div>
 	</div>
 	<div class="column--60 latest-featured gap--8">
@@ -39,7 +40,7 @@ get_header(); ?>
 	<?php series_articles_slider(true, 'specials'); ?>
 
 	<div class="container full-width pv--40">
-		<?php banner('', 'Free and open access to credible information', '', 'Learn more', 'accent full-width pv--56 ph--20 gap--32', 'extra-large', ''); ?>
+		<?php banner(home_url().'/about', 'Free and open access to credible information', '', 'Learn more', 'accent full-width pv--56 ph--20 gap--32', 'extra-large', ''); ?>
 	</div>
 
 	<div class="section--highlight container full-width pv--40">
