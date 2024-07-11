@@ -43,7 +43,7 @@ $formats = array('specials');
 
 	<?php banner('', 'We’re a nonprofit', 'Help us tell impactful stories of biodiversity loss, climate change, and more', 'Donate', 'accent ph--20 pv--56 full-width', 'extra-large'); ?>
 </div>
-<?php featured_articles_slider(4, 5); ?>
+<?php featured_articles_slider($formats, 4, 5); ?>
 
 <div class="container pv--40">
 	<?php banner(get_subscribe_link(), 'Subscribe', 'Stay informed with news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--20 pv--56 full-width', 'extra-large'); ?>
@@ -51,7 +51,7 @@ $formats = array('specials');
 
 <div class="section--highlight">
 	<div class="container pv--80 gap--20 in-column">
-		<h1>Quickly stay updated with our news <span>shorts</span></h1>
+		<h1><?php _e('Quickly stay updated with our news <span>shorts</span>', 'mongabay'); ?></h1>
 		<div class="grid--3 gap--40">
 			<?php articles_listing_condensed('short-article', 6, 0, false, 'medium', null); ?>
 		</div>
