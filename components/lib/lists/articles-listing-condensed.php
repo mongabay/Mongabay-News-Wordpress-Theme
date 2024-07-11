@@ -32,7 +32,7 @@ function articles_listing_condensed(
       $query->the_post();
 ?>
       <?php if ($post_type === 'short-article') {
-        shorts_article_card(get_the_ID(), false, '', $counter);
+        shorts_article_card(get_the_ID(), false, '', $counter, true);
       } else { ?>
         <div class="article--container gap--16 rounded">
           <a href="<?php the_permalink(); ?>">

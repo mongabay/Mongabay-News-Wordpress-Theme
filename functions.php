@@ -246,6 +246,11 @@ function mongabay_conditional_scripts()
         wp_register_script('highlighter', get_template_directory_uri() . '/js/lib/sidebar-highlighter.js', array(), '1.0.0', true);
         wp_enqueue_script('highlighter');
     }
+
+    if (is_page('shorts')) {
+        wp_register_script('shorts-previewer', get_template_directory_uri() . '/js/lib/shorts-previewer.js', array(), '1.0.0', true);
+        wp_enqueue_script('shorts-previewer');
+    }
 }
 
 // Load word count script on short articles
@@ -915,6 +920,15 @@ add_action(
             'resolve' => function ($post) {
                 $bulletpoint = get_post_meta($post->ID, 'mog_bullet_3_mog_bulletpoint', true);
                 return !empty($bulletpoint) ? $bulletpoint : null;
+            }
+        ]);
+
+        register_graphql_field('ShortArticle', 'article_link', [
+            'type' => 'String',
+            'description' => __('Article link', 'wp-graphql'),
+            'resolve' => function ($post) {
+                $article_link = get_post_meta($post->ID, 'article_link', true);
+                return !empty($article_link) ? $article_link : null;
             }
         ]);
     }

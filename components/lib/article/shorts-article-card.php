@@ -1,5 +1,5 @@
 <?php
-function shorts_article_card($id, $is_large = false, $title_class = '', $idx = 0)
+function shorts_article_card($id, $is_large = false, $title_class = '', $idx = 0, $same_background = false)
 {
   $backgrounds = array(
     1 => ' bg-theme-secondary',
@@ -14,7 +14,7 @@ function shorts_article_card($id, $is_large = false, $title_class = '', $idx = 0
   );
 
   $article_link = get_post_meta($id, 'article_link', true);
-  $link_url_share = get_permalink($id);
+  $link_url_share = home_url() . '/shorts/#/' . $id;
 
   // $backgrounds = array(
   //   1 => ' bg-theme-secondary',
@@ -30,7 +30,7 @@ function shorts_article_card($id, $is_large = false, $title_class = '', $idx = 0
 ?>
   <div class="article--container shorts-trigger" data-articlelink="<?php echo $article_link; ?>" data-shareurl="<?php echo $link_url_share; ?>">
     <div class="title headline rounded-top <?php echo $is_large ? 'ph--80 pv--80' : 'ph--40 pv--40';
-                                            echo $backgrounds[$idx]; ?>">
+                                            echo $same_background ? $backgrounds[2] : $backgrounds[$idx]; ?>">
       <?php echo $is_large ? '<h2 class="' . $title_class . '">' : '<h3 class="' . $title_class . '">' ?>
       <?php the_title(); ?>
       <?php echo $is_large ? '</h2>' : '</h3>' ?>

@@ -1345,6 +1345,16 @@ ul.main-menu:not(.off-canvas) li a.active:before {
   margin-bottom: 0;
 }
 
+a.slider-link {
+  display: flex;
+  flex-direction: column;
+}
+
+a.slider-link img {
+  height: 100%;
+  object-fit: cover;
+}
+
 /* Podcast player */
 .podcast--player {
   display: flex;
