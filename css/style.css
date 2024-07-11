@@ -1477,6 +1477,10 @@ dialog input {
   position: relative;
 }
 
+.dialog-content .title {
+  display: block;
+}
+
 .icon-share svg {
   fill: var(--theme-body);
 }
