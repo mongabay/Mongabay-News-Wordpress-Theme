@@ -18,6 +18,7 @@ get_header(); ?>
 
 		global $wp_query;
 		$taxonomies = $wp_query->tax_query;
+		$wp_query->query_vars['posts_per_page'] = 32;
 		$topics = array();
 
 		foreach ($taxonomies->queries as $tax_query) {

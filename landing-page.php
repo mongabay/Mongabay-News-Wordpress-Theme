@@ -40,7 +40,7 @@ get_header();
 	<?php series_articles_slider(true, 'specials'); ?>
 
 	<div class="container full-width pv--40">
-		<?php banner(home_url().'/about', 'Free and open access to credible information', '', 'Learn more', 'accent full-width pv--56 ph--20 gap--32', 'extra-large', ''); ?>
+		<?php banner(home_url() . '/about', 'Free and open access to credible information', '', 'Learn more', 'accent full-width pv--56 ph--20 gap--32', 'extra-large', ''); ?>
 	</div>
 
 	<div class="section--highlight container full-width pv--40">
@@ -49,7 +49,7 @@ get_header();
 
 	<div class="container in-column pv--80 gap--40">
 		<div class="container section--highlight">
-			<h1>Watch unique <span class="icon icon-play">videos</span> that cut through the noise</h1>
+			<h1><?php _e('Watch unique <span class="icon icon-play">videos</span> that cut through the noise', 'mongabay'); ?></h1>
 		</div>
 		<?php featured_articles_listing(array('videos'), 5, 0, 'medium', 4, false, null, null); ?>
 	</div>
@@ -60,13 +60,13 @@ get_header();
 </div>
 
 <div class="full-width pv--40">
-	<?php featured_articles_slider(4, 5); ?>
+	<?php featured_articles_slider(get_default_formats(), 4, 5); ?>
 </div>
 
 <div class="container ph--40 pv--40 in-column">
 	<div class="section--highlight">
 		<div class="container gap--40 in-column">
-			<h1>Quickly stay updated with our news <span class="icon icon-shorts">shorts</span></h1>
+			<h1><?php _e('Quickly stay updated with our news <span class="icon icon-shorts">shorts</span>', 'mongabay'); ?></h1>
 			<div class="shorts grid--3 gap--40">
 				<?php articles_listing_condensed('short-article', 6, 0, false, 'medium', null); ?>
 			</div>

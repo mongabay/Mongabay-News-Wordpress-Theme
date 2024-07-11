@@ -53,12 +53,19 @@ function share_icons_grid($type)
   $linkedin = '<a class="linkedin" href="' . $linkedInURL . '" target="_blank"><span class="icon-share">' . $icon_linkedin . '</span>Linkedin</a>';
   $whatsapp = '<a class="whatsapp" href="' . $whatsappURL . '" target="_blank"><span class="icon-share">' . $icon_whatsapp . '</span>Whatsapp</a>';
   $email = '<a class="email"><span class="icon-share">' . $icon_email . '</span>Email</a>';
-
-
+  $titles = array(
+    'videos' => 'video',
+    'stories' => 'story',
+    'podcasts' => 'podcast',
+    'shorts' => 'short',
+    'post' => 'article',
+    'custom-story' => 'story',
+    'specials' => 'article',
+  );
 ?>
   <div class="container gap--40 in-column share-dialog-content">
     <div class="container text-center in-column">
-      <h1><?php _e('Share this', 'mongabay'); ?> <?php echo $type; ?></h1>
+      <h1><?php _e('Share this', 'mongabay'); ?> <?php echo $titles[$type]; ?></h1>
       <p><?php _e('If you liked this story, share it with other people.', 'mongabay'); ?></p>
     </div>
     <div class="grid--4 repeat gap--40 share-dialog-links">

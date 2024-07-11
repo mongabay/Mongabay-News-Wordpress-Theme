@@ -1,8 +1,8 @@
 <?php
-function featured_articles_slider($posts_per_page, $offset)
+function featured_articles_slider($post_types, $posts_per_page, $offset)
 {
   $args = array(
-    'post_type' => array('post', 'videos', 'podcasts', 'specials'),
+    'post_type' => $post_types,
     'posts_per_page' => $posts_per_page,
     'cache_results' => true,
     'offset' => $offset,
@@ -19,7 +19,7 @@ function featured_articles_slider($posts_per_page, $offset)
 
   <div class="section--highlight slider full-width">
     <div class="container in-column ph--40 pv--40 gap--40">
-      <h1 class="text-center">In-depth <span>feature stories</span> reveal context and insight</h1>
+      <h1 class="text-center"><?php _e('In-depth <span>feature stories</span> reveal context and insight', 'mongabay'); ?></h1>
     </div>
     <div class="in-column gap--20">
       <div id="series-slider">

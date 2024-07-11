@@ -538,6 +538,7 @@ body.dark-mode {
 #off-canvas.active {
   transform: translateX(0);
   transition-duration: 0.3s;
+  height: 100vh;
 }
 
 #off-canvas .footer-links a {
@@ -2809,6 +2810,14 @@ footer .grid--4 {
 }
 
 @media only screen and (max-width: 768px) {
+  header.header {
+    position: sticky;
+    background: var(--theme-white);
+    left: 0;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0px 0px 6px rgb(135 135 135 / 21%);
+  }
   .headline h1 {
     margin: var(--spacing-4) 0;
     line-height: 1.25;
@@ -2861,8 +2870,10 @@ footer .grid--4 {
   header .container {
     flex-direction: row;
   }
+  #off-canvas,
   #off-canvas .container {
     flex-direction: column-reverse;
+    height: 100vh;
   }
   ul.main-menu.nav-desktop {
     display: none;
