@@ -1440,10 +1440,16 @@ a.slider-link img {
 }
 
 dialog h1 {
-  font-size: var(--font-m);
+  font-size: var(--font-m) !important;
   font-weight: 400;
   font-family: "Lora";
   color: var(--theme-body);
+  display: block;
+  max-width: 100% !important;
+}
+
+.dialog-content .title {
+  display: block;
 }
 
 dialog label {
