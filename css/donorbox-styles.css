@@ -1,0 +1,97 @@
+.tabs {
+  max-width: 480px;
+  min-width: 320px;
+  margin: 0 auto;
+}
+
+.tabs-header,
+.tabs-content, 
+.tabs-footer {
+  background-color: #0f362e;
+}
+
+.display-amount, 
+.donation-widget .donation-form .tooltip-wrapper .tooltip-wrapper-span.apply-opacity, 
+.a11y-dropdown .hint, 
+.tabs-header .header-content .circles .circle i, 
+.tabs-header .arrow.r i {
+  color: #CBEFB6;
+}
+
+.tabs-header {
+  border-radius: 8px 8px 0 0;
+}
+
+.tabs-footer {
+  border-radius: 0 0 8px 8px;
+}
+
+#plan_durations_selectors .mdl-cell {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+#plan_durations_selectors fieldset {
+  width: 100%;
+}
+
+.plan_duration:last-child {
+  border-right: none;
+}
+
+.suggested-amount-box .box-label {
+  border: none;
+  color: #CBEFB6;
+}
+
+.plan_duration {
+  width: 50%;
+  color: #CBEFB6 !important;
+  border: none;
+  font-size: 16px !important;
+}
+
+.pd_radio:checked + label, 
+.suggested-amount-box .box-input:checked + .box-label {
+  background-color: #CBEFB6 !important;
+  color: #0f362e !important;
+  border-radius: 30px;
+}
+
+.plan_duration .heart {
+  margin-right: 2px;
+  vertical-align: middle;
+  margin-top: 0;
+  height: calc(20px * 8 / 9);
+  width: 20px;
+}
+
+.pd_radio + label .heart path {
+  fill: #CBEFB6 !important;
+}
+
+.pd_radio:checked + label .heart path {
+  fill: #0f362e !important;
+}
+
+.cta-message {
+  margin-top: 10px;
+  color: #BDE4A8 !important;
+  font-size: 12px;
+  line-height: 140%;
+}
+
+.donorbox-custom-amount .custom-amount-input {
+  background: transparent;
+  border-color: #CBEFB6;
+  color: #CBEFB6 !important;
+  border-radius: 12px;
+}
+
+.donation-widget.tabs .tabs-footer .dw-btn.basic-color-background {
+  background-color: transparent;
+  box-shadow: none;
+  color: #CBEFB6;
+  width: auto;
+  float: right;
+}
