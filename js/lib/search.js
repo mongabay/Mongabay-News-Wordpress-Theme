@@ -929,12 +929,17 @@ async function fetchArticles(fromStart = false) {
       case "Podcast":
         iconClass = "icon-podcast";
         break;
+      case "SpecialsArticle":
+        iconClass = "icon-specials";
+        break;
       default:
         iconClass = "";
         break;
     }
 
-    postFormatIcon.innerHTML = `<span class='icon ${iconClass}'></span>`;
+    if (iconClass.length > 0) {
+      postFormatIcon.innerHTML = `<span class='icon ${iconClass}'></span>`;
+    }
 
     const titleContainer = document.createElement("div");
     titleContainer.classList.add("title", "headline");

@@ -24,7 +24,7 @@ function article_terms(int $post_id)
 
       expanderButton.click(function() {
         jQuery('#article-taxonomies').toggleClass('visible');
-        jQuery(this).toggleClass('visible');
+        jQuery('#expander-container.tags').toggleClass('visible');
       });
     });
   </script>
