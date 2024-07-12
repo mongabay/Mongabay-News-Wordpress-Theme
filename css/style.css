@@ -2363,7 +2363,7 @@ input#featured[type="checkbox"] {
 
 .content-expander.visible {
   background: transparent !important;
-  margin-top: -50px;margin-top: var(--spacing-13);
+  margin-top: var(--spacing-13);
   height: auto;
 }
 
