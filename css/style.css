@@ -775,6 +775,10 @@ ul.main-menu:not(.off-canvas) li a.active:before {
   /* width: 100%; */
 }
 
+.dark-mode .section-title .divider {
+  background: var(--brand-color);
+}
+
 /* Posts in a single column */
 .article--container {
   display: flex;
@@ -2215,6 +2219,17 @@ input#featured[type="checkbox"] {
   border-radius: 50%;
 }
 
+.single.dark-mode .meta-author-circle {
+  background: var(--theme-secondary);
+}
+
+.single.dark-mode .extra-info span.bylines a, 
+.dark-mode .post-meta span, 
+.single.dark-mode span.taxonomy:before, 
+.single.dark-mode .wp-block-quote p:before {
+  color: var(--theme-secondary);
+}
+
 .single .extra-info {
   display: flex;
   flex-direction: column;
@@ -2348,7 +2363,8 @@ input#featured[type="checkbox"] {
 
 .content-expander.visible {
   background: transparent !important;
-  margin-top: -50px;
+  margin-top: -50px;margin-top: var(--spacing-13);
+  height: auto;
 }
 
 .content-expander.visible span:after {
@@ -2500,9 +2516,17 @@ input#featured[type="checkbox"] {
   padding: var(--spacing-11) 0;
 }
 
+.single-custom-story .wp-block-quote p:before {
+  content: "\e815";
+  display: block;
+  font-family: "fontello";
+  margin-bottom: var(--spacing-6);
+  color: var(--brand-color) !important;
+}
+
 /* Soliloquy slider */
 .single-custom-story .wp-block-soliloquy-soliloquywp {
-  margin: var(--spacing-13) 0;
+  margin: var(--spacing-14) 0;
 }
 
 .soliloquy-carousel .soliloquy-pager {
