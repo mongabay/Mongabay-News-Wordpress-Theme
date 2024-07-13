@@ -2,17 +2,15 @@
 <main role="main">
     <?php
     $post_id = get_the_ID();
-
     ?>
     <div class="container in-column ph--40">
         <div class="single">
             <?php article_headline(); ?>
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-                    <div class="inner">
-                        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                            <?php article_bulletpoints($post_id); ?>
-
-                            <?php mongabay_sanitized_content($post_id); ?>
+                    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                        <?php article_bulletpoints($post_id); ?>
+                        <?php mongabay_sanitized_content($post_id); ?>
+                        <div class="inner">
                             <div id="single-article-footer">
                                 <?php article_credits($post_id); ?>
                                 <div id="single-article-tags">
@@ -21,9 +19,8 @@
                             </div>
                             <span class="article-comments"><a href=""></a></span>
                             <?php mongabay_comments(); ?>
-
-                        </article>
-                    </div>
+                        </div>
+                    </article>
                 <?php endwhile; ?>
             <?php else : ?>
                 <div class="inner">
@@ -34,18 +31,18 @@
             <?php endif; ?>
         </div>
     </div>
-    
+
     <div class="container section--highlight ph--40 pv--40 gap--20 in-column">
-      <?php
-      $series_latest = (array('oceans', 'amazon-conservation', 'land-rights-and-extractives', 'indigenous-peoples-and-conservation', 'great-apes', 'indonesian-palm-oil', 'indonesian-fisheries', 'global-forest-reporting-network'));
-      series_latest($series_latest);
-      ?>
-      <div class="container centered">
-        <a href="" class="theme--button primary"><?php _e('All Specials', 'mongabay'); ?><span class="icon icon-right"></span></a>
-      </div>
-       <?php tools_slider(); ?>       
+        <?php
+        $specials_terms = (array('tropical-forests', 'biodiversity', 'forests', 'indigenous-peoples-and-conservation', 'great-apes', 'indonesian-palm-oil', 'indonesian-fisheries', 'global-forest-reporting-network'));
+        specials_latest($specials_terms);
+        ?>
+        <div class="container centered">
+            <a href="" class="theme--button primary"><?php _e('All Specials', 'mongabay'); ?><span class="icon icon-right"></span></a>
+        </div>
+        <?php tools_slider(); ?>
     </div>
-    <div class="container full-width pv--40">    
+    <div class="container full-width pv--40">
         <?php inspiration_banner(); ?>
     </div>
 </main>
