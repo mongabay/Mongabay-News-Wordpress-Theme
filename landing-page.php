@@ -60,7 +60,7 @@ get_header();
 </div>
 
 <div class="full-width pv--40">
-	<?php featured_articles_slider(get_default_formats(), 4, 5); ?>
+	<?php featured_articles_slider(array('post', 'custom-story'), 4, 5); ?>
 </div>
 
 <div class="container ph--40 pv--40 in-column">

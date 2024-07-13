@@ -43,7 +43,7 @@ formats_slider(array('podcasts'), 'Listen to Nature with thought-provoking podca
       <?php articles_listing(array('podcasts'), 7, 0, true, 'medium', $banner, 4, null); ?>
     </div>
   </div>
-  <div class="container full-width pv--40">
+  <div class="container pv--40">
     <?php banner(get_subscribe_link(), 'Subscribe', 'Stay informed with news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--20 pv--56 full-width', 'extra-large'); ?>
   </div>
   <div class="container pv--40 gap--20 in-column">
