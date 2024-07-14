@@ -73,7 +73,7 @@ function specials_latest(array $series_array)
           echo '<div class="container ';
           echo !wp_is_mobile() ? 'pv--56' : '';
           echo ' full-width">';
-          banner('', 'We’re a nonprofit', 'Help us tell impactful stories of biodiversity loss, climate change, and more', 'Donate', 'accent ph--20 pv--56 full-width', 'extra-large');
+          banner(get_donate_link(), 'We’re a nonprofit', 'Help us tell impactful stories of biodiversity loss, climate change, and more', 'Donate', 'accent ph--20 pv--56 full-width', 'extra-large');
           echo '</div>';
         }
 

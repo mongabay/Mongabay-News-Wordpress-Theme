@@ -70,8 +70,8 @@ $counter = 0;
       ?>
     </div>
     <div class="column--20 gap--40 latest-banners">
-      <?php banner(get_subscribe_link(), 'Subscribe', 'Stay informed with news and inspiration from nature’s frontline.', 'Newsletter', 'full-width outlined ph--20', ''); ?>
-      <?php banner('', 'We’re a nonprofit', 'Help us tell impactful stories of biodiversity loss, climate change, and more', 'Donate', 'accent ph--20 pv--20 full-width', ''); ?>
+      <?php banner(get_subscribe_link(), 'Subscribe', 'Stay informed with news and inspiration from nature’s frontline.', 'Newsletter', 'full-width outlined ph--20 pv--20', ''); ?>
+      <?php banner(get_donate_link(), 'We’re a nonprofit', 'Help us tell impactful stories of biodiversity loss, climate change, and more', 'Donate', 'accent ph--20 pv--20 full-width', ''); ?>
     </div>
   </div>
 

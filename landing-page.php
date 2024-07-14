@@ -30,7 +30,7 @@ get_header();
 	</div>
 	<div class="column--20 gap--40 pv--40 latest-banners" style="padding-top: 26px">
 		<?php banner(get_subscribe_link(), 'Subscribe', 'Stay informed with news and inspiration from nature’s frontline.', 'Newsletter', 'outlined ph--20 pv--20 gap--16 full-width', 'lh--tightest', 'full-width'); ?>
-		<?php banner('', 'We’re a nonprofit', 'Help us tell impactful stories of biodiversity loss, climate change, and more', 'Donate', 'accent ph--20 pv--56 full-width gap--16', 'lh--tightest', 'full-width'); ?>
+		<?php banner(get_donate_link(), 'We’re a nonprofit', 'Help us tell impactful stories of biodiversity loss, climate change, and more', 'Donate', 'accent ph--20 pv--56 full-width gap--16', 'lh--tightest', 'full-width'); ?>
 	</div>
 </div>
 
@@ -55,7 +55,7 @@ get_header();
 	</div>
 
 	<div class="container full-width pv--40">
-		<?php banner('', 'We’re a nonprofit', 'Help us tell impactful stories of biodiversity loss, climate change, and more', 'Donate', 'accent ph--20 pv--56 gap--32 full-width', 'extra-large', ''); ?>
+		<?php banner(get_donate_link(), 'We’re a nonprofit', 'Help us tell impactful stories of biodiversity loss, climate change, and more', 'Donate', 'accent ph--20 pv--56 gap--32 full-width', 'extra-large', ''); ?>
 	</div>
 </div>
 

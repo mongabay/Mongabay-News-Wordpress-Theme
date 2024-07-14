@@ -29,7 +29,7 @@ get_header(); ?>
 </div>
 
 <div class="container in-column ph--40 pv--40">
-  <?php banner('', 'We’re a nonprofit', 'Help us tell impactful stories of biodiversity loss, climate change, and more', 'Donate', 'accent ph--20 pv--56 full-width', 'extra-large'); ?>
+  <?php banner(get_donate_link(), 'We’re a nonprofit', 'Help us tell impactful stories of biodiversity loss, climate change, and more', 'Donate', 'accent ph--20 pv--56 full-width', 'extra-large'); ?>
   <?php topics_section(
     array('post', 'custom-story'),
     'Read articles on topics such as',

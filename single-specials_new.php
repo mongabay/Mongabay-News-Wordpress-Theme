@@ -33,12 +33,9 @@ $counter = 0;
 
   <div class="container grid--4 repeat gap--16 pv-16">
     <?php
-    $posts_per_page = 12;
-
     $args = array(
       'post_type' => 'post',
-      'posts_per_page' => $posts_per_page,
-      'cache_results' => true,
+      'posts_per_page' => 32,
       'tax_query' => array(
         array(
           'taxonomy' => 'serial',
@@ -47,42 +44,32 @@ $counter = 0;
         )
       )
     );
-
-    $serail_posts_query = new WP_Query($args);
-
-    if ($serail_posts_query->have_posts()) {
-      while ($serail_posts_query->have_posts()) :
-        $serail_posts_query->the_post();
-
+var_dump($args);
+    while (have_posts()) :
+      the_post();
     ?>
-        <div class="article--container pv--8">
-          <a href="<?php the_permalink(); ?>">
-            <?php if (has_post_thumbnail()) { ?>
-              <div class="featured-image">
-                <?php echo get_icon(get_the_ID()); ?>
-                <?php the_post_thumbnail('medium') ?>
-              </div>
-            <?php }; ?>
-            <div class="title headline">
-              <h3><?php the_title(); ?></h3>
+      <div class="article--container pv--8">
+        <a href="<?php the_permalink(); ?>">
+          <?php if (has_post_thumbnail()) { ?>
+            <div class="featured-image">
+              <?php echo get_icon(get_the_ID()); ?>
+              <?php the_post_thumbnail('medium') ?>
             </div>
-            <div class="post-meta pv--8">
-              <span class="byline"><?php echo getPostBylines(get_the_ID()); ?></span>
-              <span class="date"><?php the_time('j M Y'); ?></span>
-            </div>
-          </a>
-        </div>
-    <?php endwhile;
-    }
-    wp_reset_postdata();
-    ?>
+          <?php }; ?>
+          <div class="title headline">
+            <h3><?php the_title(); ?></h3>
+          </div>
+          <div class="post-meta pv--8">
+            <span class="byline"><?php echo getPostBylines(get_the_ID()); ?></span>
+            <span class="date"><?php the_time('j M Y'); ?></span>
+          </div>
+        </a>
+      </div>
+    <?php endwhile; ?>
   </div>
-  <?php if ($serail_posts_query->found_posts > $posts_per_page) { ?>
-    <div id="posts" class="container grid--4 repeat gap--16 pv-16"></div>
-    <div class="container centered pv--40">
-      <a class="theme--button outlined load-more-button" data-post-type="post" data-taxonomy="serial" data-terms="<?php echo $specials_serie_slug; ?>" data-per-page="12"><?php _e('Load more', 'mongabay'); ?><span class="icon icon-right"></span></a>
-    </div>
-  <?php } ?>
+  <div class="pagination container pv--40 centered gap--20">
+    <?php mongabay_ajaxed_pagination(); ?>
+  </div>
   <div class="container section--highlight full-width pv-40">
     <?php $specials_latest = (array('indonesia-for-sale', 'problem-solved', 'conservation-effectiveness', 'satere-mawe', 'satere-mawe', 'satere-mawe', 'satere-mawe', 'satere-mawe'));
     specials_latest($specials_latest);

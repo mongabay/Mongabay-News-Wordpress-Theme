@@ -61,7 +61,7 @@ function videos_latest()
             <h1 class="lh--tight">We’re a nonprofit</h1>
           </div>
             <div class="copy">Help us tell impactful stories of biodiversity loss, climate change, and more</div>
-          <a href="" class="theme--button primary full-width">Donate<span class="icon icon-right"></span>
+          <a href="'.get_donate_link().'" class="theme--button primary full-width">Donate<span class="icon icon-right"></span>
           </a>
         </div>
       </div>';
@@ -72,7 +72,7 @@ function videos_latest()
             <h1>Subscribe</h1>
           </div>
             <div class="copy">Stay informed with news and inspiration from nature’s frontline.</div>
-          <a href="https://mongabay.us14.list-manage.com/subscribe?u=80161fe385606408293ae0e51&id=940652e1f4" class="theme--button primary full-width">Newsletter<span class="icon icon-right"></span>
+          <a href="'.get_subscribe_link().'" class="theme--button primary full-width">Newsletter<span class="icon icon-right"></span>
           </a>
         </div>
       </div>
