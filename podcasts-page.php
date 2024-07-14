@@ -33,7 +33,7 @@ formats_slider(array('podcasts'), 'Listen to Nature with thought-provoking podca
         <div class="copy">
           Help us tell impactful stories of biodiversity loss, climate change, and more
         </div>
-        <a href="" class="theme--button primary full-width">
+        <a href="'.get_donate_link().'" class="theme--button primary full-width">
           Donate<span class="icon icon-right"></span>
         </a>
       </div>

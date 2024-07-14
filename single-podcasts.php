@@ -81,7 +81,7 @@
       </script>
     </div>
     <div class="column--20 in-column gap--20">
-      <?php banner('', 'We’re a nonprofit.', 'Help us tell stories of biodiversity loss, climate change & socio-environmental injustice.', 'Donate', 'accent full-width ph--20 pv--20', ''); ?>
+      <?php banner(get_donate_link(), 'We’re a nonprofit.', 'Help us tell stories of biodiversity loss, climate change & socio-environmental injustice.', 'Donate', 'accent full-width ph--20 pv--20', ''); ?>
       <?php banner(get_subscribe_link(), 'Subscribe', 'Stay informed with news and inspiration from nature’s frontline.', 'Newsletter', 'outlined ph--20 pv--20 full-width', ''); ?>
     </div>
   </div>

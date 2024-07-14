@@ -23,7 +23,7 @@
 				<ul class="footer-links">
 					<li><a href="<?php echo home_url(); ?>/about"><?php _e('About', 'mongabay'); ?></a></li>
 					<li><a href="<?php echo home_url(); ?>/contact"><?php _e('Contact', 'mongabay'); ?></a></li>
-					<li><a href="<?php echo home_url(); ?>"><?php _e('Donate', 'mongabay'); ?></a></li>
+					<li><a href="<?php echo get_donate_link(); ?>"><?php _e('Donate', 'mongabay'); ?></a></li>
 					<li><a href="<?php echo get_subscribe_link(); ?>"><?php _e('Newsletters', 'mongabay'); ?></a></li>
 					<li><a href="<?php echo home_url(); ?>/submissions"><?php _e('Submissions', 'mongabay'); ?></a></li>
 					<li><a href="<?php echo home_url(); ?>/terms"><?php _e('Terms of Use', 'mongabay'); ?></a></li>

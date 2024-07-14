@@ -74,7 +74,7 @@ if (wp_is_mobile()) {
 					<li><a href="<?php echo home_url(); ?>/articles" class="<?php echo is_page('Articles') ? 'active' : ''; ?>"><?php _e('Articles', 'mongabay'); ?></a></li>
 					<li><a href="<?php echo home_url(); ?>/shorts" class="<?php echo is_page('Shorts') ? 'active' : ''; ?>"><?php _e('Shorts', 'mongabay'); ?></a></li>
 				</ul>
-				<a class="theme--button primary simple md-hide" href=""><?php _e('Donate', 'mongabay'); ?></a>
+				<a class="theme--button primary simple md-hide" href="<?php echo get_donate_link(); ?>"><?php _e('Donate', 'mongabay'); ?></a>
 				<a id="theme-switch" class="icon icon-cog"></a>
 				<a id="site-search" href="<?php echo home_url(); ?>/?s="><span class="icon icon-search"></span></a>
 				<a id="secondary-menu"><span class="icon icon-menu"></span></a>
@@ -116,7 +116,7 @@ if (wp_is_mobile()) {
 								<li><a href="<?php echo home_url(); ?>/contact"><?php _e('Contact', 'mongabay'); ?></a></li>
 							</ul>
 							<ul class="footer-links">
-								<li><a href="https://donate.mongabay.org/?utm_source=mongabay.com&utm_medium=headerlink&utm_campaign=com-header-text-link-new"><?php _e('Donate', 'mongabay'); ?></a></li>
+								<li><a href="<?php echo get_donate_link(); ?>"><?php _e('Donate', 'mongabay'); ?></a></li>
 								<li><a href="<?php echo get_subscribe_link(); ?>"><?php _e('Subscribe page', 'mongabay'); ?></a></li>
 								<li><a href="<?php echo home_url(); ?>/submissions/"><?php _e('Submissions', 'mongabay'); ?></a></li>
 							</ul>

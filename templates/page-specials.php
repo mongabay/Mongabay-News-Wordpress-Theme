@@ -41,7 +41,7 @@ $formats = array('specials');
 	</div>
 	<?php articles_listing_in_columns($formats, 6, 0, 'medium', 'serial', true); ?>
 
-	<?php banner('', 'We’re a nonprofit', 'Help us tell impactful stories of biodiversity loss, climate change, and more', 'Donate', 'accent ph--20 pv--56 full-width', 'extra-large'); ?>
+	<?php banner(get_donate_link(), 'We’re a nonprofit', 'Help us tell impactful stories of biodiversity loss, climate change, and more', 'Donate', 'accent ph--20 pv--56 full-width', 'extra-large'); ?>
 </div>
 <?php featured_articles_slider($formats, 4, 5); ?>
 

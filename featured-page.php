@@ -38,7 +38,7 @@ formats_slider($formats, 'In-depth feature stories reveal context and insight', 
   </div>
 
   <div class="container full-width pv--40">
-    <?php banner('', 'We’re a nonprofit', 'Help us tell impactful stories of biodiversity loss, climate change, and more', 'Donate', 'accent ph--20 pv--56 full-width', 'extra-large'); ?>
+    <?php banner(get_donate_link(), 'We’re a nonprofit', 'Help us tell impactful stories of biodiversity loss, climate change, and more', 'Donate', 'accent ph--20 pv--56 full-width', 'extra-large'); ?>
   </div>
 
   <div class="container full--width gap--40 in-column">

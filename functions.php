@@ -971,7 +971,7 @@ if ($GLOBALS['pagenow'] == 'post-new.php' || $pagenow == 'post.php') :
             <div id="message" class="error">
                 <p><strong><?php _e('Please set Featured Image. Article cannot be published without one.'); ?></strong></p>
             </div>
-        <?php
+            <?php
         }
     });
 endif;
@@ -1121,7 +1121,7 @@ function banner_shortcode($atts)
 // Ajaxed Pagination
 function mongabay_ajaxed_pagination()
 {
-    if (is_page('shorts')) {
+    if (is_page('shorts') || is_singular('specials')) {
         wp_enqueue_script('ajax-pagination', get_template_directory_uri() . '/js/lib/ajaxed-pagination.js', array('jquery'), null, true);
         wp_localize_script('ajax-pagination', 'ajaxpagination', array(
             'ajaxurl' => admin_url('admin-ajax.php'),
@@ -1136,21 +1136,63 @@ function load_more_posts()
     $counter = 0;
     $paged = $_POST['page'] ?? 1;
     $post_type = $_POST['post_type'] ?? 'post';
+    $taxonomy = $_POST['taxonomy'] ?? null;
+    $terms = $_POST['terms'] ?? null;
+    $posts_per_page = $_POST['posts_per_page'] ?? 9;
 
     $args = array(
         'post_type' => $post_type,
-        'posts_per_page' => 9,
+        'posts_per_page' => $posts_per_page,
         'paged' => $paged
     );
+
+    if ($taxonomy && $terms) {
+        $args['tax_query'] = array(
+            array(
+                'taxonomy' => $taxonomy,
+                'field' => 'slug',
+                'terms' => $terms,
+            )
+        );
+    }
 
     $query = new WP_Query($args);
 
     if ($query->have_posts()) :
-        echo '<div class="container full-width pv--20"></div>';
+        if ($post_type === 'short-article') {
+            // additional spacing for short only
+            echo '<div class="container full-width pv--20"></div>';
+        }
         while ($query->have_posts()) : $query->the_post();
             $counter++;
-            shorts_grid($counter, null);
-        ?>
+            if ($post_type === 'post') {
+                $isFeatured = get_post_meta(get_the_ID(), 'featured_as', true) === 'featured';
+            ?>
+                <div class="article--container">
+                    <a href="<?php the_permalink(); ?>">
+                        <?php if (has_post_thumbnail()) { ?>
+                            <div class="featured-image">
+                                <?php echo get_icon(get_the_ID()); ?>
+                                <?php the_post_thumbnail('medium') ?>
+                            </div>
+                        <?php }; ?>
+                        <?php if ($isFeatured) { ?>
+                            <div class="featured-label"><?php _e('Feature story', 'mongabay'); ?></div>
+                        <?php }; ?>
+                        <div class="title headline">
+                            <h3><?php the_title(); ?></h3>
+                        </div>
+                        <div class="post-meta pv--8">
+                            <span class="byline"><?php echo getPostBylines(get_the_ID()); ?></span>
+                            <span class="date"><?php the_time('j M Y'); ?></span>
+                        </div>
+                    </a>
+                </div>
+            <?php }
+            if ($post_type === 'short-article') {
+                shorts_grid($counter, null);
+            }
+            ?>
 
 <?php endwhile;
     endif;
@@ -1201,7 +1243,7 @@ function custom_post_type_link_rewrite($post_link, $post)
             '%s/%s/%s/%s',
             $post_type,
             get_the_date('Y', $post),
-            get_the_date('d', $post),
+            get_the_date('m', $post),
             $post->post_name
         )));
     }
