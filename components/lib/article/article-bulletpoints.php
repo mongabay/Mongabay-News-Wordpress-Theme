@@ -23,6 +23,11 @@ function article_bulletpoints(int $post_id)
     (function($) {
       $(document).ready(function() {
         const bulletPoints = $('.bulletpoints');
+
+        if (bulletPoints.length === 0) {
+          return;
+        }
+
         const bulletPointsHeight = document.querySelector('.bulletpoints').scrollHeight;
         const toggle = $('.bulletpoints-wrapper .content-expander');
 
