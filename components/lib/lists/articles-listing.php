@@ -5,9 +5,10 @@ function articles_listing(
   int $offset,
   bool $show_all_thumbnails,
   string $thumbnail_size,
-  ?string $odd_item,
-  ?int $odd_item_position,
-  ?string $taxonomy
+  ?string $odd_item = null,
+  ?int $odd_item_position = null,
+  ?string $taxonomy = null,
+  ?string $taxonomy_term = null
 ) {
   $args = array(
     'post_type' => $post_formats,
@@ -17,11 +18,12 @@ function articles_listing(
     'cache_results' => true,
   );
 
-  if ($taxonomy) {
-    $args['taxonomy'] = array(
+  if ($taxonomy && $taxonomy_term) {
+    $args['tax_query'] = array(
       array(
         'taxonomy' => $taxonomy,
         'field' => 'slug',
+        'terms' => $taxonomy_term,
       )
     );
   }

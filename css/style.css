@@ -2247,6 +2247,7 @@ input#featured[type="checkbox"] {
 
 .single .post-meta {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .single span.taxonomy:before {
@@ -2519,6 +2520,10 @@ input#featured[type="checkbox"] {
 }
 
 /* Soliloquy slider */
+.soliloquy-container {
+  overflow-x: hidden !important;
+}
+
 .single-custom-story .wp-block-soliloquy-soliloquywp {
   margin: var(--spacing-13) 0;
 }

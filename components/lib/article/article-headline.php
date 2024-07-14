@@ -3,7 +3,9 @@ function article_headline()
 {
   $post_id = get_the_ID();
   $byline_terms = wp_get_post_terms($post_id, 'byline');
-  $series_terms = wp_get_post_terms($post_id, 'serial');
+  $series_term = get_post_type($post_id) === 'specials' ? pods('specials', $post_id)->field('specials_series') : wp_get_post_terms($post_id, 'serial')[0];
+  $series_name = get_post_type($post_id) === 'specials' ? $series_term['name'] : $series_term->name;
+  $series_slug = get_post_type($post_id) === 'specials' ? $series_term['slug'] : $series_term->slug;
   $location_terms = wp_get_post_terms($post_id, 'location');
   $avatar = null;
 
@@ -31,9 +33,9 @@ function article_headline()
               echo '<a href="' . home_url() . '/location/' . $location_terms[0]->slug . '">' . $location_terms[0]->name . '</a>';
               echo '</span>';
             } ?>
-            <?php if (!empty($series_terms)) {
+            <?php if (!empty($series_term)) {
               echo '<span class="taxonomy">';
-              echo '<a href="' . home_url() . '/series/' . $series_terms[0]->slug . '">' . $series_terms[0]->name . '</a>';
+              echo '<a href="' . home_url() . '/series/' . $series_slug . '">' . $series_name . '</a>';
               echo '</span>';
             } ?>
           </div>

@@ -105,12 +105,12 @@ $counter = 0;
     <?php mongabay_pagination(); ?>
   </div>
   <div class="container section--highlight full-width pv-40">
-    <?php $specials_latest = (array('oceans', 'amazon-conservation', 'land-rights-and-extractives', 'indigenous-peoples-and-conservation', 'amazon-conservation', 'oceans', 'oceans', 'oceans'));
+    <?php $specials_latest = (array('indonesia-for-sale', 'problem-solved', 'conservation-effectiveness', 'satere-mawe', 'satere-mawe', 'satere-mawe', 'satere-mawe', 'satere-mawe'));
     specials_latest($specials_latest);
     ?>
   </div>
   <div class="container centered">
-    <a href="<?php echo home_url(); ?>/?s=&formats=special" class="theme--button primary"><?php _e('All Specials', 'mongabay'); ?><span class="icon icon-right"></span></a>
+    <a href="<?php echo home_url(); ?>/?s=&formats=specials" class="theme--button primary"><?php _e('All Specials', 'mongabay'); ?><span class="icon icon-right"></span></a>
   </div>
 </div>
 <?php tools_slider(); ?>
