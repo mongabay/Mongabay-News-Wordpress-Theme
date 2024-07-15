@@ -20,7 +20,7 @@ specials_slider('Special Issues connect the dots between stories', $specials_tax
     series_articles_slider(false, 'specials');
 
     $series_latest_tax_array = (array('conservation-effectiveness', 'product-lifecycles', 'indonesia-for-sale', 'conservation-potential', 'problem-solved', 'congo-peatlands', 'satere-mawe', 'central-american-cattle-ranching'));
-    specials_latest($series_latest_tax_array);
+    specials_latest();
     ?>
     <div class="container centered">
       <a href="<?php home_url(); ?>/?s=&formats=specials" class="theme--button primary"><?php _e('All Specials', 'mongabay'); ?><span class="icon icon-right"></span></a>
