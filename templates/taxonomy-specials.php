@@ -106,7 +106,7 @@ $counter = 0;
   </div>
   <div class="container section--highlight full-width pv-40">
     <?php $specials_latest = (array('indonesia-for-sale', 'problem-solved', 'conservation-effectiveness', 'satere-mawe', 'satere-mawe', 'satere-mawe', 'satere-mawe', 'satere-mawe'));
-    specials_latest($specials_latest);
+    specials_latest();
     ?>
   </div>
   <div class="container centered">

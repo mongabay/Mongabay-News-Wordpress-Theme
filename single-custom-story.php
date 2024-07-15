@@ -35,7 +35,7 @@
     <div class="container section--highlight ph--40 pv--40 gap--20 in-column">
         <?php
         $specials_terms = (array('tropical-forests', 'biodiversity', 'forests', 'indigenous-peoples-and-conservation', 'great-apes', 'indonesian-palm-oil', 'indonesian-fisheries', 'global-forest-reporting-network'));
-        specials_latest($specials_terms);
+        specials_latest();
         ?>
         <div class="container centered">
             <a href="" class="theme--button primary"><?php _e('All Specials', 'mongabay'); ?><span class="icon icon-right"></span></a>
