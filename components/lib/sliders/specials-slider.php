@@ -32,9 +32,11 @@ function specials_slider(string $headline, array $terms_array = [], string $extr
               $tax_obj = get_term_by('slug', $name, 'serial');
               $tax_name = $tax_obj->name;
               // $tax_url = home_url() . '/series/' . $name;
+              $post_url = get_permalink();
               $series_posts = $tax_obj->count;
       ?>
               <div class="article--container full-height">
+                <?php var_dump(get_the_ID()); ?>
                 <a href="<?php the_permalink(); ?>">
                   <div class="featured-image full-height">
                     <div class="img-overlay"></div>
@@ -58,7 +60,7 @@ function specials_slider(string $headline, array $terms_array = [], string $extr
         }
       } else {
         $args = array(
-          'post_type' => $post_formats,
+          'post_type' => 'specials',
           'posts_per_page' => 4,
           'cache_results' => true,
           'meta_query' => array(

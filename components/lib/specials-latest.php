@@ -45,7 +45,7 @@ function specials_latest(array $series_array = null)
               <?php the_post_thumbnail('large'); ?>
               <div class="article--container-headline">
                 <div class="title headline gap--8 left">
-                  <h1><?php echo $tax_name; ?></h1>
+                  <h1 class="<?php echo ($counter > 2) ? 'odd' : ''; ?>"><?php echo $tax_name; ?></h1>
                   <div class="meta">
                     <span class="count"><?php echo $stories_count; ?> stories</span>
                   </div>
