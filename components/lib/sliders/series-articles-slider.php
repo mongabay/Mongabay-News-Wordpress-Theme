@@ -38,7 +38,7 @@ function series_articles_slider(bool $show_headline, string $post_type = 'post')
 
   if ($single_serie_slug) {
     $serie_args = array(
-      'post_type' => $post_type,
+      'post_type' => $post_type === 'specials' ? 'post' : $post_type,
       'posts_per_page' => 4,
       'cache_results' => true,
       'tax_query' => array(

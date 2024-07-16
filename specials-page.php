@@ -12,7 +12,7 @@ get_header(); ?>
 
 <?php
 $specials_tax_array = (array('conservation-effectiveness', 'product-lifecycles', 'indonesia-for-sale'));
-specials_slider('Special Issues connect the dots between stories', $specials_tax_array, 'text-center');
+specials_slider('Special Issues connect the dots between stories', array(), 'text-center');
 ?>
 <div class="container full-width in-column">
   <div class="container section--highlight ph--40 pv--40 gap--20 in-column">
