@@ -1224,7 +1224,11 @@ function validate_short_article_content_length($post_id)
 
 function custom_post_type_link_rewrite($post_link, $post)
 {
-    if (is_object($post) && in_array($post->post_type, array('videos', 'podcasts', 'custom-story', 'short-article', 'specials'))) {
+    if (
+        (!is_admin() || !is_user_logged_in()) &&
+        is_object($post) &&
+        in_array($post->post_type, array('videos', 'podcasts', 'custom-story', 'short-article', 'specials'))
+    ) {
         $post_type = '';
 
         switch ($post->post_type) {
@@ -1237,6 +1241,10 @@ function custom_post_type_link_rewrite($post_link, $post)
             default:
                 $post_type = $post->post_type;
                 break;
+        }
+
+        if (str_contains($post_link, '&p=')) {
+            return $post_link;
         }
 
         $post_link = home_url(user_trailingslashit(sprintf(

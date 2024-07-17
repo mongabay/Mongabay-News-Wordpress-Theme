@@ -57,7 +57,7 @@ function topics_section(
               if (count($topics) > 0) {
                 foreach ($topics as $topic) {
                   $topic_name = str_replace('-', ' ', $topic);
-                  echo '<span class="outlined"><a href="' . home_url() . '/?s=&topics=' . $topic . '&formats=' . $formats_string . ($extra_params['featured'] ? "&featured=true" : "") . '">' . $topic_name . '</a></span>';
+                  echo '<span class="outlined"><a href="' . home_url() . '/?s=&topics=' . $topic . '&formats=' . $formats_string . ($extra_params && $extra_params['featured'] ? "&featured=true" : "") . '">' . $topic_name . '</a></span>';
                 }
               }
               ?>

@@ -529,6 +529,10 @@ header.sticky {
   z-index: 10;
 }
 
+.dark-mode header.sticky {
+  background: var(--theme-black);
+}
+
 .branding {
   width: 230px;
 }
@@ -1000,6 +1004,7 @@ ul.main-menu:not(.off-canvas) li a.active:before {
 
 .section--highlight .meta {
   font-family: "Open Sans";
+  margin-bottom: 1rem;
 }
 
 .section--highlight h1 span.icon:before {
@@ -1391,6 +1396,10 @@ a.slider-link {
 a.slider-link img {
   height: 100%;
   object-fit: cover;
+}
+
+.dark-mode .slick-dots li button:before {
+  color: var(--theme-white);
 }
 
 /* Podcast player */
@@ -2939,6 +2948,7 @@ footer .grid--4 {
   #off-canvas .container {
     flex-direction: column-reverse;
     height: calc(100vh - 40px);
+    box-sizing: content-box;
   }
   ul.main-menu.nav-desktop {
     display: none;
@@ -3013,7 +3023,7 @@ footer .grid--4 {
   .banner .title h1.extra-large,
   .section--highlight h1,
   .section--inspiration .title h1 {
-    font-size: 2.625rem;
+    font-size: clamp(1.2rem, 8vw + 0.5rem, 2.625rem);
     line-height: 1.25;
   }
   .section--highlight h1 {
