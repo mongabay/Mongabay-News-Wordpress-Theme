@@ -48,11 +48,11 @@ function add_rewrite_url()
 
     //custom post types
     // only if not in wp-admin
-    if (!is_admin() && !is_user_logged_in()) {
+    
         add_rewrite_rule('video/([0-9]{4})/([0-9]{2})/([^/]+)/?$', 'index.php?post_type=videos&name=$matches[3]', 'top');
         add_rewrite_rule('short-article/([0-9]{4})/([0-9]{2})/([^/]+)/?$', 'index.php?post_type=short-article&name=$matches[3]', 'top');
         add_rewrite_rule('podcast/([0-9]{4})/([0-9]{2})/([^/]+)/?$', 'index.php?post_type=podcasts&name=$matches[3]', 'top');
         add_rewrite_rule('specials/([0-9]{4})/([0-9]{2})/([^/]+)/?$', 'index.php?post_type=specials&name=$matches[3]', 'top');
         add_rewrite_rule('custom-story/([0-9]{4})/([0-9]{2})/([^/]+)/?$', 'index.php?post_type=custom-story&name=$matches[3]', 'top');
-    }
+    
 }
