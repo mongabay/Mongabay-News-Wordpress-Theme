@@ -4,28 +4,28 @@ function tools_slider()
 
   <div id="tools-container" class="container section--highlight in-column pv--40 ph--40 gap--80">
     <div class="container full-width">
-      <h1><?php _e('Interested in other Mongabay tools?', 'mongabay'); ?></h1>
+      <h1><?php _e('Interested in other Mongabay websites?', 'mongabay'); ?></h1>
     </div>
     <div class="container in-row gap--80 tools-top">
       <div class="tools-item">
-        <a href="https://earthhq.org/" target="_blank" title="Earth HQ"><img src="<?php echo get_template_directory_uri(); ?>/img/earth_hq.png" alt="Earth HQ" /></a>
+        <a href="https://earthhq.org/" target="_blank" title="Earth HQ"><img src="<?php echo get_template_directory_uri(); ?>/img/EarthHQ_Banner.png" alt="Earth HQ" /></a>
       </div>
       <div class="tools-item">
-        <a href="ttps://studio.mongabay.com" target="_blank" title="Mongabay Data Studio"><img src="<?php echo get_template_directory_uri(); ?>/img/data_studio.png" alt="Data Studio" /></a>
+        <a href="https://studio.mongabay.com" target="_blank" title="Mongabay Data Studio"><img src="<?php echo get_template_directory_uri(); ?>/img/data_studio.png" alt="Data Studio" /></a>
       </div>
       <div class="tools-item">
-        <a href="https://www.mongabay.org" target="_blank" title="Mongabay.org"><img src="<?php echo get_template_directory_uri(); ?>/img/mongabay_org.png" alt="Mongabay" /></a>
+        <a href="https://conservationeffectiveness.org" target="_blank" title="Conservation Effectiveness"><img src="<?php echo get_template_directory_uri(); ?>/img/conservation_effectiveness_banner.png" alt="Conservation Effectiveness" /></a>
       </div>
     </div>
     <div class="container full-width in-row gap--80 tools-bottom">
       <div class="tools-item">
-        <a href="ttps://studio.mongabay.com" target="_blank" title="Mongabay Data Studio"><img src="<?php echo get_template_directory_uri(); ?>/img/data_studio.png" alt="Data Studio" /></a>
+        <a href="https://es.mongabay.com" target="_blank" title="Mongabay Latam"><img src="<?php echo get_template_directory_uri(); ?>img/mongabay_es_banner.svg" alt="Mongabay Latam" /></a>
       </div>
       <div class="tools-item">
-        <a href="https://www.mongabay.org" target="_blank" title="Mongabay.org"><img src="<?php echo get_template_directory_uri(); ?>/img/mongabay_org.png" alt="Mongabay" /></a>
+        <a href="https://reforestation.app" target="_blank" title="Reforestation App"><img src="<?php echo get_template_directory_uri(); ?>/img/reforestation_banner.png" alt="Reforestation App" /></a>
       </div>
       <div class="tools-item">
-        <a href="https://earthhq.org/" target="_blank" title="Earth HQ"><img src="<?php echo get_template_directory_uri(); ?>/img/earth_hq.png" alt="Earth HQ" /></a>
+        <a href="https://mongabay.co.id" target="_blank" title="Mongabay Indonesia"><img src="<?php echo get_template_directory_uri(); ?>img/mongabay_indonesia_banner.svg" alt="Mongabay Indonesia" /></a>
       </div>
     </div>
   </div>
