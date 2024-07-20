@@ -18,9 +18,9 @@ formats_slider(array('podcasts'), 'Listen to Nature with thought-provoking podca
   <?php podcasts_topics_section('Explore podcasts about', array('forests', 'wildlife', 'oceans', 'climate', 'conservation-solutions'), array('link_copy' => 'all topics', 'link_url' => home_url() . '?s=&formats=podcasts')); ?>
 
   <div id="section-podcasts-latest" class="container pv--40 gap--20 in-column">
-    <div class="container in-row full-width section--headline" style="align-items: center; justify-content: space-between;">
+    <div class="container in-row full-width section--headline" style="<?php echo !wp_is_mobile() ? 'align-items: center; justify-content: space-between;' : ''; ?>">
       <h1><?php _e('Latest podcasts', 'mongabay'); ?></h1>
-      <a href="<?php home_url(); ?>/?s=&formats=podcasts" class="theme--button primary"><?php _e('All podcasts', 'mongabay'); ?><span class="icon icon-right"></span></a>
+      <a href="<?php home_url(); ?>/?s=&formats=podcasts" class="theme--button primary md-hide"><?php _e('All podcasts', 'mongabay'); ?><span class="icon icon-right"></span></a>
     </div>
     <div class="grid--4 gap--20">
       <?php
@@ -33,7 +33,7 @@ formats_slider(array('podcasts'), 'Listen to Nature with thought-provoking podca
         <div class="copy">
           Help us tell impactful stories of biodiversity loss, climate change, and more
         </div>
-        <a href="'.get_donate_link().'" class="theme--button primary full-width">
+        <a href="' . get_donate_link() . '" class="theme--button primary full-width">
           Donate<span class="icon icon-right"></span>
         </a>
       </div>

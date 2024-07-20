@@ -13,7 +13,7 @@
 					<li><a href="<?php echo home_url(); ?>/articles"><?php _e('Articles', 'mongabay'); ?></a></li>
 					<li><a href="<?php echo home_url(); ?>/specials"><?php _e('Specials', 'mongabay'); ?></a></li>
 					<li><a href="<?php echo home_url(); ?>/shorts"><?php _e('Short news', 'mongabay'); ?></a></li>
-					<li><a href="<?php echo home_url(); ?>/feature"><?php _e('Feature Stories', 'mongabay'); ?></a></li>
+					<li><a href="<?php echo home_url(); ?>/features"><?php _e('Feature Stories', 'mongabay'); ?></a></li>
 					<li><a href="<?php echo home_url(); ?>/?s=&formats=post+videos+podcasts+shorts+specials"><?php _e('The Latest', 'mongabay'); ?></a></li>
 				</ul>
 			</div>

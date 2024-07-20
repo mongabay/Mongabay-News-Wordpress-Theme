@@ -17,10 +17,10 @@ if (wp_is_mobile()) {
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>" />
 	<title><?php mongabay_custom_title(); ?></title>
-	<!-- <link href="//www.google-analytics.com" rel="dns-prefetch"> -->
+	<link href="//www.google-analytics.com" rel="dns-prefetch">
 
 	<!-- Google tag (gtag.js) -->
-	<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-12973256-1"></script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-12973256-1"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
 
@@ -30,7 +30,7 @@ if (wp_is_mobile()) {
 		gtag('js', new Date());
 
 		gtag('config', 'UA-12973256-1');
-	</script> -->
+	</script>
 
 	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/img/icons/favicon.png" type="image/x-icon" />
 	<link rel="apple-touch-icon-precomposed" href="<?php echo get_template_directory_uri(); ?>/img/icons/ico-s2.jpg">
@@ -47,12 +47,12 @@ if (wp_is_mobile()) {
 	<meta name="description" content="<?php bloginfo('description'); ?>" />
 	<meta property="fb:pages" content="24436227877" />
 	<?php
-	// if (is_home()) {
-	// 	echo '<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />';
-	// 	echo '<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>';
-	// 	echo '<script>window.addEventListener("load", function(){window.cookieconsent.initialise({
-	// "palette": {"popup": {"background": "#000"},"button": {"background": "#f1d600"}}})});</script>';
-	// }
+	if (is_home()) {
+		echo '<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />';
+		echo '<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>';
+		echo '<script>window.addEventListener("load", function(){window.cookieconsent.initialise({
+	"palette": {"popup": {"background": "#000"},"button": {"background": "#f1d600"}}})});</script>';
+	}
 	?>
 	<?php wp_head(); ?>
 
@@ -104,9 +104,9 @@ if (wp_is_mobile()) {
 							<li><a href=" <?php echo home_url(); ?>/podcasts""><?php _e('Podcasts', 'mongabay'); ?></a></li>
 						<li><a href="<?php echo home_url(); ?>/articles"><?php _e('Articles', 'mongabay'); ?></a></li>
 						<li><a href="<?php echo home_url(); ?>/shorts""><?php _e('Short News', 'mongabay'); ?></a></li>
-							<li><a href=" <?php echo home_url(); ?>/feature""><?php _e('Feature Stories', 'mongabay'); ?></a></li>
-						<li><a href="<?php echo home_url(); ?>/">The Latest</a></li>
-						<li><a href="">Explore All</a></li>
+							<li><a href=" <?php echo home_url(); ?>/features""><?php _e('Feature Stories', 'mongabay'); ?></a></li>
+						<li><a href="<?php echo home_url(); ?>/list/2024"><?php _e('The Latest', 'mongabay'); ?></a></li>
+						<li><a href="<?php echo home_url(); ?>/?s=&formats=post+custom_story+videos+podcasts+specials+short_article"><?php _e('Explore All', 'mongabay'); ?></a></li>
 					</ul>
 					<?php if (!wp_is_mobile()) { ?>
 						<div class="footer gap--20 grid--5">
