@@ -36,7 +36,7 @@ $counter = 0;
     $posts_per_page = 12;
 
     $args = array(
-      'post_type' => 'post',
+      'post_type' => array('post', 'videos', 'podcasts', 'custom-story'),
       'posts_per_page' => $posts_per_page,
       'cache_results' => true,
       'tax_query' => array(

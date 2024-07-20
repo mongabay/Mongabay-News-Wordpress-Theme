@@ -922,7 +922,7 @@ ul.main-menu:not(.off-canvas) li a.active:before {
   width: calc(100% - 48px);
   line-height: 1.27;
   overflow: hidden;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   max-width: calc(100% - 48px);
@@ -1190,29 +1190,44 @@ ul.main-menu:not(.off-canvas) li a.active:before {
   font-family: "Lora";
 }
 
-.section--inspiration .item-container:nth-child(1) .item-title {
+.section--inspiration .item-container.first .item-title {
   right: 40%;
-  bottom: -15%;
+  bottom: -30%;
 }
 
-.section--inspiration .item-container:nth-child(2) .item-title {
+.section--inspiration .item-container.second .item-title {
   left: -30%;
   bottom: 10%;
 }
 
-.section--inspiration .column--60 > .item-container:last-child img {
-  height: 145px;
-  width: 145px;
+.section--inspiration .item-container.third .item-title {
+  right: 53%;
+  bottom: 10%;
 }
 
-.section--inspiration .column--60 > .item-container.first img {
-  width: 54px;
-  height: 54px;
+.section--inspiration .item-container.second {
+  margin-top: var(--spacing-14);
 }
 
-.section--inspiration .column--40 > .item-container.second img {
-  width: 107px;
-  height: 65px;
+.section--inspiration .item-container.first img {
+  width: 70%;
+  height: auto;
+}
+
+.section--inspiration .item-container.second img {
+  width: 80%;
+  height: auto;
+}
+
+.section--inspiration .item-container a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section--inspiration .item-container.third img {
+  width: 52%;
+  height: auto;
 }
 
 .section--highlight h1,
@@ -1699,6 +1714,11 @@ dialog input {
   font-size: 10px;
   font-weight: lighter;
   font-family: "fontello";
+}
+
+.post-icon span.icon.icon-shorts:before {
+  font-size: 8px !important;
+  margin-left: -8px;
 }
 
 .dark-mode .search .tax-item-wrapper button:after {
@@ -2848,20 +2868,28 @@ footer .grid--4 {
     height: 580px;
   }
 
-  .section--inspiration .column--60 > .item-container:last-child img {
+  /* .section--inspiration .column--60 > .item-container:last-child img {
     height: 296px;
     width: 296px;
   }
 
   .section--inspiration .column--60 > .item-container.first img {
-    width: 110px;
-    height: 110px;
+    width: auto;
+    height: 150px;
+  } */
+
+  .section--inspiration .item-container.second {
+    margin-top: var(--spacing-14);
   }
 
-  .section--inspiration .column--40 > .item-container.second img {
+  /* .section--inspiration .column--40 > .item-container.second img {
     width: 218px;
     height: 133px;
-  }
+  } */
+
+  /* .section--inspiration .column--40 > .item-container.third img {
+    width: 60%;
+  } */
 
   .single-custom-story .wp-block-embed.is-type-video:nth-of-type(1) iframe {
     min-width: 100%;
@@ -2941,9 +2969,11 @@ footer .grid--4 {
   .md-hide {
     display: none !important;
   }
+
   header .container {
     flex-direction: row;
   }
+
   #off-canvas,
   #off-canvas .container {
     flex-direction: column-reverse;
@@ -2996,16 +3026,20 @@ footer .grid--4 {
   .single .row > #main {
     padding: 0;
   }
+
   .latest-news {
     order: 3;
     gap: 20px;
   }
+
   .latest-featured {
     order: 1;
   }
+
   .latest-banners {
     order: 2;
   }
+
   .article--container .featured-image .title {
     width: 100%;
     bottom: 0;
@@ -3015,32 +3049,40 @@ footer .grid--4 {
 
   .article--container .featured-image .title h1 {
     font-size: 1.5rem;
-    line-height: 1;
   }
+
   .article--container .title h3 {
-    font-size: 1em;
+    /* font-size: 1em; */
   }
+
+  .article--container-headline {
+    padding: var(--spacing-6);
+  }
+
   .banner .title h1.extra-large,
   .section--highlight h1,
+  .section--headline h1,
   .section--inspiration .title h1 {
     font-size: clamp(1.2rem, 8vw + 0.5rem, 2.625rem);
     line-height: 1.25;
   }
+
   .section--highlight h1 {
     max-width: 100%;
   }
+
+  .section--highlight .article--container.narrow {
+    width: 50%;
+  }
+
   .section--inspiration {
     padding: 40px 20px;
     box-sizing: inherit;
   }
+
   .section--inspiration .title {
     width: 100%;
     margin-bottom: 100px;
-  }
-
-  .section--inspiration .items {
-    width: 80%;
-    margin: 0 auto;
   }
 
   .section--inspiration .item-container:first-child {
@@ -3052,12 +3094,25 @@ footer .grid--4 {
     font-size: 1.6rem;
   }
 
-  .section--inspiration .item-container:nth-child(1) .item-title {
-    right: 14%;
+  .section--inspiration .item-container .item-title {
+    min-width: max-content;
+    padding: var(--spacing-4) var(--spacing-5);
+    min-height: min-content;
   }
 
-  .section--headline h1 {
-    line-height: 1.25;
+  .section--inspiration .item-container.first .item-title {
+    right: 12%;
+    bottom: -40%;
+  }
+
+  .section--inspiration .item-container.third .item-title {
+    right: 36%;
+    bottom: 10%;
+  }
+
+  .section--inspiration .item-container.first img,
+  .section--inspiration .item-container.second img {
+    width: 100%;
   }
 
   .section--headline.latest-videos {
@@ -3085,6 +3140,7 @@ footer .grid--4 {
   .section--highlight.series .featured-image:first-child {
     min-height: 60vh;
   }
+
   .section--highlight.series .featured-image:first-child img {
     object-fit: cover;
     height: 50vh;
@@ -3250,5 +3306,9 @@ footer .grid--4 {
 
   .single-custom-story .wp-block-quote p {
     font-size: var(--font-sm);
+  }
+
+  .sound-wave {
+    background-size: 200%;
   }
 }

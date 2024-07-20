@@ -62,7 +62,7 @@ function articles_listing_in_columns(
             </div>
           <?php }; ?>
           <div class="title headline left">
-            <?php if ($post_counter < 3) { ?>
+            <?php if ($post_counter < 3 && !wp_is_mobile()) { ?>
               <h1><?php the_title(); ?></h1>
             <?php } else { ?>
               <h3><?php the_title(); ?></h3>

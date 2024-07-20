@@ -932,6 +932,9 @@ async function fetchArticles(fromStart = false) {
       case "SpecialsArticle":
         iconClass = "icon-specials";
         break;
+      case "ShortArticle":
+        iconClass = "icon-shorts";
+        break;
       default:
         iconClass = "";
         break;

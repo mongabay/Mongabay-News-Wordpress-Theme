@@ -30,9 +30,9 @@ formats_slider($formats, 'In-depth feature stories reveal context and insight', 
 
 
   <div id="section-features-latest" class="container pv--40 gap--20 in-column">
-    <div class="container in-row full-width section--headline" style="align-items: center; justify-content: space-between;">
+    <div class="container in-row full-width section--headline" style="<?php echo !wp_is_mobile() ? 'align-items: center; justify-content: space-between;' : ''; ?>">
       <h1><?php _e('Latest features', 'mongabay'); ?></h1>
-      <a href="<?php echo home_url() ?>/?s=&formats=<?php echo $formats_string; ?>&featured=true" class="theme--button primary"><?php _e('All features', 'mongabay'); ?><span class="icon icon-right"></span></a>
+      <a href="<?php echo home_url() ?>/?s=&formats=<?php echo $formats_string; ?>&featured=true" class="theme--button primary md-hide"><?php _e('All features', 'mongabay'); ?><span class="icon icon-right"></span></a>
     </div>
     <?php articles_listing_in_columns($formats, 6, 0, 'medium', null, true); ?>
   </div>
