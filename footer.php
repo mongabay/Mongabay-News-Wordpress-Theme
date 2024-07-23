@@ -4,9 +4,11 @@
 			<a href="<?php echo home_url(); ?>" class="theme-light"><img src="<?php echo get_template_directory_uri(); ?>/img/logo/mongabay_logo_news_black.svg" /></a><a href="" class="theme-dark"><img src="<?php echo get_template_directory_uri(); ?>/img/logo/mongabay_logo_news_white.svg" /></a>
 		</div>
 		<div class="grid--4 gap--40">
-			<div class="section-title gap--16">
-				<h4><?php _e('News formats', 'mongabay'); ?></h4>
-				<div class="divider"></div>
+			<div>
+				<div class="section-title gap--16 pv--8">
+					<h4><?php _e('News formats', 'mongabay'); ?></h4>
+					<div class="divider"></div>
+				</div>
 				<ul class="footer-links">
 					<li><a href="<?php echo home_url(); ?>/videos"><?php _e('Videos', 'mongabay'); ?></a></li>
 					<li><a href="<?php echo home_url(); ?>/podcasts"><?php _e('Podcasts', 'mongabay'); ?></a></li>
@@ -17,9 +19,11 @@
 					<li><a href="<?php echo home_url(); ?>/?s=&formats=post+videos+podcasts+shorts+specials"><?php _e('The Latest', 'mongabay'); ?></a></li>
 				</ul>
 			</div>
-			<div class="section-title gap--16">
-				<h4><?php _e('About', 'mongabay'); ?></h4>
-				<div class="divider"></div>
+			<div>
+				<div class="section-title gap--16 pv--8">
+					<h4><?php _e('About', 'mongabay'); ?></h4>
+					<div class="divider"></div>
+				</div>
 				<ul class="footer-links">
 					<li><a href="<?php echo home_url(); ?>/about"><?php _e('About', 'mongabay'); ?></a></li>
 					<li><a href="<?php echo home_url(); ?>/contact"><?php _e('Contact', 'mongabay'); ?></a></li>
@@ -29,9 +33,11 @@
 					<li><a href="<?php echo home_url(); ?>/terms"><?php _e('Terms of Use', 'mongabay'); ?></a></li>
 				</ul>
 			</div>
-			<div class="section-title gap--16">
-				<h4><?php _e('External links', 'mongabay'); ?></h4>
-				<div class="divider"></div>
+			<div>
+				<div class="section-title gap--16 pv--8">
+					<h4><?php _e('External links', 'mongabay'); ?></h4>
+					<div class="divider"></div>
+				</div>
 				<ul class="footer-links">
 					<li><a href="https://www.wildmadagascar.org/" target="_blank"><?php _e('Wild Madagascar', 'mongabay'); ?></a></li>
 					<li><a href="https://selvastropicales.org/" target="_blank"><?php _e('Selva tropicales', 'mongabay'); ?></a></li>
@@ -40,9 +46,11 @@
 					<li><a href="https://tropicalforestnetwork.org/" target="_blank"><?php _e('Tropical Forest Network', 'mongabay'); ?></a></li>
 				</ul>
 			</div>
-			<div class="section-title gap--16">
-				<h4><?php _e('Social media', 'mongabay'); ?></h4>
-				<div class="divider"></div>
+			<div>
+				<div class="section-title gap--16 pv--8">
+					<h4><?php _e('Social media', 'mongabay'); ?></h4>
+					<div class="divider"></div>
+				</div>
 				<ul class="footer-links">
 					<li><a href="https://www.linkedin.com/company/mongabay.com/" target="_blank"><?php _e('LinkedIn', 'mongabay'); ?></a></li>
 					<li><a href="https://www.instagram.com/mongabay/" target="_blank"><?php _e('Instagram', 'mongabay'); ?></a></li>
