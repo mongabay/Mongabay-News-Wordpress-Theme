@@ -5,6 +5,8 @@ function article_credits(int $post_id)
   $adaptor = get_post_meta($post_id, "adapted_by", true);
   $translated_adapted = get_post_meta($post_id, "translated_adapted", true);
   $job_title = get_the_author_meta('job_title');
+  $string_title = '';
+  $translator_adaptor = null;
 ?>
   <div class="container in-column about-editor-translator gap--40 pv--80">
     <div class="section-title gap--16">

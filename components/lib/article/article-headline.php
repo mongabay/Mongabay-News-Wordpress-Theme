@@ -4,8 +4,14 @@ function article_headline()
   $post_id = get_the_ID();
   $byline_terms = wp_get_post_terms($post_id, 'byline');
   $series_term = get_post_type($post_id) === 'specials' ? pods('specials', $post_id)->field('specials_series') : wp_get_post_terms($post_id, 'serial')[0];
-  $series_name = get_post_type($post_id) === 'specials' ? $series_term['name'] : $series_term->name;
-  $series_slug = get_post_type($post_id) === 'specials' ? $series_term['slug'] : $series_term->slug;
+  $series_name = '';
+  $series_slug = '';
+
+  if ($series_term) {
+    $series_name = get_post_type($post_id) === 'specials' ? $series_term['name'] : $series_term->name;
+    $series_slug = get_post_type($post_id) === 'specials' ? $series_term['slug'] : $series_term->slug;
+  }
+
   $location_terms = wp_get_post_terms($post_id, 'location');
   $avatar = null;
 

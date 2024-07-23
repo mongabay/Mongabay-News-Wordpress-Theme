@@ -69,6 +69,7 @@ function series_articles_slider(bool $show_headline, string $post_type = 'post')
                   <div class="article--slide <?php echo ($count == 0) ? 'expanded' : 'collapsed'; ?>">
                     <a href="<?php the_permalink(); ?>">
                       <div class="featured-image">
+                        <?php echo get_icon(get_the_ID()); ?>
                         <div class="img-overlay"></div>
                         <?php the_post_thumbnail('large'); ?>
                         <div class="article--container-headline">
