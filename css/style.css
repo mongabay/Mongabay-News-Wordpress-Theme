@@ -3060,6 +3060,10 @@ footer .grid--4 {
     padding: 0;
   }
 
+  .single iframe.wp-embedded-content {
+    width: 100%;
+  }
+
   .latest-news {
     order: 3;
     gap: 20px;
