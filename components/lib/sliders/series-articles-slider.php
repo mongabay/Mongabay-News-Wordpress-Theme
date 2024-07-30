@@ -178,7 +178,7 @@ function series_articles_slider(bool $show_headline, string $post_type = 'post')
           <h4><?php _e('More specials', 'mongabay'); ?></h4>
           <div class="divider"></div>
         </div>
-        <div class="grid--3 gap--40">
+        <div class="grid--3 gap--40" style="<?php echo !wp_is_mobile() ? 'max-height: 375px' : ''; ?>">
         <?php }
         ?>
 

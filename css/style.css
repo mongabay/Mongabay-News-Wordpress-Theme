@@ -101,6 +101,11 @@ p.copyright {
   color: var(--theme-body);
 }
 
+ul li {
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+}
+
 hr.spacer,
 .single-custom-story .wp-block-separator {
   display: flex;
@@ -1004,7 +1009,6 @@ ul.main-menu:not(.off-canvas) li a.active:before {
 
 .section--highlight .meta {
   font-family: "Open Sans";
-  margin-bottom: 1rem;
 }
 
 .section--highlight h1 span.icon:before {
@@ -1450,9 +1454,8 @@ a.slider-link img {
 #share-dialog,
 #shorts-dialog {
   position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  left: 0%;
+  top: 0%;
   border: none;
   background: var(--theme-white);
   color: var(--theme-body);
@@ -2365,7 +2368,7 @@ input#featured[type="checkbox"] {
 }
 
 .single .bulletpoints {
-  height: 180px;
+  height: 160px;
   overflow: hidden;
 }
 
@@ -2376,6 +2379,10 @@ input#featured[type="checkbox"] {
 
 .single .bulletpoints ul {
   padding-left: 1rem;
+}
+
+.single .bulletpoints ul li {
+  margin-bottom: 1rem;
 }
 
 .single .inner {
@@ -2394,7 +2401,7 @@ input#featured[type="checkbox"] {
   margin: var(--spacing-3) 0;
 }
 
-#expander-container:before {
+#expander-container:not(.visible):before {
   content: "";
   display: block;
   width: 100%;
@@ -2602,7 +2609,7 @@ input#featured[type="checkbox"] {
 
 /* Soliloquy slider */
 .soliloquy-container {
-  overflow-x: hidden !important;
+  overflow: hidden !important;
 }
 
 .single-custom-story .wp-block-soliloquy-soliloquywp {
@@ -2842,7 +2849,7 @@ a.next.page-numbers:before {
 }
 
 /* Footer */
-.footer-links {
+ul.footer-links {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -2850,6 +2857,7 @@ a.next.page-numbers:before {
 
 .footer-links li {
   padding: 4px 0;
+  margin: 0;
 }
 
 .footer-links li a {
@@ -3045,7 +3053,7 @@ footer .grid--4 {
   }
 
   #off-canvas .global-nav {
-    margin-bottom: var(--spacing-7);
+    margin-bottom: var(--spacing-11);
   }
 
   .single .row > #main {
@@ -3169,6 +3177,15 @@ footer .grid--4 {
   .section--highlight.series .featured-image:first-child img {
     object-fit: cover;
     height: 50vh;
+  }
+
+  .single .article-cover-image > div {
+    min-height: 200px;
+  }
+
+  .single h3 {
+    line-height: 1.2;
+    margin-bottom: 20px;
   }
 
   #series-slider .article--container .featured-image,

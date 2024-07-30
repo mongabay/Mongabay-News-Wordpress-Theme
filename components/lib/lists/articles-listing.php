@@ -36,9 +36,9 @@ function articles_listing(
       $query->the_post();
       $post_counter++;
 
-      $isFeatured = get_post_meta(get_the_ID(), 'featured_as', true) === 'featured';
+      $isFeatured = get_post_meta(get_the_ID(), 'featured_as', true) === 'featured' && !is_page('features');
 ?>
-      <?php if (strlen($odd_item) > 0 && $post_counter == $odd_item_position) {
+      <?php if ($odd_item && $post_counter == $odd_item_position) {
         echo $odd_item;
       } ?>
       <div class="article--container">

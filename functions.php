@@ -210,10 +210,15 @@ function mongabay_header_scripts()
     if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
         wp_register_script('addtohomescreen', get_template_directory_uri() . '/js/lib/addtohomescreen.min.js', array(), '3.2.3', true);
         wp_enqueue_script('addtohomescreen');
+
+
         // TODO add proper script
         // wp_register_script('scripts', get_template_directory_uri() . '/js/scripts.min.js', array('jquery'), '1.0.0', true);
         // wp_enqueue_script('scripts');
     }
+
+    wp_register_script('dialog-polyfill', get_template_directory_uri() . '/js/lib/dialog-polyfill.js', array(), '0.0.1', 'all');
+    wp_enqueue_script('dialog-polyfill');
 }
 
 // Load conditional scripts
@@ -287,6 +292,8 @@ function mongabay_styles()
     wp_enqueue_style('icon-fonts');
     wp_register_style('addtohomescreen', get_template_directory_uri() . '/css/addtohomescreen.min.css', array(), '3.2.3', 'all');
     wp_enqueue_style('addtohomescreen');
+    wp_register_style('dialog-polyfill', get_template_directory_uri() . '/css/dialog-polyfill.css', array(), '0.0.1', 'all');
+    wp_enqueue_style('dialog-polyfill');
 }
 
 // Remove the <div> surrounding the dynamic navigation to cleanup markup
