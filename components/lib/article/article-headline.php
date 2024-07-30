@@ -25,7 +25,7 @@ function article_headline()
       <div class="about-author gap--16">
         <div class="author-avatar">
           <?php if ($avatar) {
-            echo '<img src="' . $avatar . '" alt="cover image" style="max-width:48px;height:auto;">';
+            echo '<img src="' . $avatar . '" alt="cover image" style="max-width:48px;">';
           } else {
             echo '<span class="meta-author-circle"></span>';
           } ?>
