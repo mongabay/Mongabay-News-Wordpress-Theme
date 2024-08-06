@@ -741,7 +741,7 @@ async function fetchArticles(fromStart = false) {
   const taxQuery = `taxQuery:{taxArray:[${taxArray.join(",")}]},`;
   const featuredQuery = `metaQuery:{metaArray:{key:\"featured_as\",compare:EQUAL_TO,value:\"featured\"}},`;
   const paginate = `,after:\"${cursor}\"`;
-  const node = `__typename,title,link,date,byline{nodes{name}},featuredImage{node{srcSet sizes(size: THUMBNAIL)}}`;
+  const node = `__typename,title,link,date,byline{nodes{name}},featuredImage{node{srcSet sourceUrl(size: MEDIUM)}}`;
   const pageInfo = `pageInfo{endCursor hasNextPage hasPreviousPage startCursor total}`;
 
   const query = `query{
@@ -908,10 +908,12 @@ async function fetchArticles(fromStart = false) {
       return;
     }
 
-    const hasNoImage =
+    const hasNoResponsiveImage =
       node.featuredImage === null ||
       (!node.featuredImage && !node.featuredImage.node) ||
       node.featuredImage.node.srcSet === null;
+  
+    const hasThumbnailImage = node.featuredImage && node.featuredImage.node.sourceUrl;
 
     const listItem = document.createElement("div");
     listItem.classList.add("article--container", "pv--8");
@@ -946,7 +948,9 @@ async function fetchArticles(fromStart = false) {
 
     const titleContainer = document.createElement("div");
     titleContainer.classList.add("title", "headline");
-    const postTitle = hasNoImage ? document.createElement("h2") : document.createElement("h4");
+    const postTitle = hasNoResponsiveImage && !hasThumbnailImage
+      ? document.createElement("h2")
+      : document.createElement("h4");
     titleContainer.appendChild(postTitle);
     const postMeta = document.createElement("div");
     postMeta.classList.add("post-meta", "pv--8");
@@ -960,11 +964,11 @@ async function fetchArticles(fromStart = false) {
     const imageContainer = document.createElement("div");
     imageContainer.classList.add("featured-image");
 
-    if (node.__typename !== "Post" && !hasNoImage) {
+    if (node.__typename !== "Post" && (!hasNoResponsiveImage || hasThumbnailImage)) {
       imageContainer.appendChild(postFormatIcon);
     }
 
-    if (!hasNoImage) {
+    if (!hasNoResponsiveImage || hasThumbnailImage) {
       imageContainer.appendChild(postImage);
       postLink.appendChild(imageContainer);
     } else {
@@ -987,13 +991,19 @@ async function fetchArticles(fromStart = false) {
     postLink.href = node.link;
     postTitle.textContent = node.title;
 
-    if (hasNoImage) {
+    if (hasNoResponsiveImage && !hasThumbnailImage) {
       postImage.src = `${domain}/gql-src/no-image.png`;
       postImage.style.opacity = 0;
       // imageContainer.remove();
     } else {
-      postImage.srcset = node.featuredImage.node.srcSet;
-      postImage.sizes = node.featuredImage.node.sizes;
+      console.log({hasNoResponsiveImage});
+      
+      if (!hasNoResponsiveImage) {
+        postImage.srcset = node.featuredImage.node.srcSet;
+        postImage.sizes = node.featuredImage.node.sizes;
+      } else {
+        postImage.src = node.featuredImage.node.sourceUrl;
+      }
     }
 
     if (!node.byline.nodes.length) {

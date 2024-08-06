@@ -728,6 +728,7 @@ ul.main-menu {
 ul.main-menu li {
   padding: var(--spacing-7) 0;
   position: relative;
+  margin: 0;
 }
 
 ul.main-menu li a {

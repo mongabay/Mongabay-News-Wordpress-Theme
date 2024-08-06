@@ -116,8 +116,12 @@ if (wp_is_mobile()) {
 								<li><a href="<?php echo home_url(); ?>/contact"><?php _e('Contact', 'mongabay'); ?></a></li>
 							</ul>
 							<ul class="footer-links">
-								<li><a href="<?php echo get_donate_link(); ?>"><?php _e('Donate', 'mongabay'); ?></a></li>
-								<li><a href="<?php echo get_subscribe_link(); ?>"><?php _e('Subscribe page', 'mongabay'); ?></a></li>
+								<?php if (function_exists('get_donate_link')) { ?>
+									<li><a href="<?php echo get_donate_link(); ?>"><?php _e('Donate', 'mongabay'); ?></a></li>
+								<?php } ?>
+								<?php if (function_exists('get_subscribe_link')) { ?>
+									<li><a href="<?php echo get_subscribe_link(); ?>"><?php _e('Subscribe page', 'mongabay'); ?></a></li>
+								<?php } ?>
 								<li><a href="<?php echo home_url(); ?>/submissions/"><?php _e('Submissions', 'mongabay'); ?></a></li>
 							</ul>
 							<ul class="footer-links">

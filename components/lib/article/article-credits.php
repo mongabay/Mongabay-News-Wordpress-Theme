@@ -5,8 +5,12 @@ function article_credits(int $post_id)
   $adaptor = get_post_meta($post_id, "adapted_by", true);
   $translated_adapted = get_post_meta($post_id, "translated_adapted", true);
   $job_title = get_the_author_meta('job_title');
+  $is_video_type = get_post_type($post_id) === 'videos';
   $string_title = '';
   $translator_adaptor = null;
+  $$translator_adaptor_slug = null;
+  $translator_adaptor_name = null;
+  $translator_adaptor_id = null;
 ?>
   <div class="container in-column about-editor-translator gap--40 pv--80">
     <div class="section-title gap--16">
@@ -33,7 +37,7 @@ function article_credits(int $post_id)
         </div>
       </div>
       <?php
-      if ($translated_adapted == 'adapted' || $translated_adapted == 'translated') {
+      if (!$is_video_type && ($translated_adapted == 'adapted' || $translated_adapted == 'translated')) {
         if ($translated_adapted == 'adapted' && !empty($adaptor)) {
           $string_title = 'Adaptor';
           $translator_adaptor = $adaptor;
@@ -41,24 +45,32 @@ function article_credits(int $post_id)
           $string_title = 'Translator';
           $translator_adaptor = $translator;
         }
-        $translator_adaptor_slug = $translator_adaptor['slug'];
-        $translator_adaptor_name = $translator_adaptor['name'];
-        $translator_adaptor_id = $translator_adaptor['term_id'];
 
-        $adaptor_avatar = get_term_meta($translator_adaptor_id, 'cover_image_url', true); ?>
+        if ($translator_adaptor) {
+          $translator_adaptor_slug = $translator_adaptor['slug'];
+          $translator_adaptor_name = $translator_adaptor['name'];
+          $translator_adaptor_id = $translator_adaptor['term_id'];
+
+          if ($translator_adaptor_id) {
+            $adaptor_avatar = get_term_meta($translator_adaptor_id, 'cover_image_url', true);
+          }
+        }
+      ?>
         <div class="in-row gap--16">
           <div class="author-avatar">
             <?php
-            if (!empty($adaptor_avatar)) { ?>
+            if ($adaptor_avatar) { ?>
               <img src="<?php echo esc_url($adaptor_avatar); ?>" />
             <?php } else { ?>
               <span class="meta-author-circle"></span>
             <?php } ?>
           </div>
           <div class="extra-info">
-            <a href="<?php echo home_url('/') . 'by/' . $translator_adaptor_slug; ?>">
-              <?php echo $translator_adaptor_name; ?>
-            </a>
+            <?php if ($translator_adaptor_slug && $translator_adaptor_name) { ?>
+              <a href="<?php echo home_url('/') . 'by/' . $translator_adaptor_slug; ?>">
+                <?php echo $translator_adaptor_name; ?>
+              </a>
+            <?php } ?>
             <span><?php _e($string_title, 'mongabay'); ?></span>
           </div>
         </div>
