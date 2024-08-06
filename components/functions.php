@@ -5,9 +5,12 @@ function getPostBylines($post_id)
   return strip_tags(get_the_term_list($post_id, 'byline', '', ', ', ''));
 }
 
+// utils
+include(get_template_directory() . '/components/lib/utils.php');
+
 // article
-include(get_template_directory() . '/components/lib/article/article-headline.php');
 include(get_template_directory() . '/components/lib/article/article-credits.php');
+include(get_template_directory() . '/components/lib/article/article-headline.php');
 include(get_template_directory() . '/components/lib/article/article-bulletpoints.php');
 include(get_template_directory() . '/components/lib/article/article-terms.php');
 include(get_template_directory() . '/components/lib/article/social-share.php');
@@ -39,5 +42,4 @@ include(get_template_directory() . '/components/lib/podcasts-topics-section.php'
 include(get_template_directory() . '/components/lib/specials-latest.php');
 include(get_template_directory() . '/components/lib/post-icon.php');
 include(get_template_directory() . '/components/lib/share-icons-grid.php');
-include(get_template_directory() . '/components/lib/utils.php');
 include(get_template_directory() . '/components/lib/shorts-dialog.php');
