@@ -67,14 +67,14 @@ function social_share()
   $post_title = str_replace(' ', '%20', get_the_title());
 
   $facebookURL = 'https://www.facebook.com/sharer/sharer.php?u=' . $postURL;
-  $xURL = 'https://twitter.com/share?url=' . $postURL . '&title=' . $post_title;
+  // $xURL = 'https://twitter.com/share?url=' . $postURL . '&title=' . $post_title;
   $threadsURL = 'https://threads.net/intent/post?text=' . $post_title . ' ' . $postURL;
   $redditURL = 'https://reddit.com/submit?url=' . $postURL . '&title=' . $post_title;
   $linkedInURL = 'https://www.linkedin.com/shareArticle?mini=true&url=' . $postURL . '&title=' . $post_title;
   $whatsappURL = 'whatsapp://send?text=' . $postURL . '&title=' . $post_title;
 
   $facebook = '<a class="facebook" href="' . $facebookURL . '" target="_blank"><span class="icon-share">' . $icon_facebook . '</span>Facebook</a>';
-  $x = '<a class="x" href="' . $xURL . '" target="_blank"><span class="icon-share">' . $icon_x . '</span>X</a>';
+  // $x = '<a class="x" href="' . $xURL . '" target="_blank"><span class="icon-share">' . $icon_x . '</span>X</a>';
   $threads = '<a class="threads" href="' . $threadsURL . '" target="_blank"><span class="icon-share">' . $icon_threads . '</span>Threads</a>';
   $reddit = '<a class="reddit" href="' . $redditURL . '" target="_blank"><span class="icon-share">' . $icon_reddit . '</span>Reddit</a>';
   $linkedin = '<a class="linkedin" href="' . $linkedInURL . '" target="_blank"><span class="icon-share">' . $icon_linkedin . '</span>Linkedin</a>';
@@ -96,7 +96,7 @@ function social_share()
         <?php
         echo $facebook;
         echo $linkedin;
-        echo $x;
+        // echo $x;
         echo $threads;
         echo $whatsapp;
         echo $reddit;

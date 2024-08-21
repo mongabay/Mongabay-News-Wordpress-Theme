@@ -47,7 +47,7 @@ function share_icons_grid($type)
   $whatsappURL = 'whatsapp://send?text={{shareUrl}}&title={{title}}';
 
   $facebook = '<a class="facebook" href="' . $facebookURL . '" target="_blank"><span class="icon-share">' . $icon_facebook . '</span>Facebook</a>';
-  $x = '<a class="x" href="' . $xURL . '" target="_blank"><span class="icon-share">' . $icon_x . '</span>X</a>';
+  // $x = '<a class="x" href="' . $xURL . '" target="_blank"><span class="icon-share">' . $icon_x . '</span>X</a>';
   $threads = '<a class="threads" href="' . $threadsURL . '" target="_blank"><span class="icon-share">' . $icon_threads . '</span>Threads</a>';
   $reddit = '<a class="reddit" href="' . $redditURL . '" target="_blank"><span class="icon-share">' . $icon_reddit . '</span>Reddit</a>';
   $linkedin = '<a class="linkedin" href="' . $linkedInURL . '" target="_blank"><span class="icon-share">' . $icon_linkedin . '</span>Linkedin</a>';
@@ -72,7 +72,6 @@ function share_icons_grid($type)
       <?php
       echo $facebook
         . $linkedin
-        . $x
         . $threads
         . $whatsapp
         . $reddit
