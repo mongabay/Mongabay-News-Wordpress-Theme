@@ -230,8 +230,8 @@ function mongabay_conditional_scripts()
         wp_register_script('iframeresize', 'https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.1/iframeResizer.min.js', array(), '4.3.1', true);
         wp_enqueue_script('iframeresize');
     }
-
-    if (is_front_page() || is_page(['articles', 'specials', 'videos', 'podcasts', 'features'])) {
+    
+    if (is_front_page() || is_page([__('articles', 'mongabay'), __('specials', 'mongabay'), __('videos', 'mongabay'), __('podcasts', 'mongabay'), __('features', 'mongabay')])) {
         wp_register_style('slick-main', get_template_directory_uri() . '/js/lib/slick/slick.css', array(), '1.8.1', 'all');
         wp_enqueue_style('slick-main');
         wp_register_style('slick-theme', get_template_directory_uri() . '/js/lib/slick/slick-theme.css', array(), '1.8.1', 'all');
@@ -243,7 +243,7 @@ function mongabay_conditional_scripts()
     }
 
     if (is_search() && isset($_GET['s'])) {
-        wp_register_script('search-js', get_stylesheet_directory_uri() . '/js/lib/search.js', array(), '1.0.0', true);
+        wp_register_script('search-js', get_stylesheet_directory_uri() . '/js/lib/search.js', array(), '1.0.1', true);
         wp_enqueue_script('search-js');
     }
 
@@ -286,7 +286,7 @@ function mongabay_featured()
 // Load styles
 function mongabay_styles()
 {
-    wp_register_style('framework', get_template_directory_uri() . '/css/style.css', array(), '1.0', 'all');
+    wp_register_style('framework', get_template_directory_uri() . '/css/style.css', array(), '1.0.1', 'all');
     wp_enqueue_style('framework');
     wp_register_style('icon-fonts', get_template_directory_uri() . '/css/fontello.css', array(), '1.0', 'all');
     wp_enqueue_style('icon-fonts');
