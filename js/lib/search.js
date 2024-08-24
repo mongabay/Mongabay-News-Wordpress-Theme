@@ -996,8 +996,6 @@ async function fetchArticles(fromStart = false) {
       postImage.style.opacity = 0;
       // imageContainer.remove();
     } else {
-      console.log({hasNoResponsiveImage});
-      
       if (!hasNoResponsiveImage) {
         postImage.srcset = node.featuredImage.node.srcSet;
         postImage.sizes = node.featuredImage.node.sizes;
@@ -1009,7 +1007,8 @@ async function fetchArticles(fromStart = false) {
     if (!node.byline.nodes.length) {
       byline.textContent = "";
     } else {
-      byline.textContent = node.byline.nodes[0].name;
+      const bylinesArray = node.byline.nodes.map((byline) => byline.name);
+      byline.textContent = bylinesArray.join(", ");
     }
     postDate.textContent = formatDate(node.date);
     document.getElementById("post-results").appendChild(listItem);

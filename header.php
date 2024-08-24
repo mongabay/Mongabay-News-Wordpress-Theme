@@ -67,12 +67,12 @@ if (wp_is_mobile()) {
 			</div>
 			<div class="menu-container align-center">
 				<ul class="main-menu nav-desktop">
-					<li><a href="<?php echo home_url(); ?>/features" class="<?php echo is_page('Features') ? 'active' : ''; ?>"><?php _e('Features', 'mongabay'); ?></a></li>
-					<li><a href=" <?php echo home_url(); ?>/videos" class="<?php echo is_page('Videos') ? 'active' : ''; ?>"><?php _e('Videos', 'mongabay'); ?></a></li>
-					<li><a href="<?php echo home_url(); ?>/podcasts" class="<?php echo is_page('Podcasts') ? 'active' : ''; ?>"><?php _e('Podcasts', 'mongabay'); ?></a></li>
-					<li><a href=" <?php echo home_url(); ?>/specials" class="<?php echo (is_page('Specials') || is_tax('serial')) ? 'active' : ''; ?>"><?php _e('Specials', 'mongabay'); ?></a></li>
-					<li><a href="<?php echo home_url(); ?>/articles" class="<?php echo is_page('Articles') ? 'active' : ''; ?>"><?php _e('Articles', 'mongabay'); ?></a></li>
-					<li><a href="<?php echo home_url(); ?>/shorts" class="<?php echo is_page('Shorts') ? 'active' : ''; ?>"><?php _e('Shorts', 'mongabay'); ?></a></li>
+					<li><a href="<?php echo home_url(); ?>/<?php echo get_menu_item('features', 'slug'); ?>" class="<?php echo is_page(get_menu_item('features', 'title')) ? 'active' : ''; ?>"><?php echo get_menu_item('features', 'title'); ?></a></li>
+					<li><a href=" <?php echo home_url(); ?>/<?php echo get_menu_item('videos', 'slug'); ?>" class="<?php echo is_page(get_menu_item('videos', 'title')) ? 'active' : ''; ?>"><?php echo get_menu_item('videos', 'title'); ?></a></li>
+					<li><a href="<?php echo home_url(); ?>/<?php echo get_menu_item('podcasts', 'slug'); ?>" class="<?php echo is_page(get_menu_item('podcasts', 'title')) ? 'active' : ''; ?>"><?php echo get_menu_item('podcasts', 'title'); ?></a></li>
+					<li><a href=" <?php echo home_url(); ?>/<?php echo get_menu_item('specials', 'slug'); ?>" class="<?php echo (is_page(get_menu_item('specials', 'title')) || is_tax('serial')) ? 'active' : ''; ?>"><?php echo get_menu_item('specials', 'title'); ?></a></li>
+					<li><a href="<?php echo home_url(); ?>/<?php echo get_menu_item('articles', 'slug'); ?>" class="<?php echo is_page(get_menu_item('articles', 'title')) ? 'active' : ''; ?>"><?php echo get_menu_item('articles', 'title'); ?></a></li>
+					<li><a href="<?php echo home_url(); ?>/<?php echo get_menu_item('shorts', 'slug'); ?>" class="<?php echo is_page(get_menu_item('shorts', 'title')) ? 'active' : ''; ?>"><?php echo get_menu_item('shorts', 'title'); ?></a></li>
 				</ul>
 				<a class="theme--button primary simple md-hide" href="<?php echo get_donate_link(); ?>"><?php _e('Donate', 'mongabay'); ?></a>
 				<a id="theme-switch" class="icon icon-cog"></a>
@@ -100,20 +100,20 @@ if (wp_is_mobile()) {
 						<?php } ?>
 					</div>
 					<ul class="main-menu nav-desktop off-canvas">
-						<li><a href="<?php echo home_url(); ?>/videos"" class=""><?php _e('Videos', 'mongabay'); ?></a></li>
-							<li><a href=" <?php echo home_url(); ?>/podcasts""><?php _e('Podcasts', 'mongabay'); ?></a></li>
-						<li><a href="<?php echo home_url(); ?>/articles"><?php _e('Articles', 'mongabay'); ?></a></li>
-						<li><a href="<?php echo home_url(); ?>/shorts""><?php _e('Short News', 'mongabay'); ?></a></li>
-							<li><a href=" <?php echo home_url(); ?>/features""><?php _e('Feature Stories', 'mongabay'); ?></a></li>
-						<li><a href="<?php echo home_url(); ?>/list/2024"><?php _e('The Latest', 'mongabay'); ?></a></li>
-						<li><a href="<?php echo home_url(); ?>/?s=&formats=post+custom_story+videos+podcasts+specials+short_article"><?php _e('Explore All', 'mongabay'); ?></a></li>
+						<li><a href=" <?php echo home_url(); ?>/<?php echo get_menu_item('videos', 'slug'); ?>"><?php echo get_menu_item('videos', 'title'); ?></a></li>
+						<li><a href=" <?php echo home_url(); ?>/<?php echo get_menu_item('podcasts', 'slug'); ?>"><?php echo get_menu_item('podcasts', 'title'); ?></a></li>
+						<li><a href=" <?php echo home_url(); ?>/<?php echo get_menu_item('articles', 'slug'); ?>"><?php echo get_menu_item('articles', 'title'); ?></a></li>
+						<li><a href=" <?php echo home_url(); ?>/<?php echo get_menu_item('shortnews', 'slug'); ?>"><?php echo get_menu_item('shortnews', 'title'); ?></a></li>
+						<li><a href=" <?php echo home_url(); ?>/<?php echo get_menu_item('featurestories', 'slug'); ?>"><?php echo get_menu_item('featurestories', 'title'); ?></a></li>
+						<li><a href=" <?php echo home_url(); ?>/<?php echo get_menu_item('thelatest', 'slug'); ?>"><?php echo get_menu_item('thelatest', 'title'); ?></a></li>
+						<li><a href=" <?php echo home_url(); ?>/<?php echo get_menu_item('exploreall', 'slug'); ?>"><?php echo get_menu_item('exploreall', 'title'); ?></a></li>
 					</ul>
 					<?php if (!wp_is_mobile()) { ?>
 						<div class="footer gap--20 grid--5">
 							<ul class="footer-links">
-								<li><a href="https://www.mongabay.com/about/"><?php _e('About', 'mongabay'); ?></a></li>
-								<li><a href="<?php echo home_url(); ?>/team"><?php _e('Team', 'mongabay'); ?></a></li>
-								<li><a href="<?php echo home_url(); ?>/contact"><?php _e('Contact', 'mongabay'); ?></a></li>
+								<li><a href="<?php echo get_menu_item('footerabout', 'slug'); ?>"><?php echo get_menu_item('footerabout', 'title'); ?></a></li>
+								<li><a href="<?php echo home_url(); ?>/<?php echo get_menu_item('footerteam', 'slug'); ?>"><?php echo get_menu_item('footerteam', 'title'); ?></a></li>
+								<li><a href="<?php echo home_url(); ?>/<?php echo get_menu_item('footercontact', 'slug'); ?>"><?php echo get_menu_item('footercontact', 'title'); ?></a></li>
 							</ul>
 							<ul class="footer-links">
 								<?php if (function_exists('get_donate_link')) { ?>

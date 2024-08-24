@@ -2,8 +2,8 @@
 function inspiration_banner()
 {
   $post_types = array('videos', 'podcasts', 'post');
-
-  $section = '<div class="section--inspiration full-width"><div class="container ph--40 gap--40"><div class="title column--40"><h1>News and Inspiration from Nature\'s Frontline.</h1></div><div class="column--60">';
+  $title = __("News and Inspiration from Nature's Frontline.", "mongabay");
+  $section = '<div class="section--inspiration full-width"><div class="container ph--40 gap--40"><div class="title column--40"><h1>' . $title . '</h1></div><div class="column--60">';
   $first_row = '<div class="container in-row items">';
   $first_column = '<div class="column--60">';
   $second_column = '<div class="column--40">';
