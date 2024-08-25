@@ -230,7 +230,7 @@ function mongabay_conditional_scripts()
         wp_register_script('iframeresize', 'https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.1/iframeResizer.min.js', array(), '4.3.1', true);
         wp_enqueue_script('iframeresize');
     }
-    
+
     if (is_front_page() || is_page([__('articles', 'mongabay'), __('specials', 'mongabay'), __('videos', 'mongabay'), __('podcasts', 'mongabay'), __('features', 'mongabay')])) {
         wp_register_style('slick-main', get_template_directory_uri() . '/js/lib/slick/slick.css', array(), '1.8.1', 'all');
         wp_enqueue_style('slick-main');
@@ -245,6 +245,34 @@ function mongabay_conditional_scripts()
     if (is_search() && isset($_GET['s'])) {
         wp_register_script('search-js', get_stylesheet_directory_uri() . '/js/lib/search.js', array(), '1.0.1', true);
         wp_enqueue_script('search-js');
+        wp_localize_script('search-js', 'formatOptionsLocal', array(
+            'post'          => array(__('Articles', 'mongabay'), 'POST'),
+            'custom_story'  => array(__('Custom Story', 'mongabay'), 'CUSTOM_STORY'),
+            'short_article' => array(__('Shorts', 'mongabay'), 'SHORT_ARTICLE'),
+            'videos'        => array(__('Video', 'mongabay'), 'VIDEOS'),
+            'podcasts'      => array(__('Podcast', 'mongabay'), 'PODCASTS'),
+            'specials'      => array(__('Specials', 'mongabay'), 'SPECIALS'),
+        ));
+        wp_localize_script('search-js', 'articlesDataLocal', array(
+            0 => array(__('Forests', 'mongabay')),
+            1 => array(__('Wildlife', 'mongabay')),
+            2 => array(__('Oceans', 'mongabay')),
+            3 => array(__('Feature', 'mongabay')),
+        ));
+        wp_localize_script('search-js', 'articlesDataLocal', array(
+            0 => array(__('Forests', 'mongabay')),
+            1 => array(__('Wildlife', 'mongabay')),
+            2 => array(__('Oceans', 'mongabay')),
+            3 => array(__('Feature', 'mongabay')),
+        ));
+        wp_localize_script('search-js', 'topicsDataLocal', array(
+            0 => array(__('Animals', 'mongabay'), __('animals', 'mongabay')),
+            1 => array(__('Forests', 'mongabay'), __('forests', 'mongabay')),
+            2 => array(__('Oceans', 'mongabay'), __('oceans', 'mongabay')),
+            3 => array(__('Conservation', 'mongabay'), __('conservation', 'mongabay')),
+            4 => array(__('Indigenous Peoples', 'mongabay'), __('indigenous-peoples', 'mongabay')),
+        ));
+        wp_localize_script('search-js', 'loadMoreLocal', __('Load more', 'mongabay'));
     }
 
     if (is_page(['contact', 'terms']) && !wp_is_mobile()) {

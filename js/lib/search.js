@@ -15,14 +15,7 @@ let isResultsLoading = false;
 let totalCount;
 let cursor = "";
 
-const formatOptions = {
-  post: ["Articles", "POST"],
-  custom_story: ["Custom Story", "CUSTOM_STORY"],
-  short_article: ["Shorts", "SHORT_ARTICLE"],
-  videos: ["Video", "VIDEOS"],
-  podcasts: ["Podcast", "PODCASTS"],
-  specials: ["Specials", "SPECIALS"],
-};
+const formatOptions = formatOptionsLocal;
 
 const defaultFormatsList = [
   "POST",
@@ -36,20 +29,9 @@ const defaultFormatsList = [
 let selectedFormats = [];
 let featuredOnly = false;
 
-const articlesData = {
-  0: ["Forests"],
-  1: ["Wildlife"],
-  2: ["Oceans"],
-  3: ["Feature"],
-};
+const articlesData = articlesDataLocal;
 
-const topicsData = {
-  0: ["Animals", "animals"],
-  1: ["Forests", "forests"],
-  2: ["Oceans", "oceans"],
-  3: ["Conservation", "conservation"],
-  4: ["Indigenous Peoples", "indigenous-peoples"],
-};
+const topicsData = topicsDataLocal;
 
 const locationsData = {
   0: ["Asia", "asia"],
@@ -912,7 +894,7 @@ async function fetchArticles(fromStart = false) {
       node.featuredImage === null ||
       (!node.featuredImage && !node.featuredImage.node) ||
       node.featuredImage.node.srcSet === null;
-  
+
     const hasThumbnailImage = node.featuredImage && node.featuredImage.node.sourceUrl;
 
     const listItem = document.createElement("div");
@@ -948,9 +930,10 @@ async function fetchArticles(fromStart = false) {
 
     const titleContainer = document.createElement("div");
     titleContainer.classList.add("title", "headline");
-    const postTitle = hasNoResponsiveImage && !hasThumbnailImage
-      ? document.createElement("h2")
-      : document.createElement("h4");
+    const postTitle =
+      hasNoResponsiveImage && !hasThumbnailImage
+        ? document.createElement("h2")
+        : document.createElement("h4");
     titleContainer.appendChild(postTitle);
     const postMeta = document.createElement("div");
     postMeta.classList.add("post-meta", "pv--8");
@@ -1018,7 +1001,7 @@ async function fetchArticles(fromStart = false) {
     cursor = data.contentNodes.pageInfo.endCursor;
     const loadMore = document.createElement("button");
     loadMore.classList.add("load-more", "theme--button", "primary");
-    loadMore.innerHTML = 'Load More<span class="icon icon-right"></span>';
+    loadMore.innerHTML = `${loadMoreLocal}<span class="icon icon-right"></span>`;
     loadMore.addEventListener("click", () => fetchArticles(false));
     resultsFooter.innerHTML = "";
 

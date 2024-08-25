@@ -45,7 +45,7 @@ get_header(); ?>
 
 <div class="section--highlight">
   <div class="container ph--40 pv--80 gap--20 in-column">
-    <h1><?php _e('Quickly stay updated with our news <span>shorts</span>'); ?></h1>
+    <h1><?php _e('Quickly stay updated with our news <span class="icon icon-shorts">shorts</span>', 'mongabay'); ?></h1>
     <div class="grid--3 gap--40">
       <?php articles_listing_condensed('short-article', 6, 0, false, 'medium', null); ?>
     </div>
