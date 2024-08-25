@@ -6,26 +6,26 @@
             <path d="M19.0008 19.0008L13.8038 13.8038M13.8038 13.8038C15.2104 12.3972 16.0006 10.4895 16.0006 8.50028C16.0006 6.51108 15.2104 4.60336 13.8038 3.19678C12.3972 1.79021 10.4895 1 8.50028 1C6.51108 1 4.60336 1.79021 3.19678 3.19678C1.79021 4.60336 1 6.51108 1 8.50028C1 10.4895 1.79021 12.3972 3.19678 13.8038C4.60336 15.2104 6.51108 16.0006 8.50028 16.0006C10.4895 16.0006 12.3972 15.2104 13.8038 13.8038Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
         <div class="search-wrapper">
-            <input type="text" id="searchInput" placeholder="Type to search in any field." autocomplete="off" />
+            <input type="text" id="searchInput" placeholder="<?php _e('Type to search in any field.', 'mongabay'); ?>" autocomplete="off" />
             <div class="search-actions"></div>
         </div>
         <div id="articles-suggestions" class="dropdown hide"></div>
     </div>
     <div class="tax-wrapper">
         <div class="tax-item-wrapper topics">
-            <input type="text" id="searchTopic" placeholder="Topic" />
+            <input type="text" id="searchTopic" placeholder="<?php _e('Topic', 'mongabay'); ?>" />
             <div class="tax-search-actions topic"></div>
             <div id="topics-suggestions" class="dropdown hide"></div>
             <div id="topics-results" class="dropdown hide"></div>
         </div>
         <div class="tax-item-wrapper locations">
-            <input type="text" id="searchLocation" placeholder="Location" onchange="" />
+            <input type="text" id="searchLocation" placeholder="<?php _e('Location', 'mongabay'); ?>" onchange="" />
             <div class="tax-search-actions location"></div>
             <div id="locations-suggestions" class="dropdown hide"></div>
             <div id="locations-results" class="dropdown hide"></div>
         </div>
         <div class="tax-item-wrapper format">
-            <input type="text" id="searchFormat" placeholder="Format" onchange="" />
+            <input type="text" id="searchFormat" placeholder="<?php _e('Format', 'mongabay'); ?>" onchange="" />
             <div class="tax-search-actions format"></div>
             <div id="formats-suggestions" class="dropdown hide"></div>
             <div id="formats-results" class="dropdown hide"></div>
