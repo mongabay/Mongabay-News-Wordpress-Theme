@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-08-07 20:55+0200\n"
-"PO-Revision-Date: 2024-08-24 20:34+0200\n"
+"PO-Revision-Date: 2024-08-25 22:53+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_ES\n"
@@ -116,8 +116,7 @@ msgid "Articles"
 msgstr "Artículos"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:38
-#: Mongabay-News-Wordpress-Theme/footer.php:16
-#: Mongabay-News-Wordpress-Theme/functions.php:254
+#: Mongabay-News-Wordpress-Theme/footer.php:16 Mongabay-News-Wordpress-Theme/functions.php:254
 msgid "Specials"
 msgstr "Especiales"
 
@@ -131,11 +130,48 @@ msgstr "Bosques"
 msgid "Wildlife"
 msgstr "Vida silvestre"
 
+#: Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:40
+#: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:59
+msgid "wildlife"
+msgstr "vida-silvestre"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:270
+#: Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:40
+#: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:59
+msgid "forests"
+msgstr "bosques"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:59
+msgid "indigenous-peoples"
+msgstr "pueblos-indigenas"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:59
+msgid "agroecology"
+msgstr "agroecologia"
+
 #: Mongabay-News-Wordpress-Theme/functions.php:259
 #: Mongabay-News-Wordpress-Theme/functions.php:265
 #: Mongabay-News-Wordpress-Theme/functions.php:271
 msgid "Oceans"
 msgstr "Océanos"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:40
+#: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:59
+msgid "oceans"
+msgstr "oceanos"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:40
+msgid "climate"
+msgstr "climatico"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:40
+msgid "conservation-solutions"
+msgstr "soluciones-de-conservacion"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:46
+#: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:65
+msgid "all topics"
+msgstr "todos los temas"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:260
 msgid "Feature"
@@ -1048,13 +1084,13 @@ msgstr "Explora videos sobre temas como"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:26
 msgid "Features"
-msgstr "Investigaciones"
+msgstr "Historias destacadas"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:27
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:67
 #: Mongabay-News-Wordpress-Theme/functions.php:234
 msgid "features"
-msgstr "investigaciones"
+msgstr "historias-destacadas"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:31
 #: Mongabay-News-Wordpress-Theme/functions.php:234
@@ -1073,6 +1109,7 @@ msgstr "especiales"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:43
 #: Mongabay-News-Wordpress-Theme/functions.php:234
+#: Mongabay-News-Wordpress-Theme/lib/components/banners/inspiration-banner.php:38
 msgid "articles"
 msgstr "articulos"
 

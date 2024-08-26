@@ -29,13 +29,13 @@ function inspiration_banner()
 
         if ($type === 'videos') {
           $has_videos = true;
-          $first_column .= '<div class="item-container first"><a href="' . get_permalink() . '">' . get_the_post_thumbnail(get_the_ID(), 'medium') . '</a><div class="item-title"><span class="icon-play"></span><a href="' . home_url() . '/videos">Videos</a></div></div>';
+          $first_column .= '<div class="item-container first"><a href="' . get_permalink() . '">' . get_the_post_thumbnail(get_the_ID(), 'medium') . '</a><div class="item-title"><span class="icon-play"></span><a href="' . home_url() . '/videos">' . __('Videos', 'mongabay') . '</a></div></div>';
         } elseif ($type === 'podcasts') {
           $has_podcasts = true;
-          $second_row .= '<div class="item-container third"><a href="' . get_permalink() . '">' . get_the_post_thumbnail(get_the_ID(), 'medium') . '</a><div class="item-title podcast"><span class="icon-audio"></span><a href="' . home_url() . '/podcasts">Podcasts</a></div></div>';
+          $second_row .= '<div class="item-container third"><a href="' . get_permalink() . '">' . get_the_post_thumbnail(get_the_ID(), 'medium') . '</a><div class="item-title podcast"><span class="icon-audio"></span><a href="' . home_url() . '/podcasts">' . __('Podcasts', 'mongabay') . '</a></div></div>';
         } elseif ($type === 'post') {
           $has_articles = true;
-          $second_column .= '<div class="item-container second"><a href="' . get_permalink() . '">' . get_the_post_thumbnail(get_the_ID(), 'medium') . '</a><div class="item-title articles"><span class="icon-articles"></span><a href="' . home_url() . '/articles">Articles</a></div></div>';
+          $second_column .= '<div class="item-container second"><a href="' . get_permalink() . '">' . get_the_post_thumbnail(get_the_ID(), 'medium') . '</a><div class="item-title articles"><span class="icon-articles"></span><a href="' . home_url() . '/' . __('articles', 'mongabay') . '">' . __('Articles', 'mongabay') . '</a></div></div>';
         }
       };
 
