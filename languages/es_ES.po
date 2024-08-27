@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-08-07 20:55+0200\n"
-"PO-Revision-Date: 2024-08-25 22:53+0200\n"
+"PO-Revision-Date: 2024-08-26 11:13+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_ES\n"
@@ -80,12 +80,12 @@ msgstr "Los comentarios están cerrados aquí."
 
 #: Mongabay-News-Wordpress-Theme/featured-page.php:34
 msgid "Latest features"
-msgstr "Últimas investigaciones"
+msgstr "Últimas historias destacadas"
 
 #: Mongabay-News-Wordpress-Theme/featured-page.php:35
 #: Mongabay-News-Wordpress-Theme/featured-page.php:49
 msgid "All features"
-msgstr "Todas las investigaciones"
+msgstr "Todas las historias destacadas"
 
 #: Mongabay-News-Wordpress-Theme/footer.php:9
 msgid "News formats"
@@ -376,8 +376,7 @@ msgstr ""
 #: Mongabay-News-Wordpress-Theme/landing-page.php:69
 #: Mongabay-News-Wordpress-Theme/articles-page.php:48
 msgid "Quickly stay updated with our news <span class=\"icon icon-shorts\">shorts</span>"
-msgstr ""
-"Mantente al día con nuestras noticias <span class=\"icon icon-shorts\">En corto</span>"
+msgstr "Mantente al día con nuestras noticias <span class=\"icon icon-shorts\">En corto</span>"
 
 #: Mongabay-News-Wordpress-Theme/page.php:15
 #: Mongabay-News-Wordpress-Theme/single-custom-story.php:28
@@ -457,8 +456,8 @@ msgstr "Transcripción"
 #: Mongabay-News-Wordpress-Theme/single-podcasts.php:47
 #: Mongabay-News-Wordpress-Theme/single-videos.php:45
 msgid ""
-"Notice: Transcripts are machine and human generated and lightly edited for accuracy. They "
-"may contain errors."
+"Notice: Transcripts are machine and human generated and lightly edited for accuracy. They may "
+"contain errors."
 msgstr ""
 "Aviso: Las transcripciones son generadas automÃ¡ticamente y ligeramente editadas para "
 "garantizar su precisiÃ³n. Pueden presentar errores."
@@ -586,8 +585,8 @@ msgid ""
 "conservation and development."
 msgstr ""
 "Mongabay no sólo busca incrementar el interés y el reconocimiento de la naturaleza, sino "
-"también investigar el impacto de las nuevas tendencias climáticas, tecnológicas, económicas "
-"y financieras en la conservación y el desarrollo."
+"también investigar el impacto de las nuevas tendencias climáticas, tecnológicas, económicas y "
+"financieras en la conservación y el desarrollo."
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:7
 msgctxt "Post type general name"
@@ -1042,8 +1041,7 @@ msgstr "Nosotros somos una caridad"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:18
 msgid "Help us tell impactful stories of biodiversity loss, climate change, and more"
-msgstr ""
-"Ayúdenos a contar historias impactantes sobre biodiversidad, el cambio climático y más"
+msgstr "Ayúdenos a contar historias impactantes sobre biodiversidad, el cambio climático y más"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:22
 msgid "Newsletter"
@@ -1060,6 +1058,12 @@ msgstr "Los artículos destacados revelan contexto y conocimientos"
 #: Mongabay-News-Wordpress-Theme/components/lib/sliders/formats-slider.php:6
 msgid "Listen to Nature with thought-provoking podcasts"
 msgstr "Escuche la naturaleza con maravillosos podcasts"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/banners/podcasts-banner.php:15
+msgid ""
+"Listen to Nature with thought-provoking <span class=\"icon icon-podcast\">podcasts</span>"
+msgstr ""
+"Escuche la naturaleza con maravillosos <span class=\"icon icon-podcast\">podcasts</span>"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/sliders/formats-slider.php:6
 msgid "Watch unique videos that cut through the noise"
