@@ -12,7 +12,7 @@ function podcasts_banner()
   while ($query->have_posts()) {
     $query->the_post(); ?>
     <div class="container in-column gap--40">
-      <h1>Listen to Nature with thought-provoking <span class="icon icon-podcast">podcasts</span></h1>
+      <h1><?php _e('Listen to Nature with thought-provoking <span class="icon icon-podcast">podcasts</span>', 'mongabay'); ?></h1>
       <div class="in-column gap--20">
 
         <div class="full-width sound-wave">
