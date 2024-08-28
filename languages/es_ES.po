@@ -349,7 +349,7 @@ msgstr "No hay publicaciones antiguas"
 #: Mongabay-News-Wordpress-Theme/components/lib/lists/articles-listing.php:53
 #: Mongabay-News-Wordpress-Theme/components/lib/sliders/featured-articles-slider.php:36
 msgid "Feature story"
-msgstr "Historia destacada"
+msgstr "Historias destacadas"
 
 #: Mongabay-News-Wordpress-Theme/header.php:123
 msgid "Subscribe page"
@@ -565,6 +565,10 @@ msgstr "Cubrimos las <span>historias ambientales</span> más importantes de Lati
 #: Mongabay-News-Wordpress-Theme/components/lib/sliders/specials-slider.php:58
 msgid "No posts found"
 msgstr "No se encontraron publicaciones"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/sliders/specials-slider.php:6
+msgid "Special Issues connect the dots between stories"
+msgstr "Los especiales conectan los puntos entre las historias"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/sliders/related-articles-slider.php:49
 msgid "Related Articles"
