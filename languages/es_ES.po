@@ -175,7 +175,7 @@ msgstr "todos los temas"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:260
 msgid "Feature"
-msgstr "Investigación"
+msgstr "Destacada"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:272
 msgid "Conservation"
@@ -192,7 +192,7 @@ msgstr "En corto"
 #: Mongabay-News-Wordpress-Theme/footer.php:18
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:66
 msgid "Feature Stories"
-msgstr "Investigaciones"
+msgstr "Historias destacadas"
 
 #: Mongabay-News-Wordpress-Theme/footer.php:19
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:70
@@ -349,7 +349,7 @@ msgstr "No hay publicaciones antiguas"
 #: Mongabay-News-Wordpress-Theme/components/lib/lists/articles-listing.php:53
 #: Mongabay-News-Wordpress-Theme/components/lib/sliders/featured-articles-slider.php:36
 msgid "Feature story"
-msgstr "Investigación"
+msgstr "Historia destacada"
 
 #: Mongabay-News-Wordpress-Theme/header.php:123
 msgid "Subscribe page"
@@ -410,7 +410,7 @@ msgstr "Formato"
 
 #: Mongabay-News-Wordpress-Theme/search.php:37
 msgid "Featured only"
-msgstr "Solo investigaciones"
+msgstr "Solo historias destacadas"
 
 #: Mongabay-News-Wordpress-Theme/search.php:41
 msgid "Try out our suggestions"
@@ -430,7 +430,7 @@ msgstr "Podcasts sobre conservación"
 
 #: Mongabay-News-Wordpress-Theme/search.php:46 Mongabay-News-Wordpress-Theme/search.php:55
 msgid "Ocean Specials"
-msgstr "Investigaciones sobre océanos"
+msgstr "Especiales sobre océanos"
 
 #: Mongabay-News-Wordpress-Theme/searchform.php:4
 msgid "To search, type and hit enter."
@@ -1025,11 +1025,11 @@ msgstr "Suscríbete"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:14
 msgid "Free and open access to credible information"
-msgstr "Acceso libre y abierto a la información ambiental"
+msgstr "Acceso libre y independiente a periodismo ambiental independiente"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:18
 msgid "Stay informed with news and inspiration from nature’s frontline."
-msgstr "Manténgase informado con noticias e inspiración de la primera línea de la naturaleza."
+msgstr "Noticias e inspiración de la primera línea de la naturaleza."
 
 #: Mongabay-News-Wordpress-Theme/components/lib/banners/inspiration-banner.php:5
 msgid "News and Inspiration from Nature's Frontline."
@@ -1045,7 +1045,7 @@ msgstr "Ayúdenos a contar historias impactantes sobre biodiversidad, el cambio 
 
 #: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:22
 msgid "Newsletter"
-msgstr "El boletín"
+msgstr "Newsletter"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:22
 msgid "Learn more"
