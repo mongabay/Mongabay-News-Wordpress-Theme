@@ -33,7 +33,7 @@ function article_headline()
         <div class="extra-info">
           <span class="bylines"><?php echo get_the_term_list($post_id, 'byline', '', ', ', ''); ?></span>
           <div class="post-meta">
-            <span class="date"><?php get_the_time('j M Y'); ?></span>
+            <span class="date"><?php echo get_the_time('j M Y'); ?></span>
             <?php if (!empty($location_terms)) {
               echo '<span class="taxonomy">';
               echo '<a href="' . home_url() . '/location/' . $location_terms[0]->slug . '">' . $location_terms[0]->name . '</a>';
