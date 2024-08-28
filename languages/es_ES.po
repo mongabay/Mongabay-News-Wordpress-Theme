@@ -168,7 +168,7 @@ msgstr "climatico"
 msgid "conservation-solutions"
 msgstr "soluciones-de-conservacion"
 
-#: Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:46
+#: Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:40
 #: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:65
 msgid "all topics"
 msgstr "todos los temas"
@@ -1085,10 +1085,6 @@ msgstr "Explora el periodismo emprendedor sobre"
 #: Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:36
 msgid "Explore podcasts about"
 msgstr "Explora podcasts sobre"
-
-#: Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:36
-msgid "all topics"
-msgstr "todos los temas"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:55
 msgid "Explore videos about topics like"
