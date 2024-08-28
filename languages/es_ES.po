@@ -1025,7 +1025,7 @@ msgstr "Suscríbete"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:14
 msgid "Free and open access to credible information"
-msgstr "Acceso libre y independiente a periodismo ambiental independiente"
+msgstr "Acceso libre y abierto a periodismo ambiental independiente"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:18
 msgid "Stay informed with news and inspiration from nature’s frontline."
@@ -1033,7 +1033,7 @@ msgstr "Noticias e inspiración de la primera línea de la naturaleza."
 
 #: Mongabay-News-Wordpress-Theme/components/lib/banners/inspiration-banner.php:5
 msgid "News and Inspiration from Nature's Frontline."
-msgstr "Manténgase informado con noticias e inspiración de la primera línea de la naturaleza."
+msgstr "Noticias e inspiración de la primera línea de la naturaleza."
 
 #: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:14
 msgid "We’re a nonprofit"
