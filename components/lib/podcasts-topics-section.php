@@ -43,7 +43,7 @@ function podcasts_topics_section(string $headline, array $topics, array $extra_p
             }
           }
           ?>
-          <span class="outlined"><a href="<?php echo $link_url; ?>"><?php echo $link_copy; ?><span class="icon icon-right"></span></a></span>
+          <span class="outlined"><a href="<?php echo $link_url; ?>"><?php _e($link_copy, 'mongabay'); ?><span class="icon icon-right"></span></a></span>
         </h1>
       </div>
     </div>
