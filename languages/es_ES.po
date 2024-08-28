@@ -1090,6 +1090,10 @@ msgstr "Explora podcasts sobre"
 msgid "Explore videos about topics like"
 msgstr "Explora videos sobre temas como"
 
+#: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:65
+msgid "all stories"
+msgstr "all stories"
+
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:26
 msgid "Features"
 msgstr "Historias destacadas"
