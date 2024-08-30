@@ -825,11 +825,11 @@ async function fetchArticles(fromStart = false) {
     const hasTopics = selectedTopics.length > 0;
     const hasLocations = selectedLocations.length > 0;
 
-    // resultsRSS.href = `${domain}/?feed=custom&s=${searchValue}&post_type=${
-    // selectedFormats === "special" ? "post" : selectedFormats
-    //}${hasTopics ? `&topic=${selectedTopics.join(",")}` : ""}${
-    //hasLocations ? `&location=${selectedLocations.join(",")}` : ""
-    //}`;
+    resultsRSS.href = `${domain}/?feed=custom&s=${searchValue}&post_type=${
+      selectedFormats === "special" ? "post" : selectedFormats
+    }${hasTopics ? `&topic=${selectedTopics.join(",")}` : ""}${
+      hasLocations ? `&location=${selectedLocations.join(",")}` : ""
+    }`;
     resultsRSS.target = "_blank";
 
     resultsHeader.id = "results-header";

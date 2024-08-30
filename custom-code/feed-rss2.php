@@ -8,7 +8,7 @@ header('Access-Control-Allow-Origin: *');
 header('Content-Type: ' . feed_content_type('rss-http') . '; charset=' . get_option('blog_charset'), true);
 $more = 1;
 $type = get_query_var('feedtype');
-
+$format = get_query_var('post_type');
 
 echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>';
 
@@ -80,7 +80,14 @@ do_action( 'rss_tag_pre', 'rss2' );
 	 */
 	do_action( 'rss2_head');
 
-	while( have_posts()) : the_post();
+	$args = array();
+
+	if ( $format) {
+		$args['post_type'] = $format;
+	};
+
+	$query = new WP_Query($args);
+	while ($query->have_posts()) : $query->the_post();
 	?>
 	<item>
 		<title><?php the_title_rss() ?></title>
