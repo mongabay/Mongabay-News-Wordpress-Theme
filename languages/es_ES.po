@@ -9,14 +9,14 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-08-07 20:55+0200\n"
-"PO-Revision-Date: 2024-08-26 11:13+0200\n"
+"PO-Revision-Date: 2024-08-30 22:40+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.4.4\n"
+"X-Generator: Poedit 3.5\n"
 
 #: Mongabay-News-Wordpress-Theme/404.php:5
 msgid "Page not found"
@@ -120,6 +120,10 @@ msgstr "Artículos"
 msgid "Specials"
 msgstr "Especiales"
 
+#: Mongabay-News-Wordpress-Theme/functions.php:269
+msgid "Animals"
+msgstr "Animales"
+
 #: Mongabay-News-Wordpress-Theme/functions.php:257
 #: Mongabay-News-Wordpress-Theme/functions.php:263
 #: Mongabay-News-Wordpress-Theme/functions.php:270
@@ -132,12 +136,14 @@ msgstr "Vida silvestre"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:40
 #: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:59
+#: Mongabay-News-Wordpress-Theme/search.php:44 Mongabay-News-Wordpress-Theme/search.php:53
 msgid "wildlife"
 msgstr "vida-silvestre"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:270
 #: Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:40
 #: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:59
+#: Mongabay-News-Wordpress-Theme/search.php:43 Mongabay-News-Wordpress-Theme/search.php:52
 msgid "forests"
 msgstr "bosques"
 
@@ -157,6 +163,7 @@ msgstr "Océanos"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:40
 #: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:59
+#: Mongabay-News-Wordpress-Theme/search.php:46 Mongabay-News-Wordpress-Theme/search.php:55
 msgid "oceans"
 msgstr "oceanos"
 
@@ -180,6 +187,10 @@ msgstr "Destacada"
 #: Mongabay-News-Wordpress-Theme/functions.php:272
 msgid "Conservation"
 msgstr "Conservación"
+
+#: Mongabay-News-Wordpress-Theme/search.php:45 Mongabay-News-Wordpress-Theme/search.php:54
+msgid "conservation"
+msgstr "conservacion"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:273
 msgid "Indigenous Peoples"
@@ -306,7 +317,7 @@ msgstr "Widget de estadísticas"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:685
 msgid "Stats page sidebar widgets should be placed here."
-msgstr "Los widgets de la barra lateral de la pÃ¡gina de estadÃ­sticas deben colocarse aquÃ­"
+msgstr "Los widgets de la barra lateral de la página de estadísticas deben colocarse aquí."
 
 #: Mongabay-News-Wordpress-Theme/functions.php:729
 #: Mongabay-News-Wordpress-Theme/functions.php:739
@@ -951,7 +962,7 @@ msgstr "Elegir entre las series más utilizadas"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-serial.php:21
 msgid "No serials found."
-msgstr "No se han encontrado series"
+msgstr "No se han encontrado series."
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-serial.php:22
 msgid "Serial"
@@ -1009,7 +1020,7 @@ msgstr "Elegir entre los temas más utilizados"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-topic.php:20
 msgid "No topics found."
-msgstr "No se han encontrado temas"
+msgstr "No se han encontrado temas."
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-topic.php:21
 msgid "Topic"
@@ -1021,7 +1032,7 @@ msgstr "Más reciente"
 
 #: Mongabay-News-Wordpress-Theme/templates/taxonomy-specials.php:23
 msgid " News"
-msgstr "Noticias"
+msgstr " Noticias"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:14
 msgid "Subscribe"
