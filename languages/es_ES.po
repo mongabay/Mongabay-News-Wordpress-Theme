@@ -589,6 +589,10 @@ msgstr "Artículos relacionados"
 msgid "More specials"
 msgstr "Más especiales"
 
+#: Mongabay-News-Wordpress-Theme/components/lib/sliders/series-articles-slider.php:55
+msgid "<span class=\"icon icon-specials\">Special issues</span> connect the dots between stories"
+msgstr "<span class=\"icon icon-specials\">Los especiales</span> conectan los puntos entre las historias"
+
 #: Mongabay-News-Wordpress-Theme/components/lib/sliders/tools-slider.php:7
 msgid "Interested in other Mongabay websites?"
 msgstr "¿Interesado en otros sitios web de Mongabay?"
