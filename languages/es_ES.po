@@ -219,6 +219,8 @@ msgstr "Contacto"
 #: Mongabay-News-Wordpress-Theme/footer.php:30 Mongabay-News-Wordpress-Theme/header.php:77
 #: Mongabay-News-Wordpress-Theme/header.php:120
 #: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:22
+#: Mongabay-News-Wordpress-Theme/components/podcasts-page.php:37
+#: Mongabay-News-Wordpress-Theme/components/lib/videos-latest.php:64
 msgid "Donate"
 msgstr "Donar"
 
@@ -1047,6 +1049,7 @@ msgid "Free and open access to credible information"
 msgstr "Acceso libre y abierto a periodismo ambiental independiente"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:18
+#: Mongabay-News-Wordpress-Theme/components/lib/videos-latest.php:74
 msgid "Stay informed with news and inspiration from nature’s frontline."
 msgstr "Noticias e inspiración de la primera línea de la naturaleza."
 
@@ -1055,14 +1058,19 @@ msgid "News and Inspiration from Nature's Frontline."
 msgstr "Noticias e inspiración de la primera línea de la naturaleza."
 
 #: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:14
+#: Mongabay-News-Wordpress-Theme/components/podcasts-page.php:31
+#: Mongabay-News-Wordpress-Theme/components/lib/videos-latest.php:61
 msgid "We’re a nonprofit"
 msgstr "Nosotros somos una caridad"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:18
+#: Mongabay-News-Wordpress-Theme/components/podcasts-page.php:34
+#: Mongabay-News-Wordpress-Theme/components/lib/videos-latest.php:63
 msgid "Help us tell impactful stories of biodiversity loss, climate change, and more"
 msgstr "Ayúdenos a contar historias impactantes sobre biodiversidad, el cambio climático y más"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:22
+#: Mongabay-News-Wordpress-Theme/components/lib/videos-latest.php:75
 msgid "Newsletter"
 msgstr "Newsletter"
 

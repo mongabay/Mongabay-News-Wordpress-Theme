@@ -58,10 +58,10 @@ function videos_latest()
       <div class="banner gap--20 accent ph--20 pv--20">
         <div class="inner">
           <div class="title">
-            <h1 class="lh--tight">We’re a nonprofit</h1>
+            <h1 class="lh--tight">' . __('We’re a nonprofit', 'mongabay') . '</h1>
           </div>
-            <div class="copy">Help us tell impactful stories of biodiversity loss, climate change, and more</div>
-          <a href="'.get_donate_link().'" class="theme--button primary full-width">Donate<span class="icon icon-right"></span>
+            <div class="copy">' . __('Help us tell impactful stories of biodiversity loss, climate change, and more', 'mongabay') . '</div>
+          <a href="' . get_donate_link() . '" class="theme--button primary full-width">' . __('Donate', 'mongabay') . '<span class="icon icon-right"></span>
           </a>
         </div>
       </div>';
@@ -71,8 +71,8 @@ function videos_latest()
           <div class="title">
             <h1>Subscribe</h1>
           </div>
-            <div class="copy">Stay informed with news and inspiration from nature’s frontline.</div>
-          <a href="'.get_subscribe_link().'" class="theme--button primary full-width">Newsletter<span class="icon icon-right"></span>
+            <div class="copy">' . __('Stay informed with news and inspiration from nature’s frontline.', 'mongabay') . '</div>
+          <a href="' . get_subscribe_link() . '" class="theme--button primary full-width">' . __('Newsletter', 'mongabay') . '<span class="icon icon-right"></span>
           </a>
         </div>
       </div>
