@@ -149,11 +149,11 @@ msgstr "bosques"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:59
 msgid "indigenous-peoples"
-msgstr "pueblos-indigenas"
+msgstr "pueblos-indígenas"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:59
 msgid "agroecology"
-msgstr "agroecologia"
+msgstr "agroecología"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:259
 #: Mongabay-News-Wordpress-Theme/functions.php:265
@@ -165,7 +165,7 @@ msgstr "Océanos"
 #: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:59
 #: Mongabay-News-Wordpress-Theme/search.php:46 Mongabay-News-Wordpress-Theme/search.php:55
 msgid "oceans"
-msgstr "oceanos"
+msgstr "océanos"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:40
 msgid "climate"
@@ -178,7 +178,7 @@ msgstr "soluciones-de-conservacion"
 #: Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:46
 #: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:65
 msgid "all topics"
-msgstr "todos los temas"
+msgstr "Más temas"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:260
 msgid "Feature"
@@ -190,7 +190,7 @@ msgstr "Conservación"
 
 #: Mongabay-News-Wordpress-Theme/search.php:45 Mongabay-News-Wordpress-Theme/search.php:54
 msgid "conservation"
-msgstr "conservacion"
+msgstr "conservación"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:273
 msgid "Indigenous Peoples"
@@ -581,7 +581,7 @@ msgstr "No se encontraron publicaciones"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/sliders/specials-slider.php:6
 msgid "Special Issues connect the dots between stories"
-msgstr "Los especiales conectan los puntos entre las historias"
+msgstr "Explora los especiales que conectan las historias más complejas"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/sliders/related-articles-slider.php:49
 msgid "Related Articles"
@@ -593,7 +593,7 @@ msgstr "Más especiales"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/sliders/series-articles-slider.php:55
 msgid "<span class=\"icon icon-specials\">Special issues</span> connect the dots between stories"
-msgstr "<span class=\"icon icon-specials\">Los especiales</span> conectan los puntos entre las historias"
+msgstr "<span class=\"icon icon-specials\">Los especiales</span> que conectan las historias más complejas"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/sliders/tools-slider.php:7
 msgid "Interested in other Mongabay websites?"
@@ -1046,28 +1046,28 @@ msgstr "Suscríbete"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:14
 msgid "Free and open access to credible information"
-msgstr "Acceso libre y abierto a periodismo ambiental independiente"
+msgstr "Acceso libre a información de calidad"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:18
 #: Mongabay-News-Wordpress-Theme/components/lib/videos-latest.php:74
 msgid "Stay informed with news and inspiration from nature’s frontline."
-msgstr "Noticias e inspiración de la primera línea de la naturaleza."
+msgstr "Noticias e inspiración desde lo más profundo de la naturaleza."
 
 #: Mongabay-News-Wordpress-Theme/components/lib/banners/inspiration-banner.php:5
 msgid "News and Inspiration from Nature's Frontline."
-msgstr "Noticias e inspiración de la primera línea de la naturaleza."
+msgstr "Noticias e inspiración desde lo más profundo de la naturaleza."
 
 #: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:14
 #: Mongabay-News-Wordpress-Theme/components/podcasts-page.php:31
 #: Mongabay-News-Wordpress-Theme/components/lib/videos-latest.php:61
 msgid "We’re a nonprofit"
-msgstr "Nosotros somos una caridad"
+msgstr "Somos una organización sin fines de lucro"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:18
 #: Mongabay-News-Wordpress-Theme/components/podcasts-page.php:34
 #: Mongabay-News-Wordpress-Theme/components/lib/videos-latest.php:63
 msgid "Help us tell impactful stories of biodiversity loss, climate change, and more"
-msgstr "Ayúdenos a contar historias impactantes sobre biodiversidad, el cambio climático y más"
+msgstr "Ayúdanos a contar historias de impacto sobre biodiversidad, cambio climático y más"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:22
 #: Mongabay-News-Wordpress-Theme/components/lib/videos-latest.php:75
@@ -1080,29 +1080,29 @@ msgstr "Más información"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/sliders/formats-slider.php:6
 msgid "In-depth feature stories reveal context and insight"
-msgstr "Los artículos destacados revelan contexto y conocimientos"
+msgstr "Cubrimos las historias ambientales más importantes de Latinoamérica"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/sliders/formats-slider.php:6
 msgid "Listen to Nature with thought-provoking podcasts"
-msgstr "Escuche la naturaleza con maravillosos podcasts"
+msgstr "Escucha los podcasts que te acercan a la naturaleza"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/banners/podcasts-banner.php:15
 msgid ""
 "Listen to Nature with thought-provoking <span class=\"icon icon-podcast\">podcasts</span>"
 msgstr ""
-"Escuche la naturaleza con maravillosos <span class=\"icon icon-podcast\">podcasts</span>"
+"Escucha los naturaleza <span class=\"icon icon-podcast\">podcasts</span> que te acercan a la naturaleza"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/sliders/formats-slider.php:6
 msgid "Watch unique videos that cut through the noise"
-msgstr "Vea videos únicos que se destacan entre el resto"
+msgstr "Mira los videos más importantes de nuestra cobertura"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:55
 msgid "Read articles on topics such as"
-msgstr "Lea artículos sobre temas como"
+msgstr "Lee más artículos sobre"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:55
 msgid "Explore enterprising journalism about"
-msgstr "Explora el periodismo emprendedor sobre"
+msgstr "Explora más historias sobre"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:55
 #: Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:36
@@ -1111,7 +1111,7 @@ msgstr "Explora podcasts sobre"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:55
 msgid "Explore videos about topics like"
-msgstr "Explora videos sobre temas como"
+msgstr "Explora más videos sobre"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:65
 msgid "all stories"
@@ -1119,13 +1119,13 @@ msgstr "all stories"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:26
 msgid "Features"
-msgstr "Historias destacadas"
+msgstr "Destacadas"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:27
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:67
 #: Mongabay-News-Wordpress-Theme/functions.php:234
 msgid "features"
-msgstr "historias-destacadas"
+msgstr "destacadas"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:31
 #: Mongabay-News-Wordpress-Theme/functions.php:234
