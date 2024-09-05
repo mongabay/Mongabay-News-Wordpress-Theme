@@ -149,11 +149,11 @@ msgstr "bosques"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:59
 msgid "indigenous-peoples"
-msgstr "pueblos-indígenas"
+msgstr "pueblos-indigenas"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:59
 msgid "agroecology"
-msgstr "agroecología"
+msgstr "agroecologia"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:259
 #: Mongabay-News-Wordpress-Theme/functions.php:265
@@ -165,7 +165,7 @@ msgstr "Océanos"
 #: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:59
 #: Mongabay-News-Wordpress-Theme/search.php:46 Mongabay-News-Wordpress-Theme/search.php:55
 msgid "oceans"
-msgstr "océanos"
+msgstr "oceanos"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:40
 msgid "climate"
@@ -190,7 +190,7 @@ msgstr "Conservación"
 
 #: Mongabay-News-Wordpress-Theme/search.php:45 Mongabay-News-Wordpress-Theme/search.php:54
 msgid "conservation"
-msgstr "conservación"
+msgstr "conservacion"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:273
 msgid "Indigenous Peoples"
