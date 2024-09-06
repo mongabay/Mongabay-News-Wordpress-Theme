@@ -43,8 +43,8 @@ get_header();
 		<?php banner(home_url() . '/about', 'Free and open access to credible information', '', 'Learn more', 'accent full-width pv--56 ph--20 gap--32', 'extra-large', ''); ?>
 	</div>
 
-	<div class="section--highlight container full-width pv--40">
-		<?php podcasts_banner(); ?>
+	<div class="<?php echo get_enabled_features('podcasts') ? 'section--highlight ' : ''; ?>container full-width pv--40">
+		<?php podcasts_banner(get_enabled_features('podcasts')); ?>
 	</div>
 
 	<div class="container in-column pv--80 gap--40">
