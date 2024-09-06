@@ -105,7 +105,7 @@ function get_enabled_features($feature)
     25 => array(
       'podcasts' => false,
       'videos' => true,
-      'specials' => true,
+      'specials' => false,
       'shorts' => false,
     ),
     26 => array(

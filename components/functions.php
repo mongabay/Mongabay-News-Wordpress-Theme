@@ -15,6 +15,7 @@ include(get_template_directory() . '/components/lib/article/article-bulletpoints
 include(get_template_directory() . '/components/lib/article/article-terms.php');
 include(get_template_directory() . '/components/lib/article/social-share.php');
 include(get_template_directory() . '/components/lib/article/shorts-article-card.php');
+include(get_template_directory() . '/components/lib/article/article-card.php');
 
 // banners
 include(get_template_directory() . '/components/lib/banners/banner.php');
