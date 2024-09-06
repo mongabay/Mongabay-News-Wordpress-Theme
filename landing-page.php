@@ -44,7 +44,7 @@ get_header();
 	</div>
 
 	<div class="section--highlight container full-width pv--40">
-		<?php podcasts_banner(); ?>
+		<?php podcasts_banner(get_enabled_features('podcasts')); ?>
 	</div>
 
 	<div class="container in-column pv--80 gap--40">

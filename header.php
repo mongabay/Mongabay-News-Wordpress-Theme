@@ -68,11 +68,11 @@ if (wp_is_mobile()) {
 			<div class="menu-container align-center">
 				<ul class="main-menu nav-desktop">
 					<li><a href="<?php echo home_url(); ?>/<?php echo get_menu_item('features', 'slug'); ?>" class="<?php echo is_page(get_menu_item('features', 'title')) ? 'active' : ''; ?>"><?php echo get_menu_item('features', 'title'); ?></a></li>
-					<li><a href=" <?php echo home_url(); ?>/<?php echo get_menu_item('videos', 'slug'); ?>" class="<?php echo is_page(get_menu_item('videos', 'title')) ? 'active' : ''; ?>"><?php echo get_menu_item('videos', 'title'); ?></a></li>
-					<li><a href="<?php echo home_url(); ?>/<?php echo get_menu_item('podcasts', 'slug'); ?>" class="<?php echo is_page(get_menu_item('podcasts', 'title')) ? 'active' : ''; ?>"><?php echo get_menu_item('podcasts', 'title'); ?></a></li>
-					<li><a href=" <?php echo home_url(); ?>/<?php echo get_menu_item('specials', 'slug'); ?>" class="<?php echo (is_page(get_menu_item('specials', 'title')) || is_tax('serial')) ? 'active' : ''; ?>"><?php echo get_menu_item('specials', 'title'); ?></a></li>
+					<?php if (get_enabled_features('videos')) : ?><li><a href=" <?php echo home_url(); ?>/<?php echo get_menu_item('videos', 'slug'); ?>" class="<?php echo is_page(get_menu_item('videos', 'title')) ? 'active' : ''; ?>"><?php echo get_menu_item('videos', 'title'); ?></a></li><?php endif; ?>
+					<?php if (get_enabled_features('podcasts')) : ?><li><a href="<?php echo home_url(); ?>/<?php echo get_menu_item('podcasts', 'slug'); ?>" class="<?php echo is_page(get_menu_item('podcasts', 'title')) ? 'active' : ''; ?>"><?php echo get_menu_item('podcasts', 'title'); ?></a></li><?php endif; ?>
+					<?php if (get_enabled_features('specials')) : ?><li><a href=" <?php echo home_url(); ?>/<?php echo get_menu_item('specials', 'slug'); ?>" class="<?php echo (is_page(get_menu_item('specials', 'title')) || is_tax('serial')) ? 'active' : ''; ?>"><?php echo get_menu_item('specials', 'title'); ?></a></li><?php endif; ?>
 					<li><a href="<?php echo home_url(); ?>/<?php echo get_menu_item('articles', 'slug'); ?>" class="<?php echo is_page(get_menu_item('articles', 'title')) ? 'active' : ''; ?>"><?php echo get_menu_item('articles', 'title'); ?></a></li>
-					<li><a href="<?php echo home_url(); ?>/<?php echo get_menu_item('shorts', 'slug'); ?>" class="<?php echo is_page(get_menu_item('shorts', 'title')) ? 'active' : ''; ?>"><?php echo get_menu_item('shorts', 'title'); ?></a></li>
+					<?php if (get_enabled_features('shorts')) : ?><li><a href="<?php echo home_url(); ?>/<?php echo get_menu_item('shorts', 'slug'); ?>" class="<?php echo is_page(get_menu_item('shorts', 'title')) ? 'active' : ''; ?>"><?php echo get_menu_item('shorts', 'title'); ?></a></li><?php endif; ?>
 				</ul>
 				<a class="theme--button primary simple md-hide" href="<?php echo get_donate_link(); ?>"><?php _e('Donate', 'mongabay'); ?></a>
 				<a id="theme-switch" class="icon icon-cog"></a>
@@ -100,10 +100,10 @@ if (wp_is_mobile()) {
 						<?php } ?>
 					</div>
 					<ul class="main-menu nav-desktop off-canvas">
-						<li><a href=" <?php echo home_url(); ?>/<?php echo get_menu_item('videos', 'slug'); ?>"><?php echo get_menu_item('videos', 'title'); ?></a></li>
-						<li><a href=" <?php echo home_url(); ?>/<?php echo get_menu_item('podcasts', 'slug'); ?>"><?php echo get_menu_item('podcasts', 'title'); ?></a></li>
+						<?php if (get_enabled_features('videos')) : ?><li><a href=" <?php echo home_url(); ?>/<?php echo get_menu_item('videos', 'slug'); ?>"><?php echo get_menu_item('videos', 'title'); ?></a></li><?php endif; ?>
+						<?php if (get_enabled_features('podcasts')) : ?><li><a href=" <?php echo home_url(); ?>/<?php echo get_menu_item('podcasts', 'slug'); ?>"><?php echo get_menu_item('podcasts', 'title'); ?></a></li><?php endif; ?>
 						<li><a href=" <?php echo home_url(); ?>/<?php echo get_menu_item('articles', 'slug'); ?>"><?php echo get_menu_item('articles', 'title'); ?></a></li>
-						<li><a href=" <?php echo home_url(); ?>/<?php echo get_menu_item('shortnews', 'slug'); ?>"><?php echo get_menu_item('shortnews', 'title'); ?></a></li>
+						<?php if (get_enabled_features('shorts')) : ?><li><a href=" <?php echo home_url(); ?>/<?php echo get_menu_item('shortnews', 'slug'); ?>"><?php echo get_menu_item('shortnews', 'title'); ?></a></li><?php endif; ?>
 						<li><a href=" <?php echo home_url(); ?>/<?php echo get_menu_item('featurestories', 'slug'); ?>"><?php echo get_menu_item('featurestories', 'title'); ?></a></li>
 						<li><a href=" <?php echo home_url(); ?>/<?php echo get_menu_item('thelatest', 'slug'); ?>"><?php echo get_menu_item('thelatest', 'title'); ?></a></li>
 						<li><a href=" <?php echo home_url(); ?>/<?php echo get_menu_item('exploreall', 'slug'); ?>"><?php echo get_menu_item('exploreall', 'title'); ?></a></li>
