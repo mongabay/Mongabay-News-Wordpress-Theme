@@ -1081,7 +1081,7 @@ msgstr "Ecouter la nature avec des podcasts qui incitent à la réflexion"
 msgid ""
 "Listen to Nature with thought-provoking <span class=\"icon icon-podcast\">podcasts</span>"
 msgstr ""
-"Ecouter la nature avec des podcasts qui incitent à la réflexion   <span class=\"icon icon-"
+"Ecouter la nature avec des podcasts qui incitent à la réflexion <span class=\"icon icon-"
 "podcast\">podcasts</span> stimulantes"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/sliders/formats-slider.php:6
@@ -1117,7 +1117,7 @@ msgstr "Grands reportages"
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:67
 #: Mongabay-News-Wordpress-Theme/functions.php:234
 msgid "features"
-msgstr "grands reportages"
+msgstr "grands-reportages"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:31
 #: Mongabay-News-Wordpress-Theme/functions.php:234
@@ -1132,7 +1132,7 @@ msgstr "podcasts"
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:35
 #: Mongabay-News-Wordpress-Theme/functions.php:234
 msgid "specials"
-msgstr "séries spéciales"
+msgstr "series-speciales"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:43
 #: Mongabay-News-Wordpress-Theme/functions.php:234
@@ -1146,7 +1146,7 @@ msgid "Shorts"
 msgstr "Brèves"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:47
-msgid "en-corto"
+msgid "shorts"
 msgstr "brèves"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:51
@@ -1162,7 +1162,7 @@ msgstr "L’équipe"
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:55
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:83
 msgid "team"
-msgstr "l’équipe"
+msgstr "lequipe"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:59
 msgid "contact"
