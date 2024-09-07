@@ -124,6 +124,10 @@ msgstr "Les séries spéciales"
 msgid "Animals"
 msgstr "Animaux"
 
+#: Mongabay-News-Wordpress-Theme/functions.php:269
+msgid "animals"
+msgstr "animaux"
+
 #: Mongabay-News-Wordpress-Theme/functions.php:257
 #: Mongabay-News-Wordpress-Theme/functions.php:263
 #: Mongabay-News-Wordpress-Theme/functions.php:270
@@ -1148,10 +1152,6 @@ msgstr "articles"
 msgid "Shorts"
 msgstr "Brèves"
 
-#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:47
-msgid "shorts"
-msgstr "brèves"
-
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:51
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:75
 msgid "about"
@@ -1175,9 +1175,10 @@ msgstr "contactez-nous"
 msgid "Short News"
 msgstr "Infos brèves"
 
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:47
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:63
 msgid "shorts"
-msgstr "brève"
+msgstr "brèves"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:71
 msgid "list/2024"
