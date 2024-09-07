@@ -43,8 +43,8 @@ get_header();
 		<?php banner(home_url() . '/about', 'Free and open access to credible information', '', 'Learn more', 'accent full-width pv--56 ph--20 gap--32', 'extra-large', ''); ?>
 	</div>
 
-	<div class="section--highlight container full-width pv--40">
-		<?php podcasts_banner(); ?>
+	<div class="<?php echo get_enabled_features('podcasts') ? 'section--highlight ' : ''; ?>container full-width pv--40">
+		<?php podcasts_banner(get_enabled_features('podcasts')); ?>
 	</div>
 
 	<div class="container in-column pv--80 gap--40">
@@ -62,7 +62,7 @@ get_header();
 <div class="full-width pv--40">
 	<?php featured_articles_slider(array('post', 'custom-story'), 4, 5); ?>
 </div>
-
+<?php if (get_enabled_features('shorts')) { ?>}
 <div class="container ph--40 pv--40 in-column">
 	<div class="section--highlight">
 		<div class="container gap--40 in-column">
@@ -72,9 +72,9 @@ get_header();
 			</div>
 		</div>
 	</div>
-
-	<div class="container pv--40 full-width">
-		<?php banner(get_subscribe_link(), 'Subscribe', 'Stay informed with news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--20 pv--56 gap--32 full-width', 'extra-large', ''); ?>
-	</div>
+<?php } ?>
+<div class="container pv--40 full-width">
+	<?php banner(get_subscribe_link(), 'Subscribe', 'Stay informed with news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--20 pv--56 gap--32 full-width', 'extra-large', ''); ?>
+</div>
 </div>
 <?php get_footer(); ?>

@@ -90,3 +90,43 @@ function get_menu_item($key, $option)
 
   return $menu_items[$key][$option];
 }
+
+function get_enabled_features($feature)
+{
+  $site_id = get_current_blog_id();
+
+  $features = array(
+    20 => array(
+      'podcasts' => true,
+      'videos' => true,
+      'specials' => true,
+      'shorts' => true,
+    ),
+    25 => array(
+      'podcasts' => true,
+      'videos' => true,
+      'specials' => true,
+      'shorts' => true,
+    ),
+    26 => array(
+      'podcasts' => false,
+      'videos' => true,
+      'specials' => true,
+      'shorts' => false,
+    ),
+    29 => array(
+      'podcasts' => false,
+      'videos' => true,
+      'specials' => true,
+      'shorts' => false,
+    ),
+    30 => array(
+      'podcasts' => true,
+      'videos' => true,
+      'specials' => true,
+      'shorts' => false,
+    ),
+  );
+
+  return $features[$site_id][$feature];
+}

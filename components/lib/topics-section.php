@@ -57,8 +57,8 @@ function topics_section(
               if (count($topics) > 0) {
                 foreach ($topics as $topic) {
                   $topic_localized = __($topic, 'mongabay');
-                  $topic_name = str_replace('-', ' ', $topic_localized);
-                  echo $topic_name ? '<span class="outlined"><a href="' . home_url() . '/?s=&topics=' . $topic_localized . '&formats=' . $formats_string . ($extra_params && $extra_params['featured'] ? "&featured=true" : "") . '">' . $topic_name . '</a></span>' : '';
+                  $topic_name = get_term_by('slug', $topic_localized, 'topic')->name;
+                  echo $topic_name ? '<span class="outlined"><a href="' . home_url() . '/?s=&topics=' . $topic_localized . '&formats=' . $formats_string . ($extra_params && $extra_params['featured'] ? "&featured=true" : "") . '">' . strtolower($topic_name) . '</a></span>' : '';
                 }
               }
               ?>
