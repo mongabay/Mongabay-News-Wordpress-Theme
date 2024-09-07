@@ -1167,7 +1167,7 @@ msgstr "Explorar tudo"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:75
 msgid "?s=&formats=post+custom_story+videos+podcasts+specials+short_article"
-msgstr "?s=&formatos=materia+materia_personalizada+videos+podcasts+especiais+noticia_curta"
+msgstr "?s=&formats=post+custom_story+videos+podcasts+specials+short_article"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:79
 msgid "https://www.mongabay.com/about/"
