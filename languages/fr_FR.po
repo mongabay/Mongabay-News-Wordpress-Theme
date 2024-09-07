@@ -1149,7 +1149,7 @@ msgid "Shorts"
 msgstr "Brèves"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:47
-msgid "en-corto"
+msgid "shorts"
 msgstr "brèves"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:51
@@ -1165,7 +1165,7 @@ msgstr "L’équipe"
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:55
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:83
 msgid "team"
-msgstr "l’équipe"
+msgstr "lequipe"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:59
 msgid "contact"
