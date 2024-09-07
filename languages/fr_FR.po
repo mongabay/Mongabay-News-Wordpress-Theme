@@ -145,15 +145,15 @@ msgstr "faune"
 #: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:59
 #: Mongabay-News-Wordpress-Theme/search.php:43 Mongabay-News-Wordpress-Theme/search.php:52
 msgid "forests"
-msgstr "forêts"
+msgstr "forets"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:59
 msgid "indigenous-peoples"
-msgstr "peuples autochtones"
+msgstr "peuples-autochtones"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:59
 msgid "agroecology"
-msgstr "agroécologie"
+msgstr "agroecologie"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:259
 #: Mongabay-News-Wordpress-Theme/functions.php:265
@@ -165,7 +165,7 @@ msgstr "Océans"
 #: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:59
 #: Mongabay-News-Wordpress-Theme/search.php:46 Mongabay-News-Wordpress-Theme/search.php:55
 msgid "oceans"
-msgstr "océans"
+msgstr "oceans"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:40
 msgid "climate"
@@ -380,7 +380,7 @@ msgstr "Impact"
 
 #: Mongabay-News-Wordpress-Theme/landing-page.php:52
 msgid "Watch unique <span class=\"icon icon-play\">videos</span> that cut through the noise"
-msgstr "Regardez des <span class=“icon icon-play”>videos</span> qui se démarquent du bruit"
+msgstr "Regardez des <span class=\"icon icon-play\">videos</span> qui se démarquent du bruit"
 
 #: Mongabay-News-Wordpress-Theme/landing-page.php:69
 #: Mongabay-News-Wordpress-Theme/articles-page.php:48
@@ -571,7 +571,7 @@ msgstr "Désolé, aucun article ne correspond à vos critères."
 #: Mongabay-News-Wordpress-Theme/components/lib/sliders/featured-articles-slider.php:22
 msgid "In-depth <span>feature stories</span> reveal context and insight"
 msgstr ""
-"Des  <span> histoires vedette</span>  approfondis révèlent le contexte et les perspectives"
+"Des  <span>histoires vedette</span>  approfondis révèlent le contexte et les perspectives"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/sliders/formats-slider.php:65
 #: Mongabay-News-Wordpress-Theme/components/lib/sliders/specials-slider.php:58
@@ -581,6 +581,10 @@ msgstr "Aucun article trouvé"
 #: Mongabay-News-Wordpress-Theme/components/lib/sliders/specials-slider.php:6
 msgid "Special Issues connect the dots between stories"
 msgstr "Les points entre les histoires sont reliés par les éditions spéciales"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/sliders/series-articles-slider.php:55
+msgid "<span class=\"icon icon-specials\">Special issues</span> connect the dots between stories"
+msgstr "Les points entre les histoires sont reliés par les <span class=\"icon icon-specials\">éditions spéciales</span>"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/sliders/related-articles-slider.php:49
 msgid "Related Articles"
@@ -1081,8 +1085,7 @@ msgstr "Ecouter la nature avec des podcasts qui incitent à la réflexion"
 msgid ""
 "Listen to Nature with thought-provoking <span class=\"icon icon-podcast\">podcasts</span>"
 msgstr ""
-"Ecouter la nature avec des podcasts qui incitent à la réflexion   <span class=\"icon icon-"
-"podcast\">podcasts</span> stimulantes"
+"Ecouter la nature avec des podcasts qui incitent à la réflexion <span class=\"icon icon-podcast\">podcasts</span> stimulantes"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/sliders/formats-slider.php:6
 msgid "Watch unique videos that cut through the noise"
@@ -1117,12 +1120,12 @@ msgstr "Grands reportages"
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:67
 #: Mongabay-News-Wordpress-Theme/functions.php:234
 msgid "features"
-msgstr "grands reportages"
+msgstr "grands-reportages"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:31
 #: Mongabay-News-Wordpress-Theme/functions.php:234
 msgid "videos"
-msgstr "vidéos"
+msgstr "videos"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:35
 #: Mongabay-News-Wordpress-Theme/functions.php:234
@@ -1132,7 +1135,7 @@ msgstr "podcasts"
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:35
 #: Mongabay-News-Wordpress-Theme/functions.php:234
 msgid "specials"
-msgstr "séries spéciales"
+msgstr "series-speciales"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:43
 #: Mongabay-News-Wordpress-Theme/functions.php:234
