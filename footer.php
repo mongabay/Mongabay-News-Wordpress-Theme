@@ -11,10 +11,10 @@
 				</div>
 				<ul class="footer-links">
 					<li><a href="<?php echo home_url(); ?>/videos"><?php _e('Videos', 'mongabay'); ?></a></li>
-					<li><a href="<?php echo home_url(); ?>/podcasts"><?php _e('Podcasts', 'mongabay'); ?></a></li>
+					<?php if (get_enabled_features('podcasts')) : ?><li><a href="<?php echo home_url(); ?>/podcasts"><?php _e('Podcasts', 'mongabay'); ?></a></li><?php endif; ?>
 					<li><a href="<?php echo home_url(); ?>/articles"><?php _e('Articles', 'mongabay'); ?></a></li>
 					<li><a href="<?php echo home_url(); ?>/specials"><?php _e('Specials', 'mongabay'); ?></a></li>
-					<li><a href="<?php echo home_url(); ?>/shorts"><?php _e('Short news', 'mongabay'); ?></a></li>
+					<?php if (get_enabled_features('shorts')) : ?><li><a href="<?php echo home_url(); ?>/shorts"><?php _e('Short news', 'mongabay'); ?></a></li><?php endif; ?>
 					<li><a href="<?php echo home_url(); ?>/features"><?php _e('Feature Stories', 'mongabay'); ?></a></li>
 					<li><a href="<?php echo home_url(); ?>/?s=&formats=post+videos+podcasts+shorts+specials"><?php _e('The Latest', 'mongabay'); ?></a></li>
 				</ul>
@@ -25,12 +25,12 @@
 					<div class="divider"></div>
 				</div>
 				<ul class="footer-links">
-					<li><a href="<?php echo home_url(); ?>/about"><?php _e('About', 'mongabay'); ?></a></li>
-					<li><a href="<?php echo home_url(); ?>/contact"><?php _e('Contact', 'mongabay'); ?></a></li>
+					<li><a href="ttps://news.mongabay.com/about"><?php _e('About', 'mongabay'); ?></a></li>
+					<li><a href="https://news.mongabay.com/contact"><?php _e('Contact', 'mongabay'); ?></a></li>
 					<li><a href="<?php echo get_donate_link(); ?>"><?php _e('Donate', 'mongabay'); ?></a></li>
 					<li><a href="<?php echo get_subscribe_link(); ?>"><?php _e('Newsletters', 'mongabay'); ?></a></li>
-					<li><a href="<?php echo home_url(); ?>/submissions"><?php _e('Submissions', 'mongabay'); ?></a></li>
-					<li><a href="<?php echo home_url(); ?>/terms"><?php _e('Terms of Use', 'mongabay'); ?></a></li>
+					<li><a href="ttps://news.mongabay.com/submissions"><?php _e('Submissions', 'mongabay'); ?></a></li>
+					<li><a href="ttps://news.mongabay.com/terms"><?php _e('Terms of Use', 'mongabay'); ?></a></li>
 				</ul>
 			</div>
 			<div>

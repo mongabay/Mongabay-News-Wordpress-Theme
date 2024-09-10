@@ -696,7 +696,7 @@ async function fetchArticles(fromStart = false) {
   if (searchValue.length > 0) {
     document.title = nextTitle;
   } else {
-    document.title = `Showing all ${selectedFormats.join(", ").toLowerCase()} stories`;
+    document.title = `Showing all ${selectedFormats.join(", ").toLowerCase()} ${storiesLocal}`;
   }
 
   const topicGql = `{taxonomy:TOPIC,terms:${JSON.stringify(
@@ -878,7 +878,7 @@ async function fetchArticles(fromStart = false) {
 
   totalCount = data.contentNodes.pageInfo.total;
   document.getElementById("results-total").textContent = `${totalCount} ${
-    totalCount > 1 ? "stories" : "story"
+    totalCount > 1 ? storiesLocal : storyLocal
   }`;
 
   noResults.classList.add("hide");

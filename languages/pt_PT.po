@@ -54,6 +54,7 @@ msgstr "Sobre"
 #: Mongabay-News-Wordpress-Theme/components/lib/sliders/series-articles-slider.php:201
 #: Mongabay-News-Wordpress-Theme/templates/taxonomy-byline.php:82
 #: Mongabay-News-Wordpress-Theme/templates/taxonomy-custom.php:41
+#: Mongabay-News-Wordpress-Theme/functions.php:276
 msgid "stories"
 msgstr "matérias"
 
@@ -1120,6 +1121,10 @@ msgstr "especiais"
 #: Mongabay-News-Wordpress-Theme/lib/components/banners/inspiration-banner.php:38
 msgid "articles"
 msgstr "materias"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:277
+msgid "story"
+msgstr "matéria"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:46
 #: Mongabay-News-Wordpress-Theme/functions.php:251
