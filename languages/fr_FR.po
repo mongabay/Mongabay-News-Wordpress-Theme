@@ -59,6 +59,7 @@ msgstr "À propos"
 #: Mongabay-News-Wordpress-Theme/components/lib/sliders/series-articles-slider.php:201
 #: Mongabay-News-Wordpress-Theme/templates/taxonomy-byline.php:82
 #: Mongabay-News-Wordpress-Theme/templates/taxonomy-custom.php:41
+#: Mongabay-News-Wordpress-Theme/functions.php:276
 msgid "stories"
 msgstr "histoires"
 
@@ -1119,6 +1120,10 @@ msgstr "toutes nos infos"
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:26
 msgid "Features"
 msgstr "Grands reportages"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:277
+msgid "story"
+msgstr "l’article"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:27
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:67

@@ -42,7 +42,7 @@ get_header(); ?>
 <div class="container ph--40 pv--40">
   <?php banner(get_subscribe_link(), 'Subscribe', 'Stay informed with news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--20 pv--56 full-width', 'extra-large'); ?>
 </div>
-
+<?php if (get_enabled_features('shorts')) : ?>
 <div class="section--highlight">
   <div class="container ph--40 pv--80 gap--20 in-column">
     <h1><?php _e('Quickly stay updated with our news <span class="icon icon-shorts">shorts</span>', 'mongabay'); ?></h1>
@@ -51,7 +51,7 @@ get_header(); ?>
     </div>
   </div>
 </div>
-
+<?php endif; ?>
 <?php inspiration_banner(); ?>
 
 <?php get_footer(); ?>
