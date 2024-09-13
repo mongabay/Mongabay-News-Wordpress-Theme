@@ -629,6 +629,10 @@ ul.main-menu.nav-desktop.off-canvas li a {
   cursor: pointer;
 }
 
+.global-languages li {
+  margin: 0;
+}
+
 /* Buttons */
 .theme--button {
   padding: var(--spacing-5) var(--spacing-13) var(--spacing-5) var(--spacing-7);
@@ -1427,6 +1431,7 @@ a.slider-link img {
 .slick-slide .article--container img,
 .slick-slide .article--container a {
   height: 100%;
+  object-fit: cover;
 }
 
 .slick-slide .article--container a {

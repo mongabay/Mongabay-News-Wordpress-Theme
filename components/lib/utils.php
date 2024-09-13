@@ -101,30 +101,35 @@ function get_enabled_features($feature)
       'videos' => true,
       'specials' => true,
       'shorts' => true,
+      'donate' => true,
     ),
     25 => array(
       'podcasts' => true,
       'videos' => true,
       'specials' => true,
       'shorts' => true,
+      'donate' => true,
     ),
     26 => array(
       'podcasts' => false,
       'videos' => true,
       'specials' => true,
       'shorts' => false,
+      'donate' => true,
     ),
     29 => array(
       'podcasts' => false,
       'videos' => true,
       'specials' => true,
       'shorts' => false,
+      'donate' => true,
     ),
     30 => array(
       'podcasts' => true,
       'videos' => true,
       'specials' => true,
       'shorts' => false,
+      'donate' => false,
     ),
   );
 
