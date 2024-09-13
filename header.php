@@ -74,7 +74,7 @@ if (wp_is_mobile()) {
 					<li><a href="<?php echo home_url(); ?>/<?php echo get_menu_item('articles', 'slug'); ?>" class="<?php echo is_page(get_menu_item('articles', 'title')) ? 'active' : ''; ?>"><?php echo get_menu_item('articles', 'title'); ?></a></li>
 					<?php if (get_enabled_features('shorts')) : ?><li><a href="<?php echo home_url(); ?>/<?php echo get_menu_item('shorts', 'slug'); ?>" class="<?php echo is_page(get_menu_item('shorts', 'title')) ? 'active' : ''; ?>"><?php echo get_menu_item('shorts', 'title'); ?></a></li><?php endif; ?>
 				</ul>
-				<a class="theme--button primary simple md-hide" href="<?php echo get_donate_link(); ?>"><?php _e('Donate', 'mongabay'); ?></a>
+				<a class="theme--button primary simple md-hide" href="<?php echo get_enabled_features('donate') ? get_donate_link() : get_subscribe_link(); ?>"><?php echo (get_enabled_features('donate') ? __('Donate', 'mongabay') : __('Subscribe', 'mongabay')); ?></a>
 				<a id="theme-switch" class="icon icon-cog"></a>
 				<a id="site-search" href="<?php echo home_url(); ?>/?s="><span class="icon icon-search"></span></a>
 				<a id="secondary-menu"><span class="icon icon-menu"></span></a>
@@ -87,13 +87,13 @@ if (wp_is_mobile()) {
 					<div class="global-nav gap--20">
 						<span class="icon icon-globe md-hide"></span>
 						<ul class="global-languages">
-							<li><a href="" class="active">English</a></li>
-							<li><a href="https://es.mongabay.com/">Español (Spanish)</a></li>
-							<li><a href="https://fr.mongabay.com/">Français (French)</a></li>
-							<li><a href="https://www.mongabay.co.id/">Bahasa Indonesia (Indonesian)</a></li>
-							<li><a href="https://brasil.mongabay.com/">Brasil (Portuguese)</a></li>
-							<li><a href="https://india.mongabay.com/">India (English)</a></li>
-							<li><a href="https://hindi.mongabay.com/">हिंदी (Hindi)</a></li>
+							<li><a href="https://news.mongabay.com" class="<?php echo get_home_url() === 'https://news.mongabay.com' ? 'active' : ''; ?>">English</a></li>
+							<li><a href="https://es.mongabay.com" class="<?php echo get_home_url() === 'https://es.mongabay.com' ? 'active' : ''; ?>">Español (Spanish)</a></li>
+							<li><a href="https://fr.mongabay.com" class="<?php echo get_home_url() === 'https://fr.mongabay.com' ? 'active' : ''; ?>">Français (French)</a></li>
+							<li><a href="https://www.mongabay.co.id" class="<?php echo get_home_url() === 'https://www.mongabay.co.id' ? 'active' : ''; ?>">Bahasa Indonesia (Indonesian)</a></li>
+							<li><a href="https://brasil.mongabay.com" class="<?php echo get_home_url() === 'https://brasil.mongabay.com' ? 'active' : ''; ?>">Brasil (Portuguese)</a></li>
+							<li><a href="https://india.mongabay.com" class="<?php echo get_home_url() === 'https://india.mongabay.com' ? 'active' : ''; ?>">India (English)</a></li>
+							<li><a href="https://hindi.mongabay.com" class="<?php echo get_home_url() === 'https://hindi.mongabay.co.id' ? 'active' : ''; ?>">हिंदी (Hindi)</a></li>
 						</ul>
 						<?php if (!wp_is_mobile()) { ?>
 							<span class="icon icon-cancel"></span>
@@ -116,7 +116,7 @@ if (wp_is_mobile()) {
 								<li><a href="<?php echo home_url(); ?>/<?php echo get_menu_item('footercontact', 'slug'); ?>"><?php echo get_menu_item('footercontact', 'title'); ?></a></li>
 							</ul>
 							<ul class="footer-links">
-								<?php if (function_exists('get_donate_link')) { ?>
+								<?php if (function_exists('get_donate_link') && get_enabled_features('donate')) { ?>
 									<li><a href="<?php echo get_donate_link(); ?>"><?php _e('Donate', 'mongabay'); ?></a></li>
 								<?php } ?>
 								<?php if (function_exists('get_subscribe_link')) { ?>

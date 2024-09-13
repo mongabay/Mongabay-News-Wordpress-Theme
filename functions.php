@@ -316,7 +316,7 @@ function mongabay_featured()
 // Load styles
 function mongabay_styles()
 {
-    wp_register_style('framework', get_template_directory_uri() . '/css/style.css', array(), '1.0.1', 'all');
+    wp_register_style('framework', get_template_directory_uri() . '/css/style.css', array(), '1.0.4', 'all');
     wp_enqueue_style('framework');
     wp_register_style('icon-fonts', get_template_directory_uri() . '/css/fontello.css', array(), '1.0', 'all');
     wp_enqueue_style('icon-fonts');
