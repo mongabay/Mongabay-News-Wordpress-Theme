@@ -25,7 +25,7 @@ function podcasts_banner($has_podcasts = true)
             </div>
           </div>
           <div class="article--container">
-            <div class="title headline gap--8">
+            <div class="title headline gap--8 align-center">
               <h3 class="text-center">
                 <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
               </h3>

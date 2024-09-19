@@ -214,7 +214,6 @@ h4 {
 
 .single h3 {
   font-size: var(--font-m);
-  line-height: 2;
 }
 
 .headline h5 {
@@ -1003,7 +1002,7 @@ ul.main-menu:not(.off-canvas) li a.active:before {
 .section--highlight .title {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
   width: 100%;
 }
 
