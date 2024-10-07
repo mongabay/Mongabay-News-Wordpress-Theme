@@ -1320,7 +1320,7 @@ add_action('admin_menu', 'mongabay_remove_custom_fields'); // Remove custom fiel
 add_action('admin_print_footer_scripts', 'px_shortcode_button'); // Add parallax button
 add_action('admin_print_footer_scripts', 'open_close_px_content'); // Add parallax button
 add_action('template_redirect', 'mongabay_featured'); // Redirect template if content is Featured
-add_action('init', 'custom_rss_feed_init'); // Add custom RSS feed
+// add_action('init', 'custom_rss_feed_init'); // Add custom RSS feed
 add_action('wp_enqueue_scripts', 'mongabay_ajaxed_pagination');
 add_action('wp_ajax_load_more_posts', 'load_more_posts');
 add_action('wp_ajax_nopriv_load_more_posts', 'load_more_posts');

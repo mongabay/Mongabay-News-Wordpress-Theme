@@ -8,6 +8,14 @@
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: ' . feed_content_type('rss-http') . '; charset=' . get_option('blog_charset'), true);
 $more = 1;
+$type = get_query_var('feedtype');
+$grant = get_query_var('grant');
+$post_type = get_query_var('post_type');
+$posts_per_page = get_query_var('show', 20);
+$topics = get_query_var('topics');
+$grant = get_query_var('grant');
+$locations = get_query_var('location');
+$default_post_type = array('post', 'custom-story', 'videos', 'podcasts', 'specials', 'short-article');
 
 echo '<?xml version="1.0" encoding="' . get_option('blog_charset') . '"?' . '>';
 
@@ -21,15 +29,7 @@ echo '<?xml version="1.0" encoding="' . get_option('blog_charset') . '"?' . '>';
  */
 do_action('rss_tag_pre', 'rss2');
 ?>
-<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" <?php
-																																																																																																																																																																/**
-																																																																																																																																																																 * Fires at the end of the RSS root to add namespaces.
-																																																																																																																																																																 *
-																																																																																																																																																																 * @since 2.0.0
-																																																																																																																																																																 */
-																																																																																																																																																																do_action('rss2_ns');
-																																																																																																																																																																?>>
-
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" <?php do_action('rss2_ns'); ?>>
 	<channel>
 		<title><?php bloginfo_rss('name'); ?></title>
 		<atom:link href="<?php self_link(); ?>" rel="self" type="application/rss+xml" />
@@ -37,43 +37,94 @@ do_action('rss_tag_pre', 'rss2');
 		<description><?php bloginfo_rss("description") ?></description>
 		<lastBuildDate><?php echo mysql2date('D, d M Y H:i:s +0000', get_lastpostmodified('GMT'), false); ?></lastBuildDate>
 		<language><?php bloginfo_rss('language'); ?></language>
-		<sy:updatePeriod><?php
-											$duration = 'hourly';
-
-											/**
-											 * Filter how often to update the RSS feed.
-											 *
-											 * @since 2.1.0
-											 *
-											 * @param string $duration The update period. Accepts 'hourly', 'daily', 'weekly', 'monthly',
-											 *                         'yearly'. Default 'hourly'.
-											 */
-											echo apply_filters('rss_update_period', $duration);
-											?></sy:updatePeriod>
-		<sy:updateFrequency><?php
-												$frequency = '1';
-
-												/**
-												 * Filter the RSS update frequency.
-												 *
-												 * @since 2.1.0
-												 *
-												 * @param string $frequency An integer passed as a string representing the frequency
-												 *                          of RSS updates within the update period. Default '1'.
-												 */
-												echo apply_filters('rss_update_frequency', $frequency);
-												?></sy:updateFrequency>
+		<sy:updatePeriod>
+			<?php
+			$duration = 'hourly';
+			echo apply_filters('rss_update_period', $duration);
+			?>
+		</sy:updatePeriod>
+		<sy:updateFrequency>
+			<?php
+			$frequency = '1';
+			echo apply_filters('rss_update_frequency', $frequency);
+			?>
+		</sy:updateFrequency>
 		<?php
-		/**
-		 * Fires at the end of the RSS2 Feed Header.
-		 *
-		 * @since 2.0.0
-		 */
 		do_action('rss2_head');
 
-		$args = array(
-			'post_type' => array('post', 'custom-story', 'videos', 'podcasts', 'specials', 'short-article')
-		);
+		$args = array();
+		$topics_array = array();
+		$locations_array = array();
+
+		if (!empty($post_type)) {
+			if (strpos($post_type, ',') !== false) {
+				$post_type = explode(',', $post_type);
+			} else {
+				$args['post_type'] = $post_type;
+			}
+		} else {
+			$args['post_type'] = $default_post_type;
+		}
+
+		if (!empty($topics)) {
+			if (strpos($topics, ',') !== false) {
+				$topics_array = explode(',', $topics);
+			} else {
+				$topics_array[] = $topics;
+			}
+		}
+
+		if (!empty($locations)) {
+			if (strpos($locations, ',') !== false) {
+				$locations_array = explode(',', $locations);
+			} else {
+				$locations_array[] = $locations;
+			}
+		}
+
+		$tax_query = array('relation' => 'OR');
+
+		// if ($grant) {
+		// 	$args['meta_query'] = array(
+		// 		array(
+		// 			'key' => 'grant',
+		// 			'value' => $grant,
+		// 			'compare' => 'LIKE'
+		// 		)
+		// 	);
+		// }
+
+		// if ($type === 'gps') {
+		// 	$args['meta_query'] = array(
+		// 		array(
+		// 			'key' => 'coordinates',
+		// 			'compare' => 'EXISTS'
+		// 		)
+		// 	);
+		// }
+
+		if (!empty($topics_array)) {
+			$tax_query[] = array(
+				'taxonomy' => 'topic',
+				'field' => 'slug',
+				'terms' => $topics_array,
+			);
+		}
+
+		if (!empty($locations_array)) {
+			$tax_query[] = array(
+				'taxonomy' => 'location',
+				'field' => 'slug',
+				'terms' => $locations_array,
+			);
+		}
+
+		$args['posts_per_page'] = $posts_per_page;
+
+		if (!empty($topics_array) || !empty($locations_array)) {
+			$args['tax_query'] = $tax_query;
+		}
+
 		$query = new WP_Query($args);
 
 		if ($query->have_posts()) :
@@ -196,11 +247,6 @@ do_action('rss_tag_pre', 'rss2');
 					<slash:comments><?php echo get_comments_number(); ?></slash:comments>
 					<?php rss_enclosure(); ?>
 					<?php
-					/**
-					 * Fires at the end of each RSS2 feed item.
-					 *
-					 * @since 2.0.0
-					 */
 					do_action('rss2_item');
 					?>
 				</item>
