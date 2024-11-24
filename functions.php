@@ -1295,6 +1295,13 @@ function custom_post_type_link_rewrite($post_link, $post)
     return $post_link;
 }
 
+add_action('graphql_register_types', function () {
+    register_graphql_field('RootQueryToContentNodeConnectionWhereArgs', 'author', [
+        'type'        => 'Integer',
+        'description' => 'Filter content nodes by author id'
+    ]);
+});
+
 /*------------------------------------*\
     Actions + Filters
 \*------------------------------------*/
