@@ -91,7 +91,8 @@ a {
   cursor: pointer;
 }
 
-p, .is-layout-flex p {
+p,
+.is-layout-flex p {
   line-height: 1.5;
   margin-bottom: 1.5rem;
 }
@@ -180,6 +181,13 @@ img.rounded {
 
 .rounded-bottom {
   border-radius: 0 0 var(--rounded) var(--rounded) !important;
+}
+
+blockquote {
+  border-radius: var(--rounded);
+  background: var(--theme-secondary-alpha);
+  margin: var(--spacing-9) 0;
+  padding: var(--spacing-9);
 }
 
 .headline,
