@@ -1302,6 +1302,13 @@ add_action('graphql_register_types', function () {
     ]);
 });
 
+function custom_author_post_types_query($query)
+{
+    if (!is_admin() && $query->is_author() && $query->is_main_query()) {
+        $query->set('post_type', array('post', 'videos', 'short-article', 'podcasts', 'custom-story', 'specials'));
+    }
+}
+
 /*------------------------------------*\
     Actions + Filters
 \*------------------------------------*/
@@ -1332,6 +1339,7 @@ add_action('wp_enqueue_scripts', 'mongabay_ajaxed_pagination');
 add_action('wp_ajax_load_more_posts', 'load_more_posts');
 add_action('wp_ajax_nopriv_load_more_posts', 'load_more_posts');
 add_action('save_post', 'validate_short_article_content_length'); // Short articles validation
+add_action('pre_get_posts', 'custom_author_post_types_query');
 
 // Remove Actions
 remove_action('wp_head', 'feed_links_extra', 3); // Display the links to the extra feeds such as category feeds

@@ -65,10 +65,19 @@ $author_role = get_the_author_meta('job_title');
 	<?php if (have_posts()) { ?>
 		<?php
 		//get query object
-		global $wp_query;
+		$author_id = get_queried_object_id();
+		$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+
+		$args = array(
+			'author'        => $author_id,
+			'post_type'     => array('post', 'short-article', 'videos', 'podcasts', 'custom-story', 'specials'),
+			'posts_per_page' => 32,
+			'paged'         => $paged
+		);
+
+		$wp_query = new WP_Query($args);
 		$total = $wp_query->found_posts;
 		?>
-
 		<div id="results">
 			<div id="results-header">
 				<div id="results-header-left">

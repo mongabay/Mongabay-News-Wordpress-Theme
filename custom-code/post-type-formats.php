@@ -33,6 +33,8 @@ function register_custom_post_type_video()
         'show_in_rest'      => true,
         'rest_base'         => 'videos',
         'show_in_graphql'   => true,
+        'publicly_queryable' => true,
+        'show_in_archive'   => true,
         'graphql_single_name' => 'Video',
         'graphql_plural_name' => 'Videos',
     );
@@ -74,6 +76,8 @@ function register_custom_post_type_podcast()
         'show_in_rest'      => true,
         'rest_base'         => 'podcasts',
         'show_in_graphql'   => true,
+        'publicly_queryable' => true,
+        'show_in_archive'   => true,
         'graphql_single_name' => 'Podcast',
         'graphql_plural_name' => 'Podcasts',
     );
@@ -116,6 +120,8 @@ function register_custom_post_type_short_article()
         'show_in_rest'      => true,
         'rest_base'         => 'short_articles',
         'show_in_graphql'   => true,
+        'publicly_queryable' => true,
+        'show_in_archive'   => true,
         'graphql_single_name' => 'ShortArticle',
         'graphql_plural_name' => 'ShortArticles',
     );
@@ -158,6 +164,8 @@ function register_custom_post_type_custom_story()
         'show_in_rest'      => true,
         'rest_base'         => 'custom_stories',
         'show_in_graphql'   => true,
+        'publicly_queryable' => true,
+        'show_in_archive'   => true,
         'graphql_single_name' => 'CustomStory',
         'graphql_plural_name' => 'CustomStories',
     );
@@ -200,6 +208,8 @@ function register_custom_post_type_specials()
         'show_in_rest'      => true,
         'rest_base'         => 'specials',
         'show_in_graphql'   => true,
+        'publicly_queryable' => true,
+        'show_in_archive'   => true,
         'graphql_single_name' => 'SpecialsArticle',
         'graphql_plural_name' => 'SpecialsArticles',
     );
