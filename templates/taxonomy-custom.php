@@ -19,6 +19,7 @@ get_header(); ?>
 		global $wp_query;
 		$taxonomies = $wp_query->tax_query;
 		$wp_query->query_vars['posts_per_page'] = 32;
+		$wp_query->query_vars['post_type'] = array('post', 'custom-story', 'videos', 'podcasts', 'short-article', 'specials');
 		$topics = array();
 
 		foreach ($taxonomies->queries as $tax_query) {

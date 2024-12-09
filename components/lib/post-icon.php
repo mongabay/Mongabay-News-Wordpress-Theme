@@ -8,7 +8,7 @@ function get_icon($post_id = null)
       'videos' => 'icon-play',
       'podcasts' => 'icon-podcast',
       'specials' => 'icon-specials',
-      'short-article' => 'icon-short',
+      'short-article' => 'icon-shorts',
     );
 
     return '<div class="post-icon"><span class="icon ' . $icons[$type] . '"></span></div>';

@@ -135,3 +135,43 @@ function get_enabled_features($feature)
 
   return $features[$site_id][$feature];
 }
+
+function get_social_links($site_id)
+{
+  switch ($site_id) {
+    case 20:
+      // News
+      return array(
+        'linkedin' => 'https://www.linkedin.com/company/mongabay.com/',
+        'instagram' => 'https://www.instagram.com/mongabay/',
+        'youtube' => 'https://www.youtube.com/channel/UCnrubbmyCz8krGnpsbhJRYg/videos',
+        'x' => 'https://www.x.com/mongabay',
+        'facebook' => 'https://www.facebook.com/mongabay',
+        'mastodon' => 'https://mastodon.green/@mongabay',
+        'android' => 'https://play.google.com/store/apps/details?id=com.newsmongabay&hl=en',
+        'apple' => 'https://apple.news/T7BxfNfp4QAiuOPNsUcn04Q/',
+      );
+    case 30:
+      // India
+      return array(
+        'linkedin' => 'https://www.linkedin.com/company/mongabay-india/ ',
+        'instagram' => 'https://www.instagram.com/mongabayindia/',
+        'youtube' => 'https://www.youtube.com/@MongabayIndia',
+        'x' => 'https://x.com/MongabayIndia',
+        'facebook' => 'https://www.facebook.com/mongabayindia',
+        'android' => 'https://play.google.com/store/apps/details?id=com.newsmongabay&hl=en',
+        'apple' => 'https://apple.news/T7BxfNfp4QAiuOPNsUcn04Q/',
+      );
+    default:
+      return array(
+        'linkedin' => 'https://www.linkedin.com/company/mongabay.com/',
+        'instagram' => 'https://www.instagram.com/mongabay/',
+        'youtube' => 'https://www.youtube.com/channel/UCnrubbmyCz8krGnpsbhJRYg/videos',
+        'x' => 'https://www.x.com/mongabay',
+        'facebook' => 'https://www.facebook.com/mongabay',
+        'mastodon' => 'https://mastodon.green/@mongabay',
+        'android' => 'https://play.google.com/store/apps/details?id=com.newsmongabay&hl=en',
+        'apple' => 'https://apple.news/T7BxfNfp4QAiuOPNsUcn04Q/',
+      );
+  }
+}

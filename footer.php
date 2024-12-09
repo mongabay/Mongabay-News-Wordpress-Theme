@@ -25,12 +25,12 @@
 					<div class="divider"></div>
 				</div>
 				<ul class="footer-links">
-					<li><a href="https://news.mongabay.com/about"><?php _e('About', 'mongabay'); ?></a></li>
-					<li><a href="https://news.mongabay.com/contact"><?php _e('Contact', 'mongabay'); ?></a></li>
+					<li><a href="https://news.mongabay.com/about/"><?php _e('About', 'mongabay'); ?></a></li>
+					<li><a href="https://news.mongabay.com/contact/"><?php _e('Contact', 'mongabay'); ?></a></li>
 					<?php if (get_enabled_features('donate')) : ?><li><a href="<?php echo get_donate_link(); ?>"><?php _e('Donate', 'mongabay'); ?></a></li><?php endif; ?>
 					<li><a href="<?php echo get_subscribe_link(); ?>"><?php _e('Newsletters', 'mongabay'); ?></a></li>
-					<li><a href="https://news.mongabay.com/submissions"><?php _e('Submissions', 'mongabay'); ?></a></li>
-					<li><a href="https://news.mongabay.com/terms"><?php _e('Terms of Use', 'mongabay'); ?></a></li>
+					<li><a href="https://news.mongabay.com/submissions/"><?php _e('Submissions', 'mongabay'); ?></a></li>
+					<li><a href="https://news.mongabay.com/terms/"><?php _e('Terms of Use', 'mongabay'); ?></a></li>
 				</ul>
 			</div>
 			<div>
@@ -52,11 +52,11 @@
 					<div class="divider"></div>
 				</div>
 				<ul class="footer-links">
-					<li><a href="https://www.linkedin.com/company/mongabay.com/" target="_blank"><?php _e('LinkedIn', 'mongabay'); ?></a></li>
-					<li><a href="https://www.instagram.com/mongabay/" target="_blank"><?php _e('Instagram', 'mongabay'); ?></a></li>
-					<li><a href="https://www.youtube.com/channel/UCnrubbmyCz8krGnpsbhJRYg/videos" target="_blank"><?php _e('Youtube', 'mongabay'); ?></a></li>
-					<li><a href="https://www.x.com/mongabay" target="_blank"><?php _e('X', 'mongabay'); ?></a></li>
-					<li><a href="https://www.facebook.com/mongabay" target="_blank"><?php _e('Facebook', 'mongabay'); ?></a></li>
+					<li><a href="<?php echo get_social_links(get_blog_details()->blog_id)['linkedin']; ?>" target="_blank"><?php _e('LinkedIn', 'mongabay'); ?></a></li>
+					<li><a href="<?php echo get_social_links(get_blog_details()->blog_id)['instagram']; ?>" target="_blank"><?php _e('Instagram', 'mongabay'); ?></a></li>
+					<li><a href="<?php echo get_social_links(get_blog_details()->blog_id)['youtube']; ?>" target="_blank"><?php _e('Youtube', 'mongabay'); ?></a></li>
+					<li><a href="<?php echo get_social_links(get_blog_details()->blog_id)['x']; ?>" target="_blank"><?php _e('X', 'mongabay'); ?></a></li>
+					<li><a href="<?php echo get_social_links(get_blog_details()->blog_id)['facebook']; ?>" target="_blank"><?php _e('Facebook', 'mongabay'); ?></a></li>
 					<li><a href="<?php echo home_url(); ?>/feed"><?php _e('RSS / XML', 'mongabay'); ?></a></li>
 					<li><a href="https://mastodon.green/@mongabay" target="_blank"><?php _e('Mastodon', 'mongabay'); ?></a></li>
 					<li><a href="https://play.google.com/store/apps/details?id=com.newsmongabay&hl=en" target="_blank"><?php _e('Android App', 'mongabay'); ?></a></li>
