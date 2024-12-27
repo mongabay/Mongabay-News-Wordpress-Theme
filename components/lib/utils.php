@@ -16,7 +16,7 @@ function get_subscribe_link()
 
 function get_donate_link()
 {
-  return 'https://news.mongabay.com/donate';
+  return 'https://mongabay.org/donate';
 }
 
 function get_menu_item($key, $option)
