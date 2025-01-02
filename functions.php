@@ -458,7 +458,10 @@ function mongabay_feed_rss2()
 {
 
     $rss_template = get_template_directory() . '/custom-code/feed-rss2.php';
-    load_template($rss_template);
+
+    if (file_exists($rss_template)) {
+        load_template($rss_template);
+    }
 }
 
 add_action('do_feed_rss2', 'mongabay_feed_rss2', 10, 1); // Custom RSS feed
@@ -989,11 +992,8 @@ if ($GLOBALS['pagenow'] == 'post-new.php' || $pagenow == 'post.php') :
         $post_id = $postarr['ID'];
         $post_status = $data['post_status'];
 
-        // $original_post_status = $postarr['original_post_status'];
-        if ($post_id && 'publish' === $post_status) {
-            $post_type = get_post_type($post_id);
-
-            if (post_type_supports($post_type, 'thumbnail') && !has_post_thumbnail($post_id)) {
+        if ($post_id && 'publish' === $post_status && isset($data['post_type']) && $data['post_type'] !== 'page') {
+            if (post_type_supports($data['post_type'], 'thumbnail') && !has_post_thumbnail($post_id)) {
                 $data['post_status'] = 'draft';
             }
         }
@@ -1004,7 +1004,7 @@ endif;
 if ($GLOBALS['pagenow'] == 'post-new.php' || $pagenow == 'post.php') :
     add_action('admin_notices', function () {
         $post = get_post();
-        if ('publish' !== get_post_status($post->ID) && !has_post_thumbnail($post->ID)) { ?>
+        if ('publish' !== get_post_status($post->ID) && !has_post_thumbnail($post->ID) && get_post_type($post->ID) !== 'page') { ?>
             <div id="message" class="error">
                 <p><strong><?php _e('Please set Featured Image. Article cannot be published without one.'); ?></strong></p>
             </div>

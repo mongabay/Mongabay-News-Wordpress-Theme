@@ -84,13 +84,18 @@ do_action('rss_tag_pre', 'rss2');
 					<link><?php the_permalink_rss() ?></link>
 					<comments><?php comments_link_feed(); ?></comments>
 					<pubDate><?php echo get_the_date('d M Y H:i:s +0000'); ?></pubDate>
-					<dc:creator>
-						<![CDATA[<?php $authors = wp_get_object_terms($post->ID, 'byline');
-											foreach ($authors as $author) {
-												$author_name = $author->name;
-												echo $author_name;
-											} ?>]]>
-					</dc:creator>
+					<?php
+					$authors = wp_get_object_terms($post->ID, 'byline');
+					if ($authors) {
+					?>
+						<dc:creator>
+							<![CDATA[<?php
+												foreach ($authors as $author) {
+													$author_name = $author->name;
+													echo $author_name;
+												} ?>]]>
+						</dc:creator>
+					<?php } ?>
 					<author>
 						<![CDATA[<?php echo get_the_author(); ?>]]>
 					</author>
