@@ -59,4 +59,4 @@ function article_headline()
 
     </div>
   </div>
-<? } ?>
+<?php } ?>

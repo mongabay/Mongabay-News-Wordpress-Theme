@@ -28,7 +28,7 @@
 					<li><a href="https://news.mongabay.com/about/"><?php _e('About', 'mongabay'); ?></a></li>
 					<li><a href="https://news.mongabay.com/contact/"><?php _e('Contact', 'mongabay'); ?></a></li>
 					<?php if (get_enabled_features('donate')) : ?><li><a href="<?php echo get_donate_link(); ?>"><?php _e('Donate', 'mongabay'); ?></a></li><?php endif; ?>
-					<li><a href="<?php echo get_subscribe_link(); ?>"><?php _e('Newsletters', 'mongabay'); ?></a></li>
+					<li><a href="<?php echo get_subscribe_link_local(get_current_blog_id()); ?>"><?php _e('Newsletters', 'mongabay'); ?></a></li>
 					<li><a href="https://news.mongabay.com/submissions/"><?php _e('Submissions', 'mongabay'); ?></a></li>
 					<li><a href="https://news.mongabay.com/terms/"><?php _e('Terms of Use', 'mongabay'); ?></a></li>
 				</ul>

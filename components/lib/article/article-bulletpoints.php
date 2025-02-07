@@ -42,5 +42,4 @@ function article_bulletpoints(int $post_id)
       });
     })(jQuery);
   </script>
-<? }
-?>
+<?php } ?>

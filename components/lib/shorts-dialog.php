@@ -159,4 +159,4 @@ function get_shorts_dialog($show_more = false)
     initDialog();
   </script>
 
-<? }
+<?php } ?>

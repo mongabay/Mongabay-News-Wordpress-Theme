@@ -175,3 +175,17 @@ function get_social_links($site_id)
       );
   }
 }
+
+function get_subscribe_link_local($site_id)
+{
+  switch ($site_id) {
+    case 20:
+      // News
+      return 'https://mongabay.us14.list-manage.com/subscribe?u=80161fe385606408293ae0e51&id=940652e1f4';
+    case 30:
+      // India
+      return 'https://mongabay.us17.list-manage.com/subscribe?u=2dd04db80c7aee01e77033c9c&id=ac74ea7c07&mc_cid=4c25010d1b&mc_eid=561303a745';
+    default:
+      return 'https://mongabay.us14.list-manage.com/subscribe?u=80161fe385606408293ae0e51&id=940652e1f4';
+  }
+}

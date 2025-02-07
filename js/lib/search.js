@@ -282,7 +282,7 @@ function clearSearch() {
 }
 
 const shouldFetch =
-  searchInput.value.length > 0 || selectedTopics.length > 0 || selectedLocations.length > 0;
+  searchInput.value.length > 0 || selectedTopics.length > 0 || selectedLocations.length > 0 || selectedFormats.length > 0;
 
 /**
  * Creates clear button for input fields
@@ -1037,6 +1037,7 @@ async function searchTopic() {
   if (data.topics.edges.length === 0) {
     topicsResults.innerHTML = "<p>No topics found</p>";
     topicsResults.classList.remove("hide");
+    topicsActions.innerHTML = "";
     return;
   }
 
