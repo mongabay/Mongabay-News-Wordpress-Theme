@@ -44,5 +44,4 @@ function shorts_article_card($id, $is_large = false, $title_class = '', $idx = 0
     </div>
     <?php the_post_thumbnail($id, 'medium', array('class' => 'rounded-bottom')); ?>
   </div>
-<? }
-?>
+<?php } ?>

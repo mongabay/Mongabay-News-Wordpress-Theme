@@ -77,4 +77,4 @@ function article_credits(int $post_id)
       <?php } ?>
     </div>
   </div>
-<? } ?>
+<?php } ?>

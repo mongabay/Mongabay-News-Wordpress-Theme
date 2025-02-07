@@ -94,7 +94,7 @@
       </div>
       <?php videos_latest(); ?>
       <?php if (!wp_is_mobile()) {
-        banner(get_subscribe_link(), 'Subscribe', 'Stay informed with news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--20 pv--56 full-width', 'extra-large');
+        banner(get_subscribe_link_local(get_current_blog_id()), 'Subscribe', 'Stay informed with news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--20 pv--56 full-width', 'extra-large');
       } ?>
     </div>
     <?php if (!wp_is_mobile()) { ?>

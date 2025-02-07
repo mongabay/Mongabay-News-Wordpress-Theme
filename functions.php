@@ -11,20 +11,20 @@ include(get_template_directory() . '/custom-code/meta.php');
 include(get_template_directory() . '/components/functions.php');
 include(get_template_directory() . '/custom-code/post-type-formats.php');
 include(get_template_directory() . '/custom-code/analytics.php');
+
+
 if (function_exists('add_theme_support')) {
     add_theme_support('menus');
     add_theme_support('post-formats', array('aside'));
     add_theme_support('post-thumbnails');
     add_image_size('large', 1200, 800, true); // Large Thumbnail
+    add_image_size('wide', 1200); // Large No Crop Thumbnail
     add_image_size('medium', 768, 512, true); // Medium Thumbnail
     add_image_size('cover-image-retina', 2400, 890, true); // Retina Cover Thumbnail
     add_image_size('thumbnail', 100, 100, true); // Small Thumbnail
     load_theme_textdomain('mongabay', get_template_directory() . '/languages');
 }
-/*------------------------------------*\
-    Functions
-\*------------------------------------*/
-//Spot.im script function
+
 function mongabay_comments()
 {
     $site_id = get_current_blog_id();
@@ -1309,6 +1309,15 @@ function custom_author_post_types_query($query)
     }
 }
 
+// Add the new image size to the list of available sizes in Gutenberg
+function mongabay_custom_image_sizes($sizes)
+{
+    return array_merge($sizes, array(
+        'wide' => __('Wide No Crop'),
+    ));
+}
+add_filter('image_size_names_choose', 'mongabay_custom_image_sizes');
+
 /*------------------------------------*\
     Actions + Filters
 \*------------------------------------*/
@@ -1334,7 +1343,7 @@ add_action('admin_menu', 'mongabay_remove_custom_fields'); // Remove custom fiel
 add_action('admin_print_footer_scripts', 'px_shortcode_button'); // Add parallax button
 add_action('admin_print_footer_scripts', 'open_close_px_content'); // Add parallax button
 add_action('template_redirect', 'mongabay_featured'); // Redirect template if content is Featured
-// add_action('init', 'custom_rss_feed_init'); // Add custom RSS feed
+add_action('init', 'custom_rss_feed_init'); // Add custom RSS feed
 add_action('wp_enqueue_scripts', 'mongabay_ajaxed_pagination');
 add_action('wp_ajax_load_more_posts', 'load_more_posts');
 add_action('wp_ajax_nopriv_load_more_posts', 'load_more_posts');

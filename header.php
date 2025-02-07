@@ -74,7 +74,7 @@ if (wp_is_mobile()) {
 					<li><a href="<?php echo home_url(); ?>/<?php echo get_menu_item('articles', 'slug'); ?>" class="<?php echo is_page(get_menu_item('articles', 'title')) ? 'active' : ''; ?>"><?php echo get_menu_item('articles', 'title'); ?></a></li>
 					<?php if (get_enabled_features('shorts')) : ?><li><a href="<?php echo home_url(); ?>/<?php echo get_menu_item('shorts', 'slug'); ?>" class="<?php echo is_page(get_menu_item('shorts', 'title')) ? 'active' : ''; ?>"><?php echo get_menu_item('shorts', 'title'); ?></a></li><?php endif; ?>
 				</ul>
-				<a class="theme--button primary simple md-hide" href="<?php echo get_enabled_features('donate') ? get_donate_link() : get_subscribe_link(); ?>"><?php echo (get_enabled_features('donate') ? __('Donate', 'mongabay') : __('Subscribe', 'mongabay')); ?></a>
+				<a class="theme--button primary simple md-hide" href="<?php echo get_enabled_features('donate') ? get_donate_link() : get_subscribe_link_local(get_current_blog_id()); ?>"><?php echo (get_enabled_features('donate') ? __('Donate', 'mongabay') : __('Subscribe', 'mongabay')); ?></a>
 				<a id="theme-switch" class="icon icon-cog"></a>
 				<a id="site-search" href="<?php echo home_url(); ?>/?s="><span class="icon icon-search"></span></a>
 				<a id="secondary-menu"><span class="icon icon-menu"></span></a>
@@ -120,7 +120,7 @@ if (wp_is_mobile()) {
 									<li><a href="<?php echo get_donate_link(); ?>"><?php _e('Donate', 'mongabay'); ?></a></li>
 								<?php } ?>
 								<?php if (function_exists('get_subscribe_link')) { ?>
-									<li><a href="<?php echo get_subscribe_link(); ?>"><?php _e('Subscribe page', 'mongabay'); ?></a></li>
+									<li><a href="<?php echo get_subscribe_link_local(get_current_blog_id()); ?>"><?php _e('Subscribe page', 'mongabay'); ?></a></li>
 								<?php } ?>
 								<li><a href="<?php echo home_url(); ?>/submissions/"><?php _e('Submissions', 'mongabay'); ?></a></li>
 							</ul>

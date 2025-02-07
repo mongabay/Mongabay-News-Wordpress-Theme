@@ -46,7 +46,7 @@ $formats = array('specials');
 <?php featured_articles_slider($formats, 4, 5); ?>
 
 <div class="container pv--40">
-	<?php banner(get_subscribe_link(), 'Subscribe', 'Stay informed with news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--20 pv--56 full-width', 'extra-large'); ?>
+	<?php banner(get_subscribe_link_local(get_current_blog_id()), 'Subscribe', 'Stay informed with news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--20 pv--56 full-width', 'extra-large'); ?>
 </div>
 
 <div class="section--highlight">

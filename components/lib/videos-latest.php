@@ -72,7 +72,7 @@ function videos_latest()
             <h1>Subscribe</h1>
           </div>
             <div class="copy">' . __('Stay informed with news and inspiration from nature’s frontline.', 'mongabay') . '</div>
-          <a href="' . get_subscribe_link() . '" class="theme--button primary full-width">' . __('Newsletter', 'mongabay') . '<span class="icon icon-right"></span>
+          <a href="' . get_subscribe_link_local(get_current_blog_id()) . '" class="theme--button primary full-width">' . __('Newsletter', 'mongabay') . '<span class="icon icon-right"></span>
           </a>
         </div>
       </div>
