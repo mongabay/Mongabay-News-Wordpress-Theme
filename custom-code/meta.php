@@ -33,7 +33,7 @@ function mongabay_meta()
 		echo '<meta property="og:url" content="' . esc_url(get_permalink()) . '"/>' . "\n";
 		echo '<meta property="og:type" content="article" />' . "\n";
 
-		$thumbnail_src = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'medium');
+		$thumbnail_src = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'large');
 
 		if (!empty($thumbnail_src[0])) {
 			echo '<meta property="og:image" content="' . esc_url($thumbnail_src[0]) . '"/>' . "\n";

@@ -9,6 +9,7 @@ header('Access-Control-Allow-Origin: *');
 header('Content-Type: ' . feed_content_type('rss-http') . '; charset=' . get_option('blog_charset'), true);
 $more = 1;
 $type = get_query_var('feedtype');
+$location = get_query_var('location');
 $post_type = get_query_var('type');
 $per_page = get_query_var('show');
 $page = get_query_var('page');
@@ -82,6 +83,16 @@ do_action('rss_tag_pre', 'rss2');
 			'posts_per_page' => $per_page,
 			'pagination' => false,
 		);
+
+		if ($location) {
+			$args['tax_query'] = array(
+				array(
+					'taxonomy' => 'location',
+					'field' => 'slug',
+					'terms' => $location,
+				)
+			);
+		};
 
 		if ($post_type && in_array($post_type, $default_post_types)) {
 			$args['post_type'] = $post_type;
