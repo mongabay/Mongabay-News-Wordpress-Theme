@@ -22,7 +22,7 @@ msgstr "Halaman tidak ditemukan"
 
 #: Mongabay-News-Wordpress-Theme/404.php:7
 msgid "Return home?"
-msgstr "Kembali ke rumah?"
+msgstr "Kembali ke beranda?"
 
 #: Mongabay-News-Wordpress-Theme/articles-page.php:16 Mongabay-News-Wordpress-Theme/landing-page.php:26
 msgid "Top stories"
@@ -39,7 +39,7 @@ msgstr "Semua berita"
 
 #: Mongabay-News-Wordpress-Theme/articles-page.php:48 Mongabay-News-Wordpress-Theme/templates/page-specials.php:54
 msgid "Quickly stay updated with our news <span>shorts</span>"
-msgstr "Pantau terus <span>celana pendek</span> berita kami dengan cepat"
+msgstr "Dapatkan Update <span>celana pendek</span> berita kami dengan cepat"
 
 #: Mongabay-News-Wordpress-Theme/author.php:56 Mongabay-News-Wordpress-Theme/footer.php:24
 #: Mongabay-News-Wordpress-Theme/footer.php:28 Mongabay-News-Wordpress-Theme/templates/taxonomy-byline.php:63
@@ -63,8 +63,7 @@ msgstr "Tidak ada hasil yang ditemukan"
 
 #: Mongabay-News-Wordpress-Theme/comments.php:3
 msgid "Post is password protected. Enter the password to view any comments."
-msgstr ""
-"Postingan dilindungi kata sandi. Masukkan kata sandi untuk melihat komentar apa pun."
+msgstr "Postingan dilindungi kata sandi. Masukkan kata sandi untuk melihat komentar mana pun."
 
 #: Mongabay-News-Wordpress-Theme/comments.php:18
 msgid "Comments are closed here."
@@ -110,11 +109,11 @@ msgstr "Spesial"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:269
 msgid "Animals"
-msgstr "Hewan"
+msgstr "Satwa"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:269
 msgid "animals"
-msgstr "hewan"
+msgstr "satwa"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:257 Mongabay-News-Wordpress-Theme/functions.php:263
 #: Mongabay-News-Wordpress-Theme/functions.php:270
@@ -123,13 +122,13 @@ msgstr "Hutan"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:258
 msgid "Wildlife"
-msgstr "Margasatwa"
+msgstr "Alam liar"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:40
 #: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:59 Mongabay-News-Wordpress-Theme/search.php:44
 #: Mongabay-News-Wordpress-Theme/search.php:53
 msgid "wildlife"
-msgstr "margasatwa"
+msgstr "alam liar"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:270 Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:40
 #: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:59 Mongabay-News-Wordpress-Theme/search.php:43
@@ -191,7 +190,7 @@ msgstr "Berita singkat"
 
 #: Mongabay-News-Wordpress-Theme/footer.php:18 Mongabay-News-Wordpress-Theme/components/lib/utils.php:66
 msgid "Feature Stories"
-msgstr "Cerita Fitur"
+msgstr "Artikel Fitur"
 
 #: Mongabay-News-Wordpress-Theme/footer.php:19 Mongabay-News-Wordpress-Theme/components/lib/utils.php:70
 msgid "The Latest"
@@ -205,7 +204,7 @@ msgstr "Kontak"
 #: Mongabay-News-Wordpress-Theme/footer.php:30 Mongabay-News-Wordpress-Theme/header.php:77
 #: Mongabay-News-Wordpress-Theme/header.php:120 Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:22
 msgid "Donate"
-msgstr "Menyumbangkan"
+msgstr "Donasi"
 
 #: Mongabay-News-Wordpress-Theme/footer.php:31
 msgid "Newsletters"
@@ -229,7 +228,7 @@ msgstr "Madagaskar liar"
 
 #: Mongabay-News-Wordpress-Theme/footer.php:43 Mongabay-News-Wordpress-Theme/header.php:134
 msgid "Selva tropicales"
-msgstr "Hutan tropis"
+msgstr "Hutan hujan tropis"
 
 #: Mongabay-News-Wordpress-Theme/footer.php:44 Mongabay-News-Wordpress-Theme/header.php:138
 msgid "For Kids"
@@ -281,7 +280,7 @@ msgstr "Aplikasi Android"
 
 #: Mongabay-News-Wordpress-Theme/footer.php:63
 msgid "Apple News"
-msgstr "Berita Apple"
+msgstr "Apple News"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:419
 msgid "View Article"
@@ -313,19 +312,19 @@ msgstr "Jika artikel ditampilkan"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:927
 msgid "Bulletpoint 1"
-msgstr "Poin-poin 1"
+msgstr "Poin 1"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:936
 msgid "Bulletpoint 2"
-msgstr "Poin-poin 2"
+msgstr "Poin 2"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:945
 msgid "Bulletpoint 3"
-msgstr "Poin-poin 3"
+msgstr "Poin 3"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:954
 msgid "Bulletpoint 4"
-msgstr "Poin-poin 4"
+msgstr "Poin 4"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:963
 msgid "Article link"
@@ -333,7 +332,7 @@ msgstr "Tautan artikel"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:1007
 msgid "Please set Featured Image. Article cannot be published without one."
-msgstr "Silakan atur Gambar Unggulan. Artikel tidak dapat diterbitkan tanpanya."
+msgstr "Silakan atur Gambar Utama. Artikel tidak dapat diterbitkan tanpanya."
 
 #: Mongabay-News-Wordpress-Theme/functions.php:1163
 msgid "No older posts"
@@ -342,7 +341,7 @@ msgstr "Tidak ada postingan lama"
 #: Mongabay-News-Wordpress-Theme/functions.php:1215 Mongabay-News-Wordpress-Theme/components/lib/lists/articles-listing.php:53
 #: Mongabay-News-Wordpress-Theme/components/lib/sliders/featured-articles-slider.php:36
 msgid "Feature story"
-msgstr "Cerita fitur"
+msgstr "Artikel fitur"
 
 #: Mongabay-News-Wordpress-Theme/header.php:123
 msgid "Subscribe page"
@@ -354,7 +353,7 @@ msgstr "Kebijakan Privasi"
 
 #: Mongabay-News-Wordpress-Theme/header.php:130
 msgid "Advertising"
-msgstr "Periklanan"
+msgstr "Iklan"
 
 #: Mongabay-News-Wordpress-Theme/header.php:135
 msgid "Impact"
@@ -366,7 +365,7 @@ msgstr "Tonton <span class=\"icon icon-play\">video</span> unik yang menghilangk
 
 #: Mongabay-News-Wordpress-Theme/landing-page.php:69 Mongabay-News-Wordpress-Theme/articles-page.php:48
 msgid "Quickly stay updated with our news <span class=\"icon icon-shorts\">shorts</span>"
-msgstr "Pantau terus berita terbaru kami <span class=\"icon icon-shorts\">celana pendek</span>"
+msgstr "Pantau terus berita terbaru kami <span class=\"icon icon-shorts\">singkat</span>"
 
 #: Mongabay-News-Wordpress-Theme/page.php:15 Mongabay-News-Wordpress-Theme/single-custom-story.php:28
 #: Mongabay-News-Wordpress-Theme/single-featured.php:40 Mongabay-News-Wordpress-Theme/single-podcasts.php:69
@@ -386,7 +385,7 @@ msgstr "Semua podcast"
 
 #: Mongabay-News-Wordpress-Theme/search.php:9
 msgid "Type to search in any field."
-msgstr "Ketik untuk mencari di bidang apa pun."
+msgstr "Ketik untuk mencari di bagian mana pun."
 
 #: Mongabay-News-Wordpress-Theme/search.php:28
 msgid "Format"
@@ -394,11 +393,11 @@ msgstr "Format"
 
 #: Mongabay-News-Wordpress-Theme/search.php:37
 msgid "Featured only"
-msgstr "Hanya ditampilkan"
+msgstr "Hanya yang featured"
 
 #: Mongabay-News-Wordpress-Theme/search.php:41
 msgid "Try out our suggestions"
-msgstr "Cobalah saran kami"
+msgstr "Coba saran kami"
 
 #: Mongabay-News-Wordpress-Theme/search.php:43 Mongabay-News-Wordpress-Theme/search.php:52
 msgid "Forest articles"
@@ -414,7 +413,7 @@ msgstr "Podcast Konservasi"
 
 #: Mongabay-News-Wordpress-Theme/search.php:46 Mongabay-News-Wordpress-Theme/search.php:55
 msgid "Ocean Specials"
-msgstr "Spesial Samudera"
+msgstr "Spesial Laut"
 
 #: Mongabay-News-Wordpress-Theme/searchform.php:4
 msgid "To search, type and hit enter."
@@ -428,7 +427,7 @@ msgstr "Tidak ada artikel pendek yang ditemukan"
 #: Mongabay-News-Wordpress-Theme/single-specials_new.php:79 Mongabay-News-Wordpress-Theme/specials-page.php:26
 #: Mongabay-News-Wordpress-Theme/templates/taxonomy-specials.php:113
 msgid "All Specials"
-msgstr "Semua Spesial"
+msgstr "Semua yang Spesial"
 
 #: Mongabay-News-Wordpress-Theme/single-podcasts.php:44 Mongabay-News-Wordpress-Theme/single-videos.php:42
 msgid "Transcript"
@@ -436,9 +435,7 @@ msgstr "Salinan"
 
 #: Mongabay-News-Wordpress-Theme/single-podcasts.php:47 Mongabay-News-Wordpress-Theme/single-videos.php:45
 msgid "Notice: Transcripts are machine and human generated and lightly edited for accuracy. They may contain errors."
-msgstr ""
-"Pemberitahuan: Transkrip dibuat oleh mesin dan manusia serta diedit dengan ringan untuk akurasi."
-"Mereka mungkin mengandung kesalahan."
+msgstr "Pemberitahuan: Transkrip dibuat oleh mesin dan manusia serta sedikit diedit  untuk akurasi. Mungkin ada kesalahan."
 
 #: Mongabay-News-Wordpress-Theme/single-podcasts.php:54 Mongabay-News-Wordpress-Theme/single-videos.php:52
 msgid "Read full transcript"
@@ -475,7 +472,7 @@ msgstr "Bagikan ini"
 #: Mongabay-News-Wordpress-Theme/components/lib/share-icons-grid.php:69
 #: Mongabay-News-Wordpress-Theme/components/lib/article/social-share.php:93
 msgid "If you liked this story, share it with other people."
-msgstr "Jika Anda menyukai cerita ini, bagikan dengan orang lain."
+msgstr "Jika Anda menyukai cerita ini, bagikan kepada orang lain."
 
 #: Mongabay-News-Wordpress-Theme/components/lib/share-icons-grid.php:83
 #: Mongabay-News-Wordpress-Theme/components/lib/article/social-share.php:107
@@ -484,7 +481,7 @@ msgstr "Tautan halaman"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/shorts-dialog.php:26
 msgid "Share Short"
-msgstr "Bagikan Singkat"
+msgstr "Bagikan Short ini"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/shorts-dialog.php:27
 msgid "Read Full Article"
@@ -530,7 +527,7 @@ msgstr "Maaf, tidak ada postingan yang sesuai dengan kriteria Anda."
 
 #: Mongabay-News-Wordpress-Theme/components/lib/sliders/featured-articles-slider.php:22
 msgid "In-depth <span>feature stories</span> reveal context and insight"
-msgstr "<span>Cerita unggulan</span> yang mendalam mengungkapkan konteks dan wawasan"
+msgstr "<span>Artikel</span> mendalam yang mengungkap konteks dan wawasan"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/sliders/formats-slider.php:65
 #: Mongabay-News-Wordpress-Theme/components/lib/sliders/specials-slider.php:58
@@ -539,11 +536,11 @@ msgstr "Tidak ada postingan yang ditemukan"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/sliders/specials-slider.php:6
 msgid "Special Issues connect the dots between stories"
-msgstr "Edisi Khusus menghubungkan titik-titik di antara cerita"
+msgstr "Edisi Khusus menghubungkan artikel-artikel"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/sliders/series-articles-slider.php:55
 msgid "<span class=\"icon icon-specials\">Special issues</span> connect the dots between stories"
-msgstr "<span class=\"icon icon-specials\">Masalah khusus</span> menghubungkan titik-titik di antara cerita"
+msgstr "<span class=\"icon icon-specials\">Terbitan khusus</span> yang menghubungkan titik-titik di antara artikel"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/sliders/related-articles-slider.php:49
 msgid "Related Articles"
@@ -551,7 +548,7 @@ msgstr "Artikel Terkait"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/sliders/series-articles-slider.php:178
 msgid "More specials"
-msgstr "Lebih spesial"
+msgstr "Lebih banyak spesial"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/sliders/tools-slider.php:7
 msgid "Interested in other Mongabay websites?"
@@ -562,7 +559,7 @@ msgid ""
 "Mongabay seeks to raise interest in and appreciation of wild lands and wildlife, while examining the impact of emerging "
 "trends in climate, technology, economics, and finance on conservation and development."
 msgstr ""
-"Mongabay berupaya meningkatkan minat dan apresiasi terhadap lahan liar dan satwa liar, sambil mengkaji dampak dari munculnya "
+"Mongabay berupaya meningkatkan minat dan apresiasi terhadap alam liar dan satwa liar, sambil mengkaji dampak dari munculnya "
 "tren iklim, teknologi, ekonomi, dan keuangan terhadap konservasi dan pembangunan."
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:7
@@ -687,45 +684,45 @@ msgstr "Cerita Khusus"
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:133
 msgctxt "Post type singular name"
 msgid "Custom Story"
-msgstr "Cerita Kustom"
+msgstr "Artikel Custom"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:134
 msgid "Search Custom Stories"
-msgstr "Telusuri Cerita Khusus"
+msgstr "Telusuri Artikel Custom"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:135
 msgid "Popular Custom Stories"
-msgstr "Cerita Kustom Populer"
+msgstr "Artikel custom yang populer"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:136
 msgid "All Custom Stories"
-msgstr "Semua Cerita Khusus"
+msgstr "Semua Artikel Custom"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:139
 msgid "Edit Custom Stories"
-msgstr "Edit Cerita Khusus"
+msgstr "Edit Artikel Custom"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:140
 msgid "Update Custom Stories"
-msgstr "Perbarui Cerita Khusus"
+msgstr "Perbarui artikel custom"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:141
 msgid "Add New Custom Stories"
-msgstr "Tambahkan Cerita Kustom Baru"
+msgstr "Tambahkan Artikel custom Baru"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:142
 msgid "New Custom Stories Name"
-msgstr "Nama Cerita Kustom Baru"
+msgstr "Nama Artikel custom Baru"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:174
 msgctxt "Post type general name"
 msgid "Special Issues"
-msgstr "Masalah Khusus"
+msgstr "Terbitan Spesial"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:175
 msgctxt "Post type singular name"
 msgid "Special Issue"
-msgstr "Masalah Khusus"
+msgstr "Terbitan Spesial"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:176
 msgid "Search Special Issues"
@@ -737,23 +734,23 @@ msgstr "Edisi Khusus Populer"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:178
 msgid "All Special Issues"
-msgstr "Semua Masalah Khusus"
+msgstr "Semua Terbitan Spesial"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:181
 msgid "Edit Special Issue"
-msgstr "Sunting Edisi Khusus"
+msgstr "Sunting Edisi Spesial"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:182
 msgid "Update Special Issue"
-msgstr "Perbarui Edisi Khusus"
+msgstr "Perbarui Edisi Spesial"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:183
 msgid "Add New Special Issue"
-msgstr "Tambahkan Edisi Khusus Baru"
+msgstr "Tambahkan Edisi Spesial Baru"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:184
 msgid "New Special Issue Name"
-msgstr "Nama Edisi Khusus Baru"
+msgstr "Nama Edisi Spesial Baru"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-entity.php:7
 msgctxt "taxonomy general name"
@@ -1001,11 +998,11 @@ msgstr "Berlangganan"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:14
 msgid "Free and open access to credible information"
-msgstr "Akses bebas dan terbuka terhadap informasi yang kredibel"
+msgstr "Akses bebas dan terbuka ke informasi yang kredibel"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:18
 msgid "Stay informed with news and inspiration from nature’s frontline."
-msgstr "Tetap terinformasi dengan berita dan inspirasi dari garis depan alam."
+msgstr "Terus terupdate dengan berita dan inspirasi dari garis depan alam."
 
 #: Mongabay-News-Wordpress-Theme/components/lib/banners/inspiration-banner.php:5
 msgid "News and Inspiration from Nature's Frontline."
@@ -1017,7 +1014,7 @@ msgstr "Kami adalah organisasi nirlaba"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:18
 msgid "Help us tell impactful stories of biodiversity loss, climate change, and more"
-msgstr "Bantu kami menceritakan kisah-kisah berdampak mengenai hilangnya keanekaragaman hayati, perubahan iklim, dan banyak lagi"
+msgstr "Ceritakan pada kami  kisah-kisah mengenai hilangnya keanekaragaman hayati, perubahan iklim, dan banyak lagi"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:22
 msgid "Newsletter"
@@ -1029,16 +1026,15 @@ msgstr "Pelajari lebih lanjut"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/sliders/formats-slider.php:6
 msgid "In-depth feature stories reveal context and insight"
-msgstr "Cerita fitur yang mendalam mengungkapkan konteks dan wawasan"
+msgstr "Artikel fitur  mendalam yang ungkap konteks dan wawasan"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/sliders/formats-slider.php:6
 msgid "Listen to Nature with thought-provoking podcasts"
-msgstr "Dengarkan Alam dengan podcast yang menggugah pikiran"
+msgstr "Dengarkan Suara Alam dengan podcast yang menggugah pikiran"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/banners/podcasts-banner.php:15
 msgid "Listen to Nature with thought-provoking <span class=\"icon icon-podcast\">podcasts</span>"
-msgstr ""
-"Dengarkan Alam dengan <span class=\"icon icon-podcast\">podcast</span> yang menggugah pikiran"
+msgstr "Dengarkan Alam dengan <span class=\"icon icon-podcast\">podcast</span> yang menggugah pikiran"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/sliders/formats-slider.php:6
 msgid "Watch unique videos that cut through the noise"
@@ -1050,7 +1046,7 @@ msgstr "Baca artikel tentang topik seperti"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:55
 msgid "Explore enterprising journalism about"
-msgstr "Jelajahi jurnalisme giat tentang"
+msgstr "Jelajahi jurnalisme enterprise tentang"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:55
 #: Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:36
@@ -1096,9 +1092,6 @@ msgid "articles"
 msgstr "artikel"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:46 Mongabay-News-Wordpress-Theme/functions.php:251
-msgid "Shorts"
-msgstr "Celana pendek"
-
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:51 Mongabay-News-Wordpress-Theme/components/lib/utils.php:75
 msgid "about"
 msgstr "tentang"
