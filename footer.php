@@ -10,13 +10,13 @@
 					<div class="divider"></div>
 				</div>
 				<ul class="footer-links">
-					<li><a href="<?php echo home_url(); ?>/videos"><?php _e('Videos', 'mongabay'); ?></a></li>
-					<?php if (get_enabled_features('podcasts')) : ?><li><a href="<?php echo home_url(); ?>/podcasts"><?php _e('Podcasts', 'mongabay'); ?></a></li><?php endif; ?>
-					<li><a href="<?php echo home_url(); ?>/articles"><?php _e('Articles', 'mongabay'); ?></a></li>
-					<li><a href="<?php echo home_url(); ?>/specials"><?php _e('Specials', 'mongabay'); ?></a></li>
-					<?php if (get_enabled_features('shorts')) : ?><li><a href="<?php echo home_url(); ?>/shorts"><?php _e('Short news', 'mongabay'); ?></a></li><?php endif; ?>
-					<li><a href="<?php echo home_url(); ?>/features"><?php _e('Feature Stories', 'mongabay'); ?></a></li>
-					<li><a href="<?php echo home_url(); ?>/?s=&formats=post+videos+podcasts+shorts+specials"><?php _e('The Latest', 'mongabay'); ?></a></li>
+					<li><a href="<?php echo home_url() . '/' . get_menu_item('videos', 'slug'); ?>"><?php echo get_menu_item('videos', 'title'); ?></a></li>
+					<?php if (get_enabled_features('podcasts')) : ?><li><a href="<?php echo home_url() . '/' . get_menu_item('podcasts', 'slug'); ?>"><?php echo get_menu_item('podcasts', 'title'); ?></a></li><?php endif; ?>
+					<li><a href="<?php echo home_url() . '/' . get_menu_item('articles', 'slug'); ?>"><?php echo get_menu_item('articles', 'title'); ?></a></li>
+					<li><a href="<?php echo home_url() . '/' . get_menu_item('specials', 'slug'); ?>"><?php echo get_menu_item('specials', 'title'); ?></a></li>
+					<?php if (get_enabled_features('shorts')) : ?><li><a href="<?php echo home_url() . '/' . get_menu_item('shorts', 'slug'); ?>"><?php echo get_menu_item('shorts', 'title'); ?></a></li><?php endif; ?>
+					<li><a href="<?php echo home_url() . '/' . get_menu_item('features', 'slug'); ?>"><?php echo get_menu_item('features', 'title'); ?></a></li>
+					<li><a href="<?php echo home_url() . '/' . get_menu_item('thelatest', 'slug') . date('Y'); ?>"><?php echo get_menu_item('thelatest', 'title'); ?></a></li>
 				</ul>
 			</div>
 			<div>
@@ -25,7 +25,7 @@
 					<div class="divider"></div>
 				</div>
 				<ul class="footer-links">
-					<li><a href="https://news.mongabay.com/about/"><?php _e('About', 'mongabay'); ?></a></li>
+					<li><a href="<?php echo home_url() . '/' . get_menu_item('about', 'slug'); ?>"><?php echo get_menu_item('about', 'title'); ?></a></li>
 					<li><a href="https://news.mongabay.com/contact/"><?php _e('Contact', 'mongabay'); ?></a></li>
 					<?php if (get_enabled_features('donate')) : ?><li><a href="<?php echo get_donate_link(); ?>"><?php _e('Donate', 'mongabay'); ?></a></li><?php endif; ?>
 					<li><a href="<?php echo get_subscribe_link_local(get_current_blog_id()); ?>"><?php _e('Newsletters', 'mongabay'); ?></a></li>

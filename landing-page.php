@@ -17,7 +17,7 @@ get_header();
 			<div class="divider"></div>
 		</div>
 		<div class="container in-column gap--16 pv--8">
-			<?php articles_listing(array('post', 'custom-story'), 6, 0, false, 'medium', null, null, null); ?>
+			<?php articles_listing(array('post', 'custom-story', 'short-article'), 6, 0, false, 'medium', null, null, null); ?>
 			<a href="<?php echo home_url(); ?>/?s=&formats=<?php echo get_default_search_formats(get_default_formats()); ?>" class="theme--button outlined full-width"><?php _e('All news', 'mongabay'); ?><span class="icon icon-right"></span></a>
 		</div>
 	</div>

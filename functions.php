@@ -230,7 +230,6 @@ function mongabay_conditional_scripts()
         wp_register_script('iframeresize', 'https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.1/iframeResizer.min.js', array(), '4.3.1', true);
         wp_enqueue_script('iframeresize');
     }
-
     if (is_front_page() || is_page([__('articles', 'mongabay'), __('specials', 'mongabay'), __('videos', 'mongabay'), __('podcasts', 'mongabay'), __('features', 'mongabay')])) {
         wp_register_style('slick-main', get_template_directory_uri() . '/js/lib/slick/slick.css', array(), '1.8.1', 'all');
         wp_enqueue_style('slick-main');
@@ -241,7 +240,6 @@ function mongabay_conditional_scripts()
         wp_register_script('slick-init', get_template_directory_uri() . '/js/slick-init.js', array(), '1.0.0', true);
         wp_enqueue_script('slick-init');
     }
-
     if (is_search() && isset($_GET['s'])) {
         wp_register_script('search-js', get_stylesheet_directory_uri() . '/js/lib/search.js', array(), '1.0.3', true);
         wp_enqueue_script('search-js');
@@ -259,11 +257,13 @@ function mongabay_conditional_scripts()
             2 => array(__('Oceans', 'mongabay')),
             3 => array(__('Feature', 'mongabay')),
         ));
-        wp_localize_script('search-js', 'articlesDataLocal', array(
-            0 => array(__('Forests', 'mongabay')),
-            1 => array(__('Wildlife', 'mongabay')),
-            2 => array(__('Oceans', 'mongabay')),
-            3 => array(__('Feature', 'mongabay')),
+        wp_localize_script('search-js', 'locationsDataLocal', array(
+            0 => array(__('Asia', 'mongabay'), __('asia', 'mongabay')),
+            1 => array(__('Africa', 'mongabay'), __('africa', 'mongabay')),
+            2 => array(__('South America', 'mongabay'), __('south-america', 'mongabay')),
+            3 => array(__('Indonesia', 'mongabay'), __('indonesia', 'mongabay')),
+            4 => array(__('Amazon', 'mongabay'), __('amazon', 'mongabay')),
+            5 => array(__('Congo', 'mongabay'), __('congo', 'mongabay')),
         ));
         wp_localize_script('search-js', 'topicsDataLocal', array(
             0 => array(__('Animals', 'mongabay'), __('animals', 'mongabay')),
@@ -276,12 +276,10 @@ function mongabay_conditional_scripts()
         wp_localize_script('search-js', 'storiesLocal', __('stories', 'mongabay'));
         wp_localize_script('search-js', 'storyLocal', __('story', 'mongabay'));
     }
-
     if (is_page(['contact', 'terms']) && !wp_is_mobile()) {
         wp_register_script('highlighter', get_template_directory_uri() . '/js/lib/sidebar-highlighter.js', array(), '1.0.0', true);
         wp_enqueue_script('highlighter');
     }
-
     if (is_page('shorts')) {
         wp_register_script('shorts-previewer', get_template_directory_uri() . '/js/lib/shorts-previewer.js', array(), '1.0.0', true);
         wp_enqueue_script('shorts-previewer');

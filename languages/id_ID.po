@@ -43,8 +43,8 @@ msgstr "Dapatkan Update <span>celana pendek</span> berita kami dengan cepat"
 
 #: Mongabay-News-Wordpress-Theme/author.php:56 Mongabay-News-Wordpress-Theme/footer.php:24
 #: Mongabay-News-Wordpress-Theme/footer.php:28 Mongabay-News-Wordpress-Theme/templates/taxonomy-byline.php:63
-#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:78 Mongabay-News-Wordpress-Theme/components/lib/utils.php:50
-#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:74
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:50 Mongabay-News-Wordpress-Theme/components/lib/utils.php:74
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:78
 msgid "About"
 msgstr "Tentang"
 
@@ -212,7 +212,7 @@ msgstr "Buletin"
 
 #: Mongabay-News-Wordpress-Theme/footer.php:32 Mongabay-News-Wordpress-Theme/header.php:125
 msgid "Submissions"
-msgstr "Kiriman"
+msgstr "Mengirim Berita"
 
 #: Mongabay-News-Wordpress-Theme/footer.php:33 Mongabay-News-Wordpress-Theme/header.php:129
 msgid "Terms of Use"
@@ -224,7 +224,7 @@ msgstr "Tautan eksternal"
 
 #: Mongabay-News-Wordpress-Theme/footer.php:42 Mongabay-News-Wordpress-Theme/header.php:133
 msgid "Wild Madagascar"
-msgstr "Madagaskar liar"
+msgstr "Wild Madagascar"
 
 #: Mongabay-News-Wordpress-Theme/footer.php:43 Mongabay-News-Wordpress-Theme/header.php:134
 msgid "Selva tropicales"
@@ -232,7 +232,7 @@ msgstr "Hutan hujan tropis"
 
 #: Mongabay-News-Wordpress-Theme/footer.php:44 Mongabay-News-Wordpress-Theme/header.php:138
 msgid "For Kids"
-msgstr "Untuk Anak-Anak"
+msgstr "Mongabay Kids"
 
 #: Mongabay-News-Wordpress-Theme/footer.php:45 Mongabay-News-Wordpress-Theme/header.php:139
 msgid "Mongabay.org"

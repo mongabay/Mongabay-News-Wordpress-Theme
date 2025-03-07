@@ -68,14 +68,14 @@ function get_menu_item($key, $option)
     ),
     'thelatest' => array(
       'title' => __('The Latest', 'mongabay'),
-      'slug' => __('list/2024', 'mongabay')
+      'slug' => __('list/', 'mongabay')
     ),
     'exploreall' => array(
       'title' => __('Explore All', 'mongabay'),
       'slug' => __('?s=&formats=post+custom_story+videos+podcasts+specials+short_article', 'mongabay')
     ),
     'footerabout' => array(
-      'title' => __('About ', 'mongabay'),
+      'title' => __('About', 'mongabay'),
       'slug' => __('https://www.mongabay.com/about/', 'mongabay')
     ),
     'footerteam' => array(
@@ -151,6 +151,18 @@ function get_social_links($site_id)
         'android' => 'https://play.google.com/store/apps/details?id=com.newsmongabay&hl=en',
         'apple' => 'https://apple.news/T7BxfNfp4QAiuOPNsUcn04Q/',
       );
+    case 25:
+      // Latam
+      return array(
+        'linkedin' => 'https://www.linkedin.com/company/mongabay-latam/posts/?feedView=all',
+        'instagram' => 'https://www.instagram.com/Mongabaylatam',
+        'youtube' => 'https://www.youtube.com/c/MongabayLatam',
+        'x' => 'https://x.com/MongabayLatam',
+        'facebook' => 'https://www.facebook.com/MongabayLatam',
+        'mastodon' => 'https://mastodon.green/@mongabay',
+        'android' => 'https://play.google.com/store/apps/details?id=com.newsmongabay&hl=en',
+        'apple' => 'https://apple.news/T7BxfNfp4QAiuOPNsUcn04Q/',
+      );
     case 30:
       // India
       return array(
@@ -182,6 +194,9 @@ function get_subscribe_link_local($site_id)
     case 20:
       // News
       return 'https://mongabay.us14.list-manage.com/subscribe?u=80161fe385606408293ae0e51&id=940652e1f4';
+    case 25:
+      // Latam
+      return 'https://es.mongabay.com/boletin-de-noticias/';
     case 30:
       // India
       return 'https://mongabay.us17.list-manage.com/subscribe?u=2dd04db80c7aee01e77033c9c&id=ac74ea7c07&mc_cid=4c25010d1b&mc_eid=561303a745';
