@@ -33,14 +33,7 @@ const articlesData = articlesDataLocal;
 
 const topicsData = topicsDataLocal;
 
-const locationsData = {
-  0: ["Asia", "asia"],
-  1: ["Africa", "africa"],
-  2: ["South America", "south-america"],
-  3: ["Indonesia", "indonesia"],
-  4: ["Amazon", "amazon"],
-  5: ["Congo", "congo"],
-};
+const locationsData = locationsDataLocal;
 
 const clearAllTagsText = "Clear all tags";
 const clearSearchInputText = "Clear search input";

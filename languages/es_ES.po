@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-08-07 20:55+0200\n"
-"PO-Revision-Date: 2024-09-05 09:34+0200\n"
+"PO-Revision-Date: 2025-03-06 23:58+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_ES\n"
@@ -131,11 +131,63 @@ msgstr "Bosques"
 msgid "Wildlife"
 msgstr "Vida silvestre"
 
+#: Mongabay-News-Wordpress-Theme/functions.php:250
+msgid "Custom Story"
+msgstr "Artículo personalizado"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:261
+msgid "Asia"
+msgstr "Asia"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:261
+msgid "asia"
+msgstr "asia"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:262
+msgid "Africa"
+msgstr "Africa"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:262
+msgid "africa"
+msgstr "africa"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:263
+msgid "South America"
+msgstr "Latinoamérica"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:263
+msgid "south-america"
+msgstr "latinoamerica"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:264
+msgid "Indonesia"
+msgstr "Indonesia"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:264
+msgid "indonesia"
+msgstr "indonesia"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:265
+msgid "Amazon"
+msgstr "Amazonía"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:265
+msgid "amazon"
+msgstr "amazonia"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:266
+msgid "Congo"
+msgstr "Congo"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:266
+msgid "congo"
+msgstr "congo"
+
 #: Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:40
 #: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:59
 #: Mongabay-News-Wordpress-Theme/search.php:44 Mongabay-News-Wordpress-Theme/search.php:53
 msgid "wildlife"
-msgstr "vida-silvestre"
+msgstr "animales"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:270
 #: Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:40
@@ -1065,8 +1117,7 @@ msgstr "Escucha los podcasts que te acercan a la naturaleza"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/banners/podcasts-banner.php:15
 msgid "Listen to Nature with thought-provoking <span class=\"icon icon-podcast\">podcasts</span>"
-msgstr ""
-"Escucha los naturaleza <span class=\"icon icon-podcast\">podcasts</span> que te acercan a la naturaleza"
+msgstr "Escucha los <span class=\"icon icon-podcast\">podcasts</span> que te acercan a la naturaleza"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/sliders/formats-slider.php:6
 msgid "Watch unique videos that cut through the noise"
@@ -1138,7 +1189,6 @@ msgid "en-corto"
 msgstr "en-corto"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:51
-#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:75
 msgid "about"
 msgstr "nosotros"
 
@@ -1165,8 +1215,8 @@ msgid "shorts"
 msgstr "en-corto"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:71
-msgid "list/2024"
-msgstr "list/2024"
+msgid "list/"
+msgstr "list/"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:74
 msgid "Explore All"
