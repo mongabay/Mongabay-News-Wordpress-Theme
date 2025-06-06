@@ -73,7 +73,7 @@ function series_articles_slider(bool $show_headline, string $post_type = 'post')
                           <div class="img-overlay"></div>
                           <?php the_post_thumbnail('large'); ?>
                           <div class="article--container-headline">
-                            <div class="title headline gap--8 text-center">
+                            <div class="title headline gap--8">
                               <h1><?php the_title(); ?></h1>
                               <div class="meta">
                                 <span class="byline"><?php echo getPostBylines(get_the_ID()); ?></span>

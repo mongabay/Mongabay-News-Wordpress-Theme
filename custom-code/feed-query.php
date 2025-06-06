@@ -9,6 +9,7 @@ function mongabay_feeds_query_vars($vars)
 	$vars[] = 'location';
 	$vars[] = 'grant';
 	$vars[] = 'type';
+	$vars[] = 'topic';
 	$vars[] = 'page';
 	$vars[] = 's';
 

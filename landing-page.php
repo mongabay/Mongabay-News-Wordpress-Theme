@@ -30,7 +30,7 @@ get_header();
 	</div>
 	<div class="column--20 gap--40 pv--40 latest-banners" style="padding-top: 26px">
 		<?php banner(get_subscribe_link_local(get_current_blog_id()), 'Subscribe', 'Stay informed with news and inspiration from nature’s frontline.', 'Newsletter', 'outlined ph--20 pv--20 gap--16 full-width', 'lh--tightest', 'full-width'); ?>
-		<?php banner(get_donate_link(), 'We’re a nonprofit', 'Help us tell impactful stories of biodiversity loss, climate change, and more', 'Donate', 'accent ph--20 pv--56 full-width gap--16', 'lh--tightest', 'full-width'); ?>
+		<?php banner(get_donate_link(), 'We’re a nonprofit', 'Help us tell impactful stories of biodiversity loss, climate change, and more', 'Donate', 'bg-theme-emerald-green ph--20 pv--20 full-width gap--16', 'lh--tightest', 'full-width bg-theme-white'); ?>
 	</div>
 </div>
 
@@ -40,7 +40,7 @@ get_header();
 	<?php series_articles_slider(true, 'specials'); ?>
 
 	<div class="container full-width pv--40">
-		<?php banner(home_url() . '/about', 'Free and open access to credible information', '', 'Learn more', 'accent full-width pv--56 ph--20 gap--32', 'extra-large', ''); ?>
+		<?php banner(home_url() . '/about', 'Free and open access to credible information', '', 'Learn more', 'accent full-width pv--56 ph--56', 'extra-large', ''); ?>
 	</div>
 
 	<div class="<?php echo get_enabled_features('podcasts') ? 'section--highlight ' : ''; ?>container full-width pv--40">
@@ -55,7 +55,7 @@ get_header();
 	</div>
 
 	<div class="container full-width pv--40">
-		<?php banner(get_donate_link(), 'We’re a nonprofit', 'Help us tell impactful stories of biodiversity loss, climate change, and more', 'Donate', 'accent ph--20 pv--56 gap--32 full-width', 'extra-large', ''); ?>
+		<?php banner(get_donate_link(), 'We’re a nonprofit', 'Help us tell impactful stories of biodiversity loss, climate change, and more', 'Donate', 'accent ph--56 pv--56 full-width', 'extra-large', ''); ?>
 	</div>
 </div>
 
@@ -74,7 +74,7 @@ get_header();
 	</div>
 <?php } ?>
 <div class="container pv--40 full-width">
-	<?php banner(get_subscribe_link_local(get_current_blog_id()), 'Subscribe', 'Stay informed with news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--20 pv--56 gap--32 full-width', 'extra-large', ''); ?>
+	<?php banner(get_subscribe_link_local(get_current_blog_id()), 'Subscribe', 'Stay informed with news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--56 pv--56 full-width', 'extra-large', ''); ?>
 </div>
 </div>
 <?php get_footer(); ?>

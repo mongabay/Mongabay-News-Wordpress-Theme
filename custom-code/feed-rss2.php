@@ -11,6 +11,7 @@ $more = 1;
 $type = get_query_var('feedtype');
 $location = get_query_var('location');
 $post_type = get_query_var('type');
+$topic = get_query_var('topic');
 $per_page = get_query_var('show');
 $page = get_query_var('page');
 $search = get_query_var('s');
@@ -84,13 +85,31 @@ do_action('rss_tag_pre', 'rss2');
 			'pagination' => false,
 		);
 
+		if ($location || $topic) {
+			if ($location && $topic) {
+				$args['tax_query'] = array(
+					'relation' => 'AND',
+				);
+			} else {
+				$args['tax_query'] = array(
+					'relation' => 'OR',
+				);
+			}
+		}
+
 		if ($location) {
-			$args['tax_query'] = array(
-				array(
-					'taxonomy' => 'location',
-					'field' => 'slug',
-					'terms' => $location,
-				)
+			$args['tax_query'][] = array(
+				'taxonomy' => 'location',
+				'field' => 'slug',
+				'terms' => $location,
+			);
+		};
+
+		if ($topic) {
+			$args['tax_query'][] = array(
+				'taxonomy' => 'topic',
+				'field' => 'slug',
+				'terms' => $topic,
 			);
 		};
 

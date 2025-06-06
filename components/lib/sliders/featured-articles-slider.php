@@ -19,7 +19,7 @@ function featured_articles_slider($post_types, $posts_per_page, $offset)
 
   <div class="section--highlight slider full-width">
     <div class="container in-column ph--40 pv--40 gap--40">
-      <h1 class="text-center"><?php _e('In-depth <span>feature stories</span> reveal context and insight', 'mongabay'); ?></h1>
+      <h1><?php _e('In-depth <span>feature stories</span> reveal context and insight', 'mongabay'); ?></h1>
     </div>
     <div class="in-column gap--20">
       <div id="series-slider">
