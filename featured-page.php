@@ -37,8 +37,8 @@ formats_slider($formats, 'In-depth feature stories reveal context and insight', 
     <?php articles_listing_in_columns($formats, 6, 4, 'medium', null, true); ?>
   </div>
 
-  <div class="container full-width pv--40">
-    <?php banner(get_donate_link(), 'We’re a nonprofit', 'Help us tell impactful stories of biodiversity loss, climate change, and more', 'Donate', 'accent ph--20 pv--56 full-width', 'extra-large'); ?>
+  <div class="container pv--40">
+    <?php banner(get_donate_link(), 'We’re a nonprofit', 'Help us tell impactful stories of biodiversity loss, climate change, and more', 'Donate', 'accent ph--56 pv--56 full-width', 'extra-large'); ?>
   </div>
 
   <div class="container full--width gap--40 in-column">

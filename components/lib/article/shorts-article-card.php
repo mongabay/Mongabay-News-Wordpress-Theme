@@ -29,8 +29,8 @@ function shorts_article_card($id, $is_large = false, $title_class = '', $idx = 0
   // );
 ?>
   <div class="article--container shorts-trigger" data-articlelink="<?php echo $article_link; ?>" data-shareurl="<?php echo $link_url_share; ?>">
-    <div class="title headline rounded-top <?php echo $is_large ? 'ph--80 pv--80' : 'ph--40 pv--40';
-                                            echo $same_background ? $backgrounds[2] : $backgrounds[$idx]; ?>">
+    <div class="title left headline rounded-top <?php echo $is_large ? 'ph--80 pv--80' : 'ph--30 pv--30';
+                                                echo $same_background ? $backgrounds[2] : $backgrounds[$idx]; ?>">
       <?php echo $is_large ? '<h2 class="' . $title_class . '">' : '<h3 class="' . $title_class . '">' ?>
       <?php the_title(); ?>
       <?php echo $is_large ? '</h2>' : '</h3>' ?>

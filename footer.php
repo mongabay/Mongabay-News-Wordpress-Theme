@@ -28,9 +28,10 @@
 					<li><a href="<?php echo home_url() . '/' . get_menu_item('about', 'slug'); ?>"><?php echo get_menu_item('about', 'title'); ?></a></li>
 					<li><a href="https://news.mongabay.com/contact/"><?php _e('Contact', 'mongabay'); ?></a></li>
 					<?php if (get_enabled_features('donate')) : ?><li><a href="<?php echo get_donate_link(); ?>"><?php _e('Donate', 'mongabay'); ?></a></li><?php endif; ?>
+					<li><a href="<?php echo 'https://mongabay.org/' . get_menu_item('impacts', 'slug'); ?>"><?php echo get_menu_item('impacts', 'title'); ?></a></li>
 					<li><a href="<?php echo get_subscribe_link_local(get_current_blog_id()); ?>"><?php _e('Newsletters', 'mongabay'); ?></a></li>
-					<li><a href="https://news.mongabay.com/submissions/"><?php _e('Submissions', 'mongabay'); ?></a></li>
-					<li><a href="https://news.mongabay.com/terms/"><?php _e('Terms of Use', 'mongabay'); ?></a></li>
+					<li><a href="<?php echo home_url() . '/' . get_menu_item('submissions', 'slug'); ?>"><?php echo get_menu_item('submissions', 'title'); ?></a></li>
+					<li><a href="<?php echo home_url() . '/' . get_menu_item('terms', 'slug'); ?>"><?php echo get_menu_item('terms', 'title'); ?></a></li>
 				</ul>
 			</div>
 			<div>
@@ -43,7 +44,10 @@
 					<li><a href="https://selvastropicales.org/" target="_blank"><?php _e('Selva tropicales', 'mongabay'); ?></a></li>
 					<li><a href="https://kids.mongabay.com/" target="_blank"><?php _e('For Kids', 'mongabay'); ?></a></li>
 					<li><a href="https://www.mongabay.org/" target="_blank"><?php _e('Mongabay.org', 'mongabay'); ?></a></li>
-					<li><a href="https://tropicalforestnetwork.org/" target="_blank"><?php _e('Tropical Forest Network', 'mongabay'); ?></a></li>
+					<li><a href="https://reforestation.app/" target="_blank"><?php _e('Reforestation App', 'mongabay'); ?></a></li>
+					<li><a href="https://www.planetaryhealthcheck.org/" target="_blank"><?php _e('Planetary Health Check', 'mongabay'); ?></a></li>
+					<li><a href="https://www.conservationeffectiveness.org/" target="_blank"><?php _e('Conservation Effectiveness', 'mongabay'); ?></a></li>
+					<li><a href="https://studio.mongabay.com/" target="_blank"><?php _e('Mongabay Data Studio', 'mongabay'); ?></a></li>
 				</ul>
 			</div>
 			<div>
@@ -52,15 +56,20 @@
 					<div class="divider"></div>
 				</div>
 				<ul class="footer-links">
-					<li><a href="<?php echo get_social_links(get_blog_details()->blog_id)['linkedin']; ?>" target="_blank"><?php _e('LinkedIn', 'mongabay'); ?></a></li>
-					<li><a href="<?php echo get_social_links(get_blog_details()->blog_id)['instagram']; ?>" target="_blank"><?php _e('Instagram', 'mongabay'); ?></a></li>
-					<li><a href="<?php echo get_social_links(get_blog_details()->blog_id)['youtube']; ?>" target="_blank"><?php _e('Youtube', 'mongabay'); ?></a></li>
-					<li><a href="<?php echo get_social_links(get_blog_details()->blog_id)['x']; ?>" target="_blank"><?php _e('X', 'mongabay'); ?></a></li>
-					<li><a href="<?php echo get_social_links(get_blog_details()->blog_id)['facebook']; ?>" target="_blank"><?php _e('Facebook', 'mongabay'); ?></a></li>
+					<?php if (get_social_links(get_blog_details()->blog_id)['linkedin']) : ?><li><a href="<?php echo get_social_links(get_blog_details()->blog_id)['linkedin']; ?>" target="_blank"><?php _e('LinkedIn', 'mongabay'); ?></a></li><?php endif; ?>
+					<?php if (get_social_links(get_blog_details()->blog_id)['instagram']) : ?><li><a href="<?php echo get_social_links(get_blog_details()->blog_id)['instagram']; ?>" target="_blank"><?php _e('Instagram', 'mongabay'); ?></a></li><?php endif; ?>
+					<?php if (get_social_links(get_blog_details()->blog_id)['youtube']) : ?><li><a href="<?php echo get_social_links(get_blog_details()->blog_id)['youtube']; ?>" target="_blank"><?php _e('Youtube', 'mongabay'); ?></a></li><?php endif; ?>
+					<?php if (get_social_links(get_blog_details()->blog_id)['x']) : ?><li><a href="<?php echo get_social_links(get_blog_details()->blog_id)['x']; ?>" target="_blank"><?php _e('X', 'mongabay'); ?></a></li><?php endif; ?>
+					<?php if (get_social_links(get_blog_details()->blog_id)['facebook']) : ?><li><a href="<?php echo get_social_links(get_blog_details()->blog_id)['facebook']; ?>" target="_blank"><?php _e('Facebook', 'mongabay'); ?></a></li><?php endif; ?>
+					<?php if (get_social_links(get_blog_details()->blog_id)['tiktok']) : ?><li><a href="<?php echo get_social_links(get_blog_details()->blog_id)['tiktok']; ?>" target="_blank"><?php _e('Tiktok', 'mongabay'); ?></a></li><?php endif; ?>
+					<?php if (get_social_links(get_blog_details()->blog_id)['redit']) : ?><li><a href="<?php echo get_social_links(get_blog_details()->blog_id)['redit']; ?>" target="_blank"><?php _e('Redit', 'mongabay'); ?></a></li><?php endif; ?>
+					<?php if (get_social_links(get_blog_details()->blog_id)['bluesky']) : ?><li><a href="<?php echo get_social_links(get_blog_details()->blog_id)['bluesky']; ?>" target="_blank"><?php _e('BlueSky', 'mongabay'); ?></a></li><?php endif; ?>
+					<?php if (get_social_links(get_blog_details()->blog_id)['whatsapp']) : ?><li><a href="<?php echo get_social_links(get_blog_details()->blog_id)['whatsapp']; ?>" target="_blank"><?php _e('Whatsapp', 'mongabay'); ?></a></li><?php endif; ?>
+					<?php if (get_social_links(get_blog_details()->blog_id)['telegram']) : ?><li><a href="<?php echo get_social_links(get_blog_details()->blog_id)['whatsapp']; ?>" target="_blank"><?php _e('Telegram', 'mongabay'); ?></a></li><?php endif; ?>
+					<?php if (get_social_links(get_blog_details()->blog_id)['mastodon']) : ?><li><a href="<?php echo get_social_links(get_blog_details()->blog_id)['mastodon']; ?>" target="_blank"><?php _e('Mastodon', 'mongabay'); ?></a></li><?php endif; ?>
+					<?php if (get_social_links(get_blog_details()->blog_id)['android']) : ?><li><a href="<?php echo get_social_links(get_blog_details()->blog_id)['android']; ?>" target="_blank"><?php _e('Android App', 'mongabay'); ?></a></li><?php endif; ?>
+					<?php if (get_social_links(get_blog_details()->blog_id)['apple']) : ?><li><a href="<?php echo get_social_links(get_blog_details()->blog_id)['apple']; ?>" target="_blank"><?php _e('Apple News', 'mongabay'); ?></a></li><?php endif; ?>
 					<li><a href="<?php echo home_url(); ?>/feed"><?php _e('RSS / XML', 'mongabay'); ?></a></li>
-					<li><a href="https://mastodon.green/@mongabay" target="_blank"><?php _e('Mastodon', 'mongabay'); ?></a></li>
-					<li><a href="https://play.google.com/store/apps/details?id=com.newsmongabay&hl=en" target="_blank"><?php _e('Android App', 'mongabay'); ?></a></li>
-					<li><a href="https://apple.news/T7BxfNfp4QAiuOPNsUcn04Q/" target="_blank"><?php _e('Apple News', 'mongabay'); ?></a></li>
 				</ul>
 			</div>
 		</div>

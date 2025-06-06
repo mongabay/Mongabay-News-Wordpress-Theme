@@ -81,7 +81,7 @@
 
   <div class="container ph--40 pv--40 in-column">
     <div class="container full-width pv--40">
-      <?php banner(get_donate_link(), 'We’re a nonprofit.', 'Help us tell stories of biodiversity loss, climate change & socio-environmental injustice.', 'Donate', 'accent full-width pv--56', 'extra-large'); ?>
+      <?php banner(get_donate_link(), 'We’re a nonprofit.', 'Help us tell stories of biodiversity loss, climate change & socio-environmental injustice.', 'Donate', 'accent full-width ph--56 pv--56', 'extra-large'); ?>
     </div>
     <div class="container pv--40">
       <?php series_articles_slider(false, 'specials');
@@ -94,7 +94,7 @@
       </div>
       <?php videos_latest(); ?>
       <?php if (!wp_is_mobile()) {
-        banner(get_subscribe_link_local(get_current_blog_id()), 'Subscribe', 'Stay informed with news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--20 pv--56 full-width', 'extra-large');
+        banner(get_subscribe_link_local(get_current_blog_id()), 'Subscribe', 'Stay informed with news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--56 pv--56 full-width', 'extra-large');
       } ?>
     </div>
     <?php if (!wp_is_mobile()) { ?>
