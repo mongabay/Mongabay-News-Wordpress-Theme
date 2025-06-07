@@ -26,7 +26,7 @@ formats_slider(array('videos'), 'Watch unique videos that cut through the noise'
     <?php videos_latest(); ?>
   </div>
 
-  <?php banner(get_subscribe_link_local(get_current_blog_id()), 'Subscribe', 'Stay informed with news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--20 pv--56 full-width', 'extra-large'); ?>
+  <?php banner(get_subscribe_link_local(get_current_blog_id()), 'Subscribe', 'Stay informed with news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--56 pv--56 full-width', 'extra-large'); ?>
 
   <div class="container full--width gap--40 in-column pv--40">
     <div class="grid--4 gap--20 repeat">

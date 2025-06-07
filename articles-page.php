@@ -29,7 +29,7 @@ get_header(); ?>
 </div>
 
 <div class="container in-column ph--40 pv--40">
-  <?php banner(get_donate_link(), 'We’re a nonprofit', 'Help us tell impactful stories of biodiversity loss, climate change, and more', 'Donate', 'accent ph--20 pv--56 full-width', 'extra-large'); ?>
+  <?php banner(get_donate_link(), 'We’re a nonprofit', 'Help us tell impactful stories of biodiversity loss, climate change, and more', 'Donate', 'accent ph--56 pv--56 full-width', 'extra-large'); ?>
   <?php topics_section(
     array('post', 'custom-story'),
     'Read articles on topics such as',
@@ -40,7 +40,7 @@ get_header(); ?>
 <?php featured_articles_slider(array('post', 'custom-story'), 4, 5); ?>
 
 <div class="container ph--40 pv--40">
-  <?php banner(get_subscribe_link_local(get_current_blog_id()), 'Subscribe', 'Stay informed with news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--20 pv--56 full-width', 'extra-large'); ?>
+  <?php banner(get_subscribe_link_local(get_current_blog_id()), 'Subscribe', 'Stay informed with news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--56 pv--56 full-width', 'extra-large'); ?>
 </div>
 <?php if (get_enabled_features('shorts')) : ?>
 <div class="section--highlight">

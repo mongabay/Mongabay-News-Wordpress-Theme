@@ -1245,7 +1245,7 @@ function validate_short_article_content_length($post_id)
 
     $content = wp_strip_all_tags($_POST['post_content']);
     $word_count = str_word_count($content);
-    if ($word_count > 500) {
+    if ($word_count > 525) {
         remove_action('save_post', 'validate_short_article_content_length'); // prevent infinite loop
         wp_update_post(array(
             'ID' => $post_id,

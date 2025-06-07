@@ -29,7 +29,7 @@ $banner = '
   <div class="copy">
     Stay informed with news and inspiration from nature’s frontline.
   </div>
-  <a href="" class="theme--button primary full-width">
+  <a href="'.get_subscribe_link().'" class="theme--button primary full-width">
     Newsletter<span class="icon icon-right"></span>
   </a>
 </div>

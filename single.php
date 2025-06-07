@@ -54,7 +54,7 @@
     <div class="container ph--40 pv--40 in-column">
         <?php series_articles_slider(false, 'specials'); ?>
         <div class="container full-width pv--40">
-            <?php banner(home_url() . '/' . get_menu_item('about', 'slug'), 'Free and open access to credible information', '', 'Learn more', 'accent full-width pv--56', 'extra-large'); ?>
+            <?php banner(home_url() . '/' . get_menu_item('about', 'slug'), 'Free and open access to credible information', '', 'Learn more', 'accent full-width ph--56 pv--56', 'extra-large'); ?>
         </div>
         <div id="section-post-latest" class="container pv--40 gap--20 in-column">
             <div class="container in-row full-width section--headline" style="<?php echo !wp_is_mobile() ? 'align-items: center; justify-content: space-between;' : ''; ?>">
@@ -69,7 +69,7 @@
             </div>
         </div>
         <div class="container pv--40 full-width">
-            <?php banner(get_subscribe_link_local(get_current_blog_id()), 'Subscribe', 'Stay informed with news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--20 pv--56 full-width', 'extra-large'); ?>
+            <?php banner(get_subscribe_link_local(get_current_blog_id()), 'Subscribe', 'Stay informed with news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--56 pv--56 full-width', 'extra-large'); ?>
         </div>
     </div>
 </main>
