@@ -86,7 +86,7 @@ function get_menu_item($key, $option)
       'title' => __('Contact', 'mongabay'),
       'slug' => __('contact', 'mongabay')
     ),
-    'impact' => array(
+    'impacts' => array(
       'title' => __('Impacts', 'mongabay'),
       'slug' => __('impacts', 'mongabay')
     ),

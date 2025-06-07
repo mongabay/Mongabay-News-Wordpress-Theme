@@ -9,10 +9,10 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-08-07 20:55+0200\n"
-"PO-Revision-Date: 2025-06-08 00:01+0200\n"
+"PO-Revision-Date: 2025-06-07 23:16+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: hi_IN\n"
+"Language: en_EN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,1173 +20,1243 @@ msgstr ""
 
 #: Mongabay-News-Wordpress-Theme/404.php:5
 msgid "Page not found"
-msgstr "पेज नहीं मिला"
+msgstr "Page not found"
 
 #: Mongabay-News-Wordpress-Theme/404.php:7
 msgid "Return home?"
-msgstr "होम पेज पर वापस जाएंगे?"
+msgstr "Return home?"
 
 #: Mongabay-News-Wordpress-Theme/articles-page.php:16 Mongabay-News-Wordpress-Theme/landing-page.php:26
 msgid "Top stories"
-msgstr "सूर्खियां"
+msgstr "Top stories"
 
 #: Mongabay-News-Wordpress-Theme/articles-page.php:23 Mongabay-News-Wordpress-Theme/landing-page.php:16
 msgid "Latest"
-msgstr "ताजा खबरें"
+msgstr "Latest"
 
 #: Mongabay-News-Wordpress-Theme/articles-page.php:27 Mongabay-News-Wordpress-Theme/landing-page.php:21
 #: Mongabay-News-Wordpress-Theme/templates/page-specials.php:33
 msgid "All news"
-msgstr "सभी खबरें"
+msgstr "All news"
 
-#: Mongabay-News-Wordpress-Theme/articles-page.php:48 Mongabay-News-Wordpress-Theme/templates/page-specials.php:54
+#: Mongabay-News-Wordpress-Theme/articles-page.php:48
+#: Mongabay-News-Wordpress-Theme/templates/page-specials.php:54
 msgid "Quickly stay updated with our news <span>shorts</span>"
-msgstr "हमारी <span> छोटी ख़बरों </span> के माध्यम से अपडेट रहें"
+msgstr "Quickly stay updated with our news <span>shorts</span>s"
 
-#: Mongabay-News-Wordpress-Theme/author.php:56 Mongabay-News-Wordpress-Theme/footer.php:24 Mongabay-News-Wordpress-Theme/footer.php:28
-#: Mongabay-News-Wordpress-Theme/templates/taxonomy-byline.php:63 Mongabay-News-Wordpress-Theme/components/lib/utils.php:78
-#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:50 Mongabay-News-Wordpress-Theme/components/lib/utils.php:74
+#: Mongabay-News-Wordpress-Theme/author.php:56 Mongabay-News-Wordpress-Theme/footer.php:24
+#: Mongabay-News-Wordpress-Theme/footer.php:28
+#: Mongabay-News-Wordpress-Theme/templates/taxonomy-byline.php:63
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:78
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:50
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:74
 msgid "About"
-msgstr "हमारे बारे में"
+msgstr "About"
 
-#: Mongabay-News-Wordpress-Theme/author.php:76 Mongabay-News-Wordpress-Theme/components/lib/specials-latest.php:50
-#: Mongabay-News-Wordpress-Theme/components/lib/sliders/series-articles-slider.php:201 Mongabay-News-Wordpress-Theme/templates/taxonomy-byline.php:82
-#: Mongabay-News-Wordpress-Theme/templates/taxonomy-custom.php:41 Mongabay-News-Wordpress-Theme/functions.php:276
+#: Mongabay-News-Wordpress-Theme/author.php:76
+#: Mongabay-News-Wordpress-Theme/components/lib/specials-latest.php:50
+#: Mongabay-News-Wordpress-Theme/components/lib/sliders/series-articles-slider.php:201
+#: Mongabay-News-Wordpress-Theme/templates/taxonomy-byline.php:82
+#: Mongabay-News-Wordpress-Theme/templates/taxonomy-custom.php:41
+#: Mongabay-News-Wordpress-Theme/functions.php:276
 msgid "stories"
-msgstr "खबरें"
+msgstr "stories"
 
-#: Mongabay-News-Wordpress-Theme/author.php:141 Mongabay-News-Wordpress-Theme/search.php:50 Mongabay-News-Wordpress-Theme/templates/taxonomy-byline.php:147
+#: Mongabay-News-Wordpress-Theme/author.php:141 Mongabay-News-Wordpress-Theme/search.php:50
+#: Mongabay-News-Wordpress-Theme/templates/taxonomy-byline.php:147
 #: Mongabay-News-Wordpress-Theme/templates/taxonomy-custom.php:97
 msgid "No results found"
-msgstr "कोई परिणाम नहीं मिला"
+msgstr "No results found"
 
 #: Mongabay-News-Wordpress-Theme/comments.php:3
 msgid "Post is password protected. Enter the password to view any comments."
-msgstr "पोस्ट पासवर्ड से सुरक्षित है। टिप्पणियां देखने के लिए पासवर्ड दर्ज करें।"
+msgstr "Post is password protected. Enter the password to view any comments."
 
 #: Mongabay-News-Wordpress-Theme/comments.php:18
 msgid "Comments are closed here."
-msgstr "यहाँ टिप्पणियां बंद कर दी गई हैं।"
+msgstr "Comments are closed here."
 
 #: Mongabay-News-Wordpress-Theme/featured-page.php:34
 msgid "Latest features"
-msgstr "ताज़ा फ़ीचर"
+msgstr "Latest features"
 
 #: Mongabay-News-Wordpress-Theme/featured-page.php:35 Mongabay-News-Wordpress-Theme/featured-page.php:49
 msgid "All features"
-msgstr "सभी फ़ीचर"
+msgstr "All features"
 
 #: Mongabay-News-Wordpress-Theme/footer.php:9
 msgid "News formats"
-msgstr "ख़बरों के प्रारूप"
+msgstr "News formats"
 
 #: Mongabay-News-Wordpress-Theme/footer.php:13 Mongabay-News-Wordpress-Theme/components/lib/utils.php:30
 msgid "Videos"
-msgstr "वीडियो"
+msgstr "Videos"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:252
 msgid "Video"
-msgstr "वीडियो"
+msgstr "Video"
 
 #: Mongabay-News-Wordpress-Theme/footer.php:14 Mongabay-News-Wordpress-Theme/components/lib/utils.php:34
 msgid "Podcasts"
-msgstr "पॉडकास्ट"
+msgstr "Podcasts"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:253
 msgid "Podcast"
-msgstr "पॉडकास्ट"
+msgstr "Podcast"
 
-#: Mongabay-News-Wordpress-Theme/footer.php:15 Mongabay-News-Wordpress-Theme/components/lib/utils.php:42 Mongabay-News-Wordpress-Theme/functions.php:249
+#: Mongabay-News-Wordpress-Theme/footer.php:15 Mongabay-News-Wordpress-Theme/components/lib/utils.php:42
+#: Mongabay-News-Wordpress-Theme/functions.php:249
 msgid "Articles"
-msgstr "लेख"
+msgstr "Articles"
 
-#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:38 Mongabay-News-Wordpress-Theme/footer.php:16 Mongabay-News-Wordpress-Theme/functions.php:254
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:38 Mongabay-News-Wordpress-Theme/footer.php:16
+#: Mongabay-News-Wordpress-Theme/functions.php:254
 msgid "Specials"
-msgstr "विशेष"
+msgstr "Specials"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:269
 msgid "Animals"
-msgstr "जीव"
+msgstr "Animals"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:269
 msgid "animals"
-msgstr "जीव"
+msgstr "animals"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:257 Mongabay-News-Wordpress-Theme/functions.php:263 Mongabay-News-Wordpress-Theme/functions.php:270
+#: Mongabay-News-Wordpress-Theme/functions.php:257 Mongabay-News-Wordpress-Theme/functions.php:263
+#: Mongabay-News-Wordpress-Theme/functions.php:270
 msgid "Forests"
-msgstr "जंगल"
+msgstr "Forests"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:258
 msgid "Wildlife"
-msgstr "वन्यजीव"
+msgstr "Wildlife"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:250
 msgid "Custom Story"
-msgstr "आपकी पसंद की खबरें"
+msgstr "Custom Story"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:261
 msgid "Asia"
-msgstr "एशिया"
+msgstr "Asia"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:261
 msgid "asia"
-msgstr "एशिया"
+msgstr "asia"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:262
 msgid "Africa"
-msgstr "अफ्रीका"
+msgstr "Africa"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:262
 msgid "africa"
-msgstr "अफ्रीका"
+msgstr "africa"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:263
 msgid "South America"
-msgstr "साउथ अमेरिका"
+msgstr "South America"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:263
 msgid "south-america"
-msgstr "साउथ अमेरिका"
+msgstr "south-america"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:264
 msgid "Indonesia"
-msgstr "इंडोनेशिया"
+msgstr "Indonesia"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:264
 msgid "indonesia"
-msgstr "इंडोनेशिया"
+msgstr "indonesia"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:265
 msgid "Amazon"
-msgstr "अमेजन"
+msgstr "Amazon"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:265
 msgid "amazon"
-msgstr "अमेजन"
+msgstr "amazon"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:266
 msgid "Congo"
-msgstr "कॉन्गो"
+msgstr "Congo"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:266
 msgid "congo"
-msgstr "कॉन्गो"
+msgstr "congo"
 
-#: Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:40 Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:59
+#: Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:40
+#: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:59
 #: Mongabay-News-Wordpress-Theme/search.php:44 Mongabay-News-Wordpress-Theme/search.php:53
 msgid "wildlife"
-msgstr "वन्यजीव"
+msgstr "wildlife"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:270 Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:40
-#: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:59 Mongabay-News-Wordpress-Theme/search.php:43 Mongabay-News-Wordpress-Theme/search.php:52
+#: Mongabay-News-Wordpress-Theme/functions.php:270
+#: Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:40
+#: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:59
+#: Mongabay-News-Wordpress-Theme/search.php:43 Mongabay-News-Wordpress-Theme/search.php:52
 msgid "forests"
-msgstr "जंगल"
+msgstr "forests"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:59
 msgid "indigenous-peoples"
-msgstr "आदिवासी समुदाय"
+msgstr "indigenous-peoples"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:59
 msgid "agroecology"
-msgstr "कृषि वानिकी"
+msgstr "agroecology"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:259 Mongabay-News-Wordpress-Theme/functions.php:265 Mongabay-News-Wordpress-Theme/functions.php:271
+#: Mongabay-News-Wordpress-Theme/functions.php:259 Mongabay-News-Wordpress-Theme/functions.php:265
+#: Mongabay-News-Wordpress-Theme/functions.php:271
 msgid "Oceans"
-msgstr "समुद्र"
+msgstr "Oceans"
 
-#: Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:40 Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:59
+#: Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:40
+#: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:59
 #: Mongabay-News-Wordpress-Theme/search.php:46 Mongabay-News-Wordpress-Theme/search.php:55
 msgid "oceans"
-msgstr "समुद्र"
+msgstr "oceans"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:40
 msgid "climate"
-msgstr "जलवायु"
+msgstr "climate"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:40
 msgid "conservation-solutions"
-msgstr "संरक्षण के उपाय"
+msgstr "conservation-solutions"
 
-#: Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:46 Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:65
+#: Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:46
+#: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:65
 msgid "all topics"
-msgstr "सभी विषय"
+msgstr "all topics"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:260
 msgid "Feature"
-msgstr "फ़ीचर"
+msgstr "Feature"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:272
 msgid "Conservation"
-msgstr "संरक्षण"
+msgstr "Conservation"
 
 #: Mongabay-News-Wordpress-Theme/search.php:45 Mongabay-News-Wordpress-Theme/search.php:54
 msgid "conservation"
-msgstr "संरक्षण"
+msgstr "conservation"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:273
 msgid "Indigenous Peoples"
-msgstr "आदिवासी समुदाय"
+msgstr "Indigenous Peoples"
 
 #: Mongabay-News-Wordpress-Theme/footer.php:17
 msgid "Short news"
-msgstr "संक्षिप्त खबरें"
+msgstr "Short news"
 
 #: Mongabay-News-Wordpress-Theme/footer.php:18 Mongabay-News-Wordpress-Theme/components/lib/utils.php:66
 msgid "Feature Stories"
-msgstr "फ़ीचर खबरें"
+msgstr "Feature Stories"
 
 #: Mongabay-News-Wordpress-Theme/footer.php:19 Mongabay-News-Wordpress-Theme/components/lib/utils.php:70
 msgid "The Latest"
-msgstr "ताजा खबरें"
+msgstr "The Latest"
 
 #: Mongabay-News-Wordpress-Theme/footer.php:29 Mongabay-News-Wordpress-Theme/components/lib/utils.php:58
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:86
 msgid "Contact"
-msgstr "संपर्क"
+msgstr "Contact"
 
-#: Mongabay-News-Wordpress-Theme/footer.php:30 Mongabay-News-Wordpress-Theme/header.php:77 Mongabay-News-Wordpress-Theme/header.php:120
-#: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:22 Mongabay-News-Wordpress-Theme/components/podcasts-page.php:37
+#: Mongabay-News-Wordpress-Theme/footer.php:30 Mongabay-News-Wordpress-Theme/header.php:77
+#: Mongabay-News-Wordpress-Theme/header.php:120
+#: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:22
+#: Mongabay-News-Wordpress-Theme/components/podcasts-page.php:37
 #: Mongabay-News-Wordpress-Theme/components/lib/videos-latest.php:64
 msgid "Donate"
-msgstr "डोनेट"
+msgstr "Donate"
 
 #: Mongabay-News-Wordpress-Theme/footer.php:32
 msgid "Newsletters"
-msgstr "न्यूजलेटर्स"
+msgstr "Newsletters"
 
 #: Mongabay-News-Wordpress-Theme/footer.php:32 Mongabay-News-Wordpress-Theme/components/lib/utils.php:94
 msgid "Submissions"
-msgstr "हमारे लिए लिखें"
+msgstr "Submissions"
 
 #: Mongabay-News-Wordpress-Theme/footer.php:33 Mongabay-News-Wordpress-Theme/components/lib/utils.php:98
 msgid "Terms of Use"
-msgstr "उपयोग के नियम"
+msgstr "Terms of Use"
 
 #: Mongabay-News-Wordpress-Theme/footer.php:38
 msgid "External links"
-msgstr "बाहरी लिंक्स"
+msgstr "External links"
 
 #: Mongabay-News-Wordpress-Theme/footer.php:43 Mongabay-News-Wordpress-Theme/header.php:131
 msgid "Wild Madagascar"
-msgstr "वाइल्ड मेडागास्कर"
+msgstr "Wild Madagascar"
 
-#: Mongabay-News-Wordpress-Theme/footer.php:43 Mongabay-News-Wordpress-Theme/header.php:132
-msgid "Selva tropicales"
-msgstr "सेल्वा ट्रॉपिकल्स"
-
-#: Mongabay-News-Wordpress-Theme/footer.php:44 Mongabay-News-Wordpress-Theme/header.php:133
+#: Mongabay-News-Wordpress-Theme/footer.php:44 Mongabay-News-Wordpress-Theme/header.php:132
 msgid "For Kids"
-msgstr "बच्चों के लिए"
+msgstr "For Kids"
 
-#: Mongabay-News-Wordpress-Theme/footer.php:45 Mongabay-News-Wordpress-Theme/header.php:134
+#: Mongabay-News-Wordpress-Theme/footer.php:45 Mongabay-News-Wordpress-Theme/header.php:133
 msgid "Mongabay.org"
 msgstr "Mongabay.org"
 
-#: Mongabay-News-Wordpress-Theme/footer.php:47 Mongabay-News-Wordpress-Theme/header.php:137
+#: Mongabay-News-Wordpress-Theme/footer.php:46 Mongabay-News-Wordpress-Theme/header.php:134
 msgid "Reforestation App"
 msgstr "Reforestation App"
 
-#: Mongabay-News-Wordpress-Theme/footer.php:48 Mongabay-News-Wordpress-Theme/header.php:138
+#: Mongabay-News-Wordpress-Theme/footer.php:47 Mongabay-News-Wordpress-Theme/header.php:137
 msgid "Planetary Health Check"
 msgstr "Planetary Health Check"
 
-#: Mongabay-News-Wordpress-Theme/footer.php:49 Mongabay-News-Wordpress-Theme/header.php:139
+#: Mongabay-News-Wordpress-Theme/footer.php:48 Mongabay-News-Wordpress-Theme/header.php:138
 msgid "Conservation Effectiveness"
 msgstr "Conservation Effectiveness"
 
-#: Mongabay-News-Wordpress-Theme/footer.php:50 Mongabay-News-Wordpress-Theme/header.php:140
+#: Mongabay-News-Wordpress-Theme/footer.php:49 Mongabay-News-Wordpress-Theme/header.php:139
 msgid "Mongabay Data Studio"
 msgstr "Mongabay Data Studio"
 
 #: Mongabay-News-Wordpress-Theme/footer.php:46
 msgid "Tropical Forest Network"
-msgstr "ट्रॉपिकल फॉरेस्ट नेटवर्क"
+msgstr "Tropical Forest Network"
 
-#: Mongabay-News-Wordpress-Theme/footer.php:51
+#: Mongabay-News-Wordpress-Theme/footer.php:54
 msgid "Social media"
-msgstr "सोशल मीडिया"
-
-#: Mongabay-News-Wordpress-Theme/footer.php:55
-msgid "LinkedIn"
-msgstr "लिंक्डइन"
-
-#: Mongabay-News-Wordpress-Theme/footer.php:56
-msgid "Instagram"
-msgstr "इंस्टाग्राम"
-
-#: Mongabay-News-Wordpress-Theme/footer.php:57
-msgid "Youtube"
-msgstr "यूट्यूब"
+msgstr "Social media"
 
 #: Mongabay-News-Wordpress-Theme/footer.php:58
-msgid "X"
-msgstr "एक्स"
+msgid "LinkedIn"
+msgstr "LinkedIn"
 
 #: Mongabay-News-Wordpress-Theme/footer.php:59
-msgid "Facebook"
-msgstr "फेसबुक"
+msgid "Instagram"
+msgstr "Instagram"
 
 #: Mongabay-News-Wordpress-Theme/footer.php:60
-msgid "RSS / XML"
-msgstr "आरएसएस / एक्सएमएल"
+msgid "Youtube"
+msgstr "Youtube"
 
 #: Mongabay-News-Wordpress-Theme/footer.php:61
-msgid "Mastodon"
-msgstr "मैस्टोडॉन"
+msgid "X"
+msgstr "X"
 
 #: Mongabay-News-Wordpress-Theme/footer.php:62
-msgid "Android app"
-msgstr "एंड्रॉइड एप"
+msgid "Facebook"
+msgstr "Facebook"
 
 #: Mongabay-News-Wordpress-Theme/footer.php:63
+msgid "Tiktok"
+msgstr "Tiktok"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:64
+msgid "Redit"
+msgstr "Redit"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:65
+msgid "Bluesky"
+msgstr "Bluesky"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:66
+msgid "Whatsapp"
+msgstr "Whatsapp"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:67
+msgid "Telegram"
+msgstr "Telegram"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:71
+msgid "RSS / XML"
+msgstr "RSS / XML"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:68
+msgid "Mastodon"
+msgstr "Mastodon"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:69
+msgid "Android app"
+msgstr "Android app"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:70
 msgid "Apple News"
-msgstr "एप्पल न्यूज"
+msgstr "Apple News"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:419
 msgid "View Article"
-msgstr "लेख देखें"
+msgstr "View Article"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:550
 msgid "Results for: "
-msgstr "परिणाम:"
+msgstr "Results for: "
 
 #: Mongabay-News-Wordpress-Theme/functions.php:670 Mongabay-News-Wordpress-Theme/functions.php:674
 msgid "You cannot add terms to this taxonomy"
-msgstr "आप इस टेक्सोनॉमी में टर्म नहीं जोड़ सकते"
+msgstr "You cannot add terms to this taxonomy"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:684
 msgid "Stats Widget"
-msgstr "स्टैट्स विजेट"
+msgstr "Stats Widget"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:685
 msgid "Stats page sidebar widgets should be placed here."
-msgstr "स्टैट्स पेज के साइडबार विजेट यहां रखे जाने चाहिए।"
+msgstr "Stats page sidebar widgets should be placed here."
 
 #: Mongabay-News-Wordpress-Theme/functions.php:729 Mongabay-News-Wordpress-Theme/functions.php:739
 msgid "Conservation news on"
-msgstr "संरक्षण से संबंधित समाचार"
+msgstr "Conservation news on"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:918
 msgid "If article is featured"
-msgstr "अगर लेख फ़ीचर में है"
+msgstr "If article is featured"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:927
 msgid "Bulletpoint 1"
-msgstr "बुलेट पॉइन्ट 1"
+msgstr "Bulletpoint 1"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:936
 msgid "Bulletpoint 2"
-msgstr "बुलेट पॉइन्ट 2"
+msgstr "Bulletpoint 2"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:945
 msgid "Bulletpoint 3"
-msgstr "बुलेट पॉइन्ट 3"
+msgstr "Bulletpoint 3"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:954
 msgid "Bulletpoint 4"
-msgstr "बुलेट पॉइन्ट 4"
+msgstr "Bulletpoint 4"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:963
 msgid "Article link"
-msgstr "आर्टिकल लिंक"
+msgstr "Article link"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:1007
 msgid "Please set Featured Image. Article cannot be published without one."
-msgstr "कृपया फीचर्ड इमेज सेट करें। इसके बिना लेख प्रकाशित नहीं किया जा सकता।"
+msgstr "Please set Featured Image. Article cannot be published without one."
 
 #: Mongabay-News-Wordpress-Theme/functions.php:1163
 msgid "No older posts"
-msgstr "कोई पुराना पोस्ट नहीं"
+msgstr "No older posts"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:1215 Mongabay-News-Wordpress-Theme/components/lib/lists/articles-listing.php:53
+#: Mongabay-News-Wordpress-Theme/functions.php:1215
+#: Mongabay-News-Wordpress-Theme/components/lib/lists/articles-listing.php:53
 #: Mongabay-News-Wordpress-Theme/components/lib/sliders/featured-articles-slider.php:36
 msgid "Feature story"
-msgstr "फ़ीचर स्टोरी"
+msgstr "Feature story"
 
 #: Mongabay-News-Wordpress-Theme/header.php:123
 msgid "Subscribe page"
-msgstr "सब्सक्राइब पेज"
+msgstr "Subscribe page"
 
 #: Mongabay-News-Wordpress-Theme/header.php:128
 msgid "Privacy Policy"
-msgstr "निजता की शर्तें"
+msgstr "Privacy Policy"
 
 #: Mongabay-News-Wordpress-Theme/header.php:130
 msgid "Advertising"
-msgstr "विज्ञापन"
+msgstr "Advertising"
 
-#: Mongabay-News-Wordpress-Theme/header.php:135
-msgid "Impact"
-msgstr "खबर का असर"
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:90
+msgid "Impacts"
+msgstr "Impacts"
 
 #: Mongabay-News-Wordpress-Theme/landing-page.php:52
 msgid "Watch unique <span class=\"icon icon-play\">videos</span> that cut through the noise"
-msgstr "खास <span class=”icon icon-play”>वीडियो</span> जो दूसरों से हटकर हैं"
+msgstr "No te pierdas los <span class=”icon icon-play”>videos</span> más importantes de nuestra cobertura"
 
 #: Mongabay-News-Wordpress-Theme/landing-page.php:69 Mongabay-News-Wordpress-Theme/articles-page.php:48
 msgid "Quickly stay updated with our news <span class=\"icon icon-shorts\">shorts</span>"
-msgstr "हमारी खबरों से जुड़े रहें <span class=\"icon icon-shorts\"> शॉर्ट्स </span> द्वारा"
+msgstr "Mantente al día con nuestras noticias <span class=\"icon icon-shorts\">En corto</span>"
 
-#: Mongabay-News-Wordpress-Theme/page.php:15 Mongabay-News-Wordpress-Theme/single-custom-story.php:28 Mongabay-News-Wordpress-Theme/single-featured.php:40
-#: Mongabay-News-Wordpress-Theme/single-podcasts.php:69 Mongabay-News-Wordpress-Theme/single-specials_.php:48
+#: Mongabay-News-Wordpress-Theme/page.php:15 Mongabay-News-Wordpress-Theme/single-custom-story.php:28
+#: Mongabay-News-Wordpress-Theme/single-featured.php:40
+#: Mongabay-News-Wordpress-Theme/single-podcasts.php:69
+#: Mongabay-News-Wordpress-Theme/single-specials_.php:48
 #: Mongabay-News-Wordpress-Theme/single-videos.php:67 Mongabay-News-Wordpress-Theme/single.php:48
 msgid "Sorry, nothing to display."
-msgstr "माफ़ कीजिए यहां कुछ उपलब्ध नहीं है।"
+msgstr "Lo sentimos, no hay nada que mostrar."
 
 #: Mongabay-News-Wordpress-Theme/podcasts-page.php:22 Mongabay-News-Wordpress-Theme/single-podcasts.php:91
 msgid "Latest podcasts"
-msgstr "नए पॉडकास्ट"
+msgstr "Últimos podcasts"
 
-#: Mongabay-News-Wordpress-Theme/podcasts-page.php:23 Mongabay-News-Wordpress-Theme/podcasts-page.php:54 Mongabay-News-Wordpress-Theme/single-podcasts.php:92
+#: Mongabay-News-Wordpress-Theme/podcasts-page.php:23 Mongabay-News-Wordpress-Theme/podcasts-page.php:54
+#: Mongabay-News-Wordpress-Theme/single-podcasts.php:92
 #: Mongabay-News-Wordpress-Theme/single-podcasts.php:124
 msgid "All podcasts"
-msgstr "सभी पॉडकास्ट"
+msgstr "Todos los podcasts"
 
 #: Mongabay-News-Wordpress-Theme/search.php:9
 msgid "Type to search in any field."
-msgstr "सर्च करने के लिए यहां टाइप करें।"
+msgstr "Escribe para buscar en cualquier campo."
 
 #: Mongabay-News-Wordpress-Theme/search.php:28
 msgid "Format"
-msgstr "फॉर्मेट"
+msgstr "Formato"
 
 #: Mongabay-News-Wordpress-Theme/search.php:37
 msgid "Featured only"
-msgstr "केवल फीचर पोस्ट"
+msgstr "Solo historias destacadas"
 
 #: Mongabay-News-Wordpress-Theme/search.php:41
 msgid "Try out our suggestions"
-msgstr "इन्हें भी देखें"
+msgstr "Prueba estas recomendaciones"
 
 #: Mongabay-News-Wordpress-Theme/search.php:43 Mongabay-News-Wordpress-Theme/search.php:52
 msgid "Forest articles"
-msgstr "जंगल की खबरें"
+msgstr "Artículos sobre bosques"
 
 #: Mongabay-News-Wordpress-Theme/search.php:44 Mongabay-News-Wordpress-Theme/search.php:53
 msgid "Wildlife Videos"
-msgstr "वीडियो"
+msgstr "Animales en video"
 
 #: Mongabay-News-Wordpress-Theme/search.php:45 Mongabay-News-Wordpress-Theme/search.php:54
 msgid "Conservation Podcasts"
-msgstr "पॉडकास्ट"
+msgstr "Podcasts sobre conservación"
 
 #: Mongabay-News-Wordpress-Theme/search.php:46 Mongabay-News-Wordpress-Theme/search.php:55
 msgid "Ocean Specials"
-msgstr "समुद्र की खबरें"
+msgstr "Especiales sobre océanos"
 
 #: Mongabay-News-Wordpress-Theme/searchform.php:4
 msgid "To search, type and hit enter."
-msgstr "सर्च करने के लिए टाइप कर एंटर दबाएं।"
+msgstr "Para buscar, escribe y pulsa Enter."
 
 #: Mongabay-News-Wordpress-Theme/shorts-page.php:50
 msgid "No short articles found"
-msgstr "कोई शॉर्ट आर्टिकल उपलब्ध नहीं है।"
+msgstr "No se encontraron En corto"
 
-#: Mongabay-News-Wordpress-Theme/single-custom-story.php:41 Mongabay-News-Wordpress-Theme/single-specials.php:92
-#: Mongabay-News-Wordpress-Theme/single-specials_new.php:79 Mongabay-News-Wordpress-Theme/specials-page.php:26
+#: Mongabay-News-Wordpress-Theme/single-custom-story.php:41
+#: Mongabay-News-Wordpress-Theme/single-specials.php:92
+#: Mongabay-News-Wordpress-Theme/single-specials_new.php:79
+#: Mongabay-News-Wordpress-Theme/specials-page.php:26
 #: Mongabay-News-Wordpress-Theme/templates/taxonomy-specials.php:113
 msgid "All Specials"
-msgstr "सभी विशेष खबरें"
+msgstr "Todos los especiales"
 
 #: Mongabay-News-Wordpress-Theme/single-podcasts.php:44 Mongabay-News-Wordpress-Theme/single-videos.php:42
 msgid "Transcript"
-msgstr "ट्रांस्क्रिप्ट"
+msgstr "Transcripción"
 
 #: Mongabay-News-Wordpress-Theme/single-podcasts.php:47 Mongabay-News-Wordpress-Theme/single-videos.php:45
-msgid "Notice: Transcripts are machine and human generated and lightly edited for accuracy. They may contain errors."
-msgstr "नोट: यह ट्रांसक्रिप्ट मशीन और इंसान द्वारा किए गए हैं और आंशिक रूप से संपादित हैं। इनमें कुछ गलतियां हो सकती हैं।"
+msgid ""
+"Notice: Transcripts are machine and human generated and lightly edited for accuracy. They may contain "
+"errors."
+msgstr ""
+"Aviso: Las transcripciones son generadas automÃ¡ticamente y ligeramente editadas para garantizar su "
+"precisiÃ³n. Pueden presentar errores."
 
 #: Mongabay-News-Wordpress-Theme/single-podcasts.php:54 Mongabay-News-Wordpress-Theme/single-videos.php:52
 msgid "Read full transcript"
-msgstr "पूरी ट्रांस्क्रिप्ट पढ़ें"
+msgstr "Lee la transcripción completa"
 
-#: Mongabay-News-Wordpress-Theme/single-specials.php:83 Mongabay-News-Wordpress-Theme/components/lib/shorts-dialog.php:38
+#: Mongabay-News-Wordpress-Theme/single-specials.php:83
+#: Mongabay-News-Wordpress-Theme/components/lib/shorts-dialog.php:38
 #: Mongabay-News-Wordpress-Theme/functions.php:275
 msgid "Load more"
-msgstr "और देखें"
+msgstr "Cargar más"
 
 #: Mongabay-News-Wordpress-Theme/single-specials_.php:61 Mongabay-News-Wordpress-Theme/single.php:61
 msgid "Latest articles"
-msgstr "नए लेख"
+msgstr "Lo último"
 
-#: Mongabay-News-Wordpress-Theme/single-specials_.php:62 Mongabay-News-Wordpress-Theme/single-specials_.php:70 Mongabay-News-Wordpress-Theme/single.php:62
+#: Mongabay-News-Wordpress-Theme/single-specials_.php:62
+#: Mongabay-News-Wordpress-Theme/single-specials_.php:70 Mongabay-News-Wordpress-Theme/single.php:62
 #: Mongabay-News-Wordpress-Theme/single.php:68
 msgid "All articles"
-msgstr "सभी लेख"
+msgstr "Todos los artículos"
 
 #: Mongabay-News-Wordpress-Theme/single-videos.php:92 Mongabay-News-Wordpress-Theme/videos-page.php:23
 msgid "Latest videos"
-msgstr "नए वीडियोज"
+msgstr "Videos recientes"
 
-#: Mongabay-News-Wordpress-Theme/single-videos.php:93 Mongabay-News-Wordpress-Theme/single-videos.php:108 Mongabay-News-Wordpress-Theme/videos-page.php:24
-#: Mongabay-News-Wordpress-Theme/videos-page.php:36
+#: Mongabay-News-Wordpress-Theme/single-videos.php:93 Mongabay-News-Wordpress-Theme/single-videos.php:108
+#: Mongabay-News-Wordpress-Theme/videos-page.php:24 Mongabay-News-Wordpress-Theme/videos-page.php:36
 msgid "All videos"
-msgstr "सभी वीडियोज"
+msgstr "Todos los videos"
 
-#: Mongabay-News-Wordpress-Theme/components/lib/share-icons-grid.php:68 Mongabay-News-Wordpress-Theme/components/lib/article/social-share.php:92
+#: Mongabay-News-Wordpress-Theme/components/lib/share-icons-grid.php:68
+#: Mongabay-News-Wordpress-Theme/components/lib/article/social-share.php:92
 msgid "Share this"
-msgstr "शेयर करें"
+msgstr "Comparte esto"
 
-#: Mongabay-News-Wordpress-Theme/components/lib/share-icons-grid.php:69 Mongabay-News-Wordpress-Theme/components/lib/article/social-share.php:93
+#: Mongabay-News-Wordpress-Theme/components/lib/share-icons-grid.php:69
+#: Mongabay-News-Wordpress-Theme/components/lib/article/social-share.php:93
 msgid "If you liked this story, share it with other people."
-msgstr "अगर आपको यह लेख पसंद आया तो शेयर करें।"
+msgstr "Si te gustó esta historia, compártela con más personas."
 
-#: Mongabay-News-Wordpress-Theme/components/lib/share-icons-grid.php:83 Mongabay-News-Wordpress-Theme/components/lib/article/social-share.php:107
+#: Mongabay-News-Wordpress-Theme/components/lib/share-icons-grid.php:83
+#: Mongabay-News-Wordpress-Theme/components/lib/article/social-share.php:107
 msgid "Page link"
-msgstr "पेज का लिंक"
+msgstr "Copiar enlace"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/shorts-dialog.php:26
 msgid "Share Short"
-msgstr "शॉर्ट को शेयर करें"
+msgstr "Comparte el En corto"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/shorts-dialog.php:27
 msgid "Read Full Article"
-msgstr "पूरा लेख पढ़ें"
+msgstr "Lee el artículo completo"
 
-#: Mongabay-News-Wordpress-Theme/components/lib/specials-latest.php:5 Mongabay-News-Wordpress-Theme/templates/page-specials.php:40
+#: Mongabay-News-Wordpress-Theme/components/lib/specials-latest.php:5
+#: Mongabay-News-Wordpress-Theme/templates/page-specials.php:40
 msgid "Latest Specials"
-msgstr "विशेष"
+msgstr "Especiales recientes"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/article/article-bulletpoints.php:19
 msgid "See All Key Ideas"
-msgstr "सभी मुख्य बिंदु देखें"
+msgstr "Cinco datos clave"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/article/article-credits.php:17
 msgid "Credits "
-msgstr "क्रेडिट्स"
+msgstr "Créditos "
 
 #: Mongabay-News-Wordpress-Theme/components/lib/article/article-credits.php:35
 msgid "Editor"
-msgstr "संपादक"
+msgstr "Editor/a"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/article/article-headline.php:53
 msgid "Comments"
-msgstr "टिप्पणियां"
+msgstr "Comentarios"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/article/article-terms.php:5
 msgid "Topics"
-msgstr "विषय"
+msgstr "Temas"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/article/article-terms.php:13
 msgid "See Topics"
-msgstr "विषय देखें"
+msgstr "Ver temas"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/article/social-share.php:85
 msgid "Share"
-msgstr "शेयर"
+msgstr "Compartir"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/lists/articles-listing-condensed.php:62
 #: Mongabay-News-Wordpress-Theme/components/lib/lists/featured-articles-listing.php:109
 msgid "Sorry, no posts matched your criteria."
-msgstr "माफ़ कीजिए, ऐसा कोई पोस्ट नहीं मिला जो आपकी खोज से मेल खाता हो।"
+msgstr "Lo sentimos, ninguna publicación coincide con tu búsqueda."
 
 #: Mongabay-News-Wordpress-Theme/components/lib/sliders/featured-articles-slider.php:22
 msgid "In-depth <span>feature stories</span> reveal context and insight"
-msgstr "विस्तृत <span>फ़ीचर स्टोरीज़</span>आपको पृष्ठभूमि और विश्लेषण दिखाती हैं।"
+msgstr "Cubrimos las <span>historias ambientales</span> más importantes de Latinoamérica"
 
-#: Mongabay-News-Wordpress-Theme/components/lib/sliders/formats-slider.php:65 Mongabay-News-Wordpress-Theme/components/lib/sliders/specials-slider.php:58
+#: Mongabay-News-Wordpress-Theme/components/lib/sliders/formats-slider.php:65
+#: Mongabay-News-Wordpress-Theme/components/lib/sliders/specials-slider.php:58
 msgid "No posts found"
-msgstr "कोई पोस्ट नहीं मिला"
+msgstr "No se encontraron publicaciones"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/sliders/specials-slider.php:6
 msgid "Special Issues connect the dots between stories"
-msgstr "विशेष संस्करण खबरों को जोड़ते हैं।"
+msgstr "Explora los especiales que conectan las historias más complejas"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/sliders/related-articles-slider.php:49
 msgid "Related Articles"
-msgstr "संबंधित लेख"
+msgstr "Artículos relacionados"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/sliders/series-articles-slider.php:178
 msgid "More specials"
-msgstr "और विशेष लेख"
+msgstr "Más especiales"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/sliders/series-articles-slider.php:55
 msgid "<span class=\"icon icon-specials\">Special issues</span> connect the dots between stories"
-msgstr "<span class=\"icon icon-specials\">विशेष संस्करण </span> जो खबरों को जोड़ते हैं।"
+msgstr "<span class=\"icon icon-specials\">Los especiales</span> que conectan las historias más complejas"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/sliders/tools-slider.php:7
 msgid "Interested in other Mongabay websites?"
-msgstr "मोंगाबे की दूसरी वेबसाइट्स में दिलचस्पी रखते हैं?"
+msgstr "¿Interesado en otros sitios web de Mongabay?"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/meta.php:101
 msgid ""
-"Mongabay seeks to raise interest in and appreciation of wild lands and wildlife, while examining the impact of emerging trends in climate, technology, "
-"economics, and finance on conservation and development."
-msgstr "मोंगाबे वन्यजीवों और प्राकृतिक क्षेत्रों के प्रति जागरूकता बढ़ाने के साथ-साथ जलवायु, तकनीक, अर्थव्यवस्था और वित्त के बदलते प्रभावों का अध्ययन करता है।"
+"Mongabay seeks to raise interest in and appreciation of wild lands and wildlife, while examining the "
+"impact of emerging trends in climate, technology, economics, and finance on conservation and "
+"development."
+msgstr ""
+"Mongabay no sólo busca incrementar el interés y el reconocimiento de la naturaleza, sino también "
+"investigar el impacto de las nuevas tendencias climáticas, tecnológicas, económicas y financieras en la "
+"conservación y el desarrollo."
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:7
 msgctxt "Post type general name"
 msgid "Videos"
-msgstr "वीडियो"
+msgstr "Videos"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:8
 msgctxt "Post type singular name"
 msgid "Video"
-msgstr "वीडियो"
+msgstr "Video"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:9
 msgid "Search Videos"
-msgstr "वीडियो सर्च करें"
+msgstr "Buscar videos"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:10
 msgid "Popular Videos"
-msgstr "प्रचलित वीडियो"
+msgstr "Videos populares"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:11
 msgid "All Videos"
-msgstr "सभी वीडियो"
+msgstr "Todos los videos"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:14
 msgid "Edit Video"
-msgstr "एडिट वीडियो"
+msgstr "Editar videos"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:15
 msgid "Update Video"
-msgstr "अपडेट वीडियो"
+msgstr "Actualizar video"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:16
 msgid "Add New Video"
-msgstr "नया वीडियो जोड़ें"
+msgstr "Añadir nuevo video"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:17
 msgid "New Video Name"
-msgstr "वीडियो का नाम"
+msgstr "Nuevo nombre del video"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:48
 msgctxt "Post type general name"
 msgid "Podcasts"
-msgstr "पॉडकास्ट्स"
+msgstr "Podcasts"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:49
 msgctxt "Post type singular name"
 msgid "Podcast"
-msgstr "पॉडकास्ट"
+msgstr "Podcast"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:50
 msgid "Search Podcasts"
-msgstr "पॉडकास्ट खोजें"
+msgstr "Buscar podcasts"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:51
 msgid "Popular Podcasts"
-msgstr "प्रचलित पॉडकास्ट"
+msgstr "Podcasts populares"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:52
 msgid "All Podcasts"
-msgstr "सभी पॉडकास्ट"
+msgstr "Todos los podcasts"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:55
 msgid "Edit Podcast"
-msgstr "एडिट पॉडकास्ट"
+msgstr "Editar podcast"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:56
 msgid "Update Podcast"
-msgstr "अपडेट पॉडकास्ट"
+msgstr "Actualizar podcast"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:57
 msgid "Add New Podcast"
-msgstr "नया पॉडकास्ट"
+msgstr "Añadir nuevo podcast"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:58
 msgid "New Podcast Name"
-msgstr "नए पॉडकास्ट का नाम"
+msgstr "Nuevo nombre del podcast"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:90
 msgctxt "Post type general name"
 msgid "Short Articles"
-msgstr "शॉर्ट आर्टिकल्स"
+msgstr "En cortos"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:91
 msgctxt "Post type singular name"
 msgid "Short Article"
-msgstr "शॉर्ट आर्टिकल"
+msgstr "En corto"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:92
 msgid "Search Short Articles"
-msgstr "शॉर्ट आर्टिकल्स खोजें"
+msgstr "Buscar En cortos"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:93
 msgid "Popular Short Articles"
-msgstr "प्रचलित शॉर्ट आर्टिकल"
+msgstr "En cortos populares"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:94
 msgid "All Short Articles"
-msgstr "सभी शॉर्ट आर्टिकल्स"
+msgstr "Todos los En cortos"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:97
 msgid "Edit Short Article"
-msgstr "एडिट शॉर्ट आर्टिकल"
+msgstr "Editar En cortos"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:98
 msgid "Update Short Article"
-msgstr "अपडेट शॉर्ट आर्टिकल"
+msgstr "Actualizar En cortos"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:99
 msgid "Add New Short Article"
-msgstr "नया शॉर्ट आर्टिकल जोड़ें"
+msgstr "Añadir En corto"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:100
 msgid "New Short Article Name"
-msgstr "नए शॉर्ट आर्टिकल का नाम"
+msgstr "Nuevo nombre del En corto"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:132
 msgctxt "Post type general name"
 msgid "Custom Stories"
-msgstr "कस्टम स्टोरीज"
+msgstr "Artículos personalizados"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:133
 msgctxt "Post type singular name"
 msgid "Custom Story"
-msgstr "कस्टम स्टोरी"
+msgstr "Artículo personalizado"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:134
 msgid "Search Custom Stories"
-msgstr "सर्च कस्टम स्टोरीज"
+msgstr "Buscar artículos personalizados"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:135
 msgid "Popular Custom Stories"
-msgstr "प्रचलित कस्टम स्टोरीज"
+msgstr "Artículos personalizados populares"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:136
 msgid "All Custom Stories"
-msgstr "सभी कस्टम स्टोरीज"
+msgstr "Todos los artículos personalizados"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:139
 msgid "Edit Custom Stories"
-msgstr "एडिट कस्टम स्टोरी"
+msgstr "Editar artículo personalizado"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:140
 msgid "Update Custom Stories"
-msgstr "अपडेट कस्टम स्टोरीज"
+msgstr "Actualizar artículo personalizado"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:141
 msgid "Add New Custom Stories"
-msgstr "नई कस्टम स्टोरी जोड़ें"
+msgstr "Añadir nuevo artículo personalizado"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:142
 msgid "New Custom Stories Name"
-msgstr "नई कस्टम स्टोरी का नाम"
+msgstr "Nuevo nombre de artículo personalizado"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:174
 msgctxt "Post type general name"
 msgid "Special Issues"
-msgstr "विशेष"
+msgstr "Especiales"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:175
 msgctxt "Post type singular name"
 msgid "Special Issue"
-msgstr "विशेष"
+msgstr "Especial"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:176
 msgid "Search Special Issues"
-msgstr "विशेष लेख खोजें"
+msgstr "Buscar especiales"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:177
 msgid "Popular Special Issues"
-msgstr "प्रचलित विशेष लेख"
+msgstr "Especiales populares"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:178
 msgid "All Special Issues"
-msgstr "सभी विशेष लेख"
+msgstr "Todos los especiales"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:181
 msgid "Edit Special Issue"
-msgstr "एडिट विशेष लेख"
+msgstr "Editar especial"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:182
 msgid "Update Special Issue"
-msgstr "अपडेट विशेष"
+msgstr "Actualizar especial"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:183
 msgid "Add New Special Issue"
-msgstr "विशेष जोड़ें"
+msgstr "Añadir nuevo especial"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:184
 msgid "New Special Issue Name"
-msgstr "विशेष लेख का नाम"
+msgstr "Nuevo nombre de especial"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-entity.php:7
 msgctxt "taxonomy general name"
 msgid "Entities"
-msgstr "प्रविष्टियां"
+msgstr "Entidades"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-entity.php:8
 msgctxt "taxonomy singular name"
 msgid "Entity"
-msgstr "प्रविष्टियां"
+msgstr "Entidad"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-entity.php:9
 msgid "Search Entities"
-msgstr "प्रविष्टियां खोजें"
+msgstr "Buscar Entidad"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-entity.php:10
 msgid "Popular Entities"
-msgstr "लोकप्रिय प्रविष्टियां"
+msgstr "Entidades populares"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-entity.php:11
 msgid "All Entities"
-msgstr "सभी प्रविष्टियां"
+msgstr "Todas las entidades"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-entity.php:14
 msgid "Edit Entity"
-msgstr "एडिट प्रविष्टियां"
+msgstr "Editar entidad"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-entity.php:15
 msgid "Update Entity"
-msgstr "अपडेट प्रविष्टियां"
+msgstr "Actualizar entidad"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-entity.php:16
 msgid "Add New Entity"
-msgstr "नई प्रविष्टि"
+msgstr "Añadir nueva entidad"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-entity.php:17
 msgid "New Entity Name"
-msgstr "प्रविष्टि का नाम"
+msgstr "Nuevo nombre de entidad"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-entity.php:18
 msgid "Separate entities with commas"
-msgstr "प्रविष्टियों को कॉमा से अलग करें"
+msgstr "Separar entidades con comas"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-entity.php:19
 msgid "Add or remove entities"
-msgstr "प्रविष्टियां जोड़ें या हटाएं"
+msgstr "Agregar o eliminar entidades"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-entity.php:20
 msgid "Choose from the most used entities"
-msgstr "सबसे अधिक उपयोग की गई प्रविष्टियों में से चुनें"
+msgstr "Elegir entre las entidades más utilizadas"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-entity.php:21
 msgid "No entities found."
-msgstr "कोई प्रविष्टि नहीं मिली"
+msgstr "No se encontraron entidades."
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-entity.php:22
 msgid "Entities"
-msgstr "प्रविष्टियां"
+msgstr "Entidades"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-location.php:6
 msgctxt "taxonomy general name"
 msgid "Locations"
-msgstr "स्थान"
+msgstr "Regiones"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-location.php:7
 msgctxt "taxonomy singular name"
 msgid "Location"
-msgstr "स्थान"
+msgstr "Región"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-location.php:8
 msgid "Search Locations"
-msgstr "स्थान खोजें"
+msgstr "Buscar regiones"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-location.php:9
 msgid "Popular Locations"
-msgstr "प्रचलित स्थान"
+msgstr "Regiones populares"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-location.php:10
 msgid "All Locations"
-msgstr "सभी स्थान"
+msgstr "Todas las regiones"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-location.php:13
 msgid "Edit Location"
-msgstr "स्थान एडिट करें"
+msgstr "Editar región"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-location.php:14
 msgid "Update Location"
-msgstr "स्थान अपडेट करें"
+msgstr "Actualizar región"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-location.php:15
 msgid "Add New Location"
-msgstr "नया स्थान जोड़ें"
+msgstr "AÃ±adir nueva región"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-location.php:16
 msgid "New Location Name"
-msgstr "नए स्थान का नाम"
+msgstr "Nuevo nombre de región"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-location.php:17
 msgid "Separate locations with commas"
-msgstr "स्थानों को कॉमा से अलग करें"
+msgstr "Separar regiones con comas"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-location.php:18
 msgid "Add or remove locations"
-msgstr "स्थान जोड़ें या हटाएं"
+msgstr "AÃ±adir o eliminar región"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-location.php:19
 msgid "Choose from the most used locations"
-msgstr "सबसे अधिक उपयोग किए स्थानों से चुनें"
+msgstr "Elegir entre las regiones más utilizadas"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-location.php:20
 msgid "No locations found."
-msgstr "कोई स्थान नहीं मिला"
+msgstr "No se han encontrado regiones."
 
-#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-location.php:21 Mongabay-News-Wordpress-Theme/search.php:22
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-location.php:21
+#: Mongabay-News-Wordpress-Theme/search.php:22
 msgid "Location"
-msgstr "स्थान"
+msgstr "Región"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-serial.php:7
 msgctxt "taxonomy general name"
 msgid "Serials"
-msgstr "सीरियल्स"
+msgstr "Series"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-serial.php:8
 msgctxt "taxonomy singular name"
 msgid "Serial"
-msgstr "सीरियल"
+msgstr "Series"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-serial.php:9
 msgid "Search Serials"
-msgstr "सीरियल सर्च करें"
+msgstr "Series"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-serial.php:10
 msgid "Popular Serials"
-msgstr "प्रचलित सीरियल"
+msgstr "Series populares"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-serial.php:11
 msgid "All Serials"
-msgstr "सभी सीरियल्स"
+msgstr "Todas las series"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-serial.php:14
 msgid "Edit Serial"
-msgstr "एडिट सीरियल्स"
+msgstr "Editar series"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-serial.php:15
 msgid "Update Serial"
-msgstr "अपडेट सीरियल"
+msgstr "Actualizar series"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-serial.php:16
 msgid "Add New Serial"
-msgstr "नया सीरियल"
+msgstr "Añadir nueva series"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-serial.php:17
 msgid "New Serial Name"
-msgstr "नए सीरियल का नाम"
+msgstr "Nombre de la nueva serie"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-serial.php:18
 msgid "Separate serials with commas"
-msgstr "सीरियल को कॉमा से अलग करें"
+msgstr "Separar las series con comas"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-serial.php:19
 msgid "Add or remove serials"
-msgstr "सीरियल जोड़ें या हटाएं"
+msgstr "Añadir o eliminar series"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-serial.php:20
 msgid "Choose from the most used serials"
-msgstr "सबसे अधिक उपयोग वाले सीरियल्स से चुनें"
+msgstr "Elegir entre las series más utilizadas"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-serial.php:21
 msgid "No serials found."
-msgstr "कोई सीरियल नहीं मिला"
+msgstr "No se han encontrado series."
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-serial.php:22
 msgid "Serial"
-msgstr "सीरियल"
+msgstr "Series"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-topic.php:6
 msgctxt "taxonomy general name"
 msgid "Topics"
-msgstr "विषय"
+msgstr "Temas"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-topic.php:7
 msgctxt "taxonomy singular name"
 msgid "Topic"
-msgstr "विषय"
+msgstr "Tema"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-topic.php:8
 msgid "Search Topics"
-msgstr "विषय खोजें"
+msgstr "Buscar temas"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-topic.php:9
 msgid "Popular Topics"
-msgstr "प्रचलित विषय"
+msgstr "Temas populares"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-topic.php:10
 msgid "All Topics"
-msgstr "सभी विषय"
+msgstr "Todos los temas"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-topic.php:13
 msgid "Edit Topic"
-msgstr "एडिट विषय"
+msgstr "Editar tema"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-topic.php:14
 msgid "Update Topic"
-msgstr "विषय अपडेट करें"
+msgstr "Actualizar tema"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-topic.php:15
 msgid "Add New Topic"
-msgstr "नया विषय जोड़ें"
+msgstr "Añadir nuevo tema"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-topic.php:16
 msgid "New Topic Name"
-msgstr "नए विषय का नाम"
+msgstr "Nombre del nuevo tema"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-topic.php:17
 msgid "Separate topics with commas"
-msgstr "विषयों को कॉमा से अलग करें"
+msgstr "Separar temas con comas"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-topic.php:18
 msgid "Add or remove topics"
-msgstr "विषय जोड़ें या हटाएं"
+msgstr "Añadir o eliminar temas"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-topic.php:19
 msgid "Choose from the most used topics"
-msgstr "सबसे अधिक उपयोग वाले विषय से चुनें"
+msgstr "Elegir entre los temas más utilizados"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-topic.php:20
 msgid "No topics found."
-msgstr "कोई विषय नहीं मिला"
+msgstr "No se han encontrado temas."
 
 #: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-topic.php:21
 msgid "Topic"
-msgstr "विषय"
+msgstr "Tema"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/thumbnailed-recent-posts.php:16
 msgid "Most Recent"
-msgstr "सबसे नया"
+msgstr "Más reciente"
 
 #: Mongabay-News-Wordpress-Theme/templates/taxonomy-specials.php:23
 msgid " News"
-msgstr "खबरें"
+msgstr " Noticias"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:14
 msgid "Subscribe"
-msgstr "सब्सक्राइब"
+msgstr "Suscríbete"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:14
 msgid "Free and open access to credible information"
-msgstr "प्रामाणिक जानकारी तक स्वतंत्र और नि:शुल्क पहुंच"
+msgstr "Acceso libre a información de calidad"
 
-#: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:18 Mongabay-News-Wordpress-Theme/components/lib/videos-latest.php:74
+#: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:18
+#: Mongabay-News-Wordpress-Theme/components/lib/videos-latest.php:74
 msgid "Stay informed with news and inspiration from nature’s frontline."
-msgstr "प्रकृति से प्रेरित समाचार और प्रेरणादायक कहानियों से जुड़े रहें।"
+msgstr "Noticias e inspiración desde lo más profundo de la naturaleza."
 
 #: Mongabay-News-Wordpress-Theme/components/lib/banners/inspiration-banner.php:5
 msgid "News and Inspiration from Nature's Frontline."
-msgstr "प्रकृति से प्रेरित समाचार"
+msgstr "Noticias e inspiración desde lo más profundo de la naturaleza."
 
-#: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:14 Mongabay-News-Wordpress-Theme/components/podcasts-page.php:31
+#: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:14
+#: Mongabay-News-Wordpress-Theme/components/podcasts-page.php:31
 #: Mongabay-News-Wordpress-Theme/components/lib/videos-latest.php:61
 msgid "We’re a nonprofit"
-msgstr "हम एक गैर-लाभकारी संस्था हैं।"
+msgstr "Somos una organización sin fines de lucro"
 
-#: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:18 Mongabay-News-Wordpress-Theme/components/podcasts-page.php:34
+#: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:18
+#: Mongabay-News-Wordpress-Theme/components/podcasts-page.php:34
 #: Mongabay-News-Wordpress-Theme/components/lib/videos-latest.php:63
 msgid "Help us tell impactful stories of biodiversity loss, climate change, and more"
-msgstr "जैव विविधता की हानि, जलवायु संकट और प्रकृति से जुड़े मुद्दों की असरदार खबरें साझा करने में हमारा साथ दें।"
+msgstr "Ayúdanos a contar historias de impacto sobre biodiversidad, cambio climático y más"
 
-#: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:22 Mongabay-News-Wordpress-Theme/components/lib/videos-latest.php:75
+#: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:22
+#: Mongabay-News-Wordpress-Theme/components/lib/videos-latest.php:75
 msgid "Newsletter"
-msgstr "न्यूजलेटर"
+msgstr "Newsletter"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:22
 msgid "Learn more"
-msgstr "और पढ़ें"
+msgstr "Más información"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/sliders/formats-slider.php:6
 msgid "In-depth feature stories reveal context and insight"
-msgstr "गंभीर फ़ीचर, विषय के व्यापक संदर्भ और गूढ़ समझ को प्रस्तुत करते हैं।"
+msgstr "Cubrimos las historias ambientales más importantes de Latinoamérica"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/sliders/formats-slider.php:6
 msgid "Listen to Nature with thought-provoking podcasts"
-msgstr "विचारप्रेरक पॉडकास्ट के ज़रिए प्रकृति की बातें सुनिए।"
+msgstr "Escucha los podcasts que te acercan a la naturaleza"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/banners/podcasts-banner.php:15
 msgid "Listen to Nature with thought-provoking <span class=\"icon icon-podcast\">podcasts</span>"
-msgstr "विचारप्रेरक <span class=\"icon icon-podcast\">पॉडकास्ट</span> के ज़रिए प्रकृति को सुनिए।"
+msgstr "Escucha los <span class=\"icon icon-podcast\">podcasts</span> que te acercan a la naturaleza"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/sliders/formats-slider.php:6
 msgid "Watch unique videos that cut through the noise"
-msgstr "खास वीडियो जो शोर के बीच सच्चाई दिखाते हैं।"
+msgstr "Mira los videos más importantes de nuestra cobertura"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:55
 msgid "Read articles on topics such as"
-msgstr "इन विषयों पर लेख पढ़ें जैसे कि"
+msgstr "Lee más artículos sobre"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:55
 msgid "Explore enterprising journalism about"
-msgstr "खोजी और नवाचारपूर्ण पत्रकारिता"
+msgstr "Explora más historias sobre"
 
-#: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:55 Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:36
+#: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:55
+#: Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:36
 msgid "Explore podcasts about"
-msgstr "इन विषयों के पॉडकास्ट सुनें।"
+msgstr "Explora podcasts sobre"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:55
 msgid "Explore videos about topics like"
-msgstr "इन विषयों पर वीडियो खोजें"
+msgstr "Explora más videos sobre"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:65
 msgid "all stories"
-msgstr "सभी लेख"
+msgstr "all stories"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:26
 msgid "Features"
-msgstr "फ़ीचर्स"
+msgstr "Destacadas"
 
-#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:27 Mongabay-News-Wordpress-Theme/components/lib/utils.php:67
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:27
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:67
 #: Mongabay-News-Wordpress-Theme/functions.php:234
 msgid "features"
-msgstr "फ़ीचर्स"
+msgstr "destacadas"
 
-#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:31 Mongabay-News-Wordpress-Theme/functions.php:234
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:31
+#: Mongabay-News-Wordpress-Theme/functions.php:234
 msgid "videos"
-msgstr "वीडियो"
+msgstr "videos"
 
-#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:35 Mongabay-News-Wordpress-Theme/functions.php:234
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:35
+#: Mongabay-News-Wordpress-Theme/functions.php:234
 msgid "podcasts"
-msgstr "पॉडकास्ट्स"
+msgstr "podcasts"
 
-#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:35 Mongabay-News-Wordpress-Theme/functions.php:234
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:35
+#: Mongabay-News-Wordpress-Theme/functions.php:234
 msgid "specials"
-msgstr "विशेष"
+msgstr "especiales"
 
-#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:43 Mongabay-News-Wordpress-Theme/functions.php:234
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:43
+#: Mongabay-News-Wordpress-Theme/functions.php:234
 #: Mongabay-News-Wordpress-Theme/lib/components/banners/inspiration-banner.php:38
 msgid "articles"
-msgstr "लेख"
+msgstr "articulos"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:277
 msgid "story"
-msgstr "खबरें"
+msgstr "articulo"
 
-#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:46 Mongabay-News-Wordpress-Theme/functions.php:251
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:46
+#: Mongabay-News-Wordpress-Theme/functions.php:251
 msgid "Shorts"
-msgstr "शॉर्ट्स"
+msgstr "En corto"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:47
 msgid "en-corto"
-msgstr "संक्षेप में"
+msgstr "en-corto"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:51
 msgid "about"
-msgstr "हमारे बारे में"
+msgstr "nosotros"
 
-#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:54 Mongabay-News-Wordpress-Theme/components/lib/utils.php:82
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:54
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:82
 msgid "Team"
-msgstr "हमारी टीम"
+msgstr "Equipo"
 
-#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:55 Mongabay-News-Wordpress-Theme/components/lib/utils.php:83
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:55
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:83
 msgid "team"
-msgstr "हमारी टीम"
+msgstr "equipo"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:59
 msgid "contact"
-msgstr "संपर्क"
+msgstr "contacto"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:62
 msgid "Short News"
-msgstr "शॉर्ट खबरें"
+msgstr "En corto"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:63
 msgid "shorts"
-msgstr "शॉर्ट्स"
+msgstr "en-corto"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:71
 msgid "list/"
-msgstr "लिस्ट/"
+msgstr "list/"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:74
 msgid "Explore All"
-msgstr "सभी देखें"
+msgstr "Explora todo"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:75
 msgid "?s=&formats=post+custom_story+videos+podcasts+specials+short_article"
-msgstr "?s=&formats=पोस्ट+कस्टम_स्टोरी+वीडियो+पॉडकास्ट+विशेषांक+संक्षिप्त_लेख"
+msgstr "?s=&formats=post+custom_story+videos+podcasts+specials+short_article"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:79
 msgid "https://www.mongabay.com/about/"

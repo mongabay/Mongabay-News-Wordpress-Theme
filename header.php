@@ -129,12 +129,11 @@ if (wp_is_mobile()) {
 							</ul>
 							<ul class="footer-links">
 								<li><a href="https://www.wildmadagascar.org/"><?php _e('Wild Madagascar', 'mongabay'); ?></a></li>
-								<li><a href="https://selvastropicales.org/"><?php _e('Selva tropicales', 'mongabay'); ?></a></li>
 								<li><a href="https://kids.mongabay.com/"><?php _e('For Kids', 'mongabay'); ?></a></li>
 								<li><a href="https://mongabay.org/"><?php _e('Mongabay.org', 'mongabay'); ?></a></li>
+								<li><a href="https://reforestation.app/"><?php _e('Reforestation App', 'mongabay'); ?></a></li>
 							</ul>
 							<ul class="footer-links">
-								<li><a href="https://reforestation.app/"><?php _e('Reforestation App', 'mongabay'); ?></a></li>
 								<li><a href="https://www.planetaryhealthcheck.org/"><?php _e('Planetary Health Check', 'mongabay'); ?></a></li>
 								<li><a href="https://www.conservationeffectiveness.org/"><?php _e('Conservation Effectiveness', 'mongabay'); ?></a></li>
 								<li><a href="https://studio.mongabay.com/"><?php _e('Mongabay Data Studio', 'mongabay'); ?></a></li>

@@ -41,7 +41,6 @@
 				</div>
 				<ul class="footer-links">
 					<li><a href="https://www.wildmadagascar.org/" target="_blank"><?php _e('Wild Madagascar', 'mongabay'); ?></a></li>
-					<li><a href="https://selvastropicales.org/" target="_blank"><?php _e('Selva tropicales', 'mongabay'); ?></a></li>
 					<li><a href="https://kids.mongabay.com/" target="_blank"><?php _e('For Kids', 'mongabay'); ?></a></li>
 					<li><a href="https://www.mongabay.org/" target="_blank"><?php _e('Mongabay.org', 'mongabay'); ?></a></li>
 					<li><a href="https://reforestation.app/" target="_blank"><?php _e('Reforestation App', 'mongabay'); ?></a></li>
