@@ -23,24 +23,22 @@ if (wp_is_mobile()) {
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-12973256-1"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
-
 		function gtag() {
 			dataLayer.push(arguments);
 		}
 		gtag('js', new Date());
-
 		gtag('config', 'UA-12973256-1');
 	</script>
-
-	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/img/icons/favicon.png" type="image/x-icon" />
+	<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico" sizes="any">
+	<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.svg" type="image/svg+xml">
+	<link rel="manifest" href="<?php echo get_template_directory_uri(); ?>/manifest.webmanifest">
 	<link rel="apple-touch-icon-precomposed" href="<?php echo get_template_directory_uri(); ?>/img/icons/ico-s2.jpg">
 	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo get_template_directory_uri(); ?>/img/icons/ico-l2.jpg">
 	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo get_template_directory_uri(); ?>/img/icons/ico-s.jpg">
 	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo get_template_directory_uri(); ?>/img/icons/ico-l.jpg">
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-	<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet" />
-	<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 	<meta name="referrer" content="always" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -74,8 +72,8 @@ if (wp_is_mobile()) {
 					<li><a href="<?php echo home_url(); ?>/<?php echo get_menu_item('articles', 'slug'); ?>" class="<?php echo is_page(get_menu_item('articles', 'title')) ? 'active' : ''; ?>"><?php echo get_menu_item('articles', 'title'); ?></a></li>
 					<?php if (get_enabled_features('shorts')) : ?><li><a href="<?php echo home_url(); ?>/<?php echo get_menu_item('shorts', 'slug'); ?>" class="<?php echo is_page(get_menu_item('shorts', 'title')) ? 'active' : ''; ?>"><?php echo get_menu_item('shorts', 'title'); ?></a></li><?php endif; ?>
 				</ul>
-				<a class="theme--button primary simple md-hide" href="<?php echo get_enabled_features('donate') ? get_donate_link() : get_subscribe_link_local(get_current_blog_id()); ?>"><?php echo (get_enabled_features('donate') ? __('Donate', 'mongabay') : __('Subscribe', 'mongabay')); ?></a>
-				<a id="theme-switch" class="icon icon-cog"></a>
+				<a class="theme--button donate simple md-hide" href="<?php echo get_enabled_features('donate') ? get_donate_link() : get_subscribe_link_local(get_current_blog_id()); ?>"><?php echo (get_enabled_features('donate') ? __('Donate', 'mongabay') : __('Subscribe', 'mongabay')); ?></a>
+				<a id="theme-switch" class="icon icon-mode"></a>
 				<a id="site-search" href="<?php echo home_url(); ?>/?s="><span class="icon icon-search"></span></a>
 				<a id="secondary-menu"><span class="icon icon-menu"></span></a>
 			</div>
@@ -109,9 +107,9 @@ if (wp_is_mobile()) {
 						<li><a href=" <?php echo home_url(); ?>/<?php echo get_menu_item('exploreall', 'slug'); ?>"><?php echo get_menu_item('exploreall', 'title'); ?></a></li>
 					</ul>
 					<?php if (!wp_is_mobile()) { ?>
-						<div class="footer gap--20 grid--5">
+						<div class="footer gap--20 grid--5 pv--20">
 							<ul class="footer-links">
-								<li><a href="<?php echo get_menu_item('footerabout', 'slug'); ?>"><?php echo get_menu_item('footerabout', 'title'); ?></a></li>
+								<li><a href="<?php echo 'https://mongabay.org/'.get_menu_item('footerabout', 'slug'); ?>"><?php echo get_menu_item('footerabout', 'title'); ?></a></li>
 								<li><a href="<?php echo home_url(); ?>/<?php echo get_menu_item('footerteam', 'slug'); ?>"><?php echo get_menu_item('footerteam', 'title'); ?></a></li>
 								<li><a href="<?php echo home_url(); ?>/<?php echo get_menu_item('footercontact', 'slug'); ?>"><?php echo get_menu_item('footercontact', 'title'); ?></a></li>
 							</ul>
@@ -131,13 +129,14 @@ if (wp_is_mobile()) {
 							</ul>
 							<ul class="footer-links">
 								<li><a href="https://www.wildmadagascar.org/"><?php _e('Wild Madagascar', 'mongabay'); ?></a></li>
-								<li><a href="https://selvastropicales.org/"><?php _e('Selva tropicales', 'mongabay'); ?></a></li>
-								<li><a href=""><?php _e('Impact', 'mongabay'); ?></a></li>
-							</ul>
-							<ul class="footer-links">
 								<li><a href="https://kids.mongabay.com/"><?php _e('For Kids', 'mongabay'); ?></a></li>
 								<li><a href="https://mongabay.org/"><?php _e('Mongabay.org', 'mongabay'); ?></a></li>
-								<li><a href="https://tropicalforestnetwork.org/"><?php _e('Tropical Forest Network', 'mongabay'); ?></a></li>
+								<li><a href="https://reforestation.app/"><?php _e('Reforestation App', 'mongabay'); ?></a></li>
+							</ul>
+							<ul class="footer-links">
+								<li><a href="https://www.planetaryhealthcheck.org/"><?php _e('Planetary Health Check', 'mongabay'); ?></a></li>
+								<li><a href="https://www.conservationeffectiveness.org/"><?php _e('Conservation Effectiveness', 'mongabay'); ?></a></li>
+								<li><a href="https://studio.mongabay.com/"><?php _e('Mongabay Data Studio', 'mongabay'); ?></a></li>
 							</ul>
 						</div>
 					<?php } ?>
@@ -154,12 +153,20 @@ if (wp_is_mobile()) {
 			function brandingDisplay() {
 				if (document.querySelector("body").classList.contains("dark-mode")) {
 					window.localStorage.setItem("mongabay-theme", "dark-mode");
-					document.querySelector(".branding .theme-light").style.display = "none";
-					document.querySelector(".branding .theme-dark").style.display = "block";
+					document.querySelectorAll(".branding .theme-light").forEach((el) => {
+						el.style.display = "none";
+					});
+					document.querySelectorAll(".branding .theme-dark").forEach((el) => {
+						el.style.display = "block";
+					});
 				} else {
 					window.localStorage.removeItem("mongabay-theme");
-					document.querySelector(".branding .theme-light").style.display = "block";
-					document.querySelector(".branding .theme-dark").style.display = "none";
+					document.querySelectorAll(".branding .theme-light").forEach((el) => {
+						el.style.display = "block";
+					});
+					document.querySelectorAll(".branding .theme-dark").forEach((el) => {
+						el.style.display = "none";
+					});
 				}
 			}
 
@@ -169,6 +176,7 @@ if (wp_is_mobile()) {
 				e.preventDefault;
 				e.stopPropagation;
 				document.querySelector("body").classList.toggle("dark-mode");
+				document.getElementById("theme-switch").classList.toggle("dark-mode");
 				brandingDisplay();
 			});
 

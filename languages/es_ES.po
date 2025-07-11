@@ -9,14 +9,14 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-08-07 20:55+0200\n"
-"PO-Revision-Date: 2025-03-06 23:58+0100\n"
+"PO-Revision-Date: 2025-06-10 11:39+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.6\n"
 
 #: Mongabay-News-Wordpress-Theme/404.php:5
 msgid "Page not found"
@@ -269,15 +269,15 @@ msgstr "Contacto"
 msgid "Donate"
 msgstr "Donar"
 
-#: Mongabay-News-Wordpress-Theme/footer.php:31
+#: Mongabay-News-Wordpress-Theme/footer.php:32
 msgid "Newsletters"
 msgstr "Newsletters"
 
-#: Mongabay-News-Wordpress-Theme/footer.php:32 Mongabay-News-Wordpress-Theme/header.php:125
+#: Mongabay-News-Wordpress-Theme/footer.php:32 Mongabay-News-Wordpress-Theme/components/lib/utils.php:94
 msgid "Submissions"
 msgstr "Cómo proponer historias"
 
-#: Mongabay-News-Wordpress-Theme/footer.php:33 Mongabay-News-Wordpress-Theme/header.php:129
+#: Mongabay-News-Wordpress-Theme/footer.php:33 Mongabay-News-Wordpress-Theme/components/lib/utils.php:98
 msgid "Terms of Use"
 msgstr "Condiciones de uso"
 
@@ -285,63 +285,95 @@ msgstr "Condiciones de uso"
 msgid "External links"
 msgstr "Enlaces externos"
 
-#: Mongabay-News-Wordpress-Theme/footer.php:42 Mongabay-News-Wordpress-Theme/header.php:133
+#: Mongabay-News-Wordpress-Theme/footer.php:43 Mongabay-News-Wordpress-Theme/header.php:131
 msgid "Wild Madagascar"
 msgstr "Wild Madagascar"
 
-#: Mongabay-News-Wordpress-Theme/footer.php:43 Mongabay-News-Wordpress-Theme/header.php:134
-msgid "Selva tropicales"
-msgstr "Selvas tropicales"
-
-#: Mongabay-News-Wordpress-Theme/footer.php:44 Mongabay-News-Wordpress-Theme/header.php:138
+#: Mongabay-News-Wordpress-Theme/footer.php:44 Mongabay-News-Wordpress-Theme/header.php:132
 msgid "For Kids"
 msgstr "Para niños"
 
-#: Mongabay-News-Wordpress-Theme/footer.php:45 Mongabay-News-Wordpress-Theme/header.php:139
+#: Mongabay-News-Wordpress-Theme/footer.php:45 Mongabay-News-Wordpress-Theme/header.php:133
 msgid "Mongabay.org"
 msgstr "Mongabay.org"
 
-#: Mongabay-News-Wordpress-Theme/footer.php:46 Mongabay-News-Wordpress-Theme/header.php:140
+#: Mongabay-News-Wordpress-Theme/footer.php:46 Mongabay-News-Wordpress-Theme/header.php:134
+msgid "Reforestation App"
+msgstr "Reforestation App"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:47 Mongabay-News-Wordpress-Theme/header.php:137
+msgid "Planetary Health Check"
+msgstr "Planetary Health Check"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:48 Mongabay-News-Wordpress-Theme/header.php:138
+msgid "Conservation Effectiveness"
+msgstr "Conservation Effectiveness"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:49 Mongabay-News-Wordpress-Theme/header.php:139
+msgid "Mongabay Data Studio"
+msgstr "Mongabay Data Studio"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:46
 msgid "Tropical Forest Network"
 msgstr "Red de Bosques Tropicales"
 
-#: Mongabay-News-Wordpress-Theme/footer.php:51
+#: Mongabay-News-Wordpress-Theme/footer.php:54
 msgid "Social media"
 msgstr "Redes sociales"
 
-#: Mongabay-News-Wordpress-Theme/footer.php:55
+#: Mongabay-News-Wordpress-Theme/footer.php:58
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
-#: Mongabay-News-Wordpress-Theme/footer.php:56
+#: Mongabay-News-Wordpress-Theme/footer.php:59
 msgid "Instagram"
 msgstr "Instagram"
 
-#: Mongabay-News-Wordpress-Theme/footer.php:57
+#: Mongabay-News-Wordpress-Theme/footer.php:60
 msgid "Youtube"
 msgstr "Youtube"
 
-#: Mongabay-News-Wordpress-Theme/footer.php:58
+#: Mongabay-News-Wordpress-Theme/footer.php:61
 msgid "X"
 msgstr "X"
 
-#: Mongabay-News-Wordpress-Theme/footer.php:59
+#: Mongabay-News-Wordpress-Theme/footer.php:62
 msgid "Facebook"
 msgstr "Facebook"
 
-#: Mongabay-News-Wordpress-Theme/footer.php:60
+#: Mongabay-News-Wordpress-Theme/footer.php:63
+msgid "Tiktok"
+msgstr "Tiktok"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:64
+msgid "Reddit"
+msgstr "Reddit"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:65
+msgid "Bluesky"
+msgstr "Bluesky"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:66
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:67
+msgid "Telegram"
+msgstr "Telegram"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:71
 msgid "RSS / XML"
 msgstr "RSS / XML"
 
-#: Mongabay-News-Wordpress-Theme/footer.php:61
+#: Mongabay-News-Wordpress-Theme/footer.php:68
 msgid "Mastodon"
 msgstr "Mastodon"
 
-#: Mongabay-News-Wordpress-Theme/footer.php:62
+#: Mongabay-News-Wordpress-Theme/footer.php:69
 msgid "Android app"
 msgstr "Android app"
 
-#: Mongabay-News-Wordpress-Theme/footer.php:63
+#: Mongabay-News-Wordpress-Theme/footer.php:70
 msgid "Apple News"
 msgstr "Apple News"
 
@@ -419,8 +451,8 @@ msgstr "Política de privacidad"
 msgid "Advertising"
 msgstr "Anuncios"
 
-#: Mongabay-News-Wordpress-Theme/header.php:135
-msgid "Impact"
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:90
+msgid "Impacts"
 msgstr "Impacto"
 
 #: Mongabay-News-Wordpress-Theme/landing-page.php:52
