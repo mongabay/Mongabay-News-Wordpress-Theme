@@ -107,7 +107,7 @@ if (wp_is_mobile()) {
 						<li><a href=" <?php echo home_url(); ?>/<?php echo get_menu_item('exploreall', 'slug'); ?>"><?php echo get_menu_item('exploreall', 'title'); ?></a></li>
 					</ul>
 					<?php if (!wp_is_mobile()) { ?>
-						<div class="footer gap--20 grid--5">
+						<div class="footer gap--20 grid--5 pv--20">
 							<ul class="footer-links">
 								<li><a href="<?php echo 'https://mongabay.org/'.get_menu_item('footerabout', 'slug'); ?>"><?php echo get_menu_item('footerabout', 'title'); ?></a></li>
 								<li><a href="<?php echo home_url(); ?>/<?php echo get_menu_item('footerteam', 'slug'); ?>"><?php echo get_menu_item('footerteam', 'title'); ?></a></li>

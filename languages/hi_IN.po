@@ -9,14 +9,14 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-08-07 20:55+0200\n"
-"PO-Revision-Date: 2025-06-08 00:01+0200\n"
+"PO-Revision-Date: 2025-06-15 00:01+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: hi_IN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Poedit 3.5\n"
 
 #: Mongabay-News-Wordpress-Theme/404.php:5
 msgid "Page not found"
@@ -146,7 +146,7 @@ msgstr "साउथ अमेरिका"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:263
 msgid "south-america"
-msgstr "साउथ अमेरिका"
+msgstr "साउथ-अमेरिका"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:264
 msgid "Indonesia"
@@ -188,7 +188,7 @@ msgstr "आदिवासी समुदाय"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:59
 msgid "agroecology"
-msgstr "कृषि वानिकी"
+msgstr "कृषि-वानिकी"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:259 Mongabay-News-Wordpress-Theme/functions.php:265 Mongabay-News-Wordpress-Theme/functions.php:271
 msgid "Oceans"
@@ -205,7 +205,7 @@ msgstr "जलवायु"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:40
 msgid "conservation-solutions"
-msgstr "संरक्षण के उपाय"
+msgstr "संरक्षण-के-उपाय"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:46 Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:65
 msgid "all topics"
@@ -225,7 +225,7 @@ msgstr "संरक्षण"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:273
 msgid "Indigenous Peoples"
-msgstr "आदिवासी समुदाय"
+msgstr "आदिवासी-समुदाय"
 
 #: Mongabay-News-Wordpress-Theme/footer.php:17
 msgid "Short news"
@@ -270,31 +270,27 @@ msgstr "बाहरी लिंक्स"
 msgid "Wild Madagascar"
 msgstr "वाइल्ड मेडागास्कर"
 
-#: Mongabay-News-Wordpress-Theme/footer.php:43 Mongabay-News-Wordpress-Theme/header.php:132
-msgid "Selva tropicales"
-msgstr "सेल्वा ट्रॉपिकल्स"
-
-#: Mongabay-News-Wordpress-Theme/footer.php:44 Mongabay-News-Wordpress-Theme/header.php:133
+#: Mongabay-News-Wordpress-Theme/footer.php:44 Mongabay-News-Wordpress-Theme/header.php:132
 msgid "For Kids"
 msgstr "बच्चों के लिए"
 
-#: Mongabay-News-Wordpress-Theme/footer.php:45 Mongabay-News-Wordpress-Theme/header.php:134
+#: Mongabay-News-Wordpress-Theme/footer.php:45 Mongabay-News-Wordpress-Theme/header.php:133
 msgid "Mongabay.org"
 msgstr "Mongabay.org"
 
-#: Mongabay-News-Wordpress-Theme/footer.php:47 Mongabay-News-Wordpress-Theme/header.php:137
+#: Mongabay-News-Wordpress-Theme/footer.php:46 Mongabay-News-Wordpress-Theme/header.php:134
 msgid "Reforestation App"
 msgstr "Reforestation App"
 
-#: Mongabay-News-Wordpress-Theme/footer.php:48 Mongabay-News-Wordpress-Theme/header.php:138
+#: Mongabay-News-Wordpress-Theme/footer.php:47 Mongabay-News-Wordpress-Theme/header.php:137
 msgid "Planetary Health Check"
 msgstr "Planetary Health Check"
 
-#: Mongabay-News-Wordpress-Theme/footer.php:49 Mongabay-News-Wordpress-Theme/header.php:139
+#: Mongabay-News-Wordpress-Theme/footer.php:48 Mongabay-News-Wordpress-Theme/header.php:138
 msgid "Conservation Effectiveness"
 msgstr "Conservation Effectiveness"
 
-#: Mongabay-News-Wordpress-Theme/footer.php:50 Mongabay-News-Wordpress-Theme/header.php:140
+#: Mongabay-News-Wordpress-Theme/footer.php:49 Mongabay-News-Wordpress-Theme/header.php:139
 msgid "Mongabay Data Studio"
 msgstr "Mongabay Data Studio"
 
@@ -326,7 +322,27 @@ msgstr "एक्स"
 msgid "Facebook"
 msgstr "फेसबुक"
 
-#: Mongabay-News-Wordpress-Theme/footer.php:60
+#: Mongabay-News-Wordpress-Theme/footer.php:63
+msgid "Tiktok"
+msgstr "Tiktok"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:64
+msgid "Reddit"
+msgstr "Reddit"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:65
+msgid "Bluesky"
+msgstr "Bluesky"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:66
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:67
+msgid "Telegram"
+msgstr "Telegram"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:71
 msgid "RSS / XML"
 msgstr "आरएसएस / एक्सएमएल"
 
@@ -415,8 +431,8 @@ msgstr "निजता की शर्तें"
 msgid "Advertising"
 msgstr "विज्ञापन"
 
-#: Mongabay-News-Wordpress-Theme/header.php:135
-msgid "Impact"
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:90
+msgid "Impacts"
 msgstr "खबर का असर"
 
 #: Mongabay-News-Wordpress-Theme/landing-page.php:52
@@ -1186,7 +1202,7 @@ msgstr "सभी देखें"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:75
 msgid "?s=&formats=post+custom_story+videos+podcasts+specials+short_article"
-msgstr "?s=&formats=पोस्ट+कस्टम_स्टोरी+वीडियो+पॉडकास्ट+विशेषांक+संक्षिप्त_लेख"
+msgstr "?s=&formats=post+custom_story+videos+podcasts+specials+short_article"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:79
 msgid "https://www.mongabay.com/about/"

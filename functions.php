@@ -657,7 +657,6 @@ function open_close_px_content()
 // Remove meta boxes from post editing screen
 function mongabay_remove_custom_fields()
 {
-
     $post_types = get_post_types('', 'names');
 
     foreach ($post_types as $post_type) {
@@ -668,12 +667,13 @@ function mongabay_remove_custom_fields()
 // Prevent from aading new location tags
 function mongabay_prevent_terms($term, $taxonomy)
 {
-
-    if ('location' === $taxonomy && !current_user_can('activate_plugins')) {
+    $current_site_id = get_current_blog_id();
+    $exception_user_ids = array(1125, 1163);
+    if ('location' === $taxonomy && (!current_user_can('activate_plugins') || (!in_array(get_current_user_id(), $exception_user_ids) && $current_site_id === 35))) {
         return new WP_Error('term_addition_blocked', __('You cannot add terms to this taxonomy'));
     }
 
-    if ('topic' === $taxonomy && !current_user_can('activate_plugins')) {
+    if ('topic' === $taxonomy && (!current_user_can('activate_plugins') || (!in_array(get_current_user_id(), $exception_user_ids) && $current_site_id === 35))) {
         return new WP_Error('term_addition_blocked', __('You cannot add terms to this taxonomy'));
     }
 
@@ -1315,6 +1315,30 @@ function mongabay_custom_image_sizes($sizes)
     ));
 }
 add_filter('image_size_names_choose', 'mongabay_custom_image_sizes');
+
+
+// Disable comment REST API endpoints
+add_filter('rest_endpoints', function ($endpoints) {
+    if (isset($endpoints['/wp/v2/comments'])) {
+        unset($endpoints['/wp/v2/comments']);
+    }
+    if (isset($endpoints['/wp/v2/comments/(?P<id>[\d]+)'])) {
+        unset($endpoints['/wp/v2/comments/(?P<id>[\d]+)']);
+    }
+    return $endpoints;
+});
+
+// Remove users from REST API
+add_filter('rest_endpoints', function ($endpoints) {
+    if (isset($endpoints['/wp/v2/users'])) {
+        unset($endpoints['/wp/v2/users']);
+    }
+    if (isset($endpoints['/wp/v2/users/(?P<id>[\d]+)'])) {
+        unset($endpoints['/wp/v2/users/(?P<id>[\d]+)']);
+    }
+    return $endpoints;
+});
+
 
 /*------------------------------------*\
     Actions + Filters

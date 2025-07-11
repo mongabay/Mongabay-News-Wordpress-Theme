@@ -140,8 +140,15 @@ function get_enabled_features($feature)
       'podcasts' => true,
       'videos' => true,
       'specials' => true,
-      'shorts' => false,
+      'shorts' => true,
       'donate' => false,
+    ),
+    35 => array(
+      'podcasts' => false,
+      'videos' => true,
+      'specials' => false,
+      'shorts' => false,
+      'donate' => true,
     ),
   );
 
@@ -164,7 +171,7 @@ function get_social_links($site_id)
         'mastodon' => 'https://mastodon.green/@mongabay',
         'android' => 'https://play.google.com/store/apps/details?id=com.newsmongabay&hl=en',
         'apple' => 'https://apple.news/T7BxfNfp4QAiuOPNsUcn04Q/',
-        'redit' => 'https://www.reddit.com/r/naturesfrontline/',
+        'reddit' => 'https://www.reddit.com/r/naturesfrontline/',
       );
     case 25:
       // Latam

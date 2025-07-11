@@ -55,19 +55,19 @@
 					<div class="divider"></div>
 				</div>
 				<ul class="footer-links">
-					<?php if (get_social_links(get_blog_details()->blog_id)['linkedin']) : ?><li><a href="<?php echo get_social_links(get_blog_details()->blog_id)['linkedin']; ?>" target="_blank"><?php _e('LinkedIn', 'mongabay'); ?></a></li><?php endif; ?>
-					<?php if (get_social_links(get_blog_details()->blog_id)['instagram']) : ?><li><a href="<?php echo get_social_links(get_blog_details()->blog_id)['instagram']; ?>" target="_blank"><?php _e('Instagram', 'mongabay'); ?></a></li><?php endif; ?>
-					<?php if (get_social_links(get_blog_details()->blog_id)['youtube']) : ?><li><a href="<?php echo get_social_links(get_blog_details()->blog_id)['youtube']; ?>" target="_blank"><?php _e('Youtube', 'mongabay'); ?></a></li><?php endif; ?>
-					<?php if (get_social_links(get_blog_details()->blog_id)['x']) : ?><li><a href="<?php echo get_social_links(get_blog_details()->blog_id)['x']; ?>" target="_blank"><?php _e('X', 'mongabay'); ?></a></li><?php endif; ?>
-					<?php if (get_social_links(get_blog_details()->blog_id)['facebook']) : ?><li><a href="<?php echo get_social_links(get_blog_details()->blog_id)['facebook']; ?>" target="_blank"><?php _e('Facebook', 'mongabay'); ?></a></li><?php endif; ?>
-					<?php if (get_social_links(get_blog_details()->blog_id)['tiktok']) : ?><li><a href="<?php echo get_social_links(get_blog_details()->blog_id)['tiktok']; ?>" target="_blank"><?php _e('Tiktok', 'mongabay'); ?></a></li><?php endif; ?>
-					<?php if (get_social_links(get_blog_details()->blog_id)['redit']) : ?><li><a href="<?php echo get_social_links(get_blog_details()->blog_id)['redit']; ?>" target="_blank"><?php _e('Redit', 'mongabay'); ?></a></li><?php endif; ?>
-					<?php if (get_social_links(get_blog_details()->blog_id)['bluesky']) : ?><li><a href="<?php echo get_social_links(get_blog_details()->blog_id)['bluesky']; ?>" target="_blank"><?php _e('BlueSky', 'mongabay'); ?></a></li><?php endif; ?>
-					<?php if (get_social_links(get_blog_details()->blog_id)['whatsapp']) : ?><li><a href="<?php echo get_social_links(get_blog_details()->blog_id)['whatsapp']; ?>" target="_blank"><?php _e('Whatsapp', 'mongabay'); ?></a></li><?php endif; ?>
-					<?php if (get_social_links(get_blog_details()->blog_id)['telegram']) : ?><li><a href="<?php echo get_social_links(get_blog_details()->blog_id)['whatsapp']; ?>" target="_blank"><?php _e('Telegram', 'mongabay'); ?></a></li><?php endif; ?>
-					<?php if (get_social_links(get_blog_details()->blog_id)['mastodon']) : ?><li><a href="<?php echo get_social_links(get_blog_details()->blog_id)['mastodon']; ?>" target="_blank"><?php _e('Mastodon', 'mongabay'); ?></a></li><?php endif; ?>
-					<?php if (get_social_links(get_blog_details()->blog_id)['android']) : ?><li><a href="<?php echo get_social_links(get_blog_details()->blog_id)['android']; ?>" target="_blank"><?php _e('Android App', 'mongabay'); ?></a></li><?php endif; ?>
-					<?php if (get_social_links(get_blog_details()->blog_id)['apple']) : ?><li><a href="<?php echo get_social_links(get_blog_details()->blog_id)['apple']; ?>" target="_blank"><?php _e('Apple News', 'mongabay'); ?></a></li><?php endif; ?>
+					<?php if (isset(get_social_links(get_blog_details()->blog_id)['linkedin'])) : ?><li><a href="<?php echo get_social_links(get_blog_details()->blog_id)['linkedin']; ?>" target="_blank"><?php _e('LinkedIn', 'mongabay'); ?></a></li><?php endif; ?>
+					<?php if (isset(get_social_links(get_blog_details()->blog_id)['instagram'])) : ?><li><a href="<?php echo get_social_links(get_blog_details()->blog_id)['instagram']; ?>" target="_blank"><?php _e('Instagram', 'mongabay'); ?></a></li><?php endif; ?>
+					<?php if (isset(get_social_links(get_blog_details()->blog_id)['youtube'])) : ?><li><a href="<?php echo get_social_links(get_blog_details()->blog_id)['youtube']; ?>" target="_blank"><?php _e('Youtube', 'mongabay'); ?></a></li><?php endif; ?>
+					<?php if (isset(get_social_links(get_blog_details()->blog_id)['x'])) : ?><li><a href="<?php echo get_social_links(get_blog_details()->blog_id)['x']; ?>" target="_blank"><?php _e('X', 'mongabay'); ?></a></li><?php endif; ?>
+					<?php if (isset(get_social_links(get_blog_details()->blog_id)['facebook'])) : ?><li><a href="<?php echo get_social_links(get_blog_details()->blog_id)['facebook']; ?>" target="_blank"><?php _e('Facebook', 'mongabay'); ?></a></li><?php endif; ?>
+					<?php if (isset(get_social_links(get_blog_details()->blog_id)['tiktok'])) : ?><li><a href="<?php echo get_social_links(get_blog_details()->blog_id)['tiktok']; ?>" target="_blank"><?php _e('Tiktok', 'mongabay'); ?></a></li><?php endif; ?>
+					<?php if (isset(get_social_links(get_blog_details()->blog_id)['reddit'])) : ?><li><a href="<?php echo get_social_links(get_blog_details()->blog_id)['reddit']; ?>" target="_blank"><?php _e('Reddit', 'mongabay'); ?></a></li><?php endif; ?>
+					<?php if (isset(get_social_links(get_blog_details()->blog_id)['bluesky'])) : ?><li><a href="<?php echo get_social_links(get_blog_details()->blog_id)['bluesky']; ?>" target="_blank"><?php _e('BlueSky', 'mongabay'); ?></a></li><?php endif; ?>
+					<?php if (isset(get_social_links(get_blog_details()->blog_id)['whatsapp'])) : ?><li><a href="<?php echo get_social_links(get_blog_details()->blog_id)['whatsapp']; ?>" target="_blank"><?php _e('WhatsApp', 'mongabay'); ?></a></li><?php endif; ?>
+					<?php if (isset(get_social_links(get_blog_details()->blog_id)['telegram'])) : ?><li><a href="<?php echo get_social_links(get_blog_details()->blog_id)['telegram']; ?>" target="_blank"><?php _e('Telegram', 'mongabay'); ?></a></li><?php endif; ?>
+					<?php if (isset(get_social_links(get_blog_details()->blog_id)['mastodon'])) : ?><li><a href="<?php echo get_social_links(get_blog_details()->blog_id)['mastodon']; ?>" target="_blank"><?php _e('Mastodon', 'mongabay'); ?></a></li><?php endif; ?>
+					<?php if (isset(get_social_links(get_blog_details()->blog_id)['android'])) : ?><li><a href="<?php echo get_social_links(get_blog_details()->blog_id)['android']; ?>" target="_blank"><?php _e('Android App', 'mongabay'); ?></a></li><?php endif; ?>
+					<?php if (isset(get_social_links(get_blog_details()->blog_id)['apple'])) : ?><li><a href="<?php echo get_social_links(get_blog_details()->blog_id)['apple']; ?>" target="_blank"><?php _e('Apple News', 'mongabay'); ?></a></li><?php endif; ?>
 					<li><a href="<?php echo home_url(); ?>/feed"><?php _e('RSS / XML', 'mongabay'); ?></a></li>
 				</ul>
 			</div>

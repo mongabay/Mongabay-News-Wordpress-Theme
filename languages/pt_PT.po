@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Mongabay Environmental News 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/mongabay_prod\n"
 "POT-Creation-Date: 2017-07-25 19:25:26+00:00\n"
-"PO-Revision-Date: 2025-06-07 23:36+0200\n"
+"PO-Revision-Date: 2025-06-10 11:39+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -286,16 +286,16 @@ msgid "Tiktok"
 msgstr "Tiktok"
 
 #: Mongabay-News-Wordpress-Theme/footer.php:64
-msgid "Redit"
-msgstr "Redit"
+msgid "Reddit"
+msgstr "Reddit"
 
 #: Mongabay-News-Wordpress-Theme/footer.php:65
 msgid "Bluesky"
 msgstr "Bluesky"
 
 #: Mongabay-News-Wordpress-Theme/footer.php:66
-msgid "Whatsapp"
-msgstr "Whatsapp"
+msgid "WhatsApp"
+msgstr "WhatsApp"
 
 #: Mongabay-News-Wordpress-Theme/footer.php:67
 msgid "Telegram"

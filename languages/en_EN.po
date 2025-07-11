@@ -346,16 +346,16 @@ msgid "Tiktok"
 msgstr "Tiktok"
 
 #: Mongabay-News-Wordpress-Theme/footer.php:64
-msgid "Redit"
-msgstr "Redit"
+msgid "Reddit"
+msgstr "Reddit"
 
 #: Mongabay-News-Wordpress-Theme/footer.php:65
 msgid "Bluesky"
 msgstr "Bluesky"
 
 #: Mongabay-News-Wordpress-Theme/footer.php:66
-msgid "Whatsapp"
-msgstr "Whatsapp"
+msgid "WhatsApp"
+msgstr "WhatsApp"
 
 #: Mongabay-News-Wordpress-Theme/footer.php:67
 msgid "Telegram"

@@ -24,7 +24,7 @@ get_header(); ?>
 
 		foreach ($taxonomies->queries as $tax_query) {
 			if (isset($tax_query['taxonomy'])) {
-				$topics[] = ucfirst(str_replace('-', ' ', $tax_query['terms'][0]));
+				$topics[] = ucfirst(str_replace('-', ' ', urldecode($tax_query['terms'][0])));
 			}
 		}
 

@@ -88,12 +88,12 @@ function isValueString(value) {
   return typeof value === "string" || value instanceof String;
 }
 
-const queriedSearch = window.location.search;
+const queriedSearch = decodeURI(window.location.search);
 
 const queriedParams = queriedSearch.split("&").reduce((acc, param) => {
   const [key, value] = param.split("=");
   if (key === "?s" && value.length > 0) {
-    acc["search"] = decodeURI(value);
+    acc["search"] = value;
   } else {
     if (key.length > 0 && value.length > 0) {
       acc[key] = value && value.includes("+") ? value.split("+") : value;
@@ -275,7 +275,10 @@ function clearSearch() {
 }
 
 const shouldFetch =
-  searchInput.value.length > 0 || selectedTopics.length > 0 || selectedLocations.length > 0 || selectedFormats.length > 0;
+  searchInput.value.length > 0 ||
+  selectedTopics.length > 0 ||
+  selectedLocations.length > 0 ||
+  selectedFormats.length > 0;
 
 /**
  * Creates clear button for input fields
@@ -1023,7 +1026,7 @@ async function searchTopic() {
   }
 
   const resp = await fetch(
-    `${domain}/graphql?query=query{topics(first:10,where:{nameLike:\"${searchValue}\"}){edges{node{name slug}}}}`,
+    `${domain}/graphql?query=query{topics(first:10,where:{search:\"${searchValue}\"}){edges{node{name slug}}}}`,
   );
   const { data } = await resp.json();
 
@@ -1086,7 +1089,7 @@ async function searchLocation() {
   }
 
   const resp = await fetch(
-    `${domain}/graphql?query=query{locations(first:10,where:{nameLike:\"${searchValue}\"}){edges{node{name slug}}}}`,
+    `${domain}/graphql?query=query{locations(first:10,where:{search:\"${searchValue}\"}){edges{node{name slug}}}}`,
   );
   const { data } = await resp.json();
 
@@ -1114,7 +1117,7 @@ async function searchLocation() {
 
     location.addEventListener("click", () => {
       if (!selectedLocations.includes(node.slug)) {
-        createTaxTag("location", node.name, node.slug);
+        createTaxTag("location", decodeURI(node.name), node.slug);
 
         // if (searchValue.length > 0) {
         //   fetchArticles(true);
@@ -1123,7 +1126,7 @@ async function searchLocation() {
       }
     });
 
-    location.textContent = node.name;
+    location.textContent = decodeURI(node.name);
     highlightResults(searchValue, location);
     locationsResults.appendChild(location);
   });
