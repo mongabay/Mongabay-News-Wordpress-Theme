@@ -1,0 +1,1232 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: English to Swahili\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-08-07 20:55+0200\n"
+"PO-Revision-Date: 2025-08-04 12:44+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: sw_TZ\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.6\n"
+
+#: Mongabay-News-Wordpress-Theme/404.php:5
+msgid "Page not found"
+msgstr "Ukurasa haupatikani"
+
+#: Mongabay-News-Wordpress-Theme/404.php:7
+msgid "Return home?"
+msgstr "Rudi mwanzo"
+
+#: Mongabay-News-Wordpress-Theme/articles-page.php:16 Mongabay-News-Wordpress-Theme/landing-page.php:26
+msgid "Top stories"
+msgstr "Habari kubwa"
+
+#: Mongabay-News-Wordpress-Theme/articles-page.php:23 Mongabay-News-Wordpress-Theme/landing-page.php:16
+msgid "Latest"
+msgstr "Mpya"
+
+#: Mongabay-News-Wordpress-Theme/articles-page.php:27 Mongabay-News-Wordpress-Theme/landing-page.php:21
+#: Mongabay-News-Wordpress-Theme/templates/page-specials.php:33
+msgid "All news"
+msgstr "Habari zote"
+
+#: Mongabay-News-Wordpress-Theme/articles-page.php:48
+#: Mongabay-News-Wordpress-Theme/templates/page-specials.php:54
+msgid "Quickly stay updated with our news <span>shorts</span>"
+msgstr "Pata habari punde zinapochapishwa"
+
+#: Mongabay-News-Wordpress-Theme/author.php:56 Mongabay-News-Wordpress-Theme/footer.php:24
+#: Mongabay-News-Wordpress-Theme/footer.php:28
+#: Mongabay-News-Wordpress-Theme/templates/taxonomy-byline.php:63
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:78
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:50
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:74
+msgid "About"
+msgstr "Kuhusu sisi"
+
+#: Mongabay-News-Wordpress-Theme/author.php:76
+#: Mongabay-News-Wordpress-Theme/components/lib/specials-latest.php:50
+#: Mongabay-News-Wordpress-Theme/components/lib/sliders/series-articles-slider.php:201
+#: Mongabay-News-Wordpress-Theme/templates/taxonomy-byline.php:82
+#: Mongabay-News-Wordpress-Theme/templates/taxonomy-custom.php:41
+#: Mongabay-News-Wordpress-Theme/functions.php:276
+msgid "stories"
+msgstr "Habari"
+
+#: Mongabay-News-Wordpress-Theme/author.php:141 Mongabay-News-Wordpress-Theme/search.php:50
+#: Mongabay-News-Wordpress-Theme/templates/taxonomy-byline.php:147
+#: Mongabay-News-Wordpress-Theme/templates/taxonomy-custom.php:97
+msgid "No results found"
+msgstr "Hakuna matokeo yoyote"
+
+#: Mongabay-News-Wordpress-Theme/comments.php:3
+msgid "Post is password protected. Enter the password to view any comments."
+msgstr "Chapisho hili limewekewa nywila. Weka nywila ili kuona maoni "
+
+#: Mongabay-News-Wordpress-Theme/comments.php:18
+msgid "Comments are closed here."
+msgstr "Maoni yamefungwa hapa"
+
+#: Mongabay-News-Wordpress-Theme/featured-page.php:34
+msgid "Latest features"
+msgstr "Makala mpya"
+
+#: Mongabay-News-Wordpress-Theme/featured-page.php:35 Mongabay-News-Wordpress-Theme/featured-page.php:49
+msgid "All features"
+msgstr "Makala zote"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:9
+msgid "News formats"
+msgstr "Aina za habari"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:13 Mongabay-News-Wordpress-Theme/components/lib/utils.php:30
+msgid "Videos"
+msgstr "Video"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:252
+msgid "Video"
+msgstr "Video"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:14 Mongabay-News-Wordpress-Theme/components/lib/utils.php:34
+msgid "Podcasts"
+msgstr "Podikasti"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:253
+msgid "Podcast"
+msgstr "Podikasti"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:15 Mongabay-News-Wordpress-Theme/components/lib/utils.php:42
+#: Mongabay-News-Wordpress-Theme/functions.php:249
+msgid "Articles"
+msgstr "Taarifa"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:38 Mongabay-News-Wordpress-Theme/footer.php:16
+#: Mongabay-News-Wordpress-Theme/functions.php:254
+msgid "Specials"
+msgstr "MAtoleo Maalum"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:269
+msgid "Animals"
+msgstr "Wanyama"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:269
+msgid "animals"
+msgstr "wanyama"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:257 Mongabay-News-Wordpress-Theme/functions.php:263
+#: Mongabay-News-Wordpress-Theme/functions.php:270
+msgid "Forests"
+msgstr "Misitu"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:258
+msgid "Wildlife"
+msgstr "Wanyamapori"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:250
+msgid "Custom Story"
+msgstr "Habari Maalum"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:261
+msgid "Asia"
+msgstr "Asia"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:261
+msgid "asia"
+msgstr "asia"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:262
+msgid "Africa"
+msgstr "Afrika"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:262
+msgid "africa"
+msgstr "afrika"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:263
+msgid "South America"
+msgstr "Amerika ya Kusini"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:263
+msgid "south-america"
+msgstr "amerika-ya-kusini"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:264
+msgid "Indonesia"
+msgstr "Indonesia"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:264
+msgid "indonesia"
+msgstr "indonesia"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:265
+msgid "Amazon"
+msgstr "Amazoni"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:265
+msgid "amazon"
+msgstr "amazoni"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:266
+msgid "Congo"
+msgstr "Kongo"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:266
+msgid "congo"
+msgstr "kongo"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:40
+#: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:59
+#: Mongabay-News-Wordpress-Theme/search.php:44 Mongabay-News-Wordpress-Theme/search.php:53
+msgid "wildlife"
+msgstr "wanyamapori"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:270
+#: Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:40
+#: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:59
+#: Mongabay-News-Wordpress-Theme/search.php:43 Mongabay-News-Wordpress-Theme/search.php:52
+msgid "forests"
+msgstr "misitu"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:59
+msgid "indigenous-peoples"
+msgstr "jamii-asilia"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:59
+msgid "agroecology"
+msgstr "Kilimo-ikolojia"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:259 Mongabay-News-Wordpress-Theme/functions.php:265
+#: Mongabay-News-Wordpress-Theme/functions.php:271
+msgid "Oceans"
+msgstr "Bahari"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:40
+#: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:59
+#: Mongabay-News-Wordpress-Theme/search.php:46 Mongabay-News-Wordpress-Theme/search.php:55
+msgid "oceans"
+msgstr "bahari"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:40
+msgid "climate"
+msgstr "hali ya hewa "
+
+#: Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:40
+msgid "conservation-solutions"
+msgstr "suluhisho-za-uhifadhi"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:46
+#: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:65
+msgid "all topics"
+msgstr "mada zote"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:260
+msgid "Feature"
+msgstr "Makala "
+
+#: Mongabay-News-Wordpress-Theme/functions.php:272
+msgid "Conservation"
+msgstr "Uhifadhi"
+
+#: Mongabay-News-Wordpress-Theme/search.php:45 Mongabay-News-Wordpress-Theme/search.php:54
+msgid "conservation"
+msgstr "uhifadhi"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:273
+msgid "Indigenous Peoples"
+msgstr "Jamii Asilia"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:17
+msgid "Short news"
+msgstr "Habari fupi"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:18 Mongabay-News-Wordpress-Theme/components/lib/utils.php:66
+msgid "Feature Stories"
+msgstr "Makala "
+
+#: Mongabay-News-Wordpress-Theme/footer.php:19 Mongabay-News-Wordpress-Theme/components/lib/utils.php:70
+msgid "The Latest"
+msgstr "Za sasa hivi"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:29 Mongabay-News-Wordpress-Theme/components/lib/utils.php:58
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:86
+msgid "Contact"
+msgstr "Mawasiliano"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:30 Mongabay-News-Wordpress-Theme/header.php:77
+#: Mongabay-News-Wordpress-Theme/header.php:120
+#: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:22
+#: Mongabay-News-Wordpress-Theme/components/podcasts-page.php:37
+#: Mongabay-News-Wordpress-Theme/components/lib/videos-latest.php:64
+msgid "Donate"
+msgstr "Changia"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:31
+msgid "Newsletters"
+msgstr "Vijarida"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:32 Mongabay-News-Wordpress-Theme/header.php:125
+msgid "Submissions"
+msgstr "Michango ya Maandishi"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:33 Mongabay-News-Wordpress-Theme/header.php:129
+msgid "Terms of Use"
+msgstr "Masharti ya matumizi"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:38
+msgid "External links"
+msgstr "Viungo vya Nje"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:42 Mongabay-News-Wordpress-Theme/header.php:133
+msgid "Wild Madagascar"
+msgstr "Pori la Madagascar"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:43 Mongabay-News-Wordpress-Theme/header.php:134
+msgid "Selva tropicales"
+msgstr "Misitu ya kitropiki"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:44 Mongabay-News-Wordpress-Theme/header.php:138
+msgid "For Kids"
+msgstr "Kwa Watoto"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:45 Mongabay-News-Wordpress-Theme/header.php:139
+msgid "Mongabay.org"
+msgstr "Mongabay.org"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:46 Mongabay-News-Wordpress-Theme/header.php:140
+msgid "Tropical Forest Network"
+msgstr "Mtandao wa Misitu ya Kitropiki"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:51
+msgid "Social media"
+msgstr " Mitandao ya kijamii"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:55
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:56
+msgid "Instagram"
+msgstr "Instagram"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:57
+msgid "Youtube"
+msgstr "Youtube"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:58
+msgid "X"
+msgstr "X"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:59
+msgid "Facebook"
+msgstr "Facebook"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:60
+msgid "RSS / XML"
+msgstr "RSS / XML"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:61
+msgid "Mastodon"
+msgstr "Mastodon"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:62
+msgid "Android app"
+msgstr "Android app"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:63
+msgid "Apple News"
+msgstr "Habari za Apple"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:419
+msgid "View Article"
+msgstr "Tazama taarifa"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:550
+msgid "Results for: "
+msgstr "Matokeo ya:"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:670 Mongabay-News-Wordpress-Theme/functions.php:674
+msgid "You cannot add terms to this taxonomy"
+msgstr " Huwezi kuongeza masharti kwenye taksonomia hii"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:684
+msgid "Stats Widget"
+msgstr "Takwimu za Wijeti"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:685
+msgid "Stats page sidebar widgets should be placed here."
+msgstr "Wijeti za upande wa ukurasa wa takwimu zinapaswa kuwekwa hapa"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:729 Mongabay-News-Wordpress-Theme/functions.php:739
+msgid "Conservation news on"
+msgstr "Habari za uhifadhi zinapatikana"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:918
+msgid "If article is featured"
+msgstr "Ikiwa taarifa imechapishwa"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:927
+msgid "Bulletpoint 1"
+msgstr "Nukta 1"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:936
+msgid "Bulletpoint 2"
+msgstr "Nukta 2"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:945
+msgid "Bulletpoint 3"
+msgstr "Nukta 3"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:954
+msgid "Bulletpoint 4"
+msgstr "Nukta 4"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:963
+msgid "Article link"
+msgstr "Kiungo cha taarifa"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:1007
+msgid "Please set Featured Image. Article cannot be published without one."
+msgstr "Tafadhali weka picha iliyopangwa. Taarifa isiyo na picha haiwezi kuchapishwa."
+
+#: Mongabay-News-Wordpress-Theme/functions.php:1163
+msgid "No older posts"
+msgstr "Hakuna machapisho ya zamani"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:1215
+#: Mongabay-News-Wordpress-Theme/components/lib/lists/articles-listing.php:53
+#: Mongabay-News-Wordpress-Theme/components/lib/sliders/featured-articles-slider.php:36
+msgid "Feature story"
+msgstr "Makala"
+
+#: Mongabay-News-Wordpress-Theme/header.php:123
+msgid "Subscribe page"
+msgstr "Ukurasa wa kujisajili"
+
+#: Mongabay-News-Wordpress-Theme/header.php:128
+msgid "Privacy Policy"
+msgstr "Sera ya faragha"
+
+#: Mongabay-News-Wordpress-Theme/header.php:130
+msgid "Advertising"
+msgstr "Matangazo"
+
+#: Mongabay-News-Wordpress-Theme/header.php:135
+msgid "Impact"
+msgstr "Athari"
+
+#: Mongabay-News-Wordpress-Theme/landing-page.php:52
+msgid "Watch unique <span class=\"icon icon-play\">videos</span> that cut through the noise"
+msgstr "Tazama video <span class=”icon icon-play”>videos</span> maalum"
+
+#: Mongabay-News-Wordpress-Theme/landing-page.php:69 Mongabay-News-Wordpress-Theme/articles-page.php:48
+msgid "Quickly stay updated with our news <span class=\"icon icon-shorts\">shorts</span>"
+msgstr "Pata habari zetu punde zinapochapishwa"
+
+#: Mongabay-News-Wordpress-Theme/page.php:15 Mongabay-News-Wordpress-Theme/single-custom-story.php:28
+#: Mongabay-News-Wordpress-Theme/single-featured.php:40
+#: Mongabay-News-Wordpress-Theme/single-podcasts.php:69
+#: Mongabay-News-Wordpress-Theme/single-specials_.php:48
+#: Mongabay-News-Wordpress-Theme/single-videos.php:67 Mongabay-News-Wordpress-Theme/single.php:48
+msgid "Sorry, nothing to display."
+msgstr "Samahani, hakuna cha kuonyesha"
+
+#: Mongabay-News-Wordpress-Theme/podcasts-page.php:22 Mongabay-News-Wordpress-Theme/single-podcasts.php:91
+msgid "Latest podcasts"
+msgstr "Podikasti za hivi punde"
+
+#: Mongabay-News-Wordpress-Theme/podcasts-page.php:23 Mongabay-News-Wordpress-Theme/podcasts-page.php:54
+#: Mongabay-News-Wordpress-Theme/single-podcasts.php:92
+#: Mongabay-News-Wordpress-Theme/single-podcasts.php:124
+msgid "All podcasts"
+msgstr "Podikasti zote"
+
+#: Mongabay-News-Wordpress-Theme/search.php:9
+msgid "Type to search in any field."
+msgstr "Andika kutafuta katika eneo lolote unalohitaji"
+
+#: Mongabay-News-Wordpress-Theme/search.php:28
+msgid "Format"
+msgstr "Aina"
+
+#: Mongabay-News-Wordpress-Theme/search.php:37
+msgid "Featured only"
+msgstr "Vilivyoainishwa tu"
+
+#: Mongabay-News-Wordpress-Theme/search.php:41
+msgid "Try out our suggestions"
+msgstr "Jaribu mapendekezo yetu"
+
+#: Mongabay-News-Wordpress-Theme/search.php:43 Mongabay-News-Wordpress-Theme/search.php:52
+msgid "Forest articles"
+msgstr "Taarifa za misitu"
+
+#: Mongabay-News-Wordpress-Theme/search.php:44 Mongabay-News-Wordpress-Theme/search.php:53
+msgid "Wildlife Videos"
+msgstr "Video za wanyamapori"
+
+#: Mongabay-News-Wordpress-Theme/search.php:45 Mongabay-News-Wordpress-Theme/search.php:54
+msgid "Conservation Podcasts"
+msgstr "Podikasti za uhifadhi"
+
+#: Mongabay-News-Wordpress-Theme/search.php:46 Mongabay-News-Wordpress-Theme/search.php:55
+msgid "Ocean Specials"
+msgstr "Vipindi maalum vya bahari"
+
+#: Mongabay-News-Wordpress-Theme/searchform.php:4
+msgid "To search, type and hit enter."
+msgstr "Ili kutafuta, andika na bonyeza kitupe kilichoandikwa ‘ingia’"
+
+#: Mongabay-News-Wordpress-Theme/shorts-page.php:50
+msgid "No short articles found"
+msgstr "Hakuna taarifa fupi zilizopatikana"
+
+#: Mongabay-News-Wordpress-Theme/single-custom-story.php:41
+#: Mongabay-News-Wordpress-Theme/single-specials.php:92
+#: Mongabay-News-Wordpress-Theme/single-specials_new.php:79
+#: Mongabay-News-Wordpress-Theme/specials-page.php:26
+#: Mongabay-News-Wordpress-Theme/templates/taxonomy-specials.php:113
+msgid "All Specials"
+msgstr "Yote maalum"
+
+#: Mongabay-News-Wordpress-Theme/single-podcasts.php:44 Mongabay-News-Wordpress-Theme/single-videos.php:42
+msgid "Transcript"
+msgstr "Nakala"
+
+#: Mongabay-News-Wordpress-Theme/single-podcasts.php:47 Mongabay-News-Wordpress-Theme/single-videos.php:45
+msgid ""
+"Notice: Transcripts are machine and human generated and lightly edited for accuracy. They may contain "
+"errors."
+msgstr ""
+"Notisi: Nakala zimeundwa kwa msaada wa mashine na binadamu na zimehaririwa kidogo kwa usahihi. Huenda "
+"zikawa na..."
+
+#: Mongabay-News-Wordpress-Theme/single-podcasts.php:54 Mongabay-News-Wordpress-Theme/single-videos.php:52
+msgid "Read full transcript"
+msgstr "Soma nakala kamili"
+
+#: Mongabay-News-Wordpress-Theme/single-specials.php:83
+#: Mongabay-News-Wordpress-Theme/components/lib/shorts-dialog.php:38
+#: Mongabay-News-Wordpress-Theme/functions.php:275
+msgid "Load more"
+msgstr "Pakia zaidi"
+
+#: Mongabay-News-Wordpress-Theme/single-specials_.php:61 Mongabay-News-Wordpress-Theme/single.php:61
+msgid "Latest articles"
+msgstr "Taarifa za hivi punde"
+
+#: Mongabay-News-Wordpress-Theme/single-specials_.php:62
+#: Mongabay-News-Wordpress-Theme/single-specials_.php:70 Mongabay-News-Wordpress-Theme/single.php:62
+#: Mongabay-News-Wordpress-Theme/single.php:68
+msgid "All articles"
+msgstr "Habari zote"
+
+#: Mongabay-News-Wordpress-Theme/single-videos.php:92 Mongabay-News-Wordpress-Theme/videos-page.php:23
+msgid "Latest videos"
+msgstr "Video za hivi punde"
+
+#: Mongabay-News-Wordpress-Theme/single-videos.php:93 Mongabay-News-Wordpress-Theme/single-videos.php:108
+#: Mongabay-News-Wordpress-Theme/videos-page.php:24 Mongabay-News-Wordpress-Theme/videos-page.php:36
+msgid "All videos"
+msgstr "Video zote"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/share-icons-grid.php:68
+#: Mongabay-News-Wordpress-Theme/components/lib/article/social-share.php:92
+msgid "Share this"
+msgstr "Sambaza hii"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/share-icons-grid.php:69
+#: Mongabay-News-Wordpress-Theme/components/lib/article/social-share.php:93
+msgid "If you liked this story, share it with other people."
+msgstr "Ikiwa umeipenda hii habari, isambaze."
+
+#: Mongabay-News-Wordpress-Theme/components/lib/share-icons-grid.php:83
+#: Mongabay-News-Wordpress-Theme/components/lib/article/social-share.php:107
+msgid "Page link"
+msgstr "Kiungo cha ukurasa"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/shorts-dialog.php:26
+msgid "Share Short"
+msgstr "Sambaza habari fupi"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/shorts-dialog.php:27
+msgid "Read Full Article"
+msgstr "Soma habari yote"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/specials-latest.php:5
+#: Mongabay-News-Wordpress-Theme/templates/page-specials.php:40
+msgid "Latest Specials"
+msgstr "Vichapisho maalum vya hivi punde"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/article/article-bulletpoints.php:19
+msgid "See All Key Ideas"
+msgstr "azama mawazo yote muhimu"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/article/article-credits.php:17
+msgid "Credits "
+msgstr "Kutambua ushiriki"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/article/article-credits.php:35
+msgid "Editor"
+msgstr "Mhariri"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/article/article-headline.php:53
+msgid "Comments"
+msgstr "Maoni"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/article/article-terms.php:5
+msgid "Topics"
+msgstr "Mada"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/article/article-terms.php:13
+msgid "See Topics"
+msgstr "Tazama mada"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/article/social-share.php:85
+msgid "Share"
+msgstr "Sambaza"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/lists/articles-listing-condensed.php:62
+#: Mongabay-News-Wordpress-Theme/components/lib/lists/featured-articles-listing.php:109
+msgid "Sorry, no posts matched your criteria."
+msgstr "Samahani, hakuna taarifa inayokidhi vigezo vyako"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/sliders/featured-articles-slider.php:22
+msgid "In-depth <span>feature stories</span> reveal context and insight"
+msgstr "Kwa undani <span>Makala</span> huonyesha muktadha na kupanua maarifa"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/sliders/formats-slider.php:65
+#: Mongabay-News-Wordpress-Theme/components/lib/sliders/specials-slider.php:58
+msgid "No posts found"
+msgstr "Hakuna habari iliyopatikana"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/sliders/specials-slider.php:6
+msgid "Special Issues connect the dots between stories"
+msgstr "Masuala maalum huunganisha hoja zilizoko kwenye habari"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/sliders/related-articles-slider.php:49
+msgid "Related Articles"
+msgstr "Taarifa zinazohusiana"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/sliders/series-articles-slider.php:178
+msgid "More specials"
+msgstr "Matoleo maalum zaidi"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/sliders/series-articles-slider.php:55
+msgid "<span class=\"icon icon-specials\">Special issues</span> connect the dots between stories"
+msgstr "<span class=\"icon icon-specials\">Matoleo maalum</span> huunganisha hoja zilizoko kwenye habari"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/sliders/tools-slider.php:7
+msgid "Interested in other Mongabay websites?"
+msgstr "Je, unapenda tovuti nyingine za Mongabay?"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/meta.php:101
+msgid ""
+"Mongabay seeks to raise interest in and appreciation of wild lands and wildlife, while examining the "
+"impact of emerging trends in climate, technology, economics, and finance on conservation and "
+"development."
+msgstr ""
+"Mongabay inalenga kuongeza hamasa na uthamini wa ardhi ya asili na wanyamapori, huku ikichunguza athari "
+"za mielekeo inayojitokeza katika hali ya hewa, teknolojia, uchumi, na fedha kwenye uhifadhi na "
+"maendeleo."
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:7
+msgctxt "Post type general name"
+msgid "Videos"
+msgstr "Video"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:8
+msgctxt "Post type singular name"
+msgid "Video"
+msgstr "Video"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:9
+msgid "Search Videos"
+msgstr "Tafuta video"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:10
+msgid "Popular Videos"
+msgstr "Video zilizopendwa"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:11
+msgid "All Videos"
+msgstr "Video zote"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:14
+msgid "Edit Video"
+msgstr "Hariri video"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:15
+msgid "Update Video"
+msgstr "Sasisha video"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:16
+msgid "Add New Video"
+msgstr "Ongeza video mpya"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:17
+msgid "New Video Name"
+msgstr "Jina la video mpya"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:48
+msgctxt "Post type general name"
+msgid "Podcasts"
+msgstr "Podikasti"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:49
+msgctxt "Post type singular name"
+msgid "Podcast"
+msgstr "Podikasti"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:50
+msgid "Search Podcasts"
+msgstr "Tafuta podikasti"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:51
+msgid "Popular Podcasts"
+msgstr "Podikasti maarufu"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:52
+msgid "All Podcasts"
+msgstr "Podikasti zote"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:55
+msgid "Edit Podcast"
+msgstr "Hariri podikasti"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:56
+msgid "Update Podcast"
+msgstr "Sasisha podikasti"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:57
+msgid "Add New Podcast"
+msgstr "Ongeza podikasti mpya"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:58
+msgid "New Podcast Name"
+msgstr "Jina la podikasti mpya"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:90
+msgctxt "Post type general name"
+msgid "Short Articles"
+msgstr "Taarifa fupi"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:91
+msgctxt "Post type singular name"
+msgid "Short Article"
+msgstr "Taarifa fupi"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:92
+msgid "Search Short Articles"
+msgstr "Tafuta taarifa fupi"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:93
+msgid "Popular Short Articles"
+msgstr "Taarifa fupi zinazopendwa"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:94
+msgid "All Short Articles"
+msgstr "Taarifa fupi zote"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:97
+msgid "Edit Short Article"
+msgstr "Hariri taarifa fupi"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:98
+msgid "Update Short Article"
+msgstr "Sasisha taarifa fupi"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:99
+msgid "Add New Short Article"
+msgstr "Ongeza taarifa fupi mpya"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:100
+msgid "New Short Article Name"
+msgstr "Jina la taarifa fupi mpya"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:132
+msgctxt "Post type general name"
+msgid "Custom Stories"
+msgstr "Habari maalum"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:133
+msgctxt "Post type singular name"
+msgid "Custom Story"
+msgstr "Habari maalum"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:134
+msgid "Search Custom Stories"
+msgstr "Tafuta habari maalum"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:135
+msgid "Popular Custom Stories"
+msgstr "Habari maalum zinazopendwa"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:136
+msgid "All Custom Stories"
+msgstr "Habari maalum zote"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:139
+msgid "Edit Custom Stories"
+msgstr "Hariri habari maalum"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:140
+msgid "Update Custom Stories"
+msgstr "Sasisha habari maalum"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:141
+msgid "Add New Custom Stories"
+msgstr "Ongeza habari maalum mpya"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:142
+msgid "New Custom Stories Name"
+msgstr "Jina la habari maalum mpya"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:174
+msgctxt "Post type general name"
+msgid "Special Issues"
+msgstr "Matoleo maalum"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:175
+msgctxt "Post type singular name"
+msgid "Special Issue"
+msgstr "Toleo maalum"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:176
+msgid "Search Special Issues"
+msgstr "Tafuta matoleo maalum"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:177
+msgid "Popular Special Issues"
+msgstr "Matoleo maalum yanayopendwa"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:178
+msgid "All Special Issues"
+msgstr "Matoleo maalum yote"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:181
+msgid "Edit Special Issue"
+msgstr "Hariri toleo maalum"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:182
+msgid "Update Special Issue"
+msgstr "Sasisha toleo maalum"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:183
+msgid "Add New Special Issue"
+msgstr "Ongeza toleo maalum jipya"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:184
+msgid "New Special Issue Name"
+msgstr "Jina la toleo maalum jipya"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-entity.php:7
+msgctxt "taxonomy general name"
+msgid "Entities"
+msgstr "Huluki"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-entity.php:8
+msgctxt "taxonomy singular name"
+msgid "Entity"
+msgstr "Huluki"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-entity.php:9
+msgid "Search Entities"
+msgstr "Tafuta huluki"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-entity.php:10
+msgid "Popular Entities"
+msgstr "Huluki zinazopendwa"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-entity.php:11
+msgid "All Entities"
+msgstr "Huluki zote "
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-entity.php:14
+msgid "Edit Entity"
+msgstr "Hariri huluki"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-entity.php:15
+msgid "Update Entity"
+msgstr "Sasisha huluki"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-entity.php:16
+msgid "Add New Entity"
+msgstr "Ongeza huluki mpya"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-entity.php:17
+msgid "New Entity Name"
+msgstr "Jina la huluki mpya"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-entity.php:18
+msgid "Separate entities with commas"
+msgstr "Tenganisha huluki kwa hati mkato"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-entity.php:19
+msgid "Add or remove entities"
+msgstr "Ongeza au ondoa huluki"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-entity.php:20
+msgid "Choose from the most used entities"
+msgstr "Chagua kutoka kwenye huluki zinazotumika zaidi"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-entity.php:21
+msgid "No entities found."
+msgstr "Hakuna huluki zilizopatikana"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-entity.php:22
+msgid "Entities"
+msgstr "Huluki"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-location.php:6
+msgctxt "taxonomy general name"
+msgid "Locations"
+msgstr "Maeneo"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-location.php:7
+msgctxt "taxonomy singular name"
+msgid "Location"
+msgstr "Eneo"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-location.php:8
+msgid "Search Locations"
+msgstr "Tafuta maeneo"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-location.php:9
+msgid "Popular Locations"
+msgstr "Maeneo maarufu"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-location.php:10
+msgid "All Locations"
+msgstr "Maeneo yote"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-location.php:13
+msgid "Edit Location"
+msgstr "Hariri eneo"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-location.php:14
+msgid "Update Location"
+msgstr "Sasisha eneo"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-location.php:15
+msgid "Add New Location"
+msgstr "Ongeza eneo jipya"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-location.php:16
+msgid "New Location Name"
+msgstr "Jina la eneo jipya"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-location.php:17
+msgid "Separate locations with commas"
+msgstr "Tenganisha maeneo kwa hati mkato"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-location.php:18
+msgid "Add or remove locations"
+msgstr "Ongeza au ondoa maeneo"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-location.php:19
+msgid "Choose from the most used locations"
+msgstr "Chagua kutoka kwa maeneo yanayotumika sana"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-location.php:20
+msgid "No locations found."
+msgstr "Hakuna eneo lililopatikana"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-location.php:21
+#: Mongabay-News-Wordpress-Theme/search.php:22
+msgid "Location"
+msgstr "Eneo"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-serial.php:7
+msgctxt "taxonomy general name"
+msgid "Serials"
+msgstr "Mfululizo"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-serial.php:8
+msgctxt "taxonomy singular name"
+msgid "Serial"
+msgstr "Mfululizo"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-serial.php:9
+msgid "Search Serials"
+msgstr "Tafuta yanayotoka mfululizo"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-serial.php:10
+msgid "Popular Serials"
+msgstr "Machapisho ya mfululizo yanayopendwa"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-serial.php:11
+msgid "All Serials"
+msgstr "Machapisho ya mfululizo yote"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-serial.php:14
+msgid "Edit Serial"
+msgstr "Hariri chapisho la mfululizo"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-serial.php:15
+msgid "Update Serial"
+msgstr "Sasisha chapisho la mfululizo"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-serial.php:16
+msgid "Add New Serial"
+msgstr "Ongeza chapisho la mfululizo jipya"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-serial.php:17
+msgid "New Serial Name"
+msgstr "Jina la chapisho mfululizo jipya"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-serial.php:18
+msgid "Separate serials with commas"
+msgstr "Tenganisha machapisho ya mfululizo kwa hati mkato"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-serial.php:19
+msgid "Add or remove serials"
+msgstr "Ongeza au ondoa machapisho ya mfululizo"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-serial.php:20
+msgid "Choose from the most used serials"
+msgstr "Chagua kutoka kwa machapisho ya mfululizo yaliyotumika zaidi"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-serial.php:21
+msgid "No serials found."
+msgstr "Hakuna chapisho la mfululizo lililopatikana"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-serial.php:22
+msgid "Serial"
+msgstr "Chapisho la mfululizo"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-topic.php:6
+msgctxt "taxonomy general name"
+msgid "Topics"
+msgstr "Mada"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-topic.php:7
+msgctxt "taxonomy singular name"
+msgid "Topic"
+msgstr "Mada"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-topic.php:8
+msgid "Search Topics"
+msgstr "Tafuta mada"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-topic.php:9
+msgid "Popular Topics"
+msgstr "Mada zinazopendwa"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-topic.php:10
+msgid "All Topics"
+msgstr "Mada zote"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-topic.php:13
+msgid "Edit Topic"
+msgstr "Hariri mada"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-topic.php:14
+msgid "Update Topic"
+msgstr "Sasisha mada"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-topic.php:15
+msgid "Add New Topic"
+msgstr "Ongeza mada mpya"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-topic.php:16
+msgid "New Topic Name"
+msgstr "Jina la mada mpya"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-topic.php:17
+msgid "Separate topics with commas"
+msgstr "Tenganisha mada kwa hati mkato"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-topic.php:18
+msgid "Add or remove topics"
+msgstr "Ongeza au ondoa mada"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-topic.php:19
+msgid "Choose from the most used topics"
+msgstr "Chagua kutoka kwa mada zinazotumika zaidi"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-topic.php:20
+msgid "No topics found."
+msgstr "Hakuna mada zilizopatikana"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-topic.php:21
+msgid "Topic"
+msgstr "Mada"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/thumbnailed-recent-posts.php:16
+msgid "Most Recent"
+msgstr "Za hivi punde"
+
+#: Mongabay-News-Wordpress-Theme/templates/taxonomy-specials.php:23
+msgid " News"
+msgstr " Habari"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:14
+msgid "Subscribe"
+msgstr "Jisajili"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:14
+msgid "Free and open access to credible information"
+msgstr " Hakuna gharama yoyote kupakua na kujipatia taarifa za kuaminika"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:18
+#: Mongabay-News-Wordpress-Theme/components/lib/videos-latest.php:74
+msgid "Stay informed with news and inspiration from nature’s frontline."
+msgstr ""
+"Zidi kupata taarifa zenye msukumo kutoka kwa taasisi inayoongoza kwenye juhudi za kulinda mazingira"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/banners/inspiration-banner.php:5
+msgid "News and Inspiration from Nature's Frontline."
+msgstr "Taarifa na msukumo kutoka kwa taasisi inayoongoza kwenye juhudi za kulinda mazingira"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:14
+#: Mongabay-News-Wordpress-Theme/components/podcasts-page.php:31
+#: Mongabay-News-Wordpress-Theme/components/lib/videos-latest.php:61
+msgid "We’re a nonprofit"
+msgstr " Sisi ni shirika lisilo la kibiashara"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:18
+#: Mongabay-News-Wordpress-Theme/components/podcasts-page.php:34
+#: Mongabay-News-Wordpress-Theme/components/lib/videos-latest.php:63
+msgid "Help us tell impactful stories of biodiversity loss, climate change, and more"
+msgstr ""
+" Tusaidie kusimulia habari muhimu kuhusu upotevu wa viumbe hai, mabadiliko ya tabianchi na mengine mengi"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:22
+#: Mongabay-News-Wordpress-Theme/components/lib/videos-latest.php:75
+msgid "Newsletter"
+msgstr "Jarida la habari"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:22
+msgid "Learn more"
+msgstr "Jifunze zaidi"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/sliders/formats-slider.php:6
+msgid "In-depth feature stories reveal context and insight"
+msgstr "Makala zilizoandikwa kwa undani hufichua na kuongeza uelewa"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/sliders/formats-slider.php:6
+msgid "Listen to Nature with thought-provoking podcasts"
+msgstr "Jifunze kuhusu mazingira asilia kupitia Podikasti zinazochochea fikra"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/banners/podcasts-banner.php:15
+msgid "Listen to Nature with thought-provoking <span class=\"icon icon-podcast\">podcasts</span>"
+msgstr ""
+"Jifunze kuhusu mazingira kupitia kipengele cha aikoni ya <span class=\"icon icon-podcast\">podikasti </"
+"span> inayochochea fikra"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/sliders/formats-slider.php:6
+msgid "Watch unique videos that cut through the noise"
+msgstr "Tazama video za kipekee na zinazoaminika"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:55
+msgid "Read articles on topics such as"
+msgstr "Soma habari kuhusu mada kama vile"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:55
+msgid "Explore enterprising journalism about"
+msgstr "Chunguza uandishi wa habari wa ubunifu kuhusu"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:55
+#: Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:36
+msgid "Explore podcasts about"
+msgstr "Chunguza podikasti kuhusu"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:55
+msgid "Explore videos about topics like"
+msgstr "Chunguza video kuhusu mada kama"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:65
+msgid "all stories"
+msgstr "Habari zote"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:26
+msgid "Features"
+msgstr "Makala "
+
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:27
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:67
+#: Mongabay-News-Wordpress-Theme/functions.php:234
+msgid "features"
+msgstr "makala "
+
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:31
+#: Mongabay-News-Wordpress-Theme/functions.php:234
+msgid "videos"
+msgstr "video"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:35
+#: Mongabay-News-Wordpress-Theme/functions.php:234
+msgid "podcasts"
+msgstr "podikasti"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:35
+#: Mongabay-News-Wordpress-Theme/functions.php:234
+msgid "specials"
+msgstr "Matoleo maalum"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:43
+#: Mongabay-News-Wordpress-Theme/functions.php:234
+#: Mongabay-News-Wordpress-Theme/lib/components/banners/inspiration-banner.php:38
+msgid "articles"
+msgstr "Taarifa zote"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:277
+msgid "story"
+msgstr "habari"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:46
+#: Mongabay-News-Wordpress-Theme/functions.php:251
+msgid "Shorts"
+msgstr "Vipande vifupi"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:47
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:63
+msgid "shorts"
+msgstr "kwa-ufupi"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:51
+msgid "about"
+msgstr "kuhusu Sisi"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:54
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:82
+msgid "Team"
+msgstr "Timu"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:55
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:83
+msgid "team"
+msgstr "timu"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:59
+msgid "contact"
+msgstr " Mawasiliano yetu"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:62
+msgid "Short News"
+msgstr "Habari fupi"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:71
+msgid "list/"
+msgstr "orodha/"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:74
+msgid "Explore All"
+msgstr "Chunguza vyote"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:75
+msgid "?s=&formats=post+custom_story+videos+podcasts+specials+short_article"
+msgstr "?s=&formats=post+custom_story+videos+podcasts+specials+short_article"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:79
+msgid "https://www.mongabay.com/about/"
+msgstr "https://www.mongabay.com/about/"
