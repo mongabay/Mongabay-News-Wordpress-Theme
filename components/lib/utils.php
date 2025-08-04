@@ -108,6 +108,7 @@ function get_enabled_features($feature)
   $site_id = get_current_blog_id();
 
   $features = array(
+    // News
     20 => array(
       'podcasts' => true,
       'videos' => true,
@@ -115,6 +116,7 @@ function get_enabled_features($feature)
       'shorts' => true,
       'donate' => true,
     ),
+    // Latam
     25 => array(
       'podcasts' => true,
       'videos' => true,
@@ -122,6 +124,7 @@ function get_enabled_features($feature)
       'shorts' => true,
       'donate' => true,
     ),
+    // French
     26 => array(
       'podcasts' => false,
       'videos' => true,
@@ -129,6 +132,7 @@ function get_enabled_features($feature)
       'shorts' => false,
       'donate' => true,
     ),
+    // Brazil
     29 => array(
       'podcasts' => false,
       'videos' => true,
@@ -136,6 +140,7 @@ function get_enabled_features($feature)
       'shorts' => false,
       'donate' => true,
     ),
+    // India
     30 => array(
       'podcasts' => true,
       'videos' => true,
@@ -143,6 +148,7 @@ function get_enabled_features($feature)
       'shorts' => true,
       'donate' => false,
     ),
+    // Hindi
     35 => array(
       'podcasts' => false,
       'videos' => true,

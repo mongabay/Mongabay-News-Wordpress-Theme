@@ -94,7 +94,7 @@ function formats_slider(array $post_formats, string $headline, array $terms_arra
                   <?php the_post_thumbnail('large'); ?>
                   <div class="article--container-headline">
                     <div class="title headline gap--8 text-center">
-                      <h1><?php the_title() ?></h1>
+                      <h1 class="mh--auto"><?php the_title() ?></h1>
                       <div class="meta">
                         <span class="byline"><?php echo getPostBylines(get_the_ID()); ?></span>
                         <span class="date"><?php the_time('j M Y'); ?></span>

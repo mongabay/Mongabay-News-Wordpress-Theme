@@ -13,7 +13,7 @@ function videos_latest()
   function get_article_card($id, $is_large = false)
   {
     $headline = '
-    <div class="title headline gap--8">
+    <div class="title headline pv--8">
       <h3>' . get_the_title() . '</h3>
     </div>
     <div class="post-meta">
@@ -21,7 +21,7 @@ function videos_latest()
       <span class="date">' . get_the_time('j M Y') . '</span>
     </div>
     ';
-    $extra_class = !wp_is_mobile() ? 'text-center' : '';
+    $extra_class = !wp_is_mobile() ? '' : '';
     $headline_large = '
     <div class="article--container-headline">
       <div class="title headline gap--8 ' . $extra_class . '">
@@ -39,7 +39,7 @@ function videos_latest()
           <div class="featured-image">'
       . ($is_large ? '<div class="img-overlay"></div>' : '')
       . get_icon($id)
-      . get_the_post_thumbnail($id, 'medium')
+      . get_the_post_thumbnail($id, $is_large ? 'medium' : 'thumbnail-medium')
       . ($is_large ? $headline_large : '')
       . '</div>'
       . (!$is_large ? $headline : '')

@@ -34,7 +34,7 @@ formats_slider($formats, 'In-depth feature stories reveal context and insight', 
       <h1><?php _e('Latest features', 'mongabay'); ?></h1>
       <a href="<?php echo home_url() ?>/?s=&formats=<?php echo $formats_string; ?>&featured=true" class="theme--button primary md-hide"><?php _e('All features', 'mongabay'); ?><span class="icon icon-right"></span></a>
     </div>
-    <?php articles_listing_in_columns($formats, 6, 4, 'medium', null, true); ?>
+    <?php articles_listing_in_columns($formats, 6, 4, 'thumbnail-medium', null, true); ?>
   </div>
 
   <div class="container pv--40">
@@ -43,7 +43,7 @@ formats_slider($formats, 'In-depth feature stories reveal context and insight', 
 
   <div class="container full--width gap--40 in-column">
     <div class="grid--4 gap--20 repeat">
-      <?php articles_listing(get_default_formats(), 4, 8, true, 'medium', null, null, 'serial'); ?>
+      <?php articles_listing(get_default_formats(), 4, 8, true, 'thumbnail-medium', null, null, 'serial'); ?>
     </div>
     <div class="container centered pv--40">
       <a href="<?php echo home_url(); ?>/?s=&formats=<?php echo $formats_string; ?>&featured=true" class="theme--button primary"><?php _e('All features', 'mongabay'); ?><span class="icon icon-right"></span></a>

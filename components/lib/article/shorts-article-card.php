@@ -42,6 +42,6 @@ function shorts_article_card($id, $is_large = false, $title_class = '', $idx = 0
     <div class="post-excerpt hidden">
       <?php the_content(); ?>
     </div>
-    <?php the_post_thumbnail($id, 'medium', array('class' => 'rounded-bottom')); ?>
+    <?php the_post_thumbnail('medium'); ?>
   </div>
 <?php } ?>

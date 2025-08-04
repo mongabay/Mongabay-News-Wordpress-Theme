@@ -12,7 +12,6 @@ include(get_template_directory() . '/components/functions.php');
 include(get_template_directory() . '/custom-code/post-type-formats.php');
 include(get_template_directory() . '/custom-code/analytics.php');
 
-
 if (function_exists('add_theme_support')) {
     add_theme_support('menus');
     add_theme_support('post-formats', array('aside'));
@@ -22,6 +21,7 @@ if (function_exists('add_theme_support')) {
     add_image_size('medium', 768, 512, true); // Medium Thumbnail
     add_image_size('cover-image-retina', 2400, 890, true); // Retina Cover Thumbnail
     add_image_size('thumbnail', 100, 100, true); // Small Thumbnail
+    add_image_size('thumbnail-medium', 350, 233, true); // Medium Thumbnail
     load_theme_textdomain('mongabay', get_template_directory() . '/languages');
 }
 
@@ -1339,6 +1339,45 @@ add_filter('rest_endpoints', function ($endpoints) {
     return $endpoints;
 });
 
+/**
+ * Remove fetchpriority="high" from images.
+ */
+function remove_fetchpriority_from_images($content)
+{
+    $content = str_replace('fetchpriority="high"', '', $content);
+    return $content;
+}
+
+/**
+ * Force date in custom post type permalinks.
+ */
+function force_date_in_cpt_permalinks($permalink, $post) {
+    // Skip if it's a default 'post' or a built-in type
+    if ($post->post_type !== 'post' && !in_array($post->post_type, ['page', 'attachment', 'revision', 'nav_menu_item'])) {
+        $date = get_the_date('Y/m', $post);
+        $permalink = home_url("/{$post->post_type}/{$date}/" . $post->post_name . '/');
+    }
+    return $permalink;
+}
+
+/**
+ * Redirect custom post types without date in URL.
+ */
+function redirect_cpt_without_date() {
+    if (is_singular() && !is_singular(['post', 'page'])) { // Skip posts & pages
+        global $wp_query;
+        
+        // Check if URL lacks date (year/month)
+        if (empty($wp_query->query_vars['year'])) {
+            $post = get_queried_object();
+            $date = get_the_date('Y/m', $post);
+            $correct_url = home_url("/{$post->post_type}/{$date}/" . $post->post_name . '/');
+            
+            wp_redirect($correct_url, 301); // Permanent redirect
+            exit;
+        }
+    }
+}
 
 /*------------------------------------*\
     Actions + Filters
@@ -1371,6 +1410,7 @@ add_action('wp_ajax_load_more_posts', 'load_more_posts');
 add_action('wp_ajax_nopriv_load_more_posts', 'load_more_posts');
 add_action('save_post', 'validate_short_article_content_length'); // Short articles validation
 add_action('pre_get_posts', 'custom_author_post_types_query');
+add_action('template_redirect', 'redirect_cpt_without_date'); // Redirect custom post types without date in URL
 
 // Remove Actions
 remove_action('wp_head', 'feed_links_extra', 3); // Display the links to the extra feeds such as category feeds
@@ -1414,6 +1454,7 @@ add_filter('onesignal_send_notification', 'onesignal_send_notification_filter', 
 add_filter('rest_prepare_post', 'mongabay_sanitize_json', 100, 3); // Get content ready for App
 add_filter('rest_prepare_page', 'mongabay_sanitize_page_json', 100, 3); //Get content ready for App
 add_filter('pods_register_taxonomy_byline', 'add_pods_graphql_support'); //Byline available in GraphQL
+add_filter('post_type_link', 'force_date_in_cpt_permalinks', 10, 2); // Force date in custom post type permalinks
 
 // Remove Filters
 remove_filter('the_excerpt', 'wpautop'); // Remove <p> tags from Excerpt altogether
