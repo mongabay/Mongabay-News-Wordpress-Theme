@@ -30,7 +30,7 @@ formats_slider(array('videos'), 'Watch unique videos that cut through the noise'
 
   <div class="container full--width gap--40 in-column pv--40">
     <div class="grid--4 gap--20 repeat">
-      <?php articles_listing(array('videos'), 8, 0, true, 'medium', null, null, null); ?>
+      <?php articles_listing(array('videos'), 8, 0, true, 'thumbnail-medium', null, null, null); ?>
     </div>
     <div class="container centered pv--40">
       <a href="<?php echo home_url(); ?>/?s=&formats=videos" class="theme--button primary"><?php _e('All videos', 'mongabay'); ?><span class="icon icon-right"></span></a>

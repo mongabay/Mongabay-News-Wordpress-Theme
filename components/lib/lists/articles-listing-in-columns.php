@@ -56,7 +56,7 @@ function articles_listing_in_columns(
       <div class="article--container pv--8">
         <a href="<?php the_permalink(); ?>">
           <?php if (has_post_thumbnail()) { ?>
-            <div class="featured-image">
+            <div class="featured-image mb--16">
               <?php echo get_icon(get_the_ID()); ?>
               <?php the_post_thumbnail($thumbnail_size) ?>
             </div>

@@ -19,7 +19,7 @@ function podcasts_banner($has_podcasts = true)
             <div class="article--container narrow">
               <?php if (has_post_thumbnail()) { ?>
                 <div class="featured-image">
-                  <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium'); ?></a>
+                  <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('thumbnail-medium'); ?></a>
                 </div>
               <?php }; ?>
             </div>
