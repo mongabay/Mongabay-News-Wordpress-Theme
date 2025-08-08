@@ -286,6 +286,7 @@ function mongabay_conditional_scripts()
     }
 }
 
+
 // Load word count script on short articles
 function enqueue_word_count_script($hook)
 {
@@ -298,6 +299,7 @@ function enqueue_word_count_script($hook)
     }
 }
 
+
 // Featured articles template
 function mongabay_featured()
 {
@@ -305,16 +307,14 @@ function mongabay_featured()
         include(TEMPLATEPATH . '/single-featured.php');
         exit;
     }
-    // if (mongabay_layout() == "container-mobile-safe") {
-    //     include(TEMPLATEPATH . '/single-featured-mobile-safe.php');
-    //     exit;
-    // }
 }
+
 
 // Load styles
 function mongabay_styles()
 {
-    wp_register_style('framework', get_template_directory_uri() . '/css/style.css', array(), '1.0.4', 'all');
+    $css_version = filemtime(get_template_directory() . '/css/style.css');
+    wp_register_style('framework', get_template_directory_uri() . '/css/style.css', array(), $css_version, 'all');
     wp_enqueue_style('framework');
     wp_register_style('icon-fonts', get_template_directory_uri() . '/css/fontello.css', array(), '1.0', 'all');
     wp_enqueue_style('icon-fonts');
@@ -1349,35 +1349,44 @@ function remove_fetchpriority_from_images($content)
 }
 
 /**
- * Force date in custom post type permalinks.
- */
-function force_date_in_cpt_permalinks($permalink, $post) {
-    // Skip if it's a default 'post' or a built-in type
-    if ($post->post_type !== 'post' && !in_array($post->post_type, ['page', 'attachment', 'revision', 'nav_menu_item'])) {
-        $date = get_the_date('Y/m', $post);
-        $permalink = home_url("/{$post->post_type}/{$date}/" . $post->post_name . '/');
-    }
-    return $permalink;
-}
-
-/**
  * Redirect custom post types without date in URL.
  */
-function redirect_cpt_without_date() {
-    if (is_singular() && !is_singular(['post', 'page'])) { // Skip posts & pages
-        global $wp_query;
-        
-        // Check if URL lacks date (year/month)
-        if (empty($wp_query->query_vars['year'])) {
-            $post = get_queried_object();
-            $date = get_the_date('Y/m', $post);
-            $correct_url = home_url("/{$post->post_type}/{$date}/" . $post->post_name . '/');
-            
-            wp_redirect($correct_url, 301); // Permanent redirect
-            exit;
+function redirect_cpt_without_date()
+{
+    // Skip if it's a post, page, preview, or admin area
+    if (is_singular() && !is_singular(['post', 'page']) && !is_preview() && !is_admin()) {
+        global $wp_query, $post;
+
+        // List of our custom post types and their URL formats
+        $dated_cpts = [
+            'podcasts' => 'podcast',
+            'videos' => 'video',
+            'custom-story' => 'custom-story',
+            'short-article' => 'short-article',
+            'specials' => 'specials'
+        ];
+
+        // Only proceed for our specified CPTs
+        if (isset($dated_cpts[$post->post_type]) && empty($wp_query->query_vars['year'])) {
+            // Get current URL path
+            $request_uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+
+            // Check if we're already on a date-based URL (prevent infinite redirects)
+            $pattern = '#^/' . $dated_cpts[$post->post_type] . '/[0-9]{4}/[0-9]{2}/#';
+            if (!preg_match($pattern, $request_uri)) {
+                // Only redirect published posts
+                if ($post->post_status === 'publish') {
+                    $date = get_the_date('Y/m', $post);
+                    $correct_url = home_url("/{$dated_cpts[$post->post_type]}/{$date}/" . $post->post_name . '/');
+
+                    wp_redirect($correct_url, 301); // Permanent redirect
+                    exit;
+                }
+            }
         }
     }
 }
+add_action('template_redirect', 'redirect_cpt_without_date');
 
 /*------------------------------------*\
     Actions + Filters
@@ -1454,7 +1463,6 @@ add_filter('onesignal_send_notification', 'onesignal_send_notification_filter', 
 add_filter('rest_prepare_post', 'mongabay_sanitize_json', 100, 3); // Get content ready for App
 add_filter('rest_prepare_page', 'mongabay_sanitize_page_json', 100, 3); //Get content ready for App
 add_filter('pods_register_taxonomy_byline', 'add_pods_graphql_support'); //Byline available in GraphQL
-add_filter('post_type_link', 'force_date_in_cpt_permalinks', 10, 2); // Force date in custom post type permalinks
 
 // Remove Filters
 remove_filter('the_excerpt', 'wpautop'); // Remove <p> tags from Excerpt altogether

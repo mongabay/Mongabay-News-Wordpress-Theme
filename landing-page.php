@@ -51,7 +51,7 @@ get_header();
 		<div class="container section--highlight">
 			<h1><?php _e('Watch unique <span class="icon icon-play">videos</span> that cut through the noise', 'mongabay'); ?></h1>
 		</div>
-		<?php featured_articles_listing(array('videos'), 5, 0, 'thumbnail-medium', 4, false, null, null); ?>
+		<?php featured_articles_listing(array('videos'), 5, 0, 'thumbnail-medium', 4, false, null, null, true); ?>
 	</div>
 
 	<div class="container full-width pv--40">
