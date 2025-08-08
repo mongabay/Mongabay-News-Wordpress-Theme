@@ -47,10 +47,9 @@ function add_rewrite_url()
     add_rewrite_rule('wildtech/([0-9]{4})/([0-9]{1,2})/([^/]*)/?$', 'index.php?year=$matches[1]&monthnum=$matches[2]&name=$matches[3]', 'top');
 
     //custom post types
-    // only if not in wp-admin
-    add_rewrite_rule(
-        '([^/]+)/([0-9]{4})/([0-9]{2})/([^/]+)/?$',
-        'index.php?post_type=$matches[1]&year=$matches[2]&monthnum=$matches[3]&name=$matches[4]',
-        'top'
-    );
+    add_rewrite_rule('video/([0-9]{4})/([0-9]{2})/([^/]+)/?$', 'index.php?post_type=videos&year=$matches[1]&monthnum=$matches[2]&name=$matches[3]', 'top');
+    add_rewrite_rule('short-article/([0-9]{4})/([0-9]{2})/([^/]+)/?$', 'index.php?post_type=short-article&year=$matches[1]&monthnum=$matches[2]&name=$matches[3]', 'top');
+    add_rewrite_rule('podcast/([0-9]{4})/([0-9]{2})/([^/]+)/?$', 'index.php?post_type=podcasts&year=$matches[1]&monthnum=$matches[2]&name=$matches[3]', 'top');
+    add_rewrite_rule('specials/([0-9]{4})/([0-9]{2})/([^/]+)/?$', 'index.php?post_type=specials&year=$matches[1]&monthnum=$matches[2]&name=$matches[3]', 'top');
+    add_rewrite_rule('custom-story/([0-9]{4})/([0-9]{2})/([^/]+)/?$', 'index.php?post_type=custom-story&year=$matches[1]&monthnum=$matches[2]&name=$matches[3]', 'top');
 }

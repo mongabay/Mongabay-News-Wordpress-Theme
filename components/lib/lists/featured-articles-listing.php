@@ -7,7 +7,8 @@ function featured_articles_listing(
   int $items_in_row,
   ?bool $show_featured = false,
   ?string $taxonomy = null,
-  ?string $taxonomy_term = null
+  ?string $taxonomy_term = null,
+  ?bool $full_width = false
 ) {
   $args = array(
     'posts_per_page' => $posts_per_page,
@@ -55,7 +56,7 @@ function featured_articles_listing(
           <a href="<?php the_permalink(); ?>">
             <div class="featured-image">
               <?php echo get_icon(get_the_ID()); ?>
-              <?php the_post_thumbnail($thumbnail_size) ?>
+              <?php the_post_thumbnail($full_width ? 'large' : 'medium') ?>
               <div class="img-overlay"></div>
               <?php if (!$taxonomy && !wp_is_mobile()) { ?>
                 <div class="title headline <?php echo $is_posts_only ? 'text-center' : ''; ?>">

@@ -1,0 +1,1273 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-08-07 20:55+0200\n"
+"PO-Revision-Date: 2025-08-08 21:16+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: bn_BD\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.5\n"
+
+#: Mongabay-News-Wordpress-Theme/404.php:5
+msgid "Page not found"
+msgstr "দুঃখিত! পৃষ্ঠাটি খুঁজে পাওয়া যায়নি"
+
+#: Mongabay-News-Wordpress-Theme/404.php:7
+msgid "Return home?"
+msgstr "হোমপেজে ফিরে যান?"
+
+#: Mongabay-News-Wordpress-Theme/articles-page.php:16 Mongabay-News-Wordpress-Theme/landing-page.php:26
+msgid "Top stories"
+msgstr "টপ স্টোরি"
+
+#: Mongabay-News-Wordpress-Theme/articles-page.php:23 Mongabay-News-Wordpress-Theme/landing-page.php:16
+msgid "Latest"
+msgstr "সাম্প্রতিক"
+
+#: Mongabay-News-Wordpress-Theme/articles-page.php:27 Mongabay-News-Wordpress-Theme/landing-page.php:21
+#: Mongabay-News-Wordpress-Theme/templates/page-specials.php:33
+msgid "All news"
+msgstr "সব সংবাদ"
+
+#: Mongabay-News-Wordpress-Theme/articles-page.php:48
+#: Mongabay-News-Wordpress-Theme/templates/page-specials.php:54
+msgid "Quickly stay updated with our news <span>shorts</span>"
+msgstr "দ্রুত জানুন, আমাদের সর্বশেষ সংবাদ"
+
+#: Mongabay-News-Wordpress-Theme/author.php:56 Mongabay-News-Wordpress-Theme/footer.php:24
+#: Mongabay-News-Wordpress-Theme/footer.php:28
+#: Mongabay-News-Wordpress-Theme/templates/taxonomy-byline.php:63
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:78
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:50
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:74
+msgid "About"
+msgstr "মঙ্গাবে সম্পর্কে"
+
+#: Mongabay-News-Wordpress-Theme/author.php:76
+#: Mongabay-News-Wordpress-Theme/components/lib/specials-latest.php:50
+#: Mongabay-News-Wordpress-Theme/components/lib/sliders/series-articles-slider.php:201
+#: Mongabay-News-Wordpress-Theme/templates/taxonomy-byline.php:82
+#: Mongabay-News-Wordpress-Theme/templates/taxonomy-custom.php:41
+#: Mongabay-News-Wordpress-Theme/functions.php:276
+msgid "stories"
+msgstr "স্টোরি"
+
+#: Mongabay-News-Wordpress-Theme/author.php:141 Mongabay-News-Wordpress-Theme/search.php:50
+#: Mongabay-News-Wordpress-Theme/templates/taxonomy-byline.php:147
+#: Mongabay-News-Wordpress-Theme/templates/taxonomy-custom.php:97
+msgid "No results found"
+msgstr "দুঃখিত, কোনো ফলাফল পাওয়া যায়নি"
+
+#: Mongabay-News-Wordpress-Theme/comments.php:3
+msgid "Post is password protected. Enter the password to view any comments."
+msgstr "পোস্টটি পাসওয়ার্ড দ্বারা সুরক্ষিত।মন্তব্য দেখতে পাসওয়ার্ড দিন।"
+
+#: Mongabay-News-Wordpress-Theme/comments.php:18
+msgid "Comments are closed here."
+msgstr "মন্তব্য গ্রহণ বন্ধ রয়েছে।"
+
+#: Mongabay-News-Wordpress-Theme/featured-page.php:34
+msgid "Latest features"
+msgstr "সর্বশেষ ফিচারসমূহ"
+
+#: Mongabay-News-Wordpress-Theme/featured-page.php:35
+#: Mongabay-News-Wordpress-Theme/featured-page.php:49
+msgid "All features"
+msgstr "সকল ফিচার"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:9
+msgid "News formats"
+msgstr "নিউজ ফরম্যাট"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:13
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:30
+msgid "Videos"
+msgstr "ভিডিওসমূহ"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:252
+msgid "Video"
+msgstr "ভিডিও"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:14
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:34
+msgid "Podcasts"
+msgstr "পডকাস্টসমূহ"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:253
+msgid "Podcast"
+msgstr "পডকাস্ট"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:15
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:42
+#: Mongabay-News-Wordpress-Theme/functions.php:249
+msgid "Articles"
+msgstr "নিবন্ধসমূহ"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:38
+#: Mongabay-News-Wordpress-Theme/footer.php:16 Mongabay-News-Wordpress-Theme/functions.php:254
+msgid "Specials"
+msgstr "বিশেষ সংখ্যাসমূহ"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:269
+msgid "Animals"
+msgstr "প্রাণিকুল"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:269
+msgid "animals"
+msgstr "প্রাণিকুল"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:257 Mongabay-News-Wordpress-Theme/functions.php:263
+#: Mongabay-News-Wordpress-Theme/functions.php:270
+msgid "Forests"
+msgstr "বন"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:258
+msgid "Wildlife"
+msgstr "বন্যপ্রাণি"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:250
+msgid "Custom Story"
+msgstr "কাস্টম স্টোরি"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:261
+msgid "Asia"
+msgstr "এশিয়া"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:261
+msgid "asia"
+msgstr "এশিয়া"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:262
+msgid "Africa"
+msgstr "আফ্রিকা"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:262
+msgid "africa"
+msgstr "আফ্রিকা"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:263
+msgid "South America"
+msgstr "দক্ষিণ আমেরিকা"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:263
+msgid "south-america"
+msgstr "দক্ষিণ আমেরিকা"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:264
+msgid "Indonesia"
+msgstr "ইন্দোনেশিয়া"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:264
+msgid "indonesia"
+msgstr "ইন্দোনেশিয়া"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:265
+msgid "Amazon"
+msgstr "আমাজন"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:265
+msgid "amazon"
+msgstr "আমাজন"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:266
+msgid "Congo"
+msgstr "কঙ্গো"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:266
+msgid "congo"
+msgstr "কঙ্গো"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:40
+#: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:59
+#: Mongabay-News-Wordpress-Theme/search.php:44 Mongabay-News-Wordpress-Theme/search.php:53
+msgid "wildlife"
+msgstr "বন্যপ্রাণি"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:270
+#: Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:40
+#: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:59
+#: Mongabay-News-Wordpress-Theme/search.php:43 Mongabay-News-Wordpress-Theme/search.php:52
+msgid "forests"
+msgstr "বন"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:59
+msgid "indigenous-peoples"
+msgstr "আদিবাসী জনগোষ্ঠী"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:59
+msgid "agroecology"
+msgstr "কৃষি প্রতিবেশ"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:259 Mongabay-News-Wordpress-Theme/functions.php:265
+#: Mongabay-News-Wordpress-Theme/functions.php:271
+msgid "Oceans"
+msgstr "মহাসাগর"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:40
+#: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:59
+#: Mongabay-News-Wordpress-Theme/search.php:46 Mongabay-News-Wordpress-Theme/search.php:55
+msgid "oceans"
+msgstr "মহাসাগর"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:40
+msgid "climate"
+msgstr "জলবায়ু"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:40
+msgid "conservation-solutions"
+msgstr "সংরক্ষণ কৌশল"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:46
+#: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:65
+msgid "all topics"
+msgstr "সকল বিষয়"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:260
+msgid "Feature"
+msgstr "ফিচার"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:272
+msgid "Conservation"
+msgstr "সংরক্ষণ"
+
+#: Mongabay-News-Wordpress-Theme/search.php:45 Mongabay-News-Wordpress-Theme/search.php:54
+msgid "conservation"
+msgstr "সংরক্ষণ"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:273
+msgid "Indigenous Peoples"
+msgstr "আদিবাসী জনগোষ্ঠী"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:17
+msgid "Short news"
+msgstr "সংক্ষিপ্ত সংবাদ"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:18
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:66
+msgid "Feature Stories"
+msgstr "ফিচার স্টোরিসমূহ"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:19
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:70
+msgid "The Latest"
+msgstr "সাম্প্রতিক"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:29
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:58
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:86
+msgid "Contact"
+msgstr "যোগাযোগ"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:30 Mongabay-News-Wordpress-Theme/header.php:77
+#: Mongabay-News-Wordpress-Theme/header.php:120
+#: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:22
+#: Mongabay-News-Wordpress-Theme/components/podcasts-page.php:37
+#: Mongabay-News-Wordpress-Theme/components/lib/videos-latest.php:64
+msgid "Donate"
+msgstr "অনুদান দিয়ে আমাদের পাশে থাকুন"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:32
+msgid "Newsletters"
+msgstr "নিউজলেটার"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:32
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:94
+msgid "Submissions"
+msgstr "জমাকৃত লেখা"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:33
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:98
+msgid "Terms of Use"
+msgstr "ব্যবহারের শর্তাবলি"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:38
+msgid "External links"
+msgstr "এক্সটার্নাল লিংক"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:43 Mongabay-News-Wordpress-Theme/header.php:131
+msgid "Wild Madagascar"
+msgstr "অরণ্যঘেরা মাদাগাস্কার"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:44 Mongabay-News-Wordpress-Theme/header.php:132
+msgid "For Kids"
+msgstr "শিশুদের জন্য"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:45 Mongabay-News-Wordpress-Theme/header.php:133
+msgid "Mongabay.org"
+msgstr ""
+
+#: Mongabay-News-Wordpress-Theme/footer.php:46 Mongabay-News-Wordpress-Theme/header.php:134
+msgid "Reforestation App"
+msgstr "বনায়ন অ্যাপ"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:47 Mongabay-News-Wordpress-Theme/header.php:137
+msgid "Planetary Health Check"
+msgstr "পৃথিবীর স্বাস্থ্য পর্যালোচনা"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:48 Mongabay-News-Wordpress-Theme/header.php:138
+msgid "Conservation Effectiveness"
+msgstr "সংরক্ষণের কার্যকারিতা"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:49 Mongabay-News-Wordpress-Theme/header.php:139
+msgid "Mongabay Data Studio"
+msgstr "মঙ্গাবে ডেটা স্টুডিও"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:46
+msgid "Tropical Forest Network"
+msgstr "ক্রান্তীয় বন নেটওয়ার্ক"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:51
+msgid "Social media"
+msgstr "সামাজিক যোগাযোগমাধ্যম"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:55
+msgid "LinkedIn"
+msgstr "লিংকডইন"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:56
+msgid "Instagram"
+msgstr "ইনস্টাগ্রাম"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:57
+msgid "Youtube"
+msgstr "ইউটিউব"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:58
+msgid "X"
+msgstr "এক্স"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:59
+msgid "Facebook"
+msgstr "ফেসবুক"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:63
+msgid "Tiktok"
+msgstr "টিকটক"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:64
+msgid "Reddit"
+msgstr "রেডিট"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:65
+msgid "Bluesky"
+msgstr "ব্লুস্কাই"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:66
+msgid "WhatsApp"
+msgstr "হোয়াটস অ্যাপ"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:67
+msgid "Telegram"
+msgstr "টেলিগ্রাম"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:71
+msgid "RSS / XML"
+msgstr "আরএসএস / এক্সএমএল"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:61
+msgid "Mastodon"
+msgstr "মাস্টোডন"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:62
+msgid "Android app"
+msgstr "অ্যান্ড্রয়েড অ্যাপ"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:63
+msgid "Apple News"
+msgstr "অ্যাপল নিউজ"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:419
+msgid "View Article"
+msgstr "নিবন্ধ দেখুন"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:550
+msgid "Results for: "
+msgstr "ফলাফল "
+
+#: Mongabay-News-Wordpress-Theme/functions.php:670 Mongabay-News-Wordpress-Theme/functions.php:674
+msgid "You cannot add terms to this taxonomy"
+msgstr "আপনি এই বিভাগে শব্দ যোগ করতে পারবেন না"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:684
+msgid "Stats Widget"
+msgstr "পরিসংখ্যান উইজেট"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:685
+msgid "Stats page sidebar widgets should be placed here."
+msgstr "পরিসংখ্যান পৃষ্ঠার সাইডবার উইজেটগুলো এখানে রাখুন।"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:729 Mongabay-News-Wordpress-Theme/functions.php:739
+msgid "Conservation news on"
+msgstr "সংরক্ষণ বিষয়ক সংবাদ"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:918
+msgid "If article is featured"
+msgstr "যদি নিবন্ধটি ফিচার করা হয়"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:927
+msgid "Bulletpoint 1"
+msgstr "বুলেট পয়েন্ট ১"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:936
+msgid "Bulletpoint 2"
+msgstr "বুলেট পয়েন্ট ২"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:945
+msgid "Bulletpoint 3"
+msgstr "বুলেট পয়েন্ট ৩"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:954
+msgid "Bulletpoint 4"
+msgstr "বুলেট পয়েন্ট ৪"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:963
+msgid "Article link"
+msgstr "নিবন্ধ লিংক"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:1007
+msgid "Please set Featured Image. Article cannot be published without one."
+msgstr "অনুগ্রহ করে একটি ফিচারড ছবি সেট করুন।ছবি ছাড়া প্রতিবেদন প্রকাশ করা যাবে না।"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:1163
+msgid "No older posts"
+msgstr "পুরনো পোস্ট নেই"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:1215
+#: Mongabay-News-Wordpress-Theme/components/lib/lists/articles-listing.php:53
+#: Mongabay-News-Wordpress-Theme/components/lib/sliders/featured-articles-slider.php:36
+msgid "Feature story"
+msgstr "ফিচার স্টোরি"
+
+#: Mongabay-News-Wordpress-Theme/header.php:123
+msgid "Subscribe page"
+msgstr "সাবস্ক্রাইব করুন"
+
+#: Mongabay-News-Wordpress-Theme/header.php:128
+msgid "Privacy Policy"
+msgstr "গোপনীয়তা নীতি"
+
+#: Mongabay-News-Wordpress-Theme/header.php:130
+msgid "Advertising"
+msgstr "বিজ্ঞাপন"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:90
+msgid "Impacts"
+msgstr "প্রভাবসমূহ"
+
+#: Mongabay-News-Wordpress-Theme/landing-page.php:52
+msgid "Watch unique <span class=\"icon icon-play\">videos</span> that cut through the noise"
+msgstr "দেখুন ব্যতিক্রমী কিছু"
+
+#: Mongabay-News-Wordpress-Theme/landing-page.php:69 Mongabay-News-Wordpress-Theme/articles-page.php:48
+msgid "Quickly stay updated with our news <span class=\"icon icon-shorts\">shorts</span>"
+msgstr "দ্রুত জানুন, আমাদের সংবাদ"
+
+#: Mongabay-News-Wordpress-Theme/page.php:15 Mongabay-News-Wordpress-Theme/single-custom-story.php:28
+#: Mongabay-News-Wordpress-Theme/single-featured.php:40
+#: Mongabay-News-Wordpress-Theme/single-podcasts.php:69
+#: Mongabay-News-Wordpress-Theme/single-specials_.php:48
+#: Mongabay-News-Wordpress-Theme/single-videos.php:67 Mongabay-News-Wordpress-Theme/single.php:48
+msgid "Sorry, nothing to display."
+msgstr "দুঃখিত, প্রদর্শনের জন্য কিছু নেই।"
+
+#: Mongabay-News-Wordpress-Theme/podcasts-page.php:22
+#: Mongabay-News-Wordpress-Theme/single-podcasts.php:91
+msgid "Latest podcasts"
+msgstr "সর্বশেষ পডকাস্টসমূহ"
+
+#: Mongabay-News-Wordpress-Theme/podcasts-page.php:23
+#: Mongabay-News-Wordpress-Theme/podcasts-page.php:54
+#: Mongabay-News-Wordpress-Theme/single-podcasts.php:92
+#: Mongabay-News-Wordpress-Theme/single-podcasts.php:124
+msgid "All podcasts"
+msgstr "সকল পডকাস্ট"
+
+#: Mongabay-News-Wordpress-Theme/search.php:9
+msgid "Type to search in any field."
+msgstr "যেকোনো বিষয় অনুসন্ধানের জন্য টাইপ করুন।"
+
+#: Mongabay-News-Wordpress-Theme/search.php:28
+msgid "Format"
+msgstr "ফরম্যাট"
+
+#: Mongabay-News-Wordpress-Theme/search.php:37
+msgid "Featured only"
+msgstr "নির্বাচিত"
+
+#: Mongabay-News-Wordpress-Theme/search.php:41
+msgid "Try out our suggestions"
+msgstr "আমাদের প্রস্তাবনা ব্যবহার করুন"
+
+#: Mongabay-News-Wordpress-Theme/search.php:43 Mongabay-News-Wordpress-Theme/search.php:52
+msgid "Forest articles"
+msgstr "বন সম্পর্কিত নিবন্ধ"
+
+#: Mongabay-News-Wordpress-Theme/search.php:44 Mongabay-News-Wordpress-Theme/search.php:53
+msgid "Wildlife Videos"
+msgstr "বন্যপ্রাণি সম্পর্কিত ভিডিওসমূহ"
+
+#: Mongabay-News-Wordpress-Theme/search.php:45 Mongabay-News-Wordpress-Theme/search.php:54
+msgid "Conservation Podcasts"
+msgstr "সংরক্ষণ বিষয়ক পডকাস্টসমূহ"
+
+#: Mongabay-News-Wordpress-Theme/search.php:46 Mongabay-News-Wordpress-Theme/search.php:55
+msgid "Ocean Specials"
+msgstr "মহাসাগর সম্পর্কিত বিশেষ সংখ্যাসমূহ"
+
+#: Mongabay-News-Wordpress-Theme/searchform.php:4
+msgid "To search, type and hit enter."
+msgstr "অনুসন্ধানের জন্য টাইপ করুন এবং এনটার প্রেস করুন।"
+
+#: Mongabay-News-Wordpress-Theme/shorts-page.php:50
+msgid "No short articles found"
+msgstr "সংক্ষিপ্ত কোনো নিবন্ধ খুঁজে পাওয়া যায়নি"
+
+#: Mongabay-News-Wordpress-Theme/single-custom-story.php:41
+#: Mongabay-News-Wordpress-Theme/single-specials.php:92
+#: Mongabay-News-Wordpress-Theme/single-specials_new.php:79
+#: Mongabay-News-Wordpress-Theme/specials-page.php:26
+#: Mongabay-News-Wordpress-Theme/templates/taxonomy-specials.php:113
+msgid "All Specials"
+msgstr "বিশেষ সংখ্যাসমূহ"
+
+#: Mongabay-News-Wordpress-Theme/single-podcasts.php:44
+#: Mongabay-News-Wordpress-Theme/single-videos.php:42
+msgid "Transcript"
+msgstr "অনুবাদ"
+
+#: Mongabay-News-Wordpress-Theme/single-podcasts.php:47
+#: Mongabay-News-Wordpress-Theme/single-videos.php:45
+msgid ""
+"Notice: Transcripts are machine and human generated and lightly edited for accuracy. They may "
+"contain errors."
+msgstr "দ্রষ্টব্য: অনুবাদগুলো যুগপৎভাবে যন্ত্র ও মানুষের তৈরি, কিছুটা সম্পাদিত। এতে ভুল থাকতে পারে।"
+
+#: Mongabay-News-Wordpress-Theme/single-podcasts.php:54
+#: Mongabay-News-Wordpress-Theme/single-videos.php:52
+msgid "Read full transcript"
+msgstr "পুরো অনুবাদ পড়ুন"
+
+#: Mongabay-News-Wordpress-Theme/single-specials.php:83
+#: Mongabay-News-Wordpress-Theme/components/lib/shorts-dialog.php:38
+#: Mongabay-News-Wordpress-Theme/functions.php:275
+msgid "Load more"
+msgstr "আরো দেখুন"
+
+#: Mongabay-News-Wordpress-Theme/single-specials_.php:61 Mongabay-News-Wordpress-Theme/single.php:61
+msgid "Latest articles"
+msgstr "সর্বশেষ নিবন্ধ"
+
+#: Mongabay-News-Wordpress-Theme/single-specials_.php:62
+#: Mongabay-News-Wordpress-Theme/single-specials_.php:70 Mongabay-News-Wordpress-Theme/single.php:62
+#: Mongabay-News-Wordpress-Theme/single.php:68
+msgid "All articles"
+msgstr "নিবন্ধসমূহ"
+
+#: Mongabay-News-Wordpress-Theme/single-videos.php:92 Mongabay-News-Wordpress-Theme/videos-page.php:23
+msgid "Latest videos"
+msgstr "সর্বশেষ ভিডিওসমূহ"
+
+#: Mongabay-News-Wordpress-Theme/single-videos.php:93
+#: Mongabay-News-Wordpress-Theme/single-videos.php:108 Mongabay-News-Wordpress-Theme/videos-page.php:24
+#: Mongabay-News-Wordpress-Theme/videos-page.php:36
+msgid "All videos"
+msgstr "সকল ভিডিওসমূহ"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/share-icons-grid.php:68
+#: Mongabay-News-Wordpress-Theme/components/lib/article/social-share.php:92
+msgid "Share this"
+msgstr "শেয়ার"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/share-icons-grid.php:69
+#: Mongabay-News-Wordpress-Theme/components/lib/article/social-share.php:93
+msgid "If you liked this story, share it with other people."
+msgstr "প্রতিবেদনটি পছন্দ হলে অন্যদের সঙ্গে শেয়ার করুন।"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/share-icons-grid.php:83
+#: Mongabay-News-Wordpress-Theme/components/lib/article/social-share.php:107
+msgid "Page link"
+msgstr "পেইজ লিংক"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/shorts-dialog.php:26
+msgid "Share Short"
+msgstr "শর্ট শেয়ার করুন"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/shorts-dialog.php:27
+msgid "Read Full Article"
+msgstr "পুরো নিবন্ধ পড়ুন"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/specials-latest.php:5
+#: Mongabay-News-Wordpress-Theme/templates/page-specials.php:40
+msgid "Latest Specials"
+msgstr "সর্বশেষ বিশেষ সংখ্যাসমূহ"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/article/article-bulletpoints.php:19
+msgid "See All Key Ideas"
+msgstr "মূল ধারণাগুলো দেখুন"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/article/article-credits.php:17
+msgid "Credits "
+msgstr "কৃতজ্ঞতা স্বীকার"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/article/article-credits.php:35
+msgid "Editor"
+msgstr "সম্পাদক"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/article/article-headline.php:53
+msgid "Comments"
+msgstr "মন্তব্যসমূহ"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/article/article-terms.php:5
+msgid "Topics"
+msgstr "বিষয়াবলি"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/article/article-terms.php:13
+msgid "See Topics"
+msgstr "বিষয়াবলি দেখুন"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/article/social-share.php:85
+msgid "Share"
+msgstr "শেয়ার"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/lists/articles-listing-condensed.php:62
+#: Mongabay-News-Wordpress-Theme/components/lib/lists/featured-articles-listing.php:109
+msgid "Sorry, no posts matched your criteria."
+msgstr "দুঃখিত! আপনার চাহিদা অনুযায়ী কোনো পোস্ট পাওয়া যায়নি।"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/sliders/featured-articles-slider.php:22
+msgid "In-depth <span>feature stories</span> reveal context and insight"
+msgstr "গভীর বিশ্লেষণ"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/sliders/formats-slider.php:65
+#: Mongabay-News-Wordpress-Theme/components/lib/sliders/specials-slider.php:58
+msgid "No posts found"
+msgstr "দুঃখিত! কোনো পোস্ট পাওয়া যায়নি"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/sliders/specials-slider.php:6
+msgid "Special Issues connect the dots between stories"
+msgstr "বিশেষ সংখ্যাগুলো একাধিক গল্পের যোগসূত্র তুলে ধরে"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/sliders/related-articles-slider.php:49
+msgid "Related Articles"
+msgstr "সংশ্লিষ্ট নিবন্ধসমূহ"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/sliders/series-articles-slider.php:178
+msgid "More specials"
+msgstr "আরো কিছু বিশেষ সংখ্যা"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/sliders/series-articles-slider.php:55
+msgid "<span class=\"icon icon-specials\">Special issues</span> connect the dots between stories"
+msgstr ""
+
+#: Mongabay-News-Wordpress-Theme/components/lib/sliders/tools-slider.php:7
+msgid "Interested in other Mongabay websites?"
+msgstr "মঙ্গাবের অন্যান্য উদ্যোগ ঘুরে দেখুন?"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/meta.php:101
+msgid ""
+"Mongabay seeks to raise interest in and appreciation of wild lands and wildlife, while examining the "
+"impact of emerging trends in climate, technology, economics, and finance on conservation and "
+"development."
+msgstr ""
+"মঙ্গাবে পৃথিবীর বন্যপ্রাণী ও প্রাকৃতিক ভূমির প্রতি মানুষের আগ্রহ ও মূল্যবোধ বাড়াতে কাজ করে।একইসঙ্গে সংরক্ষণ ও "
+"উন্নয়নে জলবায়ু, প্রযুক্তি, অর্থনীতি এবং অর্থায়নের পরিবর্তনশীল ধারা কী ধরেনর প্রভাব ফেলছে তা পর্যবেক্ষণ ও "
+"বিশ্লেষণ করে।"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:7
+msgctxt "Post type general name"
+msgid "Videos"
+msgstr "ভিডিওসমূহ"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:8
+msgctxt "Post type singular name"
+msgid "Video"
+msgstr "ভিডিও"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:9
+msgid "Search Videos"
+msgstr "ভিডিও অনুসন্ধান"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:10
+msgid "Popular Videos"
+msgstr "জনপ্রিয় ভিডিওসমূহ"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:11
+msgid "All Videos"
+msgstr "ভিডিওসমূহ"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:14
+msgid "Edit Video"
+msgstr "ভিডিও সম্পাদনা"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:15
+msgid "Update Video"
+msgstr "ভিডিওর সর্বশেষ সংযোজন"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:16
+msgid "Add New Video"
+msgstr "নতুন ভিডিও সংযুক্তি"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:17
+msgid "New Video Name"
+msgstr "নতুন ভিডিওর নাম"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:48
+msgctxt "Post type general name"
+msgid "Podcasts"
+msgstr "পডকাস্টসমূহ"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:49
+msgctxt "Post type singular name"
+msgid "Podcast"
+msgstr "পডকাস্ট"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:50
+msgid "Search Podcasts"
+msgstr "পডকাস্ট অনুসন্ধান"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:51
+msgid "Popular Podcasts"
+msgstr "জনপ্রিয় পডকাস্টসমূহ"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:52
+msgid "All Podcasts"
+msgstr "সকল পডকাস্ট"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:55
+msgid "Edit Podcast"
+msgstr "পডকাস্ট সম্পাদনা"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:56
+msgid "Update Podcast"
+msgstr "পডকাস্ট সংযোজন"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:57
+msgid "Add New Podcast"
+msgstr "নতুন পডকাস্ট সংযুক্তি"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:58
+msgid "New Podcast Name"
+msgstr "নতুন পডকাস্টের নাম"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:90
+msgctxt "Post type general name"
+msgid "Short Articles"
+msgstr "সংক্ষিপ্ত নিবন্ধসমূহ"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:91
+msgctxt "Post type singular name"
+msgid "Short Article"
+msgstr "সংক্ষিপ্ত নিবন্ধ"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:92
+msgid "Search Short Articles"
+msgstr "সংক্ষিপ্ত নিবন্ধ অনুসন্ধান"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:93
+msgid "Popular Short Articles"
+msgstr "জনপ্রিয় সংক্ষিপ্ত নিবন্ধ"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:94
+msgid "All Short Articles"
+msgstr "সকল সংক্ষিপ্ত নিবন্ধ"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:97
+msgid "Edit Short Article"
+msgstr "সংক্ষিপ্ত নিবন্ধ সম্পাদনা"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:98
+msgid "Update Short Article"
+msgstr "সংক্ষিপ্ত নিবন্ধের সর্বশেষ সংযুক্তি"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:99
+msgid "Add New Short Article"
+msgstr "নতুন সংক্ষিপ্ত নিবন্ধ সংযোজন"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:100
+msgid "New Short Article Name"
+msgstr "নতুন সংক্ষিপ্ত নিবন্ধের নাম"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:132
+msgctxt "Post type general name"
+msgid "Custom Stories"
+msgstr "কাস্টম স্টোরিসমূহ"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:133
+msgctxt "Post type singular name"
+msgid "Custom Story"
+msgstr "কাস্টম স্টোরি"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:134
+msgid "Search Custom Stories"
+msgstr "কাস্টম স্টোরি অনুসন্ধান"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:135
+msgid "Popular Custom Stories"
+msgstr "জনপ্রিয় কাস্টম স্টোরিসমূহ"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:136
+msgid "All Custom Stories"
+msgstr "সকল কাস্টম স্টোরি"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:139
+msgid "Edit Custom Stories"
+msgstr "কাস্টম স্টোরি সম্পাদনা"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:140
+msgid "Update Custom Stories"
+msgstr "কাস্টম স্টোরির সর্বশেষ"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:141
+msgid "Add New Custom Stories"
+msgstr "নতুন কাস্টম স্টোরি সংযোজন"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:142
+msgid "New Custom Stories Name"
+msgstr "নতুন কাস্টম স্টোরির নাম"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:174
+msgctxt "Post type general name"
+msgid "Special Issues"
+msgstr "বিশেষ সংখ্যাসমূহ"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:175
+msgctxt "Post type singular name"
+msgid "Special Issue"
+msgstr "বিশেষ সংখ্যা"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:176
+msgid "Search Special Issues"
+msgstr "বিশেষ সংখ্যা অনুসন্ধান"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:177
+msgid "Popular Special Issues"
+msgstr "জনপ্রিয় বিশেষ সংখ্যাসমূহ"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:178
+msgid "All Special Issues"
+msgstr "বিশেষ সংখ্যাসমূহ"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:181
+msgid "Edit Special Issue"
+msgstr "বিশেষ সংখ্যা সম্পাদনা"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:182
+msgid "Update Special Issue"
+msgstr "বিশেষ সংখ্যার সর্বশেষ সংযুক্তি"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:183
+msgid "Add New Special Issue"
+msgstr "নতুন বিশেষ সংখ্যা সংযোজন"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:184
+msgid "New Special Issue Name"
+msgstr "নতুন বিশেষ সংখ্যার নাম"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-entity.php:7
+msgctxt "taxonomy general name"
+msgid "Entities"
+msgstr "তথ্য উপাদানসমূহ"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-entity.php:8
+msgctxt "taxonomy singular name"
+msgid "Entity"
+msgstr "তথ্য-উপাদান"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-entity.php:9
+msgid "Search Entities"
+msgstr "তথ্য-উপাদান অনুসন্ধান"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-entity.php:10
+msgid "Popular Entities"
+msgstr "জনপ্রিয় তথ্য-উপাদান"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-entity.php:11
+msgid "All Entities"
+msgstr "সকল তথ্য-উপাদান"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-entity.php:14
+msgid "Edit Entity"
+msgstr "তথ্য-উপাদান সম্পাদনা"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-entity.php:15
+msgid "Update Entity"
+msgstr "তথ্য-উপাদানের সর্বশেষ সংযোজন"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-entity.php:16
+msgid "Add New Entity"
+msgstr "নতুন তথ্য-উপাদান সংযোজন"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-entity.php:17
+msgid "New Entity Name"
+msgstr "নতুন তথ্য-উপাদানের নাম"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-entity.php:18
+msgid "Separate entities with commas"
+msgstr "তথ্য-উপাদানগুলোকে কমা (,) দ্বারা আলাদা করুন"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-entity.php:19
+msgid "Add or remove entities"
+msgstr "তথ্য উপাদান যোগ করুন অথবা সরিয়ে ফেলুন"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-entity.php:20
+msgid "Choose from the most used entities"
+msgstr "সর্বাধিক ব্যবহৃত তথ্য-উপাদান থেকে নির্বাচন করুন"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-entity.php:21
+msgid "No entities found."
+msgstr "কোনো তথ্য-উপাদান পাওয়া যায়নি।"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-entity.php:22
+msgid "Entities"
+msgstr "তথ্য-উপাদানসমূহ"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-location.php:6
+msgctxt "taxonomy general name"
+msgid "Locations"
+msgstr "স্থানসমূহ"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-location.php:7
+msgctxt "taxonomy singular name"
+msgid "Location"
+msgstr "স্থান"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-location.php:8
+msgid "Search Locations"
+msgstr "জায়গা অনুসন্ধান"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-location.php:9
+msgid "Popular Locations"
+msgstr "জনপ্রিয় স্থানসমূহ"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-location.php:10
+msgid "All Locations"
+msgstr "সকল স্থান"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-location.php:13
+msgid "Edit Location"
+msgstr "স্থান সম্পাদনা"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-location.php:14
+msgid "Update Location"
+msgstr "সর্বশেষ স্থান"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-location.php:15
+msgid "Add New Location"
+msgstr "নতুন স্থান সংযোজন"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-location.php:16
+msgid "New Location Name"
+msgstr "নতুন স্থানের নাম"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-location.php:17
+msgid "Separate locations with commas"
+msgstr "স্থানগুলো কমা (,) দিয়ে আলাদা করুন"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-location.php:18
+msgid "Add or remove locations"
+msgstr "স্থান যোগ করুন বা সরিয়ে ফেলুন"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-location.php:19
+msgid "Choose from the most used locations"
+msgstr " ব্যবহৃত স্থানগুলো থেকে নির্বাচন করুন"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-location.php:20
+msgid "No locations found."
+msgstr "কোনো স্থান পাওয়া যায়নি।"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-location.php:21
+#: Mongabay-News-Wordpress-Theme/search.php:22
+msgid "Location"
+msgstr "স্থান"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-serial.php:7
+msgctxt "taxonomy general name"
+msgid "Serials"
+msgstr "পর্বসমূহ"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-serial.php:8
+msgctxt "taxonomy singular name"
+msgid "Serial"
+msgstr "পর্ব"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-serial.php:9
+msgid "Search Serials"
+msgstr "পর্ব অনুসন্ধান"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-serial.php:10
+msgid "Popular Serials"
+msgstr "জনপ্রিয় পর্ব"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-serial.php:11
+msgid "All Serials"
+msgstr "সকল পর্ব"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-serial.php:14
+msgid "Edit Serial"
+msgstr "পর্ব সম্পাদনা"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-serial.php:15
+msgid "Update Serial"
+msgstr "পর্ব সম্পাদনার নতুন সংযোজন"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-serial.php:16
+msgid "Add New Serial"
+msgstr "নতুন পর্ব যোগ করুন"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-serial.php:17
+msgid "New Serial Name"
+msgstr "নতুন পর্বের নাম"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-serial.php:18
+msgid "Separate serials with commas"
+msgstr "পর্বগুলোকে কমা (,) দিয়ে আলাদা করুন"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-serial.php:19
+msgid "Add or remove serials"
+msgstr "পর্ব যোগ করুন অথবা সরিয়ে ফেলুন"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-serial.php:20
+msgid "Choose from the most used serials"
+msgstr "সর্বাধিক ব্যবহৃত পর্বগুলো থেকে নির্বাচন করুন"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-serial.php:21
+msgid "No serials found."
+msgstr "কোনো পর্ব পাওয়া যায়নি।"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-serial.php:22
+msgid "Serial"
+msgstr "পর্ব"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-topic.php:6
+msgctxt "taxonomy general name"
+msgid "Topics"
+msgstr "বিষয়াবলি"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-topic.php:7
+msgctxt "taxonomy singular name"
+msgid "Topic"
+msgstr "বিষয়"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-topic.php:8
+msgid "Search Topics"
+msgstr "বিষয় অনুসন্ধান"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-topic.php:9
+msgid "Popular Topics"
+msgstr "জনপ্রিয় বিষয়"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-topic.php:10
+msgid "All Topics"
+msgstr "সকল বিষয়"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-topic.php:13
+msgid "Edit Topic"
+msgstr "বিষয় সম্পাদনা"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-topic.php:14
+msgid "Update Topic"
+msgstr "বিষয় এর সর্বশেষ সংযোজন"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-topic.php:15
+msgid "Add New Topic"
+msgstr "নতুন বিষয় যোগ করুন"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-topic.php:16
+msgid "New Topic Name"
+msgstr "নতুন বিষয়ের নাম"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-topic.php:17
+msgid "Separate topics with commas"
+msgstr "বিষয়গুলোকে কমা (,) দিয়ে আলাদা করুন"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-topic.php:18
+msgid "Add or remove topics"
+msgstr "বিষয় যোগ করুন অথবা সরিয়ে ফেলুন"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-topic.php:19
+msgid "Choose from the most used topics"
+msgstr "সর্বাধিক ব্যবহৃত বিষয় থেকে নির্বাচন করুন"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-topic.php:20
+msgid "No topics found."
+msgstr "কোনো বিষয় পাওয়া যায়নি।"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-topic.php:21
+msgid "Topic"
+msgstr "বিষয়"
+
+#: Mongabay-News-Wordpress-Theme/custom-code/thumbnailed-recent-posts.php:16
+msgid "Most Recent"
+msgstr "অতি সাম্প্রতিক"
+
+#: Mongabay-News-Wordpress-Theme/templates/taxonomy-specials.php:23
+msgid " News"
+msgstr "সংবাদ"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:14
+msgid "Subscribe"
+msgstr "সাবস্ক্রাইব"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:14
+msgid "Free and open access to credible information"
+msgstr "বিশ্বস্ত তথ্যের জন্য উন্মুক্ত ও অবাধ প্রবেশাধিকার"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:18
+#: Mongabay-News-Wordpress-Theme/components/lib/videos-latest.php:74
+msgid "Stay informed with news and inspiration from nature’s frontline."
+msgstr "প্রকৃতি থেকে পাওয়া সংবাদ ও অনুপ্রেরণার সঙ্গে থাকুন।"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/banners/inspiration-banner.php:5
+msgid "News and Inspiration from Nature's Frontline."
+msgstr "প্রকৃতির উৎস হতে প্রাপ্ত সংবাদ ও অনুপ্রেরণা।"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:14
+#: Mongabay-News-Wordpress-Theme/components/podcasts-page.php:31
+#: Mongabay-News-Wordpress-Theme/components/lib/videos-latest.php:61
+msgid "We’re a nonprofit"
+msgstr "আমরা একটি অলাভজনক প্রতিষ্ঠান"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:18
+#: Mongabay-News-Wordpress-Theme/components/podcasts-page.php:34
+#: Mongabay-News-Wordpress-Theme/components/lib/videos-latest.php:63
+msgid "Help us tell impactful stories of biodiversity loss, climate change, and more"
+msgstr "জৈববৈচিত্র্য হ্রাস, জলবায়ু পরিবর্তনসহ নানা বিষয়ে প্রভাব রাখতে পারা গল্প তুলে ধরতে আমাদের সহায়তা করুন"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:22
+#: Mongabay-News-Wordpress-Theme/components/lib/videos-latest.php:75
+msgid "Newsletter"
+msgstr "নিউজলেটার"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:22
+msgid "Learn more"
+msgstr "আরো জানুন"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/sliders/formats-slider.php:6
+msgid "In-depth feature stories reveal context and insight"
+msgstr "বিশ্লেষণমূলক ফিচারগুলো প্রেক্ষাপট ও অন্তর্দৃষ্টির নতুন দিগন্ত তুলে ধরে"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/sliders/formats-slider.php:6
+msgid "Listen to Nature with thought-provoking podcasts"
+msgstr "ভাবনার খোরাক জাগানো পডকাস্টে শুনুন প্রকৃতির গল্প"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/banners/podcasts-banner.php:15
+msgid "Listen to Nature with thought-provoking <span class=\"icon icon-podcast\">podcasts</span>"
+msgstr ""
+
+#: Mongabay-News-Wordpress-Theme/components/lib/sliders/formats-slider.php:6
+msgid "Watch unique videos that cut through the noise"
+msgstr "দেখুন এমন ভিডিও, যা সবার ভিড়েও আলাদা"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:55
+msgid "Read articles on topics such as"
+msgstr "এই বিষয়গুলো নিয়ে নিবন্ধ পড়ুন"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:55
+msgid "Explore enterprising journalism about"
+msgstr "ঘুরে দেখুন অনুসন্ধানী সাংবাদিকতার দুনিয়া"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:55
+#: Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:36
+msgid "Explore podcasts about"
+msgstr "এই বিষয়গুলোর ওপর পডকাস্ট শুনুন"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:55
+msgid "Explore videos about topics like"
+msgstr "এই বিষয়ের উপর ভিডিও দেখুন"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:65
+msgid "all stories"
+msgstr "সমস্ত প্রতিবেদন"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:26
+msgid "Features"
+msgstr "ফিচারসমূহ"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:27
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:67
+#: Mongabay-News-Wordpress-Theme/functions.php:234
+msgid "features"
+msgstr "ফিচারসমূহ"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:31
+#: Mongabay-News-Wordpress-Theme/functions.php:234
+msgid "videos"
+msgstr "ভিডিওসমূহ"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:35
+#: Mongabay-News-Wordpress-Theme/functions.php:234
+msgid "podcasts"
+msgstr "পডকাস্টসমূহ"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:35
+#: Mongabay-News-Wordpress-Theme/functions.php:234
+msgid "specials"
+msgstr "বিশেষ সংখ্যাসমূহ"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:43
+#: Mongabay-News-Wordpress-Theme/functions.php:234
+#: Mongabay-News-Wordpress-Theme/lib/components/banners/inspiration-banner.php:38
+msgid "articles"
+msgstr "নিবন্ধ"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:277
+msgid "story"
+msgstr "স্টোরি"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:46
+#: Mongabay-News-Wordpress-Theme/functions.php:251
+msgid "Shorts"
+msgstr "শর্টস"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:47
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:63
+msgid "shorts"
+msgstr "শর্টস"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:51
+msgid "about"
+msgstr "আমাদের সম্পর্কে"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:54
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:82
+msgid "Team"
+msgstr "টিম"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:55
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:83
+msgid "team"
+msgstr "টিম"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:59
+msgid "contact"
+msgstr "যোগাযোগ"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:62
+msgid "Short News"
+msgstr "শর্ট নিউজ"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:71
+msgid "list/"
+msgstr "তালিকা"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:74
+msgid "Explore All"
+msgstr "সব ঘুরে দেখুন"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:75
+msgid "?s=&formats=post+custom_story+videos+podcasts+specials+short_article"
+msgstr "?s=&formats=post+custom_story+videos+podcasts+specials+short_article"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:79
+msgid "https://www.mongabay.com/about/"
+msgstr "https://www.mongabay.com/about/"
