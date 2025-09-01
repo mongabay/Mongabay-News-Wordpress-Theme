@@ -102,8 +102,8 @@ function mongabay_mega_query($query)
                     'terms' => $item1[0]->slug
                 )
             );
-
             $query->set('tax_query', $tax_query);
+            $query->set('post_type', array('post', 'custom-story', 'videos', 'podcasts', 'short-article', 'specials'));
         }
 
         if ($section === 'list' && !empty($firstvar) && !empty($secondvar) && $firstvar !== 'specials') {
@@ -127,7 +127,7 @@ function mongabay_mega_query($query)
             );
 
             $query->set('tax_query', $tax_query);
-
+            $query->set('post_type', array('post', 'custom-story', 'videos', 'podcasts', 'short-article', 'specials'));
             if ($item1[0]->taxonomy == 'location' && $item2[0]->taxonomy == 'topic') {
                 wp_redirect($home_url . 'list/' . $secondvar . '/' . $firstvar);
                 exit;

@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: English to Swahili\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-08-07 20:55+0200\n"
-"PO-Revision-Date: 2025-08-04 12:44+0200\n"
+"PO-Revision-Date: 2025-09-01 20:20+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: sw_TZ\n"
@@ -568,7 +568,7 @@ msgstr "Vichapisho maalum vya hivi punde"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/article/article-bulletpoints.php:19
 msgid "See All Key Ideas"
-msgstr "azama mawazo yote muhimu"
+msgstr "Tazama Mawazo Yote Muhimu"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/article/article-credits.php:17
 msgid "Credits "
