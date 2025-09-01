@@ -7,18 +7,13 @@
     ?>
     <div class="container in-column ph--40">
         <div class="single">
-            <?php article_headline(); ?>
+            <?php
+                article_headline();
+            ?>
             <?php if (!empty($img_url)) : ?>
                 <div class="article-cover-image">
                     <?php
-                    if (wp_is_mobile()) {
-                        $coversize = 'medium';
-                    } elseif (strlen(get_the_post_thumbnail_url($post_id, 'cover-image-retina')) > 0) {
-                        $coversize = 'cover-image-retina';
-                    } else {
-                        $coversize = 'large';
-                    }
-                    $thumb_url = get_the_post_thumbnail_url($post_id, $coversize);
+                        $thumb_url = get_the_post_thumbnail_url($post_id, wp_is_mobile() ? 'medium' : 'wide');
                     ?>
                     <div style="background: url('<?php echo esc_url($thumb_url); ?>'); background-size: cover; background-position: center; width: 100%;"></div>
 
@@ -27,16 +22,21 @@
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                     <div class="inner">
                         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                            <?php article_bulletpoints($post_id); ?>
+                            <?php
+                                article_bulletpoints($post_id);
+                            ?>
 
                             <?php mongabay_sanitized_content($post_id); ?>
                             <div id="single-article-footer">
+
                                 <?php article_credits($post_id); ?>
+
                                 <div id="single-article-tags">
                                     <?php article_terms($post_id); ?>
                                 </div>
                             </div>
                             <span class="article-comments"><a href=""></a></span>
+
                             <?php mongabay_comments(); ?>
 
                         </article>

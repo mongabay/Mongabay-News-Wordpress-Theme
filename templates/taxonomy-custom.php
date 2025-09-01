@@ -19,7 +19,7 @@ get_header(); ?>
 		global $wp_query;
 		$taxonomies = $wp_query->tax_query;
 		$wp_query->query_vars['posts_per_page'] = 32;
-		$wp_query->query_vars['post_type'] = array('post', 'custom-story', 'videos', 'podcasts', 'short-article', 'specials');
+
 		$topics = array();
 
 		foreach ($taxonomies->queries as $tax_query) {
@@ -57,10 +57,10 @@ get_header(); ?>
 							<?php if (has_post_thumbnail()) { ?>
 								<div class="featured-image">
 									<?php echo get_icon(get_the_ID()); ?>
-									<?php the_post_thumbnail('medium') ?>
+									<?php the_post_thumbnail('thumbnail-medium') ?>
 								</div>
 							<?php }; ?>
-							<div class="title headline">
+							<div class="title headline pv--8">
 								<h3><?php the_title(); ?></h3>
 							</div>
 							<div class="post-meta pv--8">
