@@ -23,6 +23,7 @@ if (wp_is_mobile()) {
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-12973256-1"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
+
 		function gtag() {
 			dataLayer.push(arguments);
 		}
@@ -53,7 +54,6 @@ if (wp_is_mobile()) {
 	}
 	?>
 	<?php wp_head(); ?>
-
 </head>
 
 <body <?php body_class(); ?>>
@@ -69,10 +69,11 @@ if (wp_is_mobile()) {
 					<?php if (get_enabled_features('videos')) : ?><li><a href=" <?php echo home_url(); ?>/<?php echo get_menu_item('videos', 'slug'); ?>" class="<?php echo is_page(get_menu_item('videos', 'title')) ? 'active' : ''; ?>"><?php echo get_menu_item('videos', 'title'); ?></a></li><?php endif; ?>
 					<?php if (get_enabled_features('podcasts')) : ?><li><a href="<?php echo home_url(); ?>/<?php echo get_menu_item('podcasts', 'slug'); ?>" class="<?php echo is_page(get_menu_item('podcasts', 'title')) ? 'active' : ''; ?>"><?php echo get_menu_item('podcasts', 'title'); ?></a></li><?php endif; ?>
 					<?php if (get_enabled_features('specials')) : ?><li><a href=" <?php echo home_url(); ?>/<?php echo get_menu_item('specials', 'slug'); ?>" class="<?php echo (is_page(get_menu_item('specials', 'title')) || is_tax('serial')) ? 'active' : ''; ?>"><?php echo get_menu_item('specials', 'title'); ?></a></li><?php endif; ?>
+					<?php if (get_enabled_features('latest')) : ?><li><a href=" <?php echo home_url(); ?>/<?php echo get_menu_item('latest', 'slug'); ?>" class="<?php echo (is_page(get_menu_item('latest', 'title'))) ? 'active' : ''; ?>"><?php echo get_menu_item('latest', 'title'); ?></a></li><?php endif; ?>
 					<li><a href="<?php echo home_url(); ?>/<?php echo get_menu_item('articles', 'slug'); ?>" class="<?php echo is_page(get_menu_item('articles', 'title')) ? 'active' : ''; ?>"><?php echo get_menu_item('articles', 'title'); ?></a></li>
 					<?php if (get_enabled_features('shorts')) : ?><li><a href="<?php echo home_url(); ?>/<?php echo get_menu_item('shorts', 'slug'); ?>" class="<?php echo is_page(get_menu_item('shorts', 'title')) ? 'active' : ''; ?>"><?php echo get_menu_item('shorts', 'title'); ?></a></li><?php endif; ?>
 				</ul>
-				<a class="theme--button donate simple md-hide" href="<?php echo get_enabled_features('donate') ? get_donate_link() : get_subscribe_link_local(get_current_blog_id()); ?>"><?php echo (get_enabled_features('donate') ? __('Donate', 'mongabay') : __('Subscribe', 'mongabay')); ?></a>
+				<a class="theme--button donate simple md-hide" href="<?php echo get_enabled_features('donate') ? get_menu_item('donate', 'url') : get_subscribe_link_local(get_current_blog_id()); ?>"><?php echo (get_enabled_features('donate') ? __('Donate', 'mongabay') : __('Subscribe', 'mongabay')); ?></a>
 				<a id="theme-switch" class="icon icon-mode"></a>
 				<a id="site-search" href="<?php echo home_url(); ?>/?s="><span class="icon icon-search"></span></a>
 				<a id="secondary-menu"><span class="icon icon-menu"></span></a>
@@ -109,18 +110,18 @@ if (wp_is_mobile()) {
 					<?php if (!wp_is_mobile()) { ?>
 						<div class="footer gap--20 grid--5 pv--20">
 							<ul class="footer-links">
-								<li><a href="<?php echo 'https://mongabay.org/'.get_menu_item('footerabout', 'slug'); ?>"><?php echo get_menu_item('footerabout', 'title'); ?></a></li>
+								<li><a href="<?php echo get_menu_item('footerabout', 'url'); ?>"><?php echo get_menu_item('footerabout', 'title'); ?></a></li>
 								<li><a href="<?php echo home_url(); ?>/<?php echo get_menu_item('footerteam', 'slug'); ?>"><?php echo get_menu_item('footerteam', 'title'); ?></a></li>
 								<li><a href="<?php echo home_url(); ?>/<?php echo get_menu_item('footercontact', 'slug'); ?>"><?php echo get_menu_item('footercontact', 'title'); ?></a></li>
 							</ul>
 							<ul class="footer-links">
 								<?php if (function_exists('get_donate_link') && get_enabled_features('donate')) { ?>
-									<li><a href="<?php echo get_donate_link(); ?>"><?php _e('Donate', 'mongabay'); ?></a></li>
+									<li><a href="<?php echo get_menu_item('donate', 'url'); ?>"><?php _e('Donate', 'mongabay'); ?></a></li>
 								<?php } ?>
 								<?php if (function_exists('get_subscribe_link')) { ?>
 									<li><a href="<?php echo get_subscribe_link_local(get_current_blog_id()); ?>"><?php _e('Subscribe page', 'mongabay'); ?></a></li>
 								<?php } ?>
-								<li><a href="<?php echo home_url(); ?>/submissions/"><?php _e('Submissions', 'mongabay'); ?></a></li>
+								<li><a href="<?php echo home_url() . '/' . get_menu_item('submissions', 'slug'); ?>"><?php _e('Submissions', 'mongabay'); ?></a></li>
 							</ul>
 							<ul class="footer-links">
 								<li><a href="https://www.mongabay.com/privacy"><?php _e('Privacy Policy', 'mongabay'); ?></a></li>

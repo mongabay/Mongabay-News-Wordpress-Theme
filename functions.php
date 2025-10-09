@@ -916,6 +916,24 @@ function add_pods_graphql_support($options)
 add_action(
     'graphql_register_types',
     function () {
+            register_graphql_enum_type('ShortArticleFormatEnum', [
+            'description' => __('Different formats of a short article', 'wp-graphql'),
+            'values'      => [
+                'CONTENT' => [
+                    'value'       => 'content',
+                    'description' => __('A written content article', 'wp-graphql'),
+                ],
+                'VIDEO' => [
+                    'value'       => 'video',
+                    'description' => __('A video article', 'wp-graphql'),
+                ],
+                'AUDIO' => [
+                    'value'       => 'audio',
+                    'description' => __('An audio article', 'wp-graphql'),
+                ],
+            ],
+        ]);
+
         register_graphql_field('Post', 'featuredAs', [
             'type' => 'String',
             'description' => __('If article is featured', 'wp-graphql'),
@@ -925,48 +943,61 @@ add_action(
             }
         ]);
 
-        register_graphql_field('Post', 'bulletPoint1', [
+        // Register bullet point fields for Post type
+        foreach (range(1, 4) as $i) {
+            register_graphql_field('Post', 'bulletPoint' . $i, [
             'type' => 'String',
-            'description' => __('Bulletpoint 1', 'wp-graphql'),
-            'resolve' => function ($post) {
-                $bulletpoint = get_post_meta($post->ID, 'mog_bullet_0_mog_bulletpoint', true);
+            'description' => sprintf(__('Bulletpoint %d', 'wp-graphql'), $i),
+            'resolve' => function ($post) use ($i) {
+                $meta_key = 'mog_bullet_' . ($i - 1) . '_mog_bulletpoint';
+                $bulletpoint = get_post_meta($post->ID, $meta_key, true);
                 return !empty($bulletpoint) ? $bulletpoint : null;
             }
-        ]);
+            ]);
+        }
 
-        register_graphql_field('Post', 'bulletPoint2', [
-            'type' => 'String',
-            'description' => __('Bulletpoint 2', 'wp-graphql'),
+        register_graphql_field('ShortArticle', 'article_type', [
+            'type' => 'ShortArticleFormatEnum',
+            'description' => __('Short article type', 'wp-graphql'),
             'resolve' => function ($post) {
-                $bulletpoint = get_post_meta($post->ID, 'mog_bullet_1_mog_bulletpoint', true);
-                return !empty($bulletpoint) ? $bulletpoint : null;
-            }
-        ]);
-
-        register_graphql_field('Post', 'bulletPoint3', [
-            'type' => 'String',
-            'description' => __('Bulletpoint 3', 'wp-graphql'),
-            'resolve' => function ($post) {
-                $bulletpoint = get_post_meta($post->ID, 'mog_bullet_2_mog_bulletpoint', true);
-                return !empty($bulletpoint) ? $bulletpoint : null;
-            }
-        ]);
-
-        register_graphql_field('Post', 'bulletPoint4', [
-            'type' => 'String',
-            'description' => __('Bulletpoint 4', 'wp-graphql'),
-            'resolve' => function ($post) {
-                $bulletpoint = get_post_meta($post->ID, 'mog_bullet_3_mog_bulletpoint', true);
-                return !empty($bulletpoint) ? $bulletpoint : null;
+                $article_type = get_post_meta($post->ID, 'article_type', true);
+                return !empty($article_type) ? $article_type : null;
             }
         ]);
 
         register_graphql_field('ShortArticle', 'article_link', [
             'type' => 'String',
-            'description' => __('Article link', 'wp-graphql'),
+            'description' => __('Short article link', 'wp-graphql'),
             'resolve' => function ($post) {
                 $article_link = get_post_meta($post->ID, 'article_link', true);
                 return !empty($article_link) ? $article_link : null;
+            }
+        ]);
+
+        register_graphql_field('ShortArticle', 'video_link', [
+            'type' => 'String',
+            'description' => __('Short article video link', 'wp-graphql'),
+            'resolve' => function ($post) {
+                $video_link = get_post_meta($post->ID, 'video_link', true);
+                return !empty($video_link) ? $video_link : null;
+            }
+        ]);
+
+        register_graphql_field('ShortArticle', 'audio_link', [
+            'type' => 'String',
+            'description' => __('Short article audio link', 'wp-graphql'),
+            'resolve' => function ($post) {
+                $audio_link = get_post_meta($post->ID, 'audio_link', true);
+                return !empty($audio_link) ? $audio_link : null;
+            }
+        ]);
+
+        register_graphql_field('Post', 'coordinates', [
+            'type' => 'String',
+            'description' => __('GPS coordinates', 'wp-graphql'),
+            'resolve' => function ($post) {
+                $gps_coordinates = get_post_meta($post->ID, 'coordinates', true);
+                return !empty($gps_coordinates) ? $gps_coordinates : null;
             }
         ]);
     }

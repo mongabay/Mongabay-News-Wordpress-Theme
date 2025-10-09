@@ -5,14 +5,14 @@ msgstr ""
 "Project-Id-Version: Mongabay Environmental News 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/mongabay_prod\n"
 "POT-Creation-Date: 2017-07-25 19:25:26+00:00\n"
-"PO-Revision-Date: 2025-06-10 11:39+0200\n"
+"PO-Revision-Date: 2025-09-04 12:06+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Poedit 3.7\n"
 
 #: Mongabay-News-Wordpress-Theme/404.php:5
 msgid "Page not found"
@@ -206,6 +206,7 @@ msgstr "Contato"
 #: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:22
 #: Mongabay-News-Wordpress-Theme/components/podcasts-page.php:37
 #: Mongabay-News-Wordpress-Theme/components/lib/videos-latest.php:64
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:102
 msgid "Donate"
 msgstr "Doar"
 
@@ -213,9 +214,21 @@ msgstr "Doar"
 msgid "Newsletters"
 msgstr "Newsletters"
 
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:110
+msgid "Editorial standards"
+msgstr "Normas Editoriais"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:111
+msgid "https://mongabay.org/about/editorial-standards/"
+msgstr "https://brasil.mongabay.com/sobre/normas-editoriais/"
+
 #: Mongabay-News-Wordpress-Theme/footer.php:32 Mongabay-News-Wordpress-Theme/components/lib/utils.php:94
 msgid "Submissions"
 msgstr "Envios"
+
+#: Mongabay-News-Wordpress-Theme/footer.php:32 Mongabay-News-Wordpress-Theme/components/lib/utils.php:95
+msgid "submissions"
+msgstr "submissoes"
 
 #: Mongabay-News-Wordpress-Theme/footer.php:33 Mongabay-News-Wordpress-Theme/components/lib/utils.php:98
 msgid "Terms of Use"
@@ -1168,9 +1181,9 @@ msgid "en-corto"
 msgstr "noticias-curtas"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:51
-#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:75
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:79
 msgid "about"
-msgstr "sobre"
+msgstr "sobre-2"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:54
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:82
@@ -1182,9 +1195,17 @@ msgstr "Equipe"
 msgid "team"
 msgstr "equipe"
 
-#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:59
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:87
 msgid "contact"
 msgstr "contato"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:107
+msgid "https://news.mongabay.com/contact/"
+msgstr "https://brasil.mongabay.com/contato/"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:79
+msgid "https://mongabay.org/about/"
+msgstr "https://brasil.mongabay.com/sobre-2/"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:62
 msgid "Short News"
