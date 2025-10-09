@@ -26,8 +26,8 @@
 				</div>
 				<ul class="footer-links">
 					<li><a href="<?php echo home_url() . '/' . get_menu_item('about', 'slug'); ?>"><?php echo get_menu_item('about', 'title'); ?></a></li>
-					<li><a href="https://news.mongabay.com/contact/"><?php _e('Contact', 'mongabay'); ?></a></li>
-					<?php if (get_enabled_features('donate')) : ?><li><a href="<?php echo get_donate_link(); ?>"><?php _e('Donate', 'mongabay'); ?></a></li><?php endif; ?>
+					<li><a href="<?php echo get_menu_item('contact', 'url'); ?>"><?php _e('Contact', 'mongabay'); ?></a></li>
+					<?php if (get_enabled_features('donate')) : ?><li><a href="<?php echo get_menu_item(get_current_blog_id() === 29 ? 'editorial' : 'donate', 'url'); ?>"><?php echo get_menu_item(get_current_blog_id() === 29 ? 'editorial' : 'donate', 'title'); ?></a></li><?php endif; ?>
 					<li><a href="<?php echo 'https://mongabay.org/' . get_menu_item('impacts', 'slug'); ?>"><?php echo get_menu_item('impacts', 'title'); ?></a></li>
 					<li><a href="<?php echo get_subscribe_link_local(get_current_blog_id()); ?>"><?php _e('Newsletters', 'mongabay'); ?></a></li>
 					<li><a href="<?php echo home_url() . '/' . get_menu_item('submissions', 'slug'); ?>"><?php echo get_menu_item('submissions', 'title'); ?></a></li>

@@ -68,7 +68,11 @@ function get_menu_item($key, $option)
     ),
     'thelatest' => array(
       'title' => __('The Latest', 'mongabay'),
-      'slug' => __('list/', 'mongabay')
+      'slug' => __('list/all', 'mongabay')
+    ),
+    'latest' => array(
+      'title' => __('Latest', 'mongabay'),
+      'slug' => __('list/all', 'mongabay')
     ),
     'exploreall' => array(
       'title' => __('Explore All', 'mongabay'),
@@ -76,7 +80,7 @@ function get_menu_item($key, $option)
     ),
     'footerabout' => array(
       'title' => __('About', 'mongabay'),
-      'slug' => __('about', 'mongabay')
+      'url' => __('https://mongabay.org/about/', 'mongabay')
     ),
     'footerteam' => array(
       'title' => __('Team', 'mongabay'),
@@ -98,6 +102,18 @@ function get_menu_item($key, $option)
       'title' => __('Terms of Use', 'mongabay'),
       'slug' => __('terms', 'mongabay')
     ),
+    'donate' => array(
+      'title' => __('Donate', 'mongabay'),
+      'url' => __('https://mongabay.org/donate', 'mongabay')
+    ),
+    'contact' => array(
+      'title' => __('Contact', 'mongabay'),
+      'url' => __('https://news.mongabay.com/contact/', 'mongabay')
+    ),
+    'editorial' => array(
+      'title' => __('Editorial standards', 'mongabay'),
+      'url' => __('https://mongabay.org/about/editorial-standards/', 'mongabay')
+    ),
   );
 
   return $menu_items[$key][$option];
@@ -115,6 +131,7 @@ function get_enabled_features($feature)
       'specials' => true,
       'shorts' => true,
       'donate' => true,
+      'latest' => false,
     ),
     // Latam
     25 => array(
@@ -123,6 +140,7 @@ function get_enabled_features($feature)
       'specials' => true,
       'shorts' => true,
       'donate' => true,
+      'latest' => false,
     ),
     // French
     26 => array(
@@ -131,6 +149,7 @@ function get_enabled_features($feature)
       'specials' => true,
       'shorts' => false,
       'donate' => true,
+      'latest' => false,
     ),
     // Brazil
     29 => array(
@@ -139,6 +158,7 @@ function get_enabled_features($feature)
       'specials' => true,
       'shorts' => false,
       'donate' => true,
+      'latest' => false,
     ),
     // India
     30 => array(
@@ -147,6 +167,7 @@ function get_enabled_features($feature)
       'specials' => true,
       'shorts' => true,
       'donate' => false,
+      'latest' => false,
     ),
     // Hindi
     35 => array(
@@ -155,6 +176,25 @@ function get_enabled_features($feature)
       'specials' => false,
       'shorts' => false,
       'donate' => true,
+      'latest' => false,
+    ),
+    // Swahili
+    37 => array(
+      'podcasts' => false,
+      'videos' => false,
+      'specials' => false,
+      'shorts' => false,
+      'donate' => true,
+      'latest' => true,
+    ),
+    // Bengali
+    38 => array(
+      'podcasts' => false,
+      'videos' => false,
+      'specials' => false,
+      'shorts' => false,
+      'donate' => true,
+      'latest' => true,
     ),
   );
 

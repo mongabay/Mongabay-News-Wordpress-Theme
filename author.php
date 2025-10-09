@@ -108,7 +108,7 @@ $author_role = get_the_author_meta('job_title');
 							<?php if (wp_is_mobile()) { ?>
 								<div class="wrapper">
 								<?php } ?>
-								<div class="title headline">
+								<div class="title headline pv--8">
 									<h3><?php the_title(); ?></h3>
 								</div>
 								<div class="post-meta pv--8">

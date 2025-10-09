@@ -16,7 +16,7 @@ function article_headline()
   $avatar = null;
 
   if (!empty($byline_terms)) {
-    $avatar = get_term_meta($byline_terms[0]->term_id, 'cover_image_url', true);
+    $avatar = get_term_meta(get_the_terms($post_id, 'byline')[0]->term_id, 'cover_image_url', true);
   }
 ?>
   <div class="container in-column gap--16 article-headline">

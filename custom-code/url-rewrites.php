@@ -26,7 +26,7 @@ function add_rewrite_url()
     add_rewrite_rule('^list/([^/]*)/([^/]*)/page/([0-9]{1,})/?$', 'index.php?section=list&nc1=$matches[1]&nc2=$matches[2]&paged=$matches[3]', "top");
 
     //custom taxonomies
-    //add_rewrite_rule( '^by/([^/]*)/?$', 'byline=$matches[1]', 'top' );
+    add_rewrite_rule( '^by/([^/]*)/?$', 'byline=$matches[1]', 'top' );
     //add_rewrite_rule( '^series/([^/]*)/?$', 'index.php?section=series&nc1=$matches[1]', 'top' );
     add_rewrite_rule('^topic/([^/]*)/?$', 'index.php?section=list&nc1=$matches[1]', 'top');
     add_rewrite_rule('^list/([^/]*)/([^/]*)/?$', 'index.php?section=list&nc1=$matches[1]&nc2=$matches[2]', 'top');
