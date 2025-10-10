@@ -10,6 +10,7 @@ include(get_template_directory() . '/custom-code/feed-query.php');
 include(get_template_directory() . '/custom-code/meta.php');
 include(get_template_directory() . '/components/functions.php');
 include(get_template_directory() . '/custom-code/post-type-formats.php');
+include(get_template_directory() . '/custom-code/short-article-meta.php');
 include(get_template_directory() . '/custom-code/analytics.php');
 
 if (function_exists('add_theme_support')) {
@@ -956,7 +957,7 @@ add_action(
             ]);
         }
 
-        register_graphql_field('ShortArticle', 'article_type', [
+        register_graphql_field('ShortArticle', 'articleType', [
             'type' => 'ShortArticleFormatEnum',
             'description' => __('Short article type', 'wp-graphql'),
             'resolve' => function ($post) {
@@ -965,7 +966,7 @@ add_action(
             }
         ]);
 
-        register_graphql_field('ShortArticle', 'article_link', [
+        register_graphql_field('ShortArticle', 'articleLink', [
             'type' => 'String',
             'description' => __('Short article link', 'wp-graphql'),
             'resolve' => function ($post) {
@@ -974,7 +975,7 @@ add_action(
             }
         ]);
 
-        register_graphql_field('ShortArticle', 'video_link', [
+        register_graphql_field('ShortArticle', 'videoLink', [
             'type' => 'String',
             'description' => __('Short article video link', 'wp-graphql'),
             'resolve' => function ($post) {
@@ -983,7 +984,7 @@ add_action(
             }
         ]);
 
-        register_graphql_field('ShortArticle', 'audio_link', [
+        register_graphql_field('ShortArticle', 'audioLink', [
             'type' => 'String',
             'description' => __('Short article audio link', 'wp-graphql'),
             'resolve' => function ($post) {
