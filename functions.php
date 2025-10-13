@@ -1330,7 +1330,31 @@ add_action('graphql_register_types', function () {
         'type'        => 'Integer',
         'description' => 'Filter content nodes by author id'
     ]);
+    
+    // Add articleType filter for short articles
+    register_graphql_field('RootQueryToShortArticleConnectionWhereArgs', 'articleType', [
+        'type' => 'ShortArticleFormatEnum',
+        'description' => 'Filter short articles by article type'
+    ]);
 });
+
+// Handle the articleType filter in queries
+add_filter('graphql_post_object_connection_query_args', function ($query_args, $source, $args, $context, $info) {
+    // Only apply to short articles
+    if (isset($args['where']['articleType']) && $info->fieldName === 'shortArticles') {
+        $article_type = $args['where']['articleType'];
+        
+        $query_args['meta_query'] = array(
+            array(
+                'key' => 'article_type',
+                'value' => $article_type,
+                'compare' => '='
+            )
+        );
+    }
+    
+    return $query_args;
+}, 10, 5);
 
 function custom_author_post_types_query($query)
 {
