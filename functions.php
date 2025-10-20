@@ -956,41 +956,6 @@ add_action(
             ]);
         }
 
-        register_graphql_field('ShortArticle', 'articleType', [
-            'type' => 'ShortArticleFormatEnum',
-            'description' => __('Short article type', 'wp-graphql'),
-            'resolve' => function ($post) {
-                $article_type = get_post_meta($post->ID, 'article_type', true);
-                return !empty($article_type) ? $article_type : null;
-            }
-        ]);
-
-        register_graphql_field('ShortArticle', 'articleLink', [
-            'type' => 'String',
-            'description' => __('Short article link', 'wp-graphql'),
-            'resolve' => function ($post) {
-                $article_link = get_post_meta($post->ID, 'article_link', true);
-                return !empty($article_link) ? $article_link : null;
-            }
-        ]);
-
-        register_graphql_field('ShortArticle', 'videoLink', [
-            'type' => 'String',
-            'description' => __('Short article video link', 'wp-graphql'),
-            'resolve' => function ($post) {
-                $video_link = get_post_meta($post->ID, 'video_link', true);
-                return !empty($video_link) ? $video_link : null;
-            }
-        ]);
-
-        register_graphql_field('ShortArticle', 'audioLink', [
-            'type' => 'String',
-            'description' => __('Short article audio link', 'wp-graphql'),
-            'resolve' => function ($post) {
-                $audio_link = get_post_meta($post->ID, 'audio_link', true);
-                return !empty($audio_link) ? $audio_link : null;
-            }
-        ]);
 
         register_graphql_field('Post', 'coordinates', [
             'type' => 'String',
