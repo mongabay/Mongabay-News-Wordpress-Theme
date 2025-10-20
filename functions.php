@@ -10,7 +10,6 @@ include(get_template_directory() . '/custom-code/feed-query.php');
 include(get_template_directory() . '/custom-code/meta.php');
 include(get_template_directory() . '/components/functions.php');
 include(get_template_directory() . '/custom-code/post-type-formats.php');
-include(get_template_directory() . '/custom-code/short-article-meta.php');
 include(get_template_directory() . '/custom-code/analytics.php');
 
 if (function_exists('add_theme_support')) {
