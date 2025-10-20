@@ -956,6 +956,41 @@ add_action(
             ]);
         }
 
+        register_graphql_field('ShortArticle', 'article_type', [
+            'type' => 'ShortArticleFormatEnum',
+            'description' => __('Short article type', 'wp-graphql'),
+            'resolve' => function ($post) {
+                $article_type = get_post_meta($post->ID, 'article_type', true);
+                return !empty($article_type) ? $article_type : null;
+            }
+        ]);
+
+        register_graphql_field('ShortArticle', 'article_link', [
+            'type' => 'String',
+            'description' => __('Short article link', 'wp-graphql'),
+            'resolve' => function ($post) {
+                $article_link = get_post_meta($post->ID, 'article_link', true);
+                return !empty($article_link) ? $article_link : null;
+            }
+        ]);
+
+        register_graphql_field('ShortArticle', 'video_link', [
+            'type' => 'String',
+            'description' => __('Short article video link', 'wp-graphql'),
+            'resolve' => function ($post) {
+                $video_link = get_post_meta($post->ID, 'video_link', true);
+                return !empty($video_link) ? $video_link : null;
+            }
+        ]);
+
+        register_graphql_field('ShortArticle', 'audio_link', [
+            'type' => 'String',
+            'description' => __('Short article audio link', 'wp-graphql'),
+            'resolve' => function ($post) {
+                $audio_link = get_post_meta($post->ID, 'audio_link', true);
+                return !empty($audio_link) ? $audio_link : null;
+            }
+        ]);
 
         register_graphql_field('Post', 'coordinates', [
             'type' => 'String',
@@ -1294,31 +1329,7 @@ add_action('graphql_register_types', function () {
         'type'        => 'Integer',
         'description' => 'Filter content nodes by author id'
     ]);
-    
-    // Add articleType filter for short articles
-    register_graphql_field('RootQueryToShortArticleConnectionWhereArgs', 'articleType', [
-        'type' => 'ShortArticleFormatEnum',
-        'description' => 'Filter short articles by article type'
-    ]);
 });
-
-// Handle the articleType filter in queries
-add_filter('graphql_post_object_connection_query_args', function ($query_args, $source, $args, $context, $info) {
-    // Only apply to short articles
-    if (isset($args['where']['articleType']) && $info->fieldName === 'shortArticles') {
-        $article_type = $args['where']['articleType'];
-        
-        $query_args['meta_query'] = array(
-            array(
-                'key' => 'article_type',
-                'value' => $article_type,
-                'compare' => '='
-            )
-        );
-    }
-    
-    return $query_args;
-}, 10, 5);
 
 function custom_author_post_types_query($query)
 {
