@@ -1445,7 +1445,7 @@ ul.main-menu:not(.off-canvas) li a.active:before {
 
 .dark-mode .section--highlight h1 span.outlined:hover a,
 .dark-mode .section--highlight h1 span.outlined:hover a span.icon {
-  color: var(--theme-body);
+  color: var(--theme-dark-green);
 }
 
 .section--highlight h2 {

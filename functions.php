@@ -11,6 +11,7 @@ include(get_template_directory() . '/custom-code/meta.php');
 include(get_template_directory() . '/components/functions.php');
 include(get_template_directory() . '/custom-code/post-type-formats.php');
 include(get_template_directory() . '/custom-code/analytics.php');
+include(get_template_directory() . '/custom-code/graphql.php');
 
 if (function_exists('add_theme_support')) {
     add_theme_support('menus');
@@ -136,7 +137,8 @@ function mongabay_mega_query($query)
     }
 }
 
-//fix topics links
+
+// Fix topics links
 function mongabay_topic_link($link, $term, $taxonomy)
 {
     if ($taxonomy !== 'topic')
@@ -146,7 +148,7 @@ function mongabay_topic_link($link, $term, $taxonomy)
 }
 
 
-//fix locations links
+// Fix locations links
 function mongabay_location_link($link, $term, $taxonomy)
 {
     if ($taxonomy !== 'location')
@@ -154,6 +156,7 @@ function mongabay_location_link($link, $term, $taxonomy)
 
     return str_replace('location/', 'list/', $link);
 }
+
 
 // Fix byline links
 function mongabay_byline_link($link, $term, $taxonomy)
@@ -186,6 +189,7 @@ function mongabay_layout()
     return $container;
 }
 
+
 // Sanitize content
 function mongabay_sanitized_content($post_id)
 {
@@ -204,17 +208,13 @@ function mongabay_sanitized_content($post_id)
     }
 }
 
+
 // Load scripts
 function mongabay_header_scripts()
 {
     if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
         wp_register_script('addtohomescreen', get_template_directory_uri() . '/js/lib/addtohomescreen.min.js', array(), '3.2.3', true);
         wp_enqueue_script('addtohomescreen');
-
-
-        // TODO add proper script
-        // wp_register_script('scripts', get_template_directory_uri() . '/js/scripts.min.js', array('jquery'), '1.0.0', true);
-        // wp_enqueue_script('scripts');
     }
 
     wp_register_script('dialog-polyfill', get_template_directory_uri() . '/js/lib/dialog-polyfill.js', array(), '0.0.1', 'all');
@@ -230,6 +230,7 @@ function mongabay_conditional_scripts()
         wp_register_script('iframeresize', 'https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.1/iframeResizer.min.js', array(), '4.3.1', true);
         wp_enqueue_script('iframeresize');
     }
+
     if (is_front_page() || is_page([__('articles', 'mongabay'), __('specials', 'mongabay'), __('videos', 'mongabay'), __('podcasts', 'mongabay'), __('features', 'mongabay')])) {
         wp_register_style('slick-main', get_template_directory_uri() . '/js/lib/slick/slick.css', array(), '1.8.1', 'all');
         wp_enqueue_style('slick-main');
@@ -240,6 +241,7 @@ function mongabay_conditional_scripts()
         wp_register_script('slick-init', get_template_directory_uri() . '/js/slick-init.js', array(), '1.0.0', true);
         wp_enqueue_script('slick-init');
     }
+
     if (is_search() && isset($_GET['s'])) {
         wp_register_script('search-js', get_stylesheet_directory_uri() . '/js/lib/search.js', array(), '1.0.3', true);
         wp_enqueue_script('search-js');
@@ -680,7 +682,6 @@ function mongabay_prevent_terms($term, $taxonomy)
     return $term;
 }
 
-
 // Stats pages dynamic sidebar
 if (function_exists('register_sidebar')) {
     register_sidebar(array(
@@ -745,34 +746,6 @@ function mongabay_custom_title()
     } else {
         wp_title('');
     }
-}
-
-// Customized mobile detection function
-function mongabay_wp_is_mobile()
-{
-    static $is_mobile;
-    if (isset($is_mobile))
-        return $is_mobile;
-
-    if (empty($_SERVER['HTTP_USER_AGENT'])) {
-        $is_mobile = false;
-    } elseif (
-        strpos($_SERVER['HTTP_USER_AGENT'], 'Android') !== false
-        || strpos($_SERVER['HTTP_USER_AGENT'], 'Silk/') !== false
-        || strpos($_SERVER['HTTP_USER_AGENT'], 'Kindle') !== false
-        || strpos($_SERVER['HTTP_USER_AGENT'], 'BlackBerry') !== false
-        || strpos($_SERVER['HTTP_USER_AGENT'], 'Opera Mini') !== false
-    ) {
-        $is_mobile = true;
-    } elseif (strpos($_SERVER['HTTP_USER_AGENT'], 'Mobile') !== false && strpos($_SERVER['HTTP_USER_AGENT'], 'iPad') == false) {
-        $is_mobile = true;
-    } elseif (strpos($_SERVER['HTTP_USER_AGENT'], 'iPad') !== false) {
-        $is_mobile = false;
-    } else {
-        $is_mobile = false;
-    }
-
-    return $is_mobile;
 }
 
 // Add the filter parameter for API
@@ -912,109 +885,6 @@ function add_pods_graphql_support($options)
     return $options;
 }
 
-//Resolve some post custom meta values for GraphQL
-add_action(
-    'graphql_register_types',
-    function () {
-            register_graphql_enum_type('ShortArticleFormatEnum', [
-            'description' => __('Different formats of a short article', 'wp-graphql'),
-            'values'      => [
-                'CONTENT' => [
-                    'value'       => 'content',
-                    'description' => __('A written content article', 'wp-graphql'),
-                ],
-                'VIDEO' => [
-                    'value'       => 'video',
-                    'description' => __('A video article', 'wp-graphql'),
-                ],
-                'AUDIO' => [
-                    'value'       => 'audio',
-                    'description' => __('An audio article', 'wp-graphql'),
-                ],
-            ],
-        ]);
-
-        register_graphql_field('Post', 'featuredAs', [
-            'type' => 'String',
-            'description' => __('If article is featured', 'wp-graphql'),
-            'resolve' => function ($post) {
-                $featured = get_post_meta($post->ID, 'featured_as', true);
-                return !empty($featured) ? $featured : 'simple';
-            }
-        ]);
-
-        // Register bullet point fields for Post type
-        foreach (range(1, 4) as $i) {
-            register_graphql_field('Post', 'bulletPoint' . $i, [
-            'type' => 'String',
-            'description' => sprintf(__('Bulletpoint %d', 'wp-graphql'), $i),
-            'resolve' => function ($post) use ($i) {
-                $meta_key = 'mog_bullet_' . ($i - 1) . '_mog_bulletpoint';
-                $bulletpoint = get_post_meta($post->ID, $meta_key, true);
-                return !empty($bulletpoint) ? $bulletpoint : null;
-            }
-            ]);
-        }
-
-        register_graphql_field('ShortArticle', 'article_type', [
-            'type' => 'ShortArticleFormatEnum',
-            'description' => __('Short article type', 'wp-graphql'),
-            'resolve' => function ($post) {
-                $article_type = get_post_meta($post->ID, 'article_type', true);
-                return !empty($article_type) ? $article_type : null;
-            }
-        ]);
-
-        register_graphql_field('ShortArticle', 'article_link', [
-            'type' => 'String',
-            'description' => __('Short article link', 'wp-graphql'),
-            'resolve' => function ($post) {
-                $article_link = get_post_meta($post->ID, 'article_link', true);
-                return !empty($article_link) ? $article_link : null;
-            }
-        ]);
-
-        register_graphql_field('ShortArticle', 'video_link', [
-            'type' => 'String',
-            'description' => __('Short article video link', 'wp-graphql'),
-            'resolve' => function ($post) {
-                $video_link = get_post_meta($post->ID, 'video_link', true);
-                return !empty($video_link) ? $video_link : null;
-            }
-        ]);
-
-        register_graphql_field('ShortArticle', 'audio_link', [
-            'type' => 'String',
-            'description' => __('Short article audio link', 'wp-graphql'),
-            'resolve' => function ($post) {
-                $audio_link = get_post_meta($post->ID, 'audio_link', true);
-                return !empty($audio_link) ? $audio_link : null;
-            }
-        ]);
-
-        register_graphql_field('Post', 'coordinates', [
-            'type' => 'String',
-            'description' => __('GPS coordinates', 'wp-graphql'),
-            'resolve' => function ($post) {
-                $gps_coordinates = get_post_meta($post->ID, 'coordinates', true);
-                return !empty($gps_coordinates) ? $gps_coordinates : null;
-            }
-        ]);
-    }
-);
-
-
-// Conditional logic to show or hide translated_by/ adapted_by POD fields
-function post_edit_screen()
-{
-    $current_screen = get_current_screen();
-    if ($current_screen->id === 'post') {
-        //var_dump($current_screen);
-        wp_register_script('trada', get_template_directory_uri() . '/js/lib/translated_adopted.min.js', array('jquery'), '1.0', true);
-        wp_enqueue_script('trada');
-    }
-}
-
 // Require featured image before publishing an article
 if ($GLOBALS['pagenow'] == 'post-new.php' || $pagenow == 'post.php') :
     add_filter('wp_insert_post_data', function ($data, $postarr) {
@@ -1041,17 +911,6 @@ if ($GLOBALS['pagenow'] == 'post-new.php' || $pagenow == 'post.php') :
         }
     });
 endif;
-
-//redirect paid membership users after log in
-// function my_pmpro_login_redirect_url($redirect_to, $request, $user)
-// {
-//     global $wpdb;
-//     if (pmpro_hasMembershipLevel(NULL, $user->ID))
-//         return "/membership-account/";
-//     else
-//         return $redirect_to;
-// }
-// add_filter("pmpro_login_redirect_url", "my_pmpro_login_redirect_url", 10, 3);
 
 //Apple news byline rewrite
 function mongabay_byline($byline, $postID)
@@ -1089,6 +948,7 @@ function my_post_redirect_filter($location)
 }
 
 add_action('admin_notices', 'my_post_admin_notices');
+
 function my_post_admin_notices()
 {
     if (!isset($_GET['mongabay_error'])) return;
@@ -1102,20 +962,9 @@ function my_post_admin_notices()
     echo '<div id="notice" class="error"><p>' . $message . '</p></div>';
 }
 
-add_action('graphql_register_types', function () {
-    register_graphql_field('NodeWithContentEditor', 'unencodedContent', [
-        'type' => 'String',
-        'resolve' => function ($post) {
-            $content = get_post($post->databaseId)->post_content;
-            return esc_html($content);
-        }
-    ]);
-});
-
 /* Disable Gutenberg for normal posts */
 function mongabay_disable_gutenberg($can_edit, $post)
 {
-    $excluded_post_types = array('custom-story');
     $excluded_pages = array('about', 'contact', 'terms', 'donate');
 
     if ($post->post_type === 'custom-story') {
@@ -1140,24 +989,6 @@ function mongabay_register_tags_cpts()
     register_taxonomy_for_object_type('post_tag', 'specials');
 }
 add_action('init', 'mongabay_register_tags_cpts');
-
-// function is_mirror_site($id)
-// {
-//     return in_array($id, array(1, 22, 31, 32, 33, 34));
-// }
-
-// function mirror_site_permalink($permalink)
-// {
-//     // TODO replace with actual domain before deployment to production
-//     $origin_domain = 'https://news.mongabaydev.wpengine.com';
-//     $relative_url = preg_replace('!http(s)?://' . $_SERVER['SERVER_NAME'] . '/!', '/', $permalink);
-
-//     if (is_mirror_site(get_current_blog_id())) {
-//         $permalink = $origin_domain . $relative_url;
-//     }
-
-//     return $permalink;
-// }
 
 function banner_shortcode($atts)
 {
@@ -1438,7 +1269,6 @@ add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline 
 add_action('init', 'mongabay_pagination'); // Add our Pagination
 add_action('rest_api_init', 'rest_api_filter_add_filters'); // Add the filter parameter for API
 add_action('pre_get_posts', 'mongabay_rss_pre_get_posts'); // Add 'grant' to meta query
-add_action('current_screen', 'post_edit_screen'); // Determine post editing screen to load conditional script
 add_action('pre_insert_term', 'mongabay_prevent_terms', 1, 2); // Prevent new terms to be added
 add_action('admin_menu', 'mongabay_remove_custom_fields'); // Remove custom fields from post editing screen
 add_action('admin_print_footer_scripts', 'px_shortcode_button'); // Add parallax button
