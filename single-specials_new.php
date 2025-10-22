@@ -44,7 +44,7 @@ $counter = 0;
         )
       )
     );
-var_dump($args);
+  
     while (have_posts()) :
       the_post();
     ?>
