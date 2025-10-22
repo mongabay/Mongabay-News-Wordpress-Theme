@@ -40,6 +40,15 @@ add_action(
       }
     ]);
 
+    register_graphql_field('Post', 'coordinates', [
+      'type' => 'String',
+      'description' => __('GPS coordinates', 'wp-graphql'),
+      'resolve' => function ($post) {
+        $gps_coordinates = get_post_meta($post->ID, 'coordinates', true);
+        return !empty($gps_coordinates) ? $gps_coordinates : null;
+      }
+    ]);
+
     // Register bullet point fields for Post type
     foreach (range(1, 4) as $i) {
       register_graphql_field('Post', 'bulletPoint' . $i, [
@@ -59,6 +68,24 @@ add_action(
       'resolve' => function ($post) {
         $article_type = get_post_meta($post->ID, 'article_type', true);
         return !empty($article_type) ? $article_type : null;
+      }
+    ]);
+
+    register_graphql_field('Podcast', 'podcast_embed', [
+      'type' => 'String',
+      'description' => __('Podcast embed code', 'wp-graphql'),
+      'resolve' => function ($post) {
+        $podcast_code = get_post_meta($post->ID, 'podcast_embed', true);
+        return !empty($podcast_code) ? $podcast_code : null;
+      }
+    ]);
+
+    register_graphql_field('Video', 'video_source', [
+      'type' => 'String',
+      'description' => __('Video source', 'wp-graphql'),
+      'resolve' => function ($post) {
+        $video_source = get_post_meta($post->ID, 'video_source', true);
+        return !empty($video_source) ? $video_source : null;
       }
     ]);
 
@@ -122,15 +149,6 @@ add_action(
       'resolve' => function ($post) {
         $map_zoom = get_post_meta($post->ID, 'alert_map_zoom_level', true);
         return !empty($map_zoom) ? $map_zoom : null;
-      }
-    ]);
-
-    register_graphql_field('Post', 'coordinates', [
-      'type' => 'String',
-      'description' => __('GPS coordinates', 'wp-graphql'),
-      'resolve' => function ($post) {
-        $gps_coordinates = get_post_meta($post->ID, 'coordinates', true);
-        return !empty($gps_coordinates) ? $gps_coordinates : null;
       }
     ]);
   }
