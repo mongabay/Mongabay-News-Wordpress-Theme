@@ -9,14 +9,14 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-08-07 20:55+0200\n"
-"PO-Revision-Date: 2025-10-20 19:34+0200\n"
+"PO-Revision-Date: 2025-06-10 11:39+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.6\n"
 
 #: Mongabay-News-Wordpress-Theme/404.php:5
 msgid "Page not found"
@@ -39,24 +39,26 @@ msgstr "Lo último"
 msgid "All news"
 msgstr "Más noticias"
 
-#: Mongabay-News-Wordpress-Theme/articles-page.php:48 Mongabay-News-Wordpress-Theme/templates/page-specials.php:54
-#: Mongabay-News-Wordpress-Theme/articles-page.php:48 Mongabay-News-Wordpress-Theme/templates/page-specials.php:54
+#: Mongabay-News-Wordpress-Theme/articles-page.php:48
+#: Mongabay-News-Wordpress-Theme/templates/page-specials.php:54
 msgid "Quickly stay updated with our news <span>shorts</span>"
 msgstr "Mántente al día con nuestras noticias"
 
 #: Mongabay-News-Wordpress-Theme/author.php:56 Mongabay-News-Wordpress-Theme/footer.php:24
-#: Mongabay-News-Wordpress-Theme/footer.php:28 Mongabay-News-Wordpress-Theme/templates/taxonomy-byline.php:63
-#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:78 Mongabay-News-Wordpress-Theme/components/lib/utils.php:50
+#: Mongabay-News-Wordpress-Theme/footer.php:28
+#: Mongabay-News-Wordpress-Theme/templates/taxonomy-byline.php:63
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:78
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:50
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:74
 msgid "About"
 msgstr "Nosotros"
 
-#: Mongabay-News-Wordpress-Theme/author.php:76 Mongabay-News-Wordpress-Theme/components/lib/specials-latest.php:50
-#: Mongabay-News-Wordpress-Theme/author.php:76 Mongabay-News-Wordpress-Theme/components/lib/specials-latest.php:50
+#: Mongabay-News-Wordpress-Theme/author.php:76
+#: Mongabay-News-Wordpress-Theme/components/lib/specials-latest.php:50
 #: Mongabay-News-Wordpress-Theme/components/lib/sliders/series-articles-slider.php:201
 #: Mongabay-News-Wordpress-Theme/templates/taxonomy-byline.php:82
-#: Mongabay-News-Wordpress-Theme/templates/taxonomy-custom.php:41 Mongabay-News-Wordpress-Theme/functions.php:278
-#: Mongabay-News-Wordpress-Theme/templates/taxonomy-custom.php:41 Mongabay-News-Wordpress-Theme/functions.php:278
+#: Mongabay-News-Wordpress-Theme/templates/taxonomy-custom.php:41
+#: Mongabay-News-Wordpress-Theme/functions.php:276
 msgid "stories"
 msgstr "historias"
 
@@ -112,18 +114,16 @@ msgstr "Artículos"
 msgid "Specials"
 msgstr "Especiales"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:271
-#: Mongabay-News-Wordpress-Theme/functions.php:271
+#: Mongabay-News-Wordpress-Theme/functions.php:269
 msgid "Animals"
 msgstr "Animales"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:271
-#: Mongabay-News-Wordpress-Theme/functions.php:271
+#: Mongabay-News-Wordpress-Theme/functions.php:269
 msgid "animals"
 msgstr "animales"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:257 Mongabay-News-Wordpress-Theme/functions.php:272
-#: Mongabay-News-Wordpress-Theme/functions.php:257 Mongabay-News-Wordpress-Theme/functions.php:272
+#: Mongabay-News-Wordpress-Theme/functions.php:257 Mongabay-News-Wordpress-Theme/functions.php:263
+#: Mongabay-News-Wordpress-Theme/functions.php:270
 msgid "Forests"
 msgstr "Bosques"
 
@@ -135,85 +135,68 @@ msgstr "Vida silvestre"
 msgid "Custom Story"
 msgstr "Artículo personalizado"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:263
-#: Mongabay-News-Wordpress-Theme/functions.php:263
+#: Mongabay-News-Wordpress-Theme/functions.php:261
 msgid "Asia"
 msgstr "Asia"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:263
-#: Mongabay-News-Wordpress-Theme/functions.php:263
+#: Mongabay-News-Wordpress-Theme/functions.php:261
 msgid "asia"
 msgstr "asia"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:264
-#: Mongabay-News-Wordpress-Theme/functions.php:264
+#: Mongabay-News-Wordpress-Theme/functions.php:262
 msgid "Africa"
 msgstr "Africa"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:264
-#: Mongabay-News-Wordpress-Theme/functions.php:264
+#: Mongabay-News-Wordpress-Theme/functions.php:262
 msgid "africa"
 msgstr "africa"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:265
-#: Mongabay-News-Wordpress-Theme/functions.php:265
+#: Mongabay-News-Wordpress-Theme/functions.php:263
 msgid "South America"
 msgstr "Latinoamérica"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:265
-#: Mongabay-News-Wordpress-Theme/functions.php:265
+#: Mongabay-News-Wordpress-Theme/functions.php:263
 msgid "south-america"
 msgstr "latinoamerica"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:266
-#: Mongabay-News-Wordpress-Theme/functions.php:266
+#: Mongabay-News-Wordpress-Theme/functions.php:264
 msgid "Indonesia"
 msgstr "Indonesia"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:266
-#: Mongabay-News-Wordpress-Theme/functions.php:266
+#: Mongabay-News-Wordpress-Theme/functions.php:264
 msgid "indonesia"
 msgstr "indonesia"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:267
-#: Mongabay-News-Wordpress-Theme/functions.php:267
+#: Mongabay-News-Wordpress-Theme/functions.php:265
 msgid "Amazon"
 msgstr "Amazonía"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:267
-#: Mongabay-News-Wordpress-Theme/functions.php:267
+#: Mongabay-News-Wordpress-Theme/functions.php:265
 msgid "amazon"
 msgstr "amazonia"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:268
-#: Mongabay-News-Wordpress-Theme/functions.php:268
+#: Mongabay-News-Wordpress-Theme/functions.php:266
 msgid "Congo"
 msgstr "Congo"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:268
-#: Mongabay-News-Wordpress-Theme/functions.php:268
+#: Mongabay-News-Wordpress-Theme/functions.php:266
 msgid "congo"
 msgstr "congo"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:40
-#: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:59 Mongabay-News-Wordpress-Theme/search.php:44
-#: Mongabay-News-Wordpress-Theme/search.php:53
-#: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:59 Mongabay-News-Wordpress-Theme/search.php:44
-#: Mongabay-News-Wordpress-Theme/search.php:53
+#: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:59
+#: Mongabay-News-Wordpress-Theme/search.php:44 Mongabay-News-Wordpress-Theme/search.php:53
 msgid "wildlife"
 msgstr "animales"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:270
 #: Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:40
-#: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:59 Mongabay-News-Wordpress-Theme/search.php:43
-#: Mongabay-News-Wordpress-Theme/search.php:52
-#: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:59 Mongabay-News-Wordpress-Theme/search.php:43
-#: Mongabay-News-Wordpress-Theme/search.php:52
+#: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:59
+#: Mongabay-News-Wordpress-Theme/search.php:43 Mongabay-News-Wordpress-Theme/search.php:52
 msgid "forests"
 msgstr "bosques"
 
-#: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:59 Mongabay-News-Wordpress-Theme/functions.php:275
-#: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:59 Mongabay-News-Wordpress-Theme/functions.php:275
+#: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:59
 msgid "indigenous-peoples"
 msgstr "pueblos-indigenas"
 
@@ -221,16 +204,14 @@ msgstr "pueblos-indigenas"
 msgid "agroecology"
 msgstr "agroecologia"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:259 Mongabay-News-Wordpress-Theme/functions.php:273
-#: Mongabay-News-Wordpress-Theme/functions.php:259 Mongabay-News-Wordpress-Theme/functions.php:273
+#: Mongabay-News-Wordpress-Theme/functions.php:259 Mongabay-News-Wordpress-Theme/functions.php:265
+#: Mongabay-News-Wordpress-Theme/functions.php:271
 msgid "Oceans"
 msgstr "Océanos"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:40
-#: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:59 Mongabay-News-Wordpress-Theme/search.php:46
-#: Mongabay-News-Wordpress-Theme/search.php:55
-#: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:59 Mongabay-News-Wordpress-Theme/search.php:46
-#: Mongabay-News-Wordpress-Theme/search.php:55
+#: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:59
+#: Mongabay-News-Wordpress-Theme/search.php:46 Mongabay-News-Wordpress-Theme/search.php:55
 msgid "oceans"
 msgstr "oceanos"
 
@@ -251,19 +232,15 @@ msgstr "más temas"
 msgid "Feature"
 msgstr "Destacada"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:274
-#: Mongabay-News-Wordpress-Theme/functions.php:274
+#: Mongabay-News-Wordpress-Theme/functions.php:272
 msgid "Conservation"
 msgstr "Conservación"
 
 #: Mongabay-News-Wordpress-Theme/search.php:45 Mongabay-News-Wordpress-Theme/search.php:54
-#: Mongabay-News-Wordpress-Theme/functions.php:274
-#: Mongabay-News-Wordpress-Theme/functions.php:274
 msgid "conservation"
 msgstr "conservacion"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:275
-#: Mongabay-News-Wordpress-Theme/functions.php:275
+#: Mongabay-News-Wordpress-Theme/functions.php:273
 msgid "Indigenous Peoples"
 msgstr "Pueblos Indígenas"
 
@@ -285,8 +262,8 @@ msgid "Contact"
 msgstr "Contacto"
 
 #: Mongabay-News-Wordpress-Theme/footer.php:30 Mongabay-News-Wordpress-Theme/header.php:77
-#: Mongabay-News-Wordpress-Theme/header.php:120 Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:22
-#: Mongabay-News-Wordpress-Theme/header.php:120 Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:22
+#: Mongabay-News-Wordpress-Theme/header.php:120
+#: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:22
 #: Mongabay-News-Wordpress-Theme/components/podcasts-page.php:37
 #: Mongabay-News-Wordpress-Theme/components/lib/videos-latest.php:64
 msgid "Donate"
@@ -400,8 +377,7 @@ msgstr "Android app"
 msgid "Apple News"
 msgstr "Apple News"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:421
-#: Mongabay-News-Wordpress-Theme/functions.php:421
+#: Mongabay-News-Wordpress-Theme/functions.php:419
 msgid "View Article"
 msgstr "Ver artículo"
 
@@ -409,23 +385,19 @@ msgstr "Ver artículo"
 msgid "Results for: "
 msgstr "Resultados para: "
 
-#: Mongabay-News-Wordpress-Theme/functions.php:675 Mongabay-News-Wordpress-Theme/functions.php:679
-#: Mongabay-News-Wordpress-Theme/functions.php:675 Mongabay-News-Wordpress-Theme/functions.php:679
+#: Mongabay-News-Wordpress-Theme/functions.php:670 Mongabay-News-Wordpress-Theme/functions.php:674
 msgid "You cannot add terms to this taxonomy"
 msgstr "No se pueden agregar términos a esta taxonomía"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:688
-#: Mongabay-News-Wordpress-Theme/functions.php:688
+#: Mongabay-News-Wordpress-Theme/functions.php:684
 msgid "Stats Widget"
 msgstr "Widget de estadísticas"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:689
-#: Mongabay-News-Wordpress-Theme/functions.php:689
+#: Mongabay-News-Wordpress-Theme/functions.php:685
 msgid "Stats page sidebar widgets should be placed here."
 msgstr "Los widgets de la barra lateral de la página de estadísticas deben colocarse aquí."
 
-#: Mongabay-News-Wordpress-Theme/functions.php:733 Mongabay-News-Wordpress-Theme/functions.php:743
-#: Mongabay-News-Wordpress-Theme/functions.php:733 Mongabay-News-Wordpress-Theme/functions.php:743
+#: Mongabay-News-Wordpress-Theme/functions.php:729 Mongabay-News-Wordpress-Theme/functions.php:739
 msgid "Conservation news on"
 msgstr "Noticias ambientales sobre"
 
@@ -453,18 +425,15 @@ msgstr "Punto 4"
 msgid "Article link"
 msgstr "Enlace del artículo"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:908
-#: Mongabay-News-Wordpress-Theme/functions.php:908
+#: Mongabay-News-Wordpress-Theme/functions.php:1007
 msgid "Please set Featured Image. Article cannot be published without one."
 msgstr "Selecciona una imagen destacada. El artículo no se puede publicar sin ella."
 
-#: Mongabay-News-Wordpress-Theme/functions.php:1025
-#: Mongabay-News-Wordpress-Theme/functions.php:1025
+#: Mongabay-News-Wordpress-Theme/functions.php:1163
 msgid "No older posts"
 msgstr "No hay publicaciones antiguas"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:1077
-#: Mongabay-News-Wordpress-Theme/functions.php:1077
+#: Mongabay-News-Wordpress-Theme/functions.php:1215
 #: Mongabay-News-Wordpress-Theme/components/lib/lists/articles-listing.php:53
 #: Mongabay-News-Wordpress-Theme/components/lib/sliders/featured-articles-slider.php:36
 msgid "Feature story"
@@ -488,19 +457,17 @@ msgstr "Impacto"
 
 #: Mongabay-News-Wordpress-Theme/landing-page.php:52
 msgid "Watch unique <span class=\"icon icon-play\">videos</span> that cut through the noise"
-msgstr "No te pierdas los <span class=\"icon icon-play\">videos</span> más importantes de nuestra cobertura"
+msgstr "No te pierdas los <span class=”icon icon-play”>videos</span> más importantes de nuestra cobertura"
 
 #: Mongabay-News-Wordpress-Theme/landing-page.php:69 Mongabay-News-Wordpress-Theme/articles-page.php:48
 msgid "Quickly stay updated with our news <span class=\"icon icon-shorts\">shorts</span>"
 msgstr "Mantente al día con nuestras noticias <span class=\"icon icon-shorts\">En corto</span>"
 
 #: Mongabay-News-Wordpress-Theme/page.php:15 Mongabay-News-Wordpress-Theme/single-custom-story.php:28
-#: Mongabay-News-Wordpress-Theme/single-featured.php:40 Mongabay-News-Wordpress-Theme/single-podcasts.php:69
-#: Mongabay-News-Wordpress-Theme/single-specials_.php:48 Mongabay-News-Wordpress-Theme/single-videos.php:67
-#: Mongabay-News-Wordpress-Theme/single.php:48
-#: Mongabay-News-Wordpress-Theme/single-featured.php:40 Mongabay-News-Wordpress-Theme/single-podcasts.php:69
-#: Mongabay-News-Wordpress-Theme/single-specials_.php:48 Mongabay-News-Wordpress-Theme/single-videos.php:67
-#: Mongabay-News-Wordpress-Theme/single.php:48
+#: Mongabay-News-Wordpress-Theme/single-featured.php:40
+#: Mongabay-News-Wordpress-Theme/single-podcasts.php:69
+#: Mongabay-News-Wordpress-Theme/single-specials_.php:48
+#: Mongabay-News-Wordpress-Theme/single-videos.php:67 Mongabay-News-Wordpress-Theme/single.php:48
 msgid "Sorry, nothing to display."
 msgstr "Lo sentimos, no hay nada que mostrar."
 
@@ -509,8 +476,8 @@ msgid "Latest podcasts"
 msgstr "Últimos podcasts"
 
 #: Mongabay-News-Wordpress-Theme/podcasts-page.php:23 Mongabay-News-Wordpress-Theme/podcasts-page.php:54
-#: Mongabay-News-Wordpress-Theme/single-podcasts.php:92 Mongabay-News-Wordpress-Theme/single-podcasts.php:124
-#: Mongabay-News-Wordpress-Theme/single-podcasts.php:92 Mongabay-News-Wordpress-Theme/single-podcasts.php:124
+#: Mongabay-News-Wordpress-Theme/single-podcasts.php:92
+#: Mongabay-News-Wordpress-Theme/single-podcasts.php:124
 msgid "All podcasts"
 msgstr "Todos los podcasts"
 
@@ -554,10 +521,10 @@ msgstr "Para buscar, escribe y pulsa Enter."
 msgid "No short articles found"
 msgstr "No se encontraron En corto"
 
-#: Mongabay-News-Wordpress-Theme/single-custom-story.php:41 Mongabay-News-Wordpress-Theme/single-specials.php:92
-#: Mongabay-News-Wordpress-Theme/single-specials_new.php:79 Mongabay-News-Wordpress-Theme/specials-page.php:26
-#: Mongabay-News-Wordpress-Theme/single-custom-story.php:41 Mongabay-News-Wordpress-Theme/single-specials.php:92
-#: Mongabay-News-Wordpress-Theme/single-specials_new.php:79 Mongabay-News-Wordpress-Theme/specials-page.php:26
+#: Mongabay-News-Wordpress-Theme/single-custom-story.php:41
+#: Mongabay-News-Wordpress-Theme/single-specials.php:92
+#: Mongabay-News-Wordpress-Theme/single-specials_new.php:79
+#: Mongabay-News-Wordpress-Theme/specials-page.php:26
 #: Mongabay-News-Wordpress-Theme/templates/taxonomy-specials.php:113
 msgid "All Specials"
 msgstr "Todos los especiales"
@@ -567,21 +534,20 @@ msgid "Transcript"
 msgstr "Transcripción"
 
 #: Mongabay-News-Wordpress-Theme/single-podcasts.php:47 Mongabay-News-Wordpress-Theme/single-videos.php:45
-msgid "Notice: Transcripts are machine and human generated and lightly edited for accuracy. They may contain errors."
-msgid "Notice: Transcripts are machine and human generated and lightly edited for accuracy. They may contain errors."
+msgid ""
+"Notice: Transcripts are machine and human generated and lightly edited for accuracy. They may contain "
+"errors."
 msgstr ""
-"Aviso: Las transcripciones son generadas automÃ¡ticamente y ligeramente editadas para garantizar su precisiÃ³n. "
-"Pueden presentar errores."
-"Aviso: Las transcripciones son generadas automÃ¡ticamente y ligeramente editadas para garantizar su precisiÃ³n. "
-"Pueden presentar errores."
+"Aviso: Las transcripciones son generadas automÃ¡ticamente y ligeramente editadas para garantizar su "
+"precisiÃ³n. Pueden presentar errores."
 
 #: Mongabay-News-Wordpress-Theme/single-podcasts.php:54 Mongabay-News-Wordpress-Theme/single-videos.php:52
 msgid "Read full transcript"
 msgstr "Lee la transcripción completa"
 
 #: Mongabay-News-Wordpress-Theme/single-specials.php:83
-#: Mongabay-News-Wordpress-Theme/components/lib/shorts-dialog.php:38 Mongabay-News-Wordpress-Theme/functions.php:277
-#: Mongabay-News-Wordpress-Theme/components/lib/shorts-dialog.php:38 Mongabay-News-Wordpress-Theme/functions.php:277
+#: Mongabay-News-Wordpress-Theme/components/lib/shorts-dialog.php:38
+#: Mongabay-News-Wordpress-Theme/functions.php:275
 msgid "Load more"
 msgstr "Cargar más"
 
@@ -589,10 +555,9 @@ msgstr "Cargar más"
 msgid "Latest articles"
 msgstr "Lo último"
 
-#: Mongabay-News-Wordpress-Theme/single-specials_.php:62 Mongabay-News-Wordpress-Theme/single-specials_.php:70
-#: Mongabay-News-Wordpress-Theme/single.php:62 Mongabay-News-Wordpress-Theme/single.php:68
-#: Mongabay-News-Wordpress-Theme/single-specials_.php:62 Mongabay-News-Wordpress-Theme/single-specials_.php:70
-#: Mongabay-News-Wordpress-Theme/single.php:62 Mongabay-News-Wordpress-Theme/single.php:68
+#: Mongabay-News-Wordpress-Theme/single-specials_.php:62
+#: Mongabay-News-Wordpress-Theme/single-specials_.php:70 Mongabay-News-Wordpress-Theme/single.php:62
+#: Mongabay-News-Wordpress-Theme/single.php:68
 msgid "All articles"
 msgstr "Todos los artículos"
 
@@ -697,17 +662,13 @@ msgstr "¿Interesado en otros sitios web de Mongabay?"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/meta.php:101
 msgid ""
-"Mongabay seeks to raise interest in and appreciation of wild lands and wildlife, while examining the impact of "
-"emerging trends in climate, technology, economics, and finance on conservation and development."
-"Mongabay seeks to raise interest in and appreciation of wild lands and wildlife, while examining the impact of "
-"emerging trends in climate, technology, economics, and finance on conservation and development."
+"Mongabay seeks to raise interest in and appreciation of wild lands and wildlife, while examining the "
+"impact of emerging trends in climate, technology, economics, and finance on conservation and "
+"development."
 msgstr ""
-"Mongabay no sólo busca incrementar el interés y el reconocimiento de la naturaleza, sino también investigar el "
-"impacto de las nuevas tendencias climáticas, tecnológicas, económicas y financieras en la conservación y el "
-"desarrollo."
-"Mongabay no sólo busca incrementar el interés y el reconocimiento de la naturaleza, sino también investigar el "
-"impacto de las nuevas tendencias climáticas, tecnológicas, económicas y financieras en la conservación y el "
-"desarrollo."
+"Mongabay no sólo busca incrementar el interés y el reconocimiento de la naturaleza, sino también "
+"investigar el impacto de las nuevas tendencias climáticas, tecnológicas, económicas y financieras en la "
+"conservación y el desarrollo."
 
 #: Mongabay-News-Wordpress-Theme/custom-code/post-type-formats.php:7
 msgctxt "Post type general name"
@@ -1011,8 +972,8 @@ msgstr "Elegir entre las regiones más utilizadas"
 msgid "No locations found."
 msgstr "No se han encontrado regiones."
 
-#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-location.php:21 Mongabay-News-Wordpress-Theme/search.php:22
-#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-location.php:21 Mongabay-News-Wordpress-Theme/search.php:22
+#: Mongabay-News-Wordpress-Theme/custom-code/taxonomy-location.php:21
+#: Mongabay-News-Wordpress-Theme/search.php:22
 msgid "Location"
 msgstr "Región"
 
@@ -1219,51 +1180,57 @@ msgstr "all stories"
 msgid "Features"
 msgstr "Destacadas"
 
-#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:27 Mongabay-News-Wordpress-Theme/components/lib/utils.php:67
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:27
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:67
 #: Mongabay-News-Wordpress-Theme/functions.php:234
 msgid "features"
 msgstr "destacadas"
 
-#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:31 Mongabay-News-Wordpress-Theme/functions.php:234
-#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:31 Mongabay-News-Wordpress-Theme/functions.php:234
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:31
+#: Mongabay-News-Wordpress-Theme/functions.php:234
 msgid "videos"
 msgstr "videos"
 
-#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:35 Mongabay-News-Wordpress-Theme/functions.php:234
-#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:35 Mongabay-News-Wordpress-Theme/functions.php:234
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:35
+#: Mongabay-News-Wordpress-Theme/functions.php:234
 msgid "podcasts"
 msgstr "podcasts"
 
-#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:35 Mongabay-News-Wordpress-Theme/functions.php:234
-#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:35 Mongabay-News-Wordpress-Theme/functions.php:234
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:35
+#: Mongabay-News-Wordpress-Theme/functions.php:234
 msgid "specials"
 msgstr "especiales"
 
-#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:43 Mongabay-News-Wordpress-Theme/functions.php:234
-#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:43 Mongabay-News-Wordpress-Theme/functions.php:234
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:43
+#: Mongabay-News-Wordpress-Theme/functions.php:234
 #: Mongabay-News-Wordpress-Theme/lib/components/banners/inspiration-banner.php:38
 msgid "articles"
 msgstr "articulos"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:279
-#: Mongabay-News-Wordpress-Theme/functions.php:279
+#: Mongabay-News-Wordpress-Theme/functions.php:277
 msgid "story"
 msgstr "articulo"
 
-#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:46 Mongabay-News-Wordpress-Theme/functions.php:251
-#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:46 Mongabay-News-Wordpress-Theme/functions.php:251
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:46
+#: Mongabay-News-Wordpress-Theme/functions.php:251
 msgid "Shorts"
 msgstr "En corto"
+
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:47
+msgid "en-corto"
+msgstr "en-corto"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:51
 msgid "about"
 msgstr "nosotros"
 
-#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:54 Mongabay-News-Wordpress-Theme/components/lib/utils.php:82
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:54
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:82
 msgid "Team"
 msgstr "Equipo"
 
-#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:55 Mongabay-News-Wordpress-Theme/components/lib/utils.php:83
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:55
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:83
 msgid "team"
 msgstr "equipo"
 
@@ -1275,7 +1242,7 @@ msgstr "contacto"
 msgid "Short News"
 msgstr "En corto"
 
-#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:47 Mongabay-News-Wordpress-Theme/components/lib/utils.php:63
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:63
 msgid "shorts"
 msgstr "en-corto"
 

@@ -36,6 +36,7 @@ function specials_slider(string $headline, array $terms_array = [], string $extr
               $series_posts = $tax_obj->count;
       ?>
               <div class="article--container full-height">
+                <?php var_dump(get_the_ID()); ?>
                 <a href="<?php the_permalink(); ?>">
                   <div class="featured-image full-height">
                     <div class="img-overlay"></div>
