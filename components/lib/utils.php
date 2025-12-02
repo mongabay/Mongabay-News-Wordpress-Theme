@@ -144,7 +144,7 @@ function get_enabled_features($feature)
     ),
     // French
     26 => array(
-      'podcasts' => false,
+      'podcasts' => true,
       'videos' => true,
       'specials' => true,
       'shorts' => false,
@@ -292,6 +292,9 @@ function get_subscribe_link_local($site_id)
     case 25:
       // Latam
       return 'https://es.mongabay.com/boletin-de-noticias/';
+    case 29:
+      // Brazil
+      return 'https://mailchi.mp/mongabay/brasil-pagina-de-inscricaoo';
     case 30:
       // India
       return 'https://mongabay.us17.list-manage.com/subscribe?u=2dd04db80c7aee01e77033c9c&id=ac74ea7c07&mc_cid=4c25010d1b&mc_eid=561303a745';

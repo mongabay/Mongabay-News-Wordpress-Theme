@@ -446,7 +446,7 @@ h4 {
   margin-bottom: clamp(20px, 5vw + 1px, 40px);
 }
 .mh--auto {
-  margin: 0 auto!important;
+  margin: 0 auto !important;
 }
 
 /* Paddings */
@@ -696,7 +696,10 @@ ul.main-menu.nav-desktop.off-canvas li a {
   margin: 0;
   padding: 0;
   display: inline-flex;
-  gap: 20px;
+  flex-wrap: wrap;
+  column-gap: 20px;
+  row-gap: 10px;
+  max-width: calc(100% - 140px);
 }
 
 .global-nav ul li a {
@@ -3210,7 +3213,7 @@ footer .grid--4 {
   #off-canvas .container {
     flex-direction: column-reverse;
     height: calc(100vh - 40px);
-    box-sizing: content-box;
+    box-sizing: border-box;
   }
   ul.main-menu.nav-desktop {
     display: none;
@@ -3232,6 +3235,7 @@ footer .grid--4 {
     padding: 0;
     gap: var(--spacing-3);
     flex-direction: row;
+    max-width: 100%;
   }
 
   #off-canvas ul.global-languages li a {
