@@ -62,8 +62,8 @@ get_header();
 <div class="full-width pv--40">
 	<?php featured_articles_slider(array('post', 'custom-story'), 4, 5); ?>
 </div>
-<?php if (get_enabled_features('shorts')) { ?>}
 <div class="container ph--40 pv--40 in-column">
+	<?php if (get_enabled_features('shorts')) { ?>
 	<div class="section--highlight">
 		<div class="container gap--40 in-column">
 			<h1><?php _e('Quickly stay updated with our news <span class="icon icon-shorts">shorts</span>', 'mongabay'); ?></h1>

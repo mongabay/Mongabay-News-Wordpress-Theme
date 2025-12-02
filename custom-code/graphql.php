@@ -76,7 +76,7 @@ add_action(
       'description' => __('Podcast embed code', 'wp-graphql'),
       'resolve' => function ($post) {
         $podcast_code = get_post_meta($post->ID, 'podcast_embed', true);
-        return !empty($podcast_code) ? $podcast_code : null;
+        return !empty($podcast_code) ? wp_strip_all_tags($podcast_code) : null;
       }
     ]);
 
@@ -149,6 +149,24 @@ add_action(
       'resolve' => function ($post) {
         $map_zoom = get_post_meta($post->ID, 'alert_map_zoom_level', true);
         return !empty($map_zoom) ? $map_zoom : null;
+      }
+    ]);
+
+    register_graphql_field('ShortArticle', 'mapBoxStyle', [
+      'type' => 'String',
+      'description' => __('Mapbox styles URL', 'wp-graphql'),
+      'resolve' => function ($post) {
+        $styles_url = get_post_meta($post->ID, 'styles_url', true);
+        return !empty($styles_url) ? $styles_url : null;
+      }
+    ]);
+
+    register_graphql_field('Bylines', 'bylineCoverImage', [
+      'type' => 'String',
+      'description' => __('Byline cover image', 'wp-graphql'),
+      'resolve' => function ($term) {
+        $cover_image = get_term_meta($term->term_id, 'cover_image_url', true);
+        return !empty($cover_image) ? $cover_image : null;
       }
     ]);
   }

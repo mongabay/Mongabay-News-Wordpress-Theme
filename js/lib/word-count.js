@@ -17,7 +17,7 @@ jQuery(document).ready(function ($) {
       // Use WordPress WordCounter (defaults to words)
       const wordCount = counter.count(content, "words");
 
-      if (wordCount > 500) {
+      if (wordCount > 550) {
         event.preventDefault();
         alert("Content exceeds 500 words. Please shorten your content.");
         return false;

@@ -1116,15 +1116,15 @@ msgstr "Nos articles de fond mettent en lumière de nouvelles perspectives"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/sliders/formats-slider.php:6
 msgid "Listen to Nature with thought-provoking podcasts"
-msgstr "Ecouter la nature avec des podcasts qui incitent à la réflexion"
+msgstr "Ecouter la nature avec des podcasts qui invitent à la réflexion"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/banners/podcasts-banner.php:15
 msgid "Listen to Nature with thought-provoking <span class=\"icon icon-podcast\">podcasts</span>"
-msgstr "Ecouter la nature avec des podcasts qui incitent à la réflexion <span class=\"icon icon-podcast\">podcasts</span> stimulantes"
+msgstr "Ecouter la nature avec des podcasts qui invitent à la réflexion <span class=\"icon icon-podcast\">podcasts</span> stimulantes"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/sliders/formats-slider.php:6
 msgid "Watch unique videos that cut through the noise"
-msgstr "Visioner nos videos uniques qui se démarquent des autres"
+msgstr "Regarder des videos qui se démarquent"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:55
 msgid "Read articles on topics such as"

@@ -93,9 +93,10 @@ if (wp_is_mobile()) {
 							<li><a href="https://brasil.mongabay.com" class="<?php echo get_home_url() === 'https://brasil.mongabay.com' ? 'active' : ''; ?>">Brasil (Portuguese)</a></li>
 							<li><a href="https://india.mongabay.com" class="<?php echo get_home_url() === 'https://india.mongabay.com' ? 'active' : ''; ?>">India (English)</a></li>
 							<li><a href="https://hindi.mongabay.com" class="<?php echo get_home_url() === 'https://hindi.mongabay.co.id' ? 'active' : ''; ?>">हिंदी (Hindi)</a></li>
+							<li><a href="https://bengali.mongabay.com" class="<?php echo get_home_url() === 'https://bengali.mongabay.com' ? 'active' : ''; ?>">বাংলা (Bengali)</a></li>
+							<li><a href="https://swahili.mongabay.com" class="<?php echo get_home_url() === 'https://swahili.mongabay.com' ? 'active' : ''; ?>">Swahili</a></li>
 						</ul>
-						<?php if (!wp_is_mobile()) { ?>
-							<span class="icon icon-cancel"></span>
+						<?php if (!wp_is_mobile()) { ?><span class="icon icon-cancel"></span>
 						<?php } ?>
 					</div>
 					<ul class="main-menu nav-desktop off-canvas">
@@ -145,54 +146,59 @@ if (wp_is_mobile()) {
 			</div>
 		</div>
 		<script>
-			const isDarkMode = window.localStorage.getItem("mongabay-theme");
+			document.addEventListener('DOMContentLoaded', function() {
+				const isThemeStored = window.localStorage.getItem("mongabay-theme");
+				const isDarkMode = isThemeStored && window.localStorage.getItem("mongabay-theme") === "dark-mode";
 
-			if (isDarkMode) {
-				document.querySelector("body").classList.add("dark-mode");
-			}
+				function brandingDisplay(mode) {
+					isDark = mode === 'dark-mode';
+					const body = document.body;
+					const themeSwitch = document.getElementById("theme-switch");
 
-			function brandingDisplay() {
-				if (document.querySelector("body").classList.contains("dark-mode")) {
-					window.localStorage.setItem("mongabay-theme", "dark-mode");
-					document.querySelectorAll(".branding .theme-light").forEach((el) => {
-						el.style.display = "none";
+					// Toggle classes on body and theme switch
+					[body, themeSwitch].forEach(el => {
+						el.classList.toggle('dark-mode', isDark);
+						el.classList.toggle('light-mode', !isDark);
 					});
-					document.querySelectorAll(".branding .theme-dark").forEach((el) => {
-						el.style.display = "block";
-					});
-				} else {
-					window.localStorage.removeItem("mongabay-theme");
-					document.querySelectorAll(".branding .theme-light").forEach((el) => {
-						el.style.display = "block";
-					});
-					document.querySelectorAll(".branding .theme-dark").forEach((el) => {
-						el.style.display = "none";
-					});
+
+					// Toggle branding visibility
+					const lightEls = document.querySelectorAll("a.theme-light");
+					const darkEls = document.querySelectorAll("a.theme-dark");
+
+					lightEls.forEach(el => el.style.display = isDark ? "none" : "block");
+					darkEls.forEach(el => el.style.display = isDark ? "block" : "none");
+
+					// Persist theme preference
+					window.localStorage.setItem("mongabay-theme", mode);
 				}
-			}
 
-			brandingDisplay();
+				if (isThemeStored) {
+					brandingDisplay(isDarkMode ? 'dark-mode' : 'light-mode');
+				} else {
+					brandingDisplay('light-mode');
+				}
 
-			document.getElementById("theme-switch").addEventListener("click", (e) => {
-				e.preventDefault;
-				e.stopPropagation;
-				document.querySelector("body").classList.toggle("dark-mode");
-				document.getElementById("theme-switch").classList.toggle("dark-mode");
-				brandingDisplay();
-			});
+				document.getElementById("theme-switch").addEventListener("click", (e) => {
+					e.preventDefault;
+					e.stopPropagation;
+					const currentTheme = document.querySelector("body").classList.contains("dark-mode") ? "dark-mode" : "light-mode";
 
-			document.getElementById("secondary-menu").addEventListener("click", (e) => {
-				e.preventDefault;
-				e.stopPropagation;
-				document.getElementById("off-canvas").classList.add("active");
-				document.querySelector("body").classList.add("no-scroll");
-			});
+					brandingDisplay(currentTheme === "dark-mode" ? 'light-mode' : 'dark-mode');
+				});
 
-			document.querySelector(".icon-cancel").addEventListener("click", (e) => {
-				e.preventDefault;
-				e.stopPropagation;
-				document.getElementById("off-canvas").classList.remove("active");
-				document.querySelector("body").classList.remove("no-scroll");
+				document.getElementById("secondary-menu").addEventListener("click", (e) => {
+					e.preventDefault;
+					e.stopPropagation;
+					document.getElementById("off-canvas").classList.add("active");
+					document.querySelector("body").classList.add("no-scroll");
+				});
+
+				document.querySelector(".icon-cancel").addEventListener("click", (e) => {
+					e.preventDefault;
+					e.stopPropagation;
+					document.getElementById("off-canvas").classList.remove("active");
+					document.querySelector("body").classList.remove("no-scroll");
+				});
 			});
 		</script>
 	</header>
