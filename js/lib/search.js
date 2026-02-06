@@ -1,3 +1,21 @@
+function toGraphQLInput(obj) {
+  return `{ ${Object.entries(obj)
+    .map(([key, value]) => {
+      const isEnum = typeof value === "string" && /^[A-Z_]+$/.test(value);
+
+      if (isEnum) {
+        return `${key}: ${value}`;
+      }
+
+      if (typeof value === "string") {
+        return `${key}: "${value}"`;
+      }
+
+      return `${key}: ${value}`;
+    })
+    .join(", ")} }`;
+}
+
 let controller;
 const domain = window.location.origin;
 let selectedTopics = [];
@@ -716,7 +734,25 @@ async function fetchArticles(fromStart = false) {
   }
 
   const keyWordQuery = `search:\"${searchValue}\",`;
+  const shortsTempFilter = `{taxonomy:SHORTSFORMAT,operator:NOT_EXISTS}`;
+  // Temporary measure to hide new shorts content type until fully ready
+  taxArray.push(shortsTempFilter);
   const taxQuery = `taxQuery:{taxArray:[${taxArray.join(",")}]},`;
+  const metaArray = [];
+  const featuredMetaQuery = {
+    key: "featured_as",
+    compare: "EQUAL_TO",
+    value: "featured",
+  };
+
+  if (featuredOnly) {
+    metaArray.push(featuredMetaQuery);
+  }
+
+  if (!selectedFormats.length || selectedFormats.includes("SHORT_ARTICLE")) {
+    //metaArray.push(shortsTempMetaQuery);
+  }
+
   const featuredQuery = `metaQuery:{metaArray:{key:\"featured_as\",compare:EQUAL_TO,value:\"featured\"}},`;
   const paginate = `,after:\"${cursor}\"`;
   const node = `__typename,title,link,date,byline{nodes{name}},featuredImage{node{srcSet sourceUrl(size: MEDIUM)}}`;
@@ -727,7 +763,11 @@ async function fetchArticles(fromStart = false) {
       status:PUBLISH,
       ${searchValue.length > 0 ? keyWordQuery : ""}
       ${taxArray.length > 0 ? taxQuery : ""}
-      ${featuredOnly ? featuredQuery : ""}
+      ${
+        metaArray.length
+          ? `metaQuery:{relation: AND,metaArray:[${metaArray.map(toGraphQLInput).join(", ")}]},`
+          : ""
+      }
       contentTypes: [${!selectedFormats.length ? defaultFormatsList : selectedFormats}]
     }
       first: 24

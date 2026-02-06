@@ -15,14 +15,23 @@ function articles_listing_condensed(
     'cache_results' => true,
   );
 
+  $tax_query = array(
+    'relation' => 'AND',
+  );
+
   if ($taxonomy) {
-    $args['taxonomy'] = array(
-      array(
-        'taxonomy' => $taxonomy,
-        'field' => 'slug',
-      )
+    $tax_query[] = array(
+      'taxonomy' => $taxonomy,
+      'field' => 'slug',
     );
   }
+
+  $tax_query[] = array(
+    'taxonomy' => 'shorts_format',
+    'operator' => 'NOT EXISTS',
+  );
+
+  $args['tax_query'] = $tax_query;
 
   $query = new WP_Query($args);
   $counter = 0;

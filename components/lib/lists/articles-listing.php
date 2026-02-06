@@ -18,15 +18,24 @@ function articles_listing(
     'cache_results' => true,
   );
 
+  $tax_query = array(
+    'relation' => 'AND',
+  );
+
   if ($taxonomy && $taxonomy_term) {
-    $args['tax_query'] = array(
-      array(
-        'taxonomy' => $taxonomy,
-        'field' => 'slug',
-        'terms' => $taxonomy_term,
-      )
+    $tax_query[] = array(
+      'taxonomy' => $taxonomy,
+      'field' => 'slug',
+      'terms' => $taxonomy_term,
     );
   }
+
+  $tax_query[] = array(
+    'taxonomy' => 'shorts_format',
+    'operator' => 'NOT EXISTS',
+  );
+
+  $args['tax_query'] = $tax_query;
 
   $query = new WP_Query($args);
   $post_counter = 0;

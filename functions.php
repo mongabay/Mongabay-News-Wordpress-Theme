@@ -5,6 +5,7 @@ include(get_template_directory() . '/custom-code/taxonomy-location.php');
 include(get_template_directory() . '/custom-code/taxonomy-serial.php');
 include(get_template_directory() . '/custom-code/taxonomy-topic.php');
 include(get_template_directory() . '/custom-code/taxonomy-entity.php');
+include(get_template_directory() . '/custom-code/taxonomy-shorts-format.php');
 include(get_template_directory() . '/custom-code/thumbnailed-recent-posts.php');
 include(get_template_directory() . '/custom-code/feed-query.php');
 include(get_template_directory() . '/custom-code/meta.php');
@@ -12,7 +13,6 @@ include(get_template_directory() . '/components/functions.php');
 include(get_template_directory() . '/custom-code/post-type-formats.php');
 include(get_template_directory() . '/custom-code/analytics.php');
 include(get_template_directory() . '/custom-code/graphql.php');
-
 if (function_exists('add_theme_support')) {
     add_theme_support('menus');
     add_theme_support('post-formats', array('aside'));
@@ -300,7 +300,6 @@ function enqueue_word_count_script($hook)
         }
     }
 }
-
 
 // Featured articles template
 function mongabay_featured()

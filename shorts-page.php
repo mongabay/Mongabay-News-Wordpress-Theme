@@ -15,6 +15,10 @@ $args = array(
   'posts_per_page' => 8,
   'offset' => 0,
   'post_status' => 'publish',
+  'tax_query' => array(array(
+    'taxonomy' => 'shorts_format',
+    'operator' => 'NOT EXISTS',
+  )),
 );
 
 $query = new WP_Query($args);
@@ -29,7 +33,7 @@ $banner = '
   <div class="copy">
     Stay informed with news and inspiration from nature’s frontline.
   </div>
-  <a href="'.get_subscribe_link().'" class="theme--button primary full-width">
+  <a href="' . get_subscribe_link() . '" class="theme--button primary full-width">
     Newsletter<span class="icon icon-right"></span>
   </a>
 </div>
