@@ -1,7 +1,8 @@
 @font-face {
   font-family: "Rowan Regular";
   src: url("../fonts/Rowan-Regular.eot");
-  src: url("../fonts/Rowan-Regular.eot?#iefix") format("embedded-opentype"),
+  src:
+    url("../fonts/Rowan-Regular.eot?#iefix") format("embedded-opentype"),
     url("../fonts/Rowan-Regular.woff") format("woff"),
     url("../fonts/Rowan-Regular.woff2") format("woff2"),
     url("../fonts/Rowan-Regular.ttf") format("truetype");
@@ -30,6 +31,7 @@
   --theme-soft-gray: rgba(0, 0, 0, 0.05);
   --theme-medium-gray: #d9d9d9;
   --theme-muted: #878787;
+  --theme-red: #e63946;
   --accent-green: #bfecb1;
   --spacing-1: 4px;
   --spacing-2: 6px;
@@ -756,6 +758,10 @@ ul.main-menu.nav-desktop.off-canvas li a {
   text-overflow: ellipsis;
 }
 
+.theme--button.prev-step {
+  padding: var(--spacing-5) var(--spacing-7) var(--spacing-5) var(--spacing-12);
+}
+
 .theme--button span {
   display: flex;
   position: absolute;
@@ -764,8 +770,17 @@ ul.main-menu.nav-desktop.off-canvas li a {
   animation: all 0.2s;
 }
 
+.theme--button.prev-step span {
+  left: 10px;
+  right: auto;
+}
+
 .theme--button:hover span {
   margin-right: 10px;
+}
+
+.theme--button.prev-step:hover span {
+  margin-left: 10px;
 }
 
 .theme--button.simple {
@@ -2497,6 +2512,10 @@ input#featured[type="checkbox"] {
   border-radius: var(--rounded);
 }
 
+.single .article-cover-image.cover-image-16-9 > div {
+  min-height: 675px;
+}
+
 .single .row > #main {
   padding: 0 10%;
 }
@@ -3060,7 +3079,10 @@ footer .grid--4 {
   align-items: center;
 }
 
-#subscribe-email {
+#subscribe-email,
+#subscribe-name,
+#subscribe-last-name,
+#subscribe-company {
   width: 100%;
   padding: var(--spacing-3) var(--spacing-4);
   font-size: var(--font-sm);
@@ -3069,8 +3091,19 @@ footer .grid--4 {
   border-bottom: 1px solid var(--theme-body);
 }
 
+#subscribe-email.input-error,
+#subscribe-name.input-error,
+#subscribe-last-name.input-error {
+  border-bottom: 1px solid var(--theme-red);
+}
+
 #newsleter-subscribe {
   min-width: fit-content;
+}
+
+#step-2,
+#step-3 {
+  display: none;
 }
 
 @media (min-width: 769px) {
@@ -3388,6 +3421,10 @@ footer .grid--4 {
 
   .single .article-cover-image > div {
     min-height: 200px;
+  }
+
+  .single .article-cover-image.cover-image-16-9 > div {
+    min-height: calc(100vw * 9 / 16);
   }
 
   .single h3 {

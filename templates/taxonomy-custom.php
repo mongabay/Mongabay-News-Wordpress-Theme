@@ -23,6 +23,18 @@ get_header(); ?>
 		$topics = array();
 
 		foreach ($taxonomies->queries as $tax_query) {
+			if (
+				isset($tax_query['taxonomy']) &&
+				$tax_query['taxonomy'] === 'shorts_format'
+			) {
+				continue;
+			}
+
+			// Skip any additional exclusion filters you may add later
+			if (isset($tax_query['operator']) && $tax_query['operator'] === 'NOT IN') {
+				continue;
+			}
+			
 			if (isset($tax_query['taxonomy'])) {
 				$topics[] = ucfirst(str_replace('-', ' ', urldecode($tax_query['terms'][0])));
 			}
