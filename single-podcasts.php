@@ -98,13 +98,13 @@
       <div class="banner gap--20 ph--20 pv--20 accent">
       <div class="inner">
         <div class="title">
-          <h1>' . (get_enabled_features('donate') ? __('We’re a nonprofit', 'mongabay') : 'Free and Open') . '</h1>
+          <h1>' . (get_enabled_features('donate') ? __('We’re a nonprofit', 'mongabay') : __('Free and Open', 'mongabay')) . '</h1>
         </div>
         <div class="copy">'
         . __('Help us tell impactful stories of biodiversity loss, climate change, and more', 'mongabay') . '
         </div>
         <a href="' . (get_enabled_features('donate') ? get_donate_link() : 'https://mongabay.org/about') . '" class="theme--button primary full-width">'
-        . (get_enabled_features('donate') ? __('Donate', 'mongabay') : 'Learn more') . '<span class="icon icon-right"></span>
+        . (get_enabled_features('donate') ? __('Donate', 'mongabay') : __('Learn more', 'mongabay')) . '<span class="icon icon-right"></span>
         </a>
       </div>
     </div>

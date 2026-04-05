@@ -9,14 +9,14 @@ msgstr ""
 "Project-Id-Version: English to Swahili\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-08-07 20:55+0200\n"
-"PO-Revision-Date: 2025-10-06 14:58+0200\n"
+"PO-Revision-Date: 2026-03-11 10:34+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: sw_TZ\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.7\n"
+"X-Generator: Poedit 3.8\n"
 
 #: Mongabay-News-Wordpress-Theme/404.php:5
 msgid "Page not found"
@@ -261,7 +261,7 @@ msgstr "Za sasa hivi"
 msgid "Contact"
 msgstr "Mawasiliano"
 
-#: Mongabay-News-Wordpress-Theme/footer.php:30 Mongabay-News-Wordpress-Theme/header.php:77
+#: Mongabay-News-Wordpress-Theme/footer.php:30 Mongabay-News-Wordpress-Theme/header.php:76
 #: Mongabay-News-Wordpress-Theme/header.php:120
 #: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:22
 #: Mongabay-News-Wordpress-Theme/components/podcasts-page.php:37
@@ -1070,6 +1070,7 @@ msgid " News"
 msgstr " Habari"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:14
+#: Mongabay-News-Wordpress-Theme/header.php:76
 msgid "Subscribe"
 msgstr "Jisajili"
 

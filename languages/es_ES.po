@@ -9,14 +9,14 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-08-07 20:55+0200\n"
-"PO-Revision-Date: 2025-10-20 19:34+0200\n"
+"PO-Revision-Date: 2026-03-20 12:15+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 
 #: Mongabay-News-Wordpress-Theme/404.php:5
 msgid "Page not found"
@@ -422,7 +422,7 @@ msgstr "Enlace del artículo"
 msgid "Please set Featured Image. Article cannot be published without one."
 msgstr "Selecciona una imagen destacada. El artículo no se puede publicar sin ella."
 
-#: Mongabay-News-Wordpress-Theme/functions.php:1025
+#: Mongabay-News-Wordpress-Theme/functions.php:1024 Mongabay-News-Wordpress-Theme/functions.php:1025
 msgid "No older posts"
 msgstr "No hay publicaciones antiguas"
 
@@ -534,6 +534,7 @@ msgstr "Lee la transcripción completa"
 
 #: Mongabay-News-Wordpress-Theme/single-specials.php:83
 #: Mongabay-News-Wordpress-Theme/components/lib/shorts-dialog.php:38 Mongabay-News-Wordpress-Theme/functions.php:277
+#: Mongabay-News-Wordpress-Theme/functions.php:1023
 msgid "Load more"
 msgstr "Cargar más"
 
@@ -1114,7 +1115,7 @@ msgid "Help us tell impactful stories of biodiversity loss, climate change, and 
 msgstr "Ayúdanos a contar historias de impacto sobre biodiversidad, cambio climático y más"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:22
-#: Mongabay-News-Wordpress-Theme/components/lib/videos-latest.php:75
+#: Mongabay-News-Wordpress-Theme/components/lib/videos-latest.php:75 Mongabay-News-Wordpress-Theme/shorts-page.php:38
 msgid "Newsletter"
 msgstr "Newsletter"
 
@@ -1177,6 +1178,7 @@ msgid "podcasts"
 msgstr "podcasts"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:35 Mongabay-News-Wordpress-Theme/functions.php:234
+#: Mongabay-News-Wordpress-Theme/functions.php:1020
 msgid "specials"
 msgstr "especiales"
 
@@ -1190,6 +1192,7 @@ msgid "story"
 msgstr "articulo"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:46 Mongabay-News-Wordpress-Theme/functions.php:251
+#: Mongabay-News-Wordpress-Theme/functions.php:1020
 msgid "Shorts"
 msgstr "En corto"
 
@@ -1232,3 +1235,7 @@ msgstr "?s=&formats=post+custom_story+videos+podcasts+specials+short_article"
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:79
 msgid "https://www.mongabay.com/about/"
 msgstr "https://www.mongabay.com/about/"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:1022
+msgid "Loading..."
+msgstr "Cargando..."

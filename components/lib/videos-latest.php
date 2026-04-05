@@ -58,10 +58,10 @@ function videos_latest()
       <div class="banner gap--20 accent ph--20 pv--20">
         <div class="inner">
           <div class="title">
-            <h1 class="lh--tight">' . (get_enabled_features('donate') ? __('We’re a nonprofit', 'mongabay') : 'Free and Open') . '</h1>
+            <h1 class="lh--tight">' . (get_enabled_features('donate') ? __('We’re a nonprofit', 'mongabay') : __('Free and Open', 'mongabay')) . '</h1>
           </div>
             <div class="copy">' . __('Help us tell impactful stories of biodiversity loss, climate change, and more', 'mongabay') . '</div>
-          <a href="' . (get_enabled_features('donate') ? get_donate_link() : 'https://mongabay.org/about') . '" class="theme--button primary full-width">' . (get_enabled_features('donate') ? __('Donate', 'mongabay') : 'Learn more') . '<span class="icon icon-right"></span>
+          <a href="' . (get_enabled_features('donate') ? get_donate_link() : 'https://mongabay.org/about') . '" class="theme--button primary full-width">' . (get_enabled_features('donate') ? __('Donate', 'mongabay') : __('Learn more', 'mongabay')) . '<span class="icon icon-right"></span>
           </a>
         </div>
       </div>';
@@ -69,7 +69,7 @@ function videos_latest()
       <div class="banner gap--20 accent ph--20 pv--20">
         <div class="inner">
           <div class="title">
-            <h1>Subscribe</h1>
+            <h1>' . __('Subscribe', 'mongabay') . '</h1>
           </div>
             <div class="copy">' . __('Stay informed with news and inspiration from nature’s frontline.', 'mongabay') . '</div>
           <a href="' . get_subscribe_link_local(get_current_blog_id()) . '" class="theme--button primary full-width">' . __('Newsletter', 'mongabay') . '<span class="icon icon-right"></span>

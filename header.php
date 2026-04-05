@@ -119,7 +119,7 @@ if (wp_is_mobile()) {
 								<?php if (function_exists('get_donate_link') && get_enabled_features('donate')) { ?>
 									<li><a href="<?php echo get_menu_item('donate', 'url'); ?>"><?php _e('Donate', 'mongabay'); ?></a></li>
 								<?php } ?>
-								<?php if (function_exists('get_subscribe_link')) { ?>
+								<?php if (function_exists('get_subscribe_link_local')) { ?>
 									<li><a href="<?php echo get_subscribe_link_local(get_current_blog_id()); ?>"><?php _e('Subscribe page', 'mongabay'); ?></a></li>
 								<?php } ?>
 								<li><a href="<?php echo home_url() . '/' . get_menu_item('submissions', 'slug'); ?>"><?php _e('Submissions', 'mongabay'); ?></a></li>

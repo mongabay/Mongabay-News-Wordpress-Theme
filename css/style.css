@@ -2508,12 +2508,8 @@ input#featured[type="checkbox"] {
 }
 
 .single .article-cover-image > div {
-  min-height: 480px;
-  border-radius: var(--rounded);
-}
-
-.single .article-cover-image.cover-image-16-9 > div {
   min-height: 675px;
+  border-radius: var(--rounded);
 }
 
 .single .row > #main {
@@ -3420,10 +3416,6 @@ footer .grid--4 {
   }
 
   .single .article-cover-image > div {
-    min-height: 200px;
-  }
-
-  .single .article-cover-image.cover-image-16-9 > div {
     min-height: calc(100vw * 9 / 16);
   }
 
@@ -3552,6 +3544,12 @@ footer .grid--4 {
 
   .byline--info h1 {
     font-size: 2rem;
+  }
+
+  /* Subscribe form */
+  #step-2 .container.action-buttons {
+    flex-direction: row;
+    gap: var(--spacing-11);
   }
 
   /* Contact page */

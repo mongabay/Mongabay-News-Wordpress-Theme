@@ -20,7 +20,7 @@ if (function_exists('add_theme_support')) {
     add_image_size('large', 1200, 800, true); // Large Thumbnail
     add_image_size('wide', 1200); // Large No Crop Thumbnail
     add_image_size('medium', 768, 512, true); // Medium Thumbnail
-    add_image_size('cover-image-retina', 2400, 890, true); // Retina Cover Thumbnail
+    add_image_size('cover-image-large', 1800, 1012, true); // Large Cover Thumbnail
     add_image_size('thumbnail', 100, 100, true); // Small Thumbnail
     add_image_size('thumbnail-medium', 350, 233, true); // Medium Thumbnail
     load_theme_textdomain('mongabay', get_template_directory() . '/languages');
@@ -842,12 +842,9 @@ function onesignal_send_notification_filter($fields, $new_status, $old_status, $
 function mongabay_sanitize_json($data, $post, $context)
 {
     $data->data['content'] = preg_replace('/<noscript\b[>]*>(.*?)<\/noscript>/s', '', $data->data['content']);
-    //$data->data['content'] = preg_replace('/<p><\/p>/', '', $data->data['content']);
-    //$data->data['content'] = preg_replace('/<p> <\/p>/', '', $data->data['content']);
     $data->data['content'] = preg_replace('/<div class=\'container\'>\\n<div class=\'row justify-content-center\'>\\n<div id=\'main\' class=\'col-lg-8 single\'>\\n/s', '', $data->data['content']);
     $data->data['content'] = preg_replace('/<div class=\'clearfix\'><\/div>\\n/s', '', $data->data['content']);
     $data->data['content'] = preg_replace('/<\/div>\\n<\/div>\\n<\/div>\\n/s', '', $data->data['content']);
-    //$data->data['content'] = wp_kses($data->data['content'], $allowtags);
     $data->data['content'] = preg_replace('/\\n<div>\\n<div>\\n<ul class/s', '<ul class', $data->data['content']);
     $data->data['content'] = preg_replace('/\/>\\n<div>\\n<div>.*\w*<\/div>\\n<\/div>\\n<\/li>/', '/></li>', $data->data['content']);
     $data->data['content'] = preg_replace('/<!--.*\w*-->/', '', $data->data['content']);
@@ -977,7 +974,6 @@ function mongabay_disable_gutenberg($can_edit, $post)
     return false;
 }
 
-
 /* Register post tags for new post types */
 function mongabay_register_tags_cpts()
 {
@@ -1017,15 +1013,19 @@ function banner_shortcode($atts)
 // Ajaxed Pagination
 function mongabay_ajaxed_pagination()
 {
-    if (is_page('shorts') || is_singular('specials')) {
+    if (is_page(__('shorts', 'mongabay')) || is_singular(__('specials', 'mongabay'))) {
         wp_enqueue_script('ajax-pagination', get_template_directory_uri() . '/js/lib/ajaxed-pagination.js', array('jquery'), null, true);
         wp_localize_script('ajax-pagination', 'ajaxpagination', array(
             'ajaxurl' => admin_url('admin-ajax.php'),
             'noposts' => __('No older posts', 'mongabay'),
+            'i18n' => array(
+                'loading'  => __('Loading...', 'mongabay'),
+                'loadMore' => __('Load more', 'mongabay'),
+                'noPosts'  => __('No older posts', 'mongabay'),
+            ),
         ));
     }
 }
-
 
 function load_more_posts()
 {
@@ -1214,7 +1214,10 @@ function remove_fetchpriority_from_images($content)
  */
 function redirect_cpt_without_date()
 {
-    // Skip if it's a post, page, preview, or admin area
+    if (is_embed()) {
+        return; // Don't redirect if the content is being embedded
+    }
+
     if (is_singular() && !is_singular(['post', 'page']) && !is_preview() && !is_admin()) {
         global $wp_query, $post;
 
@@ -1248,6 +1251,7 @@ function redirect_cpt_without_date()
     }
 }
 add_action('template_redirect', 'redirect_cpt_without_date');
+
 
 /*------------------------------------*\
     Actions + Filters

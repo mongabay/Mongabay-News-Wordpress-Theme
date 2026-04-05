@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Template Name: Shorts Page
  *
@@ -17,7 +16,9 @@ $args = array(
   'post_status' => 'publish',
   'tax_query' => array(array(
     'taxonomy' => 'shorts_format',
-    'operator' => 'NOT EXISTS',
+    'field' => 'slug',
+    'operator' => 'NOT IN',
+    'terms' => array('audio', 'video'),
   )),
 );
 
@@ -28,20 +29,19 @@ $banner = '
 <div class="banner gap--20 ph--20 pv--20 outlined">
 <div class="inner">
   <div class="title">
-    <h1 class="lh--tight">Subscribe</h1>
+    <h1 class="lh--tight">'.__('Subscribe', 'mongabay').'</h1>
   </div>
   <div class="copy">
-    Stay informed with news and inspiration from nature’s frontline.
+    '.__('Stay informed with news and inspiration from nature’s frontline.', 'mongabay').'
   </div>
-  <a href="' . get_subscribe_link() . '" class="theme--button primary full-width">
-    Newsletter<span class="icon icon-right"></span>
+  <a href="' . get_subscribe_link_local(get_current_blog_id()) . '" class="theme--button primary full-width">
+    '.__('Newsletter', 'mongabay').'<span class="icon icon-right"></span>
   </a>
 </div>
 </div>';
 
 ?>
 <div class="container ph--40 pv--40 in-column">
-
   <?php if ($query->have_posts()) {
     while ($query->have_posts()) {
       $query->the_post();
