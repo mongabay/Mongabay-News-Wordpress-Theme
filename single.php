@@ -3,7 +3,7 @@
     <?php
     $post_id = get_the_ID();
     $img_url = wp_get_attachment_url(get_post_thumbnail_id());
-
+    $cover_image_16_9 = get_post_meta($post_id, 'cover_image_169', true);
     ?>
     <div class="container in-column ph--40">
         <div class="single">
@@ -11,7 +11,7 @@
             article_headline();
             ?>
             <?php if (!empty($img_url)) : ?>
-                <div class="article-cover-image">
+                <div class="article-cover-image <?php echo $cover_image_16_9 === '1' ? 'cover-image-16-9' : ''; ?>">
                     <?php
                     $thumb_url = get_the_post_thumbnail_url($post_id, wp_is_mobile() ? 'medium' : 'cover-image-large');
                     ?>

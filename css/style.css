@@ -2512,6 +2512,10 @@ input#featured[type="checkbox"] {
   border-radius: var(--rounded);
 }
 
+.single .article-cover-image.cover-image-16-9 > div {
+  min-height: 675px;
+}
+
 .single .row > #main {
   padding: 0 10%;
 }
@@ -3416,6 +3420,10 @@ footer .grid--4 {
   }
 
   .single .article-cover-image > div {
+    min-height: calc(100vw * 9 / 16);
+  }
+
+  .single .article-cover-image.cover-image-16-9 > div {
     min-height: calc(100vw * 9 / 16);
   }
 

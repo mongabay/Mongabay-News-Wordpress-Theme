@@ -422,7 +422,11 @@ msgstr "Enlace del artículo"
 msgid "Please set Featured Image. Article cannot be published without one."
 msgstr "Selecciona una imagen destacada. El artículo no se puede publicar sin ella."
 
+<<<<<<< HEAD
 #: Mongabay-News-Wordpress-Theme/functions.php:1024 Mongabay-News-Wordpress-Theme/functions.php:1025
+=======
+#: Mongabay-News-Wordpress-Theme/functions.php:1025
+>>>>>>> main
 msgid "No older posts"
 msgstr "No hay publicaciones antiguas"
 
@@ -1178,7 +1182,10 @@ msgid "podcasts"
 msgstr "podcasts"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:35 Mongabay-News-Wordpress-Theme/functions.php:234
+<<<<<<< HEAD
 #: Mongabay-News-Wordpress-Theme/functions.php:1020
+=======
+>>>>>>> main
 msgid "specials"
 msgstr "especiales"
 
@@ -1192,7 +1199,10 @@ msgid "story"
 msgstr "articulo"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:46 Mongabay-News-Wordpress-Theme/functions.php:251
+<<<<<<< HEAD
 #: Mongabay-News-Wordpress-Theme/functions.php:1020
+=======
+>>>>>>> main
 msgid "Shorts"
 msgstr "En corto"
 
