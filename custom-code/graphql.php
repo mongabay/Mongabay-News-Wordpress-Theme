@@ -1,4 +1,39 @@
 <?php
+// Allow CORS for GraphQL requests from Mongabay subdomains
+add_filter('graphql_response_headers_to_send', function ($headers) {
+  $origin = isset($_SERVER['HTTP_ORIGIN']) ? $_SERVER['HTTP_ORIGIN'] : '';
+
+  if (preg_match('/^https?:\/\/([a-z0-9-]+\.)?mongabay\.com$/', $origin)) {
+    $headers['Access-Control-Allow-Origin']  = $origin;
+    $headers['Access-Control-Allow-Methods'] = 'GET, POST, OPTIONS';
+    $headers['Access-Control-Allow-Headers'] = 'Content-Type, Authorization';
+    $headers['Access-Control-Allow-Credentials'] = 'true';
+  }
+
+  return $headers;
+});
+
+// Handle preflight OPTIONS requests for the GraphQL endpoint
+add_action('init', function () {
+  if (
+    isset($_SERVER['REQUEST_METHOD']) &&
+    $_SERVER['REQUEST_METHOD'] === 'OPTIONS' &&
+    strpos($_SERVER['REQUEST_URI'], '/graphql') !== false
+  ) {
+    $origin = isset($_SERVER['HTTP_ORIGIN']) ? $_SERVER['HTTP_ORIGIN'] : '';
+
+    if (preg_match('/^https?:\/\/([a-z0-9-]+\.)?mongabay\.com$/', $origin)) {
+      header('Access-Control-Allow-Origin: ' . $origin);
+      header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
+      header('Access-Control-Allow-Headers: Content-Type, Authorization');
+      header('Access-Control-Allow-Credentials: true');
+      header('Access-Control-Max-Age: 86400');
+      status_header(200);
+      exit;
+    }
+  }
+});
+
 add_action('graphql_register_types', function () {
   register_graphql_field('NodeWithContentEditor', 'unencodedContent', [
     'type' => 'String',

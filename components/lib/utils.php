@@ -147,7 +147,7 @@ function get_enabled_features($feature)
       'podcasts' => true,
       'videos' => true,
       'specials' => true,
-      'shorts' => false,
+      'shorts' => true,
       'donate' => true,
       'latest' => false,
     ),
@@ -184,7 +184,7 @@ function get_enabled_features($feature)
       'videos' => false,
       'specials' => false,
       'shorts' => false,
-      'donate' => true,
+      'donate' => false,
       'latest' => true,
     ),
     // Bengali
@@ -193,7 +193,7 @@ function get_enabled_features($feature)
       'videos' => false,
       'specials' => false,
       'shorts' => false,
-      'donate' => true,
+      'donate' => false,
       'latest' => true,
     ),
   );
@@ -269,6 +269,13 @@ function get_social_links($site_id)
         'facebook' => 'https://www.facebook.com/mongabayhindi/',
         'telegram' => 'https://t.me/s/mongabayindiaofficial/',
       );
+    case 37:
+      // Swahili
+      return array(
+        'linkedin' => 'https://www.linkedin.com/company/mongabay-swahili/',
+        'instagram' => 'https://www.instagram.com/mongabayswahili/',
+        'facebook' => 'https://www.facebook.com/mongabayswahili/',
+      );
     default:
       return array(
         'linkedin' => 'https://www.linkedin.com/company/mongabay.com/',
@@ -288,17 +295,29 @@ function get_subscribe_link_local($site_id)
   switch ($site_id) {
     case 20:
       // News
-      return 'https://mongabay.us14.list-manage.com/subscribe?u=80161fe385606408293ae0e51&id=940652e1f4';
+      return 'https://news.mongabay.com/newsletter-subscribe/';
     case 25:
       // Latam
-      return 'https://es.mongabay.com/boletin-de-noticias/';
+      return 'https://es.mongabay.com/newsletter-suscribete/';
+    case 26:
+      // French
+      return 'https://fr.mongabay.com/sabonner/';
     case 29:
       // Brazil
-      return 'https://mailchi.mp/mongabay/brasil-pagina-de-inscricaoo';
+      return 'https://brasil.mongabay.com/inscreva-se/';
     case 30:
       // India
-      return 'https://mongabay.us17.list-manage.com/subscribe?u=2dd04db80c7aee01e77033c9c&id=ac74ea7c07&mc_cid=4c25010d1b&mc_eid=561303a745';
+      return 'https://india.mongabay.com/subscribe/';
+    case 35:
+      // Hindi
+      return 'https://hindi.mongabay.com/सब्सक्राइब/';
+    case 37:
+      // Swahili
+      return 'https://swahili.mongabay.com/changia/';
+    case 38:
+      // Bengali
+      return 'https://bengali.mongabay.com/অনুদান-দিয়ে-আমাদের-পাশে/';
     default:
-      return 'https://mongabay.us14.list-manage.com/subscribe?u=80161fe385606408293ae0e51&id=940652e1f4';
+      return 'https://news.mongabay.com/newsletter-subscribe/';
   }
 }

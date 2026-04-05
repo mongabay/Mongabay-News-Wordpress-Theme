@@ -720,6 +720,7 @@ async function fetchArticles(fromStart = false) {
     selectedLocations,
   )},field:SLUG,operator:IN}`;
   const seriesQql = `{taxonomy:SERIAL,operator:EXISTS,field: SLUG}`;
+  const shortsExusionQql = `{taxonomy:SHORTSFORMAT,operator:NOT_EXISTS}`;
 
   const taxArray = [];
 

@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: _e;__\n"
 "X-Poedit-Basepath: .\n"
@@ -415,7 +415,7 @@ msgstr "Lien vers l’article"
 msgid "Please set Featured Image. Article cannot be published without one."
 msgstr "Merci d’inclure une photo. L’article ne peut être publié sans une image."
 
-#: Mongabay-News-Wordpress-Theme/functions.php:1025
+#: Mongabay-News-Wordpress-Theme/functions.php:1025 Mongabay-News-Wordpress-Theme/functions.php:1024
 msgid "No older posts"
 msgstr "Pas de publications"
 
@@ -525,7 +525,7 @@ msgid "Read full transcript"
 msgstr "Lire la transcription complète"
 
 #: Mongabay-News-Wordpress-Theme/single-specials.php:83 Mongabay-News-Wordpress-Theme/components/lib/shorts-dialog.php:38
-#: Mongabay-News-Wordpress-Theme/functions.php:277
+#: Mongabay-News-Wordpress-Theme/functions.php:277 Mongabay-News-Wordpress-Theme/functions.php:1023
 msgid "Load more"
 msgstr "Voir plus"
 
@@ -1074,7 +1074,7 @@ msgstr "Le plus récent"
 msgid " News"
 msgstr " Nouvelles"
 
-#: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:14
+#: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:14 Mongabay-News-Wordpress-Theme/shorts-page.php:32
 msgid "Subscribe"
 msgstr "S’abonner"
 
@@ -1083,7 +1083,7 @@ msgid "Free and open access to credible information"
 msgstr "Accès libre et gratuit à une information crédible"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:18
-#: Mongabay-News-Wordpress-Theme/components/lib/videos-latest.php:74
+#: Mongabay-News-Wordpress-Theme/components/lib/videos-latest.php:74 Mongabay-News-Wordpress-Theme/shorts-page.php:35
 msgid "Stay informed with news and inspiration from nature’s frontline."
 msgstr "Rester connectés à l’Information au plus proche de la Nature."
 
@@ -1102,7 +1102,7 @@ msgid "Help us tell impactful stories of biodiversity loss, climate change, and 
 msgstr "Aidez-nous à raconter des histoires percutantes sur la perte de biodiversité, le changement climatique et plus encore"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/banners/banner.php:22
-#: Mongabay-News-Wordpress-Theme/components/lib/videos-latest.php:75
+#: Mongabay-News-Wordpress-Theme/components/lib/videos-latest.php:75 Mongabay-News-Wordpress-Theme/shorts-page.php:38
 msgid "Newsletter"
 msgstr "Bulletin"
 
@@ -1165,6 +1165,7 @@ msgid "podcasts"
 msgstr "podcasts"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:35 Mongabay-News-Wordpress-Theme/functions.php:234
+#: Mongabay-News-Wordpress-Theme/functions.php:1020
 msgid "specials"
 msgstr "series-speciales"
 
@@ -1202,6 +1203,7 @@ msgid "Short News"
 msgstr "Infos brèves"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:47 Mongabay-News-Wordpress-Theme/components/lib/utils.php:63
+#: Mongabay-News-Wordpress-Theme/functions.php:1020
 msgid "shorts"
 msgstr "breves"
 
@@ -1220,3 +1222,7 @@ msgstr "?s=&formats=post+custom_story+videos+podcasts+specials+short_article"
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:79
 msgid "https://www.mongabay.com/about/"
 msgstr "https://www.mongabay.com/about/"
+
+#: Mongabay-News-Wordpress-Theme/functions.php:1022
+msgid "Loading..."
+msgstr "Chargement..."

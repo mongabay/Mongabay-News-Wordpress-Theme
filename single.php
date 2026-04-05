@@ -13,7 +13,7 @@
             <?php if (!empty($img_url)) : ?>
                 <div class="article-cover-image <?php echo $cover_image_16_9 === '1' ? 'cover-image-16-9' : ''; ?>">
                     <?php
-                    $thumb_url = get_the_post_thumbnail_url($post_id, wp_is_mobile() ? 'medium' : 'wide');
+                    $thumb_url = get_the_post_thumbnail_url($post_id, wp_is_mobile() ? 'medium' : 'cover-image-large');
                     ?>
                     <div style="background: url('<?php echo esc_url($thumb_url); ?>'); background-size: cover; background-position: center; width: 100%;"></div>
 
