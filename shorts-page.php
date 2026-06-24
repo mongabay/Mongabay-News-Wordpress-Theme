@@ -14,12 +14,12 @@ $args = array(
   'posts_per_page' => 8,
   'offset' => 0,
   'post_status' => 'publish',
-  'tax_query' => array(array(
-    'taxonomy' => 'shorts_format',
-    'field' => 'slug',
-    'operator' => 'NOT IN',
-    'terms' => array('audio', 'video'),
-  )),
+  // 'tax_query' => array(array(
+  //   'taxonomy' => 'shorts_format',
+  //   'field' => 'slug',
+  //   'operator' => 'NOT IN',
+  //   'terms' => array('audio', 'video'),
+  // )),
 );
 
 $query = new WP_Query($args);

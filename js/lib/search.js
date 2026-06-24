@@ -715,10 +715,10 @@ async function fetchArticles(fromStart = false) {
 
   const topicGql = `{taxonomy:TOPIC,terms:${JSON.stringify(
     selectedTopics,
-  )},field:SLUG,operator:IN}`;
+  )},field:SLUG,operator:IN,includeChildren:true}`;
   const locationGql = `{taxonomy:LOCATION,terms:${JSON.stringify(
     selectedLocations,
-  )},field:SLUG,operator:IN}`;
+  )},field:SLUG,operator:IN,includeChildren:true}`;
   const seriesQql = `{taxonomy:SERIAL,operator:EXISTS,field: SLUG}`;
   const shortsExusionQql = `{taxonomy:SHORTSFORMAT,operator:NOT_EXISTS}`;
 
@@ -862,8 +862,10 @@ async function fetchArticles(fromStart = false) {
     const hasTopics = selectedTopics.length > 0;
     const hasLocations = selectedLocations.length > 0;
 
-    resultsRSS.href = `${domain}/?feed=custom&s=${searchValue}&post_type=${
-      selectedFormats === "special" ? "post" : selectedFormats
+    resultsRSS.href = `${domain}/feed/?s=${searchValue}&type=${
+      selectedFormats === "special"
+        ? "post"
+        : selectedFormats.join(",").toLowerCase().replace(/_/g, "-")
     }${hasTopics ? `&topic=${selectedTopics.join(",")}` : ""}${
       hasLocations ? `&location=${selectedLocations.join(",")}` : ""
     }`;
@@ -913,10 +915,12 @@ async function fetchArticles(fromStart = false) {
     return;
   }
 
-  totalCount = data.contentNodes.pageInfo.total;
-  document.getElementById("results-total").textContent = `${totalCount} ${
-    totalCount > 1 ? storiesLocal : storyLocal
-  }`;
+  if (!data.contentNodes.pageInfo.hasPreviousPage) {
+    totalCount = data.contentNodes.pageInfo.total;
+    document.getElementById("results-total").textContent = `${totalCount} ${
+      totalCount > 1 ? storiesLocal : storyLocal
+    }`;
+  }
 
   noResults.classList.add("hide");
 

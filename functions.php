@@ -265,7 +265,7 @@ function mongabay_conditional_scripts()
             2 => array(__('South America', 'mongabay'), __('south-america', 'mongabay')),
             3 => array(__('Indonesia', 'mongabay'), __('indonesia', 'mongabay')),
             4 => array(__('Amazon', 'mongabay'), __('amazon', 'mongabay')),
-            5 => array(__('Congo', 'mongabay'), __('congo', 'mongabay')),
+            5 => array(__('Congo Basin', 'mongabay'), __('congo-basin', 'mongabay')),
         ));
         wp_localize_script('search-js', 'topicsDataLocal', array(
             0 => array(__('Animals', 'mongabay'), __('animals', 'mongabay')),
@@ -665,21 +665,21 @@ function mongabay_remove_custom_fields()
     }
 }
 
+
 // Prevent from aading new location tags
 function mongabay_prevent_terms($term, $taxonomy)
 {
     $current_site_id = get_current_blog_id();
     $exception_user_ids = array(1125, 1163);
-    if ('location' === $taxonomy && (!current_user_can('activate_plugins') || (!in_array(get_current_user_id(), $exception_user_ids) && $current_site_id === 35))) {
-        return new WP_Error('term_addition_blocked', __('You cannot add terms to this taxonomy'));
-    }
-
-    if ('topic' === $taxonomy && (!current_user_can('activate_plugins') || (!in_array(get_current_user_id(), $exception_user_ids) && $current_site_id === 35))) {
+    
+    if (in_array($taxonomy, array('post_tag', 'topic', 'location'), true) && (!current_user_can('activate_plugins') || (!in_array(get_current_user_id(), $exception_user_ids) && $current_site_id === 35))) {
         return new WP_Error('term_addition_blocked', __('You cannot add terms to this taxonomy'));
     }
 
     return $term;
 }
+
+
 
 // Stats pages dynamic sidebar
 if (function_exists('register_sidebar')) {
@@ -1252,6 +1252,13 @@ function redirect_cpt_without_date()
 }
 add_action('template_redirect', 'redirect_cpt_without_date');
 
+/**
+ * Tell Yoast SEO to treat all custom post types as Article schema,
+ * so the author node is included in yoast_head / yoast_head_json.
+ */
+add_filter('wpseo_schema_article_post_types', function (array $post_types): array {
+    return array_merge($post_types, array('videos', 'podcasts', 'short-article', 'custom-story', 'specials'));
+});
 
 /*------------------------------------*\
     Actions + Filters

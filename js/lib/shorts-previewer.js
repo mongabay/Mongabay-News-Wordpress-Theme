@@ -12,7 +12,7 @@ const shortsShare = document.querySelector("#shorts-share");
 
 function initPreviewDialog(postUrl, shareUrl, title, byline, date, content) {
   const dialogTitle = shortsDialog.querySelector(".dialog-body .title h2");
-  const dialogContent = shortsDialog.querySelector(".dialog-body .post-content p");
+  const dialogContent = shortsDialog.querySelector(".dialog-body .post-content .post-content-body");
   const dialogByline = shortsDialog.querySelector(".dialog-body .post-meta .byline");
   const dialogDate = shortsDialog.querySelector(".dialog-body .post-meta .date");
   const dialogArticleLink = shortsDialog.querySelector(".dialog-footer a.link");

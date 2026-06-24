@@ -28,7 +28,7 @@
 
                             <?php mongabay_sanitized_content($post_id); ?>
                             <div id="single-article-footer">
-
+                                <?php echo do_shortcode('[crossref_doi]'); ?>
                                 <?php article_credits($post_id); ?>
 
                                 <div id="single-article-tags">
