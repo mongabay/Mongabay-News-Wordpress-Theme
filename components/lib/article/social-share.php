@@ -109,7 +109,7 @@ function social_share()
         <span class="icon-share-copy"><?php echo $icon_copy; ?></span>
       </div>
     </div>
-
+  </dialog>
   <?php
   echo '<script>
     function openShareDialog(e) {

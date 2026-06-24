@@ -55,6 +55,11 @@ function article_headline()
         ?>
 
         <?php social_share(); ?>
+
+        <?php if ('success' === get_post_meta($post_id, '_crossref_status', true)) { ?>
+          <a href="#cite-article" class="theme--button simple secondary"><?php _e('Cite article', 'mongabay'); ?></a>
+        <?php } ?>
+        
       </div>
 
     </div>

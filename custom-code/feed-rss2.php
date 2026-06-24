@@ -82,6 +82,8 @@ do_action('rss_tag_pre', 'rss2');
 		$args = array(
 			'post_type' => $default_post_types,
 			'posts_per_page' => $per_page,
+			'orderby' => 'date',
+			'order' => 'DESC',
 			'pagination' => false,
 		);
 
@@ -113,8 +115,13 @@ do_action('rss_tag_pre', 'rss2');
 			);
 		};
 
-		if ($post_type && in_array($post_type, $default_post_types)) {
-			$args['post_type'] = $post_type;
+		if ($post_type) {
+			$post_types = array_filter(array_map('trim', explode(',', $post_type)));
+			$post_types = array_values(array_intersect($post_types, $default_post_types));
+
+			if (!empty($post_types)) {
+				$args['post_type'] = $post_types;
+			}
 		}
 
 		if ($page) {

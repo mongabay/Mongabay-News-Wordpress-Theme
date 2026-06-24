@@ -41,7 +41,6 @@
             initDialog();
           }
         } else {
-          console.log("No more posts");
           $(".load-more-button").html(noResultsButton);
           $(".load-more-button").addClass("disabled");
         }
