@@ -1,4 +1,13 @@
 <?php
+add_filter('query_vars', function ($vars) {
+    $vars[] = 'short';
+    return $vars;
+});
+
+add_filter('redirect_canonical', function ($redirect_url) {
+    return get_query_var('short') ? false : $redirect_url;
+});
+
 //add_action('init', 'custom_author_base');
 function custom_author_base()
 {
@@ -10,6 +19,15 @@ function custom_author_base()
 add_action('init', 'add_rewrite_url');
 function add_rewrite_url()
 {
+    $shorts_page = get_page_by_path(sanitize_title(__('shorts', 'mongabay')));
+    if ($shorts_page) {
+        add_rewrite_rule(
+            '^' . preg_quote($shorts_page->post_name, '/') . '/([^/]+)/?$',
+            'index.php?page_id=' . (int) $shorts_page->ID . '&short=$matches[1]',
+            'top'
+        );
+    }
+
     // add_rewrite_rule(
     //     '^list/([^/]+)/?$',
     //     'index.php?location=$matches[1]',
@@ -23,12 +41,14 @@ function add_rewrite_url()
     // );
     //pagination
     add_rewrite_rule('^list/([^/]*)/page/([0-9]{1,})/?$', 'index.php?section=list&nc1=$matches[1]&paged=$matches[2]', "top");
+    add_rewrite_rule('^list/([^/]*)/([^/]*)/([^/]*)/page/([0-9]{1,})/?$', 'index.php?section=list&nc1=$matches[1]&nc2=$matches[2]&nc3=$matches[3]&paged=$matches[4]', "top");
     add_rewrite_rule('^list/([^/]*)/([^/]*)/page/([0-9]{1,})/?$', 'index.php?section=list&nc1=$matches[1]&nc2=$matches[2]&paged=$matches[3]', "top");
 
     //custom taxonomies
     add_rewrite_rule('^by/([^/]*)/?$', 'byline=$matches[1]', 'top');
     //add_rewrite_rule( '^series/([^/]*)/?$', 'index.php?section=series&nc1=$matches[1]', 'top' );
     add_rewrite_rule('^topic/([^/]*)/?$', 'index.php?section=list&nc1=$matches[1]', 'top');
+    add_rewrite_rule('^list/([^/]*)/([^/]*)/([^/]*)/?$', 'index.php?section=list&nc1=$matches[1]&nc2=$matches[2]&nc3=$matches[3]', 'top');
     add_rewrite_rule('^list/([^/]*)/([^/]*)/?$', 'index.php?section=list&nc1=$matches[1]&nc2=$matches[2]', 'top');
     add_rewrite_rule('^list/([^/]*)/?$', 'index.php?section=list&nc1=$matches[1]', 'top');
     add_rewrite_rule('^wildtech/([0-9]{4})/([0-9]{1,2})/([^/]*)/?$', 'index.php?year=$matches[1]&monthnum=$matches[2]&name=$matches[3]', 'top');

@@ -104,31 +104,3 @@ function mongabay_ms_clarity()
 	<?php
 	}
 }
-
-
-// Clicky integration
-add_action('wp_body_open', 'mongabay_clicky');
-
-function mongabay_clicky()
-{
-	$site_id = get_current_blog_id();
-	$clicky_ids = array(
-		20 => '101412303',
-		25 => '101413170',
-		26 => '101413174',
-		29 => '101413173',
-		30 => '101413171',
-		35 => '101413172',
-	);
-
-	$site_clicky_id = $clicky_ids[$site_id] ?? '101412303';
-
-	if ($site_clicky_id) {
-	?>
-		<script async data-id="<?php echo $site_clicky_id; ?>" src="//static.getclicky.com/js"></script>
-		<noscript>
-			<p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/<?php echo $site_clicky_id; ?>ns.gif" /></p>
-		</noscript>
-<?php
-	}
-}

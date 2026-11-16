@@ -81,12 +81,10 @@ $byline_avatar = get_term_meta($byline_id, 'cover_image_url', true);
           <a href="<?php echo home_url() ?>/feed/?post_type=post&byline=<?php echo $title; ?>" target="_blank" id="results-rss" class="theme--button primary simple">RSS</a>
           <div id="results-total"><?php echo $total; ?> <?php _e($total > 1 ? 'stories' : 'story', 'mongabay'); ?></div>
         </div>
-        <?php if (!wp_is_mobile()) { ?>
-          <div id="results-view-toggles">
-            <button id="list-view">L</button>
-            <button id="grid-view" class="active">G</button>
-          </div>
-        <?php } ?>
+        <div id="results-view-toggles" class="md-hide">
+          <button id="list-view">L</button>
+          <button id="grid-view" class="active">G</button>
+        </div>
       </div>
       <div id="post-results" class="container grid--4 gap--20 grid-view">
         <?php
@@ -98,24 +96,17 @@ $byline_avatar = get_term_meta($byline_id, 'cover_image_url', true);
             <a href="<?php the_permalink(); ?>">
               <?php if (has_post_thumbnail()) { ?>
                 <div class="featured-image">
-                  <?php echo !wp_is_mobile() ? get_icon(get_the_ID()) : ''; ?>
+                  <?php echo get_icon(get_the_ID()); ?>
                   <?php the_post_thumbnail('medium') ?>
                 </div>
               <?php }; ?>
-              <?php if (wp_is_mobile()) { ?>
-                <div class="wrapper">
-                <?php } ?>
-                <div class="title headline pv--8">
-                  <h3><?php the_title(); ?></h3>
-                </div>
-                <div class="post-meta pv--8">
-                  <?php echo wp_is_mobile() ? get_icon(get_the_ID()) : ''; ?>
-                  <span class="byline"><?php echo getPostBylines(get_the_ID()); ?></span>
-                  <span class="date"><?php the_time('j M Y'); ?></span>
-                </div>
-                <?php if (wp_is_mobile()) { ?>
-                </div>
-              <?php } ?>
+              <div class="title headline pv--8">
+                <h3><?php the_title(); ?></h3>
+              </div>
+              <div class="post-meta pv--8">
+                <span class="byline"><?php echo getPostBylines(get_the_ID()); ?></span>
+                <span class="date"><?php the_time('j M Y'); ?></span>
+              </div>
             </a>
           </div>
         <?php endwhile; ?>
@@ -149,4 +140,5 @@ $byline_avatar = get_term_meta($byline_id, 'cover_image_url', true);
   ?>
 </div>
 <?php inspiration_banner(); ?>
+<?php app_banner(1); ?>
 <?php get_footer(); ?>

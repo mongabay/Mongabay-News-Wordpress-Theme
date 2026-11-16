@@ -26,12 +26,12 @@ function articles_listing_condensed(
     );
   }
 
-  $tax_query[] = array(
-    'taxonomy' => 'shorts_format',
-    'operator' => 'NOT EXISTS',
-  );
+  // $tax_query[] = array(
+  //   'taxonomy' => 'shorts_format',
+  //   'operator' => 'NOT EXISTS',
+  // );
 
-  $args['tax_query'] = $tax_query;
+  // $args['tax_query'] = $tax_query;
 
   $query = new WP_Query($args);
   $counter = 0;
@@ -41,7 +41,7 @@ function articles_listing_condensed(
       $query->the_post();
 ?>
       <?php if ($post_type === 'short-article') {
-        shorts_article_card(get_the_ID(), false, '', $counter, true);
+        shorts_article_card(get_the_ID(), false, '', $counter, get_the_terms(get_the_ID(), 'shorts_format')[0]->slug ?? '');
       } else { ?>
         <div class="article--container gap--16 rounded">
           <a href="<?php the_permalink(); ?>">
@@ -64,9 +64,9 @@ function articles_listing_condensed(
 <?php }
     wp_reset_postdata();
 
-    if ($post_type === 'short-article') {
-      get_shorts_dialog();
-    }
+    // if ($post_type === 'short-article') {
+    //   get_shorts_dialog();
+    // }
   } else {
     esc_html_e('Sorry, no posts matched your criteria.');
   }

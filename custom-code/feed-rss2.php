@@ -15,6 +15,7 @@ $topic = get_query_var('topic');
 $per_page = get_query_var('show');
 $page = get_query_var('page');
 $search = get_query_var('s');
+$shorts_format = get_query_var('shorts_format');
 
 echo '<?xml version="1.0" encoding="' . get_option('blog_charset') . '"?' . '>';
 
@@ -87,16 +88,11 @@ do_action('rss_tag_pre', 'rss2');
 			'pagination' => false,
 		);
 
-		if ($location || $topic) {
-			if ($location && $topic) {
-				$args['tax_query'] = array(
-					'relation' => 'AND',
-				);
-			} else {
-				$args['tax_query'] = array(
-					'relation' => 'OR',
-				);
-			}
+		if ($location || $topic || $shorts_format) {
+			$has_multiple = (($location ? 1 : 0) + ($topic ? 1 : 0) + ($shorts_format ? 1 : 0)) > 1;
+			$args['tax_query'] = array(
+				'relation' => $has_multiple ? 'AND' : 'OR',
+			);
 		}
 
 		if ($location) {
@@ -115,14 +111,51 @@ do_action('rss_tag_pre', 'rss2');
 			);
 		};
 
+		// Process post types before applying shorts_format filter
+		$selected_post_types = $default_post_types;
 		if ($post_type) {
 			$post_types = array_filter(array_map('trim', explode(',', $post_type)));
 			$post_types = array_values(array_intersect($post_types, $default_post_types));
 
 			if (!empty($post_types)) {
+				$selected_post_types = $post_types;
 				$args['post_type'] = $post_types;
 			}
 		}
+
+		// IMPORTANT LIMITATION: Taxonomy filters in tax_query apply to ALL post types.
+		// When mixing shorts with other post types (post, custom-story, etc.), we CANNOT use
+		// the shorts_format taxonomy filter because it would exclude those other post types.
+		//
+		// UI Solution: The search page format dropdown prevents mixing by disabling incompatible
+		// options, so this scenario shouldn't occur. However, direct RSS URL access could still
+		// trigger this case.
+		//
+		// Current behavior:
+		// - Selecting ONLY short-article: Taxonomy filter applied (except for 'content')
+		// - Mixing shorts + other types: Not supported via UI, falls back to all shorts
+		
+		if ($shorts_format) {
+			$shorts_formats = array_filter(array_map('trim', explode(',', $shorts_format)));
+			if (!empty($shorts_formats)) {
+				$has_content = in_array('content', $shorts_formats);
+				// Check if other post types besides short-article are selected
+				$other_post_types = array_diff($selected_post_types, array('short-article'));
+				$has_other_types = !empty($other_post_types);
+				
+				// Only add taxonomy filter if:
+				// 1. Content is NOT selected (untagged shorts need no filter), AND
+				// 2. ONLY short-article is selected (taxonomy filter would exclude other types)
+				if (!$has_content && !$has_other_types) {
+					// Only audio/video shorts selected - use taxonomy filter
+					$args['tax_query'][] = array(
+						'taxonomy' => 'shorts_format',
+						'field' => 'slug',
+						'terms' => $shorts_formats,
+					);
+				}
+			}
+		};
 
 		if ($page) {
 			$args['paged'] = $page;

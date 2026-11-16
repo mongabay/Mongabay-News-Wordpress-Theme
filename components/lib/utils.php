@@ -106,13 +106,13 @@ function get_menu_item($key, $option)
       'title' => __('Donate', 'mongabay'),
       'url' => __('https://mongabay.org/donate', 'mongabay')
     ),
-    'contact' => array(
-      'title' => __('Contact', 'mongabay'),
-      'url' => __('https://news.mongabay.com/contact/', 'mongabay')
-    ),
     'editorial' => array(
       'title' => __('Editorial standards', 'mongabay'),
       'url' => __('https://mongabay.org/about/editorial-standards/', 'mongabay')
+    ),
+    'explore' => array(
+      'title' => __('Explore', 'mongabay'),
+      'slug' => __('explore', 'mongabay')
     ),
   );
 
@@ -156,7 +156,7 @@ function get_enabled_features($feature)
       'podcasts' => false,
       'videos' => true,
       'specials' => true,
-      'shorts' => false,
+      'shorts' => true,
       'donate' => true,
       'latest' => false,
     ),
@@ -192,7 +192,7 @@ function get_enabled_features($feature)
       'podcasts' => false,
       'videos' => false,
       'specials' => false,
-      'shorts' => false,
+      'shorts' => true,
       'donate' => false,
       'latest' => true,
     ),
@@ -240,7 +240,7 @@ function get_social_links($site_id)
     case 29:
       // Brazil
       return array(
-        'linkedin' => 'https://www.linkedin.com/company/mongabay-brasil/',
+        'linkedin' => 'https://www.linkedin.com/in/mongabay-brasil/',
         'instagram' => 'https://www.instagram.com/mongabaybrasil/',
         'youtube' => 'https://www.youtube.com/@MongabayBrasil',
         'x' => 'https://x.com/mongabay_brasil/',

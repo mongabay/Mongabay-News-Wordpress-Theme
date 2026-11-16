@@ -99,7 +99,7 @@ msgstr "Beschreibung für diesen Widget-Bereich…"
 msgid "Widget Area 2"
 msgstr "Widget-Bereich 2"
 
-#: ../functions.php:258
+#: ../functions.php:275
 msgid "View Article"
 msgstr "Artikel ansehen"
 
@@ -145,7 +145,7 @@ msgstr "HTML5 Blank Custom Post bearbeiten"
 msgid "New HTML5 Blank Custom Post"
 msgstr "Neuer HTML5 Blank Custom Post"
 
-#: ../functions.php:418 ../functions.php:419
+#: ../functions.php:418 ../functions.php:436
 msgid "View HTML5 Blank Custom Post"
 msgstr "HTML5 Blank Custom Post ansehen"
 

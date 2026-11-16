@@ -1,0 +1,239 @@
+.mongabay-mega-menu-admin {
+  max-width: 1100px;
+}
+
+.mongabay-mega-menu-tools {
+  margin: 20px 0;
+  padding: 16px 20px;
+  border: 1px solid #c3c4c7;
+  background: #fff;
+}
+
+.mongabay-mega-menu-tools h2 {
+  margin-top: 0;
+}
+
+.mongabay-mega-menu-tools-actions {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mongabay-mega-menu-tools-actions form {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 0;
+}
+
+.mongabay-mega-menu-tools-actions label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-weight: 600;
+}
+
+.mongabay-mega-menu-tools-actions input[type="file"] {
+  max-width: 100%;
+  font-weight: 400;
+}
+
+.mongabay-mega-menu-tools-actions .button {
+  flex: 0 0 auto;
+  margin: 0 0 1px;
+}
+
+.mongabay-mega-menu-editor-item {
+  margin: 14px 0;
+  padding: 16px;
+  border: 1px solid #c3c4c7;
+  border-left: 4px solid #00856f;
+  background: #fff;
+}
+
+.mongabay-mega-menu-editor-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.mongabay-mega-menu-editor-heading strong {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mongabay-mega-menu-editor-icon-button {
+  display: inline-grid !important;
+  box-sizing: border-box;
+  width: 32px;
+  height: 32px;
+  min-height: 32px !important;
+  place-items: center;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 4px !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: #50575e;
+  line-height: 0;
+  outline: none;
+}
+
+.mongabay-mega-menu-editor-icon-button:hover {
+  border: 0 !important;
+  background: #f0f0f1 !important;
+  color: #1d2327;
+}
+
+.mongabay-mega-menu-editor-icon-button:focus {
+  border: 0 !important;
+  box-shadow: none !important;
+  outline: none;
+}
+
+.mongabay-mega-menu-editor-icon-button:focus-visible {
+  outline: 2px solid #2271b1;
+  outline-offset: 2px;
+}
+
+.mongabay-mega-menu-editor-icon-button .dashicons {
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  line-height: 20px;
+  text-align: center;
+}
+
+.mongabay-mega-menu-editor-icon-button .dashicons::before {
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  padding: 0;
+  line-height: 20px;
+}
+
+.mongabay-mega-menu-editor-icon-button.is-destructive {
+  color: #b32d2e;
+}
+
+.mongabay-mega-menu-editor-icon-button.is-destructive:hover,
+.mongabay-mega-menu-editor-icon-button.is-destructive:focus-visible {
+  color: #8a2424;
+}
+
+.mongabay-mega-menu-editor-item:not(.is-top-level) > .mongabay-mega-menu-editor-heading {
+  display: none;
+}
+
+.mongabay-mega-menu-editor-item.is-collapsed > .mongabay-mega-menu-editor-fields,
+.mongabay-mega-menu-editor-item.is-collapsed > .mongabay-mega-menu-editor-children {
+  display: none;
+}
+
+.mongabay-mega-menu-editor-item.is-collapsed > .mongabay-mega-menu-editor-heading {
+  margin-bottom: 0;
+}
+
+.mongabay-mega-menu-editor-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 16px;
+}
+
+.mongabay-mega-menu-editor-fields label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-weight: 600;
+}
+
+.mongabay-mega-menu-editor-fields input,
+.mongabay-mega-menu-editor-fields textarea,
+.mongabay-mega-menu-editor-fields select {
+  width: 100%;
+  max-width: none;
+  font-weight: 400;
+}
+
+.mongabay-mega-menu-editor-fields input[type="checkbox"] {
+  width: auto;
+  margin: 4px 0 0;
+}
+
+.mongabay-mega-menu-editor-image-field {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.mongabay-mega-menu-editor-image-label {
+  font-weight: 600;
+}
+
+.mongabay-mega-menu-editor-image-field input {
+  width: 100%;
+}
+
+.mongabay-mega-menu-editor-image-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.mongabay-mega-menu-editor-image-preview {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: 180px;
+  object-fit: contain;
+}
+
+.mongabay-mega-menu-editor-title-toggle {
+  align-items: flex-start;
+}
+
+.mongabay-mega-menu-editor-item.is-title-mode > .mongabay-mega-menu-editor-fields > [data-title-incompatible] {
+  display: none;
+}
+
+.mongabay-mega-menu-editor-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  grid-column: 1 / -1;
+}
+
+.mongabay-mega-menu-editor-children {
+  margin: 8px 0 0 20px;
+  padding-left: 16px;
+  border-left: 2px solid #dcdcde;
+}
+
+@media (max-width: 782px) {
+  .mongabay-mega-menu-editor-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .mongabay-mega-menu-tools-actions form {
+    align-items: flex-start;
+  }
+
+  .mongabay-mega-menu-tools-actions form label {
+    max-width: 100%;
+  }
+
+  .mongabay-mega-menu-tools-actions .button {
+    align-self: flex-start;
+  }
+}

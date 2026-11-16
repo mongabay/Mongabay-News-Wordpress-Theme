@@ -99,7 +99,7 @@ msgstr "A widhet rész leírása..."
 msgid "Widget Area 2"
 msgstr "Widget rész 2"
 
-#: ../functions.php:258
+#: ../functions.php:275
 msgid "View Article"
 msgstr "Tartalom Megtekintése"
 
@@ -145,7 +145,7 @@ msgstr "HTML5 Blank egyedi tartalom szerkesztése"
 msgid "New HTML5 Blank Custom Post"
 msgstr "Új HTML5 Blank egyedi tartalom"
 
-#: ../functions.php:418 ../functions.php:419
+#: ../functions.php:418 ../functions.php:436
 msgid "View HTML5 Blank Custom Post"
 msgstr "HTML5 Blank egyedi tartalom megtekintése"
 

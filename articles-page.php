@@ -53,5 +53,5 @@ get_header(); ?>
 </div>
 <?php endif; ?>
 <?php inspiration_banner(); ?>
-
+<?php app_banner(1); ?>
 <?php get_footer(); ?>

@@ -6,6 +6,45 @@ function mongabay_meta()
 {
 
 	global $post;
+	$short_identifier = sanitize_title((string) get_query_var('short'));
+	$shared_short = '';
+	if ($short_identifier !== '') {
+		$shared_short = ctype_digit($short_identifier)
+			? get_post(absint($short_identifier))
+			: get_page_by_path($short_identifier, OBJECT, 'short-article');
+	}
+
+	if ($shared_short instanceof WP_Post && $shared_short->post_type === 'short-article' && $shared_short->post_status === 'publish') {
+		$title = get_the_title($shared_short);
+		$description = wp_strip_all_tags(get_the_excerpt($shared_short));
+		if ($description === '') {
+			$description = wp_trim_words(wp_strip_all_tags($shared_short->post_content), 30, '...');
+		}
+		$thumbnail_url = get_the_post_thumbnail_url($shared_short, 'large');
+		$shorts_page = get_page_by_path(sanitize_title(__('shorts', 'mongabay')));
+		$shorts_url = $shorts_page ? get_permalink($shorts_page) : home_url('/shorts/');
+		$share_url = trailingslashit($shorts_url) . rawurlencode($shared_short->post_name) . '/';
+
+		echo '<link rel="canonical" href="' . esc_url($share_url) . '" />' . "\n";
+		echo '<meta name="description" content="' . esc_attr($description) . '" />' . "\n";
+		echo '<meta property="og:title" content="' . esc_attr($title) . '" />' . "\n";
+		echo '<meta property="og:site_name" content="Mongabay Environmental News" />' . "\n";
+		echo '<meta property="og:url" content="' . esc_url($share_url) . '" />' . "\n";
+		echo '<meta property="og:type" content="article" />' . "\n";
+		echo '<meta property="og:description" content="' . esc_attr($description) . '" />' . "\n";
+		echo '<meta name="twitter:card" content="summary_large_image" />' . "\n";
+		echo '<meta name="twitter:site" content="@mongabay" />' . "\n";
+		echo '<meta name="twitter:title" content="' . esc_attr($title) . '" />' . "\n";
+		echo '<meta name="twitter:description" content="' . esc_attr($description) . '" />' . "\n";
+
+		if ($thumbnail_url) {
+			echo '<meta property="og:image" content="' . esc_url($thumbnail_url) . '" />' . "\n";
+			echo '<meta name="twitter:image" content="' . esc_url($thumbnail_url) . '" />' . "\n";
+		}
+
+		return;
+	}
+
 	// article
 	if (is_single() && !is_front_page() && !is_home()) {
 

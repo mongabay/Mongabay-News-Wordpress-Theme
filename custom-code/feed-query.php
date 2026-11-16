@@ -12,6 +12,7 @@ function mongabay_feeds_query_vars($vars)
 	$vars[] = 'topic';
 	$vars[] = 'page';
 	$vars[] = 's';
+	$vars[] = 'shorts_format';
 
 	return $vars;
 }

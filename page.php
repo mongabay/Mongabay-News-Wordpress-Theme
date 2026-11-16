@@ -18,6 +18,7 @@
 		<?php endif; ?>
 	</div>
 	<?php inspiration_banner(); ?>
+	<?php app_banner(1); ?>
 	<!-- /main -->
 </main>
 

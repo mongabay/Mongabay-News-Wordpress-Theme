@@ -30,5 +30,5 @@ specials_slider('Special Issues connect the dots between stories', array(), 'tex
 <?php tools_slider(); ?>
 
 <?php inspiration_banner(); ?>
-
+<?php app_banner(1); ?>
 <?php get_footer(); ?>

@@ -100,15 +100,15 @@ msgstr "Menú de la barra lateral"
 msgid "Extra Menu"
 msgstr "Menú extra"
 
-#: ../functions.php:257
+#: ../functions.php:274
 msgid "Widget Area 1"
 msgstr "Zona 1 de widgets"
 
-#: ../functions.php:258 ../functions.php:269
+#: ../functions.php:275 ../functions.php:269
 msgid "Description for this widget-area..."
 msgstr "Descripción para esta zona..."
 
-#: ../functions.php:268
+#: ../functions.php:285
 msgid "Widget Area 2"
 msgstr "Zona 2 de widgets"
 

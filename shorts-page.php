@@ -49,13 +49,13 @@ $banner = '
 
       shorts_grid($post_counter, $banner);
     }
-    get_shorts_dialog(true);
   } else {
     _e('No short articles found', 'mongabay');
   }
+  get_shorts_dialog(true);
   ?>
 </div>
 
 <?php inspiration_banner(); ?>
-
+<?php app_banner(1); ?>
 <?php get_footer(); ?>

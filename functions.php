@@ -73,65 +73,82 @@ function mongabay_subdomain_name()
 }
 
 // Main WP_query modifier to process multiple vars
+function mongabay_get_list_term($slug)
+{
+    if (!is_string($slug) || $slug === '') {
+        return null;
+    }
+
+    foreach (array('topic', 'location') as $taxonomy) {
+        $term = get_term_by('slug', $slug, $taxonomy);
+        if ($term && !is_wp_error($term)) {
+            return $term;
+        }
+    }
+
+    return null;
+}
+
 function mongabay_mega_query($query)
 {
     if ($query->is_home() && $query->is_main_query() && !is_admin()) {
         $home_url = esc_url(home_url('/'));
         $section = get_query_var('section');
-        $firstvar = get_query_var('nc1');
-        $secondvar = get_query_var('nc2');
+        $term_slugs = array(
+            get_query_var('nc1'),
+            get_query_var('nc2'),
+            get_query_var('nc3'),
+        );
+        $term_slugs = array_values(array_filter($term_slugs, function ($slug) {
+            return is_string($slug) && $slug !== '';
+        }));
 
         if ($section == 'moved') {
-            $moved_query = array('post_type' => 'post', 'posts_per_page' => 1, 'offset' => 0, array('key' => 'mongabay_post_legacy_url', 'value' => $secondvar, 'compare' => '='));
+            $moved_query = array('post_type' => 'post', 'posts_per_page' => 1, 'offset' => 0, array('key' => 'mongabay_post_legacy_url', 'value' => get_query_var('nc2'), 'compare' => '='));
             $query->set('meta_query', $moved_query);
         }
-        if ($section == 'list' && empty($firstvar)) {
+        if ($section == 'list' && empty($term_slugs[0])) {
             wp_redirect($home_url);
             exit;
         }
 
-        if ($section == 'list' && !empty($firstvar) && empty($secondvar)) {
+        if ($section === 'list' && $term_slugs[0] !== 'specials') {
+            $tax_query = array('relation' => 'AND');
+            $terms = array();
 
-            $item1 = get_terms(array('topic', 'location'), array('slug' => $firstvar));
-
-            if (empty($item1)) return;
-
-            $tax_query = array(
-                array(
-                    'taxonomy' => $item1[0]->taxonomy,
+            foreach ($term_slugs as $slug) {
+                $term = mongabay_get_list_term($slug);
+                if (!$term) {
+                    $terms = array();
+                    break;
+                }
+                $terms[] = $term;
+                $tax_query[] = array(
+                    'taxonomy' => $term->taxonomy,
                     'field' => 'slug',
-                    'terms' => $item1[0]->slug
-                )
-            );
-            $query->set('tax_query', $tax_query);
+                    'terms' => $term->slug,
+                );
+            }
+
             $query->set('post_type', array('post', 'custom-story', 'videos', 'podcasts', 'short-article', 'specials'));
-        }
-
-        if ($section === 'list' && !empty($firstvar) && !empty($secondvar) && $firstvar !== 'specials') {
-
-            $item1 = get_terms(array('topic', 'location'), array('slug' => $firstvar));
-            $item2 = get_terms(array('topic', 'location'), array('slug' => $secondvar));
-
-            $tax_query = array(
-                'relation' => 'AND',
-                array(
-                    'taxonomy' => $item1[0]->taxonomy,
-                    'field' => 'slug',
-                    'terms' => $item1[0]->slug
-                ),
-
-                array(
-                    'taxonomy' => $item2[0]->taxonomy,
-                    'field' => 'slug',
-                    'terms' => $item2[0]->slug
-                )
-            );
-
-            $query->set('tax_query', $tax_query);
-            $query->set('post_type', array('post', 'custom-story', 'videos', 'podcasts', 'short-article', 'specials'));
-            if ($item1[0]->taxonomy == 'location' && $item2[0]->taxonomy == 'topic') {
-                wp_redirect($home_url . 'list/' . $secondvar . '/' . $firstvar);
-                exit;
+            $query->set('posts_per_page', 20);
+            if (count($terms) === count($term_slugs)) {
+                if (
+                    count($terms) === 2
+                    && $terms[0]->taxonomy === 'location'
+                    && $terms[1]->taxonomy === 'topic'
+                ) {
+                    $redirect_url = home_url('/list/' . $terms[1]->slug . '/' . $terms[0]->slug . '/');
+                    $paged = (int) $query->get('paged');
+                    if ($paged > 1) {
+                        $redirect_url = trailingslashit($redirect_url . 'page/' . $paged);
+                    }
+                    wp_safe_redirect($redirect_url);
+                    exit;
+                }
+                $query->set('tax_query', $tax_query);
+            } else {
+                $query->set('post__in', array(0));
             }
         }
     }
@@ -224,6 +241,46 @@ function mongabay_header_scripts()
 // Load conditional scripts
 function mongabay_conditional_scripts()
 {
+    if (get_query_var('section') === 'list' || is_tax(array('topic', 'location'))) {
+        $listing_filters_path = get_stylesheet_directory() . '/js/lib/listing-filters.js';
+        wp_enqueue_script(
+            'mongabay-listing-filters',
+            get_stylesheet_directory_uri() . '/js/lib/listing-filters.js',
+            array(),
+            file_exists($listing_filters_path) ? filemtime($listing_filters_path) : '1.0.0',
+            true
+        );
+        $filter_defaults = array(
+            'topic' => array(
+                array(__('Animals', 'mongabay'), __('animals', 'mongabay')),
+                array(__('Forests', 'mongabay'), __('forests', 'mongabay')),
+                array(__('Oceans', 'mongabay'), __('oceans', 'mongabay')),
+                array(__('Conservation', 'mongabay'), __('conservation', 'mongabay')),
+                array(__('Indigenous Peoples', 'mongabay'), __('indigenous-peoples', 'mongabay')),
+            ),
+            'location' => array(
+                array(__('Asia', 'mongabay'), __('asia', 'mongabay')),
+                array(__('Africa', 'mongabay'), __('africa', 'mongabay')),
+                array(__('South America', 'mongabay'), __('south-america', 'mongabay')),
+                array(__('Indonesia', 'mongabay'), __('indonesia', 'mongabay')),
+                array(__('Amazon', 'mongabay'), __('amazon', 'mongabay')),
+                array(__('Congo Basin', 'mongabay'), __('congo-basin', 'mongabay')),
+            ),
+        );
+        wp_localize_script('mongabay-listing-filters', 'listingFilterConfigLocal', array(
+            'graphqlUrl' => esc_url_raw(home_url('/graphql')),
+            'defaults' => $filter_defaults,
+            'labels' => array(
+                'topic' => __('Topic', 'mongabay'),
+                'location' => __('Location', 'mongabay'),
+                'addFilter' => __('Add a topic or location', 'mongabay'),
+                'removeFilter' => __('Remove %s filter', 'mongabay'),
+                'noResults' => __('No matching topics or locations found.', 'mongabay'),
+                'searchError' => __('Could not load suggestions. Please try again.', 'mongabay'),
+            ),
+        ));
+    }
+
     if (mongabay_layout() == 'container-fluid') {
         wp_register_script('parallax', get_template_directory_uri() . '/js/lib/parallax.min.js', array(), '1.4.2', true);
         wp_enqueue_script('parallax');
@@ -240,15 +297,32 @@ function mongabay_conditional_scripts()
         wp_enqueue_script('slick');
         wp_register_script('slick-init', get_template_directory_uri() . '/js/slick-init.js', array(), '1.0.0', true);
         wp_enqueue_script('slick-init');
+
+        // Masonry for shorts layout
+        wp_register_script('masonry-lib', get_stylesheet_directory_uri() . '/js/lib/masonry-grid-vanilla.js', array(), '1.1.0', true);
+        wp_enqueue_script('masonry-lib');
+        wp_register_script('masonry-init', get_template_directory_uri() . '/js/lib/masonry-init.js', array('masonry-lib'), '1.0.0', true);
+        wp_enqueue_script('masonry-init');
+
+        // Short videos horizontal scroll loading
+        wp_register_script('short-videos-scroll', get_template_directory_uri() . '/js/lib/short-videos-scroll.js', array(), '1.0.0', true);
+        wp_enqueue_script('short-videos-scroll');
+        wp_localize_script('short-videos-scroll', 'shortVideosScrollConfig', array(
+            'ajaxurl' => admin_url('admin-ajax.php')
+        ));
     }
 
     if (is_search() && isset($_GET['s'])) {
-        wp_register_script('search-js', get_stylesheet_directory_uri() . '/js/lib/search.js', array(), '1.0.3', true);
+        wp_register_script('masonry-lib', get_stylesheet_directory_uri() . '/js/lib/masonry-grid-vanilla.js', array(), '1.1.0', true);
+        wp_enqueue_script('masonry-lib');
+        wp_register_script('search-js', get_stylesheet_directory_uri() . '/js/lib/search.js', array('masonry-lib'), filemtime(get_stylesheet_directory() . '/js/lib/search.js'), true);
         wp_enqueue_script('search-js');
         wp_localize_script('search-js', 'formatOptionsLocal', array(
             'post'          => array(__('Articles', 'mongabay'), 'POST'),
             'custom_story'  => array(__('Custom Story', 'mongabay'), 'CUSTOM_STORY'),
-            'short_article' => array(__('Shorts', 'mongabay'), 'SHORT_ARTICLE'),
+            'short_audio'   => array(__('Shorts: Audio', 'mongabay'), 'SHORT_AUDIO'),
+            'short_video'   => array(__('Shorts: Video', 'mongabay'), 'SHORT_VIDEO'),
+            'short_content' => array(__('Shorts: Content', 'mongabay'), 'SHORT_CONTENT'),
             'videos'        => array(__('Video', 'mongabay'), 'VIDEOS'),
             'podcasts'      => array(__('Podcast', 'mongabay'), 'PODCASTS'),
             'specials'      => array(__('Specials', 'mongabay'), 'SPECIALS'),
@@ -282,9 +356,24 @@ function mongabay_conditional_scripts()
         wp_register_script('highlighter', get_template_directory_uri() . '/js/lib/sidebar-highlighter.js', array(), '1.0.0', true);
         wp_enqueue_script('highlighter');
     }
-    if (is_page('shorts')) {
+    $shared_short_slug = sanitize_title((string) get_query_var('short'));
+    $shared_short = $shared_short_slug
+        ? get_page_by_path($shared_short_slug, OBJECT, 'short-article')
+        : null;
+    if (is_page('shorts') || ($shared_short instanceof WP_Post && $shared_short->post_status === 'publish')) {
         wp_register_script('shorts-previewer', get_template_directory_uri() . '/js/lib/shorts-previewer.js', array(), '1.0.0', true);
         wp_enqueue_script('shorts-previewer');
+
+        if ($shared_short instanceof WP_Post && $shared_short->post_status === 'publish') {
+            wp_localize_script('shorts-previewer', 'shortsPreviewData', array(
+                'title' => get_the_title($shared_short),
+                'slug' => $shared_short->post_name,
+                'date' => get_the_date('j M Y', $shared_short),
+                'content' => apply_filters('the_content', $shared_short->post_content),
+                'articleLink' => get_post_meta($shared_short->ID, 'article_link', true),
+                'byline' => getPostBylines($shared_short->ID),
+            ));
+        }
     }
 }
 
@@ -345,6 +434,119 @@ function remove_category_rel_from_category_list($thelist)
 }
 
 // Add page slug to body class
+function mongabay_ocean_topic_details()
+{
+    $ocean_slug = sanitize_title(__('oceans', 'mongabay'));
+    $ocean_term = get_term_by('slug', $ocean_slug, 'topic');
+    if (!$ocean_term && $ocean_slug !== 'oceans') {
+        $ocean_term = get_term_by('slug', 'oceans', 'topic');
+    }
+
+    return array(
+        'slug' => $ocean_term && !is_wp_error($ocean_term) ? $ocean_term->slug : $ocean_slug,
+        'term_id' => $ocean_term && !is_wp_error($ocean_term) ? (int) $ocean_term->term_id : 0,
+        'term_taxonomy_id' => $ocean_term && !is_wp_error($ocean_term) ? (int) $ocean_term->term_taxonomy_id : 0,
+    );
+}
+
+function mongabay_tax_query_has_ocean_term($clauses, $ocean)
+{
+    foreach ($clauses as $clause) {
+        if (!is_array($clause)) {
+            continue;
+        }
+
+        if (($clause['taxonomy'] ?? '') === 'topic') {
+            $field = $clause['field'] ?? 'term_id';
+            $terms = (array) ($clause['terms'] ?? array());
+            foreach ($terms as $term) {
+                if ($field === 'slug' && sanitize_title((string) $term) === $ocean['slug']) {
+                    return true;
+                }
+                if (
+                    $field === 'term_id'
+                    && $ocean['term_id']
+                    && (int) $term === $ocean['term_id']
+                ) {
+                    return true;
+                }
+                if (
+                    $field === 'term_taxonomy_id'
+                    && $ocean['term_taxonomy_id']
+                    && (int) $term === $ocean['term_taxonomy_id']
+                ) {
+                    return true;
+                }
+            }
+        }
+
+        if (($clause['taxonomy'] ?? '') === 'location') {
+            $field = $clause['field'] ?? 'term_id';
+            foreach ((array) ($clause['terms'] ?? array()) as $term) {
+                if (mongabay_location_term_is_ocean_related($term, $field)) {
+                    return true;
+                }
+            }
+        }
+
+        if (mongabay_tax_query_has_ocean_term($clause, $ocean)) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+function mongabay_location_term_is_ocean_related($term, $field)
+{
+    $values = array();
+    if (in_array($field, array('term_id', 'term_taxonomy_id'), true) && is_numeric($term)) {
+        $location_term = $field === 'term_taxonomy_id'
+            ? get_term_by('term_taxonomy_id', (int) $term, 'location')
+            : get_term((int) $term, 'location');
+        if (!$location_term || is_wp_error($location_term)) {
+            return false;
+        }
+        $values = array($location_term->slug, $location_term->name);
+    } elseif (is_scalar($term)) {
+        $values = array((string) $term);
+    }
+
+    $tokens = array('ocean', 'oceans', 'sea', 'seas');
+    foreach (array('ocean', 'oceans', 'sea', 'seas') as $label) {
+        $translated = sanitize_title(__($label, 'mongabay'));
+        if ($translated !== '') {
+            $tokens = array_merge($tokens, explode('-', $translated));
+        }
+    }
+    $tokens = array_unique($tokens);
+
+    foreach ($values as $value) {
+        $value_tokens = preg_split('/[-_\s]+/', sanitize_title($value), -1, PREG_SPLIT_NO_EMPTY);
+        if (array_intersect($tokens, $value_tokens)) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+function mongabay_is_ocean_listing()
+{
+    global $wp_query;
+    $is_taxonomy_listing = ($wp_query instanceof WP_Query)
+        && (get_query_var('section') === 'list' || is_tax(array('topic', 'location')))
+        && isset($wp_query->tax_query->queries);
+    if (!$is_taxonomy_listing) {
+        return false;
+    }
+
+    return mongabay_tax_query_has_ocean_term(
+        $wp_query->tax_query->queries,
+        mongabay_ocean_topic_details()
+    );
+}
+
 function add_slug_to_body_class($classes)
 {
     global $post;
@@ -357,6 +559,10 @@ function add_slug_to_body_class($classes)
         $classes[] = sanitize_html_class($post->post_name);
     } elseif (is_singular()) {
         $classes[] = sanitize_html_class($post->post_name);
+    }
+
+    if (mongabay_is_ocean_listing()) {
+        $classes[] = 'has-ocean-primary-color';
     }
 
     return $classes;
@@ -446,6 +652,7 @@ function mongabay_query_var($vars)
     $vars[] = 'section';
     $vars[] = 'nc1';
     $vars[] = 'nc2';
+    $vars[] = 'nc3';
     return $vars;
 }
 
@@ -671,7 +878,7 @@ function mongabay_prevent_terms($term, $taxonomy)
 {
     $current_site_id = get_current_blog_id();
     $exception_user_ids = array(1125, 1163);
-    
+
     if (in_array($taxonomy, array('post_tag', 'topic', 'location'), true) && (!current_user_can('activate_plugins') || (!in_array(get_current_user_id(), $exception_user_ids) && $current_site_id === 35))) {
         return new WP_Error('term_addition_blocked', __('You cannot add terms to this taxonomy'));
     }
@@ -720,27 +927,23 @@ function mongabay_wildtech_post_link($url, $post, $leavename)
 // Listings proper page title
 function mongabay_custom_title()
 {
-
-    $firstvar = get_query_var('nc1');
-    $secondvar = get_query_var('nc2');
-
     if (get_query_var('section') == 'list') {
-
-        if (!empty($firstvar) && empty($secondvar)) {
-            $item1 = get_terms(array('topic', 'location'), array('slug' => $firstvar));
-            $title = $item1[0]->name;
-            _e('Conservation news on', 'mongabay');
-            echo ' ' . $title;
+        $term_slugs = array(
+            get_query_var('nc1'),
+            get_query_var('nc2'),
+            get_query_var('nc3'),
+        );
+        $titles = array();
+        foreach ($term_slugs as $slug) {
+            $term = mongabay_get_list_term($slug);
+            if ($term) {
+                $titles[] = $term->name;
+            }
         }
 
-        if (!empty($firstvar) && !empty($secondvar)) {
-            $item1 = get_terms(array('topic', 'location'), array('slug' => $firstvar));
-            $item2 = get_terms(array('topic', 'location'), array('slug' => $secondvar));
-            $title1 = $item1[0]->name;
-            $title2 = $item2[0]->name;
-            $title = $title1 . ' and ' . $title2;
+        if (!empty($titles)) {
             _e('Conservation news on', 'mongabay');
-            echo ' ' . $title;
+            echo ' ' . implode(' and ', $titles);
         }
     } else {
         wp_title('');
@@ -939,7 +1142,7 @@ function my_post_data_validator($data)
 
 function my_post_redirect_filter($location)
 {
-    remove_filter('redirect_post_location', __FILTER__, '99');
+    remove_filter('redirect_post_location', 'my_post_redirect_filter', '99');
     return add_query_arg('mongabay_error', 1, $location);
 }
 
@@ -1090,10 +1293,83 @@ function load_more_posts()
             }
             ?>
 
-<?php endwhile;
+        <?php endwhile;
     endif;
     wp_reset_postdata();
 
+    die();
+}
+
+function load_more_short_videos()
+{
+    $paged = isset($_POST['page']) ? intval($_POST['page']) : 1;
+    $posts_per_page = isset($_POST['posts_per_page']) ? intval($_POST['posts_per_page']) : 5;
+
+    $args = array(
+        'post_type' => 'short-article',
+        'posts_per_page' => $posts_per_page,
+        'paged' => $paged,
+        'post_status' => 'publish',
+        'cache_results' => true,
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'shorts_format',
+                'field' => 'slug',
+                'terms' => array('video'),
+            ),
+        ),
+    );
+
+    $query = new WP_Query($args);
+
+    if ($query->have_posts()) {
+        ob_start();
+        while ($query->have_posts()) {
+            $query->the_post();
+            $id = get_the_ID();
+            $embed_url = get_post_meta($id, 'video_link', true);
+            $article_link = get_post_meta($id, 'article_link', true);
+            $link_url_share = home_url('/shorts/#/' . $id);
+        ?>
+            <div class="article--container shorts-trigger shorts-video-card" data-articlelink="<?php echo esc_url($article_link); ?>" data-shareurl="<?php echo esc_url($link_url_share); ?>" data-media-format="video" data-embed-url="<?php echo esc_url($embed_url); ?>">
+                <div class="featured-image shorts-video-featured-image">
+                    <?php echo get_icon($id); ?>
+                    <?php if (has_post_thumbnail()) { ?>
+                        <?php the_post_thumbnail('large'); ?>
+                    <?php } ?>
+                    <div class="img-overlay"></div>
+                    <div class="shorts-video-overlay">
+                        <div class="title headline">
+                            <h3><?php the_title(); ?></h3>
+                        </div>
+                        <div class="post-meta">
+                            <span class="byline"><?php echo getPostBylines($id); ?></span>
+                            <span class="date"><?php echo human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ' . __('ago', 'mongabay'); ?></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="post-excerpt hidden">
+                    <?php the_content(); ?>
+                </div>
+                <div class="shorts-media-embed hidden">
+                    <?php mongabay_render_embed_url($embed_url); ?>
+                </div>
+            </div>
+<?php
+        }
+        $html = ob_get_clean();
+        wp_send_json_success(array(
+            'html' => $html,
+            'has_more' => $query->max_num_pages > $paged
+        ));
+    } else {
+        wp_send_json_success(array(
+            'html' => '',
+            'has_more' => false
+        ));
+    }
+
+    wp_reset_postdata();
     die();
 }
 
@@ -1260,6 +1536,52 @@ add_filter('wpseo_schema_article_post_types', function (array $post_types): arra
     return array_merge($post_types, array('videos', 'podcasts', 'short-article', 'custom-story', 'specials'));
 });
 
+// Load alerts map scripts
+function mongabay_get_mapbox_public_token()
+{
+    $token = defined('MAPBOX_PUBLIC_TOKEN')
+        ? MAPBOX_PUBLIC_TOKEN
+        : ($GLOBALS['MAPBOX_PUBLIC_TOKEN'] ?? (defined('MAPBOX_TOKEN') ? MAPBOX_TOKEN : ($GLOBALS['MAPBOX_TOKEN'] ?? '')));
+
+    $token = trim((string) $token);
+    return strpos($token, 'pk.') === 0 ? $token : '';
+}
+
+function mongabay_alerts_scripts()
+{
+    if (is_page_template('alerts-page.php')) {
+        wp_enqueue_style('mapbox-gl-css', 'https://api.mapbox.com/mapbox-gl-js/v3.4.0/mapbox-gl.css', array(), '3.4.0');
+        wp_enqueue_script('mapbox-gl-js', 'https://api.mapbox.com/mapbox-gl-js/v3.4.0/mapbox-gl.js', array(), '3.4.0', true);
+        $alerts_map_script = get_template_directory() . '/js/lib/alerts-map.js';
+        wp_register_script('alerts-map', get_template_directory_uri() . '/js/lib/alerts-map.js', array('mapbox-gl-js'), file_exists($alerts_map_script) ? filemtime($alerts_map_script) : '1.0.0', true);
+        wp_enqueue_script('alerts-map');
+        wp_localize_script('alerts-map', 'alertsMapConfig', array(
+            'graphqlEndpoint' => esc_url(home_url('/graphql')),
+            'mapboxToken' => mongabay_get_mapbox_public_token(),
+            'allAlertsLabel' => __('All Alerts', 'mongabay'),
+            'allLocationsLabel' => __('All locations', 'mongabay'),
+            'allTopicsLabel' => __('All topics', 'mongabay'),
+            'allFormatsLabel' => __('All formats', 'mongabay'),
+            'formatOptions' => array(
+                array('value' => 'post', 'label' => __('Articles', 'mongabay')),
+                array('value' => 'custom_story', 'label' => __('Custom Story', 'mongabay')),
+                array('value' => 'short_audio', 'label' => __('Shorts: Audio', 'mongabay')),
+                array('value' => 'short_video', 'label' => __('Shorts: Video', 'mongabay')),
+                array('value' => 'short_content', 'label' => __('Shorts: Content', 'mongabay')),
+                array('value' => 'videos', 'label' => __('Video', 'mongabay')),
+                array('value' => 'podcasts', 'label' => __('Podcast', 'mongabay')),
+                array('value' => 'specials', 'label' => __('Specials', 'mongabay')),
+            ),
+            'alertsLabel' => __('alerts', 'mongabay'),
+            'noAlertsLabel' => __('No alerts found for these filters.', 'mongabay'),
+            'alertsUnavailable' => __('Alerts could not be loaded. Please try again later.', 'mongabay'),
+            'alertsTruncatedLabel' => __('Additional alerts were omitted.', 'mongabay'),
+            'mapUnavailable' => __('The map is unavailable.', 'mongabay'),
+            'readFullArticle' => __('Read full article', 'mongabay'),
+        ));
+    }
+}
+
 /*------------------------------------*\
     Actions + Filters
 \*------------------------------------*/
@@ -1273,6 +1595,7 @@ add_shortcode('banner', 'banner_shortcode');
 // Add Actions
 add_action('init', 'mongabay_header_scripts'); // Add Custom Scripts to wp_head
 add_action('wp_enqueue_scripts', 'mongabay_conditional_scripts'); // Add Conditional Page Scripts
+add_action('wp_enqueue_scripts', 'mongabay_alerts_scripts'); // Add Alerts Map Scripts
 add_action('admin_enqueue_scripts', 'enqueue_word_count_script'); // Enqueue word count script
 add_action('wp_enqueue_scripts', 'mongabay_styles'); // Add Theme Stylesheet
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
@@ -1288,6 +1611,8 @@ add_action('init', 'custom_rss_feed_init'); // Add custom RSS feed
 add_action('wp_enqueue_scripts', 'mongabay_ajaxed_pagination');
 add_action('wp_ajax_load_more_posts', 'load_more_posts');
 add_action('wp_ajax_nopriv_load_more_posts', 'load_more_posts');
+add_action('wp_ajax_load_more_short_videos', 'load_more_short_videos');
+add_action('wp_ajax_nopriv_load_more_short_videos', 'load_more_short_videos');
 add_action('save_post', 'validate_short_article_content_length'); // Short articles validation
 add_action('pre_get_posts', 'custom_author_post_types_query');
 add_action('template_redirect', 'redirect_cpt_without_date'); // Redirect custom post types without date in URL

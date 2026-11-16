@@ -45,5 +45,6 @@
     <div class="container full-width pv--40">
         <?php inspiration_banner(); ?>
     </div>
+    <?php app_banner(1); ?>
 </main>
 <?php get_footer(); ?>

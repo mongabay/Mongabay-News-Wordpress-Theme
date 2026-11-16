@@ -34,6 +34,8 @@ function get_shorts_dialog($show_more = false)
   </dialog>
   <dialog id="shorts-video-dialog">
     <a class="close close-video-button icon icon-cancel"></a>
+    <a class="shorts-video-nav shorts-video-prev icon icon-up-open"></a>
+    <a class="shorts-video-nav shorts-video-next icon icon-down-open"></a>
     <div class="shorts-video-modal-body"></div>
   </dialog>
   <?php if ($show_more) { ?>
@@ -63,23 +65,55 @@ function get_shorts_dialog($show_more = false)
         autoplayParam = 'auto_play=true';
       }
 
-      if (!src.includes('autoplay=1') && !src.includes('auto_play=true')) {
-        iframe.src = src + separator + autoplayParam;
+      let newSrc = src;
+      if (!newSrc.includes('autoplay=1') && !newSrc.includes('auto_play=true')) {
+        newSrc = newSrc + separator + autoplayParam;
       }
+
+      if (newSrc.includes('youtube.com') || newSrc.includes('youtu.be')) {
+        const sep = newSrc.includes('?') ? '&' : '?';
+        newSrc = newSrc + sep + 'cc_load_policy=0&cc_lang_pref=off';
+      }
+
+      iframe.src = newSrc;
 
       iframe.setAttribute('allow', 'autoplay; encrypted-media; fullscreen');
     }
 
+    function autoplayMediaElement(element) {
+      if (!element) return;
+
+      if (element.tagName === 'VIDEO') {
+        // HTML5 video element
+        element.play().catch(err => {
+          console.log('Autoplay prevented:', err);
+        });
+      } else if (element.tagName === 'IFRAME') {
+        // iframe (already handled by setAutoplayOnIframe)
+      }
+    }
+
     function stopDialogMediaPlayback(shortsDialog) {
       const mediaFrames = shortsDialog.querySelectorAll('.post-content iframe');
-
       mediaFrames.forEach((iframe) => {
         iframe.src = '';
+      });
+
+      const videos = shortsDialog.querySelectorAll('.post-content video');
+      videos.forEach((video) => {
+        video.pause();
+        video.currentTime = 0;
       });
     }
 
     function stopVideoDialogPlayback(shortsVideoDialog) {
       const dialogBody = shortsVideoDialog.querySelector('.shorts-video-modal-body');
+      // Pause any video elements before clearing
+      const videos = dialogBody.querySelectorAll('video');
+      videos.forEach(video => {
+        video.pause();
+        video.currentTime = 0;
+      });
       dialogBody.innerHTML = '';
     }
 
@@ -207,6 +241,8 @@ function get_shorts_dialog($show_more = false)
       const shortsVideoDialogBody = document.querySelector('.shorts-video-modal-body');
       const closeDialogButton = document.querySelector('a.close-button');
       const closeVideoDialogButton = document.querySelector('a.close-video-button');
+      const shortsVideoPrev = document.querySelector('.shorts-video-prev');
+      const shortsVideoNext = document.querySelector('.shorts-video-next');
       const backButton = document.querySelector('a.back-button');
       const shareButton = document.querySelector('a.share');
       const shortsOverview = document.querySelector('#shorts-overview');
@@ -215,6 +251,52 @@ function get_shorts_dialog($show_more = false)
       let title = '';
       let postUrl = '';
       let shareUrl = '';
+      let videoCards = [];
+      let currentVideoIndex = -1;
+
+      function getVideoCards() {
+        return Array.from(document.querySelectorAll('.shorts-video-card'));
+      }
+
+      function openVideoAtIndex(index) {
+        videoCards = getVideoCards();
+        if (index < 0 || index >= videoCards.length) return;
+        currentVideoIndex = index;
+        const card = videoCards[index];
+        const mediaEmbed = card.querySelector('.shorts-media-embed');
+        if (!mediaEmbed) return;
+
+        stopActiveAudio();
+        shortsVideoDialogBody.innerHTML = mediaEmbed.innerHTML;
+
+        const videoIframe = shortsVideoDialogBody.querySelector('iframe');
+        const videoElement = shortsVideoDialogBody.querySelector('video');
+
+        if (videoIframe) {
+          setAutoplayOnIframe(videoIframe, 'video');
+        } else if (videoElement) {
+          autoplayMediaElement(videoElement);
+        }
+
+        updateVideoNavButtons();
+      }
+
+      function updateVideoNavButtons() {
+        shortsVideoPrev.classList.toggle('hidden', currentVideoIndex <= 0);
+        shortsVideoNext.classList.toggle('hidden', currentVideoIndex >= videoCards.length - 1);
+      }
+
+      shortsVideoPrev.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        openVideoAtIndex(currentVideoIndex - 1);
+      });
+
+      shortsVideoNext.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        openVideoAtIndex(currentVideoIndex + 1);
+      });
 
       shortsAudioCards.forEach(card => {
         if (card.dataset.audioBound === '1') {
@@ -282,11 +364,21 @@ function get_shorts_dialog($show_more = false)
 
           if (mediaFormat === 'video' && mediaEmbed) {
             stopActiveAudio();
+            videoCards = getVideoCards();
+            currentVideoIndex = videoCards.indexOf(card);
             shortsVideoDialogBody.innerHTML = mediaEmbed.innerHTML;
             shortsVideoDialog.showModal();
 
             const videoIframe = shortsVideoDialogBody.querySelector('iframe');
-            setAutoplayOnIframe(videoIframe, mediaFormat);
+            const videoElement = shortsVideoDialogBody.querySelector('video');
+
+            if (videoIframe) {
+              setAutoplayOnIframe(videoIframe, mediaFormat);
+            } else if (videoElement) {
+              autoplayMediaElement(videoElement);
+            }
+
+            updateVideoNavButtons();
             return;
           }
 
@@ -315,7 +407,13 @@ function get_shorts_dialog($show_more = false)
 
           if (mediaEmbed) {
             const iframe = dialogContent.querySelector('iframe');
-            setAutoplayOnIframe(iframe, mediaFormat);
+            const videoElement = dialogContent.querySelector('video');
+
+            if (iframe) {
+              setAutoplayOnIframe(iframe, mediaFormat);
+            } else if (videoElement) {
+              autoplayMediaElement(videoElement);
+            }
           }
 
           shortsShare.innerHTML = shortsShare.innerHTML.replace(/{{title}}/g, title);
@@ -403,6 +501,9 @@ function get_shorts_dialog($show_more = false)
       });
       backButton.addEventListener('click', back);
     }
+
+    // Expose globally for re-initialization after dynamic content load
+    window.initShortsDialog = initDialog;
 
     initDialog();
   </script>

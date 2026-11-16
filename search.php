@@ -61,7 +61,9 @@
     </div>
 </div>
 
+<?php get_shorts_dialog(); ?>
 <?php tools_slider(); ?>
 <?php inspiration_banner(); ?>
+<?php app_banner(1); ?>
 </div>
 <?php get_footer(); ?>
