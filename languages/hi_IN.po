@@ -84,7 +84,7 @@ msgstr "ख़बरों के प्रारूप"
 msgid "Videos"
 msgstr "वीडियो"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:252
+#: Mongabay-News-Wordpress-Theme/functions.php:269
 msgid "Video"
 msgstr "वीडियो"
 
@@ -92,15 +92,15 @@ msgstr "वीडियो"
 msgid "Podcasts"
 msgstr "पॉडकास्ट"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:253
+#: Mongabay-News-Wordpress-Theme/functions.php:270
 msgid "Podcast"
 msgstr "पॉडकास्ट"
 
-#: Mongabay-News-Wordpress-Theme/footer.php:15 Mongabay-News-Wordpress-Theme/components/lib/utils.php:42 Mongabay-News-Wordpress-Theme/functions.php:249
+#: Mongabay-News-Wordpress-Theme/footer.php:15 Mongabay-News-Wordpress-Theme/components/lib/utils.php:42 Mongabay-News-Wordpress-Theme/functions.php:264
 msgid "Articles"
 msgstr "लेख"
 
-#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:38 Mongabay-News-Wordpress-Theme/footer.php:16 Mongabay-News-Wordpress-Theme/functions.php:254
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:38 Mongabay-News-Wordpress-Theme/footer.php:16 Mongabay-News-Wordpress-Theme/functions.php:271
 msgid "Specials"
 msgstr "विशेष"
 
@@ -112,15 +112,15 @@ msgstr "जीव"
 msgid "animals"
 msgstr "जीव"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:257 Mongabay-News-Wordpress-Theme/functions.php:263 Mongabay-News-Wordpress-Theme/functions.php:270
+#: Mongabay-News-Wordpress-Theme/functions.php:274 Mongabay-News-Wordpress-Theme/functions.php:280 Mongabay-News-Wordpress-Theme/functions.php:287
 msgid "Forests"
 msgstr "जंगल"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:258
+#: Mongabay-News-Wordpress-Theme/functions.php:275
 msgid "Wildlife"
 msgstr "वन्यजीव"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:250
+#: Mongabay-News-Wordpress-Theme/functions.php:265
 msgid "Custom Story"
 msgstr "आपकी पसंद की खबरें"
 
@@ -140,35 +140,35 @@ msgstr "अफ्रीका"
 msgid "africa"
 msgstr "अफ्रीका"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:263
+#: Mongabay-News-Wordpress-Theme/functions.php:280
 msgid "South America"
 msgstr "साउथ अमेरिका"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:263
+#: Mongabay-News-Wordpress-Theme/functions.php:280
 msgid "south-america"
 msgstr "साउथ-अमेरिका"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:264
+#: Mongabay-News-Wordpress-Theme/functions.php:281
 msgid "Indonesia"
 msgstr "इंडोनेशिया"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:264
+#: Mongabay-News-Wordpress-Theme/functions.php:281
 msgid "indonesia"
 msgstr "इंडोनेशिया"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:265
+#: Mongabay-News-Wordpress-Theme/functions.php:282
 msgid "Amazon"
 msgstr "अमेजन"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:265
+#: Mongabay-News-Wordpress-Theme/functions.php:282
 msgid "amazon"
 msgstr "अमेजन"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:266
+#: Mongabay-News-Wordpress-Theme/functions.php:283
 msgid "Congo"
 msgstr "कॉन्गो"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:266
+#: Mongabay-News-Wordpress-Theme/functions.php:283
 msgid "congo"
 msgstr "कॉन्गो"
 
@@ -177,7 +177,7 @@ msgstr "कॉन्गो"
 msgid "wildlife"
 msgstr "वन्यजीव"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:270 Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:40
+#: Mongabay-News-Wordpress-Theme/functions.php:287 Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:40
 #: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:59 Mongabay-News-Wordpress-Theme/search.php:43 Mongabay-News-Wordpress-Theme/search.php:52
 msgid "forests"
 msgstr "जंगल"
@@ -190,7 +190,7 @@ msgstr "आदिवासी समुदाय"
 msgid "agroecology"
 msgstr "कृषि-वानिकी"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:259 Mongabay-News-Wordpress-Theme/functions.php:265 Mongabay-News-Wordpress-Theme/functions.php:271
+#: Mongabay-News-Wordpress-Theme/functions.php:259 Mongabay-News-Wordpress-Theme/functions.php:282 Mongabay-News-Wordpress-Theme/functions.php:288
 msgid "Oceans"
 msgstr "समुद्र"
 
@@ -211,11 +211,11 @@ msgstr "संरक्षण-के-उपाय"
 msgid "all topics"
 msgstr "सभी विषय"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:260
+#: Mongabay-News-Wordpress-Theme/functions.php:277
 msgid "Feature"
 msgstr "फ़ीचर"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:272
+#: Mongabay-News-Wordpress-Theme/functions.php:289
 msgid "Conservation"
 msgstr "संरक्षण"
 
@@ -223,7 +223,7 @@ msgstr "संरक्षण"
 msgid "conservation"
 msgstr "संरक्षण"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:273
+#: Mongabay-News-Wordpress-Theme/functions.php:290
 msgid "Indigenous Peoples"
 msgstr "आदिवासी-समुदाय"
 
@@ -358,11 +358,11 @@ msgstr "एंड्रॉइड एप"
 msgid "Apple News"
 msgstr "एप्पल न्यूज"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:419
+#: Mongabay-News-Wordpress-Theme/functions.php:436
 msgid "View Article"
 msgstr "लेख देखें"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:550
+#: Mongabay-News-Wordpress-Theme/functions.php:567
 msgid "Results for: "
 msgstr "परिणाम:"
 
@@ -382,27 +382,27 @@ msgstr "स्टैट्स पेज के साइडबार विज�
 msgid "Conservation news on"
 msgstr "संरक्षण से संबंधित समाचार"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:918
+#: Mongabay-News-Wordpress-Theme/functions.php:935
 msgid "If article is featured"
 msgstr "अगर लेख फ़ीचर में है"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:927
+#: Mongabay-News-Wordpress-Theme/functions.php:944
 msgid "Bulletpoint 1"
 msgstr "बुलेट पॉइन्ट 1"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:936
+#: Mongabay-News-Wordpress-Theme/functions.php:953
 msgid "Bulletpoint 2"
 msgstr "बुलेट पॉइन्ट 2"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:945
+#: Mongabay-News-Wordpress-Theme/functions.php:962
 msgid "Bulletpoint 3"
 msgstr "बुलेट पॉइन्ट 3"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:954
+#: Mongabay-News-Wordpress-Theme/functions.php:971
 msgid "Bulletpoint 4"
 msgstr "बुलेट पॉइन्ट 4"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:963
+#: Mongabay-News-Wordpress-Theme/functions.php:980
 msgid "Article link"
 msgstr "आर्टिकल लिंक"
 
@@ -517,7 +517,7 @@ msgid "Read full transcript"
 msgstr "पूरी ट्रांस्क्रिप्ट पढ़ें"
 
 #: Mongabay-News-Wordpress-Theme/single-specials.php:83 Mongabay-News-Wordpress-Theme/components/lib/shorts-dialog.php:38
-#: Mongabay-News-Wordpress-Theme/functions.php:275
+#: Mongabay-News-Wordpress-Theme/functions.php:292
 msgid "Load more"
 msgstr "और देखें"
 
@@ -1135,23 +1135,23 @@ msgid "Features"
 msgstr "फ़ीचर्स"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:27 Mongabay-News-Wordpress-Theme/components/lib/utils.php:67
-#: Mongabay-News-Wordpress-Theme/functions.php:234
+#: Mongabay-News-Wordpress-Theme/functions.php:251
 msgid "features"
 msgstr "फ़ीचर्स"
 
-#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:31 Mongabay-News-Wordpress-Theme/functions.php:234
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:31 Mongabay-News-Wordpress-Theme/functions.php:251
 msgid "videos"
 msgstr "वीडियो"
 
-#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:35 Mongabay-News-Wordpress-Theme/functions.php:234
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:35 Mongabay-News-Wordpress-Theme/functions.php:251
 msgid "podcasts"
 msgstr "पॉडकास्ट्स"
 
-#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:35 Mongabay-News-Wordpress-Theme/functions.php:234
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:35 Mongabay-News-Wordpress-Theme/functions.php:251
 msgid "specials"
 msgstr "विशेष"
 
-#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:43 Mongabay-News-Wordpress-Theme/functions.php:234
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:43 Mongabay-News-Wordpress-Theme/functions.php:251
 #: Mongabay-News-Wordpress-Theme/lib/components/banners/inspiration-banner.php:38
 msgid "articles"
 msgstr "लेख"
@@ -1160,7 +1160,7 @@ msgstr "लेख"
 msgid "story"
 msgstr "खबरें"
 
-#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:46 Mongabay-News-Wordpress-Theme/functions.php:251
+#: Mongabay-News-Wordpress-Theme/components/lib/utils.php:46 Mongabay-News-Wordpress-Theme/functions.php:266
 msgid "Shorts"
 msgstr "शॉर्ट्स"
 

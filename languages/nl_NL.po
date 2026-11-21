@@ -100,15 +100,15 @@ msgstr "zijbalk Menu"
 msgid "Extra Menu"
 msgstr "Extra Menu"
 
-#: ../functions.php:257
+#: ../functions.php:274
 msgid "Widget Area 1"
 msgstr "Widget Zone 1"
 
-#: ../functions.php:258 ../functions.php:269
+#: ../functions.php:275 ../functions.php:269
 msgid "Description for this widget-area..."
 msgstr "Beschrijving voor deze widget zone..."
 
-#: ../functions.php:268
+#: ../functions.php:285
 msgid "Widget Area 2"
 msgstr "Widget Zone 2"
 

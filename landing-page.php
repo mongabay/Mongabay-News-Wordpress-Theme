@@ -40,7 +40,7 @@ get_header();
 	<?php series_articles_slider(true, 'specials'); ?>
 
 	<div class="container full-width pv--40">
-		<?php banner(home_url() . '/about', 'Free and open access to credible information', '', 'Learn more', 'accent full-width pv--56 ph--56', 'extra-large', ''); ?>
+		<?php banner(home_url() . '/' . get_menu_item('about', 'slug'), 'Free and open access to credible information', '', 'Learn more', 'accent full-width pv--56 ph--56', 'extra-large', ''); ?>
 	</div>
 
 	<div class="<?php echo get_enabled_features('podcasts') ? 'section--highlight ' : ''; ?>container full-width pv--40">
@@ -52,6 +52,7 @@ get_header();
 			<h1><?php _e('Watch unique <span class="icon icon-play">videos</span> that cut through the noise', 'mongabay'); ?></h1>
 		</div>
 		<?php featured_articles_listing(array('videos'), 5, 0, 'thumbnail-medium', 4, false, null, null, true); ?>
+		<?php short_videos_latest(true); ?>
 	</div>
 
 	<div class="container full-width pv--40">
@@ -77,4 +78,6 @@ get_header();
 	<?php banner(get_subscribe_link_local(get_current_blog_id()), 'Subscribe', 'Stay informed with news and inspiration from nature’s frontline.', 'Newsletter', 'accent ph--56 pv--56 full-width', 'extra-large', ''); ?>
 </div>
 </div>
+<?php app_banner(2); ?>
+<?php get_shorts_dialog(false); ?>
 <?php get_footer(); ?>

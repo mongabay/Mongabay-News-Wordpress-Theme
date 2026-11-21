@@ -37,10 +37,14 @@ include(get_template_directory() . '/components/lib/sliders/specials-slider.php'
 include(get_template_directory() . '/components/lib/sliders/series-articles-slider.php');
 
 // misc
+include(get_template_directory() . '/components/lib/mega-menu.php');
 include(get_template_directory() . '/components/lib/topics-section.php');
 include(get_template_directory() . '/components/lib/videos-latest.php');
+include(get_template_directory() . '/components/lib/short-videos-latest.php');
+include(get_template_directory() . '/components/lib/short-audios-latest.php');
 include(get_template_directory() . '/components/lib/podcasts-topics-section.php');
 include(get_template_directory() . '/components/lib/specials-latest.php');
 include(get_template_directory() . '/components/lib/post-icon.php');
 include(get_template_directory() . '/components/lib/share-icons-grid.php');
 include(get_template_directory() . '/components/lib/shorts-dialog.php');
+include(get_template_directory() . '/components/lib/banners/app-banner.php');

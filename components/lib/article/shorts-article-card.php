@@ -54,7 +54,9 @@ function shorts_article_card($id, $is_large = false, $title_class = '', $idx = 0
   );
 
   $article_link = get_post_meta($id, 'article_link', true);
-  $link_url_share = home_url() . '/shorts/#/' . $id;
+  $shorts_page = get_page_by_path(sanitize_title(__('shorts', 'mongabay')));
+  $shorts_url = $shorts_page ? get_permalink($shorts_page) : home_url('/shorts/');
+  $link_url_share = trailingslashit($shorts_url) . rawurlencode(get_post_field('post_name', $id)) . '/';
 
   // $backgrounds = array(
   //   1 => ' bg-theme-secondary',
@@ -73,10 +75,10 @@ function shorts_article_card($id, $is_large = false, $title_class = '', $idx = 0
   ?>
 <div class="article--container shorts-trigger shorts-video-card" data-articlelink="<?php echo esc_url($article_link); ?>" data-shareurl="<?php echo esc_url($link_url_share); ?>" data-media-format="video" data-embed-url="<?php echo esc_url($embed_url); ?>">
   <div class="featured-image shorts-video-featured-image">
-    <div class="shorts-video-preview">
-      <?php mongabay_render_embed_url($embed_url); ?>
-    </div>
-    <div class="shorts-video-click-blocker"></div>
+    <?php echo get_icon($id); ?>
+    <?php if (has_post_thumbnail()) { ?>
+      <?php the_post_thumbnail('large'); ?>
+    <?php } ?>
     <div class="img-overlay"></div>
     <div class="shorts-video-overlay">
       <div class="title headline <?php echo $title_class; ?>">
@@ -104,7 +106,8 @@ function shorts_article_card($id, $is_large = false, $title_class = '', $idx = 0
     <div class="shorts-audio-top">
       <div class="shorts-audio-info">
         <!-- <div class="shorts-audio-label">
-          <span>&#10022;</span> <?php //_e('AI Voice Narration', 'mongabay'); ?>
+          <span>&#10022;</span> <?php //_e('AI Voice Narration', 'mongabay'); 
+                                ?>
         </div> -->
         <div class="title headline">
           <?php echo $is_large ? '<h2 class="' . $title_class . '">' : '<h3 class="' . $title_class . '">' ?>
@@ -118,6 +121,7 @@ function shorts_article_card($id, $is_large = false, $title_class = '', $idx = 0
       </div>
       <?php if (has_post_thumbnail()) { ?>
         <div class="shorts-audio-thumbnail">
+          <?php echo get_icon($id); ?>
           <?php the_post_thumbnail('thumbnail'); ?>
         </div>
       <?php } ?>
@@ -160,7 +164,10 @@ function shorts_article_card($id, $is_large = false, $title_class = '', $idx = 0
     <div class="post-excerpt hidden">
       <?php the_content(); ?>
     </div>
-    <?php the_post_thumbnail('thumbnail-medium'); ?>
+    <div class="shorts-thumbnail-wrapper">
+      <?php echo get_icon($id); ?>
+      <?php the_post_thumbnail('thumbnail-medium'); ?>
+    </div>
   </div>
 <?php } ?>
 <?php

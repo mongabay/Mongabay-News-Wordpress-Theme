@@ -92,7 +92,7 @@ msgstr "Aina za habari"
 msgid "Videos"
 msgstr "Video"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:252
+#: Mongabay-News-Wordpress-Theme/functions.php:269
 msgid "Video"
 msgstr "Video"
 
@@ -100,17 +100,17 @@ msgstr "Video"
 msgid "Podcasts"
 msgstr "Podikasti"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:253
+#: Mongabay-News-Wordpress-Theme/functions.php:270
 msgid "Podcast"
 msgstr "Podikasti"
 
 #: Mongabay-News-Wordpress-Theme/footer.php:15 Mongabay-News-Wordpress-Theme/components/lib/utils.php:42
-#: Mongabay-News-Wordpress-Theme/functions.php:249
+#: Mongabay-News-Wordpress-Theme/functions.php:264
 msgid "Articles"
 msgstr "Taarifa"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:38 Mongabay-News-Wordpress-Theme/footer.php:16
-#: Mongabay-News-Wordpress-Theme/functions.php:254
+#: Mongabay-News-Wordpress-Theme/functions.php:271
 msgid "Specials"
 msgstr "MAtoleo Maalum"
 
@@ -122,16 +122,16 @@ msgstr "Wanyama"
 msgid "animals"
 msgstr "wanyama"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:257 Mongabay-News-Wordpress-Theme/functions.php:263
-#: Mongabay-News-Wordpress-Theme/functions.php:270
+#: Mongabay-News-Wordpress-Theme/functions.php:274 Mongabay-News-Wordpress-Theme/functions.php:280
+#: Mongabay-News-Wordpress-Theme/functions.php:287
 msgid "Forests"
 msgstr "Misitu"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:258
+#: Mongabay-News-Wordpress-Theme/functions.php:275
 msgid "Wildlife"
 msgstr "Wanyamapori"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:250
+#: Mongabay-News-Wordpress-Theme/functions.php:265
 msgid "Custom Story"
 msgstr "Habari Maalum"
 
@@ -151,35 +151,35 @@ msgstr "Afrika"
 msgid "africa"
 msgstr "afrika"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:263
+#: Mongabay-News-Wordpress-Theme/functions.php:280
 msgid "South America"
 msgstr "Amerika ya Kusini"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:263
+#: Mongabay-News-Wordpress-Theme/functions.php:280
 msgid "south-america"
 msgstr "amerika-ya-kusini"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:264
+#: Mongabay-News-Wordpress-Theme/functions.php:281
 msgid "Indonesia"
 msgstr "Indonesia"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:264
+#: Mongabay-News-Wordpress-Theme/functions.php:281
 msgid "indonesia"
 msgstr "indonesia"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:265
+#: Mongabay-News-Wordpress-Theme/functions.php:282
 msgid "Amazon"
 msgstr "Amazoni"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:265
+#: Mongabay-News-Wordpress-Theme/functions.php:282
 msgid "amazon"
 msgstr "amazoni"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:266
+#: Mongabay-News-Wordpress-Theme/functions.php:283
 msgid "Congo"
 msgstr "Kongo"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:266
+#: Mongabay-News-Wordpress-Theme/functions.php:283
 msgid "congo"
 msgstr "kongo"
 
@@ -189,7 +189,7 @@ msgstr "kongo"
 msgid "wildlife"
 msgstr "wanyamapori"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:270
+#: Mongabay-News-Wordpress-Theme/functions.php:287
 #: Mongabay-News-Wordpress-Theme/components/lib/podcasts-topics-section.php:40
 #: Mongabay-News-Wordpress-Theme/components/lib/topics-section.php:59
 #: Mongabay-News-Wordpress-Theme/search.php:43 Mongabay-News-Wordpress-Theme/search.php:52
@@ -204,8 +204,8 @@ msgstr "jamii-asilia"
 msgid "agroecology"
 msgstr "Kilimo-ikolojia"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:259 Mongabay-News-Wordpress-Theme/functions.php:265
-#: Mongabay-News-Wordpress-Theme/functions.php:271
+#: Mongabay-News-Wordpress-Theme/functions.php:259 Mongabay-News-Wordpress-Theme/functions.php:282
+#: Mongabay-News-Wordpress-Theme/functions.php:288
 msgid "Oceans"
 msgstr "Bahari"
 
@@ -228,11 +228,11 @@ msgstr "suluhisho-za-uhifadhi"
 msgid "all topics"
 msgstr "mada zote"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:260
+#: Mongabay-News-Wordpress-Theme/functions.php:277
 msgid "Feature"
 msgstr "Makala"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:272
+#: Mongabay-News-Wordpress-Theme/functions.php:289
 msgid "Conservation"
 msgstr "Uhifadhi"
 
@@ -240,7 +240,7 @@ msgstr "Uhifadhi"
 msgid "conservation"
 msgstr "uhifadhi"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:273
+#: Mongabay-News-Wordpress-Theme/functions.php:290
 msgid "Indigenous Peoples"
 msgstr "Jamii Asilia"
 
@@ -345,11 +345,11 @@ msgstr "Android app"
 msgid "Apple News"
 msgstr "Habari za Apple"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:419
+#: Mongabay-News-Wordpress-Theme/functions.php:436
 msgid "View Article"
 msgstr "Tazama taarifa"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:550
+#: Mongabay-News-Wordpress-Theme/functions.php:567
 msgid "Results for: "
 msgstr "Matokeo ya:"
 
@@ -369,27 +369,27 @@ msgstr "Wijeti za upande wa ukurasa wa takwimu zinapaswa kuwekwa hapa"
 msgid "Conservation news on"
 msgstr "Habari za uhifadhi zinapatikana"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:918
+#: Mongabay-News-Wordpress-Theme/functions.php:935
 msgid "If article is featured"
 msgstr "Ikiwa taarifa imechapishwa"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:927
+#: Mongabay-News-Wordpress-Theme/functions.php:944
 msgid "Bulletpoint 1"
 msgstr "Nukta 1"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:936
+#: Mongabay-News-Wordpress-Theme/functions.php:953
 msgid "Bulletpoint 2"
 msgstr "Nukta 2"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:945
+#: Mongabay-News-Wordpress-Theme/functions.php:962
 msgid "Bulletpoint 3"
 msgstr "Nukta 3"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:954
+#: Mongabay-News-Wordpress-Theme/functions.php:971
 msgid "Bulletpoint 4"
 msgstr "Nukta 4"
 
-#: Mongabay-News-Wordpress-Theme/functions.php:963
+#: Mongabay-News-Wordpress-Theme/functions.php:980
 msgid "Article link"
 msgstr "Kiungo cha taarifa"
 
@@ -515,7 +515,7 @@ msgstr "Soma nakala kamili"
 
 #: Mongabay-News-Wordpress-Theme/single-specials.php:83
 #: Mongabay-News-Wordpress-Theme/components/lib/shorts-dialog.php:38
-#: Mongabay-News-Wordpress-Theme/functions.php:275
+#: Mongabay-News-Wordpress-Theme/functions.php:292
 msgid "Load more"
 msgstr "Pakia zaidi"
 
@@ -1155,27 +1155,27 @@ msgstr "Makala"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:27
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:67
-#: Mongabay-News-Wordpress-Theme/functions.php:234
+#: Mongabay-News-Wordpress-Theme/functions.php:251
 msgid "features"
 msgstr "makala"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:31
-#: Mongabay-News-Wordpress-Theme/functions.php:234
+#: Mongabay-News-Wordpress-Theme/functions.php:251
 msgid "videos"
 msgstr "video"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:35
-#: Mongabay-News-Wordpress-Theme/functions.php:234
+#: Mongabay-News-Wordpress-Theme/functions.php:251
 msgid "podcasts"
 msgstr "podikasti"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:35
-#: Mongabay-News-Wordpress-Theme/functions.php:234
+#: Mongabay-News-Wordpress-Theme/functions.php:251
 msgid "specials"
 msgstr "Matoleo maalum"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:43
-#: Mongabay-News-Wordpress-Theme/functions.php:234
+#: Mongabay-News-Wordpress-Theme/functions.php:251
 #: Mongabay-News-Wordpress-Theme/lib/components/banners/inspiration-banner.php:38
 msgid "articles"
 msgstr "taarifa"
@@ -1185,7 +1185,7 @@ msgid "story"
 msgstr "habari"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:46
-#: Mongabay-News-Wordpress-Theme/functions.php:251
+#: Mongabay-News-Wordpress-Theme/functions.php:266
 msgid "Shorts"
 msgstr "Vipande vifupi"
 

@@ -11,12 +11,12 @@
             article_headline();
             ?>
             <?php if (!empty($img_url)) : ?>
-                <div class="article-cover-image <?php echo $cover_image_16_9 === '1' ? 'cover-image-16-9' : ''; ?>">
-                    <?php
-                    $thumb_url = get_the_post_thumbnail_url($post_id, wp_is_mobile() ? 'medium' : 'cover-image-large');
-                    ?>
-                    <div style="background: url('<?php echo esc_url($thumb_url); ?>'); background-size: cover; background-position: center; width: 100%;"></div>
-
+                <div role="img" class="article-cover-image <?php echo $cover_image_16_9 === '1' ? 'cover-image-16-9' : ''; ?>" aria-label="<?php echo get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true) ?: wp_get_attachment_caption(get_post_thumbnail_id()) ?: get_the_title($post_id); ?>">
+                    <div
+                        class="article-cover-image__bg"
+                        style="--cover-image-large: url('<?php echo esc_url(get_the_post_thumbnail_url($post_id, 'cover-image-large')); ?>');
+                            --cover-image-medium: url('<?php echo esc_url(get_the_post_thumbnail_url($post_id, 'medium')); ?>');">
+                    </div>
                 </div>
             <?php endif; ?>
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -28,7 +28,7 @@
 
                             <?php mongabay_sanitized_content($post_id); ?>
                             <div id="single-article-footer">
-                                <?php echo do_shortcode('[crossref_doi]'); ?>
+                                <?php if (get_current_blog_id() === 20) echo do_shortcode('[crossref_doi]'); ?>
                                 <?php article_credits($post_id); ?>
 
                                 <div id="single-article-tags">

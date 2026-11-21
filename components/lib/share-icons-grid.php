@@ -79,8 +79,8 @@ function share_icons_grid($type)
       ?>
     </div>
     <div class="container full-width in-column gap--8 share-dialog-link">
-      <label for="share-link"><?php _e('Page link', 'mongabay'); ?></label>
-      <input id="copy-url" type="text" value="{{shareUrl}}" id="share-link" readonly>
+      <label for="copy-url"><?php _e('Page link', 'mongabay'); ?></label>
+      <input id="copy-url" type="text" value="{{shareUrl}}" readonly>
       <span class="icon-share-copy"><?php echo $icon_copy; ?></span>
     </div>
   </div>

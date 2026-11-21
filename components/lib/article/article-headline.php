@@ -48,11 +48,11 @@ function article_headline()
         </div>
       </div>
       <div class="container social gap--4">
-        <?php
-        echo '<a href="#spotim-specific" class="theme--button simple secondary">';
-        _e('Comments', 'mongabay');
-        echo '</a>';
-        ?>
+        <div google-add-preferred-source-btn data-lang="<?php echo explode('_', get_locale())[0]; ?>"></div>
+
+
+
+
 
         <?php social_share(); ?>
 

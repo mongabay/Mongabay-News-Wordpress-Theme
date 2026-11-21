@@ -10,6 +10,11 @@ add_filter('graphql_response_headers_to_send', function ($headers) {
     $headers['Access-Control-Allow-Credentials'] = 'true';
   }
 
+  // Allow-Origin is echoed back per request, so any cache in front of /graphql
+  // must key on Origin too. Without this, a cached response can be served to a
+  // different subdomain carrying the wrong Allow-Origin value.
+  $headers['Vary'] = empty($headers['Vary']) ? 'Origin' : $headers['Vary'] . ', Origin';
+
   return $headers;
 });
 
@@ -206,3 +211,25 @@ add_action(
     ]);
   }
 );
+
+// Filter shortArticles query to support hasAlert argument
+add_filter('graphql_map_input_fields_to_wp_query', function ($query_args, $where_args, $source, $args, $context, $info, $post_type) {
+  if (!empty($where_args['hasAlert'])) {
+    if (!isset($query_args['meta_query'])) {
+      $query_args['meta_query'] = array();
+    }
+    $query_args['meta_query'][] = array(
+      'key' => 'alert',
+      'value' => '1',
+      'compare' => '=',
+    );
+  }
+  return $query_args;
+}, 10, 7);
+
+add_action('graphql_register_types', function () {
+  register_graphql_field('RootQueryToShortArticleConnectionWhereArgs', 'hasAlert', [
+    'type' => 'Boolean',
+    'description' => __('Filter to only show alert articles', 'wp-graphql'),
+  ]);
+});

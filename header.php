@@ -6,11 +6,11 @@
 <html class="ie ie8" <?php language_attributes(); ?> class="no-js">
 <![endif]-->
 <!--[if !(IE 7) | !(IE 8) ]><!-->
-<?php
-if (wp_is_mobile()) {
-	$html_style = 'margin-top: 25px!important';
-}
-?>
+
+
+
+
+
 <html <?php language_attributes(); ?> class="no-js">
 <!--<![endif]-->
 
@@ -23,13 +23,13 @@ if (wp_is_mobile()) {
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-12973256-1"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
-
 		function gtag() {
 			dataLayer.push(arguments);
 		}
 		gtag('js', new Date());
 		gtag('config', 'UA-12973256-1');
 	</script>
+	<script async src="https://news.google.com/swg/js/v1/publisher.js"></script>
 	<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico" sizes="any">
 	<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.svg" type="image/svg+xml">
 	<link rel="manifest" href="<?php echo get_template_directory_uri(); ?>/manifest.webmanifest">
@@ -59,13 +59,15 @@ if (wp_is_mobile()) {
 <body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
 	<header class="header sticky" role="banner">
-		<div class="container in-row space-between align-center ph--40 pv--20">
+		<?php mongabay_mega_menu(); ?>
+		<!-- <div class="container in-row space-between align-center ph--40 pv--20">
 			<div class="branding">
 				<a href="<?php echo home_url(); ?>" class="theme-light"><img src="<?php echo get_template_directory_uri(); ?>/img/logo/mongabay_logo_news_black.svg" /></a><a href="<?php echo home_url(); ?>" class="theme-dark"><img src="<?php echo get_template_directory_uri(); ?>/img/logo/mongabay_logo_news_white.svg" /></a>
 			</div>
 			<div class="menu-container align-center">
 				<ul class="main-menu nav-desktop">
 					<li><a href="<?php echo home_url(); ?>/<?php echo get_menu_item('features', 'slug'); ?>" class="<?php echo is_page(get_menu_item('features', 'title')) ? 'active' : ''; ?>"><?php echo get_menu_item('features', 'title'); ?></a></li>
+					<li><a href="<?php echo home_url(); ?>/<?php echo get_menu_item('explore', 'slug'); ?>" class="<?php echo is_page(get_menu_item('explore', 'title')) ? 'active' : ''; ?>"><?php echo get_menu_item('explore', 'title'); ?></a></li>
 					<?php if (get_enabled_features('videos')) : ?><li><a href=" <?php echo home_url(); ?>/<?php echo get_menu_item('videos', 'slug'); ?>" class="<?php echo is_page(get_menu_item('videos', 'title')) ? 'active' : ''; ?>"><?php echo get_menu_item('videos', 'title'); ?></a></li><?php endif; ?>
 					<?php if (get_enabled_features('podcasts')) : ?><li><a href="<?php echo home_url(); ?>/<?php echo get_menu_item('podcasts', 'slug'); ?>" class="<?php echo is_page(get_menu_item('podcasts', 'title')) ? 'active' : ''; ?>"><?php echo get_menu_item('podcasts', 'title'); ?></a></li><?php endif; ?>
 					<?php if (get_enabled_features('specials')) : ?><li><a href=" <?php echo home_url(); ?>/<?php echo get_menu_item('specials', 'slug'); ?>" class="<?php echo (is_page(get_menu_item('specials', 'title')) || is_tax('serial')) ? 'active' : ''; ?>"><?php echo get_menu_item('specials', 'title'); ?></a></li><?php endif; ?>
@@ -79,9 +81,9 @@ if (wp_is_mobile()) {
 				<a id="secondary-menu"><span class="icon icon-menu"></span></a>
 			</div>
 			<div id="off-canvas">
-				<?php if (wp_is_mobile()) { ?>
-					<span class="icon icon-cancel"></span>
-				<?php } ?>
+
+				<span class="d-hide icon icon-cancel"></span>
+
 				<div class="container in-column ph--40 pv--20 gap--20 <?php echo !wp_is_mobile() ? 'full-height' : ''; ?>" style="justify-content: space-between">
 					<div class="global-nav gap--20">
 						<span class="icon icon-globe md-hide"></span>
@@ -96,8 +98,8 @@ if (wp_is_mobile()) {
 							<li><a href="https://bengali.mongabay.com" class="<?php echo get_home_url() === 'https://bengali.mongabay.com' ? 'active' : ''; ?>">বাংলা (Bengali)</a></li>
 							<li><a href="https://swahili.mongabay.com" class="<?php echo get_home_url() === 'https://swahili.mongabay.com' ? 'active' : ''; ?>">Swahili</a></li>
 						</ul>
-						<?php if (!wp_is_mobile()) { ?><span class="icon icon-cancel"></span>
-						<?php } ?>
+						<span class="md-hide icon icon-cancel"></span>
+
 					</div>
 					<ul class="main-menu nav-desktop off-canvas">
 						<?php if (get_enabled_features('videos')) : ?><li><a href=" <?php echo home_url(); ?>/<?php echo get_menu_item('videos', 'slug'); ?>"><?php echo get_menu_item('videos', 'title'); ?></a></li><?php endif; ?>
@@ -108,43 +110,43 @@ if (wp_is_mobile()) {
 						<li><a href=" <?php echo home_url(); ?>/<?php echo get_menu_item('thelatest', 'slug'); ?>"><?php echo get_menu_item('thelatest', 'title'); ?></a></li>
 						<li><a href=" <?php echo home_url(); ?>/<?php echo get_menu_item('exploreall', 'slug'); ?>"><?php echo get_menu_item('exploreall', 'title'); ?></a></li>
 					</ul>
-					<?php if (!wp_is_mobile()) { ?>
-						<div class="footer gap--20 grid--5 pv--20">
-							<ul class="footer-links">
-								<li><a href="<?php echo get_menu_item('footerabout', 'url'); ?>"><?php echo get_menu_item('footerabout', 'title'); ?></a></li>
-								<li><a href="<?php echo home_url(); ?>/<?php echo get_menu_item('footerteam', 'slug'); ?>"><?php echo get_menu_item('footerteam', 'title'); ?></a></li>
-								<li><a href="<?php echo home_url(); ?>/<?php echo get_menu_item('footercontact', 'slug'); ?>"><?php echo get_menu_item('footercontact', 'title'); ?></a></li>
-							</ul>
-							<ul class="footer-links">
-								<?php if (function_exists('get_donate_link') && get_enabled_features('donate')) { ?>
-									<li><a href="<?php echo get_menu_item('donate', 'url'); ?>"><?php _e('Donate', 'mongabay'); ?></a></li>
-								<?php } ?>
-								<?php if (function_exists('get_subscribe_link_local')) { ?>
-									<li><a href="<?php echo get_subscribe_link_local(get_current_blog_id()); ?>"><?php _e('Subscribe page', 'mongabay'); ?></a></li>
-								<?php } ?>
-								<li><a href="<?php echo home_url() . '/' . get_menu_item('submissions', 'slug'); ?>"><?php _e('Submissions', 'mongabay'); ?></a></li>
-							</ul>
-							<ul class="footer-links">
-								<li><a href="https://www.mongabay.com/privacy"><?php _e('Privacy Policy', 'mongabay'); ?></a></li>
-								<li><a href="https://www.mongabay.com/terms"><?php _e('Terms of Use', 'mongabay'); ?></a></li>
-								<li><a href="https://www.mongabay.com/advertising"><?php _e('Advertising', 'mongabay'); ?></a></li>
-							</ul>
-							<ul class="footer-links">
-								<li><a href="https://www.wildmadagascar.org/"><?php _e('Wild Madagascar', 'mongabay'); ?></a></li>
-								<li><a href="https://kids.mongabay.com/"><?php _e('For Kids', 'mongabay'); ?></a></li>
-								<li><a href="https://mongabay.org/"><?php _e('Mongabay.org', 'mongabay'); ?></a></li>
-								<li><a href="https://reforestation.app/"><?php _e('Reforestation App', 'mongabay'); ?></a></li>
-							</ul>
-							<ul class="footer-links">
-								<li><a href="https://www.planetaryhealthcheck.org/"><?php _e('Planetary Health Check', 'mongabay'); ?></a></li>
-								<li><a href="https://www.conservationeffectiveness.org/"><?php _e('Conservation Effectiveness', 'mongabay'); ?></a></li>
-								<li><a href="https://studio.mongabay.com/"><?php _e('Mongabay Data Studio', 'mongabay'); ?></a></li>
-							</ul>
-						</div>
-					<?php } ?>
+
+					<div class="md-hide footer gap--20 grid--5 pv--20">
+						<ul class="footer-links">
+							<li><a href="<?php echo get_menu_item('footerabout', 'url'); ?>"><?php echo get_menu_item('footerabout', 'title'); ?></a></li>
+							<li><a href="<?php echo home_url(); ?>/<?php echo get_menu_item('footerteam', 'slug'); ?>"><?php echo get_menu_item('footerteam', 'title'); ?></a></li>
+							<li><a href="<?php echo home_url(); ?>/<?php echo get_menu_item('footercontact', 'slug'); ?>"><?php echo get_menu_item('footercontact', 'title'); ?></a></li>
+						</ul>
+						<ul class="footer-links">
+							<?php if (function_exists('get_donate_link') && get_enabled_features('donate')) { ?>
+								<li><a href="<?php echo get_menu_item('donate', 'url'); ?>"><?php _e('Donate', 'mongabay'); ?></a></li>
+							<?php } ?>
+							<?php if (function_exists('get_subscribe_link_local')) { ?>
+								<li><a href="<?php echo get_subscribe_link_local(get_current_blog_id()); ?>"><?php _e('Subscribe page', 'mongabay'); ?></a></li>
+							<?php } ?>
+							<li><a href="<?php echo home_url() . '/' . get_menu_item('submissions', 'slug'); ?>"><?php _e('Submissions', 'mongabay'); ?></a></li>
+						</ul>
+						<ul class="footer-links">
+							<li><a href="https://www.mongabay.com/privacy"><?php _e('Privacy Policy', 'mongabay'); ?></a></li>
+							<li><a href="https://www.mongabay.com/terms"><?php _e('Terms of Use', 'mongabay'); ?></a></li>
+							<li><a href="https://www.mongabay.com/advertising"><?php _e('Advertising', 'mongabay'); ?></a></li>
+						</ul>
+						<ul class="footer-links">
+							<li><a href="https://www.wildmadagascar.org/"><?php _e('Wild Madagascar', 'mongabay'); ?></a></li>
+							<li><a href="https://kids.mongabay.com/"><?php _e('For Kids', 'mongabay'); ?></a></li>
+							<li><a href="https://mongabay.org/"><?php _e('Mongabay.org', 'mongabay'); ?></a></li>
+							<li><a href="https://reforestation.app/"><?php _e('Reforestation App', 'mongabay'); ?></a></li>
+						</ul>
+						<ul class="footer-links">
+							<li><a href="https://www.planetaryhealthcheck.org/"><?php _e('Planetary Health Check', 'mongabay'); ?></a></li>
+							<li><a href="https://www.conservationeffectiveness.org/"><?php _e('Conservation Effectiveness', 'mongabay'); ?></a></li>
+							<li><a href="https://studio.mongabay.com/"><?php _e('Mongabay Data Studio', 'mongabay'); ?></a></li>
+						</ul>
+					</div>
+
 				</div>
 			</div>
-		</div>
+		</div> -->
 		<script>
 			document.addEventListener('DOMContentLoaded', function() {
 				const isThemeStored = window.localStorage.getItem("mongabay-theme");
@@ -193,11 +195,13 @@ if (wp_is_mobile()) {
 					document.querySelector("body").classList.add("no-scroll");
 				});
 
-				document.querySelector(".icon-cancel").addEventListener("click", (e) => {
-					e.preventDefault;
-					e.stopPropagation;
-					document.getElementById("off-canvas").classList.remove("active");
-					document.querySelector("body").classList.remove("no-scroll");
+				document.querySelectorAll(".icon-cancel").forEach((el) => {
+					el.addEventListener("click", (e) => {
+						e.preventDefault;
+						e.stopPropagation;
+						document.getElementById("off-canvas").classList.remove("active");
+						document.querySelector("body").classList.remove("no-scroll");
+					});
 				});
 			});
 		</script>
