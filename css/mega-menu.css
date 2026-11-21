@@ -545,6 +545,14 @@ a.mongabay-mega-menu__navbar-card:focus-visible {
   min-width: 0;
 }
 
+.mongabay-mega-menu__panel-secondary:has(> :only-child) {
+  align-items: stretch;
+}
+
+.mongabay-mega-menu__panel-secondary:has(> :only-child) .mongabay-mega-menu__card {
+  min-height: 100%;
+}
+
 .mongabay-mega-menu__panel-layout.has-features .mongabay-mega-menu__title-column {
   grid-column: auto;
   min-width: 0;
