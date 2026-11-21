@@ -18,3 +18,12 @@ jobs:
           WPE_ENV: mongabaynewstg
           REMOTE_PATH: wp-content/themes/mongabay_v2/
 
+      - name: Clear WP Engine Cache
+        if: success()
+        run: |
+          curl -X POST https://api.wpengine.com/v1/sites/mongabaynewstg/cache \
+            -H "Authorization: Bearer ${{ secrets.WPENGINE_API_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            -d '{"action":"purge_all"}'
+          echo "WP Engine cache cleared successfully!"
+
