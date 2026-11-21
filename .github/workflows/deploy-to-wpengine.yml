@@ -1,0 +1,35 @@
+name: Deploy to WP Engine Staging
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy to WP Engine
+        env:
+          WPENGINE_SSH_HOST: ${{ secrets.WPENGINE_SSH_HOST }}
+          WPENGINE_SSH_USER: ${{ secrets.WPENGINE_SSH_USER }}
+          WPENGINE_SSH_KEY: ${{ secrets.WPENGINE_SSH_KEY }}
+          WPENGINE_ENVIRONMENT: staging
+          WPENGINE_SITE_NAME: mongabaynewstg
+        run: |
+          # Install SSH key
+          mkdir -p ~/.ssh
+          echo "$WPENGINE_SSH_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H "$WPENGINE_SSH_HOST" >> ~/.ssh/known_hosts
+          
+          # Deploy the theme
+          ssh -i ~/.ssh/id_rsa "$WPENGINE_SSH_USER@$WPENGINE_SSH_HOST" << 'EOF'
+          cd wp-content/themes/mongabay-news-wordpress-theme
+          git pull origin main
+          EOF
+          
+          echo "Deployment to WP Engine staging completed successfully!"
