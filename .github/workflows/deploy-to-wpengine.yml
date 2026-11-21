@@ -28,7 +28,7 @@ jobs:
           
           # Deploy the theme
           ssh -i ~/.ssh/id_rsa "$WPENGINE_SSH_USER@$WPENGINE_SSH_HOST" << 'EOF'
-          cd wp-content/themes/mongabay-news-wordpress-theme
+          cd wp-content/themes/mongabay_v2
           git pull origin main
           EOF
           
