@@ -524,11 +524,15 @@ a.mongabay-mega-menu__navbar-card:focus-visible {
   gap: var(--spacing-11);
 }
 
+.mongabay-mega-menu__panel-layout.has-secondary {
+  align-items: stretch;
+}
+
 .mongabay-mega-menu__panel-layout.has-features .mongabay-mega-menu__feature-grid {
   grid-column: span 12;
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  align-items: start;
+  align-items: stretch;
   gap: var(--spacing-5);
 }
 
@@ -543,14 +547,6 @@ a.mongabay-mega-menu__navbar-card:focus-visible {
   align-items: start;
   gap: var(--spacing-6) var(--spacing-7);
   min-width: 0;
-}
-
-.mongabay-mega-menu__panel-secondary:has(> :only-child) {
-  align-items: stretch;
-}
-
-.mongabay-mega-menu__panel-secondary:has(> :only-child) .mongabay-mega-menu__card {
-  min-height: 100%;
 }
 
 .mongabay-mega-menu__panel-layout.has-features .mongabay-mega-menu__title-column {
