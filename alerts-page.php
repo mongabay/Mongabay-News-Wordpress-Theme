@@ -14,6 +14,7 @@ get_header(); ?>
     <div class="alerts-slider-wrapper">
       <header class="alerts-content-header">
         <h1 id="alerts-page-title"><?php esc_html_e('All News', 'mongabay'); ?></h1>
+        <p class="alerts-results-status" id="alerts-results-status" role="status" aria-live="polite"></p>
         <div class="alerts-filters-section">
           <div class="alerts-filter-controls">
             <label>
@@ -37,7 +38,6 @@ get_header(); ?>
           </div>
         </div>
       </header>
-      <p class="alerts-results-status" id="alerts-results-status" role="status" aria-live="polite"></p>
       <p class="alerts-index-status" id="alerts-index-status" role="status" aria-live="polite">
         <span class="loading-spinner"><?php esc_html_e('Loading map and filters...', 'mongabay'); ?></span>
       </p>
