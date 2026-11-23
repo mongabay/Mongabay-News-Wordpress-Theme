@@ -5368,7 +5368,7 @@ footer .grid--4 {
 }
 
 .alerts-content-header h1 {
-  margin: 0 0 18px;
+  margin: 0 0 8px;
   font-family: "Rowan Regular";
   font-size: clamp(2rem, 3.2vw, 3.25rem);
   font-weight: 400;
@@ -5646,8 +5646,9 @@ footer .grid--4 {
   }
 
   .alerts-content-header {
-    position: relative;
-    top: auto;
+    position: sticky;
+    top: var(--alerts-site-header-offset, 72px);
+    z-index: 4;
     flex-shrink: 0;
     margin: 0;
     padding: 0;
@@ -5674,7 +5675,7 @@ footer .grid--4 {
 
   .alerts-results-status {
     flex-shrink: 0;
-    margin: 0 16px 8px;
+    margin: 4px 16px 0;
   }
 
   .alerts-index-status {

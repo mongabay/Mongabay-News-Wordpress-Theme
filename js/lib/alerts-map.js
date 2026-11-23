@@ -462,6 +462,20 @@
     mapMessage.hidden = false;
   }
 
+  function initStickyHeader() {
+    const header = document.querySelector("header.header");
+    if (!header) return;
+    const page = document.getElementById("alerts-page");
+    const updateOffset = () => {
+      const top = Number.parseFloat(getComputedStyle(header).top);
+      const offset = header.getBoundingClientRect().height + (Number.isFinite(top) ? Math.max(top, 0) : 0);
+      page.style.setProperty("--alerts-site-header-offset", `${offset}px`);
+    };
+    updateOffset();
+    window.addEventListener("resize", updateOffset);
+    if (window.ResizeObserver) new ResizeObserver(updateOffset).observe(header);
+  }
+
   async function loadMapIndex() {
     const status = document.getElementById("alerts-index-status");
     const retry = document.getElementById("alerts-index-retry");
@@ -660,6 +674,7 @@
 
   async function init() {
     initDialog();
+    initStickyHeader();
     initSliderNavigation();
     initLoadMore();
     if (MAPBOX_TOKEN) {
