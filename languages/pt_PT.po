@@ -619,10 +619,6 @@ msgstr ""
 "<span class=\"icon icon-specials\">Séries de reportagens</span> para se aprofundar nas questões mais "
 "urgentes"
 
-#: Mongabay-News-Wordpress-Theme/components/lib/sliders/tools-slider.php:7
-msgid "Interested in other Mongabay websites?"
-msgstr "Interessado em outros sites da Mongabay?"
-
 #: Mongabay-News-Wordpress-Theme/custom-code/meta.php:101
 msgid ""
 "Mongabay seeks to raise interest in and appreciation of wild lands and wildlife, while examining the "

@@ -646,10 +646,6 @@ msgstr "আরো কিছু বিশেষ সংখ্যা"
 msgid "<span class=\"icon icon-specials\">Special issues</span> connect the dots between stories"
 msgstr ""
 
-#: Mongabay-News-Wordpress-Theme/components/lib/sliders/tools-slider.php:7
-msgid "Interested in other Mongabay websites?"
-msgstr "মঙ্গাবের অন্যান্য উদ্যোগ ঘুরে দেখুন?"
-
 #: Mongabay-News-Wordpress-Theme/custom-code/meta.php:101
 msgid ""
 "Mongabay seeks to raise interest in and appreciation of wild lands and wildlife, while examining the impact of "

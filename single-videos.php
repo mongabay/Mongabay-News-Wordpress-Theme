@@ -108,9 +108,9 @@
       <a href="<?php echo home_url(); ?>/?s=&formats=videos" class="theme--button primary"><?php _e('All videos', 'mongabay'); ?><span class="icon icon-right"></span></a>
     </div>
   </div>
+  <?php app_banner(1); ?>
   <div class="container full-width pv--40">
     <?php inspiration_banner(); ?>
   </div>
-  <?php app_banner(1); ?>
 </main>
 <?php get_footer(); ?>

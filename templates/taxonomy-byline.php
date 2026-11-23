@@ -139,6 +139,6 @@ $byline_avatar = get_term_meta($byline_id, 'cover_image_url', true);
   }
   ?>
 </div>
-<?php inspiration_banner(); ?>
 <?php app_banner(1); ?>
+<?php inspiration_banner(); ?>
 <?php get_footer(); ?>

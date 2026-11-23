@@ -2951,7 +2951,7 @@ button.clear-button:after {
   gap: 0;
   margin-top: 0;
   max-width: 100%;
-  min-width: min(220px, 100%);
+  min-width: min-content;
   padding: 0;
   position: relative;
   width: fit-content;
@@ -3170,6 +3170,11 @@ button.clear-button:after {
   left: 0;
   border-radius: 0 0 24px 24px;
   min-width: 0;
+  right: 0;
+  width: 100%;
+}
+
+.search[data-listing-filters] .tax-item-wrapper[data-slug] .listing-filter-dropdown {
   right: 44px;
   width: calc(100% - 44px);
 }
@@ -3734,21 +3739,6 @@ input#featured[type="checkbox"] {
 
 #general-page .open-sans {
   font-family: "Public Sans", sans-serif !important;
-}
-
-/* Mongabay tools */
-.tools-item {
-  height: 250px;
-  border-radius: var(--spacing-6);
-  overflow: hidden;
-  max-width: 421px;
-}
-
-.tools-item img {
-  width: 100%;
-  height: 250px;
-  object-fit: contain;
-  max-width: 421px;
 }
 
 /* Single post */

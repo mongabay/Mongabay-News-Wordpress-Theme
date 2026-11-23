@@ -417,7 +417,7 @@ msgstr "Merci d’inclure une photo. L’article ne peut être publié sans une 
 
 #: Mongabay-News-Wordpress-Theme/functions.php:1025 Mongabay-News-Wordpress-Theme/functions.php:1114
 msgid "No older posts"
-msgstr "Pas de publications"
+msgstr "Pas de publications plus anciennes"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:1167 Mongabay-News-Wordpress-Theme/components/lib/lists/articles-listing.php:53
 #: Mongabay-News-Wordpress-Theme/components/lib/sliders/featured-articles-slider.php:36
@@ -631,10 +631,6 @@ msgstr "Plus de séries spéciales"
 #: Mongabay-News-Wordpress-Theme/components/lib/sliders/series-articles-slider.php:55
 msgid "<span class=\"icon icon-specials\">Special issues</span> connect the dots between stories"
 msgstr "Les points entre les histoires sont reliés par les <span class=\"icon icon-specials\">éditions spéciales</span>"
-
-#: Mongabay-News-Wordpress-Theme/components/lib/sliders/tools-slider.php:7
-msgid "Interested in other Mongabay websites?"
-msgstr "Souhaitez-vous découvrir d’autres sites Mongabay?"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/meta.php:101
 msgid ""

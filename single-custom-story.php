@@ -40,11 +40,10 @@
         <div class="container centered">
             <a href="" class="theme--button primary"><?php _e('All Specials', 'mongabay'); ?><span class="icon icon-right"></span></a>
         </div>
-        <?php tools_slider(); ?>
+        <?php app_banner(1); ?>
     </div>
     <div class="container full-width pv--40">
         <?php inspiration_banner(); ?>
     </div>
-    <?php app_banner(1); ?>
 </main>
 <?php get_footer(); ?>

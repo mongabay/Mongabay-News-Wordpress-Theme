@@ -422,13 +422,9 @@ msgstr "Enlace del artículo"
 msgid "Please set Featured Image. Article cannot be published without one."
 msgstr "Selecciona una imagen destacada. El artículo no se puede publicar sin ella."
 
-<<<<<<< HEAD
-#: Mongabay-News-Wordpress-Theme/functions.php:1114 Mongabay-News-Wordpress-Theme/functions.php:1025
-=======
-#: Mongabay-News-Wordpress-Theme/functions.php:1025
->>>>>>> main
+#: Mongabay-News-Wordpress-Theme/functions.php:1223 Mongabay-News-Wordpress-Theme/functions.php:1227
 msgid "No older posts"
-msgstr "No hay publicaciones antiguas"
+msgstr "No hay publicaciones anteriores"
 
 #: Mongabay-News-Wordpress-Theme/functions.php:1167
 #: Mongabay-News-Wordpress-Theme/components/lib/lists/articles-listing.php:53
@@ -645,10 +641,6 @@ msgstr "Más especiales"
 #: Mongabay-News-Wordpress-Theme/components/lib/sliders/series-articles-slider.php:55
 msgid "<span class=\"icon icon-specials\">Special issues</span> connect the dots between stories"
 msgstr "<span class=\"icon icon-specials\">Los especiales</span> que conectan las historias más complejas"
-
-#: Mongabay-News-Wordpress-Theme/components/lib/sliders/tools-slider.php:7
-msgid "Interested in other Mongabay websites?"
-msgstr "¿Interesado en otros sitios web de Mongabay?"
 
 #: Mongabay-News-Wordpress-Theme/custom-code/meta.php:101
 msgid ""
@@ -1182,10 +1174,6 @@ msgid "podcasts"
 msgstr "podcasts"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:35 Mongabay-News-Wordpress-Theme/functions.php:251
-<<<<<<< HEAD
-#: Mongabay-News-Wordpress-Theme/functions.php:1110
-=======
->>>>>>> main
 msgid "specials"
 msgstr "especiales"
 
@@ -1199,10 +1187,6 @@ msgid "story"
 msgstr "articulo"
 
 #: Mongabay-News-Wordpress-Theme/components/lib/utils.php:46 Mongabay-News-Wordpress-Theme/functions.php:266
-<<<<<<< HEAD
-#: Mongabay-News-Wordpress-Theme/functions.php:1110
-=======
->>>>>>> main
 msgid "Shorts"
 msgstr "En corto"
 
