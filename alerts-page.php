@@ -18,13 +18,13 @@ get_header(); ?>
           <div class="alerts-filter-controls">
             <label>
               <span class="screen-reader-text"><?php esc_html_e('Filter by location', 'mongabay'); ?></span>
-              <select id="alerts-location-filter">
+              <select id="alerts-location-filter" disabled>
                 <option value="all"><?php esc_html_e('All locations', 'mongabay'); ?></option>
               </select>
             </label>
             <label>
               <span class="screen-reader-text"><?php esc_html_e('Filter by topic', 'mongabay'); ?></span>
-              <select id="alerts-topic-filter">
+              <select id="alerts-topic-filter" disabled>
                 <option value="all"><?php esc_html_e('All topics', 'mongabay'); ?></option>
               </select>
             </label>
@@ -38,6 +38,10 @@ get_header(); ?>
         </div>
       </header>
       <p class="alerts-results-status" id="alerts-results-status" role="status" aria-live="polite"></p>
+      <p class="alerts-index-status" id="alerts-index-status" role="status" aria-live="polite">
+        <span class="loading-spinner"><?php esc_html_e('Loading map and filters...', 'mongabay'); ?></span>
+      </p>
+      <button class="theme--button outlined" id="alerts-index-retry" type="button" hidden><?php esc_html_e('Retry loading map and filters', 'mongabay'); ?></button>
       <div class="alerts-slider-navigation">
         <button class="alerts-slider-nav alerts-slider-nav-prev" id="alerts-slider-prev" aria-label="<?php esc_attr_e('Previous articles', 'mongabay'); ?>" type="button">
           <span class="icon icon-left" aria-hidden="true"></span>
@@ -47,6 +51,10 @@ get_header(); ?>
         </button>
       </div>
       <div class="alerts-article-grid" id="alerts-article-grid"></div>
+      <div class="alerts-load-more">
+        <p id="alerts-loading" role="status" aria-live="polite" hidden><span class="loading-spinner"><?php esc_html_e('Loading alerts...', 'mongabay'); ?></span></p>
+        <button class="theme--button outlined" id="alerts-load-more" type="button" hidden><?php esc_html_e('Load more alerts', 'mongabay'); ?></button>
+      </div>
     </div>
   </section>
   <div class="alerts-globe" id="alerts-globe" aria-label="<?php esc_attr_e('Map of news alerts', 'mongabay'); ?>">
