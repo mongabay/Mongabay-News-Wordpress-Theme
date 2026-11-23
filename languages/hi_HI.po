@@ -604,10 +604,6 @@ msgstr "और विशेष लेख"
 msgid "<span class=\"icon icon-specials\">Special issues</span> connect the dots between stories"
 msgstr "<span class=\"icon icon-specials\">विशेष संस्करण </span> जो खबरों को जोड़ते हैं।"
 
-#: Mongabay-News-Wordpress-Theme/components/lib/sliders/tools-slider.php:7
-msgid "Interested in other Mongabay websites?"
-msgstr "मोंगाबे की दूसरी वेबसाइट्स में दिलचस्पी रखते हैं?"
-
 #: Mongabay-News-Wordpress-Theme/custom-code/meta.php:101
 msgid ""
 "Mongabay seeks to raise interest in and appreciation of wild lands and wildlife, while examining the impact of emerging trends in climate, technology, "

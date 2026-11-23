@@ -27,8 +27,7 @@ specials_slider('Special Issues connect the dots between stories', array(), 'tex
     </div>
   </div>
 </div>
-<?php tools_slider(); ?>
+<?php app_banner(1); ?>
 
 <?php inspiration_banner(); ?>
-<?php app_banner(1); ?>
 <?php get_footer(); ?>

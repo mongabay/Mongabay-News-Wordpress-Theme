@@ -142,6 +142,6 @@ $author_role = get_the_author_meta('job_title');
 	}
 	?>
 </div>
-<?php inspiration_banner(); ?>
 <?php app_banner(1); ?>
+<?php inspiration_banner(); ?>
 <?php get_footer(); ?>

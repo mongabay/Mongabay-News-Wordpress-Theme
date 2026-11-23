@@ -55,6 +55,6 @@ formats_slider(array('podcasts'), 'Listen to Nature with thought-provoking podca
     </div>
   </div>
 </div>
-<?php inspiration_banner(); ?>
 <?php app_banner(1); ?>
+<?php inspiration_banner(); ?>
 <?php get_footer(); ?>

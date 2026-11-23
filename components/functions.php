@@ -31,7 +31,6 @@ include(get_template_directory() . '/components/lib/lists/shorts-listing.php');
 
 // sliders
 include(get_template_directory() . '/components/lib/sliders/featured-articles-slider.php');
-include(get_template_directory() . '/components/lib/sliders/tools-slider.php');
 include(get_template_directory() . '/components/lib/sliders/formats-slider.php');
 include(get_template_directory() . '/components/lib/sliders/specials-slider.php');
 include(get_template_directory() . '/components/lib/sliders/series-articles-slider.php');

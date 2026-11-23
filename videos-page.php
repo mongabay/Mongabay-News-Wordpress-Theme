@@ -37,7 +37,7 @@ formats_slider(array('videos'), 'Watch unique videos that cut through the noise'
     </div>
   </div>
 </div>
-<?php inspiration_banner(); ?>
 <?php app_banner(1); ?>
+<?php inspiration_banner(); ?>
 <?php get_shorts_dialog(true); ?>
 <?php get_footer(); ?>

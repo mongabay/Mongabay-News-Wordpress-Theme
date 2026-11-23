@@ -62,8 +62,7 @@
 </div>
 
 <?php get_shorts_dialog(); ?>
-<?php tools_slider(); ?>
-<?php inspiration_banner(); ?>
 <?php app_banner(1); ?>
+<?php inspiration_banner(); ?>
 </div>
 <?php get_footer(); ?>

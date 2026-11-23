@@ -79,7 +79,6 @@ $counter = 0;
     <a href="<?php echo home_url(); ?>/?s=&formats=specials" class="theme--button primary"><?php _e('All Specials', 'mongabay'); ?><span class="icon icon-right"></span></a>
   </div>
 </div>
-<?php tools_slider(); ?>
-<?php inspiration_banner(); ?>
 <?php app_banner(1); ?>
+<?php inspiration_banner(); ?>
 <?php get_footer(); ?>

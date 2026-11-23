@@ -56,6 +56,6 @@ $banner = '
   ?>
 </div>
 
-<?php inspiration_banner(); ?>
 <?php app_banner(1); ?>
+<?php inspiration_banner(); ?>
 <?php get_footer(); ?>

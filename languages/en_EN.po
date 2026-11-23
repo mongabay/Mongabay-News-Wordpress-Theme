@@ -656,10 +656,6 @@ msgstr "Más especiales"
 msgid "<span class=\"icon icon-specials\">Special issues</span> connect the dots between stories"
 msgstr "<span class=\"icon icon-specials\">Los especiales</span> que conectan las historias más complejas"
 
-#: Mongabay-News-Wordpress-Theme/components/lib/sliders/tools-slider.php:7
-msgid "Interested in other Mongabay websites?"
-msgstr "¿Interesado en otros sitios web de Mongabay?"
-
 #: Mongabay-News-Wordpress-Theme/custom-code/meta.php:101
 msgid ""
 "Mongabay seeks to raise interest in and appreciation of wild lands and wildlife, while examining the "
