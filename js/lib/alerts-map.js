@@ -7,6 +7,7 @@
 
   let map;
   let mapReady = false;
+  let indexReady = false;
   let mapAlerts = [];
   let filteredAlerts = [];
   let filteredMapAlerts = [];
@@ -467,9 +468,11 @@
     status.classList.add("loading-spinner");
     status.textContent = config.loadingMapLabel || "Loading map and filters...";
     retry.hidden = true;
+    indexReady = false;
     mapAlerts = [];
     filteredMapAlerts = [];
     renderMarkers();
+    updateResultsStatus();
     const query = `
       query AlertMapIndex($after: String) {
         shortArticles(first: 100, after: $after, where: { hasAlert: true, status: PUBLISH, orderby: { field: DATE, order: DESC } }) {
@@ -495,6 +498,8 @@
       }
       populateFilter("alerts-location-filter", "locations", config.allLocationsLabel || "All locations");
       populateFilter("alerts-topic-filter", "topics", config.allTopicsLabel || "All topics");
+      indexReady = true;
+      updateResultsStatus();
       status.textContent = "";
     } catch (error) {
       console.error("Unable to load the alert map index.", error);
@@ -503,6 +508,24 @@
     } finally {
       status.classList.remove("loading-spinner");
     }
+  }
+
+  function updateResultsStatus() {
+    if (loadFailed) return;
+    const status = document.getElementById("alerts-results-status");
+    const noMatches = !hasMore || (indexReady && !filteredMapAlerts.length);
+    if (!loading && !filteredAlerts.length && noMatches) {
+      status.textContent = config.noAlertsLabel || "No alerts found";
+      return;
+    }
+    const total = indexReady ? String(filteredMapAlerts.length) : "...";
+    let message = (config.alertsProgressLabel || "Alerts %1$s/%2$s")
+      .replace("%1$s", () => String(filteredAlerts.length))
+      .replace("%2$s", () => total);
+    if (!loading && !filteredAlerts.length) {
+      message += ` ${config.noLoadedAlertsLabel || "No alerts in this batch. Load more to continue."}`;
+    }
+    status.textContent = message;
   }
 
   function resetArticles() {
@@ -533,6 +556,7 @@
     const grid = document.getElementById("alerts-article-grid");
     loading = true;
     loadFailed = false;
+    updateResultsStatus();
     articleRequest = new AbortController();
     indicator.hidden = false;
     button.hidden = true;
@@ -545,11 +569,6 @@
       alerts.forEach((alert) => grid.appendChild(createArticleCard(alert)));
       nextCursor = connection.pageInfo.endCursor;
       hasMore = connection.pageInfo.hasNextPage;
-      status.textContent = filteredAlerts.length
-        ? `${filteredAlerts.length} ${config.alertsLoadedLabel || "alerts loaded"}`
-        : hasMore
-          ? (config.noLoadedAlertsLabel || "No alerts in this batch. Load more to continue.")
-          : (config.noAlertsLabel || "No alerts found for these filters.");
       button.textContent = config.loadMoreLabel || "Load more alerts";
       updateSliderNavigation();
     } catch (error) {
@@ -564,6 +583,7 @@
         indicator.hidden = true;
         button.hidden = !hasMore;
         grid.removeAttribute("aria-busy");
+        updateResultsStatus();
       }
     }
   }
