@@ -5391,6 +5391,12 @@ footer .grid--4 {
   width: 160px;
 }
 
+.alerts-filter-controls label[hidden],
+#alerts-index-retry[hidden],
+#alerts-load-more[hidden] {
+  display: none;
+}
+
 .alerts-filter-controls label::after {
   position: absolute;
   top: 50%;
@@ -5423,6 +5429,25 @@ footer .grid--4 {
   margin: 0 0 16px;
   color: var(--theme-muted);
   font-size: var(--font-xs);
+}
+
+.alerts-index-status {
+  margin: 0 0 16px;
+  color: var(--theme-muted);
+  font-size: var(--font-xs);
+}
+
+.alerts-index-status:empty {
+  display: none;
+}
+
+.alerts-load-more {
+  padding: 16px 0;
+  text-align: center;
+}
+
+.alerts-load-more p {
+  margin: 0;
 }
 
 .alerts-article-grid {
@@ -5649,6 +5674,10 @@ footer .grid--4 {
 
   .alerts-results-status {
     flex-shrink: 0;
+    margin: 0 16px 8px;
+  }
+
+  .alerts-index-status {
     margin: 0 16px 8px;
   }
 

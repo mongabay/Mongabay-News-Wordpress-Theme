@@ -7,15 +7,32 @@
 
   let map;
   let mapReady = false;
-  let allAlerts = [];
+  let mapAlerts = [];
   let filteredAlerts = [];
-  let selectedAlertIndex = -1;
+  let filteredMapAlerts = [];
+  let selectedAlertId = null;
   let articleDetailsRequest = 0;
+  let nextCursor = null;
+  let hasMore = true;
+  let loading = false;
+  let loadFailed = false;
+  let requestGeneration = 0;
+  let articleRequest;
+  let nearPageEnd = false;
+  let nearPaneEnd = false;
 
-  function buildQuery() {
+  function buildQuery(location, topic) {
+    const taxFilters = [];
+    if (location !== "all") {
+      taxFilters.push(`{taxonomy: LOCATION, terms: [${JSON.stringify(location)}], field: SLUG, operator: IN, includeChildren: false}`);
+    }
+    if (topic !== "all") {
+      taxFilters.push(`{taxonomy: TOPIC, terms: [${JSON.stringify(topic)}], field: SLUG, operator: IN, includeChildren: false}`);
+    }
+    const taxQuery = taxFilters.length ? `taxQuery: { relation: AND, taxArray: [${taxFilters.join(", ")}] },` : "";
     return `
       query AlertArticles($after: String) {
-        shortArticles(first: 20, after: $after, where: { hasAlert: true, status: PUBLISH, orderby: { field: DATE, order: DESC } }) {
+        shortArticles(first: 20, after: $after, where: { hasAlert: true, status: PUBLISH, ${taxQuery} orderby: { field: DATE, order: DESC } }) {
           nodes {
             databaseId
             title
@@ -36,7 +53,7 @@
             topics { nodes { name slug } }
             locations {
               nodes {
-                name
+                name slug
               }
             }
           }
@@ -46,39 +63,25 @@
     `;
   }
 
-  async function fetchAlerts() {
-    const alerts = [];
-    let after = null;
-    let hasNextPage = true;
-    let pageCount = 0;
-
-    while (hasNextPage && pageCount < 10) {
-      const response = await fetch(GRAPHQL_ENDPOINT, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ query: buildQuery(), variables: { after } }),
-      });
-
-      if (!response.ok) {
-        throw new Error(`Alert request failed with status ${response.status}`);
-      }
-
-      const result = await response.json();
-      if (!result.data?.shortArticles) {
-        throw new Error(result.errors?.map((error) => error.message).join(", ") || "Alert data is unavailable");
-      }
-      if (result.errors?.length) {
-        console.warn("GraphQL returned partial alert data.", result.errors);
-      }
-
-      const connection = result.data.shortArticles;
-      alerts.push(...connection.nodes.filter((alert) => alert.alertMapCoordinates));
-      hasNextPage = connection.pageInfo.hasNextPage;
-      after = connection.pageInfo.endCursor;
-      pageCount++;
+  async function fetchConnection(query, after, signal) {
+    const response = await fetch(GRAPHQL_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ query, variables: { after } }),
+      signal,
+    });
+    if (!response.ok) {
+      throw new Error(`Alert request failed with status ${response.status}`);
     }
-
-    return { alerts, truncated: hasNextPage };
+    const result = await response.json();
+    if (result.errors?.length || !result.data?.shortArticles) {
+      throw new Error(result.errors?.map((error) => error.message).join(", ") || "Alert data is unavailable");
+    }
+    const connection = result.data.shortArticles;
+    if (connection.pageInfo.hasNextPage && (!connection.pageInfo.endCursor || connection.pageInfo.endCursor === after)) {
+      throw new Error("Alert pagination returned an invalid cursor");
+    }
+    return connection;
   }
 
   function parseCoordinates(coordString) {
@@ -113,7 +116,7 @@
   function getMarkerColorExpression() {
     return [
       "case",
-      ["==", ["get", "index"], selectedAlertIndex],
+      ["==", ["get", "id"], selectedAlertId ?? -1],
       getThemeColor("--theme-emerald-green", "#006a54"),
       getThemeColor("--theme-red", "#e63946"),
     ];
@@ -155,16 +158,16 @@
         source: markerSourceId,
         paint: {
           "circle-color": getMarkerColorExpression(),
-          "circle-radius": ["case", ["==", ["get", "index"], selectedAlertIndex], 12, 8],
+          "circle-radius": ["case", ["==", ["get", "id"], selectedAlertId ?? -1], 12, 8],
           "circle-stroke-color": getThemeColor("--theme-body-white", "#ffffff"),
           "circle-stroke-width": 2,
         },
       });
       map.on("click", markerLayerId, function (event) {
         if (!event.features?.length) return;
-        const index = Number(event.features[0].properties.index);
-        const alert = filteredAlerts[index];
-        if (alert) openArticle(alert, index);
+        const id = Number(event.features[0].properties.id);
+        const alert = filteredMapAlerts.find((item) => item.databaseId === id);
+        if (alert) openArticle(alert);
       });
       map.on("mouseenter", markerLayerId, function () {
         map.getCanvas().style.cursor = "pointer";
@@ -181,7 +184,7 @@
   function populateFilter(selectId, taxonomy, defaultLabel) {
     const select = document.getElementById(selectId);
     const terms = new Map();
-    allAlerts.forEach((alert) => {
+    mapAlerts.forEach((alert) => {
       getTerms(alert, taxonomy).forEach((term) => {
         const value = getTermValue(term);
         if (value) terms.set(value, getTermLabel(term));
@@ -198,7 +201,7 @@
       });
     select.options[0].textContent = defaultLabel;
     select.closest("label").hidden = terms.size === 0;
-    select.addEventListener("change", applyFilters);
+    select.disabled = false;
   }
 
   function applyFilters() {
@@ -220,19 +223,17 @@
     }
     document.getElementById("alerts-page-title").textContent = title;
 
-    filteredAlerts = allAlerts.filter((alert) => {
-      const matchesLocation = location === "all" || getTerms(alert, "locations").some((term) => getTermValue(term) === location);
-      const matchesTopic = topic === "all" || getTerms(alert, "topics").some((term) => getTermValue(term) === topic);
-      const matchesFormat = format === "all";
-      return matchesLocation && matchesTopic && matchesFormat;
-    });
-
-    selectedAlertIndex = -1;
-    renderArticles();
+    filteredMapAlerts = mapAlerts.filter((alert) =>
+      (location === "all" || getTerms(alert, "locations").some((term) => getTermValue(term) === location)) &&
+      (topic === "all" || getTerms(alert, "topics").some((term) => getTermValue(term) === topic)) &&
+      format === "all"
+    );
+    selectedAlertId = null;
     renderMarkers();
+    resetArticles();
   }
 
-  function createArticleCard(alert, index) {
+  function createArticleCard(alert) {
     const card = document.createElement("div");
     card.classList.add("article--container", "pv--8");
     const link = document.createElement("a");
@@ -266,7 +267,7 @@
 
     link.addEventListener("click", (event) => {
       event.preventDefault();
-      openArticle(alert, index);
+      openArticle(alert);
     });
 
     const mobileCard = document.createElement("div");
@@ -329,31 +330,12 @@
     readLink.appendChild(arrow);
     readLink.addEventListener("click", (event) => {
       event.preventDefault();
-      openArticle(alert, index);
+      openArticle(alert);
     });
     inner.appendChild(readLink);
     mobileCard.appendChild(inner);
     card.appendChild(mobileCard);
     return card;
-  }
-
-  function renderArticles() {
-    const grid = document.getElementById("alerts-article-grid");
-    const status = document.getElementById("alerts-results-status");
-    grid.replaceChildren();
-    grid.scrollLeft = 0;
-
-    if (!filteredAlerts.length) {
-      status.textContent = config.noAlertsLabel || "No alerts found for these filters.";
-      updateSliderNavigation();
-      return;
-    }
-
-    status.textContent = `${filteredAlerts.length} ${config.alertsLabel || "alerts"}`;
-    filteredAlerts.forEach((alert, index) => {
-      grid.appendChild(createArticleCard(alert, index));
-    });
-    updateSliderNavigation();
   }
 
   function renderMarkers() {
@@ -362,12 +344,12 @@
     if (!source) return;
 
     const features = [];
-    filteredAlerts.forEach((alert, index) => {
+    filteredMapAlerts.forEach((alert) => {
       const coordinates = parseCoordinates(alert.alertMapCoordinates);
       if (!coordinates) return;
       features.push({
         type: "Feature",
-        properties: { index },
+        properties: { id: alert.databaseId },
         geometry: { type: "Point", coordinates },
       });
     });
@@ -377,7 +359,7 @@
       map.setPaintProperty(markerLayerId, "circle-color", getMarkerColorExpression());
       map.setPaintProperty(markerLayerId, "circle-radius", [
         "case",
-        ["==", ["get", "index"], selectedAlertIndex],
+        ["==", ["get", "id"], selectedAlertId ?? -1],
         12,
         8,
       ]);
@@ -389,6 +371,8 @@
       query AlertArticleDetails($id: ID!) {
         shortArticle(idType: DATABASE_ID, id: $id) {
           content
+          articleLink
+          featuredImage { node { sourceUrl(size: MEDIUM) } }
           byline { nodes { name } }
         }
       }
@@ -410,8 +394,8 @@
     return result.data.shortArticle;
   }
 
-  async function openArticle(alert, index) {
-    selectedAlertIndex = index;
+  async function openArticle(alert) {
+    selectedAlertId = alert.databaseId;
     renderMarkers();
     const requestId = ++articleDetailsRequest;
 
@@ -449,6 +433,13 @@
       const details = await fetchArticleDetails(alert.databaseId);
       if (requestId !== articleDetailsRequest || !dialog.open) return;
       content.innerHTML = details.content || alert.excerpt || "";
+      if (!imageUrl && details.featuredImage?.node?.sourceUrl) {
+        const image = document.createElement("img");
+        image.src = details.featuredImage.node.sourceUrl;
+        image.alt = "";
+        imageContainer.appendChild(image);
+      }
+      if (details.articleLink) document.getElementById("alerts-dialog-link").href = details.articleLink;
       document.getElementById("alerts-dialog-byline").textContent =
         details.byline?.nodes?.map((author) => author.name).filter(Boolean).join(", ") || "";
     } catch (error) {
@@ -468,6 +459,152 @@
     const mapMessage = document.getElementById("alerts-map-message");
     mapMessage.textContent = message;
     mapMessage.hidden = false;
+  }
+
+  async function loadMapIndex() {
+    const status = document.getElementById("alerts-index-status");
+    const retry = document.getElementById("alerts-index-retry");
+    status.classList.add("loading-spinner");
+    status.textContent = config.loadingMapLabel || "Loading map and filters...";
+    retry.hidden = true;
+    mapAlerts = [];
+    filteredMapAlerts = [];
+    renderMarkers();
+    const query = `
+      query AlertMapIndex($after: String) {
+        shortArticles(first: 100, after: $after, where: { hasAlert: true, status: PUBLISH, orderby: { field: DATE, order: DESC } }) {
+          nodes {
+            databaseId title uri date alertMapCoordinates alertMapZoom
+            topics { nodes { name slug } }
+            locations { nodes { name slug } }
+          }
+          pageInfo { hasNextPage endCursor }
+        }
+      }
+    `;
+    try {
+      let after = null;
+      let more = true;
+      while (more) {
+        const connection = await fetchConnection(query, after);
+        mapAlerts.push(...connection.nodes.filter((alert) => alert.alertMapCoordinates));
+        filteredMapAlerts = mapAlerts.slice();
+        renderMarkers();
+        more = connection.pageInfo.hasNextPage;
+        after = connection.pageInfo.endCursor;
+      }
+      populateFilter("alerts-location-filter", "locations", config.allLocationsLabel || "All locations");
+      populateFilter("alerts-topic-filter", "topics", config.allTopicsLabel || "All topics");
+      status.textContent = "";
+    } catch (error) {
+      console.error("Unable to load the alert map index.", error);
+      status.textContent = config.mapIndexUnavailable || "Could not load all map markers and filters.";
+      retry.hidden = false;
+    } finally {
+      status.classList.remove("loading-spinner");
+    }
+  }
+
+  function resetArticles() {
+    requestGeneration++;
+    if (articleRequest) articleRequest.abort();
+    nextCursor = null;
+    hasMore = true;
+    loading = false;
+    loadFailed = false;
+    nearPageEnd = false;
+    nearPaneEnd = false;
+    filteredAlerts = [];
+    const grid = document.getElementById("alerts-article-grid");
+    grid.replaceChildren();
+    grid.scrollLeft = 0;
+    updateSliderNavigation();
+    loadMoreArticles();
+  }
+
+  async function loadMoreArticles() {
+    if (loading || !hasMore) return;
+    const generation = requestGeneration;
+    const location = document.getElementById("alerts-location-filter").value;
+    const topic = document.getElementById("alerts-topic-filter").value;
+    const status = document.getElementById("alerts-results-status");
+    const indicator = document.getElementById("alerts-loading");
+    const button = document.getElementById("alerts-load-more");
+    const grid = document.getElementById("alerts-article-grid");
+    loading = true;
+    loadFailed = false;
+    articleRequest = new AbortController();
+    indicator.hidden = false;
+    button.hidden = true;
+    grid.setAttribute("aria-busy", "true");
+    try {
+      const connection = await fetchConnection(buildQuery(location, topic), nextCursor, articleRequest.signal);
+      if (generation !== requestGeneration) return;
+      const alerts = connection.nodes.filter((alert) => alert.alertMapCoordinates);
+      filteredAlerts.push(...alerts);
+      alerts.forEach((alert) => grid.appendChild(createArticleCard(alert)));
+      nextCursor = connection.pageInfo.endCursor;
+      hasMore = connection.pageInfo.hasNextPage;
+      status.textContent = filteredAlerts.length
+        ? `${filteredAlerts.length} ${config.alertsLoadedLabel || "alerts loaded"}`
+        : hasMore
+          ? (config.noLoadedAlertsLabel || "No alerts in this batch. Load more to continue.")
+          : (config.noAlertsLabel || "No alerts found for these filters.");
+      button.textContent = config.loadMoreLabel || "Load more alerts";
+      updateSliderNavigation();
+    } catch (error) {
+      if (generation !== requestGeneration) return;
+      console.error("Unable to load alerts.", error);
+      status.textContent = config.alertsUnavailable || "Alerts could not be loaded. Please try again later.";
+      button.textContent = config.retryAlertsLabel || "Retry loading alerts";
+      loadFailed = true;
+    } finally {
+      if (generation === requestGeneration) {
+        loading = false;
+        indicator.hidden = true;
+        button.hidden = !hasMore;
+        grid.removeAttribute("aria-busy");
+      }
+    }
+  }
+
+  function initLoadMore() {
+    const pane = document.querySelector(".alerts-content-pane");
+    const grid = document.getElementById("alerts-article-grid");
+    const button = document.getElementById("alerts-load-more");
+    const boundary = document.querySelector(".alerts-load-more");
+    button.addEventListener("click", loadMoreArticles);
+    document.getElementById("alerts-index-retry").addEventListener("click", loadMapIndex);
+    document.getElementById("alerts-location-filter").addEventListener("change", applyFilters);
+    document.getElementById("alerts-topic-filter").addEventListener("change", applyFilters);
+    let lastPageScroll = window.scrollY;
+    let lastPaneScroll = pane.scrollTop;
+    window.addEventListener("scroll", () => {
+      const current = window.scrollY;
+      const nearEnd = boundary.getBoundingClientRect().top <= window.innerHeight + 100;
+      if (current > lastPageScroll && window.matchMedia("(max-width: 768px)").matches &&
+          nearEnd && !nearPageEnd && !loadFailed) {
+        loadMoreArticles();
+      }
+      nearPageEnd = nearEnd;
+      lastPageScroll = current;
+    });
+    pane.addEventListener("scroll", () => {
+      const current = pane.scrollTop;
+      const nearEnd = current + pane.clientHeight >= pane.scrollHeight - 100;
+      if (current > lastPaneScroll && !window.matchMedia("(max-width: 768px)").matches &&
+          nearEnd && !nearPaneEnd && !loadFailed) {
+        loadMoreArticles();
+      }
+      nearPaneEnd = nearEnd;
+      lastPaneScroll = current;
+    });
+    grid.addEventListener("scroll", () => {
+      if (window.matchMedia("(max-width: 768px)").matches && grid.scrollLeft > 0 &&
+          grid.scrollLeft + grid.clientWidth >= grid.scrollWidth - 10 && !loadFailed) {
+        loadMoreArticles();
+      }
+    });
   }
 
   function updateSliderNavigation() {
@@ -504,6 +641,7 @@
   async function init() {
     initDialog();
     initSliderNavigation();
+    initLoadMore();
     if (MAPBOX_TOKEN) {
       try {
         if (!window.mapboxgl) throw new Error("Mapbox GL JS is unavailable.");
@@ -516,23 +654,8 @@
       showMapMessage(config.mapUnavailable || "The map is unavailable.");
     }
 
-    try {
-      const result = await fetchAlerts();
-      allAlerts = result.alerts;
-      populateFilter("alerts-location-filter", "locations", config.allLocationsLabel || "All locations");
-      populateFilter("alerts-topic-filter", "topics", config.allTopicsLabel || "All topics");
-      filteredAlerts = allAlerts.slice();
-      renderArticles();
-      renderMarkers();
-      if (result.truncated) {
-        document.getElementById("alerts-results-status").textContent +=
-          ` ${config.alertsTruncatedLabel || "Additional alerts were omitted."}`;
-      }
-    } catch (error) {
-      console.error("Unable to load alerts.", error);
-      document.getElementById("alerts-results-status").textContent =
-        config.alertsUnavailable || "Alerts could not be loaded. Please try again later.";
-    }
+    resetArticles();
+    loadMapIndex();
   }
 
   if (document.readyState === "loading") {
