@@ -342,6 +342,10 @@
   display: none;
 }
 
+.mongabay-mega-menu__mobile-items {
+  display: none;
+}
+
 .mongabay-mega-menu__navbar-cards {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -921,13 +925,78 @@ a.mongabay-mega-menu__navbar-card:focus-visible {
     padding: var(--spacing-5) var(--spacing-5);
   }
 
-  .mongabay-mega-menu__navbar-cards,
-  .mongabay-mega-menu__navbar-links {
-    grid-template-columns: 1fr;
+  .mongabay-mega-menu__navbar-cards {
+    display: none;
   }
 
-  .mongabay-mega-menu__navbar-card {
-    min-height: 180px;
+  .mongabay-mega-menu__mobile-items {
+    display: block;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .mongabay-mega-menu__mobile-item {
+    margin: 0;
+    border-bottom: 1px solid var(--theme-medium-gray);
+    list-style: none;
+  }
+
+  .mongabay-mega-menu__mobile-item summary,
+  .mongabay-mega-menu__mobile-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-5);
+    padding: var(--spacing-5) 0;
+    color: var(--theme-body);
+    font: 400 var(--font-sm)/1.2 "Rowan Regular";
+    text-decoration: none;
+  }
+
+  .mongabay-mega-menu__mobile-item summary {
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .mongabay-mega-menu__mobile-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .mongabay-mega-menu__mobile-item details[open] > summary .mongabay-mega-menu__chevron {
+    transform: translateY(2px) rotate(225deg);
+  }
+
+  .mongabay-mega-menu__mobile-parent-link,
+  .mongabay-mega-menu__mobile-items .mongabay-mega-menu__nested-item > a,
+  .mongabay-mega-menu__mobile-items .mongabay-mega-menu__nested-item > span {
+    display: inline-block;
+    padding: var(--spacing-2) 0;
+    color: var(--theme-body);
+    font-size: var(--font-s);
+    text-decoration: none;
+  }
+
+  .mongabay-mega-menu__mobile-items .mongabay-mega-menu__nested-list {
+    padding-bottom: var(--spacing-3);
+  }
+
+  .mongabay-mega-menu__mobile-items .mongabay-mega-menu__nested-title {
+    color: var(--theme-body);
+  }
+
+  .mongabay-mega-menu__mobile-items a:hover,
+  .mongabay-mega-menu__mobile-items a:focus-visible {
+    text-decoration: underline;
+  }
+
+  .mongabay-mega-menu__mobile-items summary:focus-visible {
+    outline: 2px solid var(--theme-emerald-green);
+    outline-offset: -2px;
+  }
+
+  .mongabay-mega-menu__navbar-links {
+    grid-template-columns: 1fr;
   }
 
   .mongabay-mega-menu__navbar-links {
