@@ -35,7 +35,15 @@ get_header(); ?>
       </div>
     </header>
     <p class="alerts-results-status" id="alerts-results-status" role="status" aria-live="polite"></p>
-    <div class="alerts-article-grid" id="alerts-article-grid"></div>
+    <div class="alerts-slider-wrapper">
+      <button class="alerts-slider-nav alerts-slider-nav-prev" id="alerts-slider-prev" aria-label="<?php esc_attr_e('Previous articles', 'mongabay'); ?>" type="button">
+        <span class="icon icon-left" aria-hidden="true"></span>
+      </button>
+      <div class="alerts-article-grid" id="alerts-article-grid"></div>
+      <button class="alerts-slider-nav alerts-slider-nav-next" id="alerts-slider-next" aria-label="<?php esc_attr_e('Next articles', 'mongabay'); ?>" type="button">
+        <span class="icon icon-right" aria-hidden="true"></span>
+      </button>
+    </div>
   </section>
   <div class="alerts-globe" id="alerts-globe" aria-label="<?php esc_attr_e('Map of news alerts', 'mongabay'); ?>">
     <p class="alerts-map-message" id="alerts-map-message" hidden></p>

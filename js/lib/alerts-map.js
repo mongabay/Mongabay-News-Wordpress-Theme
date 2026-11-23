@@ -387,6 +387,41 @@
     mapMessage.hidden = false;
   }
 
+  function initSliderNavigation() {
+    const grid = document.getElementById("alerts-article-grid");
+    const prevBtn = document.getElementById("alerts-slider-prev");
+    const nextBtn = document.getElementById("alerts-slider-next");
+    
+    if (!grid || !prevBtn || !nextBtn) return;
+    
+    function updateNavigation() {
+      const scrollLeft = grid.scrollLeft;
+      const scrollWidth = grid.scrollWidth;
+      const clientWidth = grid.clientWidth;
+      
+      prevBtn.disabled = scrollLeft <= 0;
+      nextBtn.disabled = scrollLeft + clientWidth >= scrollWidth - 10;
+    }
+    
+    function scroll(direction) {
+      const cardWidth = grid.querySelector(".article--container")?.offsetWidth || (window.innerWidth - 64);
+      const scrollAmount = cardWidth + 16;
+      
+      grid.scrollBy({
+        left: direction === 'next' ? scrollAmount : -scrollAmount,
+        behavior: 'smooth'
+      });
+      
+      setTimeout(updateNavigation, 100);
+    }
+    
+    prevBtn.addEventListener('click', () => scroll('prev'));
+    nextBtn.addEventListener('click', () => scroll('next'));
+    grid.addEventListener('scroll', updateNavigation);
+    
+    updateNavigation();
+  }
+
   async function init() {
     initDialog();
     if (MAPBOX_TOKEN) {
@@ -408,6 +443,7 @@
       populateFilter("alerts-topic-filter", "topics", config.allTopicsLabel || "All topics");
       filteredAlerts = allAlerts.slice();
       renderArticles();
+      initSliderNavigation();
       renderMarkers();
       if (result.truncated) {
         document.getElementById("alerts-results-status").textContent +=
