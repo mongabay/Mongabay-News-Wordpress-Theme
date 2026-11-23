@@ -19,7 +19,7 @@ formats_slider(array('videos'), 'Watch unique videos that cut through the noise'
   <?php topics_section(array('videos'), 'Explore videos about topics like', array('wildlife', 'indigenous-peoples', 'forests', 'oceans', 'agroecology'), array('link_copy' => 'all topics', 'link_url' => home_url() . '/?s=&formats=videos')); ?>
   <?php short_videos_latest(); ?>
   <div id="section-videos-latest" class="container pv--40 gap--20 in-column">
-    <div class="container in-row full-width section--headline desktop-section-headline">
+    <div class="container in-row full-width section--headline desktop-section-headline gap--16">
       <h1><?php _e('Latest videos', 'mongabay'); ?></h1>
       <a href="<?php echo home_url(); ?>/?s=&formats=videos" class="theme--button primary"><?php _e('All videos', 'mongabay'); ?><span class="icon icon-right"></span></a>
     </div>
