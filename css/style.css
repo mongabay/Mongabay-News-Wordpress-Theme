@@ -5347,22 +5347,97 @@ footer .grid--4 {
     height: 100vh;
     display: flex;
     flex-direction: column;
+    grid-template-columns: unset;
   }
 
   .alerts-globe {
-    height: 50%;
+    height: 33.33%;
+    flex-shrink: 0;
   }
 
-  .alerts-panel {
-    position: relative;
-    top: auto;
-    left: auto;
-    width: 100%;
-    max-height: 50%;
-    background: var(--theme-body-white);
-    border-radius: 16px 16px 0 0;
-    margin-top: -16px;
-    overflow-y: auto;
+  .alerts-content-pane {
+    height: 66.67%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    min-width: 0;
+  }
+
+  .alerts-content-header {
+    flex-shrink: 0;
+    overflow: hidden;
+    margin: 0;
+    padding: 16px;
+    border-bottom: 1px solid var(--theme-body-border);
+  }
+
+  .alerts-content-header h1 {
+    margin: 0 0 12px;
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+  }
+
+  .alerts-filter-controls {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    padding-bottom: 8px;
+    gap: 8px;
+  }
+
+  .alerts-filter-controls::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .alerts-filter-controls::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .alerts-filter-controls::-webkit-scrollbar-thumb {
+    background-color: var(--theme-body-border);
+    border-radius: 2px;
+  }
+
+  .alerts-filter-controls label {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .alerts-results-status {
+    display: none;
+  }
+
+  .alerts-article-grid {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: var(--theme-body-border) transparent;
+    gap: 16px;
+    padding: 16px;
+    align-items: stretch;
+    grid-template-columns: unset;
+  }
+
+  .alerts-article-grid::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .alerts-article-grid::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .alerts-article-grid::-webkit-scrollbar-thumb {
+    background-color: var(--theme-body-border);
+    border-radius: 3px;
+  }
+
+  .alerts-article-grid .article--container {
+    flex: 0 0 calc(100vw - 32px - 32px);
+    min-width: calc(100vw - 32px - 32px);
   }
 }
 
@@ -5636,6 +5711,11 @@ footer .grid--4 {
 @media only screen and (max-width: 480px) {
   .alerts-article-grid {
     grid-template-columns: 1fr;
+  }
+
+  .alerts-article-grid .article--container {
+    flex: 0 0 calc(100vw - 32px);
+    min-width: calc(100vw - 32px);
   }
 }
 
