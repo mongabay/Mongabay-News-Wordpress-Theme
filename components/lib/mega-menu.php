@@ -588,9 +588,6 @@ function mongabay_mega_menu_render_navbar_panel($items, $panel_id)
           <?php if (!empty($item['children'])) : ?>
             <details>
               <summary><?php echo esc_html($item['label']); ?><span class="mongabay-mega-menu__chevron" aria-hidden="true"></span></summary>
-              <?php if (!empty($item['url'])) : ?>
-                <a class="mongabay-mega-menu__mobile-parent-link" href="<?php echo esc_url($item['url']); ?>"><?php echo esc_html($item['label']); ?></a>
-              <?php endif; ?>
               <?php mongabay_mega_menu_render_nested_items($item['children'], true); ?>
             </details>
           <?php elseif (!empty($item['url'])) : ?>
