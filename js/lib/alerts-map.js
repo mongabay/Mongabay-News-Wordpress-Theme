@@ -254,6 +254,72 @@
       event.preventDefault();
       openArticle(alert, index);
     });
+
+    const mobileCard = document.createElement("div");
+    mobileCard.classList.add("alerts-card", "alerts-mobile-card");
+    if (imageUrl) {
+      const imageWrapper = document.createElement("div");
+      imageWrapper.classList.add("alerts-card-image-wrapper");
+      const mobileImageContainer = document.createElement("div");
+      mobileImageContainer.classList.add("alerts-card-image");
+      const mobileImage = document.createElement("img");
+      mobileImage.src = imageUrl;
+      mobileImage.alt = "";
+      mobileImage.loading = "lazy";
+      mobileImageContainer.appendChild(mobileImage);
+      imageWrapper.appendChild(mobileImageContainer);
+      const location = getTerms(alert, "locations")[0];
+      if (location) {
+        const locationLabel = document.createElement("div");
+        locationLabel.classList.add("alerts-card-location");
+        locationLabel.textContent = getTermLabel(location);
+        imageWrapper.appendChild(locationLabel);
+      }
+      mobileCard.appendChild(imageWrapper);
+    }
+
+    const inner = document.createElement("div");
+    inner.classList.add("alerts-card-inner");
+    const cardMeta = document.createElement("div");
+    cardMeta.classList.add("alerts-card-meta");
+    const topic = getTerms(alert, "topics")[0];
+    if (topic) {
+      const topicLabel = document.createElement("span");
+      topicLabel.classList.add("alerts-card-topic");
+      topicLabel.textContent = getTermLabel(topic);
+      cardMeta.appendChild(topicLabel);
+    }
+    const cardDate = document.createElement("span");
+    cardDate.classList.add("alerts-card-date");
+    cardDate.textContent = formatDate(alert.date);
+    cardMeta.appendChild(cardDate);
+    inner.appendChild(cardMeta);
+
+    const cardTitle = document.createElement("h3");
+    cardTitle.classList.add("alerts-card-title");
+    cardTitle.textContent = alert.title;
+    inner.appendChild(cardTitle);
+    if (alert.excerpt) {
+      const excerpt = document.createElement("p");
+      excerpt.classList.add("alerts-card-excerpt");
+      excerpt.textContent = new DOMParser().parseFromString(alert.excerpt, "text/html").body.textContent.trim();
+      inner.appendChild(excerpt);
+    }
+    const readLink = document.createElement("a");
+    readLink.classList.add("theme--button", "outlined", "full-width", "alerts-card-link");
+    readLink.href = link.href;
+    readLink.textContent = config.readFullArticle || "Read full article";
+    const arrow = document.createElement("span");
+    arrow.classList.add("icon", "icon-right");
+    arrow.setAttribute("aria-hidden", "true");
+    readLink.appendChild(arrow);
+    readLink.addEventListener("click", (event) => {
+      event.preventDefault();
+      openArticle(alert, index);
+    });
+    inner.appendChild(readLink);
+    mobileCard.appendChild(inner);
+    card.appendChild(mobileCard);
     return card;
   }
 
@@ -261,9 +327,11 @@
     const grid = document.getElementById("alerts-article-grid");
     const status = document.getElementById("alerts-results-status");
     grid.replaceChildren();
+    grid.scrollLeft = 0;
 
     if (!filteredAlerts.length) {
       status.textContent = config.noAlertsLabel || "No alerts found for these filters.";
+      updateSliderNavigation();
       return;
     }
 
@@ -271,6 +339,7 @@
     filteredAlerts.forEach((alert, index) => {
       grid.appendChild(createArticleCard(alert, index));
     });
+    updateSliderNavigation();
   }
 
   function renderMarkers() {
@@ -387,43 +456,40 @@
     mapMessage.hidden = false;
   }
 
+  function updateSliderNavigation() {
+    const grid = document.getElementById("alerts-article-grid");
+    const prevBtn = document.getElementById("alerts-slider-prev");
+    const nextBtn = document.getElementById("alerts-slider-next");
+    prevBtn.disabled = grid.scrollLeft <= 1;
+    nextBtn.disabled = grid.scrollLeft + grid.clientWidth >= grid.scrollWidth - 1;
+  }
+
   function initSliderNavigation() {
     const grid = document.getElementById("alerts-article-grid");
     const prevBtn = document.getElementById("alerts-slider-prev");
     const nextBtn = document.getElementById("alerts-slider-next");
-    
-    if (!grid || !prevBtn || !nextBtn) return;
-    
-    function updateNavigation() {
-      const scrollLeft = grid.scrollLeft;
-      const scrollWidth = grid.scrollWidth;
-      const clientWidth = grid.clientWidth;
-      
-      prevBtn.disabled = scrollLeft <= 0;
-      nextBtn.disabled = scrollLeft + clientWidth >= scrollWidth - 10;
-    }
-    
+
     function scroll(direction) {
-      const cardWidth = grid.querySelector(".article--container")?.offsetWidth || (window.innerWidth - 64);
-      const scrollAmount = cardWidth + 16;
-      
+      const card = grid.querySelector(".article--container");
+      if (!card) return;
+      const gap = Number.parseFloat(getComputedStyle(grid).columnGap) || 0;
+      const scrollAmount = card.offsetWidth + gap;
       grid.scrollBy({
-        left: direction === 'next' ? scrollAmount : -scrollAmount,
-        behavior: 'smooth'
+        left: direction === "next" ? scrollAmount : -scrollAmount,
+        behavior: "smooth",
       });
-      
-      setTimeout(updateNavigation, 100);
     }
-    
-    prevBtn.addEventListener('click', () => scroll('prev'));
-    nextBtn.addEventListener('click', () => scroll('next'));
-    grid.addEventListener('scroll', updateNavigation);
-    
-    updateNavigation();
+
+    prevBtn.addEventListener("click", () => scroll("prev"));
+    nextBtn.addEventListener("click", () => scroll("next"));
+    grid.addEventListener("scroll", updateSliderNavigation);
+    window.addEventListener("resize", updateSliderNavigation);
+    updateSliderNavigation();
   }
 
   async function init() {
     initDialog();
+    initSliderNavigation();
     if (MAPBOX_TOKEN) {
       try {
         if (!window.mapboxgl) throw new Error("Mapbox GL JS is unavailable.");
@@ -443,7 +509,6 @@
       populateFilter("alerts-topic-filter", "topics", config.allTopicsLabel || "All topics");
       filteredAlerts = allAlerts.slice();
       renderArticles();
-      initSliderNavigation();
       renderMarkers();
       if (result.truncated) {
         document.getElementById("alerts-results-status").textContent +=

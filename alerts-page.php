@@ -11,31 +11,33 @@ get_header(); ?>
 
 <main id="alerts-page" class="alerts-page">
   <section class="alerts-content-pane" aria-label="<?php esc_attr_e('News alerts', 'mongabay'); ?>">
-    <header class="alerts-content-header">
-      <h1><?php esc_html_e('All News', 'mongabay'); ?></h1>
-      <div class="alerts-filter-controls">
-        <label>
-          <span class="screen-reader-text"><?php esc_html_e('Filter by location', 'mongabay'); ?></span>
-          <select id="alerts-location-filter">
-            <option value="all"><?php esc_html_e('All locations', 'mongabay'); ?></option>
-          </select>
-        </label>
-        <label>
-          <span class="screen-reader-text"><?php esc_html_e('Filter by topic', 'mongabay'); ?></span>
-          <select id="alerts-topic-filter">
-            <option value="all"><?php esc_html_e('All topics', 'mongabay'); ?></option>
-          </select>
-        </label>
-        <!-- <label>
-          <span class="screen-reader-text"><?php esc_html_e('Filter by format', 'mongabay'); ?></span>
-          <select id="alerts-format-filter">
-            <option value="all"><?php esc_html_e('All formats', 'mongabay'); ?></option>
-          </select>
-        </label> -->
-      </div>
-    </header>
-    <p class="alerts-results-status" id="alerts-results-status" role="status" aria-live="polite"></p>
     <div class="alerts-slider-wrapper">
+      <header class="alerts-content-header">
+        <h1><?php esc_html_e('All News', 'mongabay'); ?></h1>
+        <div class="alerts-filters-section">
+          <div class="alerts-filter-controls">
+            <label>
+              <span class="screen-reader-text"><?php esc_html_e('Filter by location', 'mongabay'); ?></span>
+              <select id="alerts-location-filter">
+                <option value="all"><?php esc_html_e('All locations', 'mongabay'); ?></option>
+              </select>
+            </label>
+            <label>
+              <span class="screen-reader-text"><?php esc_html_e('Filter by topic', 'mongabay'); ?></span>
+              <select id="alerts-topic-filter">
+                <option value="all"><?php esc_html_e('All topics', 'mongabay'); ?></option>
+              </select>
+            </label>
+            <!-- <label>
+              <span class="screen-reader-text"><?php esc_html_e('Filter by format', 'mongabay'); ?></span>
+              <select id="alerts-format-filter">
+                <option value="all"><?php esc_html_e('All formats', 'mongabay'); ?></option>
+              </select>
+            </label> -->
+          </div>
+        </div>
+      </header>
+      <p class="alerts-results-status" id="alerts-results-status" role="status" aria-live="polite"></p>
       <button class="alerts-slider-nav alerts-slider-nav-prev" id="alerts-slider-prev" aria-label="<?php esc_attr_e('Previous articles', 'mongabay'); ?>" type="button">
         <span class="icon icon-left" aria-hidden="true"></span>
       </button>
