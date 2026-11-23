@@ -37,6 +37,13 @@
       document.body.classList.remove("mongabay-mega-menu-open");
     }
 
+    const mobileMenu = window.matchMedia("(max-width: 600px)");
+    if (mobileMenu.addEventListener) {
+      mobileMenu.addEventListener("change", closeAll);
+    } else {
+      mobileMenu.addListener(closeAll);
+    }
+
     triggers.forEach(function (trigger) {
       trigger.addEventListener("click", function () {
         const opening = trigger.getAttribute("aria-expanded") !== "true";

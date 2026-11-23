@@ -374,7 +374,7 @@ function mongabay_mega_menu_admin_assets($hook_suffix)
 }
 add_action('admin_enqueue_scripts', 'mongabay_mega_menu_admin_assets');
 
-function mongabay_mega_menu_render_nested_items($items)
+function mongabay_mega_menu_render_nested_items($items, $text_only = false)
 {
   if (empty($items)) {
     return;
@@ -385,8 +385,8 @@ function mongabay_mega_menu_render_nested_items($items)
       <li class="mongabay-mega-menu__nested-item">
         <?php if (!empty($item['is_title'])) : ?>
           <h3 class="mongabay-mega-menu__nested-title"><?php echo esc_html($item['label']); ?></h3>
-          <?php mongabay_mega_menu_render_nested_items($item['children'] ?? array()); ?>
-        <?php elseif (!empty($item['image'])) : ?>
+          <?php mongabay_mega_menu_render_nested_items($item['children'] ?? array(), $text_only); ?>
+        <?php elseif (!$text_only && !empty($item['image'])) : ?>
           <?php if (!empty($item['url'])) : ?>
             <a class="mongabay-mega-menu__nested-card" href="<?php echo esc_url($item['url']); ?>">
               <img src="<?php echo esc_url(mongabay_mega_menu_image_url($item['image'])); ?>" alt="" loading="lazy">
@@ -404,10 +404,10 @@ function mongabay_mega_menu_render_nested_items($items)
           <span><?php echo esc_html($item['label']); ?></span>
         <?php endif; ?>
         <?php if (empty($item['is_title'])) : ?>
-          <?php if (!empty($item['description'])) : ?>
+          <?php if (!$text_only && !empty($item['description'])) : ?>
             <p><?php echo esc_html($item['description']); ?></p>
           <?php endif; ?>
-          <?php mongabay_mega_menu_render_nested_items($item['children'] ?? array()); ?>
+          <?php mongabay_mega_menu_render_nested_items($item['children'] ?? array(), $text_only); ?>
         <?php endif; ?>
       </li>
     <?php endforeach; ?>
@@ -582,6 +582,25 @@ function mongabay_mega_menu_render_navbar_panel($items, $panel_id)
         <?php endif; ?>
       <?php endforeach; ?>
     </div>
+    <ul class="mongabay-mega-menu__mobile-items">
+      <?php foreach ($items as $item) : ?>
+        <li class="mongabay-mega-menu__mobile-item">
+          <?php if (!empty($item['children'])) : ?>
+            <details>
+              <summary><?php echo esc_html($item['label']); ?><span class="mongabay-mega-menu__chevron" aria-hidden="true"></span></summary>
+              <?php if (!empty($item['url'])) : ?>
+                <a class="mongabay-mega-menu__mobile-parent-link" href="<?php echo esc_url($item['url']); ?>"><?php echo esc_html($item['label']); ?></a>
+              <?php endif; ?>
+              <?php mongabay_mega_menu_render_nested_items($item['children'], true); ?>
+            </details>
+          <?php elseif (!empty($item['url'])) : ?>
+            <a class="mongabay-mega-menu__mobile-heading" href="<?php echo esc_url($item['url']); ?>"><?php echo esc_html($item['label']); ?></a>
+          <?php else : ?>
+            <span class="mongabay-mega-menu__mobile-heading"><?php echo esc_html($item['label']); ?></span>
+          <?php endif; ?>
+        </li>
+      <?php endforeach; ?>
+    </ul>
     <div class="mongabay-mega-menu__navbar-links">
       <?php foreach ($link_columns as $column) : ?>
         <ul>
