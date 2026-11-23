@@ -202,9 +202,23 @@
   }
 
   function applyFilters() {
-    const location = document.getElementById("alerts-location-filter").value;
-    const topic = document.getElementById("alerts-topic-filter").value;
+    const locationFilter = document.getElementById("alerts-location-filter");
+    const topicFilter = document.getElementById("alerts-topic-filter");
+    const location = locationFilter.value;
+    const topic = topicFilter.value;
     const format = document.getElementById("alerts-format-filter")?.value || "all";
+
+    const locationLabel = location === "all" ? "" : locationFilter.selectedOptions[0].textContent;
+    const topicLabel = topic === "all" ? "" : topicFilter.selectedOptions[0].textContent;
+    let title = config.allNewsLabel || "All News";
+    if (locationLabel && topicLabel) {
+      title = (config.locationTopicNewsTitle || "%1$s and %2$s News")
+        .replace("%1$s", () => locationLabel)
+        .replace("%2$s", () => topicLabel);
+    } else if (locationLabel || topicLabel) {
+      title = (config.filteredNewsTitle || "%s News").replace("%s", () => locationLabel || topicLabel);
+    }
+    document.getElementById("alerts-page-title").textContent = title;
 
     filteredAlerts = allAlerts.filter((alert) => {
       const matchesLocation = location === "all" || getTerms(alert, "locations").some((term) => getTermValue(term) === location);

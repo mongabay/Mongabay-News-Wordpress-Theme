@@ -13,7 +13,7 @@ get_header(); ?>
   <section class="alerts-content-pane" aria-label="<?php esc_attr_e('News alerts', 'mongabay'); ?>">
     <div class="alerts-slider-wrapper">
       <header class="alerts-content-header">
-        <h1><?php esc_html_e('All News', 'mongabay'); ?></h1>
+        <h1 id="alerts-page-title"><?php esc_html_e('All News', 'mongabay'); ?></h1>
         <div class="alerts-filters-section">
           <div class="alerts-filter-controls">
             <label>

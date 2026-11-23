@@ -1559,6 +1559,11 @@ function mongabay_alerts_scripts()
             'graphqlEndpoint' => esc_url(home_url('/graphql')),
             'mapboxToken' => mongabay_get_mapbox_public_token(),
             'allAlertsLabel' => __('All Alerts', 'mongabay'),
+            'allNewsLabel' => __('All News', 'mongabay'),
+            /* translators: %s is the selected location or topic. */
+            'filteredNewsTitle' => __('%s News', 'mongabay'),
+            /* translators: 1: selected location, 2: selected topic. */
+            'locationTopicNewsTitle' => __('%1$s and %2$s News', 'mongabay'),
             'allLocationsLabel' => __('All locations', 'mongabay'),
             'allTopicsLabel' => __('All topics', 'mongabay'),
             'allFormatsLabel' => __('All formats', 'mongabay'),
