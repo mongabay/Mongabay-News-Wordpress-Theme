@@ -235,6 +235,30 @@
     resetArticles();
   }
 
+  function initFilterDropdown() {
+    const toggle = document.getElementById("alerts-filter-toggle");
+    const filters = document.getElementById("alerts-filters");
+
+    function closeFilters() {
+      filters.hidden = true;
+      toggle.setAttribute("aria-expanded", "false");
+    }
+
+    closeFilters();
+    toggle.hidden = false;
+    toggle.addEventListener("click", () => {
+      const opening = filters.hidden;
+      filters.hidden = !opening;
+      toggle.setAttribute("aria-expanded", String(opening));
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && !filters.hidden) {
+        closeFilters();
+        toggle.focus();
+      }
+    });
+  }
+
   function createArticleCard(alert) {
     const card = document.createElement("div");
     card.classList.add("article--container", "pv--8");
@@ -562,7 +586,39 @@
 
   function updateLoadMoreButton() {
     document.getElementById("alerts-load-more").hidden =
-      loading || !hasMore || (mobileViewport.matches && !loadFailed);
+      loading || !hasMore || mobileViewport.matches;
+  }
+
+  function updateMobileLoadingCard(state) {
+    const grid = document.getElementById("alerts-article-grid");
+    let card = grid.querySelector(".alerts-loading-card");
+    if (!state) {
+      if (card) card.remove();
+      return;
+    }
+    if (!card) {
+      card = document.createElement("div");
+      card.className = "article--container alerts-loading-card";
+      grid.appendChild(card);
+    }
+    const content = document.createElement("div");
+    content.className = "alerts-card alerts-mobile-card alerts-loading-card-content";
+    if (state === "loading") {
+      const status = document.createElement("p");
+      status.setAttribute("role", "status");
+      status.appendChild(document.querySelector("#alerts-loading .loading-spinner").cloneNode(true));
+      content.appendChild(status);
+    } else {
+      const message = document.createElement("p");
+      message.textContent = config.alertsUnavailable || "Alerts could not be loaded. Please try again later.";
+      const retry = document.createElement("button");
+      retry.type = "button";
+      retry.className = "theme--button outlined";
+      retry.textContent = config.retryAlertsLabel || "Retry loading alerts";
+      retry.addEventListener("click", loadMoreArticles);
+      content.append(message, retry);
+    }
+    card.replaceChildren(content);
   }
 
   function loadMoreIfSliderCannotScroll(emptyBatch = false) {
@@ -588,17 +644,19 @@
     indicator.hidden = false;
     button.hidden = true;
     grid.setAttribute("aria-busy", "true");
+    updateMobileLoadingCard("loading");
+    updateSliderNavigation();
     try {
       const connection = await fetchConnection(buildQuery(location, topic), nextCursor, articleRequest.signal);
       if (generation !== requestGeneration) return;
       const alerts = connection.nodes.filter((alert) => alert.alertMapCoordinates);
       emptyBatch = alerts.length === 0;
       filteredAlerts.push(...alerts);
-      alerts.forEach((alert) => grid.appendChild(createArticleCard(alert)));
+      const loadingCard = grid.querySelector(".alerts-loading-card");
+      alerts.forEach((alert) => grid.insertBefore(createArticleCard(alert), loadingCard));
       nextCursor = connection.pageInfo.endCursor;
       hasMore = connection.pageInfo.hasNextPage;
       button.textContent = config.loadMoreLabel || "Load more alerts";
-      updateSliderNavigation();
     } catch (error) {
       if (generation !== requestGeneration) return;
       console.error("Unable to load alerts.", error);
@@ -609,9 +667,11 @@
       if (generation === requestGeneration) {
         loading = false;
         indicator.hidden = true;
+        updateMobileLoadingCard(loadFailed ? "error" : null);
         updateLoadMoreButton();
         grid.removeAttribute("aria-busy");
         updateResultsStatus();
+        updateSliderNavigation();
         loadMoreIfSliderCannotScroll(emptyBatch);
       }
     }
@@ -621,7 +681,7 @@
     const pane = document.querySelector(".alerts-content-pane");
     const grid = document.getElementById("alerts-article-grid");
     const button = document.getElementById("alerts-load-more");
-    const boundary = document.querySelector(".alerts-load-more");
+    const boundary = document.querySelector(".alerts-article-viewport");
     button.addEventListener("click", loadMoreArticles);
     window.addEventListener("resize", () => {
       updateLoadMoreButton();
@@ -634,7 +694,7 @@
     let lastPaneScroll = pane.scrollTop;
     window.addEventListener("scroll", () => {
       const current = window.scrollY;
-      const nearEnd = boundary.getBoundingClientRect().top <= window.innerHeight + 100;
+      const nearEnd = boundary.getBoundingClientRect().bottom <= window.innerHeight + 100;
       if (current > lastPageScroll && mobileViewport.matches &&
           nearEnd && !nearPageEnd && !loadFailed) {
         loadMoreArticles();
@@ -662,8 +722,10 @@
 
   function updateSliderNavigation() {
     const grid = document.getElementById("alerts-article-grid");
+    const navigation = document.querySelector(".alerts-slider-navigation");
     const prevBtn = document.getElementById("alerts-slider-prev");
     const nextBtn = document.getElementById("alerts-slider-next");
+    navigation.hidden = !grid.querySelector(".article--container:not(.alerts-loading-card)");
     prevBtn.disabled = grid.scrollLeft <= 1;
     nextBtn.disabled = grid.scrollLeft + grid.clientWidth >= grid.scrollWidth - 1;
   }
@@ -693,6 +755,7 @@
 
   async function init() {
     initDialog();
+    initFilterDropdown();
     initStickyHeader();
     initSliderNavigation();
     initLoadMore();

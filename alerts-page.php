@@ -13,9 +13,14 @@ get_header(); ?>
   <section class="alerts-content-pane" aria-label="<?php esc_attr_e('News alerts', 'mongabay'); ?>">
     <div class="alerts-slider-wrapper">
       <header class="alerts-content-header">
-        <h1 id="alerts-page-title"><?php esc_html_e('All News', 'mongabay'); ?></h1>
+        <div class="alerts-content-heading">
+          <h1 id="alerts-page-title"><?php esc_html_e('All News', 'mongabay'); ?></h1>
+          <button type="button" class="alerts-filter-toggle" id="alerts-filter-toggle" aria-label="<?php esc_attr_e('Filter alerts', 'mongabay'); ?>" aria-controls="alerts-filters" aria-expanded="false" hidden>
+            <span class="icon icon-sliders" aria-hidden="true"></span>
+          </button>
+        </div>
         <p class="alerts-results-status" id="alerts-results-status" role="status" aria-live="polite"></p>
-        <div class="alerts-filters-section">
+        <div class="alerts-filters-section" id="alerts-filters">
           <div class="alerts-filter-controls">
             <label>
               <span class="screen-reader-text"><?php esc_html_e('Filter by location', 'mongabay'); ?></span>
@@ -42,15 +47,17 @@ get_header(); ?>
         <span class="loading-spinner"><?php esc_html_e('Loading map and filters...', 'mongabay'); ?></span>
       </p>
       <button class="theme--button outlined" id="alerts-index-retry" type="button" hidden><?php esc_html_e('Retry loading map and filters', 'mongabay'); ?></button>
-      <div class="alerts-slider-navigation">
-        <button class="alerts-slider-nav alerts-slider-nav-prev" id="alerts-slider-prev" aria-label="<?php esc_attr_e('Previous articles', 'mongabay'); ?>" type="button">
-          <span class="icon icon-left" aria-hidden="true"></span>
-        </button>
-        <button class="alerts-slider-nav alerts-slider-nav-next" id="alerts-slider-next" aria-label="<?php esc_attr_e('Next articles', 'mongabay'); ?>" type="button">
-          <span class="icon icon-right" aria-hidden="true"></span>
-        </button>
+      <div class="alerts-article-viewport">
+        <div class="alerts-slider-navigation" hidden>
+          <button class="alerts-slider-nav alerts-slider-nav-prev" id="alerts-slider-prev" aria-label="<?php esc_attr_e('Previous articles', 'mongabay'); ?>" type="button">
+            <span class="icon icon-left" aria-hidden="true"></span>
+          </button>
+          <button class="alerts-slider-nav alerts-slider-nav-next" id="alerts-slider-next" aria-label="<?php esc_attr_e('Next articles', 'mongabay'); ?>" type="button">
+            <span class="icon icon-right" aria-hidden="true"></span>
+          </button>
+        </div>
+        <div class="alerts-article-grid" id="alerts-article-grid"></div>
       </div>
-      <div class="alerts-article-grid" id="alerts-article-grid"></div>
       <div class="alerts-load-more">
         <p id="alerts-loading" role="status" aria-live="polite" hidden><span class="loading-spinner"><?php esc_html_e('Loading alerts...', 'mongabay'); ?></span></p>
         <button class="theme--button outlined" id="alerts-load-more" type="button" hidden><?php esc_html_e('Load more alerts', 'mongabay'); ?></button>
