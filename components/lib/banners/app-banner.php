@@ -6,7 +6,7 @@ function app_banner($number_of_phones = 1)
       <div class="title column--40 in-column pv--80 ph--40 gap--16 justify-center">
         <h1><? echo __('Get the Mongabay App', 'mongabay'); ?></h1>
         <p><? echo __('Personalise your news feed and follow the environmental topics and regions that matter most to you.', 'mongabay'); ?></p>
-        <div class="container gap--20 in-row">
+        <div class="container gap--20 in-row actions">
           <a href="https://play.google.com/store/apps/details?id=com.newsmongabay&hl=en" target="_blank"><img class="app-banner-store-badge" src="<?php echo get_stylesheet_directory_uri(); ?>/img/google-play.svg" alt="Download on Google Play"></a>
           <a href="https://apps.apple.com/us/app/mongabay-environmental-news/id6802597016" target="_blank"><img class="app-banner-store-badge" src="<?php echo get_stylesheet_directory_uri(); ?>/img/appstore.svg" alt="Download on the App Store"></a>
         </div>
