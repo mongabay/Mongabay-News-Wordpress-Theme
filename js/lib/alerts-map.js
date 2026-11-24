@@ -2,6 +2,7 @@
   const config = window.alertsMapConfig || {};
   const GRAPHQL_ENDPOINT = config.graphqlEndpoint || "/graphql";
   const MAPBOX_TOKEN = config.mapboxToken || "";
+  const mobileViewport = window.matchMedia("(max-width: 768px)");
   const markerSourceId = "alerts-markers";
   const markerLayerId = "alerts-marker-circles";
 
@@ -559,6 +560,17 @@
     loadMoreArticles();
   }
 
+  function updateLoadMoreButton() {
+    document.getElementById("alerts-load-more").hidden =
+      loading || !hasMore || (mobileViewport.matches && !loadFailed);
+  }
+
+  function loadMoreIfSliderCannotScroll(emptyBatch = false) {
+    if (mobileViewport.matches && !loadFailed && hasMore && (emptyBatch || filteredAlerts.length < 2)) {
+      loadMoreArticles();
+    }
+  }
+
   async function loadMoreArticles() {
     if (loading || !hasMore) return;
     const generation = requestGeneration;
@@ -568,6 +580,7 @@
     const indicator = document.getElementById("alerts-loading");
     const button = document.getElementById("alerts-load-more");
     const grid = document.getElementById("alerts-article-grid");
+    let emptyBatch = false;
     loading = true;
     loadFailed = false;
     updateResultsStatus();
@@ -579,6 +592,7 @@
       const connection = await fetchConnection(buildQuery(location, topic), nextCursor, articleRequest.signal);
       if (generation !== requestGeneration) return;
       const alerts = connection.nodes.filter((alert) => alert.alertMapCoordinates);
+      emptyBatch = alerts.length === 0;
       filteredAlerts.push(...alerts);
       alerts.forEach((alert) => grid.appendChild(createArticleCard(alert)));
       nextCursor = connection.pageInfo.endCursor;
@@ -595,9 +609,10 @@
       if (generation === requestGeneration) {
         loading = false;
         indicator.hidden = true;
-        button.hidden = !hasMore;
+        updateLoadMoreButton();
         grid.removeAttribute("aria-busy");
         updateResultsStatus();
+        loadMoreIfSliderCannotScroll(emptyBatch);
       }
     }
   }
@@ -608,6 +623,10 @@
     const button = document.getElementById("alerts-load-more");
     const boundary = document.querySelector(".alerts-load-more");
     button.addEventListener("click", loadMoreArticles);
+    window.addEventListener("resize", () => {
+      updateLoadMoreButton();
+      loadMoreIfSliderCannotScroll();
+    });
     document.getElementById("alerts-index-retry").addEventListener("click", loadMapIndex);
     document.getElementById("alerts-location-filter").addEventListener("change", applyFilters);
     document.getElementById("alerts-topic-filter").addEventListener("change", applyFilters);
@@ -616,7 +635,7 @@
     window.addEventListener("scroll", () => {
       const current = window.scrollY;
       const nearEnd = boundary.getBoundingClientRect().top <= window.innerHeight + 100;
-      if (current > lastPageScroll && window.matchMedia("(max-width: 768px)").matches &&
+      if (current > lastPageScroll && mobileViewport.matches &&
           nearEnd && !nearPageEnd && !loadFailed) {
         loadMoreArticles();
       }
@@ -626,7 +645,7 @@
     pane.addEventListener("scroll", () => {
       const current = pane.scrollTop;
       const nearEnd = current + pane.clientHeight >= pane.scrollHeight - 100;
-      if (current > lastPaneScroll && !window.matchMedia("(max-width: 768px)").matches &&
+      if (current > lastPaneScroll && !mobileViewport.matches &&
           nearEnd && !nearPaneEnd && !loadFailed) {
         loadMoreArticles();
       }
@@ -634,7 +653,7 @@
       lastPaneScroll = current;
     });
     grid.addEventListener("scroll", () => {
-      if (window.matchMedia("(max-width: 768px)").matches && grid.scrollLeft > 0 &&
+      if (mobileViewport.matches && grid.scrollLeft > 0 &&
           grid.scrollLeft + grid.clientWidth >= grid.scrollWidth - 10 && !loadFailed) {
         loadMoreArticles();
       }
