@@ -406,7 +406,7 @@ function mongabay_styles()
     $css_version = filemtime(get_template_directory() . '/css/style.css');
     wp_register_style('framework', get_template_directory_uri() . '/css/style.css', array(), $css_version, 'all');
     wp_enqueue_style('framework');
-    wp_register_style('icon-fonts', get_template_directory_uri() . '/css/fontello.css', array(), '1.0', 'all');
+    wp_register_style('icon-fonts', get_template_directory_uri() . '/css/fontello.css', array(), '1.1', 'all');
     wp_enqueue_style('icon-fonts');
     wp_register_style('addtohomescreen', get_template_directory_uri() . '/css/addtohomescreen.min.css', array(), '3.2.3', 'all');
     wp_enqueue_style('addtohomescreen');
