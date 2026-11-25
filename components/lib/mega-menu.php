@@ -8,14 +8,6 @@ function mongabay_mega_menu_image_url($image_url)
     return '';
   }
 
-  $attachment_id = attachment_url_to_postid($image_url);
-  if ($attachment_id) {
-    $medium_url = wp_get_attachment_image_url($attachment_id, 'medium');
-    if ($medium_url) {
-      return $medium_url;
-    }
-  }
-
   return $image_url;
 }
 
